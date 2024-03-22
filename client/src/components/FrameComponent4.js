@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import Group6 from "./Group6";
+import Group6 from "./Navbar";
 import Component from "./Component";
 
 const FrameComponent4 = () => {

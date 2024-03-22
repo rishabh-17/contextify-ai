@@ -1,9 +1,9 @@
-import Group6 from "./Group6";
+import Group6 from "./Navbar";
 import Group5 from "./Group5";
 
 const FrameComponent2 = () => {
   return (
-    <div className="w-[98.875rem] flex flex-col items-start justify-end pt-[0rem] px-[0rem] pb-[2.188rem] box-border max-w-[110%] shrink-0 text-left text-[4.25rem] text-black1 font-junge">
+    <div className="z-100 w-[98.875rem] flex flex-col items-start justify-end pt-[0rem] px-[0rem] pb-[2.188rem] box-border max-w-[110%] shrink-0 text-left text-[4.25rem] text-black1 font-junge">
       <div className="self-stretch flex flex-col items-start justify-start gap-[1.688rem] shrink-0 [debug_commit:f6aba90]">
         <Group6 />
         <div className="self-stretch flex flex-row items-start justify-end max-w-full">

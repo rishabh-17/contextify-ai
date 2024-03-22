@@ -1,4 +1,4 @@
-import Group6 from "./Group6";
+import Group6 from "./Navbar";
 
 const FrameComponent7 = () => {
   return (

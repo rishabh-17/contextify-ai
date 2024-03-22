@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Button } from "@mui/material";
-
-const Group6 = ({
+import { useNavigate } from "react-router-dom";
+const Navbar = ({
   dataLinkWidth,
   dataLinkPosition,
   dataLinkAlignSelf,
@@ -25,6 +25,8 @@ const Group6 = ({
     };
   }, [frameDivWidth, frameDivRight]);
 
+  const navigate = useNavigate();
+
   return (
     <header
       className="w-[92.813rem] flex flex-row items-start justify-center py-[2rem] px-[1.25rem] box-border relative gap-[33.188rem] max-w-full text-left text-[1.688rem] text-blueviolet-200 font-junge mq450:gap-[33.188rem_4.125rem] mq825:gap-[33.188rem_8.313rem] mq1425:gap-[33.188rem_16.563rem]"
@@ -42,7 +44,10 @@ const Group6 = ({
             alt=""
             src="/frame.svg"
           />
-          <h2 className="m-0 flex-1 relative text-inherit leading-[1.625rem] capitalize font-normal font-inherit whitespace-nowrap z-[2]">
+          <h2
+            className="m-0 flex-1 relative text-inherit leading-[1.625rem] capitalize font-normal font-inherit whitespace-nowrap z-[2]"
+            onClick={() => navigate("/")}
+          >
             Contextify
           </h2>
         </div>
@@ -51,19 +56,31 @@ const Group6 = ({
         <nav className="m-0 flex-1 flex flex-col items-start justify-start pt-[1.063rem] px-[0rem] pb-[0rem] box-border max-w-full mq825:hidden">
           <nav className="m-0 self-stretch flex flex-row items-start justify-start gap-[1.188rem] text-left text-[1rem] text-base-white font-junge">
             <div className="flex flex-col items-start justify-start py-[0rem] pr-[0.813rem] pl-[0rem]">
-              <div className="relative leading-[1.625rem] capitalize inline-block min-w-[2.875rem] z-[1]">
+              <div
+                className="relative leading-[1.625rem] capitalize inline-block min-w-[2.875rem] z-[1]"
+                onClick={() => navigate("/")}
+              >
                 home
               </div>
             </div>
             <div className="flex-[0.8875] flex flex-col items-start justify-start py-[0rem] pr-[0.563rem] pl-[0rem]">
-              <div className="relative leading-[1.625rem] capitalize inline-block min-w-[4.438rem] whitespace-nowrap z-[1]">
+              <div
+                className="relative leading-[1.625rem] capitalize inline-block min-w-[4.438rem] whitespace-nowrap z-[1]"
+                onClick={() => navigate("/about")}
+              >
                 about us
               </div>
             </div>
-            <div className="relative leading-[1.625rem] capitalize inline-block min-w-[3.25rem] z-[1]">
+            <div
+              className="relative leading-[1.625rem] capitalize inline-block min-w-[3.25rem] z-[1]"
+              onClick={() => navigate("/pricing")}
+            >
               pricing
             </div>
-            <div className="flex-1 relative leading-[1.625rem] capitalize inline-block min-w-[5.25rem] whitespace-nowrap z-[1]">
+            <div
+              className="flex-1 relative leading-[1.625rem] capitalize inline-block min-w-[5.25rem] whitespace-nowrap z-[1]"
+              onClick={() => navigate("/contact-us")}
+            >
               Contact Us
             </div>
           </nav>
@@ -90,4 +107,4 @@ const Group6 = ({
   );
 };
 
-export default Group6;
+export default Navbar;
