@@ -332,7 +332,7 @@ export default function AboutPage() {
                     <Text
                       size="8xl"
                       as="p"
-                      className="w-[40%] md:w-full ml-[-87px] md:p-5 md:ml-0 capitalize text-center leading-8"
+                      className="w-[38%] md:w-full ml-[-87px] md:p-5 md:ml-0 capitalize text-center leading-8"
                     >
                       Contexttify is a hub puts information into context at the click of a button
                     </Text>

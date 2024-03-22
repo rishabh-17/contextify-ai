@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import HomePageLearnhtml from "../../components/HomePageLearnhtml";
 import HomePageReadbooklight from "../../components/HomePageReadbooklight";
 import HomePageSituplight from "../../components/HomePageSituplight";
+import HomePageUIDesign from "../../components/HomePageUIDesign";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
@@ -19,7 +20,10 @@ export default function HomePagePage() {
     <>
       <Helmet>
         <title>Contextify</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="flex flex-col items-center w-full pt-8 gap-[59px] sm:gap-[29px] sm:pt-5 bg-gray-100">
         <Header className="w-[86%] md:w-full md:p-5" />
@@ -38,8 +42,13 @@ export default function HomePagePage() {
                   </Text>
                 </div>
                 <div className="flex flex-col items-start ml-2.5 md:ml-0">
-                  <Text size="8xl" as="p" className="w-[89%] md:w-full capitalize leading-8">
-                    Contexttify is a hub puts information into context at the click of a button
+                  <Text
+                    size="8xl"
+                    as="p"
+                    className="w-[89%] md:w-full capitalize leading-8"
+                  >
+                    Contexttify is a hub puts information into context at the
+                    click of a button
                   </Text>
                   <div className="flex sm:flex-col self-stretch mt-7 gap-6">
                     <Input
@@ -50,12 +59,17 @@ export default function HomePagePage() {
                       placeholder={`Get Started For Free`}
                       className="sm:px-5 capitalize flex-grow rounded-[32px]"
                     />
-                    <Button size="10xl" className="w-[65px] shadow-md rounded-[32px]">
+                    <Button
+                      size="10xl"
+                      className="w-[65px] shadow-md rounded-[32px]"
+                    >
                       <Img src="images/img_frame_white_a700.svg" />
                     </Button>
                   </div>
                   <Text size="9xl" as="p" className="mt-16 capitalize">
-                    <span className="text-gray_800_01">Already using Contextify?</span>
+                    <span className="text-gray_800_01">
+                      Already using Contextify?
+                    </span>
                     <span className="text-black-900_02">&nbsp;</span>
                     <span className="text-deep_purple-A200">Sign In</span>
                   </Text>
@@ -95,7 +109,11 @@ export default function HomePagePage() {
                         4.8/5
                       </Text>
                       <div className="flex self-stretch items-start gap-2.5">
-                        <Img src="images/img_group.svg" alt="image_one" className="h-[12px] mt-0.5" />
+                        <Img
+                          src="images/img_group.svg"
+                          alt="image_one"
+                          className="h-[12px] mt-0.5"
+                        />
                         <Text as="p" className="!text-black-900_87 opacity-0.5">
                           Rating
                         </Text>
@@ -111,7 +129,11 @@ export default function HomePagePage() {
                     <div className="flex flex-col items-center w-[35%] md:w-full mr-[166px] p-[25px] md:mr-0 sm:p-5 z-[1] border-white-A700_3d border-[16px] border-solid bg-white-A700 rounded-[24px]">
                       <div className="h-[11px] w-[11px] mt-[3px] bg-teal-300 rounded-[5px]" />
                       <div className="h-[25px] w-[23px] z-[1] bg-teal-300 rounded-[50%]" />
-                      <Heading size="5xl" as="h1" className="mt-[-2px] tracking-[0.36px] text-center">
+                      <Heading
+                        size="5xl"
+                        as="h1"
+                        className="mt-[-2px] tracking-[0.36px] text-center"
+                      >
                         32000+
                       </Heading>
                       <Text
@@ -139,7 +161,11 @@ export default function HomePagePage() {
                                 className="h-[46px] w-[46px] z-[1]"
                               />
                               <div className="flex flex-col self-end items-end ml-[-1px] gap-2">
-                                <Heading size="6xl" as="h2" className="mr-2.5 md:mr-0 tracking-[0.39px] text-center">
+                                <Heading
+                                  size="6xl"
+                                  as="h2"
+                                  className="mr-2.5 md:mr-0 tracking-[0.39px] text-center"
+                                >
                                   23
                                 </Heading>
                                 <Text
@@ -155,7 +181,11 @@ export default function HomePagePage() {
                         </div>
                       </div>
                       <div className="flex sm:flex-col justify-between items-start w-[80%] left-[28.00px] top-[22%] gap-5 m-auto absolute sm:relative">
-                        <Img src="images/img_group_indigo_100.svg" alt="image_three" className="h-[20px] sm:w-full" />
+                        <Img
+                          src="images/img_group_indigo_100.svg"
+                          alt="image_three"
+                          className="h-[20px] sm:w-full"
+                        />
                         <div className="flex sm:flex-col justify-center w-[88%] sm:w-full mt-3 gap-[11px]">
                           <div className="flex w-full sm:w-full p-3.5 bg-white-A700 shadow-4xl">
                             <div className="flex items-center mt-[3px] mb-0.5">
@@ -165,7 +195,11 @@ export default function HomePagePage() {
                                 className="h-[46px] w-[46px] z-[1]"
                               />
                               <div className="flex flex-col items-start ml-[-1px] gap-1">
-                                <Heading size="6xl" as="h3" className="self-end tracking-[0.39px] text-center">
+                                <Heading
+                                  size="6xl"
+                                  as="h3"
+                                  className="self-end tracking-[0.39px] text-center"
+                                >
                                   2034
                                 </Heading>
                                 <Text
@@ -194,7 +228,11 @@ export default function HomePagePage() {
                                 className="h-[35px] w-[34%] border-deep_orange-50 border-4 border-solid"
                               />
                               <div className="flex flex-col items-end gap-1">
-                                <Heading size="6xl" as="h4" className="tracking-[0.39px] text-center">
+                                <Heading
+                                  size="6xl"
+                                  as="h4"
+                                  className="tracking-[0.39px] text-center"
+                                >
                                   234
                                 </Heading>
                                 <Text
@@ -215,7 +253,11 @@ export default function HomePagePage() {
                                 className="h-[46px] w-[46px] z-[1]"
                               />
                               <div className="flex flex-col items-start ml-[-1px] gap-1">
-                                <Heading size="6xl" as="h5" className="self-end tracking-[0.39px] text-center">
+                                <Heading
+                                  size="6xl"
+                                  as="h5"
+                                  className="self-end tracking-[0.39px] text-center"
+                                >
                                   5420
                                 </Heading>
                                 <Text
@@ -232,7 +274,11 @@ export default function HomePagePage() {
                       </div>
                       <div className="flex flex-col items-end w-[90%] left-[28.00px] top-[17.89px] m-auto absolute">
                         <div className="flex justify-between items-center w-[91%] md:w-full gap-5 flex-wrap">
-                          <Heading size="8xl" as="h6" className="!text-blue_gray-800 tracking-[0.46px] text-center">
+                          <Heading
+                            size="8xl"
+                            as="h6"
+                            className="!text-blue_gray-800 tracking-[0.46px] text-center"
+                          >
                             Dashboard
                           </Heading>
                           <Heading
@@ -251,7 +297,11 @@ export default function HomePagePage() {
                           Develper
                         </Text>
                         <div className="flex self-stretch justify-between items-start mt-[3px] mr-[392px] gap-5 md:mr-0">
-                          <Img src="images/img_group_indigo_100_11x14.svg" alt="image_six" className="h-[11px]" />
+                          <Img
+                            src="images/img_group_indigo_100_11x14.svg"
+                            alt="image_six"
+                            className="h-[11px]"
+                          />
                           <div className="flex justify-between items-center w-[74%] mt-1.5 gap-5 flex-wrap">
                             <Text
                               size="lg"
@@ -295,7 +345,11 @@ export default function HomePagePage() {
                         className="h-[10px] w-[10px] bottom-[36%] left-[5%] m-auto absolute"
                       />
                       <div className="flex flex-col items-center bottom-[29%] left-[4%] m-auto absolute">
-                        <Img src="images/img_vector.svg" alt="vector_three" className="h-[10px] w-[11px] z-[1]" />
+                        <Img
+                          src="images/img_vector.svg"
+                          alt="vector_three"
+                          className="h-[10px] w-[11px] z-[1]"
+                        />
                         <Img
                           src="images/img_vector_blue_gray_100.svg"
                           alt="vector_five"
@@ -305,7 +359,11 @@ export default function HomePagePage() {
                       <div className="flex flex-col items-end w-[82%] gap-[23px] bottom-[9%] right-0 left-0 m-auto absolute">
                         <div className="flex flex-col w-[91%] md:w-full mr-3 gap-[35px] md:mr-0">
                           <div className="flex sm:flex-col justify-between items-center gap-5 flex-1">
-                            <Text size="xl" as="p" className="tracking-[0.16px] !font-inter">
+                            <Text
+                              size="xl"
+                              as="p"
+                              className="tracking-[0.16px] !font-inter"
+                            >
                               Mary Adants
                             </Text>
                             <div className="flex self-start justify-between w-[71%] sm:w-full gap-5">
@@ -316,24 +374,44 @@ export default function HomePagePage() {
                               >
                                 321
                               </Text>
-                              <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                              <Text
+                                size="lg"
+                                as="p"
+                                className="!text-gray-600 tracking-[0.15px] !font-inter"
+                              >
                                 100.0%
                               </Text>
-                              <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                              <Text
+                                size="lg"
+                                as="p"
+                                className="!text-gray-600 tracking-[0.15px] !font-inter"
+                              >
                                 12.0%
                               </Text>
                               <div className="flex justify-between w-[27%] gap-5 flex-wrap">
-                                <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                                <Text
+                                  size="lg"
+                                  as="p"
+                                  className="!text-gray-600 tracking-[0.15px] !font-inter"
+                                >
                                   8.0%
                                 </Text>
-                                <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                                <Text
+                                  size="lg"
+                                  as="p"
+                                  className="!text-gray-600 tracking-[0.15px] !font-inter"
+                                >
                                   73.2%
                                 </Text>
                               </div>
                             </div>
                           </div>
                           <div className="flex sm:flex-col justify-center items-center flex-1">
-                            <Text size="xl" as="p" className="tracking-[0.16px] !font-inter">
+                            <Text
+                              size="xl"
+                              as="p"
+                              className="tracking-[0.16px] !font-inter"
+                            >
                               osacar wilson
                             </Text>
                             <Text
@@ -358,16 +436,28 @@ export default function HomePagePage() {
                               90%
                             </Text>
                             <div className="flex self-end justify-between sm:self-stretch ml-[69px] gap-5 sm:ml-0 flex-1 flex-wrap">
-                              <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                              <Text
+                                size="lg"
+                                as="p"
+                                className="!text-gray-600 tracking-[0.15px] !font-inter"
+                              >
                                 19.0%
                               </Text>
-                              <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                              <Text
+                                size="lg"
+                                as="p"
+                                className="!text-gray-600 tracking-[0.15px] !font-inter"
+                              >
                                 73.2
                               </Text>
                             </div>
                           </div>
                           <div className="flex sm:flex-col justify-between items-center gap-5 flex-1">
-                            <Text size="xl" as="p" className="tracking-[0.16px] !font-inter">
+                            <Text
+                              size="xl"
+                              as="p"
+                              className="tracking-[0.16px] !font-inter"
+                            >
                               Den Mitchell
                             </Text>
                             <div className="flex sm:flex-col self-end justify-center w-[71%] sm:w-full">
@@ -393,10 +483,18 @@ export default function HomePagePage() {
                                 42.9%
                               </Text>
                               <div className="flex justify-between w-[58%] sm:w-full ml-[62px] gap-5 sm:ml-0 flex-wrap">
-                                <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                                <Text
+                                  size="lg"
+                                  as="p"
+                                  className="!text-gray-600 tracking-[0.15px] !font-inter"
+                                >
                                   4.0%
                                 </Text>
-                                <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                                <Text
+                                  size="lg"
+                                  as="p"
+                                  className="!text-gray-600 tracking-[0.15px] !font-inter"
+                                >
                                   73.2%
                                 </Text>
                               </div>
@@ -404,7 +502,11 @@ export default function HomePagePage() {
                           </div>
                         </div>
                         <div className="flex sm:flex-col self-stretch justify-end items-center p-[11px] bg-white-A700 shadow-3xl">
-                          <Text size="xl" as="p" className="self-end tracking-[0.16px] !font-inter">
+                          <Text
+                            size="xl"
+                            as="p"
+                            className="self-end tracking-[0.16px] !font-inter"
+                          >
                             Betto Compball
                           </Text>
                           <Text
@@ -429,10 +531,18 @@ export default function HomePagePage() {
                             62.9%
                           </Text>
                           <div className="flex self-end justify-between w-[35%] sm:w-full ml-[62px] gap-5 sm:ml-0 flex-wrap">
-                            <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                            <Text
+                              size="lg"
+                              as="p"
+                              className="!text-gray-600 tracking-[0.15px] !font-inter"
+                            >
                               8.0%
                             </Text>
-                            <Text size="lg" as="p" className="!text-gray-600 tracking-[0.15px] !font-inter">
+                            <Text
+                              size="lg"
+                              as="p"
+                              className="!text-gray-600 tracking-[0.15px] !font-inter"
+                            >
                               73.2%
                             </Text>
                           </div>
@@ -443,7 +553,11 @@ export default function HomePagePage() {
                   <div className="flex justify-end w-[34%] bottom-[0.00px] left-[9%] p-[18px] m-auto border-white-A700_3d border-[16px] border-solid bg-white-A700 shadow-xs absolute rounded-[24px]">
                     <div className="flex flex-col items-start w-full mb-1 gap-[17px]">
                       <div className="flex items-center flex-wrap">
-                        <Heading size="lg" as="p" className="self-end mb-0.5 !text-blue_gray-900_03">
+                        <Heading
+                          size="lg"
+                          as="p"
+                          className="self-end mb-0.5 !text-blue_gray-900_03"
+                        >
                           Based Instagram
                         </Heading>
                         <Img
@@ -487,20 +601,21 @@ export default function HomePagePage() {
               <Text size="7xl" as="p" className="capitalize">
                 trusted by 20,000+ clients
               </Text>
-              <Img src="images/img_group.svg" alt="image_eleven" className="h-[12px]" />
+              <Img
+                src="images/img_group.svg"
+                alt="image_eleven"
+                className="h-[12px]"
+              />
             </div>
             <div className="flex flex-col self-stretch items-center mt-4">
               <div className="flex w-full">
-                <div className="flex flex-col items-center w-[94%] md:w-full gap-[31px] md:p-5">
+                <div className="flex flex-col items-center w-[98%] md:w-full gap-[31px] md:p-5">
                   <div className="flex justify-center w-[23%] md:w-full">
                     <div className="flex flex-col items-end w-full">
                       <div className="h-[50px] w-[52%] mr-[61px] md:mr-0 bg-orange-50_01" />
                       <div className="flex mt-[-42px]">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col items-center">
                           <Text size="19xl" as="p" className="capitalize">
-                            they trust us.
-                          </Text>
-                          <Text size="19xl" as="p" className="mt-[-59px] capitalize">
                             they trust us.
                           </Text>
                         </div>
@@ -512,18 +627,7 @@ export default function HomePagePage() {
                       <div className="w-full mx-auto md:p-5 max-w-[1353px]">
                         <div className="flex md:flex-col justify-center items-center gap-[21px]">
                           <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
-                            <div className="flex justify-center items-center w-[60%] gap-[7px]">
-                              <Img
-                                src="images/img_vector_black_900_02.svg"
-                                alt="vector_seven"
-                                className="h-[38px] w-[38px]"
-                              />
-                              <Img
-                                src="images/img_vector_black_900_02_33x82.svg"
-                                alt="vector_nine"
-                                className="self-end h-[33px]"
-                              />
-                            </div>
+                           
                             <div className="flex justify-center items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_black_900_02.svg"
@@ -538,17 +642,16 @@ export default function HomePagePage() {
                             </div>
                           </div>
                           <div className="h-[92px] w-[11%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
-                            <Img src="images/img_format_wordmark.svg" alt="formatwordmark" className="h-[29px]" />
+                          
                             <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
-                              <Img src="images/img_format_wordmark.svg" alt="formatwordmark" className="h-[29px]" />
+                              <Img
+                                src="images/img_format_wordmark.svg"
+                                alt="formatwordmark"
+                                className="h-[29px]"
+                              />
                             </div>
                           </div>
                           <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 flex-1 relative rounded-[50px] md:flex-none">
-                            <Img
-                              src="images/img_format_wordmark_green_600_01.svg"
-                              alt="formatwordmark"
-                              className="h-[38px]"
-                            />
                             <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 absolute rounded-[50px]">
                               <Img
                                 src="images/img_format_wordmark_green_600_01.svg"
@@ -558,18 +661,7 @@ export default function HomePagePage() {
                             </div>
                           </div>
                           <div className="h-[101px] w-[19%] md:w-full md:h-auto bg-white-A700 shadow-5xl relative rounded-[50px]">
-                            <div className="flex justify-center items-start w-[66%] gap-[15px]">
-                              <Img
-                                src="images/img_vector_deep_purple_a200_01.svg"
-                                alt="vector_fifteen"
-                                className="h-[39px]"
-                              />
-                              <Img
-                                src="images/img_vector_black_900_02_25x112.svg"
-                                alt="vector"
-                                className="h-[25px] mt-1"
-                              />
-                            </div>
+                          
                             <div className="flex justify-center items-start w-full h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_deep_purple_a200_01.svg"
@@ -584,11 +676,6 @@ export default function HomePagePage() {
                             </div>
                           </div>
                           <div className="md:self-stretch h-[81px] md:w-full md:h-auto bg-white-A700 flex-1 relative rounded-[40px] md:flex-none">
-                            <Img
-                              src="images/img_format_wordmark_light_blue_500.svg"
-                              alt="formatwordmark"
-                              className="h-[19px]"
-                            />
                             <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[40px]">
                               <Img
                                 src="images/img_format_wordmark_light_blue_500.svg"
@@ -598,11 +685,6 @@ export default function HomePagePage() {
                             </div>
                           </div>
                           <div className="md:self-stretch h-[94px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[47px] md:flex-none">
-                            <Img
-                              src="images/img_format_wordmark_black_900_02.svg"
-                              alt="formatwordmark"
-                              className="h-[32px]"
-                            />
                             <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[47px]">
                               <Img
                                 src="images/img_format_wordmark_black_900_02.svg"
@@ -616,43 +698,27 @@ export default function HomePagePage() {
                       <div>
                         <div className="flex">
                           <div className="flex md:flex-col items-center w-[94%] md:w-full gap-[21px]">
-                            <div className="h-[98px] w-[25%] md:w-full bg-white-A700 relative rounded-[46px]">
-                              <Img
-                                src="images/img_format_wordmark_black_900_02_29x130.svg"
-                                alt="formatwordmark"
-                                className="h-[29px] bottom-[32%] right-[12%] m-auto absolute"
-                              />
-                              <div className="w-[48%] left-[0.00px] top-[0.00px] m-auto absolute">
-                                <div className="flex bg-white-A700 shadow-xs rounded-[47px]">
-                                  <Img
-                                    src="images/img_format_wordmark_black_900_02_32x130.svg"
-                                    alt="formatwordmark"
-                                    className="h-[32px] mt-[29px] mb-[30px]"
-                                  />
-                                </div>
-                                <div className="flex mt-[-95px] bg-white-A700 shadow-xs rounded-[47px]">
-                                  <Img
-                                    src="images/img_format_wordmark_black_900_02_32x130.svg"
-                                    alt="formatwordmark"
-                                    className="h-[32px] mt-[29px] mb-[30px]"
-                                  />
-                                </div>
-                              </div>
-                              <div className="flex justify-center w-[59%] bottom-[0.00px] right-[0.00px] p-[31px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
-                                <Img
-                                  src="images/img_format_wordmark_black_900_02_29x130.svg"
-                                  alt="formatwordmark"
-                                  className="h-[29px]"
-                                />
-                              </div>
-                            </div>
-                            <div className="flex md:flex-col w-[64%] md:w-full gap-[21px]">
+                            <div className="flex md:flex-col w-[100%] md:w-full gap-[21px]">
                               <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <Img
-                                  src="images/img_format_wordmark_deep_orange_a400_01.svg"
-                                  alt="formatwordmark"
-                                  className="h-[29px]"
-                                />
+                                <div className="flex justify-center w-full h-full left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                                  <Img
+                                    src="images/img_format_wordmark_black_900_02_32x130.svg"
+                                    alt="formatwordmark"
+                                    className="h-[29px] "
+                                  />
+                                </div>
+                              </div>
+                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                                  <Img
+                                    src="images/img_format_wordmark_black_900_02_29x130.svg"
+                                    alt="formatwordmark"
+                                    className="h-[29px]"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
                                 <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_deep_orange_a400_01.svg"
@@ -661,12 +727,8 @@ export default function HomePagePage() {
                                   />
                                 </div>
                               </div>
+
                               <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <Img
-                                  src="images/img_property_1_wordmark.svg"
-                                  alt="propertyone_one"
-                                  className="h-[29px]"
-                                />
                                 <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_property_1_wordmark.svg"
@@ -676,11 +738,7 @@ export default function HomePagePage() {
                                 </div>
                               </div>
                               <div className="h-[93px] w-full md:h-auto bg-white-A700 cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <Img
-                                  src="images/img_format_wordmark_black_900_02_31x130.svg"
-                                  alt="formatwordmark"
-                                  className="h-[31px]"
-                                />
+                               
                                 <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_black_900_02_31x130.svg"
@@ -690,28 +748,29 @@ export default function HomePagePage() {
                                 </div>
                               </div>
                               <div className="h-[88px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[44px] hover:shadow-xs">
-                                <Img src="images/img_format_frame.svg" alt="image" className="h-[25px]" />
+                              
                                 <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
-                                  <Img src="images/img_format_frame.svg" alt="image_one" className="h-[25px]" />
+                                  <Img
+                                    src="images/img_format_frame.svg"
+                                    alt="image_one"
+                                    className="h-[25px]"
+                                  />
                                 </div>
                               </div>
                             </div>
                             <div className="h-[92px] w-[15%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
-                              <div className="flex justify-center items-center w-[61%] gap-[5px]">
-                                <Img
-                                  src="images/img_vector_pink_a200.svg"
-                                  alt="vector"
-                                  className="self-end h-[26px] w-[27px]"
-                                />
-                                <Img src="images/img_vector_black_900_02_29x97.svg" alt="vector" className="h-[29px]" />
-                              </div>
+                            
                               <div className="flex justify-center items-center w-full h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                 <Img
                                   src="images/img_vector_pink_a200.svg"
                                   alt="vector"
                                   className="self-end h-[26px] w-[27px]"
                                 />
-                                <Img src="images/img_vector_black_900_02_29x97.svg" alt="vector" className="h-[29px]" />
+                                <Img
+                                  src="images/img_vector_black_900_02_29x97.svg"
+                                  alt="vector"
+                                  className="h-[29px]"
+                                />
                               </div>
                             </div>
                           </div>
@@ -733,14 +792,18 @@ export default function HomePagePage() {
                         />
                         <div className="h-[50px] w-[27%] mt-[130px] ml-[-99px] md:ml-0 bg-orange-50_01" />
                       </div>
-                      <Text size="19xl" as="p" className="mt-[122px] ml-[-313px] md:p-5 md:ml-0 capitalize">
+                      <Text
+                        size="19xl"
+                        as="p"
+                        className="mt-[122px] ml-[-313px] md:p-5 md:ml-0 capitalize"
+                      >
                         one platform for all Your Research
                       </Text>
                     </div>
                     <Text
                       size="19xl"
                       as="p"
-                      className="w-[48%] md:w-full mt-[-26px] ml-[100px] md:p-5 md:ml-0 capitalize leading-[50px]"
+                      className="w-[48%] md:w-full mt-[276px] ml-[100px] md:p-5 md:ml-0 capitalize leading-[50px]"
                     >
                       Manage your tasks online easily.
                     </Text>
@@ -751,7 +814,12 @@ export default function HomePagePage() {
                   <div className="self-stretch">
                     <div className="flex justify-between items-start gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                       <div className="flex flex-col mt-[13px] ml-[3px] md:ml-0">
-                        <Button color="red_500" size="5xl" shape="circle" className="w-[50px] !rounded-[25px]">
+                        <Button
+                          color="red_500"
+                          size="5xl"
+                          shape="circle"
+                          className="w-[50px] !rounded-[25px]"
+                        >
                           <Img src="images/img_group_249.png" />
                         </Button>
                       </div>
@@ -759,8 +827,13 @@ export default function HomePagePage() {
                         <Text size="12xl" as="p" className="capitalize">
                           appointments
                         </Text>
-                        <Text size="7xl" as="p" className="!text-black-900_87 opacity-0.5 leading-[27px]">
-                          Many desktop publishing packages and web page editors now use for them.
+                        <Text
+                          size="7xl"
+                          as="p"
+                          className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                        >
+                          Many desktop publishing packages and web page editors
+                          now use for them.
                         </Text>
                       </div>
                     </div>
@@ -768,7 +841,12 @@ export default function HomePagePage() {
                   <div className="flex flex-col w-[91%] md:w-full gap-[34px] md:p-5">
                     <div className="flex justify-between items-start gap-5 flex-1">
                       <div className="flex flex-col">
-                        <Button color="green_500" size="5xl" shape="circle" className="w-[50px] !rounded-[25px]">
+                        <Button
+                          color="green_500"
+                          size="5xl"
+                          shape="circle"
+                          className="w-[50px] !rounded-[25px]"
+                        >
                           <Img src="images/img_group_244.png" />
                         </Button>
                       </div>
@@ -776,14 +854,24 @@ export default function HomePagePage() {
                         <Text size="12xl" as="p" className="capitalize">
                           class bookings
                         </Text>
-                        <Text size="7xl" as="p" className="!text-black-900_87 opacity-0.5 leading-[27px]">
-                          Many desktop publishing packages and web page editors now use for them.
+                        <Text
+                          size="7xl"
+                          as="p"
+                          className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                        >
+                          Many desktop publishing packages and web page editors
+                          now use for them.
                         </Text>
                       </div>
                     </div>
                     <div className="flex justify-between items-start gap-5 flex-1">
                       <div className="flex flex-col">
-                        <Button color="light_blue_A700" size="5xl" shape="circle" className="w-[50px] !rounded-[25px]">
+                        <Button
+                          color="light_blue_A700"
+                          size="5xl"
+                          shape="circle"
+                          className="w-[50px] !rounded-[25px]"
+                        >
                           <Img src="images/img_group_239.png" />
                         </Button>
                       </div>
@@ -791,8 +879,13 @@ export default function HomePagePage() {
                         <Text size="12xl" as="p" className="capitalize">
                           fast support
                         </Text>
-                        <Text size="7xl" as="p" className="!text-black-900_87 opacity-0.5 leading-[27px]">
-                          Many desktop publishing packages and web page editors now use for them.
+                        <Text
+                          size="7xl"
+                          as="p"
+                          className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                        >
+                          Many desktop publishing packages and web page editors
+                          now use for them.
                         </Text>
                       </div>
                     </div>
@@ -803,18 +896,24 @@ export default function HomePagePage() {
                   as="p"
                   className="w-[41%] bottom-[6%] left-[7%] m-auto !text-black-900_87 capitalize opacity-0.5 leading-[27px] absolute"
                 >
-                  Pellentesque blandit augue facilisis malesuada interdum eleifend risus, commodo. Egestas senectus
-                  vehicula vel consectetur eu. Sit pulvinar urna diam lacus fringilla eu cursus.
+                  Pellentesque blandit augue facilisis malesuada interdum
+                  eleifend risus, commodo. Egestas senectus vehicula vel
+                  consectetur eu. Sit pulvinar urna diam lacus fringilla eu
+                  cursus.
                 </Text>
                 <div className="flex flex-col items-end w-[46%] gap-7 right-[0.00px] top-[16%] m-auto absolute">
                   <div className="self-stretch h-[358px] relative">
                     <div className="flex flex-col items-start w-[87%] left-[0.00px] top-[0.00px] m-auto absolute">
                       <div className="h-[12px] w-[12px] ml-[164px] md:ml-0 z-[1] bg-deep_purple-A200 rounded-md" />
                       <div className="flex sm:flex-col self-stretch items-start mt-[-11px]">
-                        <div className="flex justify-end w-[38%] sm:w-full mt-[41px] p-5 sm:p-5 z-[1] bg-white-A700 shadow-xl rounded-[23px]">
+                        <div className="flex justify-end w-[45%] sm:w-full mt-[41px] p-5 sm:p-5 z-[1] bg-white-A700 shadow-xl rounded-[23px]">
                           <div className="flex flex-col w-full mt-3 mb-[9px] gap-[15px]">
                             <div className="flex items-start ml-1 md:ml-0 flex-wrap">
-                              <Heading size="md" as="p" className="mt-[5px] !text-[13.96px]">
+                              <Heading
+                                size="md"
+                                as="p"
+                                className="mt-[5px] !text-[13.96px]"
+                              >
                                 Users Activity
                               </Heading>
                               <Text
@@ -1049,7 +1148,11 @@ export default function HomePagePage() {
                               >
                                 <Img src="images/img_group_260.png" />
                               </Button>
-                              <Heading size="2xl" as="h6" className="mt-1 !text-[17.95px]">
+                              <Heading
+                                size="2xl"
+                                as="h6"
+                                className="mt-1 !text-[17.95px]"
+                              >
                                 $4,250
                               </Heading>
                             </div>
@@ -1076,27 +1179,51 @@ export default function HomePagePage() {
                   <div className="w-full p-9 sm:p-5 bg-purple-900 shadow-sm rounded-[24px]">
                     <div className="flex md:flex-col justify-center w-full mb-1.5 gap-12 mx-auto max-w-[975px]">
                       <div className="flex flex-col items-center w-full gap-[9px]">
-                        <Text size="19xl" as="p" className="!text-white-A700 text-center">
+                        <Text
+                          size="19xl"
+                          as="p"
+                          className="!text-white-A700 text-center"
+                        >
                           110+
                         </Text>
-                        <Text as="p" className="!text-white-A700 capitalize text-center leading-6">
-                          Automation templates for creating your campaigns quickly
+                        <Text
+                          as="p"
+                          className="!text-white-A700 capitalize text-center leading-6"
+                        >
+                          Automation templates for creating your campaigns
+                          quickly
                         </Text>
                       </div>
                       <div className="flex flex-col items-center w-full gap-[9px]">
-                        <Text size="19xl" as="p" className="!text-white-A700 text-center">
+                        <Text
+                          size="19xl"
+                          as="p"
+                          className="!text-white-A700 text-center"
+                        >
                           4M
                         </Text>
-                        <Text as="p" className="!text-white-A700 capitalize text-center leading-6">
-                          Automation templates for creating your campaigns quickly
+                        <Text
+                          as="p"
+                          className="!text-white-A700 capitalize text-center leading-6"
+                        >
+                          Automation templates for creating your campaigns
+                          quickly
                         </Text>
                       </div>
                       <div className="flex flex-col items-center w-full gap-[9px]">
-                        <Text size="19xl" as="p" className="!text-white-A700 text-center">
+                        <Text
+                          size="19xl"
+                          as="p"
+                          className="!text-white-A700 text-center"
+                        >
                           99.99%
                         </Text>
-                        <Text as="p" className="!text-white-A700 capitalize text-center leading-6">
-                          Automation templates for creating your campaigns quickly
+                        <Text
+                          as="p"
+                          className="!text-white-A700 capitalize text-center leading-6"
+                        >
+                          Automation templates for creating your campaigns
+                          quickly
                         </Text>
                       </div>
                     </div>
@@ -1112,7 +1239,11 @@ export default function HomePagePage() {
                     <div className="sm:self-stretch p-[31px] sm:p-5 z-[1] bg-white-A700 shadow-xs flex-1 rounded-[24px]">
                       <div className="flex flex-col gap-[11px]">
                         <div className="flex justify-between items-center gap-5 flex-wrap">
-                          <Heading size="xl" as="h6" className="!text-black-900_01 !text-[16.78px]">
+                          <Heading
+                            size="xl"
+                            as="h6"
+                            className="!text-black-900_01 !text-[16.78px]"
+                          >
                             Today
                           </Heading>
                           <a href="#" className="self-start opacity-0.7">
@@ -1126,14 +1257,19 @@ export default function HomePagePage() {
                           </a>
                         </div>
                         <div className="flex flex-col gap-[13px]">
-                          <div className="h-[70px] md:w-full md:h-auto flex-1 relative md:flex-none">
+                          {/* <div className="h-[70px] md:w-full md:h-auto flex-1 relative md:flex-none">
                             <Img
                               src="images/img_vector_black_900_02_70x287.svg"
                               alt="ui_design_one"
                               className="h-[70px] rounded-[10px]"
                             />
                             <div className="flex justify-center items-start w-[91%] h-max gap-[13px] left-0 bottom-0 right-0 top-0 m-auto absolute">
-                              <Button color="purple_400" size="2xl" shape="circle" className="w-[36px] !rounded-[18px]">
+                              <Button
+                                color="purple_400"
+                                size="2xl"
+                                shape="circle"
+                                className="w-[36px] !rounded-[18px]"
+                              >
                                 <Img src="images/img_desktop.svg" />
                               </Button>
                               <div className="flex flex-col gap-1.5 flex-1">
@@ -1173,9 +1309,11 @@ export default function HomePagePage() {
                                     className="h-[20px] w-[20px]"
                                   />
                                 </div>
+                                
                               </div>
                             </div>
-                          </div>
+                          </div> */}
+                          <HomePageUIDesign className="flex justify-center items-center flex-1" />
                           <HomePageSituplight className="flex justify-center items-center flex-1" />
                           <HomePageLearnhtml className="flex justify-center items-center flex-1" />
                           <HomePageReadbooklight className="flex justify-center items-center flex-1" />
@@ -1186,7 +1324,12 @@ export default function HomePagePage() {
                       <Button
                         color="white_A700"
                         size="11xl"
-                        leftIcon={<Img src="images/img_group_amber_200_01.svg" alt="Group" />}
+                        leftIcon={
+                          <Img
+                            src="images/img_group_amber_200_01.svg"
+                            alt="Group"
+                          />
+                        }
                         className="gap-[17px] sm:px-5 !text-black-900_02 font-inter font-semibold shadow-xs min-w-[209px] rounded-[24px]"
                       >
                         Report analysis
@@ -1195,7 +1338,9 @@ export default function HomePagePage() {
                         <Button
                           color="white_A700"
                           size="11xl"
-                          leftIcon={<Img src="images/img_frame.svg" alt="Frame" />}
+                          leftIcon={
+                            <Img src="images/img_frame.svg" alt="Frame" />
+                          }
                           className="w-full gap-[13px] !text-black-900_02 font-inter font-semibold shadow-xs rounded-[24px]"
                         >
                           Timesheets make
@@ -1208,16 +1353,28 @@ export default function HomePagePage() {
               <div className="w-full mt-[150px] mx-auto md:p-5 max-w-[1240px]">
                 <div className="flex md:flex-col justify-between items-center gap-5">
                   <div className="h-[452px] w-[49%] md:w-full md:h-auto relative">
-                    <Img src="images/img_group_purple_a100.svg" alt="image_fourteen" className="h-[394px]" />
+                    <Img
+                      src="images/img_group_purple_a100.svg"
+                      alt="image_fourteen"
+                      className="h-[394px]"
+                    />
                     <div className="h-[16px] w-[16px] left-[8.00px] top-[17.00px] m-auto bg-deep_purple-A200 absolute rounded-lg" />
                     <div className="flex w-[62%] left-[28.00px] top-[10%] m-auto absolute">
                       <SelectBox
                         shape="round"
-                        indicator={<Img src="images/img_arrowdown.svg" alt="arrow_down" />}
+                        indicator={
+                          <Img
+                            src="images/img_arrowdown.svg"
+                            alt="arrow_down"
+                          />
+                        }
                         getOptionLabel={(e) => (
                           <>
                             <div className="flex items-center">
-                              <Img src="images/img_vector_blue_gray_100_03.svg" alt="Vector" />
+                              <Img
+                                src="images/img_vector_blue_gray_100_03.svg"
+                                alt="Vector"
+                              />
                               <span>{e.label}</span>
                             </div>
                           </>
@@ -1230,14 +1387,22 @@ export default function HomePagePage() {
                     </div>
                     <div className="flex justify-end w-[32%] right-[12.00px] top-[7%] m-auto absolute">
                       <div className="flex flex-col items-start justify-center w-full gap-[17px] p-[18px] bg-white-A700 shadow-2xl rounded-[21px]">
-                        <Text size="lg" as="p" className="tracking-[0.21px] !font-inter !text-[10.29px]">
+                        <Text
+                          size="lg"
+                          as="p"
+                          className="tracking-[0.21px] !font-inter !text-[10.29px]"
+                        >
                           Task Progress
                         </Text>
                         <div className="flex flex-col md:flex-row sm:flex-col self-stretch mb-1 gap-3.5">
                           <div className="flex justify-center flex-1">
                             <div className="flex flex-col items-start w-full">
                               <div className="flex self-stretch justify-between gap-5 flex-wrap">
-                                <Text size="s" as="p" className="tracking-[0.21px] !font-inter !text-[8.23px]">
+                                <Text
+                                  size="s"
+                                  as="p"
+                                  className="tracking-[0.21px] !font-inter !text-[8.23px]"
+                                >
                                   Copywriting
                                 </Text>
                                 <Text
@@ -1313,7 +1478,12 @@ export default function HomePagePage() {
                               size="sm"
                               name="search"
                               placeholder={`Search`}
-                              prefix={<Img src="images/img_group_black_900_02.svg" alt="Group" />}
+                              prefix={
+                                <Img
+                                  src="images/img_group_black_900_02.svg"
+                                  alt="Group"
+                                />
+                              }
                               className="gap-[21px] sm:pr-5 font-inter rounded-[16px]"
                             />
                           </div>
@@ -1367,7 +1537,11 @@ export default function HomePagePage() {
                         </div>
                         <div className="flex flex-col w-[87%] md:w-full gap-6">
                           <div className="flex justify-center items-center gap-3.5">
-                            <Img src="images/img_group_3.png" alt="image_seventeen" className="w-[31px] object-cover" />
+                            <Img
+                              src="images/img_group_3.png"
+                              alt="image_seventeen"
+                              className="w-[31px] object-cover"
+                            />
                             <div className="flex self-end justify-between items-center mb-1.5 gap-5 flex-1 flex-wrap">
                               <Text
                                 size="xl"
@@ -1424,7 +1598,11 @@ export default function HomePagePage() {
                       <div className="w-full p-2 bg-white-A700 shadow-2xl rounded-[21px]">
                         <div className="flex flex-col mb-4">
                           <div className="flex justify-between items-start gap-5">
-                            <Text size="2xl" as="p" className="!font-inter !text-[12.76px] !font-medium">
+                            <Text
+                              size="2xl"
+                              as="p"
+                              className="!font-inter !text-[12.76px] !font-medium"
+                            >
                               Konsep design homepage
                             </Text>
                             <Img
@@ -1452,8 +1630,9 @@ export default function HomePagePage() {
                             as="p"
                             className="w-[95%] md:w-full mt-[9px] !text-black-900_99 !font-inter !text-[9.92px] !font-normal opacity-0.7 leading-[17px]"
                           >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam
                           </Text>
                           <div className="mt-[23px]">
                             <div className="flex flex-col gap-[11px]">
@@ -1474,7 +1653,10 @@ export default function HomePagePage() {
                                 </Text>
                               </div>
                               <div className="h-[4px] bg-green-500_63 relative rounded-sm">
-                                <div style={{ width: "36%" }} className="h-full bg-teal-300_01 absolute rounded-sm" />
+                                <div
+                                  style={{ width: "36%" }}
+                                  className="h-full bg-teal-300_01 absolute rounded-sm"
+                                />
                               </div>
                             </div>
                           </div>
@@ -1519,14 +1701,24 @@ export default function HomePagePage() {
                       <div>
                         <div className="flex flex-col items-start">
                           <div className="h-[50px] w-[39%] ml-[130px] md:ml-0 bg-orange-50_01" />
-                          <Text size="19xl" as="p" className="mt-[-50px] capitalize leading-[50px]">
+                          <Text
+                            size="19xl"
+                            as="p"
+                            className="mt-[-50px] capitalize leading-[50px]"
+                          >
                             keep track of all your progress.
                           </Text>
                         </div>
                       </div>
-                      <Text size="7xl" as="p" className="!text-black-900_87 capitalize opacity-0.5 leading-[27px]">
-                        Pellentesque blandit augue facilisis malesuada interdum eleifend risus, commodo. Egestas
-                        senectus vehicula vel consectetur eu. Sit pulvinar urna diam lacus fringilla eu cursus.
+                      <Text
+                        size="7xl"
+                        as="p"
+                        className="!text-black-900_87 capitalize opacity-0.5 leading-[27px]"
+                      >
+                        Pellentesque blandit augue facilisis malesuada interdum
+                        eleifend risus, commodo. Egestas senectus vehicula vel
+                        consectetur eu. Sit pulvinar urna diam lacus fringilla
+                        eu cursus.
                       </Text>
                     </div>
                   </div>
@@ -1539,7 +1731,12 @@ export default function HomePagePage() {
                       <div className="flex justify-center flex-1">
                         <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                           <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
-                            <Button color="pink_400" size="5xl" shape="circle" className="w-[50px] !rounded-[25px]">
+                            <Button
+                              color="pink_400"
+                              size="5xl"
+                              shape="circle"
+                              className="w-[50px] !rounded-[25px]"
+                            >
                               <Img src="images/img_group_393.png" />
                             </Button>
                           </div>
@@ -1547,8 +1744,13 @@ export default function HomePagePage() {
                             <Text size="12xl" as="p" className="capitalize">
                               education system
                             </Text>
-                            <Text size="7xl" as="p" className="!text-black-900_87 opacity-0.5 leading-[27px]">
-                              Many desktop publishing packages and web page editors now use for them.
+                            <Text
+                              size="7xl"
+                              as="p"
+                              className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                            >
+                              Many desktop publishing packages and web page
+                              editors now use for them.
                             </Text>
                           </div>
                         </div>
@@ -1569,8 +1771,13 @@ export default function HomePagePage() {
                             <Text size="12xl" as="p" className="capitalize">
                               officials & financial
                             </Text>
-                            <Text size="7xl" as="p" className="!text-black-900_87 opacity-0.5 leading-[27px]">
-                              Many desktop publishing packages and web page editors now use for them.
+                            <Text
+                              size="7xl"
+                              as="p"
+                              className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                            >
+                              Many desktop publishing packages and web page
+                              editors now use for them.
                             </Text>
                           </div>
                         </div>
@@ -1582,7 +1789,11 @@ export default function HomePagePage() {
                           <div>
                             <div className="flex flex-col items-start">
                               <div className="h-[50px] w-[63%] ml-[138px] md:ml-0 bg-orange-50_01" />
-                              <Text size="19xl" as="p" className="mt-[-50px] capitalize leading-[50px]">
+                              <Text
+                                size="19xl"
+                                as="p"
+                                className="mt-[-50px] capitalize leading-[50px]"
+                              >
                                 More connections, no more cancellations
                               </Text>
                             </div>
@@ -1592,11 +1803,16 @@ export default function HomePagePage() {
                             as="p"
                             className="w-[83%] md:w-full mt-6 !text-black-900_87 capitalize opacity-0.5 leading-[27px]"
                           >
-                            Pellentesque blandit augue facilisis malesuada interdum eleifend risus, commodo. Egestas
-                            senectus vehicula vel consectetur eu. Sit pulvinar urna diam lacus fringilla eu cursus.
+                            Pellentesque blandit augue facilisis malesuada
+                            interdum eleifend risus, commodo. Egestas senectus
+                            vehicula vel consectetur eu. Sit pulvinar urna diam
+                            lacus fringilla eu cursus.
                           </Text>
                           <div className="flex mt-[-3px]">
-                            <Button size="9xl" className="sm:px-5 capitalize min-w-[160px] rounded-[30px]">
+                            <Button
+                              size="9xl"
+                              className="sm:px-5 capitalize min-w-[160px] rounded-[30px]"
+                            >
                               get started
                             </Button>
                           </div>
@@ -1605,7 +1821,11 @@ export default function HomePagePage() {
                       <div className="flex flex-col items-end md:self-stretch ml-[-210px] md:ml-0 flex-1">
                         <div className="flex flex-col items-start w-[72%] md:w-full mr-[102px] md:mr-0 z-[1]">
                           <div className="self-stretch h-[391px] md:h-auto relative">
-                            <Img src="images/img_group_purple_a100_391x606.svg" alt="image" className="h-[391px]" />
+                            <Img
+                              src="images/img_group_purple_a100_391x606.svg"
+                              alt="image"
+                              className="h-[391px]"
+                            />
                             <div className="h-[16px] w-[16px] bottom-[16.00px] right-[30.00px] m-auto bg-deep_purple-A200 absolute rounded-lg" />
                           </div>
                           <Img
@@ -1635,7 +1855,12 @@ export default function HomePagePage() {
                   <div className="flex justify-center md:p-5 flex-1">
                     <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                       <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
-                        <Button color="blue_400_01" size="5xl" shape="circle" className="w-[50px] !rounded-[25px]">
+                        <Button
+                          color="blue_400_01"
+                          size="5xl"
+                          shape="circle"
+                          className="w-[50px] !rounded-[25px]"
+                        >
                           <Img src="images/img_group_239.png" />
                         </Button>
                       </div>
@@ -1643,8 +1868,13 @@ export default function HomePagePage() {
                         <Text size="12xl" as="p" className="capitalize">
                           beauty & wellness
                         </Text>
-                        <Text size="7xl" as="p" className="!text-black-900_87 opacity-0.5 leading-[27px]">
-                          Many desktop publishing packages and web page editors now use for them.
+                        <Text
+                          size="7xl"
+                          as="p"
+                          className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                        >
+                          Many desktop publishing packages and web page editors
+                          now use for them.
                         </Text>
                       </div>
                     </div>
@@ -1652,7 +1882,12 @@ export default function HomePagePage() {
                   <div className="flex justify-center md:p-5 flex-1">
                     <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                       <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
-                        <Button color="blue_400_02" size="5xl" shape="circle" className="w-[50px] !rounded-[25px]">
+                        <Button
+                          color="blue_400_02"
+                          size="5xl"
+                          shape="circle"
+                          className="w-[50px] !rounded-[25px]"
+                        >
                           <Img src="images/img_group_381.png" />
                         </Button>
                       </div>
@@ -1660,8 +1895,13 @@ export default function HomePagePage() {
                         <Text size="12xl" as="p" className="capitalize">
                           events & entertainment
                         </Text>
-                        <Text size="7xl" as="p" className="!text-black-900_87 opacity-0.5 leading-[27px]">
-                          Many desktop publishing packages and web page editors now use for them.
+                        <Text
+                          size="7xl"
+                          as="p"
+                          className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                        >
+                          Many desktop publishing packages and web page editors
+                          now use for them.
                         </Text>
                       </div>
                     </div>
@@ -1698,7 +1938,11 @@ export default function HomePagePage() {
                               >
                                 <Img src="images/img_group_white_a700.svg" />
                               </Button>
-                              <Heading size="md" as="p" className="!text-[13.8px]">
+                              <Heading
+                                size="md"
+                                as="p"
+                                className="!text-[13.8px]"
+                              >
                                 Inbox
                               </Heading>
                             </div>
@@ -1724,7 +1968,11 @@ export default function HomePagePage() {
                                           <Img src="images/img_group_white_a700_30x30.svg" />
                                         </Button>
                                         <div className="flex flex-col self-end items-start gap-1">
-                                          <Heading size="xs" as="p" className="!text-gray-900_01 !text-[9.86px]">
+                                          <Heading
+                                            size="xs"
+                                            as="p"
+                                            className="!text-gray-900_01 !text-[9.86px]"
+                                          >
                                             New Message
                                           </Heading>
                                           <Text
@@ -1750,7 +1998,11 @@ export default function HomePagePage() {
                                           <Img src="images/img_group_30x30.svg" />
                                         </Button>
                                         <div className="flex flex-col items-start gap-[3px]">
-                                          <Heading size="xs" as="p" className="!text-gray-900_01 !text-[9.86px]">
+                                          <Heading
+                                            size="xs"
+                                            as="p"
+                                            className="!text-gray-900_01 !text-[9.86px]"
+                                          >
                                             New Email
                                           </Heading>
                                           <Text
@@ -1776,7 +2028,11 @@ export default function HomePagePage() {
                                           <Img src="images/img_group_1.svg" />
                                         </Button>
                                         <div className="flex flex-col self-end items-start gap-[3px]">
-                                          <Heading size="xs" as="p" className="!text-gray-900_01 !text-[9.86px]">
+                                          <Heading
+                                            size="xs"
+                                            as="p"
+                                            className="!text-gray-900_01 !text-[9.86px]"
+                                          >
                                             Facebook Messagner
                                           </Heading>
                                           <Text
@@ -1802,7 +2058,11 @@ export default function HomePagePage() {
                                           <Img src="images/img_group_white_a700_30x30.svg" />
                                         </Button>
                                         <div className="flex flex-col self-end items-start gap-1">
-                                          <Heading size="xs" as="p" className="!text-gray-900_01 !text-[9.86px]">
+                                          <Heading
+                                            size="xs"
+                                            as="p"
+                                            className="!text-gray-900_01 !text-[9.86px]"
+                                          >
                                             New Message
                                           </Heading>
                                           <Text
@@ -1833,7 +2093,11 @@ export default function HomePagePage() {
                 <div className="flex flex-col w-full bottom-[0.00px] right-0 left-0 m-auto md:p-5 absolute max-w-[961px]">
                   <div className="flex flex-col items-end w-[75%] md:w-full ml-[147px] md:ml-0 z-[1]">
                     <div className="h-[50px] w-[33%] mr-[186px] md:mr-0 bg-orange-50_01" />
-                    <Text size="19xl" as="p" className="mt-[-50px] capitalize text-center leading-[50px]">
+                    <Text
+                      size="19xl"
+                      as="p"
+                      className="mt-[-50px] capitalize text-center leading-[50px]"
+                    >
                       what our client think about us?
                     </Text>
                   </div>
@@ -1855,8 +2119,10 @@ export default function HomePagePage() {
                                 as="p"
                                 className="!text-black-900_87 text-center opacity-0.5 leading-[27px]"
                               >
-                                Build your financial literacy within a transparent community. Follow other investors,
-                                share insights with people from different professional backgrounds, and never be alone.
+                                Build your financial literacy within a
+                                transparent community. Follow other investors,
+                                share insights with people from different
+                                professional backgrounds, and never be alone.
                               </Text>
                               <Text size="12xl" as="p" className="text-center">
                                 Jony Scotty
@@ -1910,7 +2176,11 @@ export default function HomePagePage() {
                             <div className="w-[18%] md:w-full ml-[118px] md:ml-0">
                               <div className="border-white-A700 border border-solid bg-deep_purple-A200 rounded-[31px]">
                                 <div className="mt-1.5">
-                                  <Img src="images/img_image.png" alt="image" className="h-[55px] rounded-[50%]" />
+                                  <Img
+                                    src="images/img_image.png"
+                                    alt="image"
+                                    className="h-[55px] rounded-[50%]"
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -1938,12 +2208,21 @@ export default function HomePagePage() {
                   <Text size="7xl" as="p" className="md:p-5 capitalize">
                     trusted by 20,000+ clients
                   </Text>
-                  <Img src="images/img_group.svg" alt="image_thirtyone" className="h-[12px] md:w-full" />
+                  <Img
+                    src="images/img_group.svg"
+                    alt="image_thirtyone"
+                    className="h-[12px] md:w-full"
+                  />
                 </div>
                 <div className="flex w-[45%] left-[32%] top-[32%] m-auto absolute">
                   <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                     <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
-                      <Button color="red_500" size="5xl" shape="circle" className="w-[50px] !rounded-[25px]">
+                      <Button
+                        color="red_500"
+                        size="5xl"
+                        shape="circle"
+                        className="w-[50px] !rounded-[25px]"
+                      >
                         <Img src="images/img_group_249.png" />
                       </Button>
                     </div>
@@ -1951,8 +2230,13 @@ export default function HomePagePage() {
                       <Text size="12xl" as="p" className="capitalize">
                         sports & fitness
                       </Text>
-                      <Text size="7xl" as="p" className="!text-black-900_87 opacity-0.5 leading-[27px]">
-                        Many desktop publishing packages and web page editors now use for them.
+                      <Text
+                        size="7xl"
+                        as="p"
+                        className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                      >
+                        Many desktop publishing packages and web page editors
+                        now use for them.
                       </Text>
                     </div>
                   </div>
@@ -1973,8 +2257,13 @@ export default function HomePagePage() {
                       <Text size="12xl" as="p" className="capitalize">
                         medical services
                       </Text>
-                      <Text size="7xl" as="p" className="!text-black-900_87 opacity-0.5 leading-[27px]">
-                        Many desktop publishing packages and web page editors now use for them.
+                      <Text
+                        size="7xl"
+                        as="p"
+                        className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                      >
+                        Many desktop publishing packages and web page editors
+                        now use for them.
                       </Text>
                     </div>
                   </div>
@@ -2004,7 +2293,11 @@ export default function HomePagePage() {
                       alt="polygon_five"
                       className="w-[47%] md:w-full z-[1] object-cover rounded-[69px]"
                     />
-                    <Text size="19xl" as="p" className="mt-[138px] ml-[-3px] md:ml-0 capitalize text-center">
+                    <Text
+                      size="19xl"
+                      as="p"
+                      className="mt-[138px] ml-[-3px] md:ml-0 capitalize text-center"
+                    >
                       try Contextify for free
                     </Text>
                   </div>
@@ -2025,7 +2318,8 @@ export default function HomePagePage() {
                     as="p"
                     className="w-[40%] md:w-full ml-[-87px] md:p-5 md:ml-0 capitalize text-center leading-8"
                   >
-                    Contexttify is a hub puts information into context at the click of a button
+                    Contexttify is a hub puts information into context at the
+                    click of a button
                   </Text>
                 </div>
                 <div className="h-[50px] w-[18%] left-[40%] top-[27%] m-auto bg-orange-50_01 absolute" />
@@ -2037,7 +2331,11 @@ export default function HomePagePage() {
                       <div className="flex flex-col items-start w-full gap-[25px]">
                         <div className="flex w-[88%] md:w-full">
                           <div className="flex items-center w-full">
-                            <Img src="images/img_frame_purple_900.svg" alt="image_thirtytwo" className="h-[39px]" />
+                            <Img
+                              src="images/img_frame_purple_900.svg"
+                              alt="image_thirtytwo"
+                              className="h-[39px]"
+                            />
                             <Text
                               size="14xl"
                               as="p"
@@ -2048,13 +2346,21 @@ export default function HomePagePage() {
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Img src="images/img_frame_purple_900_24x24.svg" alt="image" className="h-[24px] w-[24px]" />
+                          <Img
+                            src="images/img_frame_purple_900_24x24.svg"
+                            alt="image"
+                            className="h-[24px] w-[24px]"
+                          />
                           <Text as="p" className="self-end capitalize">
                             help@contextify.com
                           </Text>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Img src="images/img_frame_24x24.svg" alt="image" className="h-[24px] w-[24px]" />
+                          <Img
+                            src="images/img_frame_24x24.svg"
+                            alt="image"
+                            className="h-[24px] w-[24px]"
+                          />
                           <Text as="p" className="self-start capitalize">
                             +1 234 456 678 89
                           </Text>
@@ -2062,7 +2368,11 @@ export default function HomePagePage() {
                       </div>
                     </div>
                     <div className="flex flex-col items-start gap-[22px]">
-                      <Text size="16xl" as="p" className="capitalize text-center">
+                      <Text
+                        size="16xl"
+                        as="p"
+                        className="capitalize text-center"
+                      >
                         links
                       </Text>
                       <Text as="p" className="capitalize">
@@ -2118,11 +2428,17 @@ export default function HomePagePage() {
                     </Text>
                     <div className="self-stretch">
                       <div className="flex justify-between items-start gap-5 p-2.5 border-gray-300 border-2 border-solid bg-white-A700 rounded-[40px]">
-                        <Text as="p" className="mt-[18px] ml-[13px] md:ml-0 !text-gray-500_05">
+                        <Text
+                          as="p"
+                          className="mt-[18px] ml-[13px] md:ml-0 !text-gray-500_05"
+                        >
                           Your email{" "}
                         </Text>
                         <div className="flex">
-                          <Button size="9xl" className="sm:px-5 capitalize min-w-[160px] rounded-[30px]">
+                          <Button
+                            size="9xl"
+                            className="sm:px-5 capitalize min-w-[160px] rounded-[30px]"
+                          >
                             Subscribe
                           </Button>
                         </div>
