@@ -10,7 +10,7 @@ export default function HomePageReadbooklight({
 }) {
   return (
     <div {...props}>
-      <div className="w-full p-[13px] bg-white rounded-[10px]">
+      <div className="w-full p-[13px] bg-neutral-100 rounded-[10px]">
         <div className="flex justify-center items-start gap-[13px]">
           <Button color="green_A400" size="2xl" shape="circle" className="w-[36px] !rounded-[18px]">
             <Img src="images/img_book.svg" />

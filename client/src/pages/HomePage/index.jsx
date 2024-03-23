@@ -803,7 +803,7 @@ export default function HomePagePage() {
                     <Text
                       size="19xl"
                       as="p"
-                      className="w-[48%] md:w-full mt-[276px] ml-[100px] md:p-5 md:ml-0 capitalize leading-[50px]"
+                      className="w-[48%] z-[1] md:w-full mt-[276px] ml-[100px] md:p-5 md:ml-0 capitalize leading-[50px]"
                     >
                       Manage your tasks online easily.
                     </Text>
@@ -1320,7 +1320,7 @@ export default function HomePagePage() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col items-start w-[43%] sm:w-full mt-[47px] ml-[-98px] gap-[17px] sm:p-5 sm:ml-0">
+                    <div className="flex flex-col items-start w-[43%] z-[1] sm:w-full mt-[47px] ml-[-98px] gap-[17px] sm:p-5 sm:ml-0">
                       <Button
                         color="white_A700"
                         size="11xl"
@@ -1359,7 +1359,7 @@ export default function HomePagePage() {
                       className="h-[394px]"
                     />
                     <div className="h-[16px] w-[16px] left-[8.00px] top-[17.00px] m-auto bg-deep_purple-A200 absolute rounded-lg" />
-                    <div className="flex w-[62%] left-[28.00px] top-[10%] m-auto absolute">
+                    <div className="flex w-[60%] left-[28.00px] top-[10%] m-auto absolute">
                       <SelectBox
                         shape="round"
                         indicator={
@@ -1484,7 +1484,7 @@ export default function HomePagePage() {
                                   alt="Group"
                                 />
                               }
-                              className="gap-[21px] sm:pr-5 font-inter rounded-[16px]"
+                              className="gap-[21px] sm:pr-5 font-inter bg-neutral-50 rounded-[16px]"
                             />
                           </div>
                           <div className="flex justify-center items-center gap-3.5">
@@ -1511,7 +1511,7 @@ export default function HomePagePage() {
                             </div>
                           </div>
                         </div>
-                        <div className="flex self-stretch justify-between items-center pr-6 gap-5 sm:pr-5 bg-black-900_02">
+                        <div className="flex self-stretch justify-between items-center pr-6 gap-5 sm:pr-5 bg-white">
                           <div className="flex items-start">
                             <div className="h-full w-[2px] bg-deep_purple-A200" />
                             <Img
@@ -1594,7 +1594,7 @@ export default function HomePagePage() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex justify-end w-[52%] bottom-[0.00px] right-[9%] m-auto absolute">
+                    <div className="flex justify-end w-[52%]  top-[50%] right-[2%] m-auto absolute">
                       <div className="w-full p-2 bg-white-A700 shadow-2xl rounded-[21px]">
                         <div className="flex flex-col mb-4">
                           <div className="flex justify-between items-start gap-5">
@@ -1700,7 +1700,7 @@ export default function HomePagePage() {
                     <div className="flex flex-col w-full gap-6">
                       <div>
                         <div className="flex flex-col items-start">
-                          <div className="h-[50px] w-[39%] ml-[130px] md:ml-0 bg-orange-50_01" />
+                          <div className="h-[50px] w-[28%] ml-[130px] md:ml-0 bg-orange-50_01" />
                           <Text
                             size="19xl"
                             as="p"
@@ -1783,12 +1783,12 @@ export default function HomePagePage() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex md:flex-col items-start md:self-stretch ml-[-390px] md:p-5 md:ml-0 flex-1">
+                    <div className="flex md:flex-col items-start md:self-stretch ml-[-225px] md:p-5 md:ml-0 flex-1">
                       <div className="flex w-[39%] md:w-full mt-[63px] z-[1]">
                         <div className="flex flex-col w-full">
                           <div>
                             <div className="flex flex-col items-start">
-                              <div className="h-[50px] w-[63%] ml-[138px] md:ml-0 bg-orange-50_01" />
+                              <div className="h-[50px] w-[50%] ml-[138px] md:ml-0 bg-orange-50_01" />
                               <Text
                                 size="19xl"
                                 as="p"
