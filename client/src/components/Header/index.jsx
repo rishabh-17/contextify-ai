@@ -23,22 +23,22 @@ export default function Header({ ...props }) {
             </Text>
           </div>
           <div className="flex sm:flex-col items-center">
-            <div onClick={()=>navigate('/')} >
+            <div className="mx-5" onClick={()=>navigate('/')} >
               <Text as="p" className="!text-white-A700 capitalize">
                 home
               </Text>
             </div>
-            <div onClick={()=>navigate('/about')} >
+            <div className="mx-5" onClick={()=>navigate('/about')} >
               <Text as="p" className="!text-white-A700 capitalize">
                 about us
               </Text>
             </div>
-            <div onClick={()=>navigate('/pricing')} > 
+            <div className="mx-5" onClick={()=>navigate('/pricing')} > 
               <Text as="p" className="!text-white-A700 capitalize">
                 pricing
               </Text>
             </div>
-            <div onClick={()=>navigate('/contactus')} >
+            <div className="mx-5" onClick={()=>navigate('/contactus')} >
               <Text as="p" className="!text-white-A700 capitalize">
                 Contact Us
               </Text>
