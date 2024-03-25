@@ -40,157 +40,223 @@ export default function AboutPage() {
                 className="h-[583px] w-full md:h-auto object-cover rounded-[50px]"
               />
             </div>
+
+
+
+            <div className="dooooo" style={{display:"flex"}}>
+              <div className="flex ml-[5px] md:ml-0 z-[1]"style={
+              {
+              textAlign:"left",
+              width:"30%",
+              height:"30%",
+             
+              }
+            }>
+                <Heading size="10xl" as="h1" className="!text-gray-900 !font-nunito text-center">
+                  What we do
+                </Heading>
+              </div>
+              <div className="flex md:flex-col items-start w-[92%] md:w-full md:p-5" style={{height:"50vh"}}>
+                <Img
+                  src="images/img_group_19834.png"
+                  alt="image_one"
+                  className="w-[38%] md:w-full object-cover"
+                />
+                <Text
+                  size="11xl"
+                  as="p"
+                  className="w-[62%] md:w-full ml-[-57px] md:ml-0 !text-gray-600_03 !font-nunito leading-[157.4%]"
+                >
+                  <>
+                    It is a long established fact that a reader will be distracted by the readable content of a
+                    page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
+                    normal distribution of letters, as opposed to using.
+                    <br />
+                    <br />
+                    Content here&#39;, making it look like readable English. Many desktop publishing packages and
+                    web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem
+                    ipsum&#39; will uncover many web sites still in their infancy.{" "}
+                  </>
+                </Text>
+              </div>
+            </div>
+
             <div className="flex flex-col  ">
 
-              <div className="self-stretch h-[1316px] md:h-auto relative">
-                <div className="flex flex-col w-full">
-                  <div className="flex ml-[5px] md:ml-0 z-[1]">
-                    <Heading size="10xl" as="h1" className="!text-gray-900 !font-nunito text-center">
-                      What we do
-                    </Heading>
-                  </div>
-                  <div className="flex md:flex-col items-start mt-[-60px] overflow-auto">
-                    <div className="flex md:flex-col items-start w-[92%] md:w-full md:p-5">
-                      <Img
-                        src="images/img_group_19834.png"
-                        alt="image_one"
-                        className="w-[38%] md:w-full object-cover"
-                      />
-                      <Text
-                        size="11xl"
-                        as="p"
-                        className="w-[62%] md:w-full ml-[-57px] md:ml-0 !text-gray-600_03 !font-nunito leading-[157.4%]"
-                      >
-                        <>
-                          It is a long established fact that a reader will be distracted by the readable content of a
-                          page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                          normal distribution of letters, as opposed to using.
-                          <br />
-                          <br />
-                          Content here&#39;, making it look like readable English. Many desktop publishing packages and
-                          web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem
-                          ipsum&#39; will uncover many web sites still in their infancy.{" "}
-                        </>
-                      </Text>
-                    </div>
-                    <div className="flex justify-center items-center w-[14%] md:w-full mt-[487px] ml-[-84px] gap-[5px] p-[30px] md:p-5 md:ml-0 bg-white-A700 shadow-xs rounded-[46px]">
-                      <Img
-                        src="images/img_vector_pink_a200.svg"
-                        alt="vector_one"
-                        className="self-end h-[26px] w-[27px]"
-                      />
-                      <Img src="images/img_vector_black_900_02_29x97.svg" alt="vector_three" className="h-[29px]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="w-[16%] left-[10%] top-[38%] m-auto absolute">
-                  <div className="flex justify-center p-[31px] sm:p-5 bg-white-A700 rounded-[46px]">
-                    <Img
-                      src="images/img_format_wordmark_black_900_02_29x130.svg"
-                      alt="formatwordmark"
-                      className="h-[29px]"
-                    />
-                  </div>
-                  <div className="flex justify-center mt-[-92px] p-[31px] sm:p-5 bg-white-A700 rounded-[46px]">
-                    <Img
-                      src="images/img_format_wordmark_black_900_02_29x130.svg"
-                      alt="formatwordmark"
-                      className="h-[29px]"
-                    />
-                  </div>
-                </div>
-                <div className="w-[12%] left-[0.00px] top-[37%] m-auto absolute">
-                  <div className="flex bg-white-A700 shadow-xs rounded-[47px]">
-                    <Img
-                      src="images/img_format_wordmark_black_900_02_32x130.svg"
-                      alt="formatwordmark"
-                      className="h-[32px] mt-[29px] mb-[30px]"
-                    />
-                  </div>
-                </div>
-                <div className="flex sm:flex-col items-center w-[28%] gap-[21px] left-[4%] top-[28%] m-auto absolute sm:relative">
-                  <div className="sm:self-stretch h-[101px] md:h-auto sm:w-full sm:p-5 bg-white-A700 shadow-xs flex-1 relative rounded-[50px] sm:flex-none">
-                    <div className="flex justify-center items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]">
-                      <Img src="images/img_vector_black_900_02.svg" alt="vector_nine" className="h-[38px] w-[38px]" />
-                      <Img
-                        src="images/img_vector_black_900_02_33x82.svg"
-                        alt="vector_eleven"
-                        className="self-end h-[33px]"
-                      />
-                    </div>
-                  </div>
-                  <div className="h-[92px] w-[41%] md:h-auto sm:w-full sm:p-5 bg-white-A700 shadow-xs relative rounded-[46px]">
-                    <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
-                      <Img src="images/img_format_wordmark.svg" alt="formatwordmark" className="h-[29px]" />
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col items-start w-[46%] right-[19%] top-[20%] m-auto absolute">
-                  <div className="h-[50px] w-[40%] ml-[129px] md:ml-0 bg-orange-50_01" />
-                  <Text size="19xl" as="p" className="capitalize">
-                    Our Trusted Partners
-                  </Text>
-                </div>
-                <div className="h-[92px] w-[20%] md:h-auto left-[28%] top-[38%] m-auto bg-white-A700 shadow-xs absolute rounded-[46px]">
-                  <Img
-                    src="images/img_format_wordmark_deep_orange_a400_01.svg"
-                    alt="formatwordmark"
-                    className="h-[29px]  mt-[]"
-                  />
+              <div className="flex w-full">
+                <div className="flex flex-col items-center w-[98%] md:w-full gap-[31px] md:p-5">
 
-                </div>
-                <div className="flex md:flex-col justify-end items-center w-[53%] gap-[21px] right-[10%] top-[38%] m-auto absolute md:relative">
-                  <div className="h-[92px] w-full md:h-auto md:p-5 bg-white-A700 shadow-xs relative rounded-[46px]">
-                    <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
-                      <Img src="images/img_property_1_wordmark.svg" alt="propertyone" className="h-[29px]" />
-                    </div>
-                  </div>
-                  <div className="h-[93px] w-full md:h-auto md:p-5 bg-white-A700 relative rounded-[46px]">
 
-                    <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
-                      <Img
-                        src="images/img_format_wordmark_black_900_02_31x130.svg"
-                        alt="formatwordmark"
-                        className="h-[31px]"
-                      />
+                  <div className="flex justify-center w-[23%] md:w-full">
+                    <div className="flex flex-col items-end w-full">
+                      <div className="h-[50px] w-[52%] mr-[61px] md:mr-0 bg-orange-50_01" />
+                      <div className="flex mt-[-42px]">
+                        <div className="flex flex-col items-center">
+                          <Text size="19xl" as="p" className="capitalize">
+                            Our Trusted Partners
+                          </Text>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="h-[88px] w-full md:h-auto md:p-5 bg-white-A700 shadow-xs relative rounded-[44px]">
-                    <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
-                      <Img src="images/img_format_frame.svg" alt="image_three" className="h-[25px]" />
-                    </div>
-                  </div>
-                </div>
 
-                <div className="flex md:flex-col justify-end items-center w-[51%] gap-[21px] right-[28.00px] top-[28%] m-auto absolute md:relative">
-                  <div className="h-[101px] w-[36%] md:w-full md:h-auto md:p-5 bg-white-A700 shadow-5xl relative rounded-[50px]">
 
-                    <div className="flex justify-center items-start w-full h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
-                      <Img src="images/img_vector_black_900_02_25x112.svg" alt="vector" className="h-[25px] mt-1" />
+
+                  <div className="w-full">
+                    <div className="flex flex-col gap-[26px]">
+                      <div className="w-full mx-auto md:p-5 max-w-[1353px]">
+                        <div className="flex md:flex-col justify-center items-center gap-[21px]">
+                          <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
+
+                            <div className="flex justify-center items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]">
+                              <Img
+                                src="images/img_vector_black_900_02.svg"
+                                alt="vector_eleven"
+                                className="h-[38px] w-[38px]"
+                              />
+                              <Img
+                                src="images/img_vector_black_900_02_33x82.svg"
+                                alt="vector_thirteen"
+                                className="self-end h-[33px]"
+                              />
+                            </div>
+                          </div>
+                          <div className="h-[92px] w-[11%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
+
+                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                              <Img
+                                src="images/img_format_wordmark.svg"
+                                alt="formatwordmark"
+                                className="h-[29px]"
+                              />
+                            </div>
+                          </div>
+                          <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 flex-1 relative rounded-[50px] md:flex-none">
+                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 absolute rounded-[50px]">
+                              <Img
+                                src="images/img_format_wordmark_green_600_01.svg"
+                                alt="formatwordmark"
+                                className="h-[38px]"
+                              />
+                            </div>
+                          </div>
+                          <div className="h-[101px] w-[19%] md:w-full md:h-auto bg-white-A700 shadow-5xl relative rounded-[50px]">
+
+                            <div className="flex justify-center items-start w-full h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
+                              <Img
+                                src="images/img_vector_deep_purple_a200_01.svg"
+                                alt="vector_nineteen"
+                                className="h-[39px]"
+                              />
+                              <Img
+                                src="images/img_vector_black_900_02_25x112.svg"
+                                alt="vector"
+                                className="h-[25px] mt-1"
+                              />
+                            </div>
+                          </div>
+                          <div className="md:self-stretch h-[81px] md:w-full md:h-auto bg-white-A700 flex-1 relative rounded-[40px] md:flex-none">
+                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[40px]">
+                              <Img
+                                src="images/img_format_wordmark_light_blue_500.svg"
+                                alt="formatwordmark"
+                                className="h-[19px]"
+                              />
+                            </div>
+                          </div>
+                          <div className="md:self-stretch h-[94px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[47px] md:flex-none">
+                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[47px]">
+                              <Img
+                                src="images/img_format_wordmark_black_900_02.svg"
+                                alt="formatwordmark"
+                                className="h-[32px]"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex">
+                          <div className="flex md:flex-col items-center w-[94%] md:w-full gap-[21px]">
+                            <div className="flex md:flex-col w-[100%] md:w-full gap-[21px]">
+                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-full left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                                  <Img
+                                    src="images/img_format_wordmark_black_900_02_32x130.svg"
+                                    alt="formatwordmark"
+                                    className="h-[29px] "
+                                  />
+                                </div>
+                              </div>
+                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                                  <Img
+                                    src="images/img_format_wordmark_black_900_02_29x130.svg"
+                                    alt="formatwordmark"
+                                    className="h-[29px]"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                                  <Img
+                                    src="images/img_format_wordmark_deep_orange_a400_01.svg"
+                                    alt="formatwordmark"
+                                    className="h-[29px]"
+                                  />
+                                </div>
+                              </div>
+
+                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                                  <Img
+                                    src="images/img_property_1_wordmark.svg"
+                                    alt="propertyone"
+                                    className="h-[29px]"
+                                  />
+                                </div>
+                              </div>
+                              <div className="h-[93px] w-full md:h-auto bg-white-A700 cursor-pointer relative rounded-[46px] hover:shadow-xs">
+
+                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
+                                  <Img
+                                    src="images/img_format_wordmark_black_900_02_31x130.svg"
+                                    alt="formatwordmark"
+                                    className="h-[31px]"
+                                  />
+                                </div>
+                              </div>
+                              <div className="h-[88px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[44px] hover:shadow-xs">
+
+                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
+                                  <Img
+                                    src="images/img_format_frame.svg"
+                                    alt="image_one"
+                                    className="h-[25px]"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="h-[92px] w-[15%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
+
+                              <div className="flex justify-center items-center w-full h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                                <Img
+                                  src="images/img_vector_pink_a200.svg"
+                                  alt="vector"
+                                  className="self-end h-[26px] w-[27px]"
+                                />
+                                <Img
+                                  src="images/img_vector_black_900_02_29x97.svg"
+                                  alt="vector"
+                                  className="h-[29px]"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="md:self-stretch h-[81px] md:w-full md:h-auto md:p-5 bg-white-A700 flex-1 relative rounded-[40px] md:flex-none">
-                    <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[40px]">
-                      <Img
-                        src="images/img_format_wordmark_light_blue_500.svg"
-                        alt="formatwordmark"
-                        className="h-[19px]"
-                      />
-                    </div>
-                  </div>
-                  <div className="md:self-stretch h-[94px] md:w-full md:h-auto md:p-5 bg-white-A700 shadow-xs flex-1 relative rounded-[47px] md:flex-none">
-                    <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[47px]">
-                      <Img
-                        src="images/img_format_wordmark_black_900_02.svg"
-                        alt="formatwordmark"
-                        className="h-[32px]"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="h-[101px] w-[22%] md:h-auto left-[32%] top-[28%] m-auto bg-white-A700 absolute rounded-[50px]">
-                  <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 absolute rounded-[50px]">
-                    <Img src="images/img_format_wordmark_green_600_01.svg" alt="formatwordmark" className="h-[38px]" />
                   </div>
                 </div>
               </div>
@@ -235,7 +301,8 @@ export default function AboutPage() {
                 <meta name="description" content="Web site created using create-react-app" />
               </Helmet>
 
-              <div className="flex flex-col items-center w-full pb-[98px] gap-[39px] md:pb-5">
+
+              <div className="flex flex-col items-center w-full pb-[98px] gap-[39px] md:pb-5"  style={{height:"10vh"}}>
                 <div className="flex flex-col items-center w-[47%] md:w-full gap-[31px] md:p-5">
                   <Button
                     color="deep_purple_50_02"
@@ -340,7 +407,7 @@ export default function AboutPage() {
 
 
 
-{/* Team */}
+              {/* Team */}
               <Button
                 color="deep_purple_50_02"
                 size="11xl"
@@ -351,7 +418,7 @@ export default function AboutPage() {
               <div className="self-stretch h-[1754px] md:h-auto mt-[-2px] relative">
                 <div className="flex flex-col items-start w-[38%] bottom-[-0.08px] right-[0.00px] m-auto absolute">
                   {/* circule */}
-                  <div className="h-[273px] w-[273px] ml-[33px] md:ml-0 z-[1] bg-purple-400 shadow-7xl rounded-[136px]" style={{zIndex: "0", overflow: "hidden", margin: "-3px -8%"}}/>
+                  <div className="h-[273px] w-[273px] ml-[33px] md:ml-0 z-[1] bg-purple-400 shadow-7xl rounded-[136px]" style={{ zIndex: "0", overflow: "hidden", margin: "-3px -8%" }} />
                   <Img
                     src="images/img_group_1000003855.png"
                     alt="image_four"
@@ -363,7 +430,7 @@ export default function AboutPage() {
                     src="images/img_vector_purple_900_1078x472.png"
                     alt="vector"
                     className="w-[37%] md:w-full object-cover rounded-[148px]"
-                  style={{margin: "-26% -10%"}}/>
+                    style={{ margin: "-26% -10%" }} />
                   <Text size="20xl" as="p" className="mt-[33px] ml-[150px] md:p-5 md:ml-0 !text-gray-900 text-center" >
                     Meet the team behind Contextify!
                   </Text>
@@ -425,39 +492,38 @@ export default function AboutPage() {
                       className="w-[64%] md:w-full ml-[-56px] md:ml-0 object-cover rounded-[69px]"
                     />
                   </div>
-                  <div className="flex md:flex-col justify-center w-full h-max left-0 bottom-0 right-0 top-0 m-auto absolute md:relative" style={{ height:"max-content"}}>
+                  <div className="flex md:flex-col justify-center w-full h-max left-0 bottom-0 right-0 top-0 m-auto absolute md:relative" style={{ overflow: "hidden" }}>
                     <div className="flex md:flex-col justify-center items-start md:self-stretch md:p-5 flex-1">
                       <Img
                         src="images/img_polygon_deep_purple_a200.png"
                         alt="polygon_three"
                         className="w-[47%] md:w-full z-[1] object-cover rounded-[69px]"
-                        />
-                    </div>
-                      <Text size="19xl" as="p" className="mt-[138px] ml-[-3px] md:ml-0 capitalize text-center"  style={{backgroundColor:"white"}}>
+                        style={{}} />
+                      <Text size="19xl" as="p" className="mt-[138px] ml-[-3px] md:ml-0 capitalize text-center" style={{ backgroundColor: "white", width: "100%" }}>
                         try Contextify for free
                       </Text>
+                    </div>
                     <Img
                       src="images/img_polygon_deep_orange_300.png"
                       alt="polygon_five"
                       className="w-[32%] md:w-full ml-[-4px] md:ml-0 object-cover rounded-[69px]"
-                      style={{margin:"-10% -50%", height:"-40vh"}}/>
+                    />
                   </div>
-                  <div className="flex md:flex-col items-center w-[64%] left-[0.00px] top-[70.00px] m-auto absolute md:relative">
+                  <div className="flex md:flex-col items-center w-[64%] left-[0.00px] top-[0.00px] m-auto absolute md:relative">
                     <Img
                       src="images/img_polygon_purple_a100.png"
                       alt="polygon_seven"
                       className="w-[60%] md:w-full object-cover rounded-[69px]"
-                      style={{margin:"-10% -50%", height:"40vh"}}/>
-                      {/* Styling */}
-                  
+                      style={{ margin: "-10% -50%", innerHeight: "20" }} />
+
                   </div>
                   <Text
-                      size="8xl"
-                      as="p"
-                      className="w-[88%] md:w-full ml-[-87px] md:p-5 md:ml-0 capitalize text-center leading-8"
-                      style={{overflow:"hidden", backgroundColor:"white"}} >
-                      Contexttify is a hub puts information into context at the click of a button
-                    </Text>
+                    size="8xl"
+                    as="p"
+                    className="w-[88%] md:w-full ml-[-87px] md:p-5 md:ml-0 capitalize text-center leading-8"
+                    style={{ overflow: "hidden", backgroundColor: "white" }} >
+                    Contexttify is a hub puts information into context at the click of a button
+                  </Text>
                   <div className="h-[50px] w-[18%] left-[40%] top-[27%] m-auto bg-orange-50_01 absolute" />
                 </div>
                 <div className="w-[22%] right-[20%] top-[21%] m-auto absolute">

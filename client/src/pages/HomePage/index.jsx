@@ -611,6 +611,8 @@ export default function HomePagePage() {
             <div className="flex flex-col self-stretch items-center mt-4">
               <div className="flex w-full">
                 <div className="flex flex-col items-center w-[98%] md:w-full gap-[31px] md:p-5">
+
+
                   <div className="flex justify-center w-[23%] md:w-full">
                     <div className="flex flex-col items-end w-full">
                       <div className="h-[50px] w-[52%] mr-[61px] md:mr-0 bg-orange-50_01" />
@@ -623,6 +625,9 @@ export default function HomePagePage() {
                       </div>
                     </div>
                   </div>
+
+
+
                   <div className="w-full">
                     <div className="flex flex-col gap-[26px]">
                       <div className="w-full mx-auto md:p-5 max-w-[1353px]">
