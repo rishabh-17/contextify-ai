@@ -193,7 +193,11 @@ export default function AboutPage() {
                     <Img src="images/img_format_wordmark_green_600_01.svg" alt="formatwordmark" className="h-[38px]" />
                   </div>
                 </div>
-                <div className="w-full p-3.5" style={{display:"flex", alignItems:"center", justifyContent:"center", marginTop:"-50%"}}>
+              </div>
+
+              {/* our missition */}
+              <div className="sdfg" style={{ display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap", marginTop: "" }} >
+                <div className="w-full p-3.5" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <div className="flex md:flex-col justify-center items-center w-full mx-auto my-20 max-w-[1372px]">
                     <div className="flex flex-col items-start w-[45%] md:w-full gap-5">
                       <Heading size="10xl" as="h1" className="!text-gray-900 !font-nunito">
@@ -224,7 +228,119 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
+              {/* our value */}
 
+              <Helmet>
+                <title>Contextify</title>
+                <meta name="description" content="Web site created using create-react-app" />
+              </Helmet>
+
+              <div className="flex flex-col items-center w-full pb-[98px] gap-[39px] md:pb-5">
+                <div className="flex flex-col items-center w-[47%] md:w-full gap-[31px] md:p-5">
+                  <Button
+                    color="deep_purple_50_02"
+                    size="11xl"
+                    className="sm:px-5 !text-purple-900 font-nunito font-bold min-w-[164px] rounded-[37px]"
+                  >
+                    Our values
+                  </Button>
+                  <Text size="20xl" as="p" className="!text-gray-900 text-center leading-[110%]">
+                    <>
+                      The story and values behind
+                      <br /> our company
+                    </>
+                  </Text>
+                </div>
+                <div className="self-stretch">
+                  <div className="justify-center gap-[52px] grid-cols-[repeat(auto-fill,_minmax(620px_,_1fr))] grid">
+                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]">
+                      <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
+                        <div className="w-[21%] md:w-full p-[39px] sm:p-5 bg-purple-900 rounded-[23px]">
+                          <Img
+                            src="images/img_icon_white_a700.svg"
+                            alt="image"
+                            className="h-[71px] w-full md:h-auto my-[5px]"
+                          />
+                        </div>
+                        <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
+                          <Heading size="7xl" as="h1" className="!text-gray-900 !font-nunito">
+                            Innovation
+                          </Heading>
+                          <Text size="11xl" as="p" className="!text-gray-600_03 leading-[157.4%]">
+                            Long established fact that a readeed to will be distracted by the readable content of a page when
+                            looking at its layout
+                          </Text>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]">
+                      <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
+                        <div className="w-[21%] md:w-full p-[35px] sm:p-5 bg-purple-900 rounded-[23px]">
+                          <Img
+                            src="images/img_icon_white_a700_64x58.svg"
+                            alt="icon_one"
+                            className="h-[64px] w-full md:h-auto mt-[9px] mb-4"
+                          />
+                        </div>
+                        <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
+                          <Heading size="7xl" as="h2" className="!text-gray-900 !font-nunito">
+                            Team work
+                          </Heading>
+                          <Text size="11xl" as="p" className="!text-gray-600_03 !font-nunito leading-[157.4%]">
+                            Long established fact that a readeed to will be distracted by the readable content of a page when
+                            looking at its layout
+                          </Text>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]">
+                      <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
+                        <div className="w-[21%] md:w-full p-[42px] md:p-5 bg-purple-900 rounded-[23px]">
+                          <Img
+                            src="images/img_icon_white_a700_62x44.svg"
+                            alt="icon_one"
+                            className="h-[62px] w-full md:h-auto mt-[7px] mb-1.5"
+                          />
+                        </div>
+                        <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
+                          <Heading size="7xl" as="h3" className="!text-gray-900 !font-nunito">
+                            Excellence
+                          </Heading>
+                          <Text size="11xl" as="p" className="!text-gray-600_03 !font-nunito leading-[157.4%]">
+                            Long established fact that a readeed to will be distracted by the readable content of a page when
+                            looking at its layout
+                          </Text>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]">
+                      <div className="flex md:flex-col justify-between items-center w-full gap-5 my-3">
+                        <div className="w-[21%] md:w-full p-10 sm:p-5 bg-purple-900 rounded-[23px]">
+                          <Img
+                            src="images/img_icon_indigo_a100.svg"
+                            alt="icon_one"
+                            className="h-[51px] w-full md:h-auto my-3.5"
+                          />
+                        </div>
+                        <div className="flex flex-col items-start w-[73%] md:w-full gap-[3px]">
+                          <Heading size="7xl" as="h4" className="!text-gray-900 !font-nunito">
+                            Responsibility
+                          </Heading>
+                          <Text size="11xl" as="p" className="!text-gray-600_03 !font-nunito leading-[157.4%]">
+                            Long established fact that a readeed to will be distracted by the readable content of a page when
+                            looking at its layout
+                          </Text>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+{/* Team */}
               <Button
                 color="deep_purple_50_02"
                 size="11xl"
@@ -234,20 +350,21 @@ export default function AboutPage() {
               </Button>
               <div className="self-stretch h-[1754px] md:h-auto mt-[-2px] relative">
                 <div className="flex flex-col items-start w-[38%] bottom-[-0.08px] right-[0.00px] m-auto absolute">
-                  <div className="h-[273px] w-[273px] ml-[33px] md:ml-0 z-[1] bg-purple-400 shadow-7xl rounded-[136px]" />
+                  {/* circule */}
+                  <div className="h-[273px] w-[273px] ml-[33px] md:ml-0 z-[1] bg-purple-400 shadow-7xl rounded-[136px]" style={{zIndex: "0", overflow: "hidden", margin: "-3px -8%"}}/>
                   <Img
                     src="images/img_group_1000003855.png"
                     alt="image_four"
                     className="h-[1308px] w-full md:h-auto mt-[-150px] object-cover"
                   />
                 </div>
-                <div className="flex md:flex-col items-start w-[79%]">
+                <div className="flex md:flex-col items-start w-[79%]" >
                   <Img
                     src="images/img_vector_purple_900_1078x472.png"
                     alt="vector"
                     className="w-[37%] md:w-full object-cover rounded-[148px]"
-                  />
-                  <Text size="20xl" as="p" className="mt-[33px] ml-[-124px] md:p-5 md:ml-0 !text-gray-900 text-center">
+                  style={{margin: "-26% -10%"}}/>
+                  <Text size="20xl" as="p" className="mt-[33px] ml-[150px] md:p-5 md:ml-0 !text-gray-900 text-center" >
                     Meet the team behind Contextify!
                   </Text>
                 </div>
@@ -308,37 +425,39 @@ export default function AboutPage() {
                       className="w-[64%] md:w-full ml-[-56px] md:ml-0 object-cover rounded-[69px]"
                     />
                   </div>
-                  <div className="flex md:flex-col justify-center w-full h-max left-0 bottom-0 right-0 top-0 m-auto absolute md:relative">
+                  <div className="flex md:flex-col justify-center w-full h-max left-0 bottom-0 right-0 top-0 m-auto absolute md:relative" style={{ height:"max-content"}}>
                     <div className="flex md:flex-col justify-center items-start md:self-stretch md:p-5 flex-1">
                       <Img
                         src="images/img_polygon_deep_purple_a200.png"
                         alt="polygon_three"
                         className="w-[47%] md:w-full z-[1] object-cover rounded-[69px]"
-                      />
-                      <Text size="19xl" as="p" className="mt-[138px] ml-[-3px] md:ml-0 capitalize text-center">
+                        />
+                    </div>
+                      <Text size="19xl" as="p" className="mt-[138px] ml-[-3px] md:ml-0 capitalize text-center"  style={{backgroundColor:"white"}}>
                         try Contextify for free
                       </Text>
-                    </div>
                     <Img
                       src="images/img_polygon_deep_orange_300.png"
                       alt="polygon_five"
                       className="w-[32%] md:w-full ml-[-4px] md:ml-0 object-cover rounded-[69px]"
-                    />
+                      style={{margin:"-10% -50%", height:"-40vh"}}/>
                   </div>
-                  <div className="flex md:flex-col items-center w-[64%] left-[0.00px] top-[0.00px] m-auto absolute md:relative">
+                  <div className="flex md:flex-col items-center w-[64%] left-[0.00px] top-[70.00px] m-auto absolute md:relative">
                     <Img
                       src="images/img_polygon_purple_a100.png"
                       alt="polygon_seven"
                       className="w-[60%] md:w-full object-cover rounded-[69px]"
-                    />
-                    <Text
+                      style={{margin:"-10% -50%", height:"40vh"}}/>
+                      {/* Styling */}
+                  
+                  </div>
+                  <Text
                       size="8xl"
                       as="p"
-                      className="w-[38%] md:w-full ml-[-87px] md:p-5 md:ml-0 capitalize text-center leading-8"
-                    >
+                      className="w-[88%] md:w-full ml-[-87px] md:p-5 md:ml-0 capitalize text-center leading-8"
+                      style={{overflow:"hidden", backgroundColor:"white"}} >
                       Contexttify is a hub puts information into context at the click of a button
                     </Text>
-                  </div>
                   <div className="h-[50px] w-[18%] left-[40%] top-[27%] m-auto bg-orange-50_01 absolute" />
                 </div>
                 <div className="w-[22%] right-[20%] top-[21%] m-auto absolute">
@@ -393,6 +512,9 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
+
+
+
               <div className="w-full mt-24 mx-auto md:p-5 max-w-[1240px]">
                 <div className="flex md:flex-col justify-between items-start gap-5">
                   <div className="flex justify-between items-start w-[29%] md:w-full gap-5">
