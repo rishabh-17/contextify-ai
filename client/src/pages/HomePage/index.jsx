@@ -6,6 +6,7 @@ import HomePageLearnhtml from "../../components/HomePageLearnhtml";
 import HomePageReadbooklight from "../../components/HomePageReadbooklight";
 import HomePageSituplight from "../../components/HomePageSituplight";
 import HomePageUIDesign from "../../components/HomePageUIDesign";
+import FreeTrialArea from "../../components/FreeTrialArea";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
@@ -1724,10 +1725,11 @@ export default function HomePagePage() {
                   </div>
                 </div>
               </div>
-              <div className="h-[2149px] w-[95%] md:h-auto mt-[150px] relative">
+              <div className="h-[2149px] z-[2] w-[95%] md:h-auto mt-[150px] relative">
                 <div className="w-full">
                   <div className="flex md:flex-col items-center">
-                    <div className="flex flex-col self-end w-[24%] md:w-full mb-[560px] gap-5 md:p-5 z-[1]">
+                    {/* ========================================================== */}
+                    <div className="flex flex-col self-end w-[30%] md:w-full mb-[762px] gap-5 md:p-5 z-[1]">
                       <div className="flex justify-center flex-1">
                         <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                           <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
@@ -1808,7 +1810,7 @@ export default function HomePagePage() {
                             vehicula vel consectetur eu. Sit pulvinar urna diam
                             lacus fringilla eu cursus.
                           </Text>
-                          <div className="flex mt-[-3px]">
+                          <div className="flex mt-[3px]">
                             <Button
                               size="9xl"
                               className="sm:px-5 capitalize min-w-[160px] rounded-[30px]"
@@ -1818,13 +1820,13 @@ export default function HomePagePage() {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-col items-end md:self-stretch ml-[-210px] md:ml-0 flex-1">
-                        <div className="flex flex-col items-start w-[72%] md:w-full mr-[102px] md:mr-0 z-[1]">
-                          <div className="self-stretch h-[391px] md:h-auto relative">
+                      <div className="flex flex-col items-end md:self-stretch ml-[-80px] md:ml-0 flex-1">
+                        <div className="flex flex-col items-start w-[72%] md:w-full mr-[102px] md:mr-0 z-[2]">
+                          <div className="self-stretch h-[391px]  md:h-auto relative">
                             <Img
                               src="images/img_group_purple_a100_391x606.svg"
                               alt="image"
-                              className="h-[391px]"
+                              className="h-[391px] "
                             />
                             <div className="h-[16px] w-[16px] bottom-[16.00px] right-[30.00px] m-auto bg-deep_purple-A200 absolute rounded-lg" />
                           </div>
@@ -1835,7 +1837,7 @@ export default function HomePagePage() {
                           />
                         </div>
                         <div className="flex md:flex-col self-stretch justify-end items-start mt-[-145px]">
-                          <div className="h-[50px] w-[44%] mt-[330px] z-[1] bg-orange-50_01" />
+                          <div className="h-[45px] w-[44%] mt-[335px] z-[0] bg-orange-50_01" />
                           <Img
                             src="images/img_group_1000003855.png"
                             alt="image"
@@ -1851,7 +1853,8 @@ export default function HomePagePage() {
                     className="w-full md:h-auto mt-[-243px] mx-auto md:p-5 z-[1] object-cover max-w-[1288px]"
                   />
                 </div>
-                <div className="flex flex-col w-[32%] gap-5 right-[6%] top-[32%] m-auto absolute md:relative">
+                {/* ====================================================================== */}
+                <div className="flex flex-col w-[30%] gap-5 right-[4%] top-[32%] m-auto absolute md:relative">
                   <div className="flex justify-center md:p-5 flex-1">
                     <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                       <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
@@ -1918,14 +1921,14 @@ export default function HomePagePage() {
                     Several Use Cases
                   </>
                 </Text>
-                <div className="flex md:flex-col justify-end items-start w-[34%] right-[15%] top-[3%] m-auto absolute md:relative">
+                <div className="flex md:flex-col justify-end items-start w-[35%] right-[18%] top-[3%] ml-auto absolute md:relative">
                   <Img
                     src="images/img_ellipse_51x51.png"
                     alt="circleimage"
-                    className="h-[51px] w-[51px] mt-[79px] z-[1] rounded-[50%]"
+                    className="h-[51px] w-[51px] mt-[79px] z-[2] rounded-[50%]"
                   />
-                  <div className="flex justify-end items-center md:self-stretch ml-[-20px] md:p-5 md:ml-0 flex-1">
-                    <div className="p-[15px] bg-white-A700 shadow-lg flex-1 rounded-[20px]">
+                  <div className="flex justify-end items-center md:self-stretch ml-[120px] md:p-5 md:ml-0 flex-1">
+                    <div className="p-[15px] bg-white-A700  shadow-lg flex-1 rounded-[20px] z-[2]">
                       <div className="mb-3.5">
                         <div className="flex flex-col gap-2.5">
                           <div className="flex justify-between items-start gap-5">
@@ -1953,7 +1956,7 @@ export default function HomePagePage() {
                             />
                           </div>
                           <div>
-                            <div className="p-[11px] bg-black-900_02 rounded-[9px]">
+                            <div className="p-[11px] bg-white-A700 rounded-[9px]">
                               <div className="mt-1">
                                 <div className="flex flex-col gap-[13px]">
                                   <div className="flex justify-center flex-1">
@@ -2105,7 +2108,7 @@ export default function HomePagePage() {
                     <div className="flex md:flex-col items-start md:self-stretch flex-1">
                       <div className="h-[16px] w-[16px] mt-[443px] z-[1] bg-purple-A100 rounded-lg" />
                       <div className="md:self-stretch h-[933px] w-[933px] md:w-full ml-[-2px] md:ml-0 flex-1 relative md:flex-none">
-                        <div className="flex flex-col items-end w-[73%] bottom-[16%] left-[16%] m-auto absolute">
+                        <div className="flex flex-col items-end w-[73%] bottom-[16%] left-[16%] m-auto z-[2] absolute">
                           <div className="h-[414px] w-[414px] mr-[51px] md:mr-0 border-indigo-500_0f border-[0.5px] border-solid rounded-[207px]" />
                           <div className="self-stretch h-[228px] md:h-auto mt-[-113px] relative">
                             <Img
@@ -2113,7 +2116,7 @@ export default function HomePagePage() {
                               alt="vector"
                               className="h-[228px] rounded-[10px]"
                             />
-                            <div className="flex flex-col items-center w-[89%] gap-[7px] bottom-[14%] right-0 left-0 m-auto absolute">
+                            <div className="flex flex-col items-center w-[72%] gap-[7px] bottom-[14%] right-[100px] left-0 m-auto absolute">
                               <Text
                                 size="7xl"
                                 as="p"
@@ -2156,41 +2159,41 @@ export default function HomePagePage() {
                                 <Img
                                   src="images/img_ellipse_87x87.png"
                                   alt="circleimage"
-                                  className="h-[87px] w-[87px] rounded-[50%]"
+                                  className="h-[74px] w-[87px] rounded-[50%]"
                                 />
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="flex sm:flex-col items-start w-[68%] h-max left-[14%] bottom-0 top-0 my-auto absolute sm:relative">
+                        <div className="flex sm:flex-col items-start w-[58%] h-max left-[14%] bottom-0 top-0 my-auto absolute sm:relative">
                           <div className="w-[16%] sm:w-full mt-[137px] z-[1]">
                             <div className="border-white-A700 border border-solid bg-purple-A100 shadow-6xl rounded-[46px]">
                               <Img
                                 src="images/img_ellipse_89x89.png"
                                 alt="circleimage"
-                                className="h-[89px] w-[89px] rounded-[50%]"
+                                className="h-[86px] w-[89px] rounded-[50%]"
                               />
                             </div>
                           </div>
                           <div className="flex flex-col items-start sm:self-stretch ml-[-29px] gap-[90px] md:gap-[67px] sm:gap-[45px] sm:ml-0 border-deep_purple-A200 border-[5px] border-solid flex-1 rounded-[240px]">
-                            <div className="w-[18%] md:w-full ml-[118px] md:ml-0">
+                            <div className="w-[12%] md:w-full ml-[118px] md:ml-0">
                               <div className="border-white-A700 border border-solid bg-deep_purple-A200 rounded-[31px]">
                                 <div className="mt-1.5">
                                   <Img
                                     src="images/img_image.png"
                                     alt="image"
-                                    className="h-[55px] rounded-[50%]"
+                                    className="h-[50px] rounded-[50%]"
                                   />
                                 </div>
                               </div>
                             </div>
-                            <div className="w-[52%] md:w-full mb-[153px] ml-[153px] md:ml-0">
+                            <div className="w-[36%] md:w-full mb-[153px] ml-[153px] md:ml-0">
                               <div className="border-white-A700 border-8 border-solid bg-deep_purple-A200 rounded-[84px]">
                                 <div className="mt-0.5">
                                   <Img
                                     src="images/img_image_157x160.png"
                                     alt="image_thirty"
-                                    className="h-[157px] rotate-[15deg] rounded-[50%]"
+                                    className="h-[157px] rotate-[0deg] rounded-[50%]"
                                   />
                                 </div>
                               </div>
@@ -2212,9 +2215,10 @@ export default function HomePagePage() {
                     src="images/img_group.svg"
                     alt="image_thirtyone"
                     className="h-[12px] md:w-full"
-                  />
+                    />
                 </div>
-                <div className="flex w-[45%] left-[32%] top-[32%] m-auto absolute">
+                    {/* ==================================================================== */}
+                <div className="flex w-[32%] left-[32%] top-[32%] m-auto absolute">
                   <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                     <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
                       <Button
@@ -2241,7 +2245,8 @@ export default function HomePagePage() {
                     </div>
                   </div>
                 </div>
-                <div className="flex w-[45%] left-[32%] top-[40%] m-auto absolute">
+
+                <div className="flex w-[32%] left-[32%] top-[39%] m-auto absolute">
                   <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                     <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
                       <Button
@@ -2269,61 +2274,7 @@ export default function HomePagePage() {
                   </div>
                 </div>
               </div>
-              <div className="self-stretch h-[519px] mt-[168px] bg-gray-50_01 relative">
-                <div className="flex md:flex-col justify-end items-center w-[62%] bottom-[0.00px] right-[0.00px] m-auto absolute md:relative">
-                  <div className="flex self-end justify-end w-[36%] md:w-full mb-[140px] md:p-5 z-[1]">
-                    <div className="flex justify-end w-full p-[29px] sm:p-5 border-black-900_02 border-2 border-solid rounded-[40px]">
-                      <div className="flex self-end mr-2.5 md:mr-0">
-                        <Text as="p" className="capitalize">
-                          Start Your Free Trial Today
-                        </Text>
-                      </div>
-                    </div>
-                  </div>
-                  <Img
-                    src="images/img_polygon_amber_200.png"
-                    alt="polygon_three"
-                    className="w-[64%] md:w-full ml-[-56px] md:ml-0 object-cover rounded-[69px]"
-                  />
-                </div>
-                <div className="flex md:flex-col justify-center w-full h-max left-0 bottom-0 right-0 top-0 m-auto absolute md:relative">
-                  <div className="flex md:flex-col justify-center items-start md:self-stretch md:p-5 flex-1">
-                    <Img
-                      src="images/img_polygon_deep_purple_a200.png"
-                      alt="polygon_five"
-                      className="w-[47%] md:w-full z-[1] object-cover rounded-[69px]"
-                    />
-                    <Text
-                      size="19xl"
-                      as="p"
-                      className="mt-[138px] ml-[-3px] md:ml-0 capitalize text-center"
-                    >
-                      try Contextify for free
-                    </Text>
-                  </div>
-                  <Img
-                    src="images/img_polygon_deep_orange_300.png"
-                    alt="polygon_seven"
-                    className="w-[32%] md:w-full ml-[-4px] md:ml-0 object-cover rounded-[69px]"
-                  />
-                </div>
-                <div className="flex md:flex-col items-center w-[64%] left-[0.00px] top-[0.00px] m-auto absolute md:relative">
-                  <Img
-                    src="images/img_polygon_purple_a100.png"
-                    alt="polygon_nine"
-                    className="w-[60%] md:w-full object-cover rounded-[69px]"
-                  />
-                  <Text
-                    size="8xl"
-                    as="p"
-                    className="w-[40%] md:w-full ml-[-87px] md:p-5 md:ml-0 capitalize text-center leading-8"
-                  >
-                    Contexttify is a hub puts information into context at the
-                    click of a button
-                  </Text>
-                </div>
-                <div className="h-[50px] w-[18%] left-[40%] top-[27%] m-auto bg-orange-50_01 absolute" />
-              </div>
+              <FreeTrialArea/>
               <div className="w-full mt-[149px] mx-auto md:p-5 max-w-[1240px]">
                 <div className="flex md:flex-col justify-between items-start gap-5">
                   <div className="flex justify-between items-start w-[29%] md:w-full gap-5">

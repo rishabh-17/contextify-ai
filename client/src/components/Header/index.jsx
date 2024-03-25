@@ -1,7 +1,9 @@
 import React from "react";
 import { Button, Text, Img } from "./..";
+import { useNavigate } from "react-router-dom";
 
 export default function Header({ ...props }) {
+  const navigate = useNavigate();
   return (
     <header {...props}>
       <div className="w-full">
@@ -21,26 +23,26 @@ export default function Header({ ...props }) {
             </Text>
           </div>
           <div className="flex sm:flex-col items-center">
-            <a href="home" target="_blank" rel="noreferrer">
+            <div className="mx-5" onClick={()=>navigate('/')} >
               <Text as="p" className="!text-white-A700 capitalize">
                 home
               </Text>
-            </a>
-            <a href="#" className="self-start mt-[18px] ml-8 sm:ml-0">
+            </div>
+            <div className="mx-5" onClick={()=>navigate('/about')} >
               <Text as="p" className="!text-white-A700 capitalize">
                 about us
               </Text>
-            </a>
-            <a href="pricing" target="_blank" rel="noreferrer" className="ml-7 sm:ml-0">
+            </div>
+            <div className="mx-5" onClick={()=>navigate('/pricing')} > 
               <Text as="p" className="!text-white-A700 capitalize">
                 pricing
               </Text>
-            </a>
-            <a href="#" className="ml-[19px] sm:ml-0">
+            </div>
+            <div className="mx-5" onClick={()=>navigate('/contactus')} >
               <Text as="p" className="!text-white-A700 capitalize">
                 Contact Us
               </Text>
-            </a>
+            </div>
             <div className="flex ml-[21px] sm:ml-0">
               <Button color="white_A700" size="9xl" className="sm:px-5 capitalize min-w-[160px] rounded-[30px]">
                 Get Free Trial
