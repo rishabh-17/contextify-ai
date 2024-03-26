@@ -81,9 +81,16 @@ export default function ContactUsPage() {
                 </div>
               </div>
             </div>
-            <div className="self-stretch h-[2834px] md:h-auto mt-44 relative" >
+            <div className="self-stretch h-[2834px] md:h-auto mt-44 relative">
               <div className="w-full top-[0.00px] right-0 left-0 m-auto">
-                <div className="w-full m-auto md:p-5 z-[1]"  style={{display:"flex", alignItems:"center" , justifyContent:"center" }}>
+                <div
+                  className="w-full m-auto md:p-5 z-[1]"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <div className="w-full px-14 py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5">
                     <div className="my-[18px]">
                       <div className="flex flex-col items-center pb-[26px] gap-[76px] md:gap-[57px] sm:gap-[38px] sm:pb-5">
@@ -213,6 +220,26 @@ export default function ContactUsPage() {
                       </div>
                       <div>
                         <div className="flex flex-col pt-[145px] gap-[34px] md:pt-5">
+                          <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
+                            <div className="flex md:flex-col justify-between items-center w-full gap-5">
+                              <Text
+                                size="15xl"
+                                as="p"
+                                className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
+                              >
+                                1. Where is my order? Quisque molestie
+                              </Text>
+                              <div className="flex flex-col">
+                                <Text
+                                  size="15xl"
+                                  as="p"
+                                  className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
+                                >
+                                  
+                                </Text>
+                              </div>
+                            </div>
+                          </div>
                           <div className="flex justify-end w-full py-[25px] mx-auto md:p-5 sm:py-5 bg-deep_purple-100 flex-1 max-w-[976px] rounded-[20px]">
                             <div className="flex flex-col items-center w-[96%] md:w-full pb-[73px] gap-[9px] md:pb-5">
                               <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
@@ -247,28 +274,8 @@ export default function ContactUsPage() {
                               </Text>
                             </div>
                           </div>
-                          <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
-                            <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                              <Text
-                                size="15xl"
-                                as="p"
-                                className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
-                              >
-                                1. Where is my order? Quisque molestie
-                              </Text>
-                              <div className="flex flex-col">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                >
-                                  
-                                </Text>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="flex justify-center p-[26px] sm:p-5 bg-deep_purple-100 flex-1 rounded-[20px]">
-                            <div className="flex sm:flex-col justify-between items-center w-full gap-5 mx-auto max-w-[920px]">
+                          <div className="flex justify-center w-full p-[26px]  mx-auto sm:p-5 bg-deep_purple-100 flex-1 max-w-[991px] rounded-[20px]">
+                            <div className="flex sm:flex-col justify-between items-center w-full gap-5  ">
                               <Text
                                 size="15xl"
                                 as="p"
@@ -276,7 +283,7 @@ export default function ContactUsPage() {
                               >
                                 3. Can I cancel or change my order?
                               </Text>
-                              <div className="w-[6%] sm:w-full">
+                              <div className="w-[6%] md:w-full">
                                 <div className="flex flex-col items-end justify-center p-[5px] bg-purple-900 rounded-[29px]">
                                   <Text
                                     size="15xl"
@@ -340,10 +347,9 @@ export default function ContactUsPage() {
                 </div>
               </div>
             </div>
-             <div className="w-full mt-[-100px] mb-8  mx-auto md:p-5">
-              <Footer/>
-                
-              </div>
+            <div className="w-full mt-[-100px] mb-8  mx-auto md:p-5">
+              <Footer />
+            </div>
           </div>
         </div>
       </div>
