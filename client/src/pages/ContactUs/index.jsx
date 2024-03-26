@@ -81,9 +81,9 @@ export default function ContactUsPage() {
               </div>
             </div>
             <div className="self-stretch h-[2834px] md:h-auto mt-44 relative" >
-              <div className="w-full top-[0.00px] right-0 left-0 m-auto absolute">
-                <div className="w-full md:p-5 z-[1] max-w-[1400px]"  style={{display:"flex", alignItems:"center" , justifyContent:"center" }}>
-                  <div className="px-14 py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px]">
+              <div className="w-full top-[0.00px] right-0 left-0 m-auto">
+                <div className="w-full m-auto md:p-5 z-[1]"  style={{display:"flex", alignItems:"center" , justifyContent:"center" }}>
+                  <div className="w-full px-14 py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5">
                     <div className="my-[18px]">
                       <div className="flex flex-col items-center pb-[26px] gap-[76px] md:gap-[57px] sm:gap-[38px] sm:pb-5">
                         <div className="flex flex-col self-stretch gap-[54px] sm:gap-[27px]">
@@ -365,17 +365,17 @@ export default function ContactUsPage() {
               <Text
                 size="16xl"
                 as="p"
-                className="bottom-[18%] right-[20%] m-auto capitalize relative"
+                className="bottom-[0.5%] right-[20%] m-auto capitalize absolute"
               >
                 Newsletter
               </Text>
               <Text
                 as="p"
-                className="bottom-[10%] right-[22%] m-auto capitalize absolute"
+                className="bottom-[-1%] right-[22%] m-auto capitalize absolute"
               >
                 Stay up to date
               </Text>
-              <div className="flex sm:flex-col justify-between items-start w-[59%] bottom-[6%] left-[7%] gap-5 m-auto absolute sm:relative">
+              <div className="flex sm:flex-col justify-between items-start w-[59%] bottom-[-6%] left-[7%] gap-5 m-auto absolute sm:relative">
                 <div className="flex justify-between items-start w-[45%] sm:w-full gap-5 sm:p-5">
                   <div className="flex justify-center w-[56%]">
                     <div className="flex flex-col w-full gap-[25px]">
@@ -464,7 +464,7 @@ export default function ContactUsPage() {
                   </Text>
                 </div>
               </div>
-              <div className="flex justify-end w-[25%] bottom-[7%] right-[7%] m-auto absolute">
+              <div className="flex justify-end w-[25%] bottom-[-5%] right-[7%] m-auto absolute">
                 <div className="flex justify-between items-start w-full gap-5 p-2.5 border-gray-300 border-2 border-solid bg-white-A700 rounded-[40px]">
                   <Text
                     as="p"
