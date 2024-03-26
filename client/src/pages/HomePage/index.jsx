@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading, Input, SelectBox } from "../../components";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import HomePageLearnhtml from "../../components/HomePageLearnhtml";
 import HomePageReadbooklight from "../../components/HomePageReadbooklight";
 import HomePageSituplight from "../../components/HomePageSituplight";
@@ -611,8 +612,6 @@ export default function HomePagePage() {
             <div className="flex flex-col self-stretch items-center mt-4">
               <div className="flex w-full">
                 <div className="flex flex-col items-center w-[98%] md:w-full gap-[31px] md:p-5">
-
-
                   <div className="flex justify-center w-[23%] md:w-full">
                     <div className="flex flex-col items-end w-full">
                       <div className="h-[50px] w-[52%] mr-[61px] md:mr-0 bg-orange-50_01" />
@@ -626,14 +625,11 @@ export default function HomePagePage() {
                     </div>
                   </div>
 
-
-
                   <div className="w-full">
                     <div className="flex flex-col gap-[26px]">
                       <div className="w-full mx-auto md:p-5 max-w-[1353px]">
                         <div className="flex md:flex-col justify-center items-center gap-[21px]">
                           <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
-                           
                             <div className="flex justify-center items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_black_900_02.svg"
@@ -648,7 +644,6 @@ export default function HomePagePage() {
                             </div>
                           </div>
                           <div className="h-[92px] w-[11%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
-                          
                             <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                               <Img
                                 src="images/img_format_wordmark.svg"
@@ -667,7 +662,6 @@ export default function HomePagePage() {
                             </div>
                           </div>
                           <div className="h-[101px] w-[19%] md:w-full md:h-auto bg-white-A700 shadow-5xl relative rounded-[50px]">
-                          
                             <div className="flex justify-center items-start w-full h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_deep_purple_a200_01.svg"
@@ -744,7 +738,6 @@ export default function HomePagePage() {
                                 </div>
                               </div>
                               <div className="h-[93px] w-full md:h-auto bg-white-A700 cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                               
                                 <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_black_900_02_31x130.svg"
@@ -754,7 +747,6 @@ export default function HomePagePage() {
                                 </div>
                               </div>
                               <div className="h-[88px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[44px] hover:shadow-xs">
-                              
                                 <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
                                   <Img
                                     src="images/img_format_frame.svg"
@@ -765,7 +757,6 @@ export default function HomePagePage() {
                               </div>
                             </div>
                             <div className="h-[92px] w-[15%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
-                            
                               <div className="flex justify-center items-center w-full h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                 <Img
                                   src="images/img_vector_pink_a200.svg"
@@ -2220,9 +2211,9 @@ export default function HomePagePage() {
                     src="images/img_group.svg"
                     alt="image_thirtyone"
                     className="h-[12px] md:w-full"
-                    />
+                  />
                 </div>
-                    {/* ==================================================================== */}
+                {/* ==================================================================== */}
                 <div className="flex w-[32%] left-[32%] top-[32%] m-auto absolute">
                   <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                     <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
@@ -2279,131 +2270,9 @@ export default function HomePagePage() {
                   </div>
                 </div>
               </div>
-              <FreeTrialArea/>
-              <div className="w-full mt-[149px] mx-auto md:p-5 max-w-[1240px]">
-                <div className="flex md:flex-col justify-between items-start gap-5">
-                  <div className="flex justify-between items-start w-[29%] md:w-full gap-5">
-                    <div className="flex justify-center w-[56%]">
-                      <div className="flex flex-col items-start w-full gap-[25px]">
-                        <div className="flex w-[88%] md:w-full">
-                          <div className="flex items-center w-full">
-                            <Img
-                              src="images/img_frame_purple_900.svg"
-                              alt="image_thirtytwo"
-                              className="h-[39px]"
-                            />
-                            <Text
-                              size="14xl"
-                              as="p"
-                              className="self-end ml-[-76px] !text-purple-900 !font-inter capitalize"
-                            >
-                              Contextify
-                            </Text>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Img
-                            src="images/img_frame_purple_900_24x24.svg"
-                            alt="image"
-                            className="h-[24px] w-[24px]"
-                          />
-                          <Text as="p" className="self-end capitalize">
-                            help@contextify.com
-                          </Text>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Img
-                            src="images/img_frame_24x24.svg"
-                            alt="image"
-                            className="h-[24px] w-[24px]"
-                          />
-                          <Text as="p" className="self-start capitalize">
-                            +1 234 456 678 89
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-start gap-[22px]">
-                      <Text
-                        size="16xl"
-                        as="p"
-                        className="capitalize text-center"
-                      >
-                        links
-                      </Text>
-                      <Text as="p" className="capitalize">
-                        home
-                      </Text>
-                      <Text as="p" className="capitalize">
-                        about us
-                      </Text>
-                      <Text as="p" className="capitalize">
-                        bookings
-                      </Text>
-                      <Text as="p" className="capitalize">
-                        blog
-                      </Text>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-start mt-1 gap-[21px]">
-                    <Text size="16xl" as="p" className="capitalize">
-                      legal
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      terms of use
-                    </Text>
-                    <a href="#">
-                      <Text as="p" className="capitalize">
-                        privacy policy
-                      </Text>
-                    </a>
-                    <Text as="p" className="capitalize">
-                      cookie policy
-                    </Text>
-                  </div>
-                  <div className="flex flex-col items-start gap-[21px]">
-                    <Text size="16xl" as="p" className="capitalize">
-                      product
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      take tour
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      live chat
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      reveiws
-                    </Text>
-                  </div>
-                  <div className="flex flex-col items-start w-[27%] md:w-full gap-5">
-                    <Text size="16xl" as="p" className="capitalize">
-                      Newsletter
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      Stay up to date
-                    </Text>
-                    <div className="self-stretch">
-                      <div className="flex justify-between items-start gap-5 p-2.5 border-gray-300 border-2 border-solid bg-white-A700 rounded-[40px]">
-                        <Text
-                          as="p"
-                          className="mt-[18px] ml-[13px] md:ml-0 !text-gray-500_05"
-                        >
-                          Your email{" "}
-                        </Text>
-                        <div className="flex">
-                          <Button
-                            size="9xl"
-                            className="sm:px-5 capitalize min-w-[160px] rounded-[30px]"
-                          >
-                            Subscribe
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <Text className="mt-[93px]" />
+              <FreeTrialArea />
+              <Footer />
+              <Text className="mt-[30px]" />
             </div>
           </div>
         </div>
