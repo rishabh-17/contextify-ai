@@ -13,7 +13,7 @@ export default function ContactUsPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex flex-col items-center w-full pt-8 gap-[342px] md:gap-64 sm:gap-[171px] sm:pt-5 bg-gray-100">
+      <div className="flex flex-col items-center w-full pt-8 gap-[342px] md:gap-64 sm:gap-[171px] sm:pt-5 bg-gray-100" style={{overflow:"hidden", flexWrap:"wrap"}}>
         <Header className="w-[86%] md:w-full md:p-5" />
         <div className="self-stretch">
           <div className="flex flex-col items-center">
@@ -350,7 +350,7 @@ export default function ContactUsPage() {
                   <div className="flex self-end justify-end sm:self-stretch mb-1.5 p-10 sm:p-5 border-blue_gray-100_01 border-t border-solid flex-1">
                     <Text
                       as="p"
-                      className="self-end mr-[265px] md:mr-0 capitalize"
+                      className="self-end mr-[250px]  md:mr-0 capitalize"
                     >
                       Copyright 2022 Contextify inc. all rights reserved
                     </Text>
@@ -365,17 +365,17 @@ export default function ContactUsPage() {
               <Text
                 size="16xl"
                 as="p"
-                className="bottom-[0.5%] right-[20%] m-auto capitalize absolute"
+                className="bottom-[12.5%] right-[20%] m-auto capitalize absolute"
               >
                 Newsletter
               </Text>
               <Text
                 as="p"
-                className="bottom-[-1%] right-[22%] m-auto capitalize absolute"
+                className="bottom-[10.9%] right-[22%] m-auto capitalize absolute"
               >
                 Stay up to date
               </Text>
-              <div className="flex sm:flex-col justify-between items-start w-[59%] bottom-[-6%] left-[7%] gap-5 m-auto absolute sm:relative">
+              <div className="flex sm:flex-col justify-between items-start w-[59%] bottom-[6%] left-[7%] gap-5 m-auto absolute sm:relative">
                 <div className="flex justify-between items-start w-[45%] sm:w-full gap-5 sm:p-5">
                   <div className="flex justify-center w-[56%]">
                     <div className="flex flex-col w-full gap-[25px]">
@@ -464,7 +464,7 @@ export default function ContactUsPage() {
                   </Text>
                 </div>
               </div>
-              <div className="flex justify-end w-[25%] bottom-[-5%] right-[7%] m-auto absolute">
+              <div className="flex justify-end w-[25%] bottom-[7%] right-[7%] m-auto absolute">
                 <div className="flex justify-between items-start w-full gap-5 p-2.5 border-gray-300 border-2 border-solid bg-white-A700 rounded-[40px]">
                   <Text
                     as="p"
