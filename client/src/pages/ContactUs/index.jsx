@@ -1,9 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button, Text, Img, Heading, Input } from "../../components";
 import Header from "../../components/Header";
 
 export default function ContactUsPage() {
+
+
+  // const { formData, setFormData } = useState({
+  //   fullname: "",
+  //   email: "",
+  //   company: "",
+  //   subject: "",
+  //   message: ""
+  // })
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value
+  //   });
+  // };
+
+  // const handleDivClick = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const respose = await fetch('http://localhost:5173/submit-form', {
+  //       method: 'POST',
+  //       headter: {
+  //         'Contect-type': 'application/json'
+  //       },
+  //       body: JSON.stringify(formData)
+  //     });
+  //     if (respose.pf) {
+  //       console.log('Form Submited successfull !');
+  //       console.log('Submitted data:', formData);
+  //       setFormData({
+  //         name: '',
+  //         email: '',
+  //         company: '',
+  //         subject: '',
+  //         message: '',
+  //       })
+  //     } else {
+  //       console.log('Something Wrong!');
+  //     }
+  //   } catch (error) {
+  //     console.log('error submition form', error);
+  //   }
+  // }
+
+
+
+
+  // <-------------------------------- ToogleFAQ--------------------------------------------->
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
+  const [isOpen4, setIsOpen4] = useState(false);
+  const [isOpen5, setIsOpen5] = useState(false);
+
+  const toggleFAQ1 = () => {
+    setIsOpen1(!isOpen1);
+  };
+
+  const toggleFAQ2 = () => {
+    setIsOpen2(!isOpen2);
+  };
+
+  const toggleFAQ3 = () => {
+    setIsOpen3(!isOpen3);
+  };
+
+  const toggleFAQ4 = () => {
+    setIsOpen4(!isOpen4);
+  };
+
+  const toggleFAQ5 = () => {
+    setIsOpen5(!isOpen5);
+  };
+
+  
+
   return (
     <>
       <Helmet>
@@ -15,7 +93,7 @@ export default function ContactUsPage() {
       </Helmet>
       <div className="flex flex-col items-center w-full pt-8 gap-[342px] md:gap-64 sm:gap-[171px] sm:pt-5 bg-gray-100" style={{ overflow: "hidden", flexWrap: "wrap" }}>
         <Header className="w-[86%] md:w-full md:p-5" />
-        <div className="self-stretch" style={{marginTop:"-10%"}}>
+        <div className="self-stretch" style={{ marginTop: "-10%" }}>
           <div className="flex flex-col items-center">
             <Text size="22xl" as="p" className="!text-gray-900 text-center">
               Get in touch today!
@@ -39,7 +117,7 @@ export default function ContactUsPage() {
                       Mail Us
                     </Text>
                   </div>
-                  <a href="#" className="w-[36%] sm:w-full leading-[157.4%]">
+                  <a href="" className="w-[36%] sm:w-full leading-[157.4%]">
                     <Text
                       size="11xl"
                       as="p"
@@ -68,7 +146,7 @@ export default function ContactUsPage() {
                       Call Us
                     </Heading>
                   </div>
-                  <a href="#">
+                  <a href="">
                     <Text
                       size="11xl"
                       as="p"
@@ -82,8 +160,10 @@ export default function ContactUsPage() {
             </div>
             <div className="self-stretch h-[2834px] md:h-auto mt-44 relative" >
               <div className="w-full top-[0.00px] right-0 left-0 m-auto">
+
                 <div className="w-full m-auto md:p-5 z-[1]" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <div className="w-full px-14 py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5 mt-[-50px]  w-[70%]">
+                  <div className="w-full px-14 py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5 mt-[-10%] w-[70%]">
+                    {/* <form onSubmit={handleSubmit}> */}
                     <div className="my-[18px]">
                       <div className="flex flex-col items-center pb-[26px] gap-[76px] md:gap-[57px] sm:gap-[38px] sm:pb-5">
                         <div className="flex flex-col self-stretch gap-[54px] sm:gap-[27px]">
@@ -102,6 +182,8 @@ export default function ContactUsPage() {
                                   name="fullName"
                                   placeholder={`John David`}
                                   className="sm:px-5 font-nunito lowercase border-blue_gray-100_02 border border-solid"
+                                // value={formData.fullname}
+                                // onchange={handleChange}
                                 />
                               </div>
                             </div>
@@ -120,6 +202,8 @@ export default function ContactUsPage() {
                                   name="email"
                                   placeholder={`example@yourmail.com`}
                                   className="sm:px-5 font-nunito lowercase border-blue_gray-100_02 border border-solid"
+                                // value={formData.email}
+                                // onchange={handleChange}
                                 />
                               </div>
                             </div>
@@ -140,6 +224,8 @@ export default function ContactUsPage() {
                                   name="name"
                                   placeholder={`yourcompany name here`}
                                   className="sm:px-5 font-nunito lowercase border-blue_gray-100_02 border border-solid"
+                                // value={formData.company}
+                                // onchange={handleChange}
                                 />
                               </div>
                             </div>
@@ -157,6 +243,8 @@ export default function ContactUsPage() {
                                   name="how_can_we_help"
                                   placeholder={`How can we Help`}
                                   className="sm:px-5 font-nunito lowercase border-blue_gray-100_02 border border-solid"
+                                // value={formData.subject}
+                                // onchange={handleChange}
                                 />
                               </div>
                             </div>
@@ -175,6 +263,8 @@ export default function ContactUsPage() {
                                   size="9xl"
                                   as="p"
                                   className="mb-[219px] ml-1 md:ml-0 !text-gray-600_03 !font-nunito lowercase"
+                                // value={formData.message}
+                                // onchange={handleChange}
                                 >
                                   Hello there,I would like to talk about how
                                   to...
@@ -183,16 +273,22 @@ export default function ContactUsPage() {
                             </div>
                           </div>
                         </div>
-                        <Button
-                          size="11xl"
-                          className="sm:px-5 font-nunito font-bold min-w-[239px] rounded-[37px]"
-                        >
-                          Send Message
-                        </Button>
+                        <div className="flex justify-center">
+                          <Button
+                            size="11xl"
+                            className="sm:px-5 font-nunito font-bold min-w-[239px] rounded-[37px]"
+                          // onClick={handleDivClick}
+                          >
+                            Send Message
+                          </Button>
+                        </div>
                       </div>
                     </div>
+                    {/* </form> */}
                   </div>
                 </div>
+
+
                 <div className="flex flex-col items-start mt-[-683px]">
                   <Img
                     src="images/img_group_19834.png"
@@ -211,50 +307,17 @@ export default function ContactUsPage() {
                         </Heading>
                       </div>
                       <div>
+
+
+                        {/* toogle FAQ */}
                         <div className="flex flex-col pt-[145px] mt-[-10%] gap-[34px] md:pt-5">
-                          <div className="flex justify-end w-full py-[25px] mx-auto md:p-5 sm:py-5 bg-deep_purple-100 flex-1 max-w-[976px] rounded-[20px]">
-                            <div className="flex flex-col items-center w-[96%] md:w-full pb-[73px] gap-[9px] md:pb-5">
-                              <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="self-end mb-2 !text-gray-900"
-                                >
-                                  2. How can I return an item purchased online?
-                                </Text>
-                                <div className="flex flex-col">
-                                  <Text
-                                    size="15xl"
-                                    as="p"
-                                    className="flex justify-center items-center h-[59px] w-[59px] pt-[25px] pb-[5px] px-[13px] sm:pt-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                  >
-                                    
-                                  </Text>
-                                </div>
-                              </div>
-                              <Text
-                                size="11xl"
-                                as="p"
-                                className="w-[85%] md:w-full !text-gray-600_03 !font-nunito leading-[157.4%]"
-                              >
-                                The are going to use a passage of Lorem Ipsum,
-                                you need to be sure tdembarrassing hidden in the
-                                middle of text. All the Lorem generators on the
-                                Internet tend to repeat predefined chunks as
-                                necessary, making this the first true generator
-                                on the Internet.{" "}
-                              </Text>
-                            </div>
-                          </div>
-                          <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
+
+
+                          <div className="flex justify-end w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
                             <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                              <Text
-                                size="15xl"
-                                as="p"
-                                className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
-                              >
-                                1. Where is my order? Quisque molestie
-                              </Text>
+                              <button onClick={toggleFAQ2} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
+                                1. Where is my order? Quisque molestie {isOpen2 ? '[-]' : '[+]'}
+                              </button>
                               <div className="flex flex-col">
                                 <Text
                                   size="15xl"
@@ -266,78 +329,184 @@ export default function ContactUsPage() {
                               </div>
                             </div>
                           </div>
+
+                          {isOpen2 && (
+                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
+                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
+                                <Text
+                                  size="15xl"
+                                  as="p"
+                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
+                                >
+                                  Your answer for Where is my order?
+                                </Text>
+                                <div className="flex flex-col">
+                                  <Text
+                                    size="15xl"
+                                    as="p"
+                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
+                                  >
+                                    
+                                  </Text>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+
+
+                          <div className="flex justify-end w-full py-[25px] mx-auto md:p-5 sm:py-5 bg-deep_purple-100 flex-1 max-w-[976px] rounded-[20px]">
+                            <div className="flex flex-col items-center w-[96%] md:w-full pb-[73px] gap-[9px] md:pb-5">
+                              <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
+                                <button onClick={toggleFAQ1} className="self-end mb-2 !text-gray-900 focus:outline-none">
+                                  2. How can I return an item purchased online? {isOpen1 ? '[-]' : '[+]'}
+                                </button>
+                              </div>
+                              {isOpen1 && (
+                                <Text
+                                  size="11xl"
+                                  as="p"
+                                  className="w-[85%] md:w-full !text-gray-600_03 !font-nunito leading-[157.4%]"
+                                >
+                                  The are going to use a passage of Lorem Ipsum,
+                                  you need to be sure tdembarrassing hidden in the
+                                  middle of text. All the Lorem generators on the
+                                  Internet tend to repeat predefined chunks as
+                                  necessary, making this the first true generator
+                                  on the Internet.{" "}
+                                </Text>
+                              )}
+                            </div>
+                          </div>
+
+
                           <div className="flex justify-center p-[26px] sm:p-5 bg-deep_purple-100 flex-1 rounded-[20px]">
                             <div className="flex sm:flex-col justify-between items-center w-full gap-5 mx-auto max-w-[920px]">
-                              <Text
-                                size="15xl"
-                                as="p"
-                                className="self-end mb-2 !text-gray-900"
-                              >
-                                3. Can I cancel or change my order?
-                              </Text>
-                              <div className="w-[6%] sm:w-full">
-                                <div className="flex flex-col items-end justify-center p-[5px] bg-purple-900 rounded-[29px]">
+                              <button onClick={toggleFAQ3} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
+                                3. Can I cancel or change my order? {isOpen2 ? '[-]' : '[+]'}
+                              </button>
+                              <div className="flex flex-col">
+                                <Text
+                                  size="15xl"
+                                  as="p"
+                                  className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
+                                >
+                                  
+                                </Text>
+                              </div>
+                            </div>
+                          </div>
+
+                          {isOpen3 && (
+                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
+                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
+                                <Text
+                                  size="15xl"
+                                  as="p"
+                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
+                                >
+                                  Your answer for Where is my order?
+                                </Text>
+                                <div className="flex flex-col">
                                   <Text
                                     size="15xl"
                                     as="p"
-                                    className="mt-[7px] mb-[9px] !text-white-A700"
+                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
                                   >
                                     
                                   </Text>
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          )}
+
+
                           <div className="flex justify-end w-full p-[25px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[991px] rounded-[20px]">
                             <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                              <Text
-                                size="15xl"
-                                as="p"
-                                className="self-end mb-2 !text-gray-900"
-                              >
-                                4. I have a promotional or discount code?
-                              </Text>
-                              <div className="w-[6%] md:w-full">
-                                <div className="flex flex-col items-end justify-center p-[5px] bg-purple-900 rounded-[29px]">
+                              <button onClick={toggleFAQ4} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
+                                4. I have a promotional or discount code? {isOpen2 ? '[-]' : '[+]'}
+                              </button>
+                              <div className="flex flex-col">
+                                <Text
+                                  size="15xl"
+                                  as="p"
+                                  className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
+                                >
+                                  
+                                </Text>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          {isOpen4 && (
+                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
+                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
+                                <Text
+                                  size="15xl"
+                                  as="p"
+                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
+                                >
+                                  Your answer for Where is my order?
+                                </Text>
+                                <div className="flex flex-col">
                                   <Text
                                     size="15xl"
                                     as="p"
-                                    className="mt-[7px] mb-[9px] !text-white-A700"
+                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
                                   >
                                     
                                   </Text>
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          )}
+
                           <div className="flex justify-end w-full p-[26px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[988px] rounded-[20px]">
                             <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                              <Text
-                                size="15xl"
-                                as="p"
-                                className="self-end mb-2 !text-gray-900"
-                              >
-                                5. Can I integrate my store with Facebook?
-                              </Text>
-                              <div className="w-[6%] md:w-full">
-                                <div className="flex flex-col items-end justify-center p-[5px] bg-purple-900 rounded-[29px]">
+                              <button onClick={toggleFAQ5} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
+                                5. Can I integrate my store with Facebook? {isOpen2 ? '[-]' : '[+]'}
+                              </button>
+                              <div className="flex flex-col">
+                                <Text
+                                  size="15xl"
+                                  as="p"
+                                  className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
+                                >
+                                  
+                                </Text>
+                              </div>
+                            </div>
+                          </div>
+
+                          {isOpen5 && (
+                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
+                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
+                                <Text
+                                  size="15xl"
+                                  as="p"
+                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
+                                >
+                                  Your answer for Where is my order?
+                                </Text>
+                                <div className="flex flex-col">
                                   <Text
                                     size="15xl"
                                     as="p"
-                                    className="mt-[7px] mb-[9px] !text-white-A700"
+                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
                                   >
                                     
                                   </Text>
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          )}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
 
 
               {/* footer */}
@@ -401,7 +570,7 @@ export default function ContactUsPage() {
                     <Text as="p" className="capitalize">
                       terms of use
                     </Text>
-                    <a href="#">
+                    <a href="">
                       <Text as="p" className="capitalize">
                         privacy policy
                       </Text>

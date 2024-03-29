@@ -1,4 +1,5 @@
 import React from "react";
+import './About.css';
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading } from "../../components";
 import Header from "../../components/Header";
@@ -12,7 +13,7 @@ export default function AboutPage() {
       </Helmet>
       <div className="flex flex-col items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
         <Header className="w-[86%] md:w-full md:p-5" />
-        <div className="self-stretch">
+        <div className="self-stretch" style={{display:"flex", flexWrap:"wrap", alignItems:"center", justifyContent:"center"}}>
           <div className="flex flex-col items-center">
             <Text size="22xl" as="p" className="!text-gray-900">
               About Contextify
@@ -20,6 +21,9 @@ export default function AboutPage() {
             <Text size="13xl" as="p" className="mt-3.5 !text-gray-600_03 text-center">
               Discover the Power of Contextify!
             </Text>
+
+
+
             <div className="hjsadkj" style={{
               display: "flex",
               width: "100%",
@@ -27,7 +31,7 @@ export default function AboutPage() {
               alignItems: "center",
               justifyContent: "center",
               gap: "30px",
-              margin: "50px 0px"
+              margin: "50px 0px",
             }}>
               <Img
                 src="images/img_photo.png"
@@ -47,25 +51,26 @@ export default function AboutPage() {
               <div className="flex ml-[5px] md:ml-0 z-[1]"style={
               {
               textAlign:"left",
-              width:"30%",
-              height:"30%",
-             
+              width:"50%",
               }
             }>
-                <Heading size="10xl" as="h1" className="!text-gray-900 !font-nunito text-center">
+                <Heading size="10xl" as="h1" className="ddddoooo !text-gray-900 !font-nunito text-center">
                   What we do
                 </Heading>
               </div>
-              <div className="flex md:flex-col items-start w-[92%] md:w-full md:p-5" style={{height:"50vh"}}>
-                <Img
+              <div className="flex md:flex-col items-start w-[92%] md:w-full md:p-5" style={{}}>
+                {/* <Img
                   src="images/img_group_19834.png"
                   alt="image_one"
                   className="w-[38%] md:w-full object-cover"
-                />
+                /> */}
                 <Text
                   size="11xl"
                   as="p"
-                  className="w-[62%] md:w-full ml-[-57px] md:ml-0 !text-gray-600_03 !font-nunito leading-[157.4%]"
+                  className="w-[62%] md:w-full ml-[30%] md:ml-0 !text-gray-600_03 !font-nunito leading-[157.4%]"
+                  style={{
+                    display:"flex"
+                  }}
                 >
                   <>
                     It is a long established fact that a reader will be distracted by the readable content of a
@@ -87,11 +92,11 @@ export default function AboutPage() {
                 <div className="flex flex-col items-center w-[98%] md:w-full gap-[31px] md:p-5">
 
 
-                  <div className="flex justify-center w-[23%] md:w-full">
+                  <div className="flex justify-center w-[20%] md:w-full" >
                     <div className="flex flex-col items-end w-full">
                       <div className="h-[50px] w-[52%] mr-[61px] md:mr-0 bg-orange-50_01" />
                       <div className="flex mt-[-42px]">
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col items-center" >
                           <Text size="19xl" as="p" className="capitalize">
                             Our Trusted Partners
                           </Text>
@@ -261,6 +266,8 @@ export default function AboutPage() {
                 </div>
               </div>
 
+              
+
               {/* our missition */}
               <div className="sdfg" style={{ display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap", marginTop: "" }} >
                 <div className="w-full p-3.5" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -318,7 +325,7 @@ export default function AboutPage() {
                     </>
                   </Text>
                 </div>
-                <div className="self-stretch">
+                <div className="stretch1111">
                   <div className="justify-center gap-[52px] grid-cols-[repeat(auto-fill,_minmax(620px_,_1fr))] grid">
                     <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]">
                       <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
@@ -411,7 +418,7 @@ export default function AboutPage() {
               <Button
                 color="deep_purple_50_02"
                 size="11xl"
-                className="mt-[811px] sm:px-5 font-nunito font-bold z-[1] min-w-[155px] rounded-[37px]"
+                className="lolo  mt-[811px] sm:px-5 font-nunito font-bold z-[1] min-w-[155px] rounded-[37px]"
               >
                 Our Team
               </Button>

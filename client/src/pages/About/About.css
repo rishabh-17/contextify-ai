@@ -1,0 +1,26 @@
+@media (max-width: 768px) {
+    .hjsadkj {
+        flex-wrap: wrap;
+    }
+
+    .dooooo {
+        flex-wrap: wrap;
+        height: max-content;
+        width: 100vw;
+    }
+
+    .ddddoooo {
+        text-align: center;
+    }
+
+    .stretch1111 {
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .lolo {
+        margin-top: 10px;
+    }
+}
