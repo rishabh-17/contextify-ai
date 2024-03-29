@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button, Text, Img, Heading, Input } from "../../components";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function ContactUsPage() {
 
@@ -158,7 +159,7 @@ export default function ContactUsPage() {
                 </div>
               </div>
             </div>
-            <div className="self-stretch h-[2834px] md:h-auto mt-44 relative" >
+            <div className="self-stretch h-[2834px] md:h-auto mt-44 relative">
               <div className="w-full top-[0.00px] right-0 left-0 m-auto">
 
                 <div className="w-full m-auto md:p-5 z-[1]" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
