@@ -13,9 +13,9 @@ export default function ContactUsPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex flex-col items-center w-full pt-8 gap-[342px] md:gap-64 sm:gap-[171px] sm:pt-5 bg-gray-100" style={{overflow:"hidden", flexWrap:"wrap"}}>
+      <div className="flex flex-col items-center w-full pt-8 gap-[342px] md:gap-64 sm:gap-[171px] sm:pt-5 bg-gray-100" style={{ overflow: "hidden", flexWrap: "wrap" }}>
         <Header className="w-[86%] md:w-full md:p-5" />
-        <div className="self-stretch">
+        <div className="self-stretch" style={{marginTop:"-10%"}}>
           <div className="flex flex-col items-center">
             <Text size="22xl" as="p" className="!text-gray-900 text-center">
               Get in touch today!
@@ -82,8 +82,8 @@ export default function ContactUsPage() {
             </div>
             <div className="self-stretch h-[2834px] md:h-auto mt-44 relative" >
               <div className="w-full top-[0.00px] right-0 left-0 m-auto">
-                <div className="w-full m-auto md:p-5 z-[1]"  style={{display:"flex", alignItems:"center" , justifyContent:"center" }}>
-                  <div className="w-full px-14 py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5">
+                <div className="w-full m-auto md:p-5 z-[1]" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div className="w-full px-14 py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5 mt-[-50px]  w-[70%]">
                     <div className="my-[18px]">
                       <div className="flex flex-col items-center pb-[26px] gap-[76px] md:gap-[57px] sm:gap-[38px] sm:pb-5">
                         <div className="flex flex-col self-stretch gap-[54px] sm:gap-[27px]">
@@ -199,19 +199,19 @@ export default function ContactUsPage() {
                     alt="image_one"
                     className="w-[39%] object-cover"
                   />
-                  <div className="flex self-stretch justify-end mt-[-572px] pl-14 pr-[98px] py-[98px] md:p-5 bg-gray-100">
-                    <div className="flex flex-col w-[82%] md:w-full mt-[73px] mr-[73px] gap-[39px] md:mr-0">
+                  <div className="flex self-stretch justify-end mt-[-582px] pl-14 pr-[98px] py-[98px] md:p-5 bg-gray-100">
+                    <div className="flex flex-col w-[82%] h-[20%] md:w-full mt-[73px] mr-[73px] gap-[39px] md:mr-0">
                       <div className="flex justify-center w-full mx-auto md:p-5 max-w-[671px]">
                         <Heading
                           size="10xl"
                           as="h2"
-                          className="!text-purple-900 !font-nunito text-center  mt-[-50%]"
+                          className="!text-purple-900 !font-nunito text-center  mt-[-15%] h-[10px]"
                         >
                           Frequently Asked Questions
                         </Heading>
                       </div>
                       <div>
-                        <div className="flex flex-col pt-[145px] mt-[-30%] gap-[34px] md:pt-5">
+                        <div className="flex flex-col pt-[145px] mt-[-10%] gap-[34px] md:pt-5">
                           <div className="flex justify-end w-full py-[25px] mx-auto md:p-5 sm:py-5 bg-deep_purple-100 flex-1 max-w-[976px] rounded-[20px]">
                             <div className="flex flex-col items-center w-[96%] md:w-full pb-[73px] gap-[9px] md:pb-5">
                               <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
@@ -338,147 +338,111 @@ export default function ContactUsPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex md:flex-col justify-end items-start w-[89%]">
-                <Text
-                  size="14xl"
-                  as="p"
-                  className="mt-[30px] md:p-5 !text-purple-900 !font-inter capitalize z-[1]"
-                >
-                  Contextify
-                </Text>
-                <div className="flex sm:flex-col justify-end items-center md:self-stretch ml-[-113px] md:p-5 md:ml-0 flex-1">
-                  <div className="flex self-end justify-end sm:self-stretch mb-1.5 p-10 sm:p-5 border-blue_gray-100_01 border-t border-solid flex-1">
-                    <Text
-                      as="p"
-                      className="self-end mr-[250px]  md:mr-0 capitalize"
-                    >
-                      Copyright 2022 Contextify inc. all rights reserved
-                    </Text>
-                  </div>
-                  <Img
-                    src="images/img_group_1000003855.png"
-                    alt="image_two"
-                    className="w-[26%] sm:w-full ml-[-123px] sm:ml-0 object-cover"
-                  />
-                </div>
-              </div>
-              <Text
-                size="16xl"
-                as="p"
-                className="bottom-[12.5%] right-[20%] m-auto capitalize absolute"
-              >
-                Newsletter
-              </Text>
-              <Text
-                as="p"
-                className="bottom-[10.9%] right-[22%] m-auto capitalize absolute"
-              >
-                Stay up to date
-              </Text>
-              <div className="flex sm:flex-col justify-between items-start w-[59%] bottom-[6%] left-[7%] gap-5 m-auto absolute sm:relative">
-                <div className="flex justify-between items-start w-[45%] sm:w-full gap-5 sm:p-5">
-                  <div className="flex justify-center w-[56%]">
-                    <div className="flex flex-col w-full gap-[25px]">
-                      <div className="h-[39px] relative">
-                        <Img
-                          src="images/img_frame_purple_900.svg"
-                          alt="image_three"
-                          className="h-[39px] left-[0.00px] bottom-0 top-0 my-auto absolute"
-                        />
-                        <Text
-                          size="14xl"
-                          as="p"
-                          className="bottom-[-0.98px] right-[0.00px] m-auto !text-purple-900 !font-inter capitalize absolute"
-                        >
-                          Contextify
-                        </Text>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Img
-                          src="images/img_frame_purple_900_24x24.svg"
-                          alt="image_four"
-                          className="h-[24px] w-[24px]"
-                        />
-                        <Text as="p" className="self-end capitalize">
-                          help@contextify.com
-                        </Text>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Img
-                          src="images/img_frame_24x24.svg"
-                          alt="image_five"
-                          className="h-[24px] w-[24px]"
-                        />
-                        <Text as="p" className="self-start capitalize">
-                          +1 234 456 678 89
-                        </Text>
+
+
+              {/* footer */}
+              <div className="w-full mt-24 mx-auto md:p-5 max-w-[1240px]">
+                <div className="flex md:flex-col justify-between items-start gap-5">
+                  <div className="flex justify-between items-start w-[29%] md:w-full gap-5">
+                    <div className="flex justify-center w-[56%]">
+                      <div className="flex flex-col items-start w-full gap-[25px]">
+                        <div className="flex w-[91%] md:w-full">
+                          <div className="flex items-center w-full">
+                            <Img src="images/img_frame_purple_900.svg" alt="image_five" className="h-[39px]" />
+                            <Text
+                              size="14xl"
+                              as="p"
+                              className="self-end ml-[-71px] !text-purple-900 !font-inter capitalize"
+                            >
+                              Contextify
+                            </Text>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Img
+                            src="images/img_frame_purple_900_24x24.svg"
+                            alt="image_six"
+                            className="h-[24px] w-[24px]"
+                          />
+                          <Text as="p" className="self-end capitalize">
+                            help@contextify.com
+                          </Text>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Img src="images/img_frame_24x24.svg" alt="image_seven" className="h-[24px] w-[24px]" />
+                          <Text as="p" className="self-start capitalize">
+                            +1 234 456 678 89
+                          </Text>
+                        </div>
                       </div>
                     </div>
+                    <div className="flex flex-col items-start gap-[22px]">
+                      <Text size="16xl" as="p" className="capitalize text-center">
+                        links
+                      </Text>
+                      <Text as="p" className="capitalize">
+                        home
+                      </Text>
+                      <Text as="p" className="capitalize">
+                        about us
+                      </Text>
+                      <Text as="p" className="capitalize">
+                        bookings
+                      </Text>
+                      <Text as="p" className="capitalize">
+                        blog
+                      </Text>
+                    </div>
                   </div>
-                  <div className="flex flex-col items-start gap-[22px]">
-                    <Text size="16xl" as="p" className="capitalize text-center">
-                      links
+                  <div className="flex flex-col items-start mt-1 gap-[21px]">
+                    <Text size="16xl" as="p" className="capitalize">
+                      legal
                     </Text>
                     <Text as="p" className="capitalize">
-                      home
+                      terms of use
                     </Text>
+                    <a href="#">
+                      <Text as="p" className="capitalize">
+                        privacy policy
+                      </Text>
+                    </a>
                     <Text as="p" className="capitalize">
-                      about us
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      bookings
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      blog
+                      cookie policy
                     </Text>
                   </div>
-                </div>
-                <div className="flex flex-col items-start mt-1 gap-[21px] sm:p-5">
-                  <Text size="16xl" as="p" className="capitalize">
-                    legal
-                  </Text>
-                  <Text as="p" className="capitalize">
-                    terms of use
-                  </Text>
-                  <a href="#">
-                    <Text as="p" className="capitalize">
-                      privacy policy
+                  <div className="flex flex-col items-start gap-[21px]">
+                    <Text size="16xl" as="p" className="capitalize">
+                      product
                     </Text>
-                  </a>
-                  <Text as="p" className="capitalize">
-                    cookie policy
-                  </Text>
-                </div>
-                <div className="flex flex-col items-start gap-[21px] sm:p-5">
-                  <Text size="16xl" as="p" className="capitalize">
-                    product
-                  </Text>
-                  <Text as="p" className="capitalize">
-                    take tour
-                  </Text>
-                  <Text as="p" className="capitalize">
-                    live chat
-                  </Text>
-                  <Text as="p" className="capitalize">
-                    reveiws
-                  </Text>
-                </div>
-              </div>
-              <div className="flex justify-end w-[25%] bottom-[7%] right-[7%] m-auto absolute">
-                <div className="flex justify-between items-start w-full gap-5 p-2.5 border-gray-300 border-2 border-solid bg-white-A700 rounded-[40px]">
-                  <Text
-                    as="p"
-                    className="mt-[18px] ml-[13px] md:ml-0 !text-gray-500_05"
-                  >
-                    Your email{" "}
-                  </Text>
-                  <div className="flex">
-                    <Button
-                      size="9xl"
-                      className="sm:px-5 capitalize min-w-[160px] rounded-[30px]"
-                    >
-                      Subscribe
-                    </Button>
+                    <Text as="p" className="capitalize">
+                      take tour
+                    </Text>
+                    <Text as="p" className="capitalize">
+                      live chat
+                    </Text>
+                    <Text as="p" className="capitalize">
+                      reveiws
+                    </Text>
+                  </div>
+                  <div className="flex flex-col items-start w-[27%] md:w-full gap-5">
+                    <Text size="16xl" as="p" className="capitalize">
+                      Newsletter
+                    </Text>
+                    <Text as="p" className="capitalize">
+                      Stay up to date
+                    </Text>
+                    <div className="self-stretch">
+                      <div className="flex justify-between items-start gap-5 p-2.5 border-gray-300 border-2 border-solid bg-white-A700 rounded-[40px]">
+                        <Text as="p" className="mt-[18px] ml-[13px] md:ml-0 !text-gray-500_05">
+                          Your email{" "}
+                        </Text>
+                        <div className="flex">
+                          <Button size="9xl" className="sm:px-5 capitalize min-w-[160px] rounded-[30px]">
+                            Subscribe
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
