@@ -80,7 +80,7 @@ export default function ContactUsPage() {
     setIsOpen5(!isOpen5);
   };
 
-  
+
 
   return (
     <>
@@ -315,8 +315,8 @@ export default function ContactUsPage() {
 
                           <div className="flex justify-end w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
                             <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                              <button onClick={toggleFAQ2} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
-                                1. Where is my order? Quisque molestie {isOpen2 ? '[-]' : '[+]'}
+                              <button onClick={toggleFAQ1} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
+                                1. Where is my order? Quisque molestie {isOpen1 ? '[-]' : '[+]'}
                               </button>
                               <div className="flex flex-col">
                                 <Text
@@ -330,7 +330,7 @@ export default function ContactUsPage() {
                             </div>
                           </div>
 
-                          {isOpen2 && (
+                          {isOpen1 && (
                             <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
                               <div className="flex md:flex-col justify-between items-center w-full gap-5">
                                 <Text
@@ -357,15 +357,29 @@ export default function ContactUsPage() {
                           <div className="flex justify-end w-full py-[25px] mx-auto md:p-5 sm:py-5 bg-deep_purple-100 flex-1 max-w-[976px] rounded-[20px]">
                             <div className="flex flex-col items-center w-[96%] md:w-full pb-[73px] gap-[9px] md:pb-5">
                               <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
-                                <button onClick={toggleFAQ1} className="self-end mb-2 !text-gray-900 focus:outline-none">
-                                  2. How can I return an item purchased online? {isOpen1 ? '[-]' : '[+]'}
+                                <button onClick={toggleFAQ2} className="self-end mb-2 !text-gray-900 focus:outline-none">
+                                  2. How can I return an item purchased online? {isOpen2 ? '[-]' : '[+]'}
                                 </button>
+                                <div className="flex flex-col">
+                                  <Text
+                                    size="15xl"
+                                    as="p"
+                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
+                                  >
+                                    
+                                  </Text>
+                                </div>
                               </div>
-                              {isOpen1 && (
+                            </div>
+                          </div>
+
+                          {isOpen2 && (
+                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
+                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
                                 <Text
-                                  size="11xl"
+                                  size="15xl"
                                   as="p"
-                                  className="w-[85%] md:w-full !text-gray-600_03 !font-nunito leading-[157.4%]"
+                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
                                 >
                                   The are going to use a passage of Lorem Ipsum,
                                   you need to be sure tdembarrassing hidden in the
@@ -374,9 +388,18 @@ export default function ContactUsPage() {
                                   necessary, making this the first true generator
                                   on the Internet.{" "}
                                 </Text>
-                              )}
+                                <div className="flex flex-col">
+                                  <Text
+                                    size="15xl"
+                                    as="p"
+                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
+                                  >
+                                    
+                                  </Text>
+                                </div>
+                              </div>
                             </div>
-                          </div>
+                          )}
 
 
                           <div className="flex justify-center p-[26px] sm:p-5 bg-deep_purple-100 flex-1 rounded-[20px]">
