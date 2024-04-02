@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import { Button, Text, Img, Heading, Input } from "../../components";
+import { Button, Text, Img, Heading, Input, FAQ } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -50,37 +50,6 @@ export default function ContactUsPage() {
   //     console.log('error submition form', error);
   //   }
   // }
-
-
-
-
-  // <-------------------------------- ToogleFAQ--------------------------------------------->
-  const [isOpen1, setIsOpen1] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
-  const [isOpen3, setIsOpen3] = useState(false);
-  const [isOpen4, setIsOpen4] = useState(false);
-  const [isOpen5, setIsOpen5] = useState(false);
-
-  const toggleFAQ1 = () => {
-    setIsOpen1(!isOpen1);
-  };
-
-  const toggleFAQ2 = () => {
-    setIsOpen2(!isOpen2);
-  };
-
-  const toggleFAQ3 = () => {
-    setIsOpen3(!isOpen3);
-  };
-
-  const toggleFAQ4 = () => {
-    setIsOpen4(!isOpen4);
-  };
-
-  const toggleFAQ5 = () => {
-    setIsOpen5(!isOpen5);
-  };
-
 
 
   return (
@@ -163,10 +132,10 @@ export default function ContactUsPage() {
               <div className="w-full top-[0.00px] right-0 left-0 m-auto">
 
                 <div className="w-full m-auto md:p-5 z-[1]" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <div className="w-full px-14 py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5 mt-[-10%] w-[70%]">
+                  <div className="w-full px-14  rounded-[40px] sm:h-[135em] rounded-[40px] md:h-[115em] rounded-[40px] lg:h-[95em] py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5 mt-[-10%] w-[70%]">
                     {/* <form onSubmit={handleSubmit}> */}
                     <div className="my-[18px]">
-                      <div className="flex flex-col items-center pb-[26px] gap-[76px] md:gap-[57px] sm:gap-[38px] sm:pb-5">
+                      <div className="flex flex-col  items-center pb-[26px] gap-[76px] md:gap-[57px] sm:gap-[38px] sm:pb-5">
                         <div className="flex flex-col self-stretch gap-[54px] sm:gap-[27px]">
                           <div className="flex md:flex-col justify-center gap-[47px]">
                             <div className="flex flex-col items-start w-full gap-[21px]">
@@ -311,219 +280,13 @@ export default function ContactUsPage() {
 
 
                         {/* toogle FAQ */}
-                        <div className="flex flex-col pt-[145px] mt-[-10%] gap-[34px] md:pt-5">
+                        <div className="flex flex-col pt-[145px] mt-[10%] gap-[34px] md:pt-5">
 
-
-                          <div className="flex justify-end w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
-                            <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                              <button onClick={toggleFAQ1} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
-                                1. Where is my order? Quisque molestie {isOpen1 ? '[-]' : '[+]'}
-                              </button>
-                              <div className="flex flex-col">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                >
-                                  
-                                </Text>
-                              </div>
-                            </div>
-                          </div>
-
-                          {isOpen1 && (
-                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
-                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
-                                >
-                                  Your answer for Where is my order?
-                                </Text>
-                                <div className="flex flex-col">
-                                  <Text
-                                    size="15xl"
-                                    as="p"
-                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                  >
-                                    
-                                  </Text>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-
-                          <div className="flex justify-end w-full py-[25px] mx-auto md:p-5 sm:py-5 bg-deep_purple-100 flex-1 max-w-[976px] rounded-[20px]">
-                            <div className="flex flex-col items-center w-[96%] md:w-full pb-[73px] gap-[9px] md:pb-5">
-                              <div className="flex md:flex-col self-stretch justify-between items-center gap-5">
-                                <button onClick={toggleFAQ2} className="self-end mb-2 !text-gray-900 focus:outline-none">
-                                  2. How can I return an item purchased online? {isOpen2 ? '[-]' : '[+]'}
-                                </button>
-                                <div className="flex flex-col">
-                                  <Text
-                                    size="15xl"
-                                    as="p"
-                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                  >
-                                    
-                                  </Text>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          {isOpen2 && (
-                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
-                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
-                                >
-                                  The are going to use a passage of Lorem Ipsum,
-                                  you need to be sure tdembarrassing hidden in the
-                                  middle of text. All the Lorem generators on the
-                                  Internet tend to repeat predefined chunks as
-                                  necessary, making this the first true generator
-                                  on the Internet.{" "}
-                                </Text>
-                                <div className="flex flex-col">
-                                  <Text
-                                    size="15xl"
-                                    as="p"
-                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                  >
-                                    
-                                  </Text>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-
-                          <div className="flex justify-center p-[26px] sm:p-5 bg-deep_purple-100 flex-1 rounded-[20px]">
-                            <div className="flex sm:flex-col justify-between items-center w-full gap-5 mx-auto max-w-[920px]">
-                              <button onClick={toggleFAQ3} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
-                                3. Can I cancel or change my order? {isOpen2 ? '[-]' : '[+]'}
-                              </button>
-                              <div className="flex flex-col">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                >
-                                  
-                                </Text>
-                              </div>
-                            </div>
-                          </div>
-
-                          {isOpen3 && (
-                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
-                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
-                                >
-                                  Your answer for Where is my order?
-                                </Text>
-                                <div className="flex flex-col">
-                                  <Text
-                                    size="15xl"
-                                    as="p"
-                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                  >
-                                    
-                                  </Text>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-
-                          <div className="flex justify-end w-full p-[25px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[991px] rounded-[20px]">
-                            <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                              <button onClick={toggleFAQ4} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
-                                4. I have a promotional or discount code? {isOpen2 ? '[-]' : '[+]'}
-                              </button>
-                              <div className="flex flex-col">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                >
-                                  
-                                </Text>
-                              </div>
-                            </div>
-                          </div>
-
-
-                          {isOpen4 && (
-                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
-                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
-                                >
-                                  Your answer for Where is my order?
-                                </Text>
-                                <div className="flex flex-col">
-                                  <Text
-                                    size="15xl"
-                                    as="p"
-                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                  >
-                                    
-                                  </Text>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-                          <div className="flex justify-end w-full p-[26px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[988px] rounded-[20px]">
-                            <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                              <button onClick={toggleFAQ5} className="w-[60%] md:w-full !text-gray-900 leading-[110%] focus:outline-none">
-                                5. Can I integrate my store with Facebook? {isOpen2 ? '[-]' : '[+]'}
-                              </button>
-                              <div className="flex flex-col">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                >
-                                  
-                                </Text>
-                              </div>
-                            </div>
-                          </div>
-
-                          {isOpen5 && (
-                            <div className="flex justify-center w-full p-[22px] mx-auto md:p-5 bg-deep_purple-100 flex-1 max-w-[986px] rounded-[20px]">
-                              <div className="flex md:flex-col justify-between items-center w-full gap-5">
-                                <Text
-                                  size="15xl"
-                                  as="p"
-                                  className="w-[60%] md:w-full !text-gray-900 leading-[110%]"
-                                >
-                                  Your answer for Where is my order?
-                                </Text>
-                                <div className="flex flex-col">
-                                  <Text
-                                    size="15xl"
-                                    as="p"
-                                    className="flex justify-center items-center h-[59px] w-[59px] pl-[25px] pr-[5px] py-[13px] sm:pl-5 !text-white-A700 bg-purple-900 rounded-[29px]"
-                                  >
-                                    
-                                  </Text>
-                                </div>
-                              </div>
-                            </div>
-                          )}
+                          <FAQ question={" 1. Where is my order? Quisque molestie "} answer={" Your answer for Where is my order?"} />
+                          <FAQ question={"2. How can I return an item purchased online? "} answer={"Your answer for Where is my order?"} />
+                          <FAQ question={" 3. Can I cancel or change my order?"} answer={" Your answer for Where is my order?"} />
+                          <FAQ question={"4. I have a promotional or discount code? "} answer={" Your answer for Where is my order?"} />
+                          <FAQ question={" 5. Can I integrate my store with Facebook?"} answer={" Your answer for Where is my order?"} />
                         </div>
                       </div>
                     </div>

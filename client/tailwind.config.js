@@ -138,6 +138,13 @@ module.exports = {
         "8xl": "0px 24px  33px 0px #b4b4b43f",
         "9xl": "0px 17px  44px 0px #b2b2b23f",
       },
+      'tablet': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'desktop': '1280px',
       fontFamily: {
         inter: "Inter",
         junge: "Junge",

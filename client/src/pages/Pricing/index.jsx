@@ -14,10 +14,10 @@ export default function PricingPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex flex-col items-center w-full gap-[249px] py-7 md:gap-[186px] sm:gap-[124px] sm:py-5 bg-gray-100">
-        <Header className="w-[86%] md:w-full mt-1 md:p-5" />
+      <div className="flex flex-col items-center w-full sm:w-[200vw] gap-[249px] py-7 md:w-[200vw] md:gap-[186px] sm:gap-[124px] sm:py-5 bg-gray-100">
+        <Header className="w-[100%] md:w-full mt-1 md:p-5" />
         <div className="self-stretch">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center md:flex-wrap ">
             <Text size="22xl" as="p" className="!text-gray-900 text-center">
               Pricing
             </Text>
@@ -31,13 +31,15 @@ export default function PricingPage() {
                 interdum ullamcorper sed pharetra sene.
               </>
             </Text>
-            <div className="self-stretch h-[auto] md:h-auto mt-[39px] relative">
-              <div className="flex z-[1] mb-[45%] md:flex-col w-[67%]">
-                <div className="flex flex-col items-start md:p-5 flex-1">
-                  <div className="w-[83%] md:w-full ml-[19px] md:ml-0 z-[1]">
-                    <div className="p-[34px] sm:p-5 bg-deep_purple-100 rounded-[30px]">
-                      <div className="flex flex-col items-center mt-5 mb-[50px] gap-[35px]">
-                        <div className="flex self-stretch justify-between items-center pr-3 gap-5">
+            <div className="self-stretch h-[auto] md:h-auto mt-[39px] relative flex wrap">
+
+              <div className="flex z-[1] mb-[45%] md:flex-col w-[67%] flex flex-col md:flex-row w-full">
+                <div className="flex flex-col items-start md:p-5 flex-1 flex flex-col items-start md:p-5 flex-1 md:w-[67%]">
+                  <div className="w-[83%] md:w-full ml-[19px] md:ml-0 z-[1] w-full md:w-[83%] md:ml-[19px]">
+                    <div className="p-[34px] sm:p-5 bg-deep_purple-100 rounded-[30px]  p-[34px] sm:p-5 bg-deep_purple-100 rounded-[30px] flex flex-col items-center mt-5 mb-5 md:mb-10 gap-5">
+
+                      <div className="flex flex-col items-center mt-5 mb-[50px] gap-[35px] flex flex-col w-full gap-5 md:w-auto md:gap-10">
+                        <div className="flex self-stretch justify-between items-center pr-3 gap-5 flex justify-between items-center gap-5">
                           <Text
                             size="18xl"
                             as="p"
@@ -48,13 +50,13 @@ export default function PricingPage() {
                           <Button
                             color="white_A700"
                             size="7xl"
-                            className="sm:px-5 !text-gray-600_03 min-w-[119px] rounded-[27px]"
+                            className="sm:px-5 !text-gray-600_03 min-w-[119px] rounded-[27px]  px-3 text-gray-600_03 rounded-lg md:min-w-[119px]"
                           >
                             Save 30%
                           </Button>
                         </div>
-                        <div className="flex flex-col self-stretch gap-[42px]">
-                          <div className="flex flex-col items-center gap-[18px] p-4 border-blue_gray-100_02 border-t-[0.5px] border-solid">
+                        <div className="flex flex-col self-stretch gap-[42px] flex flex-col gap-4">
+                          <div className="flex flex-col items-center gap-[18px] p-4 border-blue_gray-100_02 border-t-[0.5px] border-solid flex flex-col items-center gap-2 p-4 border-t border-blue_gray-100_02">
                             <Heading
                               size="9xl"
                               as="h1"
@@ -367,6 +369,9 @@ export default function PricingPage() {
                             </div>
                           </div>
                         </div>
+
+
+
 
                         <div className="flex flex-col items-start gap-8 flex-1">
                           <Heading
