@@ -14,10 +14,10 @@ export default function PricingPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex flex-col items-center w-full sm:w-[200vw] gap-[249px] py-7 md:w-[200vw] md:gap-[186px] sm:gap-[124px] sm:py-5 bg-gray-100">
-        <Header className="w-[100%] md:w-full mt-1 md:p-5" />
+      <div className="flex flex-col md:flex md:flex-wrap md:w-[200%]  items-center w-full gap-[249px] py-7 md:gap-[186px] sm:gap-[124px] sm:py-5 bg-gray-100 md:max-w-lg:flex flex flex-col sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
+        <Header className="w-[86%] md:w-full mt-1 md:p-5" />
         <div className="self-stretch">
-          <div className="flex flex-col items-center md:flex-wrap ">
+          <div className="flex flex-col items-center md:flex flex-wrap">
             <Text size="22xl" as="p" className="!text-gray-900 text-center">
               Pricing
             </Text>
@@ -31,15 +31,13 @@ export default function PricingPage() {
                 interdum ullamcorper sed pharetra sene.
               </>
             </Text>
-            <div className="self-stretch h-[auto] md:h-auto mt-[39px] relative flex wrap">
-
-              <div className="flex z-[1] mb-[45%] md:flex-col w-[67%] flex flex-col md:flex-row w-full">
-                <div className="flex flex-col items-start md:p-5 flex-1 flex flex-col items-start md:p-5 flex-1 md:w-[67%]">
-                  <div className="w-[83%] md:w-full ml-[19px] md:ml-0 z-[1] w-full md:w-[83%] md:ml-[19px]">
-                    <div className="p-[34px] sm:p-5 bg-deep_purple-100 rounded-[30px]  p-[34px] sm:p-5 bg-deep_purple-100 rounded-[30px] flex flex-col items-center mt-5 mb-5 md:mb-10 gap-5">
-
-                      <div className="flex flex-col items-center mt-5 mb-[50px] gap-[35px] flex flex-col w-full gap-5 md:w-auto md:gap-10">
-                        <div className="flex self-stretch justify-between items-center pr-3 gap-5 flex justify-between items-center gap-5">
+            <div className="self-stretch md:w-[200vw] sm:w-[350vw] lg:w-[200vw] h-[auto] md:h-auto mt-[39px] relative   ">
+              <div className="flex z-[1] mb-[45%] md:flex sm:flex w-[67%]">
+                <div className="flex flex-col items-start md:p-5 flex-1 md:flex flex-col">
+                  <div className="w-[83%] md:w-full ml-[19px] md:ml-0 z-[1]">
+                    <div className="p-[34px] sm:p-5 bg-deep_purple-100 rounded-[30px]">
+                      <div className="flex flex-col items-center mt-5 mb-[50px] gap-[35px]">
+                        <div className="flex self-stretch justify-between items-center pr-3 gap-5">
                           <Text
                             size="18xl"
                             as="p"
@@ -50,13 +48,13 @@ export default function PricingPage() {
                           <Button
                             color="white_A700"
                             size="7xl"
-                            className="sm:px-5 !text-gray-600_03 min-w-[119px] rounded-[27px]  px-3 text-gray-600_03 rounded-lg md:min-w-[119px]"
+                            className="sm:px-5 !text-gray-600_03 min-w-[119px] rounded-[27px]"
                           >
                             Save 30%
                           </Button>
                         </div>
-                        <div className="flex flex-col self-stretch gap-[42px] flex flex-col gap-4">
-                          <div className="flex flex-col items-center gap-[18px] p-4 border-blue_gray-100_02 border-t-[0.5px] border-solid flex flex-col items-center gap-2 p-4 border-t border-blue_gray-100_02">
+                        <div className="flex flex-col self-stretch gap-[42px]">
+                          <div className="flex flex-col items-center gap-[18px] p-4 border-blue_gray-100_02 border-t-[0.5px] border-solid">
                             <Heading
                               size="9xl"
                               as="h1"
@@ -133,10 +131,10 @@ export default function PricingPage() {
                   <Img
                     src="images/img_group_19834.png"
                     alt="image"
-                    className="h-[1308px] w-full md:h-auto mt-[-40px] object-cover"
+                    className="h-[1308px] w-full md:h-auto mt-[-40px] object-cover md:h-[0px] md:w-[0px]"
                   />
                 </div>
-                <div className="flex flex-col items-center w-[51%] md:w-full gap-20 md:gap-[60px] md:p-5 sm:gap-10">
+                <div className="flex z-[1] flex-col items-center md:flef-wrap w-[51%] md:w-full gap-20 md:gap-[60px] md:p-5 sm:gap-10">
                   <div className="w-[91%] md:w-full p-[34px] sm:p-5 bg-purple-900 rounded-[30px]">
                     <div className="flex flex-col items-center mt-5 mb-2.5 gap-[35px]">
                       <div className="flex self-stretch justify-between items-center pr-[5px] gap-5">
@@ -228,7 +226,7 @@ export default function PricingPage() {
                       <Button
                         color="white_A700"
                         size="11xl"
-                        className="sm:px-5 !text-gray-900 font-nunito font-bold min-w-[200px] rounded-[37px]"
+                        className="sm:px-5 !text-gray-900 font-nunito font-bold min-w-[200px] md: rounded-[37px]"
                       >
                         Get Started
                       </Button>
@@ -245,16 +243,16 @@ export default function PricingPage() {
               <Img
                 src="images/img_group_1000003855.png"
                 alt="image_one"
-                className="h-[1308px] w-[27%] bottom-[1%] right-[0.00px] m-auto object-cover absolute"
+                className="h-[1308px] w-[27%] bottom-[1%] right-[0.00px] m-auto  object-cover absolute"
               />
               <div className="w-full  bottom-[0.00px] right-0 left-0 m-auto md:p-5 bg-deep_purple-50_01 absolute max-w-[1400px] rounded-[50px]">
-                <div className="my-12">
-                  <div className="flex flex-col items-center gap-[52px] sm:gap-[26px]">
-                    <div className="flex md:flex-col justify-between items-center w-[88%] md:w-full gap-5">
+                <div className="my-12 md:flex flex-wrap md:mb-[-87%] h-[auto] md:w-full sm:w-[380vw] lg:w-[200vw]" >
+                  <div className="flex flex-col items-center gap-[52px] sm:gap-[26px] sm:w-[350vw] lg:w-[200vw] md:mb-[0%]">
+                    <div className="flex md:flex-col justify-between items-center  w-[88%] md:items-start md:w-full gap-5">
                       <Text
                         size="18xl"
                         as="p"
-                        className="self-end mb-[7px] !text-gray-900"
+                        className="self-end mb-[7px] !text-gray-900 "
                       >
                         Features
                       </Text>
@@ -369,9 +367,6 @@ export default function PricingPage() {
                             </div>
                           </div>
                         </div>
-
-
-
 
                         <div className="flex flex-col items-start gap-8 flex-1">
                           <Heading
@@ -562,7 +557,7 @@ export default function PricingPage() {
                           color="blue_gray_100_02"
                           size="11xl"
                           variant="outline"
-                          className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px]"
+                          className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px] "
                         >
                           Get Started
                         </Button>
@@ -653,7 +648,7 @@ export default function PricingPage() {
                       color="blue_gray_100_02"
                       size="11xl"
                       variant="outline"
-                      className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px]"
+                      className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px] sm:w-[auto]"
                     >
                       Get Started
                     </Button>
@@ -661,10 +656,13 @@ export default function PricingPage() {
                 </div>
               </div>
             </div>
+            <div className="md:mt-[70em]">
             <Footer />
+            </div>
           </div>
         </div>
       </div>
     </>
   );
+  
 }

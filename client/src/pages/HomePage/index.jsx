@@ -27,27 +27,29 @@ export default function HomePagePage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex flex-col items-center w-full pt-8 gap-[59px] sm:gap-[29px] sm:pt-5 bg-gray-100">
+      <div className="flex flex-col items-center w-full pt-8 gap-[59px] md:flex-wrap 
+      md:w-[150vw] sm:[200vw]  sm:gap-[29px] sm:pt-5 
+      bg-gray-100 md:max-w-lg:flex flex flex-col sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
         <Header className="w-[86%] md:w-full md:p-5" />
-        <div className="self-stretch">
+        <div className="self-stretch md:flex  md:h-[auto] md:flex-wrap">
           <div className="flex flex-col items-center overflow-auto">
             <div className="flex md:flex-col self-stretch justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1424px]">
               <div className="flex flex-col w-[35%] md:w-full gap-[88px] md:gap-[66px] sm:gap-11">
-                <div className="h-[140px] w-[89%] relative">
-                  <div className="h-[62px] w-full bottom-[2.00px] right-0 left-0 m-auto bg-orange-50_01 absolute" />
+                <div className="h-[140px] w-[89%] relative  relative w-full md:w-[89%]">
+                  <div className="h-[62px] w-full bottom-[2.00px] right-0 left-0 m-auto bg-orange-50_01 absolute bottom-[2.00px] right-0 left-0 m-auto w-full h-[62px] bg-orange-50_01" />
                   <Text
                     size="21xl"
                     as="p"
-                    className="w-[98%] h-max left-0 bottom-0 right-0 top-0 m-auto capitalize leading-[70px] absolute"
+                    className="w-[98%] h-max left-0 bottom-0 right-0 top-0 m-auto capitalize leading-[70px] absolute text-21xl"
                   >
                     Be in the Know.
                   </Text>
                 </div>
-                <div className="flex flex-col items-start ml-2.5 md:ml-0">
+                <div className="flex flex-col  items-start ml-2.5 md:ml-0">
                   <Text
                     size="8xl"
                     as="p"
-                    className="w-[89%] md:w-full capitalize leading-8"
+                    className="w-[89%] md:w-full md:w-[89%] capitalize leading-8"
                   >
                     Contexttify is a hub puts information into context at the
                     click of a button

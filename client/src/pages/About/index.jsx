@@ -15,7 +15,7 @@ export default function AboutPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className=" md:max-w-lg:flex flex flex-col items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
+      <div className=" md:max-w-lg:flex flex flex-col md:w-[200%] sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
         <Header className="w-[86%] md:w-full md:p-5" />
         <div className="self-stretch" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
           <div className="flex flex-col items-center">
@@ -371,7 +371,7 @@ export default function AboutPage() {
 
                       <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
                         <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                          <div class="w-[21%] md:w-full p-[39px] md:ml-[19%] sm:ml-[50%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                          <div class="w-[21%] md:w-full p-[39px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
 
                             <Img
                               src="images/img_icon_white_a700.svg"
@@ -390,7 +390,7 @@ export default function AboutPage() {
                             <Text
                               size="11xl"
                               as="p"
-                              className="!text-gray-600_03 leading-[157.4%] w-[100%] md:w-[80%] pl-[15%] "
+                              className="!text-gray-600_03 leading-[157.4%] w-[100%] md:w-[80%] pl-[15%] sm:ml-[10%] sm:w-[80%]  "
                             >
                               Long established fact that a readeed to will be
                               distracted by the readable content of a page when
@@ -401,7 +401,7 @@ export default function AboutPage() {
                       </div>
                       <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
                         <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                          <div className="w-[21%] md:w-full p-[35px] md:ml-[19%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                          <div className="w-[21%] md:w-full p-[35px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
                             <Img
                               src="images/img_icon_white_a700_64x58.svg"
                               alt="icon_one"
@@ -430,7 +430,7 @@ export default function AboutPage() {
                       </div>
                       <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
                         <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                          <div className="w-[21%] md:w-full p-[35px]  md:ml-[19%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                          <div className="w-[21%] md:w-full p-[35px] sm:ml-[40%] sm:w-[20%]  md:ml-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
                             <Img
                               src="images/img_icon_white_a700_62x44.svg"
                               alt="icon_one"
@@ -441,7 +441,7 @@ export default function AboutPage() {
                             <Heading
                               size="7xl"
                               as="h3"
-                              className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
+                              className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] md:pl-[15%]"
                             >
                               Excellence
                             </Heading>
@@ -459,7 +459,7 @@ export default function AboutPage() {
                       </div>
                       <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
                         <div className="flex md:flex-col justify-between items-center w-full gap-5 my-3">
-                          <div className="w-[21%] md:w-full p-[35px]  md:ml-[-10%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                          <div className="w-[21%] md:w-full p-[35px] sm:ml-[0%] sm:w-[20%] md:ml-[-10%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
                             <Img
                               src="images/img_icon_indigo_a100.svg"
                               alt="icon_one"
