@@ -9,11 +9,7 @@ const explainText = async (text) => {
     const prompt = [
       {
         role: "user",
-        content: "explain meaning of given text",
-      },
-      {
-        role: "user",
-        content: text,
+        content: "explain meaning of given text " + text,
       },
     ];
 
