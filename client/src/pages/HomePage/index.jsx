@@ -26,8 +26,10 @@ export default function HomePagePage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex flex-col items-center w-full pt-8 gap-[59px] sm:gap-[29px] sm:pt-5 bg-gray-100">
-        <Header className="w-[86%] md:w-full md:p-5" />
+      <div className="flex flex-col items-center w-full gap-[59px] sm:gap-[29px] sm:pt-5 bg-gray-100">
+        <div className="bg-gradient-to-r from-gray-100 to-purple-900 w-full pt-5 pb-2">
+          <Header className="w-[86%] md:w-full md:p-5 m-auto" />
+        </div>
         <div className="self-stretch">
           <div className="flex flex-col items-center overflow-auto">
             <div className="flex md:flex-col self-stretch justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1424px]">
@@ -628,7 +630,6 @@ export default function HomePagePage() {
                       <div className="w-full mx-auto md:p-5 max-w-[1353px]">
                         <div className="flex md:flex-col justify-center items-center gap-[21px]">
                           <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
-                           
                             <div className="flex justify-center items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_black_900_02.svg"
@@ -643,7 +644,6 @@ export default function HomePagePage() {
                             </div>
                           </div>
                           <div className="h-[92px] w-[11%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
-                          
                             <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                               <Img
                                 src="images/img_format_wordmark.svg"
@@ -662,7 +662,6 @@ export default function HomePagePage() {
                             </div>
                           </div>
                           <div className="h-[101px] w-[19%] md:w-full md:h-auto bg-white-A700 shadow-5xl relative rounded-[50px]">
-                          
                             <div className="flex justify-center items-start w-full h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_deep_purple_a200_01.svg"
@@ -739,7 +738,6 @@ export default function HomePagePage() {
                                 </div>
                               </div>
                               <div className="h-[93px] w-full md:h-auto bg-white-A700 cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                               
                                 <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_black_900_02_31x130.svg"
@@ -749,7 +747,6 @@ export default function HomePagePage() {
                                 </div>
                               </div>
                               <div className="h-[88px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[44px] hover:shadow-xs">
-                              
                                 <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
                                   <Img
                                     src="images/img_format_frame.svg"
@@ -760,7 +757,6 @@ export default function HomePagePage() {
                               </div>
                             </div>
                             <div className="h-[92px] w-[15%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
-                            
                               <div className="flex justify-center items-center w-full h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                 <Img
                                   src="images/img_vector_pink_a200.svg"
@@ -2215,9 +2211,9 @@ export default function HomePagePage() {
                     src="images/img_group.svg"
                     alt="image_thirtyone"
                     className="h-[12px] md:w-full"
-                    />
+                  />
                 </div>
-                    {/* ==================================================================== */}
+                {/* ==================================================================== */}
                 <div className="flex w-[32%] left-[32%] top-[32%] m-auto absolute">
                   <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                     <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
@@ -2274,7 +2270,7 @@ export default function HomePagePage() {
                   </div>
                 </div>
               </div>
-              <FreeTrialArea/>
+              <FreeTrialArea />
               <div className="w-full mt-[149px] mx-auto md:p-5 max-w-[1240px]">
                 <div className="flex md:flex-col justify-between items-start gap-5">
                   <div className="flex justify-between items-start w-[29%] md:w-full gap-5">
