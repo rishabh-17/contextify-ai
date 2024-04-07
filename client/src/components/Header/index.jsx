@@ -22,28 +22,37 @@ export default function Header({ ...props }) {
               Contextify
             </Text>
           </div>
-          <div className="flex sm:flex-col items-center ">
-            <div className="mx-5" onClick={() => navigate("/")}>
+          <div className="flex sm:flex-col items-center">
+            <div className="mx-5 cursor-pointer" onClick={() => navigate("/")}>
               <Text as="p" className="!text-white-A700 capitalize">
                 home
               </Text>
             </div>
-            <div className="mx-5" onClick={() => navigate("/about")}>
+            <div
+              className="mx-5 cursor-pointer"
+              onClick={() => navigate("/about")}
+            >
               <Text as="p" className="!text-white-A700 capitalize">
                 about us
               </Text>
             </div>
-            <div className="mx-5" onClick={() => navigate("/pricing")}>
+            <div
+              className="mx-5 cursor-pointer"
+              onClick={() => navigate("/pricing")}
+            >
               <Text as="p" className="!text-white-A700 capitalize">
                 pricing
               </Text>
             </div>
-            <div className="mx-5" onClick={() => navigate("/contactus")}>
+            <div
+              className="mx-5 cursor-pointer"
+              onClick={() => navigate("/contactus")}
+            >
               <Text as="p" className="!text-white-A700 capitalize">
                 Contact Us
               </Text>
             </div>
-            <div className="flex ml-[21px] sm:ml-0">
+            <div className="flex cursor-pointer ml-[21px] sm:ml-0">
               <Button
                 color="white_A700"
                 size="9xl"

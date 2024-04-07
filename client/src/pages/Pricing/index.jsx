@@ -2,18 +2,22 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading } from "../../components";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function PricingPage() {
   return (
     <>
       <Helmet>
         <title>Contextify</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
-      <div className="flex flex-col items-center w-full gap-[249px] py-7 md:gap-[186px] sm:gap-[124px] sm:py-5 bg-gray-100">
+      <div className="flex flex-col md:flex md:flex-wrap md:w-[200%]  items-center w-full gap-[249px] py-7 md:gap-[186px] sm:gap-[124px] sm:py-5 bg-gray-100 md:max-w-lg:flex flex flex-col sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
         <Header className="w-[86%] md:w-full mt-1 md:p-5" />
         <div className="self-stretch">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center md:flex flex-wrap">
             <Text size="22xl" as="p" className="!text-gray-900 text-center">
               Pricing
             </Text>
@@ -27,14 +31,18 @@ export default function PricingPage() {
                 interdum ullamcorper sed pharetra sene.
               </>
             </Text>
-            <div className="self-stretch h-[2561px] md:h-auto mt-[39px] relative">
-              <div className="flex md:flex-col w-[67%]">
-                <div className="flex flex-col items-start md:p-5 flex-1">
+            <div className="self-stretch md:w-[200vw] sm:w-[350vw] lg:w-[200vw] h-[auto] md:h-auto mt-[39px] relative   ">
+              <div className="flex z-[1] mb-[45%] md:flex sm:flex w-[67%]">
+                <div className="flex flex-col items-start md:p-5 flex-1 md:flex flex-col">
                   <div className="w-[83%] md:w-full ml-[19px] md:ml-0 z-[1]">
                     <div className="p-[34px] sm:p-5 bg-deep_purple-100 rounded-[30px]">
                       <div className="flex flex-col items-center mt-5 mb-[50px] gap-[35px]">
                         <div className="flex self-stretch justify-between items-center pr-3 gap-5">
-                          <Text size="18xl" as="p" className="self-start !text-gray-900">
+                          <Text
+                            size="18xl"
+                            as="p"
+                            className="self-start !text-gray-900"
+                          >
                             Basic
                           </Text>
                           <Button
@@ -47,9 +55,17 @@ export default function PricingPage() {
                         </div>
                         <div className="flex flex-col self-stretch gap-[42px]">
                           <div className="flex flex-col items-center gap-[18px] p-4 border-blue_gray-100_02 border-t-[0.5px] border-solid">
-                            <Heading size="9xl" as="h1" className="!text-gray-900 !font-nunito">
-                              <span className="text-gray-900 font-junge font-normal">$7.99</span>
-                              <span className="text-gray-900 font-junge text-xl font-normal">&nbsp;/ month</span>
+                            <Heading
+                              size="9xl"
+                              as="h1"
+                              className="!text-gray-900 !font-nunito"
+                            >
+                              <span className="text-gray-900 font-junge font-normal">
+                                $7.99
+                              </span>
+                              <span className="text-gray-900 font-junge text-xl font-normal">
+                                &nbsp;/ month
+                              </span>
                             </Heading>
                             <Button
                               color="yellow_100_01"
@@ -72,7 +88,9 @@ export default function PricingPage() {
                                   <br />
                                 </>
                               </span>
-                              <span className="text-gray-900 font-junge text-xl">Unlimited</span>
+                              <span className="text-gray-900 font-junge text-xl">
+                                Unlimited
+                              </span>
                               <span className="text-gray-600_03 font-junge text-xl">
                                 <>
                                   &nbsp;feedback
@@ -113,25 +131,41 @@ export default function PricingPage() {
                   <Img
                     src="images/img_group_19834.png"
                     alt="image"
-                    className="h-[1308px] w-full md:h-auto mt-[-40px] object-cover"
+                    className="h-[1308px] w-full md:h-auto mt-[-40px] object-cover md:h-[0px] md:w-[0px]"
                   />
                 </div>
-                <div className="flex flex-col items-center w-[51%] md:w-full gap-20 md:gap-[60px] md:p-5 sm:gap-10">
+                <div className="flex z-[1] flex-col items-center md:flef-wrap w-[51%] md:w-full gap-20 md:gap-[60px] md:p-5 sm:gap-10">
                   <div className="w-[91%] md:w-full p-[34px] sm:p-5 bg-purple-900 rounded-[30px]">
                     <div className="flex flex-col items-center mt-5 mb-2.5 gap-[35px]">
                       <div className="flex self-stretch justify-between items-center pr-[5px] gap-5">
-                        <Text size="18xl" as="p" className="self-start !text-white-A700">
+                        <Text
+                          size="18xl"
+                          as="p"
+                          className="self-start !text-white-A700"
+                        >
                           Advanced
                         </Text>
-                        <Button color="deep_purple_50" size="7xl" className="sm:px-5 min-w-[108px] rounded-[27px]">
+                        <Button
+                          color="deep_purple_50"
+                          size="7xl"
+                          className="sm:px-5 min-w-[108px] rounded-[27px]"
+                        >
                           Popular
                         </Button>
                       </div>
                       <div className="flex flex-col self-stretch gap-[42px]">
                         <div className="flex flex-col items-center gap-[18px] p-4 border-deep_purple-A200_02 border-t-[0.5px] border-solid">
-                          <Heading size="9xl" as="h2" className="!text-white-A700 !font-nunito">
-                            <span className="text-white-A700 font-junge font-normal">$10.99</span>
-                            <span className="text-white-A700 font-junge text-xl font-normal">&nbsp;/ month</span>
+                          <Heading
+                            size="9xl"
+                            as="h2"
+                            className="!text-white-A700 !font-nunito"
+                          >
+                            <span className="text-white-A700 font-junge font-normal">
+                              $10.99
+                            </span>
+                            <span className="text-white-A700 font-junge text-xl font-normal">
+                              &nbsp;/ month
+                            </span>
                           </Heading>
                           <Button
                             color="deep_purple_A200_02"
@@ -154,7 +188,9 @@ export default function PricingPage() {
                                 <br />
                               </>
                             </span>
-                            <span className="text-white-A700 text-xl font-bold">Unlimited</span>
+                            <span className="text-white-A700 text-xl font-bold">
+                              Unlimited
+                            </span>
                             <span className="text-white-A700 text-xl">
                               <>
                                 &nbsp;feedback
@@ -190,7 +226,7 @@ export default function PricingPage() {
                       <Button
                         color="white_A700"
                         size="11xl"
-                        className="sm:px-5 !text-gray-900 font-nunito font-bold min-w-[200px] rounded-[37px]"
+                        className="sm:px-5 !text-gray-900 font-nunito font-bold min-w-[200px] md: rounded-[37px]"
                       >
                         Get Started
                       </Button>
@@ -203,23 +239,21 @@ export default function PricingPage() {
                   </div>
                 </div>
               </div>
-              <Text
-                size="14xl"
-                as="p"
-                className="left-[8%] top-[45%] m-auto !text-purple-900 !font-inter capitalize absolute"
-              >
-                Contextify
-              </Text>
+
               <Img
                 src="images/img_group_1000003855.png"
                 alt="image_one"
-                className="h-[1308px] w-[27%] bottom-[1%] right-[0.00px] m-auto object-cover absolute"
+                className="h-[1308px] w-[27%] bottom-[1%] right-[0.00px] m-auto  object-cover absolute"
               />
-              <div className="w-full bottom-[0.00px] right-0 left-0 m-auto md:p-5 bg-deep_purple-50_01 absolute max-w-[1400px] rounded-[50px]">
-                <div className="my-12">
-                  <div className="flex flex-col items-center gap-[52px] sm:gap-[26px]">
-                    <div className="flex md:flex-col justify-between items-center w-[88%] md:w-full gap-5">
-                      <Text size="18xl" as="p" className="self-end mb-[7px] !text-gray-900">
+              <div className="w-full  bottom-[0.00px] right-0 left-0 m-auto md:p-5 bg-deep_purple-50_01 absolute max-w-[1400px] rounded-[50px]">
+                <div className="my-12 md:flex flex-wrap md:mb-[-87%] h-[auto] md:w-full sm:w-[380vw] lg:w-[200vw]" >
+                  <div className="flex flex-col items-center gap-[52px] sm:gap-[26px] sm:w-[350vw] lg:w-[200vw] md:mb-[0%]">
+                    <div className="flex md:flex-col justify-between items-center  w-[88%] md:items-start md:w-full gap-5">
+                      <Text
+                        size="18xl"
+                        as="p"
+                        className="self-end mb-[7px] !text-gray-900 "
+                      >
                         Features
                       </Text>
                       <div className="flex flex-col items-center w-[65%] md:w-full gap-0.5">
@@ -248,9 +282,14 @@ export default function PricingPage() {
                       </div>
                     </div>
                     <div className="flex flex-col self-stretch items-end pt-9 gap-[50px] sm:pt-5">
-                      <div className="flex flex-col self-stretch gap-[35px]">
+                      <div className="flex flex-col self-stretch gap-[20px]">
+                        <div className="w-[1398px] h-px bg-deep_purple-100" />
                         <div className="flex flex-col items-start gap-8 flex-1">
-                          <Heading size="3xl" as="h3" className="ml-16 md:ml-0 !text-deep_purple-A400 !font-nunito">
+                          <Heading
+                            size="3xl"
+                            as="h3"
+                            className="ml-16 md:ml-0 !text-deep_purple-A400 !font-nunito"
+                          >
                             Analytics
                           </Heading>
                           <div className="self-stretch">
@@ -262,7 +301,11 @@ export default function PricingPage() {
                               >
                                 Realtime analytics
                               </Text>
-                              <Img src="images/img_tick.svg" alt="realtime" className="h-[28px] w-[28px]" />
+                              <Img
+                                src="images/img_tick.svg"
+                                alt="realtime"
+                                className="h-[28px] w-[28px]"
+                              />
                               <Img
                                 src="images/img_tick.svg"
                                 alt="realtime"
@@ -306,8 +349,16 @@ export default function PricingPage() {
                               >
                                 Funnel optimization
                               </Text>
-                              <Img src="images/img_close.svg" alt="image" className="h-[28px] w-[28px] mt-[3px]" />
-                              <Img src="images/img_tick.svg" alt="image_one" className="h-[28px] w-[28px] mt-[3px]" />
+                              <Img
+                                src="images/img_close.svg"
+                                alt="image"
+                                className="h-[28px] w-[28px] ml-[-8px] mt-[3px]"
+                              />
+                              <Img
+                                src="images/img_tick.svg"
+                                alt="image_one"
+                                className="h-[28px] w-[28px] mt-[3px]"
+                              />
                               <Img
                                 src="images/img_tick.svg"
                                 alt="image_two"
@@ -316,9 +367,13 @@ export default function PricingPage() {
                             </div>
                           </div>
                         </div>
-                        <div className="w-[1398px] h-px bg-deep_purple-100" />
+
                         <div className="flex flex-col items-start gap-8 flex-1">
-                          <Heading size="3xl" as="h4" className="ml-16 md:ml-0 !text-deep_purple-A400 !font-nunito">
+                          <Heading
+                            size="3xl"
+                            as="h4"
+                            className="ml-16 md:ml-0 !text-deep_purple-A400 !font-nunito"
+                          >
                             Report
                           </Heading>
                           <div className="self-stretch">
@@ -331,9 +386,21 @@ export default function PricingPage() {
                                 Automated{" "}
                               </Text>
                               <div className="flex justify-between items-end w-[60%] md:w-full mb-1.5 mr-[119px] gap-5 md:mr-0">
-                                <Img src="images/img_close.svg" alt="close_one" className="h-[28px] w-[28px] mt-2" />
-                                <Img src="images/img_tick.svg" alt="tick_one" className="h-[28px] w-[28px]" />
-                                <Img src="images/img_tick.svg" alt="tick_three" className="h-[28px] w-[28px]" />
+                                <Img
+                                  src="images/img_close.svg"
+                                  alt="close_one"
+                                  className="h-[28px] w-[28px] ml-[100px] mt-2"
+                                />
+                                <Img
+                                  src="images/img_tick.svg"
+                                  alt="tick_one"
+                                  className="h-[28px] w-[28px] "
+                                />
+                                <Img
+                                  src="images/img_tick.svg"
+                                  alt="tick_three"
+                                  className="h-[28px] w-[28px]"
+                                />
                               </div>
                             </div>
                             <div className="flex justify-between items-start gap-5 p-[26px] sm:p-5 bg-gray-50_01 flex-wrap">
@@ -344,8 +411,16 @@ export default function PricingPage() {
                               >
                                 AI data predictions
                               </Text>
-                              <Img src="images/img_tick.svg" alt="tick_five" className="h-[28px] w-[28px] mt-[5px]" />
-                              <Img src="images/img_close.svg" alt="close_three" className="h-[28px] w-[28px]" />
+                              <Img
+                                src="images/img_tick.svg"
+                                alt="tick_five"
+                                className="h-[28px] w-[28px] ml-[5px] mt-[5px]"
+                              />
+                              <Img
+                                src="images/img_close.svg"
+                                alt="close_three"
+                                className="h-[28px] w-[28px]"
+                              />
                               <Img
                                 src="images/img_tick.svg"
                                 alt="tick_seven"
@@ -360,8 +435,16 @@ export default function PricingPage() {
                               >
                                 Advanced charts
                               </Text>
-                              <Img src="images/img_close.svg" alt="close_five" className="h-[28px] w-[28px]" />
-                              <Img src="images/img_close.svg" alt="close_seven" className="h-[28px] w-[28px]" />
+                              <Img
+                                src="images/img_close.svg"
+                                alt="close_five"
+                                className="h-[28px] w-[28px] ml-[25px]"
+                              />
+                              <Img
+                                src="images/img_close.svg"
+                                alt="close_seven"
+                                className="h-[28px] w-[28px]"
+                              />
                               <Img
                                 src="images/img_tick.svg"
                                 alt="tick_nine"
@@ -370,9 +453,13 @@ export default function PricingPage() {
                             </div>
                           </div>
                         </div>
-                        <div className="w-[1398px] h-px bg-deep_purple-100" />
+
                         <div className="flex flex-col items-start gap-8 flex-1">
-                          <Heading size="3xl" as="h5" className="ml-16 md:ml-0 !text-deep_purple-A400 !font-nunito">
+                          <Heading
+                            size="3xl"
+                            as="h5"
+                            className="ml-16 md:ml-0 !text-deep_purple-A400 !font-nunito"
+                          >
                             Security
                           </Heading>
                           <div className="self-stretch">
@@ -387,7 +474,7 @@ export default function PricingPage() {
                               <Img
                                 src="images/img_close.svg"
                                 alt="close_one"
-                                className="h-[28px] w-[28px] md:w-full mt-1.5 ml-[272px] md:ml-0"
+                                className="h-[28px] w-[28px] md:w-full mt-1.5 ml-[278px] md:ml-0"
                               />
                               <Img
                                 src="images/img_tick.svg"
@@ -408,8 +495,16 @@ export default function PricingPage() {
                               >
                                 Easy-to-share results
                               </Text>
-                              <Img src="images/img_tick.svg" alt="tick_five" className="h-[28px] w-[28px] mt-1" />
-                              <Img src="images/img_tick.svg" alt="tick_seven" className="h-[28px] w-[28px]" />
+                              <Img
+                                src="images/img_tick.svg"
+                                alt="tick_five"
+                                className="h-[28px] w-[28px] ml-[-12px] mt-1"
+                              />
+                              <Img
+                                src="images/img_tick.svg"
+                                alt="tick_seven"
+                                className="h-[28px] w-[28px]"
+                              />
                               <Img
                                 src="images/img_tick.svg"
                                 alt="tick_nine"
@@ -424,8 +519,16 @@ export default function PricingPage() {
                               >
                                 Team goal setting
                               </Text>
-                              <Img src="images/img_close.svg" alt="close_three" className="h-[28px] w-[28px] mt-1" />
-                              <Img src="images/img_tick.svg" alt="tick_eleven" className="h-[28px] w-[28px]" />
+                              <Img
+                                src="images/img_close.svg"
+                                alt="close_three"
+                                className="h-[28px] w-[28px] ml-[23px] mt-1"
+                              />
+                              <Img
+                                src="images/img_tick.svg"
+                                alt="tick_eleven"
+                                className="h-[28px] w-[28px]"
+                              />
                               <Img
                                 src="images/img_tick.svg"
                                 alt="tick_thirteen"
@@ -444,14 +547,17 @@ export default function PricingPage() {
                         >
                           Get Started
                         </Button>
-                        <Button size="11xl" className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px]">
+                        <Button
+                          size="11xl"
+                          className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px]"
+                        >
                           Get Started
                         </Button>
                         <Button
                           color="blue_gray_100_02"
                           size="11xl"
                           variant="outline"
-                          className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px]"
+                          className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px] "
                         >
                           Get Started
                         </Button>
@@ -467,19 +573,20 @@ export default function PricingPage() {
                       <Text size="18xl" as="p" className="!text-gray-900">
                         Pro
                       </Text>
-                      <Button
-                        color="deep_purple_50"
-                        size="8xl"
-                        className="sm:px-5 font-nunito font-bold min-w-[108px] rounded-[28px]"
-                      >
-                        Popular
-                      </Button>
                     </div>
                     <div className="flex flex-col self-stretch gap-[42px]">
                       <div className="flex flex-col items-center gap-[18px] p-4 border-blue_gray-100_02 border-t-[0.5px] border-solid">
-                        <Heading size="9xl" as="h6" className="!text-gray-900 !font-nunito">
-                          <span className="text-gray-900 font-junge font-normal">$15.99</span>
-                          <span className="text-gray-900 font-junge text-xl font-normal">&nbsp;/ month</span>
+                        <Heading
+                          size="9xl"
+                          as="h6"
+                          className="!text-gray-900 !font-nunito"
+                        >
+                          <span className="text-gray-900 font-junge font-normal">
+                            $15.99
+                          </span>
+                          <span className="text-gray-900 font-junge text-xl font-normal">
+                            &nbsp;/ month
+                          </span>
                         </Heading>
                         <Button
                           color="yellow_100_01"
@@ -502,7 +609,9 @@ export default function PricingPage() {
                               <br />
                             </>
                           </span>
-                          <span className="text-deep_purple-A400 text-xl font-bold">Unlimited</span>
+                          <span className="text-deep_purple-A400 text-xl font-bold">
+                            Unlimited
+                          </span>
                           <span className="text-gray-600_03 text-xl">
                             <>
                               &nbsp;feedback
@@ -539,7 +648,7 @@ export default function PricingPage() {
                       color="blue_gray_100_02"
                       size="11xl"
                       variant="outline"
-                      className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px]"
+                      className="sm:px-5 font-nunito font-bold min-w-[200px] rounded-[37px] sm:w-[auto]"
                     >
                       Get Started
                     </Button>
@@ -547,117 +656,13 @@ export default function PricingPage() {
                 </div>
               </div>
             </div>
-            <div className="w-full mt-[156px] mx-auto md:p-5 max-w-[1240px]">
-              <div className="flex md:flex-col justify-between items-start gap-5">
-                <div className="flex justify-between items-start w-[29%] md:w-full gap-5">
-                  <div className="flex justify-center w-[56%]">
-                    <div className="flex flex-col w-full gap-6">
-                      <div className="h-[39px] relative">
-                        <Img
-                          src="images/img_frame_purple_900.svg"
-                          alt="image_two"
-                          className="h-[39px] left-[0.00px] bottom-0 top-0 my-auto absolute"
-                        />
-                        <Text
-                          size="14xl"
-                          as="p"
-                          className="bottom-[-0.98px] right-[0.00px] m-auto !text-purple-900 !font-inter capitalize absolute"
-                        >
-                          Contextify
-                        </Text>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Img
-                          src="images/img_frame_purple_900_24x24.svg"
-                          alt="image_three"
-                          className="h-[24px] w-[24px]"
-                        />
-                        <Text as="p" className="capitalize">
-                          help@contextify.com
-                        </Text>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Img src="images/img_frame_24x24.svg" alt="image_four" className="h-[24px] w-[24px]" />
-                        <Text as="p" className="self-start capitalize">
-                          +1 234 456 678 89
-                        </Text>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-start gap-[22px]">
-                    <Text size="16xl" as="p" className="capitalize text-center">
-                      links
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      home
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      about us
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      bookings
-                    </Text>
-                    <Text as="p" className="capitalize">
-                      blog
-                    </Text>
-                  </div>
-                </div>
-                <div className="flex flex-col items-start mt-1 gap-[21px]">
-                  <Text size="16xl" as="p" className="capitalize">
-                    legal
-                  </Text>
-                  <Text as="p" className="capitalize">
-                    terms of use
-                  </Text>
-                  <a href="#">
-                    <Text as="p" className="capitalize">
-                      privacy policy
-                    </Text>
-                  </a>
-                  <Text as="p" className="capitalize">
-                    cookie policy
-                  </Text>
-                </div>
-                <div className="flex flex-col items-start gap-[21px]">
-                  <Text size="16xl" as="p" className="capitalize">
-                    product
-                  </Text>
-                  <Text as="p" className="capitalize">
-                    take tour
-                  </Text>
-                  <Text as="p" className="capitalize">
-                    live chat
-                  </Text>
-                  <Text as="p" className="capitalize">
-                    reveiws
-                  </Text>
-                </div>
-                <div className="flex flex-col items-start w-[27%] md:w-full gap-5">
-                  <Text size="16xl" as="p" className="capitalize">
-                    Newsletter
-                  </Text>
-                  <Text as="p" className="capitalize">
-                    Stay up to date
-                  </Text>
-                  <div className="self-stretch">
-                    <div className="flex justify-between items-start gap-5 p-2.5 border-gray-300 border-2 border-solid bg-white-A700 rounded-[40px]">
-                      <Text as="p" className="mt-[18px] ml-[13px] md:ml-0 !text-gray-500_05">
-                        Your email{" "}
-                      </Text>
-                      <div className="flex">
-                        <Button size="9xl" className="sm:px-5 capitalize min-w-[160px] rounded-[30px]">
-                          Subscribe
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="md:mt-[70em]">
+            <Footer />
             </div>
-            <Text className="mt-[58px]" />
           </div>
         </div>
       </div>
     </>
   );
+  
 }
