@@ -1,6 +1,9 @@
 module.exports = {
   mode: "jit",
-  content: ["./src/**/**/*.{js,ts,jsx,tsx,html,mdx}", "./src/**/*.{js,ts,jsx,tsx,html,mdx}"],
+  content: [
+    "./src/**/**/*.{js,ts,jsx,tsx,html,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,html,mdx}",
+  ],
   darkMode: "class",
   theme: {
     screens: { md: { max: "1050px" }, sm: { max: "550px" } },
@@ -80,13 +83,38 @@ module.exports = {
           A200_5c: "#7166f95c",
         },
         cyan: { 50: "#ccf8fe", "50_01": "#e6fcf4" },
-        orange: { 50: "#ffe5d3", "300_02": "#ffa556", "50_01": "#fff0d9", "300_01": "#ffaf63" },
+        orange: {
+          50: "#ffe5d3",
+          "300_02": "#ffa556",
+          "50_01": "#fff0d9",
+          "300_01": "#ffaf63",
+        },
         lime: { 50: "#fef5ed", 800: "#c58914" },
-        white: { A700: "#ffffff", A700_3d: "#ffffff3d", A700_99: "#ffffff99", A700_05: "#ffffff05" },
-        indigo: { 50: "#dad7fe", A700: "#4339f2", "500_07": "#4056bf07", "500_0f": "#4056bf0f" },
-        pink: { 400: "#f23584", A200_01: "#fd5b71", A100: "#f563d3" ,A200_02:"#FD6378"},
+        white: {
+          A700: "#ffffff",
+          A700_3d: "#ffffff3d",
+          A700_99: "#ffffff99",
+          A700_05: "#ffffff05",
+        },
+        indigo: {
+          50: "#dad7fe",
+          A700: "#4339f2",
+          "500_07": "#4056bf07",
+          "500_0f": "#4056bf0f",
+        },
+        pink: {
+          400: "#f23584",
+          A200_01: "#fd5b71",
+          A100: "#f563d3",
+          A200_02: "#FD6378",
+        },
         red: { 50: "#ffeff1", 400: "#ed4546", 500: "#f23936" },
-        yellow: { 100: "#fff5cc", 400: "#fded62", "400_63": "#fded6263", "100_01": "#ffedcc" },
+        yellow: {
+          100: "#fff5cc",
+          400: "#fded62",
+          "400_63": "#fded6263",
+          "100_01": "#ffedcc",
+        },
         purple: {
           400: "#9b51e0",
           900: "#4b0082",
@@ -124,7 +152,7 @@ module.exports = {
         gray_800_01: "#524242",
       },
       boxShadow: {
-        xs: "0px 54.48px  64px 0px #cdcdcd28",
+        xs: "6px 6px 54px 0px #000000",
         sm: "0px 54.48px  64px 0px #6640ff28",
         md: "0px 8px  16px -2px #653fff3d",
         lg: "0px 46.23px  54px 0px #cdcdcd28",
@@ -138,13 +166,13 @@ module.exports = {
         "8xl": "0px 24px  33px 0px #b4b4b43f",
         "9xl": "0px 17px  44px 0px #b2b2b23f",
       },
-      'tablet': '640px',
+      tablet: "640px",
       // => @media (min-width: 640px) { ... }
 
-      'laptop': '1024px',
+      laptop: "1024px",
       // => @media (min-width: 1024px) { ... }
 
-      'desktop': '1280px',
+      desktop: "1280px",
       fontFamily: {
         inter: "Inter",
         junge: "Junge",
@@ -155,7 +183,17 @@ module.exports = {
         alatsi: "Alatsi",
         neuton: "Neuton",
       },
-      opacity: { 0.4: 0.4, 0.5: 0.5, 0.08: 0.08, 0.7: 0.7, 0.1: 0.1, 0.85: 0.85, 0.9: 0.9, 0.72: 0.72, 0.02: 0.02 },
+      opacity: {
+        0.4: 0.4,
+        0.5: 0.5,
+        0.08: 0.08,
+        0.7: 0.7,
+        0.1: 0.1,
+        0.85: 0.85,
+        0.9: 0.9,
+        0.72: 0.72,
+        0.02: 0.02,
+      },
       backgroundImage: { gradient: "linear-gradient(61deg, #f8c561,#f68d60)" },
     },
   },

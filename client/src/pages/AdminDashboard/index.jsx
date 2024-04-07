@@ -1,591 +1,366 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Text, Img, Button } from "../../components";
+import { CloseSVG } from "../../assets/images";
+import { Text, Img, SelectBox, Input } from "../../components";
+import { MenuItem, Menu, Sidebar } from "react-pro-sidebar";
 
-export default function AdminDashboardPage() {
+const dropDownOptions = [
+  { label: "Option1", value: "option1" },
+  { label: "Option2", value: "option2" },
+  { label: "Option3", value: "option3" },
+];
+
+export default function AdmindashboardPage() {
+  const [searchBarValue7, setSearchBarValue7] = React.useState("");
+  const [collapsed, setCollapsed] = React.useState(false);
+
+  //use this function to collapse/expand the sidebar
+  //function collapseSidebar() {
+  //    setCollapsed(!collapsed)
+  //}
+
   return (
     <>
       <Helmet>
-        <title>Contextify</title>
+        <title>admin</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <div className="flex w-full bg-gray-100">
-        <div className="flex md:flex-col items-center w-[97%] md:w-full gap-[47px] md:p-5">
-          <div className="h-[900px] w-[21%] md:w-full relative">
-            <div className="h-[879px] w-full left-0 bottom-0 right-0 top-0 m-auto bg-gray-50_04 absolute" />
-            <div className="h-[879px] w-full left-0 bottom-0 right-0 top-0 m-auto bg-gray-50_04 absolute" />
-            <div className="h-[880px] w-full left-0 bottom-0 right-0 top-0 m-auto bg-gray-50_04 absolute" />
-            <div className="h-[900px] w-full md:h-auto left-0 bottom-0 right-0 top-0 m-auto absolute">
-              <Img src="images/img_background.png" alt="background" className="h-[900px] w-full object-cover" />
-              <div className="flex flex-col items-end w-[73%] gap-[73px] left-[28.00px] top-[5%] m-auto md:gap-[54px] sm:gap-9 absolute">
-                <div className="flex self-stretch justify-between items-center gap-5">
-                  <Img src="images/img_vector_purple_900.svg" alt="vector_one" className="h-[36px] w-[36px]" />
-                  <Text size="9xl" as="p" className="self-end !text-purple-900">
-                    Contextify
-                  </Text>
-                </div>
-                <div className="flex flex-col self-start items-start">
-                  <Text size="4xl" as="p" className="!text-purple-900 tracking-[-0.07px] !font-roboto">
-                    Overview
-                  </Text>
-                  <Text size="2xl" as="p" className="mt-[49px] !text-purple-900 !font-roboto">
-                    Opportunities
-                  </Text>
-                  <Text size="2xl" as="p" className="mt-[33px] !text-purple-900 !font-roboto">
-                    My competitors
-                  </Text>
-                  <Text size="2xl" as="p" className="mt-[49px] !text-purple-900 !font-roboto">
-                    Briefs
-                  </Text>
-                  <Text size="2xl" as="p" className="mt-[45px] ml-2 md:ml-0 !text-purple-900 !font-roboto">
-                    Saved
-                  </Text>
-                  <Text size="2xl" as="p" className="mt-[201px] !text-purple-900 !font-roboto">
-                    Settings
-                  </Text>
-                  <Text size="2xl" as="p" className="mt-[34px] ml-2 md:ml-0">
-                    Help
-                  </Text>
-                  <a href="#" className="mt-[51px]">
-                    <Text size="2xl" as="p" className="!text-gray-600_02 !font-roboto">
-                      Log out
-                    </Text>
-                  </a>
-                </div>
-              </div>
+      <div className="flex w-full justify-center overflow-auto bg-gray-100 md:flex-col">
+        <Sidebar
+          width="242px !important"
+          collapsedWidth="80px !important"
+          collapsed={collapsed}
+          className="!sticky top-0 flex h-screen flex-col overflow-auto bg-white-A700 py-[18px] md:hidden md:p-5"
+        >
+          <div className="mb-[5px] flex flex-col items-center gap-[23px] self-stretch">
+            <div className="relative h-[39px] w-[74%]">
+              <Img
+                src="images/img_frame.svg"
+                alt="image"
+                className="absolute bottom-0 left-[0.00px] top-0 my-auto h-[39px] w-[65%]"
+              />
+              <Text
+                size="5xl"
+                as="p"
+                className="absolute bottom-[-0.45px] right-[0.00px] m-auto capitalize !text-deep_purple-A200_02"
+              >
+                Contextify
+              </Text>
             </div>
+            <Menu
+              menuItemStyles={{
+                button: {
+                  padding: "35px 35px 35px 39px",
+                  gap: "16px",
+                  alignSelf: "start",
+                  color: "#4b0082",
+                  fontWeight: 400,
+                  fontSize: "14px",
+                  [`&:hover, &.ps-active`]: { color: "#ffffff" },
+                },
+              }}
+              className="w-full self-stretch"
+            >
+              <div className="flex flex-col gap-[0.33px]">
+                <MenuItem
+                  icon={
+                    <Img src="images/defaultNoData.png" alt="image_one" className="h-[27px] w-[22px] object-cover" />
+                  }
+                >
+                  Dashboard
+                </MenuItem>
+                <MenuItem
+                  icon={
+                    <Img src="images/defaultNoData.png" alt="image_two" className="h-[27px] w-[22px] object-cover" />
+                  }
+                >
+                  Edit Content
+                </MenuItem>
+                <MenuItem
+                  icon={
+                    <Img src="images/defaultNoData.png" alt="image_three" className="h-[27px] w-[22px] object-cover" />
+                  }
+                >
+                  Users
+                </MenuItem>
+                <MenuItem
+                  icon={
+                    <Img src="images/defaultNoData.png" alt="image_four" className="h-[27px] w-[22px] object-cover" />
+                  }
+                >
+                  Sales
+                </MenuItem>
+              </div>
+              <div className="mt-[387px] h-px bg-gray-300" />
+              <div className="flex flex-col gap-[0.33px]">
+                <MenuItem icon={<Img src="images/defaultNoData.png" alt="image_five" className="h-[27px] w-[22px]" />}>
+                  Settings
+                </MenuItem>
+                <MenuItem icon={<Img src="images/defaultNoData.png" alt="image_six" className="h-[27px] w-[22px]" />}>
+                  Logout
+                </MenuItem>
+              </div>
+            </Menu>
           </div>
-          <div className="flex flex-col md:self-stretch gap-9 flex-1">
-            <header className="gap-[41px]">
-              <div>
-                <div className="flex flex-col gap-0.5">
-                  <div className="flex sm:flex-col justify-between items-start gap-5">
-                    <div className="flex justify-center items-center w-[27%] sm:w-full mb-0.5 gap-2.5">
-                      <Button color="gray_50_04" size="5xl" className="rounded-[12px]">
-                        <Img src="images/img_group_107.svg" />
-                      </Button>
-                      <Text size="9xl" as="p" className="self-end mb-[11px]">
-                        Team Lutalika
-                      </Text>
-                      <div className="flex w-[15%] p-[3px] bg-deep_purple-A200_03 rounded-[19px]">
-                        <div className="h-[23px] w-[71%] md:h-auto mt-[5px] mb-[3px] relative">
-                          <Img src="images/img_rectangle_7.svg" alt="image" className="h-[23px] w-full rounded" />
+        </Sidebar>
+        <div className="flex-1 bg-gray-100 md:self-stretch md:p-5">
+          <div className="h-[1070px] bg-[url(/public/images/img_group_37.png)] bg-cover bg-no-repeat pb-[264px] md:h-auto md:pb-5">
+            <div className="flex flex-col items-center gap-[30px]">
+              <header className="self-stretch bg-white-A700 p-[13px]">
+                <div className="flex items-center justify-between gap-5 md:flex-col">
+                  <div className="flex w-[38%] items-center justify-center gap-[25px] md:w-full sm:flex-col">
+                    <Text size="2xl" as="p" className="mb-1 self-end text-center">
+                      
+                    </Text>
+                    <Input
+                      color="gray_100"
+                      size="xs"
+                      name="search"
+                      placeholder={`Search`}
+                      value={searchBarValue7}
+                      onChange={(e) => setSearchBarValue7(e)}
+                      prefix={
+                        <Img src="images/img_rewind.svg" alt="rewind" className="h-[15px] w-[15px] cursor-pointer" />
+                      }
+                      suffix={
+                        searchBarValue7?.length > 0 ? (
+                          <CloseSVG
+                            onClick={() => setSearchBarValue7("")}
+                            height={15}
+                            width={15}
+                            fillColor="#000000ff"
+                          />
+                        ) : null
+                      }
+                      className="flex-grow gap-3 rounded-[19px] border-purple-900 text-gray-900_7f sm:pr-5"
+                    />
+                  </div>
+                  <div className="flex w-[22%] items-start justify-between gap-5 md:w-full">
+                    <div className="relative mt-[5px] h-[32px] w-[12%]">
+                      <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max w-[97%] items-start justify-center">
+                        <div className="flex flex-col items-end">
+                          <Text as="p" className="relative z-[1] !text-white-A700">
+                            6
+                          </Text>
                           <Img
-                            src="images/img_polygon_2_black_900.svg"
-                            alt="polygontwo_one"
-                            className="h-[4px] bottom-[8.28px] right-0 left-0 m-auto absolute rounded-[1px]"
+                            src="images/img_group.svg"
+                            alt="image_seven"
+                            className="relative mt-[-9px] h-[26px] w-full md:h-auto"
                           />
                         </div>
+                        <div className="relative ml-[-11px] h-[16px] w-[16px] rounded-lg bg-pink-400" />
                       </div>
+                      <div className="absolute right-[0.00px] top-[0.00px] m-auto h-[18px] w-[18px] rounded-[9px] bg-pink-400_1a" />
+                    </div>
+                    <div className="flex items-center gap-5">
                       <Img
-                        src="images/img_vector_deep_purple_a200_03.svg"
-                        alt="vector_three"
-                        className="self-start h-[23px] w-[24px] mt-3"
+                        src="images/img_group_170x170.png"
+                        alt="image_eight"
+                        className="h-[44px] w-[44px] object-cover"
                       />
+                      <div className="mt-[3px] flex flex-col items-start gap-0.5 self-start">
+                        <Text size="md" as="p" className="!text-gray-800">
+                          Moni Roy
+                        </Text>
+                        <Text as="p" className="!text-gray-700_03">
+                          Admin
+                        </Text>
+                      </div>
+                      <div className="flex flex-col items-center justify-center rounded-[9px] border border-solid border-gray-700 p-1.5">
+                        <Img src="images/img_group_gray_700_03.svg" alt="image_nine" className="h-[4px]" />
+                      </div>
                     </div>
-                    <div className="flex justify-center items-center w-[22%] sm:w-full">
-                      <Img src="images/img_images_1.png" alt="imagesone_one" className="object-cover rounded-[12px]" />
-                      <Text size="9xl" as="p" className="ml-2.5 !text-purple-900">
-                        Zahra hasht..
+                  </div>
+                </div>
+              </header>
+              <Text size="7xl" as="p" className="ml-[30px] self-start tracking-[-0.11px] md:ml-0">
+                Dashboard
+              </Text>
+              <div className="flex w-[95%] gap-[30px] md:w-full md:flex-col">
+                <div className="flex w-full flex-col justify-center gap-[31px] rounded-[14px] bg-white-A700 p-3.5 shadow-xs">
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex flex-col items-start gap-[19px]">
+                      <Text size="lg" as="p" className="!text-gray-900_b2">
+                        Total User
                       </Text>
-                      <div className="h-[23px] w-[13%] md:h-auto ml-[23px] relative">
-                        <Img src="images/img_rectangle_7.svg" alt="image_one" className="h-[23px] w-full rounded" />
+                      <Text size="6xl" as="p" className="tracking-[1.00px]">
+                        40,689
+                      </Text>
+                    </div>
+                    <Img src="images/img_contrast_indigo_a100.svg" alt="total_user_one" className="h-[60px] w-[60px]" />
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Img src="images/img_checkmark_teal_a700.svg" alt="image" className="h-[24px] w-[24px]" />
+                    <Text size="lg" as="p" className="!text-teal-A700">
+                      <span className="text-teal-A700">8.5%</span>
+                      <span className="text-gray-900_02">&nbsp;</span>
+                      <span className="text-gray_700_02">Up from yesterday</span>
+                    </Text>
+                  </div>
+                </div>
+                <div className="flex w-full flex-col justify-center gap-[33px] rounded-[14px] bg-white-A700 p-3.5 shadow-xs">
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex flex-col items-start gap-[17px]">
+                      <Text size="lg" as="p" className="!text-gray-900_b2">
+                        Total Premium
+                      </Text>
+                      <Text size="6xl" as="p" className="tracking-[1.00px]">
+                        10293
+                      </Text>
+                    </div>
+                    <Img src="images/img_close_yellow_700.svg" alt="close_one" className="h-[60px] w-[60px]" />
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Img src="images/img_checkmark_teal_a700.svg" alt="checkmark_one" className="h-[24px] w-[24px]" />
+                    <Text size="lg" as="p" className="!text-teal-A700">
+                      <span className="text-teal-A700">1.3%</span>
+                      <span className="text-gray-900_02">&nbsp;</span>
+                      <span className="text-gray_700_02">Up from past week</span>
+                    </Text>
+                  </div>
+                </div>
+                <div className="flex w-full flex-col items-center justify-center gap-8 rounded-[14px] bg-white-A700 p-3.5 shadow-xs">
+                  <div className="flex items-start justify-between gap-5 self-stretch">
+                    <div className="flex flex-col items-start gap-[18px]">
+                      <Text size="lg" as="p" className="!text-gray-900_b2">
+                        Total Sales
+                      </Text>
+                      <Text size="6xl" as="p" className="tracking-[1.00px]">
+                        $89,000
+                      </Text>
+                    </div>
+                    <Img src="images/img_floating_icon.svg" alt="floatingicon" className="h-[60px] w-[60px]" />
+                  </div>
+                  <div className="flex items-center gap-2 self-start">
+                    <Img src="images/img_group_pink_400.svg" alt="image" className="h-[24px] w-[24px]" />
+                    <Text size="lg" as="p" className="!text-pink-400">
+                      <span className="text-pink-400">4.3%</span>
+                      <span className="text-gray-900_02">&nbsp;</span>
+                      <span className="text-gray_700_02">Down from yesterday</span>
+                    </Text>
+                  </div>
+                </div>
+                <div className="flex w-full flex-col gap-[33px] rounded-[14px] bg-white-A700 p-4 shadow-xs">
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex flex-col items-start gap-[15px]">
+                      <Text size="lg" as="p" className="!text-gray-900_b2">
+                        Total Sign Ups
+                      </Text>
+                      <Text size="6xl" as="p" className="tracking-[1.00px]">
+                        2040
+                      </Text>
+                    </div>
+                    <Img src="images/img_user.svg" alt="user_one" className="h-[60px] w-[60px]" />
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Img src="images/img_checkmark_teal_a700.svg" alt="checkmark_one" className="h-[24px] w-[24px]" />
+                    <Text size="lg" as="p" className="!text-teal-A700">
+                      <span className="text-teal-A700">1.8%</span>
+                      <span className="text-gray-900_02">&nbsp;</span>
+                      <span className="text-gray_700_02">Up from yesterday</span>
+                    </Text>
+                  </div>
+                </div>
+              </div>
+              <div className="flex w-[95%] flex-col gap-10 rounded-[14px] bg-white-A700 p-8 shadow-xs md:w-full sm:p-5">
+                <div className="flex items-center justify-between gap-5">
+                  <Text size="3xl" as="p" className="self-end">
+                    Api calls
+                  </Text>
+                  <SelectBox
+                    color="gray_50_02"
+                    size="sm"
+                    shape="round"
+                    indicator={
+                      <Img
+                        src="images/img_arrowdown_blue_gray_900_01.svg"
+                        alt="arrow_down"
+                        className="h-[10px] w-[10px]"
+                      />
+                    }
+                    name="october"
+                    placeholder={`October`}
+                    options={dropDownOptions}
+                    className="w-[10%] gap-px self-start !rounded border border-solid border-blue_gray-100 sm:pr-5"
+                  />
+                </div>
+                <div className="mb-6 flex flex-col items-center gap-[17px]">
+                  <div className="flex items-center justify-between gap-5 self-stretch md:flex-col">
+                    <div className="flex flex-col items-start gap-11">
+                      <Text as="p" className="self-center !text-blue_gray-900_66">
+                        100%
+                      </Text>
+                      <Text as="p" className="!text-blue_gray-900_66">
+                        80%
+                      </Text>
+                      <Text as="p" className="!text-blue_gray-900_66">
+                        60%
+                      </Text>
+                      <Text as="p" className="!text-blue_gray-900_66">
+                        40%
+                      </Text>
+                      <Text as="p" className="!text-blue_gray-900_66">
+                        20%
+                      </Text>
+                    </div>
+                    <div className="flex flex-1 flex-col items-start gap-1 md:self-stretch">
+                      <div className="ml-[3px] h-px self-stretch border-[0.5px] border-solid border-gray-200 bg-white-A700 md:ml-0" />
+                      <div className="ml-[243px] flex h-[27px] items-start bg-[url(/public/images/img_group_blue_a200.svg)] bg-cover bg-no-repeat md:ml-0 md:h-auto">
+                        <Text as="p" className="mb-2 !text-white-A700">
+                          64,3664.77
+                        </Text>
+                      </div>
+                      <div className="relative h-[205px] self-stretch">
                         <Img
-                          src="images/img_polygon_2_black_900.svg"
-                          alt="polygonone_one"
-                          className="h-[4px] top-[8.66px] right-0 left-0 m-auto absolute rounded-[1px]"
+                          src="images/img_group_purple_900.png"
+                          alt="image_ten"
+                          className="absolute bottom-0 left-0 right-0 top-0 m-auto h-[195px] w-full object-cover"
+                        />
+                        <Img
+                          src="images/img_group_blue_a200_205x938.svg"
+                          alt="image_eleven"
+                          className="absolute bottom-0 left-[0.00px] top-0 my-auto h-[205px] w-[94%]"
                         />
                       </div>
                     </div>
                   </div>
-                  <div className="h-px bg-gray-50_04" />
-                </div>
-              </div>
-              <div className="flex md:flex-col justify-between items-center gap-5">
-                <div className="flex self-end items-start gap-[15px]">
-                  <Text size="17xl" as="p" className="!text-gray-700 !font-alatsi">
-                    <span className="text-gray-700 font-junge">Project statisti</span>
-                    <span className="text-gray-700 tracking-[-0.90px] font-junge">cs</span>
-                  </Text>
-                  <Button color="deep_purple_A200_03" size="2xl" className="rounded-[19px]">
-                    <Img src="images/img_group_13.svg" />
-                  </Button>
-                </div>
-                <div className="flex sm:flex-col gap-2">
-                  <Button
-                    color="deep_purple_A200_ab"
-                    size="6xl"
-                    className="sm:px-5 tracking-[-0.07px] font-neuton font-bold opacity-0.9 min-w-[92px] rounded-[26px]"
-                  >
-                    30 days
-                  </Button>
-                  <Button
-                    color="gray_50_ab"
-                    size="6xl"
-                    className="sm:px-5 tracking-[-0.07px] font-neuton font-bold opacity-0.9 min-w-[92px] rounded-[26px]"
-                  >
-                    90 days
-                  </Button>
-                  <Button
-                    color="gray_50_ab"
-                    size="6xl"
-                    className="sm:px-5 tracking-[-0.07px] font-neuton font-bold opacity-0.9 min-w-[95px] rounded-[26px]"
-                  >
-                    6 monts
-                  </Button>
-                  <Button
-                    color="gray_50_ab"
-                    size="6xl"
-                    className="sm:px-5 tracking-[-0.07px] font-neuton font-bold opacity-0.9 min-w-[101px] rounded-[26px]"
-                  >
-                    12 monts
-                  </Button>
-                </div>
-              </div>
-            </header>
-            <div className="flex md:flex-col justify-center items-center gap-[17px]">
-              <div className="h-[407px] w-full mt-[3px] p-[23px] sm:p-5 border-gray-50_04 border border-solid bg-blue_gray-50_04 relative rounded-[32px]">
-                <div className="flex flex-col items-end h-max left-[7%] bottom-0 top-0 my-auto absolute">
-                  <Text size="lg" as="p" className="!text-gray-500_04 !font-roboto">
-                    40,000,000
-                  </Text>
-                  <Text size="lg" as="p" className="mt-11 !text-gray-500_04 !font-roboto">
-                    30,000,000
-                  </Text>
-                  <Text size="lg" as="p" className="mt-11 !text-gray-500_04 !font-roboto">
-                    20,000,000
-                  </Text>
-                  <Text size="lg" as="p" className="mt-8 !text-gray-500_04 !font-roboto">
-                    10,000,000
-                  </Text>
-                  <Text size="lg" as="p" className="mt-[21px] !text-gray-500_04 !font-roboto">
-                    0
-                  </Text>
-                </div>
-                <div className="flex justify-between w-[82%] bottom-[12%] right-[7%] gap-5 m-auto absolute">
-                  <div className="flex self-start justify-between w-[23%] gap-5 flex-wrap">
-                    <Text size="lg" as="p" className="!text-gray-500_04 !font-roboto">
-                      Feb
+                  <div className="flex w-[89%] flex-wrap justify-between gap-5 md:w-full">
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      5k
                     </Text>
-                    <Text size="lg" as="p" className="!text-gray-500_04 !font-roboto">
-                      Mar
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      10k
                     </Text>
-                  </div>
-                  <div className="flex self-end flex-wrap">
-                    <Text size="lg" as="p" className="self-end !text-gray-500_04 !font-roboto">
-                      Apr
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      15k
                     </Text>
-                    <Text size="lg" as="p" className="self-start ml-[49px] !text-gray-500_04 !font-roboto">
-                      May
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      20k
                     </Text>
-                    <Text size="lg" as="p" className="self-start ml-[39px] !text-gray-500_04 !font-roboto">
-                      Jun
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      25k
                     </Text>
-                  </div>
-                  <Text size="lg" as="p" className="self-start h-[12px] !text-gray-500_04 !font-roboto">
-                    Jul
-                  </Text>
-                </div>
-                <div className="flex flex-col w-[96%] gap-[25px] top-[23.59px] right-0 left-0 m-auto absolute">
-                  <div className="flex justify-between items-center gap-5 flex-wrap">
-                    <Text size="9xl" as="p" className="self-end mb-[5px] tracking-[-0.40px] !font-roboto">
-                      Total visits
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      30k
                     </Text>
-                    <Text size="16xl" as="p" className="!text-deep_purple-A200_03 !font-roboto !font-medium">
-                      42,43M
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      35k
                     </Text>
-                  </div>
-                  <div className="h-px bg-gray-400_02" />
-                </div>
-                <div className="h-[236px] w-[83%] bottom-[16%] right-[11%] m-auto absolute">
-                  <div className="flex justify-between items-center w-full h-max left-0 bottom-0 right-0 top-0 gap-5 m-auto absolute">
-                    <div className="h-full w-px bg-gray-200" />
-                    <div className="h-[230px] w-px bg-gray-200" />
-                  </div>
-                  <div className="h-[235px] w-full left-0 bottom-0 right-0 top-0 m-auto absolute">
-                    <div className="flex justify-between w-[51%] h-max left-[20%] bottom-0 top-0 gap-5 my-auto absolute">
-                      <div className="h-full w-px bg-gray-200" />
-                      <div className="h-full w-px bg-gray-200" />
-                      <div className="h-full w-px bg-gray-200" />
-                    </div>
-                    <div className="h-[231px] w-px right-[19%] bottom-0 top-0 my-auto bg-gray-200 absolute" />
-                    <div className="flex flex-col items-end w-full bottom-[-0.01px] right-0 left-0 m-auto absolute">
-                      <div className="flex flex-col self-stretch items-end">
-                        <div className="h-[49px] w-[26%] md:h-auto mr-[25px] md:mr-0 z-[1] relative">
-                          <Img src="images/img_group_17.svg" alt="image_two" className="h-[49px]" />
-                          <div className="flex flex-col items-center top-[8.35px] right-0 left-0 m-auto absolute">
-                            <Text size="2xl" as="p" className="!text-gray-50_02 !font-roboto">
-                              24,000,033
-                            </Text>
-                            <Text size="2xl" as="p" className="!text-white-A700_99 !font-roboto opacity-0.7">
-                              Visitors
-                            </Text>
-                          </div>
-                        </div>
-                        <div className="self-stretch h-[74px] md:h-auto mt-[-41px] relative">
-                          <Img
-                            src="images/img_vector_2.png"
-                            alt="vectortwo_one"
-                            className="h-[74px] w-full object-cover"
-                          />
-                          <div className="h-[15px] w-[16px] bottom-[14.33px] right-[17%] m-auto border-white-A700 border-4 border-solid bg-deep_purple-A200_03 absolute rounded-lg" />
-                        </div>
-                      </div>
-                      <div className="h-[138px] w-[4px] mt-[-13px] mr-[66px] md:mr-0 z-[1] bg-gray-400_02" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full">
-                <div className="flex flex-col gap-1">
-                  <div className="flex sm:flex-col justify-center items-start gap-6">
-                    <div className="h-[212px] w-full sm:w-full relative">
-                      <div className="h-[137px] w-[73%] bottom-[0.00px] right-0 left-0 m-auto bg-purple-A100_90 backdrop-opacity-[0.6] blur-[46.00px] absolute rounded-[32px]" />
-                      <div className="h-[186px] w-full bg-light_blue-300 absolute rounded-[32px]" />
-                      <div className="h-[190px] w-full top-[0.00px] right-0 left-0 m-auto absolute">
-                        <Img
-                          src="images/img_mask_group_purple_a100_01.svg"
-                          alt="image_three"
-                          className="h-[190px] left-0 bottom-0 right-0 top-0 m-auto absolute"
-                        />
-                        <div className="flex flex-col items-end w-[83%] left-[16.08px] top-[16.87px] m-auto absolute">
-                          <div className="flex flex-col self-stretch items-start gap-[23px]">
-                            <div className="flex self-stretch justify-between items-center ml-[19px] gap-5 md:ml-0">
-                              <Button color="white_A700_05" size="5xl" className="w-[52px] rounded-[16px]">
-                                <Img src="images/img_group_37.svg" />
-                              </Button>
-                              <div className="flex self-end items-start mb-3 gap-0.5">
-                                <Img
-                                  src="images/img_polygon_2.svg"
-                                  alt="polygontwo"
-                                  className="h-[6px] rounded-[1px]"
-                                />
-                                <Text size="2xl" as="p" className="!text-white-A700 !font-roboto">
-                                  12%
-                                </Text>
-                              </div>
-                            </div>
-                            <Text size="16xl" as="p" className="!text-gray-50_04 !font-roboto !font-medium">
-                              42,34%
-                            </Text>
-                          </div>
-                          <div className="h-[31px] w-[32px] mt-[-4px] mr-3 md:mr-0 opacity-0.02 bg-deep_purple-A200_5c rounded-[16px]" />
-                        </div>
-                        <Img
-                          src="images/img_vector_gray_50_04.svg"
-                          alt="vector_five"
-                          className="h-[17px] bottom-[21%] right-[23%] m-auto absolute"
-                        />
-                        <Text
-                          size="4xl"
-                          as="p"
-                          className="bottom-[21%] left-[16.08px] m-auto !text-gray-50_9b !font-roboto !font-medium opacity-0.72 absolute"
-                        >
-                          Bounce Rate
-                        </Text>
-                      </div>
-                    </div>
-                    <div className="h-[190px] w-full md:h-auto sm:w-full mt-0.5 relative">
-                      <div className="flex items-start mt-[37px] mr-[25px] gap-0.5 md:mr-0">
-                        <Img
-                          src="images/img_polygon_2.svg"
-                          alt="polygontwo_five"
-                          className="h-[6px] mt-[3px] rounded-[1px]"
-                        />
-                        <Text size="2xl" as="p" className="!font-roboto">
-                          12%
-                        </Text>
-                      </div>
-                      <div className="w-full h-max left-0 bottom-0 right-0 top-0 p-4 m-auto bg-gray-50_04 absolute rounded-[32px]">
-                        <div className="flex justify-between items-center mb-[23px] gap-5">
-                          <div className="flex flex-col items-start gap-6">
-                            <Button
-                              color="gray_400_0a"
-                              size="5xl"
-                              className="w-[52px] ml-[18px] md:ml-0 rounded-[16px]"
-                            >
-                              <Img src="images/img_group_48.svg" />
-                            </Button>
-                            <div className="flex flex-col items-start gap-1">
-                              <Text size="16xl" as="p" className="!text-blue_gray-900 !font-roboto !font-medium">
-                                42,34%
-                              </Text>
-                              <Text
-                                size="4xl"
-                                as="p"
-                                className="!text-blue_gray-900_9b !font-roboto !font-medium opacity-0.72"
-                              >
-                                Pages per visit
-                              </Text>
-                            </div>
-                          </div>
-                          <div className="flex self-end mb-2.5 p-[3px] bg-deep_purple-A200_03 rounded-lg">
-                            <Img src="images/img_group_13.svg" alt="vector_seven" className="h-[10px] w-[10px]" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex sm:flex-col justify-center gap-6">
-                    <div className="w-full sm:w-full p-3.5 bg-gray-50_04 rounded-[32px]">
-                      <div className="flex flex-col mb-6 gap-[23px]">
-                        <div className="flex justify-between items-center ml-[19px] gap-5 md:ml-0">
-                          <Button color="gray_400_0a" size="5xl" className="w-[52px] rounded-[16px]">
-                            <Img src="images/img_group_60.svg" />
-                          </Button>
-                          <div className="flex self-end items-start mb-[11px] gap-2">
-                            <Img
-                              src="images/img_polygon_2_deep_orange_a400.svg"
-                              alt="polygontwo"
-                              className="h-[6px] mt-[3px] rounded-[1px]"
-                            />
-                            <Text size="2xl" as="p" className="!font-roboto">
-                              2,1%
-                            </Text>
-                          </div>
-                        </div>
-                        <div className="flex flex-col self-center gap-1.5">
-                          <Text size="16xl" as="p" className="!text-blue_gray-900 !font-roboto !font-medium">
-                            326.60K
-                          </Text>
-                          <Text
-                            size="4xl"
-                            as="p"
-                            className="!text-blue_gray-900_9b !font-roboto !font-medium opacity-0.72"
-                          >
-                            Total Monthly Visit
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-full sm:w-full">
-                      <div className="h-[190px] md:h-auto bg-gray-50_04 relative rounded-[32px]">
-                        <div className="flex flex-col w-[83%] mt-4 ml-4 gap-[23px] md:ml-0">
-                          <div className="flex justify-between items-center ml-[19px] gap-5 md:ml-0">
-                            <Button color="white_A700_05" size="5xl" className="w-[52px] rounded-[16px]">
-                              <Img src="images/img_group_76.svg" />
-                            </Button>
-                            <div className="flex self-end items-start mb-[11px] gap-[5px]">
-                              <Img
-                                src="images/img_polygon_2_green_800.svg"
-                                alt="polygontwo_nine"
-                                className="h-[6px] rounded-[1px]"
-                              />
-                              <Text size="2xl" as="p" className="!font-roboto">
-                                12%
-                              </Text>
-                            </div>
-                          </div>
-                          <div className="flex flex-col items-start gap-[3px]">
-                            <Text size="16xl" as="p" className="!text-blue_gray-900 !font-roboto !font-medium">
-                              42,34%
-                            </Text>
-                            <Text
-                              size="4xl"
-                              as="p"
-                              className="!text-blue_gray-900_9b !font-roboto !font-medium opacity-0.72"
-                            >
-                              Bounce Rate
-                            </Text>
-                          </div>
-                        </div>
-                        <div className="w-full h-max left-0 bottom-0 right-0 top-0 p-4 m-auto bg-gray-50_04 absolute rounded-[32px]">
-                          <div className="flex flex-col mb-[23px] gap-[21px]">
-                            <div className="flex justify-between items-center ml-[19px] gap-5 md:ml-0">
-                              <Button color="gray_400_05_01" size="5xl" className="w-[52px] rounded-[16px]">
-                                <Img src="images/img_group_69.svg" />
-                              </Button>
-                              <div className="flex self-end items-start mb-[13px] gap-[5px]">
-                                <Img
-                                  src="images/img_polygon_2_deep_orange_a400_6x13.svg"
-                                  alt="polygontwo"
-                                  className="h-[6px] mt-0.5 rounded-[1px]"
-                                />
-                                <Text size="2xl" as="p" className="!font-roboto">
-                                  2,4%
-                                </Text>
-                              </div>
-                            </div>
-                            <div className="flex flex-col items-start gap-1.5">
-                              <Text size="16xl" as="p" className="!text-blue_gray-900 !font-roboto !font-medium">
-                                00:03:27
-                              </Text>
-                              <Text
-                                size="4xl"
-                                as="p"
-                                className="!text-blue_gray-900_9b !font-roboto !font-medium opacity-0.72"
-                              >
-                                Avg.Visit Duration
-                              </Text>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex md:flex-col gap-5">
-              <div className="flex justify-end w-full p-2.5 bg-blue_gray-50_04 rounded-[32px]">
-                <div className="flex flex-col items-start w-full mt-[23px] mr-4 md:mr-0">
-                  <Text size="9xl" as="p" className="tracking-[-0.40px] !font-roboto">
-                    Traffic Sources
-                  </Text>
-                  <div className="self-stretch h-px mt-[29px] bg-gray-400_02" />
-                  <div className="flex sm:flex-col self-stretch justify-between items-center mt-[7px] gap-5">
-                    <div className="flex flex-col items-start w-[61%] sm:w-full gap-[13px]">
-                      <div className="flex self-stretch justify-between gap-5 p-1.5 bg-blue_gray-50_02 flex-wrap rounded-[12px]">
-                        <Text
-                          size="2xl"
-                          as="p"
-                          className="ml-[39px] md:ml-0 !text-gray-500_02 tracking-[-0.24px] !font-roboto"
-                        >
-                          sourse
-                        </Text>
-                        <Text
-                          size="2xl"
-                          as="p"
-                          className="self-start mr-[45px] md:mr-0 !text-gray-400_05 tracking-[-0.24px] !font-roboto"
-                        >
-                          Traffic sourse,%
-                        </Text>
-                      </div>
-                      <div className="flex flex-col w-[79%] md:w-full ml-[19px] gap-3.5 md:ml-0">
-                        <div className="flex justify-between gap-5">
-                          <div className="flex self-end justify-center items-center w-[31%] gap-3">
-                            <div className="self-start h-[12px] w-[18px] bg-light_blue-300 rounded-sm" />
-                            <Text size="2xl" as="p" className="tracking-[-0.24px] !font-roboto">
-                              Direct{" "}
-                            </Text>
-                          </div>
-                          <Text size="2xl" as="p" className="self-start h-[15px] tracking-[-0.24px] !font-roboto">
-                            50
-                          </Text>
-                        </div>
-                        <div className="flex justify-between gap-5">
-                          <div className="flex self-end justify-center items-center w-[32%] gap-[9px]">
-                            <div className="self-start h-[12px] w-[18px] bg-purple-A100_01 rounded-sm" />
-                            <Text size="2xl" as="p" className="tracking-[-0.24px] !font-roboto">
-                              Search
-                            </Text>
-                          </div>
-                          <Text size="2xl" as="p" className="self-start h-[15px] tracking-[-0.24px] !font-roboto">
-                            50
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-[30%] sm:w-full">
-                      <div className="p-[9px] bg-gray-100_06 rounded-[65px]">
-                        <div className="flex flex-col items-start border-light_blue-300 border-[13px] border-solid rounded-[55px]">
-                          <div className="flex flex-col items-end w-[81%] md:w-full">
-                            <div className="flex justify-end w-[8%] md:w-full mr-[27px] md:mr-0 z-[1]">
-                              <div className="h-[4px] w-[4px] bg-gray-50_04 rounded-sm" />
-                              <div className="h-[4px] w-[4px] ml-[-4px] bg-gray-50_04 rounded-sm" />
-                            </div>
-                            <div className="self-stretch mt-[-2px] z-[2]">
-                              <div className="flex justify-center items-center">
-                                <Img src="images/img_ellipse_10.svg" alt="sourse_two" className="h-[97px] z-[1]" />
-                                <div className="flex flex-col self-end items-center mb-3 ml-[-31px]">
-                                  <Text size="16xl" as="p" className="!font-roboto !font-medium">
-                                    50%
-                                  </Text>
-                                  <Text size="2xl" as="p" className="!text-gray-500_01 tracking-[-0.24px] !font-roboto">
-                                    Direct{" "}
-                                  </Text>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="flex justify-end w-[11%] md:w-full mt-[-2px] mr-[25px] md:mr-0">
-                              <div className="h-[4px] w-[4px] z-[1] bg-gray-50_04 rounded-sm" />
-                              <div className="h-[4px] w-[4px] ml-[-2px] bg-gray-50_04 rounded-sm" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-end w-full p-2.5 bg-blue_gray-50_04 rounded-[32px]">
-                <div className="flex flex-col items-start w-full mt-[23px] mr-4 md:mr-0">
-                  <Text size="9xl" as="p" className="tracking-[-0.40px] !font-roboto">
-                    Traffic Sources
-                  </Text>
-                  <div className="self-stretch h-px mt-[29px] bg-gray-400_02" />
-                  <div className="flex sm:flex-col self-stretch justify-between items-center mt-[7px] gap-5">
-                    <div className="flex flex-col items-start w-[61%] sm:w-full gap-[13px]">
-                      <div className="flex self-stretch justify-between gap-5 p-1.5 bg-blue_gray-50_02 flex-wrap rounded-[12px]">
-                        <Text
-                          size="2xl"
-                          as="p"
-                          className="ml-[39px] md:ml-0 !text-gray-500_02 tracking-[-0.24px] !font-roboto"
-                        >
-                          sourse
-                        </Text>
-                        <Text
-                          size="2xl"
-                          as="p"
-                          className="self-start mr-[45px] md:mr-0 !text-gray-400_05 tracking-[-0.24px] !font-roboto"
-                        >
-                          Traffic sourse,%
-                        </Text>
-                      </div>
-                      <div className="flex flex-col w-[79%] md:w-full ml-[19px] gap-3.5 md:ml-0">
-                        <div className="flex justify-between gap-5">
-                          <div className="flex self-end justify-center items-center w-[31%] gap-3">
-                            <div className="self-start h-[12px] w-[18px] bg-light_blue-300 rounded-sm" />
-                            <Text size="2xl" as="p" className="tracking-[-0.24px] !font-roboto">
-                              Direct{" "}
-                            </Text>
-                          </div>
-                          <Text size="2xl" as="p" className="self-start h-[15px] tracking-[-0.24px] !font-roboto">
-                            50
-                          </Text>
-                        </div>
-                        <div className="flex justify-between gap-5">
-                          <div className="flex self-end justify-center items-center w-[32%] gap-[9px]">
-                            <div className="self-start h-[12px] w-[18px] bg-purple-A100_01 rounded-sm" />
-                            <Text size="2xl" as="p" className="tracking-[-0.24px] !font-roboto">
-                              Search
-                            </Text>
-                          </div>
-                          <Text size="2xl" as="p" className="self-start h-[15px] tracking-[-0.24px] !font-roboto">
-                            50
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-[30%] sm:w-full">
-                      <div className="p-[9px] bg-gray-100_06 rounded-[65px]">
-                        <div className="flex flex-col items-start border-light_blue-300 border-[13px] border-solid rounded-[55px]">
-                          <div className="flex flex-col items-end w-[81%] md:w-full">
-                            <div className="flex justify-end w-[8%] md:w-full mr-[27px] md:mr-0 z-[1]">
-                              <div className="h-[4px] w-[4px] bg-gray-50_04 rounded-sm" />
-                              <div className="h-[4px] w-[4px] ml-[-4px] bg-gray-50_04 rounded-sm" />
-                            </div>
-                            <div className="self-stretch mt-[-2px] z-[2]">
-                              <div className="flex justify-center items-center">
-                                <Img src="images/img_ellipse_10.svg" alt="image" className="h-[97px] z-[1]" />
-                                <div className="flex flex-col self-end items-center mb-3 ml-[-31px]">
-                                  <Text size="16xl" as="p" className="!font-roboto !font-medium">
-                                    50%
-                                  </Text>
-                                  <Text size="2xl" as="p" className="!text-gray-500_01 tracking-[-0.24px] !font-roboto">
-                                    Direct{" "}
-                                  </Text>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="flex justify-end w-[11%] md:w-full mt-[-2px] mr-[25px] md:mr-0">
-                              <div className="h-[4px] w-[4px] z-[1] bg-gray-50_04 rounded-sm" />
-                              <div className="h-[4px] w-[4px] ml-[-2px] bg-gray-50_04 rounded-sm" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      40k
+                    </Text>
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      45k
+                    </Text>
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      50k
+                    </Text>
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      55k
+                    </Text>
+                    <Text as="p" className="text-center !text-blue_gray-900_66">
+                      60k
+                    </Text>
                   </div>
                 </div>
               </div>
