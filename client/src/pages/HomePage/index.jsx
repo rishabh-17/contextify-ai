@@ -27,13 +27,11 @@ export default function HomePagePage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex flex-col items-center w-full pt-8 gap-[59px] md:flex-wrap 
-      md:w-[150vw] sm:[200vw]  sm:gap-[29px] sm:pt-5 
-      bg-gray-100 md:max-w-lg:flex flex flex-col sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
+      <div className="md:max-w-lg:flex flex flex-col md:w-[150%] sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
         <Header className="w-[86%] md:w-full md:p-5" />
         <div className="self-stretch md:flex  md:h-[auto] md:flex-wrap">
           <div className="flex flex-col items-center overflow-auto">
-            <div className="flex md:flex-col self-stretch justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1424px]">
+            <div className="flex md:flex md:flex-wrap  self-stretch  justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1424px]">
               <div className="flex flex-col w-[35%] md:w-full gap-[88px] md:gap-[66px] sm:gap-11">
                 <div className="h-[140px] w-[89%] relative  relative w-full md:w-[89%]">
                   <div className="h-[62px] w-full bottom-[2.00px] right-0 left-0 m-auto bg-orange-50_01 absolute bottom-[2.00px] right-0 left-0 m-auto w-full h-[62px] bg-orange-50_01" />
@@ -77,9 +75,9 @@ export default function HomePagePage() {
                     <span className="text-black-900_02">&nbsp;</span>
                     <span className="text-deep_purple-A200">Sign In</span>
                   </Text>
-                  <div className="flex sm:flex-col self-stretch justify-between items-center mt-[35px] gap-5">
-                    <div className="flex justify-center w-[28%] sm:w-full">
-                      <div className="flex justify-center w-full">
+                  <div className="flex sm:flex-col self-stretch justify-between items-center mt-[35px] gap-5 ">
+                    <div className="flex justify-center w-[28%] sm:w-full w-full sm:w-[28%]">
+                      <div className="flex justify-center w-full sm:w-[28%]">
                         <div className="flex justify-center flex-1">
                           <Img
                             src="images/img_ellipse.png"
@@ -108,7 +106,7 @@ export default function HomePagePage() {
                       </Text>
                     </div>
                     <div className="self-start h-[39px] w-[2px] sm:w-[39px] sm:h-[2px] mt-[11px] opacity-0.08 bg-black-900_61" />
-                    <div className="flex flex-col items-start w-[29%] sm:w-full gap-2">
+                    <div className="flex flex-col items-start sm:w-[29%] w-full gap-2">
                       <Text size="15xl" as="p">
                         4.8/5
                       </Text>
@@ -126,7 +124,9 @@ export default function HomePagePage() {
                   </div>
                 </div>
               </div>
-              <div className="flex md:flex-col justify-between items-start w-[60%] md:w-full gap-5">
+
+
+              <div className="flex md:flex-col md:flex-wrap md:h-[auto] justify-between items-start w-[60%] md:w-full gap-5">
                 <div className="h-[16px] w-[16px] mt-[100px] bg-deep_purple-A200 rounded-lg animate-bounce" />
                 <div className="h-[624px] w-[92%] md:w-full relative">
                   <div className="flex flex-col items-end w-full top-[0.00px] right-0 left-0 m-auto absolute">
@@ -360,7 +360,7 @@ export default function HomePagePage() {
                           className="h-[12px] w-full mt-[-9px]"
                         />
                       </div>
-                      <div className="flex flex-col items-end w-[82%] gap-[23px] bottom-[9%] right-0 left-0 m-auto absolute">
+                      <div className="flex flex-col items-end w-[82%] md:h-[1px] gap-[23px] bottom-[9%] right-0 left-0 m-auto absolute">
                         <div className="flex flex-col w-[91%] md:w-full mr-3 gap-[35px] md:mr-0">
                           <div className="flex sm:flex-col justify-between items-center gap-5 flex-1">
                             <Text
@@ -613,8 +613,8 @@ export default function HomePagePage() {
             </div>
             <div className="flex flex-col self-stretch items-center mt-4">
               <div className="flex w-full">
-                <div className="flex flex-col items-center w-[98%] md:w-full gap-[31px] md:p-5">
-                  <div className="flex justify-center w-[23%] md:w-full">
+                <div className="flex flex-col items-center  md:w-[98%] w-[98%] md:w-full gap-[31px] md:p-5">
+                  <div className="flex justify-center w-[23%] md:w-[23%] ">
                     <div className="flex flex-col items-end w-full">
                       <div className="h-[50px] w-[52%] mr-[61px] md:mr-0 bg-orange-50_01" />
                       <div className="flex mt-[-42px]">
@@ -627,44 +627,44 @@ export default function HomePagePage() {
                     </div>
                   </div>
 
-                  <div className="w-full">
+                  <div className="w-full md:w-full md:p-5 md:ml-0 md:mt-0 md:mb-0 md:pr-0 md:pl-0 md:pt-0 md:pb-0 ">
                     <div className="flex flex-col gap-[26px]">
-                      <div className="w-full mx-auto md:p-5 max-w-[1353px]">
-                        <div className="flex md:flex-col justify-center items-center gap-[21px]">
-                          <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
-                            <div className="flex justify-center items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]   transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                      <div class="w-full mx-auto sm:block sm:w-full z-[1] md:w-full md:p-[5%]">
+                        <div class="flex md:flex-col justify-center items-center gap-[21px]">
+                          <div class="md:self-stretch h-[101px] md:w-[200px]  md:ml-[45%] md:h-[50px] bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
+                            <div class="flex justify-center md:w-full items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_black_900_02.svg"
                                 alt="vector_eleven"
-                                className="h-[38px] w-[38px]"
+                                className="h-[38px] w-[35px] md:flex-wrap z-[1] sm:flex-none z-[1]"
                               />
                               <Img
                                 src="images/img_vector_black_900_02_33x82.svg"
                                 alt="vector_thirteen"
-                                className="self-end h-[33px]"
+                                className="self-end h-[33px] md:flex-wrap  z-[1] sm:flex-none z-[1] "
                               />
                             </div>
                           </div>
-                          <div className="h-[92px] w-[11%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]   transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                          <div className="h-[92px] w-[11%] md:w-[200px] md:ml-[55%]  md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
+                            <div className="flex justify-center w-full md:mt-[-45%] h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                               <Img
                                 src="images/img_format_wordmark.svg"
                                 alt="formatwordmark"
-                                className="h-[29px]"
+                                className="h-[29px] md:flex wrap  z-[1] sm:flex-none z-[1]"
                               />
                             </div>
                           </div>
-                          <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 flex-1 relative rounded-[50px] md:flex-none  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 absolute rounded-[50px]">
+                          <div className="md:self-stretch h-[101px]  md:ml-[22%] md:w-[200px] md:h-auto bg-white-A700 flex-1 relative rounded-[50px] md:flex-none">
+                            <div className="flex justify-center w-full h-max md:mt-[-55%] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 absolute rounded-[50px]">
                               <Img
                                 src="images/img_format_wordmark_green_600_01.svg"
                                 alt="formatwordmark"
-                                className="h-[38px]"
+                                className="h-[38px] md:flex wrap  z-[1] sm:flex-none z-[1]"
                               />
                             </div>
                           </div>
-                          <div className="h-[101px] w-[19%] md:w-full md:h-auto bg-white-A700 shadow-5xl relative rounded-[50px]  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <div className="flex justify-center items-start w-full h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
+                          <div className="h-[101px] w-[19%] md:w-[200px] md:ml-[55%] md:bg-transparent  md:h-[50px] bg-white-A700 shadow-5xl relative rounded-[50px]">
+                            <div className="flex justify-center items-start w-full md:mt-[5%]  h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_deep_purple_a200_01.svg"
                                 alt="vector_nineteen"
@@ -673,36 +673,39 @@ export default function HomePagePage() {
                               <Img
                                 src="images/img_vector_black_900_02_25x112.svg"
                                 alt="vector"
-                                className="h-[25px] mt-1"
+                                className="h-[25px] mt-1 md:flex wrap  z-[1] sm:flex-none z-[1]"
                               />
                             </div>
                           </div>
-                          <div className="md:self-stretch h-[81px] md:w-full md:h-auto bg-white-A700 flex-1 relative rounded-[40px] md:flex-none   transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[40px]">
+                          <div className="md:self-stretch h-[81px] md:w-[200px] md:ml-[22%]  md:h-[50px] bg-white-A700 md:bg-transparent flex-1 relative rounded-[40px] md:flex-none">
+                            <div className="flex justify-center w-full h-max left-0 md:mt-[-30.5%]  bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[40px]">
                               <Img
                                 src="images/img_format_wordmark_light_blue_500.svg"
                                 alt="formatwordmark"
-                                className="h-[19px]"
+                                className="h-[19px] md:flex wrap  z-[1] sm:flex-none z-[1]"
                               />
                             </div>
                           </div>
-                          <div className="md:self-stretch h-[94px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[47px] md:flex-none   transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                          <div className="md:self-stretch h-[94px] md:w-[200px] md:mt-[-11.5%] md:ml-[45%] md:h-[50px] bg-white-A700 shadow-xs flex-1 relative rounded-[47px] md:flex-none">
                             <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[47px]">
                               <Img
                                 src="images/img_format_wordmark_black_900_02.svg"
                                 alt="formatwordmark"
-                                className="h-[32px]"
+                                className="h-[32px] md:flex wrap justify-center  z-[1]  sm:flex-none z-[1]"
                               />
                             </div>
                           </div>
                         </div>
                       </div>
+
+
+
                       <div>
                         <div className="flex">
                           <div className="flex md:flex-col items-center w-[94%] md:w-full gap-[21px]">
                             <div className="flex md:flex-col w-[100%] md:w-full gap-[21px]">
-                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs   transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                                <div className="flex justify-center w-full h-full left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                              <div className="h-[92px] w-full md:h-auto bg-white-A700 md:w-[200px]  md:ml-[45%] md:bg-transparent md:h-[50px] shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-full left-0 bottom-0 md:mt-[50%] right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_black_900_02_32x130.svg"
                                     alt="formatwordmark"
@@ -710,8 +713,8 @@ export default function HomePagePage() {
                                   />
                                 </div>
                               </div>
-                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs   transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                              <div className="h-[92px] w-full -[101px] md:w-[200px]  md:ml-[65%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max md:mt-[-40%] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_black_900_02_29x130.svg"
                                     alt="formatwordmark"
@@ -720,8 +723,8 @@ export default function HomePagePage() {
                                 </div>
                               </div>
 
-                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                              <div className="h-[92px] w-full md:w-[200px] md:ml-[45%]  md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 md:mt-[-75%] bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_deep_orange_a400_01.svg"
                                     alt="formatwordmark"
@@ -730,8 +733,8 @@ export default function HomePagePage() {
                                 </div>
                               </div>
 
-                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                              <div className="h-[92px] w-full md:ml-[22%] md:w-[200px] md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 md:mt-[-85%] bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_property_1_wordmark.svg"
                                     alt="propertyone"
@@ -739,8 +742,8 @@ export default function HomePagePage() {
                                   />
                                 </div>
                               </div>
-                              <div className="h-[93px] w-full md:h-auto bg-white-A700 cursor-pointer relative rounded-[46px] hover:shadow-xs  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
+                              <div className="h-[93px] w-full md:w-[200px] md:ml-[45%]  md:h-[50px] md:bg-transparent bg-white-A700 cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 md:mt-[10%] bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_black_900_02_31x130.svg"
                                     alt="formatwordmark"
@@ -748,8 +751,8 @@ export default function HomePagePage() {
                                   />
                                 </div>
                               </div>
-                              <div className="h-[88px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[44px] hover:shadow-xs  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
+                              <div className="h-[88px] w-full h-[81px] md:w-[200px] md:ml-[22%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs cursor-pointer relative rounded-[44px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 md:mt-[-28%] bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
                                   <Img
                                     src="images/img_format_frame.svg"
                                     alt="image_one"
@@ -758,8 +761,8 @@ export default function HomePagePage() {
                                 </div>
                               </div>
                             </div>
-                            <div className="h-[92px] w-[15%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                              <div className="flex justify-center items-center w-full h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                            <div className="h-[92px] w-[15%] md:w-[200px] md:mt-[-11.5%] md:ml-[50%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs relative rounded-[46px]">
+                              <div className="flex justify-center items-center w-full md:mt-[0%] h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                 <Img
                                   src="images/img_vector_pink_a200.svg"
                                   alt="vector"
@@ -779,7 +782,10 @@ export default function HomePagePage() {
                   </div>
                 </div>
               </div>
-              <div className="h-[1618px] w-[93%] md:h-auto mt-[26px] relative">
+
+
+              
+              <div className="h-[1618px] md:flex md:flex-wrap md:gap-5 md:h-auto w-[93%] md:h-auto mt-[26px] relative">
                 <div className="flex flex-col items-start w-[86%]">
                   <div className="flex flex-col self-stretch">
                     <div className="flex md:flex-col items-start">
@@ -1349,6 +1355,7 @@ export default function HomePagePage() {
                   </div>
                 </div>
               </div>
+              
               <div className="w-full mt-[150px] mx-auto md:p-5 max-w-[1240px]">
                 <div className="flex md:flex-col justify-between items-center gap-5">
                   <div className="h-[452px] w-[49%] md:w-full md:h-auto relative">
@@ -1723,11 +1730,11 @@ export default function HomePagePage() {
                   </div>
                 </div>
               </div>
-              <div className="h-[2149px] z-[2] w-[95%] md:h-auto mt-[150px] relative">
-                <div className="w-full">
+              <div className="h-[2149px] z-[2] md:w-[100vw]  w-[95%] md:h-auto mt-[150px] relative">
+                <div className="w-full h-[2149px] z-[2]">
                   <div className="flex md:flex-col items-center">
                     {/* ========================================================== */}
-                    <div className="flex flex-col self-end w-[30%] md:w-full mb-[762px] gap-5 md:p-5 z-[1]">
+                    <div className="flex md:flex-wrap flex-col self-end w-[30%] md:w-full md:h-[auto] md:flex md:flex-wrap items-center mb-[670px]  gap-5 md:p-5 z-[1]">
                       <div className="flex justify-center flex-1">
                         <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                           <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
@@ -1852,7 +1859,7 @@ export default function HomePagePage() {
                   />
                 </div>
                 {/* ====================================================================== */}
-                <div className="flex flex-col w-[30%] gap-5 right-[4%] top-[32%] m-auto absolute md:relative">
+                <div className="flex md:flex-wrap flex-col w-[30%] gap-5 right-[4%] top-[32%] m-auto absolute md:relative">
                   <div className="flex justify-center md:p-5 flex-1">
                     <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                       <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
@@ -2216,7 +2223,7 @@ export default function HomePagePage() {
                   />
                 </div>
                 {/* ==================================================================== */}
-                <div className="flex w-[32%] left-[32%] top-[32%] m-auto absolute">
+                <div className="flex w-[32%] left-[32%] md:flex-wrap  top-[32%] m-auto absolute">
                   <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]">
                     <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
                       <Button

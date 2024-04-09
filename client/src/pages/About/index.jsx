@@ -15,7 +15,7 @@ export default function AboutPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className=" md:max-w-lg:flex flex flex-col md:w-[200%] sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
+      <div className=" md:max-w-lg:flex flex flex-col md:w-[150%] sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
         <Header className="w-[86%] md:w-full md:p-5" />
         <div className="self-stretch" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
           <div className="flex flex-col items-center">
@@ -118,10 +118,10 @@ export default function AboutPage() {
 
                   <div className="w-full md:w-full md:p-5 md:ml-0 md:mt-0 md:mb-0 md:pr-0 md:pl-0 md:pt-0 md:pb-0 ">
                     <div className="flex flex-col gap-[26px]">
-                      <div className="w-full mx-auto sm:block sm:w-full   z-[1] md:w-full md:p-[5%]">
-                        <div className="flex md:flex-col justify-center items-center gap-[21px]">
-                          <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
-                            <div className="flex justify-center md:w-full items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]">
+                      <div class="w-full mx-auto sm:block sm:w-full z-[1] md:w-full md:p-[5%]">
+                        <div class="flex md:flex-col justify-center items-center gap-[21px]">
+                          <div class="md:self-stretch h-[101px] md:w-[200px]  md:ml-[45%] md:h-[50px] bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
+                            <div class="flex justify-center md:w-full items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_black_900_02.svg"
                                 alt="vector_eleven"
@@ -130,12 +130,12 @@ export default function AboutPage() {
                               <Img
                                 src="images/img_vector_black_900_02_33x82.svg"
                                 alt="vector_thirteen"
-                                className="self-end h-[33px] md:flex wrap  z-[1] sm:flex-none z-[1] "
+                                className="self-end h-[33px] md:flex-wrap  z-[1] sm:flex-none z-[1] "
                               />
                             </div>
                           </div>
-                          <div className="h-[92px] w-[11%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
-                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                          <div className="h-[92px] w-[11%] md:w-[200px] md:ml-[50%]  md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
+                            <div className="flex justify-center w-full md:mt-[-45%] h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                               <Img
                                 src="images/img_format_wordmark.svg"
                                 alt="formatwordmark"
@@ -143,8 +143,8 @@ export default function AboutPage() {
                               />
                             </div>
                           </div>
-                          <div className="md:self-stretch h-[101px] md:w-full md:h-auto bg-white-A700 flex-1 relative rounded-[50px] md:flex-none">
-                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 absolute rounded-[50px]">
+                          <div className="md:self-stretch h-[101px]  md:ml-[22%] md:w-[200px] md:h-auto bg-white-A700 flex-1 relative rounded-[50px] md:flex-none">
+                            <div className="flex justify-center w-full h-max md:mt-[-55%] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 absolute rounded-[50px]">
                               <Img
                                 src="images/img_format_wordmark_green_600_01.svg"
                                 alt="formatwordmark"
@@ -152,8 +152,8 @@ export default function AboutPage() {
                               />
                             </div>
                           </div>
-                          <div className="h-[101px] w-[19%] md:w-full md:h-auto bg-white-A700 shadow-5xl relative rounded-[50px]">
-                            <div className="flex justify-center items-start w-full h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
+                          <div className="h-[101px] w-[19%] md:w-[200px] md:ml-[50%]  md:h-[50px] bg-white-A700 shadow-5xl relative rounded-[50px]">
+                            <div className="flex justify-center items-start w-full  h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
                               <Img
                                 src="images/img_vector_deep_purple_a200_01.svg"
                                 alt="vector_nineteen"
@@ -166,8 +166,8 @@ export default function AboutPage() {
                               />
                             </div>
                           </div>
-                          <div className="md:self-stretch h-[81px] md:w-full md:h-auto bg-white-A700 flex-1 relative rounded-[40px] md:flex-none">
-                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[40px]">
+                          <div className="md:self-stretch h-[81px] md:w-[200px] md:ml-[22%]  md:h-[50px] bg-white-A700 md:bg-transparent flex-1 relative rounded-[40px] md:flex-none">
+                            <div className="flex justify-center w-full h-max left-0 md:mt-[-40.5%]  bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[40px]">
                               <Img
                                 src="images/img_format_wordmark_light_blue_500.svg"
                                 alt="formatwordmark"
@@ -175,7 +175,7 @@ export default function AboutPage() {
                               />
                             </div>
                           </div>
-                          <div className="md:self-stretch h-[94px] md:w-full md:h-auto bg-white-A700 shadow-xs flex-1 relative rounded-[47px] md:flex-none">
+                          <div className="md:self-stretch h-[94px] md:w-[200px] md:mt-[-11.5%] md:ml-[45%] md:h-[50px] bg-white-A700 shadow-xs flex-1 relative rounded-[47px] md:flex-none">
                             <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[47px]">
                               <Img
                                 src="images/img_format_wordmark_black_900_02.svg"
@@ -186,12 +186,15 @@ export default function AboutPage() {
                           </div>
                         </div>
                       </div>
+
+
+
                       <div>
                         <div className="flex">
                           <div className="flex md:flex-col items-center w-[94%] md:w-full gap-[21px]">
                             <div className="flex md:flex-col w-[100%] md:w-full gap-[21px]">
-                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-full left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                              <div className="h-[92px] w-full md:h-auto bg-white-A700 md:w-[200px]  md:ml-[45%] md:bg-transparent md:h-[50px] shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-full left-0 bottom-0 md:mt-[50%] right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_black_900_02_32x130.svg"
                                     alt="formatwordmark"
@@ -199,8 +202,8 @@ export default function AboutPage() {
                                   />
                                 </div>
                               </div>
-                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                              <div className="h-[92px] w-full -[101px] md:w-[200px]  md:ml-[65%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max md:mt-[-40%] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_black_900_02_29x130.svg"
                                     alt="formatwordmark"
@@ -209,8 +212,8 @@ export default function AboutPage() {
                                 </div>
                               </div>
 
-                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                              <div className="h-[92px] w-full md:w-[200px] md:ml-[45%]  md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 md:mt-[-75%] bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_deep_orange_a400_01.svg"
                                     alt="formatwordmark"
@@ -219,8 +222,8 @@ export default function AboutPage() {
                                 </div>
                               </div>
 
-                              <div className="h-[92px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                              <div className="h-[92px] w-full md:ml-[22%] md:w-[200px] md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 md:mt-[-85%] bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                   <Img
                                     src="images/img_property_1_wordmark.svg"
                                     alt="propertyone"
@@ -228,8 +231,8 @@ export default function AboutPage() {
                                   />
                                 </div>
                               </div>
-                              <div className="h-[93px] w-full md:h-auto bg-white-A700 cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
+                              <div className="h-[93px] w-full md:w-[200px] md:ml-[45%]  md:h-[50px] md:bg-transparent bg-white-A700 cursor-pointer relative rounded-[46px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 md:mt-[10%] bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
                                   <Img
                                     src="images/img_format_wordmark_black_900_02_31x130.svg"
                                     alt="formatwordmark"
@@ -237,8 +240,8 @@ export default function AboutPage() {
                                   />
                                 </div>
                               </div>
-                              <div className="h-[88px] w-full md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[44px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
+                              <div className="h-[88px] w-full h-[81px] md:w-[200px] md:ml-[22%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs cursor-pointer relative rounded-[44px] hover:shadow-xs">
+                                <div className="flex justify-center w-full h-max left-0 md:mt-[-28%] bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
                                   <Img
                                     src="images/img_format_frame.svg"
                                     alt="image_one"
@@ -247,8 +250,8 @@ export default function AboutPage() {
                                 </div>
                               </div>
                             </div>
-                            <div className="h-[92px] w-[15%] md:w-full md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
-                              <div className="flex justify-center items-center w-full h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                            <div className="h-[92px] w-[15%] md:w-[200px] md:mt-[-11.5%] md:ml-[45%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs relative rounded-[46px]">
+                              <div className="flex justify-center items-center w-full md:mt-[20%] h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                 <Img
                                   src="images/img_vector_pink_a200.svg"
                                   alt="vector"
@@ -345,7 +348,7 @@ export default function AboutPage() {
 
               <div
                 className="flex h-[10vh] flex-col items-center w-full gap-6 md:h-[130vh]   pb-[98px] gap-[39px] md:pb-5"
-                
+
               >
                 <div className="flex flex-col items-center w-[47%] md:w-full gap-[31px] md:p-5">
                   <Button
@@ -366,127 +369,127 @@ export default function AboutPage() {
                     </>
                   </Text>
                 </div>
-                  <div className="stretch1111  flex  flex-col items-center gap-6  md:h-[100vh]">
-                    <div className="justify-center gap-[52px] grid-cols-[repeat(auto-fill,_minmax(620px_,_1fr))] grid :w-[70%]">
+                <div className="stretch1111  flex  flex-col items-center gap-6  md:h-[100vh]">
+                  <div className="justify-center gap-[52px] grid-cols-[repeat(auto-fill,_minmax(620px_,_1fr))] grid :w-[70%]">
 
-                      <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
-                        <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                          <div class="w-[21%] md:w-full p-[39px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
+                      <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
+                        <div class="w-[21%] md:w-full p-[39px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
 
-                            <Img
-                              src="images/img_icon_white_a700.svg"
-                              alt="image"
-                              className="h-[71px] w-full md:h-auto my-[5px]  md:h-16   h-auto my-2"
-                            />
-                          </div>
-                          <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
-                            <Heading
-                              size="7xl"
-                              as="h1"
-                              className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
-                            >
-                              Innovation
-                            </Heading>
-                            <Text
-                              size="11xl"
-                              as="p"
-                              className="!text-gray-600_03 leading-[157.4%] w-[100%] md:w-[80%] pl-[15%] sm:ml-[10%] sm:w-[80%]  "
-                            >
-                              Long established fact that a readeed to will be
-                              distracted by the readable content of a page when
-                              looking at its layout
-                            </Text>
-                          </div>
+                          <Img
+                            src="images/img_icon_white_a700.svg"
+                            alt="image"
+                            className="h-[71px] w-full md:h-auto my-[5px]  md:h-16   h-auto my-2"
+                          />
                         </div>
-                      </div>
-                      <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
-                        <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                          <div className="w-[21%] md:w-full p-[35px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
-                            <Img
-                              src="images/img_icon_white_a700_64x58.svg"
-                              alt="icon_one"
-                              className="h-[64px] w-full  md:h-auto my-[5px]  md:h-16   h-auto my-2"
-                            />
-                          </div>
-                          <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
-                            <Heading
-                              size="7xl"
-                              as="h2"
-                              className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
-                            >
-                              Team work
-                            </Heading>
-                            <Text
-                              size="11xl"
-                              as="p"
-                              className="!text-gray-600_03 !font-nunito leading-[157.4%]  w-[100%] md:w-[80%] pl-[15%]"
-                            >
-                              Long established fact that a readeed to will be
-                              distracted by the readable content of a page when
-                              looking at its layout
-                            </Text>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
-                        <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                          <div className="w-[21%] md:w-full p-[35px] sm:ml-[40%] sm:w-[20%]  md:ml-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
-                            <Img
-                              src="images/img_icon_white_a700_62x44.svg"
-                              alt="icon_one"
-                              className="h-[62px] w-full md:h-auto mt-[7px] mb-1.5 md:h-auto my-[5px]  md:h-16   h-auto my-2"
-                            />
-                          </div>
-                          <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
-                            <Heading
-                              size="7xl"
-                              as="h3"
-                              className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] md:pl-[15%]"
-                            >
-                              Excellence
-                            </Heading>
-                            <Text
-                              size="11xl"
-                              as="p"
-                              className="!text-gray-600_03 !font-nunito leading-[157.4%]  w-[100%] md:w-[80%] pl-[15%]"
-                            >
-                              Long established fact that a readeed to will be
-                              distracted by the readable content of a page when
-                              looking at its layout
-                            </Text>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
-                        <div className="flex md:flex-col justify-between items-center w-full gap-5 my-3">
-                          <div className="w-[21%] md:w-full p-[35px] sm:ml-[0%] sm:w-[20%] md:ml-[-10%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%] md:ml-[50%] flex justify-center items-center p-5 bg-purple-900 rounded-md">
-                            <Img
-                              src="images/img_icon_indigo_a100.svg"
-                              alt="icon_one"
-                              className="h-[51px] w-full md:h-auto my-3.5 md:h-auto my-[5px]  md:h-16   h-auto my-2"
-                            />
-                          </div>
-                          <div className="flex flex-col items-start w-[73%] md:w-full gap-[3px]">
-                            <Heading
-                              size="7xl"
-                              as="h4"
-                              className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
-                            >
-                              Responsibility
-                            </Heading>
-                            <Text
-                              size="11xl"
-                              as="p"
-                              className="!text-gray-600_03 !font-nunito leading-[157.4%]  w-[100%] md:w-[80%] pl-[15%]"
-                            >
-                              Long established fact that a readeed to will be
-                              distracted by the readable content of a page when
-                              looking at its layout
-                            </Text>
-                          </div>
+                        <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
+                          <Heading
+                            size="7xl"
+                            as="h1"
+                            className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
+                          >
+                            Innovation
+                          </Heading>
+                          <Text
+                            size="11xl"
+                            as="p"
+                            className="!text-gray-600_03 leading-[157.4%] w-[100%] md:w-[80%] pl-[15%] sm:ml-[10%] sm:w-[80%]  "
+                          >
+                            Long established fact that a readeed to will be
+                            distracted by the readable content of a page when
+                            looking at its layout
+                          </Text>
                         </div>
                       </div>
                     </div>
+                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
+                      <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
+                        <div className="w-[21%] md:w-full p-[35px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                          <Img
+                            src="images/img_icon_white_a700_64x58.svg"
+                            alt="icon_one"
+                            className="h-[64px] w-full  md:h-auto my-[5px]  md:h-16   h-auto my-2"
+                          />
+                        </div>
+                        <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
+                          <Heading
+                            size="7xl"
+                            as="h2"
+                            className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
+                          >
+                            Team work
+                          </Heading>
+                          <Text
+                            size="11xl"
+                            as="p"
+                            className="!text-gray-600_03 !font-nunito leading-[157.4%]  w-[100%] md:w-[80%] pl-[15%]"
+                          >
+                            Long established fact that a readeed to will be
+                            distracted by the readable content of a page when
+                            looking at its layout
+                          </Text>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
+                      <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
+                        <div className="w-[21%] md:w-full p-[35px] sm:ml-[40%] sm:w-[20%]  md:ml-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                          <Img
+                            src="images/img_icon_white_a700_62x44.svg"
+                            alt="icon_one"
+                            className="h-[62px] w-full md:h-auto mt-[7px] mb-1.5 md:h-auto my-[5px]  md:h-16   h-auto my-2"
+                          />
+                        </div>
+                        <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
+                          <Heading
+                            size="7xl"
+                            as="h3"
+                            className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] md:pl-[15%]"
+                          >
+                            Excellence
+                          </Heading>
+                          <Text
+                            size="11xl"
+                            as="p"
+                            className="!text-gray-600_03 !font-nunito leading-[157.4%]  w-[100%] md:w-[80%] pl-[15%]"
+                          >
+                            Long established fact that a readeed to will be
+                            distracted by the readable content of a page when
+                            looking at its layout
+                          </Text>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
+                      <div className="flex md:flex-col justify-between items-center w-full gap-5 my-3">
+                        <div className="w-[21%] md:w-full p-[35px] sm:ml-[0%] sm:w-[20%] md:ml-[-10%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                          <Img
+                            src="images/img_icon_indigo_a100.svg"
+                            alt="icon_one"
+                            className="h-[51px] w-full md:h-auto my-3.5 md:h-auto my-[5px]  md:h-16   h-auto my-2"
+                          />
+                        </div>
+                        <div className="flex flex-col items-start w-[73%] md:w-full gap-[3px]">
+                          <Heading
+                            size="7xl"
+                            as="h4"
+                            className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
+                          >
+                            Responsibility
+                          </Heading>
+                          <Text
+                            size="11xl"
+                            as="p"
+                            className="!text-gray-600_03 !font-nunito leading-[157.4%]  w-[100%] md:w-[80%] pl-[15%]"
+                          >
+                            Long established fact that a readeed to will be
+                            distracted by the readable content of a page when
+                            looking at its layout
+                          </Text>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   {/* </div> */}
                 </div>
               </div>
