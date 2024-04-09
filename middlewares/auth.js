@@ -1,7 +1,8 @@
 const jwt = require("jsonwebtoken");
-const User = require("../db/models/User");
+const User = require("../models/User");
+const { User, Premium } = require("../models");
 
-module.exports = (req, res, next) => {
+exports.userAuthentication = (req, res, next) => {
   try {
     const token = req.header("authentication");
     const user = jwt.verify(token, process.env.SECRET);
@@ -11,5 +12,30 @@ module.exports = (req, res, next) => {
     });
   } catch (error) {
     return res.status(401).json({ success: false });
+  }
+};
+
+exports.secretKeyValidation = (req, res, next) => {
+  try {
+    const token = req.header("secret");
+    Premium.findOne({ Key: token }).then((premium) => {
+      if (!premium) {
+        return res
+          .status(401)
+          .json({ success: false, msg: "invalid premium key" });
+      } else if (premium.expiry < Date.now()) {
+        return res
+          .status(401)
+          .json({ success: false, msg: "premium key expired" });
+      } else if (premium.usage >= premium.totalReq) {
+        return res
+          .status(401)
+          .json({ success: false, msg: "premium key usage limit reached" });
+      } else {
+        next();
+      }
+    });
+  } catch (error) {
+    return res.status(401).json({ success: false, msg: "invalid token" });
   }
 };
