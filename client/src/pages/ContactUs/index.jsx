@@ -68,7 +68,7 @@ export default function ContactUsPage() {
             <Text size="22xl" as="p" className="!text-gray-900 text-center">
               Get in touch today!
             </Text>
-            <div className="flex md:flex-col w-full mt-[34px] gap-[27px] mx-auto md:p-5 max-w-[1193px]">
+            <div className="flex md:flex-col w-full sm:flex  mt-[34px] gap-[27px] mx-auto md:p-5 max-w-[1193px]">
               <div className="flex w-full p-[34px] sm:p-5 border-gray-200_01 border border-solid bg-white-A700 shadow-8xl rounded-[40px]">
                 <div className="flex sm:flex-col justify-between items-center w-full ml-1 gap-5 md:ml-0">
                   <div className="flex items-center gap-4">
@@ -132,9 +132,9 @@ export default function ContactUsPage() {
               <div className="w-full top-[0.00px] right-0 left-0 m-auto">
 
                 <div className="w-full m-auto md:p-5 z-[1]" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <div className="w-full px-14  rounded-[40px] sm:h-[135em] rounded-[40px] md:h-[115em] rounded-[40px] lg:h-[95em] py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5 mt-[-10%] w-[70%]">
+                  <div className="w-full px-14  rounded-[40px] sm:h-[90em] sm:rounded-[40px] rounded-[40px] md:h-[115em] rounded-[40px] lg:h-[95em] py-[74px] md:p-5 bg-deep_purple-100 shadow-9xl rounded-[40px] mx-5 mt-[-10%] w-[70%]">
                     {/* <form onSubmit={handleSubmit}> */}
-                    <div className="my-[18px]">
+                    <div className="my-[18px] sm:p-[10%">
                       <div className="flex flex-col  items-center pb-[26px] gap-[76px] md:gap-[57px] sm:gap-[38px] sm:pb-5">
                         <div className="flex flex-col self-stretch gap-[54px] sm:gap-[27px]">
                           <div className="flex md:flex-col justify-center gap-[47px]">

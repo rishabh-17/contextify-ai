@@ -14,7 +14,7 @@ export default function PricingPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="flex flex-col md:flex md:flex-wrap md:w-[200%]  items-center w-full gap-[249px] py-7 md:gap-[186px] sm:gap-[124px] sm:py-5 bg-gray-100 md:max-w-lg:flex flex flex-col sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
+      <div className="flex flex-col sm:p-[20%] md:flex md:flex-wrap md:w-[200%]  items-center w-full gap-[249px] py-7 md:gap-[186px] sm:gap-[124px] sm:py-5 bg-gray-100 md:max-w-lg:flex flex flex-col sm:w-[398vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
         <Header className="w-[86%] md:w-full mt-1 md:p-5" />
         <div className="self-stretch">
           <div className="flex flex-col items-center md:flex flex-wrap">
@@ -32,7 +32,7 @@ export default function PricingPage() {
               </>
             </Text>
             <div className="self-stretch md:w-[200vw] sm:w-[350vw] lg:w-[200vw] h-[auto] md:h-auto mt-[39px] relative   ">
-              <div className="flex z-[1] mb-[45%] md:flex sm:flex w-[67%]">
+              <div className="flex z-[1] mb-[45%] md:flex sm:mb-[75%] sm:flex w-[67%]">
                 <div className="flex flex-col items-start md:p-5 flex-1 md:flex flex-col">
                   <div className="w-[83%] md:w-full ml-[19px] md:ml-0 z-[1]">
                     <div className="p-[34px] sm:p-5 bg-deep_purple-100 rounded-[30px]">

@@ -27,7 +27,7 @@ export default function HomePagePage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="md:max-w-lg:flex flex flex-col md:w-[150%] sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
+      <div className="md:max-w-lg:flex flex flex-col sm:flex-col md:w-[150%] sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
         <Header className="w-[86%] md:w-full md:p-5" />
         <div className="self-stretch md:flex  md:h-[auto] md:flex-wrap">
           <div className="flex flex-col items-center overflow-auto">
@@ -611,8 +611,8 @@ export default function HomePagePage() {
                 className="h-[12px]"
               />
             </div>
-            <div className="flex flex-col self-stretch items-center mt-4">
-              <div className="flex w-full">
+            <div className="flex flex-col self-stretch items-center  mt-4 md:flex md:self-stretch md:items-center md:mt-4 md:flex-col">
+              <div className="flex w-full sm:mt-[30%]">
                 <div className="flex flex-col items-center  md:w-[98%] w-[98%] md:w-full gap-[31px] md:p-5">
                   <div className="flex justify-center w-[23%] md:w-[23%] ">
                     <div className="flex flex-col items-end w-full">
@@ -627,8 +627,8 @@ export default function HomePagePage() {
                     </div>
                   </div>
 
-                  <div className="w-full md:w-full md:p-5 md:ml-0 md:mt-0 md:mb-0 md:pr-0 md:pl-0 md:pt-0 md:pb-0 ">
-                    <div className="flex flex-col gap-[26px]">
+                  <div className="w-full md:w-full sm:w-full sm:height-[auto] md:p-5  md:ml-0 md:mt-0 md:mb-0 md:pr-0 md:pl-0 md:pt-0 md:pb-0 ">
+                    <div className="flex flex-col gap-[26px] sm:w-full sm:height-[auto] sm:mt-[20%]">
                       <div class="w-full mx-auto sm:block sm:w-full z-[1] md:w-full md:p-[5%]">
                         <div class="flex md:flex-col justify-center items-center gap-[21px]">
                           <div class="md:self-stretch h-[101px] md:w-[200px]  md:ml-[45%] md:h-[50px] bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
@@ -808,7 +808,7 @@ export default function HomePagePage() {
                     <Text
                       size="19xl"
                       as="p"
-                      className="w-[48%] z-[1] md:w-full mt-[276px] ml-[100px] md:p-5 md:ml-0 capitalize leading-[50px]"
+                      className="w-[48%] z-[1] sm:mt-[40%] md:w-full mt-[276px] ml-[100px] md:p-5 md:ml-0 capitalize leading-[50px]"
                     >
                       Manage your tasks online easily.
                     </Text>
@@ -2109,8 +2109,8 @@ export default function HomePagePage() {
                       what our client think about us?
                     </Text>
                   </div>
-                  <div className="flex md:flex-col items-center mt-[-48px]">
-                    <div className="flex md:flex-col items-start md:self-stretch flex-1">
+                  <div className="flex md:flex-col sm:flex-col items-center mt-[-48px]">
+                    <div className="flex md:flex-col sm:flex-col sm:self-stretch  items-start md:self-stretch flex-1">
                       <div className="h-[16px] w-[16px] mt-[443px] z-[1] bg-purple-A100 rounded-lg" />
                       <div className="md:self-stretch h-[933px] w-[933px] md:w-full ml-[-2px] md:ml-0 flex-1 relative md:flex-none">
                         <div className="flex flex-col items-end w-[73%] bottom-[16%] left-[16%] m-auto z-[2] absolute">

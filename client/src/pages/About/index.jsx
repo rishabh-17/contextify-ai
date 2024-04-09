@@ -250,8 +250,8 @@ export default function AboutPage() {
                                 </div>
                               </div>
                             </div>
-                            <div className="h-[92px] w-[15%] md:w-[200px] md:mt-[-11.5%] md:ml-[45%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs relative rounded-[46px]">
-                              <div className="flex justify-center items-center w-full md:mt-[20%] h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
+                            <div className="h-[92px] w-[15%] md:w-[200px] md:mt-[-11.5%]  md:ml-[45%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs relative rounded-[46px]">
+                              <div className="flex justify-center items-center sm:mt-[6%] w-full md:mt-[5%] h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
                                 <Img
                                   src="images/img_vector_pink_a200.svg"
                                   alt="vector"
@@ -404,7 +404,7 @@ export default function AboutPage() {
                     </div>
                     <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
                       <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                        <div className="w-[21%] md:w-full p-[35px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                        <div className="w-[21%] md:w-full p-[35px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[40%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
                           <Img
                             src="images/img_icon_white_a700_64x58.svg"
                             alt="icon_one"
@@ -433,7 +433,7 @@ export default function AboutPage() {
                     </div>
                     <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
                       <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                        <div className="w-[21%] md:w-full p-[35px] sm:ml-[40%] sm:w-[20%]  md:ml-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
+                        <div className="w-[21%] md:w-full p-[35px] sm:ml-[40%] sm:w-[20%]  md:ml-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[40%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
                           <Img
                             src="images/img_icon_white_a700_62x44.svg"
                             alt="icon_one"
