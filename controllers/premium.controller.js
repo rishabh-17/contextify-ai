@@ -1,1 +1,1 @@
-exports.test = async (req, res) = {};
+exports.getPremium = async (req, res) => {};

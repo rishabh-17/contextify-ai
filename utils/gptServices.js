@@ -4,7 +4,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const explainText = async (text) => {
+const explain = async (text) => {
   if (text?.length > 0) {
     const prompt = [
       {
@@ -52,4 +52,4 @@ const explainImage = async (imageUrl) => {
   return { success: false, error: "Unable to get image" };
 };
 
-exports.module = { explainText, explainImage };
+exports.module = { explain, explainImage };

@@ -9,7 +9,8 @@ import Two from "pages/Two";
 import Three from "pages/Three";
 import One from "pages/One";
 import AdminDashboard from "pages/AdminDashboard";
-import Dashboard from "pages/Dashboard";
+// import Dashboard from "pages/Dashboard";
+import Dashboard from "pages/Clientdashboard";
 
 const ProjectRoutes = () => {
   let element = useRoutes([

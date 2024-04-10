@@ -27,7 +27,9 @@ export default function HomePagePage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className="md:max-w-lg:flex flex flex-col sm:flex-col md:w-[150%] sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
+      <div className="flex flex-col items-center w-full pt-8 gap-[59px] md:flex-wrap 
+      md:w-[150vw] sm:[200vw]  sm:gap-[29px] sm:pt-5 
+      bg-gray-100 md:max-w-lg:flex flex flex-col sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
         <Header className="w-[86%] md:w-full md:p-5" />
         <div className="self-stretch md:flex  md:h-[auto] md:flex-wrap">
           <div className="flex flex-col items-center overflow-auto">
