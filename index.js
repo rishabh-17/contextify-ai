@@ -3,6 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const { contextRoutes, userRoutes } = require("./routes");
 const { AuthMiddleware } = require("./middlewares");
+const { connectDB } = require("./utils");
 const app = express();
 require("dotenv").config();
 app.use(cors());
@@ -24,4 +25,4 @@ app.get("/", (req, res) => {
 app.use("/api/context", AuthMiddleware.secretKeyValidation, contextRoutes);
 app.use("/api/user", userRoutes);
 
-app.listen(8000, () => console.log("Server started on port 8000"));
+app.listen(8000, () => connectDB(process.env.MONGO_URI));

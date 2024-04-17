@@ -64,3 +64,16 @@ function getAccessToken(id, name, isPremiumUser) {
     process.env.SECRET
   );
 }
+
+exports.genrateKey = async (req, res) => {
+  try {
+    const id = req.user._id;
+    const { validity, plan } = req.body;
+    const user = await User.findById(id);
+    user.secretKey = user.password;
+    await user.save();
+    res.json({ key: user.password });
+  } catch (error) {
+    console.log(error);
+  }
+};

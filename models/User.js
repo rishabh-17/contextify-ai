@@ -29,7 +29,21 @@ const UserSchema = new mongoose.Schema(
     secretKey: {
       type: String,
       trim: true,
-    }
+    },
+    expiry: {
+      type: Date,
+    },
+    usage: {
+      type: String,
+    },
+    totalReq: {
+      type: Number,
+      default: 10,
+    },
+    premiumType: {
+      type: String,
+      default: "free",
+    },
   },
   { timestamps: true }
 );
