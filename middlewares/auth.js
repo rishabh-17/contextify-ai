@@ -32,6 +32,7 @@ exports.secretKeyValidation = (req, res, next) => {
           .status(401)
           .json({ success: false, msg: "premium key usage limit reached" });
       } else {
+        req.user = premium.user
         next();
       }
     });

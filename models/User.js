@@ -26,6 +26,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       select: false,
     },
+    secretKey: {
+      type: String,
+      trim: true,
+    }
   },
   { timestamps: true }
 );
