@@ -1,7 +1,8 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const { contextRoutes } = require("./routes");
+const { contextRoutes, userRoutes } = require("./routes");
+const { AuthMiddleware } = require("./middlewares");
 const app = express();
 require("dotenv").config();
 app.use(cors());
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
   );
 });
 
-app.use("/api/context", contextRoutes);
+app.use("/api/context", AuthMiddleware.secretKeyValidation, contextRoutes);
+app.use("/api/user", userRoutes);
 
 app.listen(8000, () => console.log("Server started on port 8000"));
