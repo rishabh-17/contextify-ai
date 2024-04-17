@@ -19,4 +19,4 @@ const SavedSchema = new mongoose.Schema(
 
 const Saved = mongoose.model("Saved", SavedSchema);
 
-module.exports = User;
+module.exports = Saved;
