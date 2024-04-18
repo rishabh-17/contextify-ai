@@ -24,5 +24,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/context", AuthMiddleware.secretKeyValidation, contextRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/saved", contextRoutes);
 
 app.listen(8000, () => connectDB(process.env.MONGO_URI));
