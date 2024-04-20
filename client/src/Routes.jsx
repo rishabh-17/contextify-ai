@@ -50,6 +50,14 @@ const ProjectRoutes = () => {
       path: "dashboard",
       element: <Dashboard />,
     },
+    {
+      path: "login",
+      element: <Dashboard />,
+    },
+    {
+      path: "signup",
+      element: <Dashboard />,
+    },
     { path: "*", element: <NotFound /> },
   ]);
 

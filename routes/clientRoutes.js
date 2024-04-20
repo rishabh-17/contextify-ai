@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-// router.post("/contextify", contextController.getContext);
-// router.post("/save", contextController.saveContext);
+app.get("/dashboard", (req, res) => {});
+app.get("/alldetails", (req, res) => {});
+
 module.exports = router;
