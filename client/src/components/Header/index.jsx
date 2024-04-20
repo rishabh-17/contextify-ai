@@ -1,23 +1,22 @@
 import React from "react";
 import { Button, Text, Img } from "./..";
 import { useNavigate } from "react-router-dom";
-
+import './index.css';
 export default function Header({ ...props }) {
   const navigate = useNavigate();
   return (
-    <header {...props}>
+    <header {...props} className="wih5">
       <div className="w-full">
         <div className="flex md:flex-col justify-between items-center gap-5">
-          <div className="h-[39px] w-[14%] md:w-full relative">
+          <div className="jhsufdj w-100% flex md:ml-[-75%]">
             <Img
               src="images/img_frame_purple_900.svg"
               alt="image"
-              className="h-[39px] left-[0.00px] bottom-0 top-0 my-auto absolute"
-            />
+              width={'100%'} />
             <Text
               size="14xl"
               as="p"
-              className="bottom-[-0.45px] right-[0.00px] m-auto !text-deep_purple-A200_04 capitalize absolute"
+              className="bottom-[-0.45px] right-[0.00px] m-auto !text-deep_purple-A200_04 capitalize"
             >
               Contextify
             </Text>
