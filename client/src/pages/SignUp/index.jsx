@@ -1,6 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Button, Img, CheckBox, Text } from "../../components";
+import {CheckBox} from "../../components";
+import { Button } from "pages/SignIn/Button";
+import { Text } from "pages/SignIn/Text";
+import { Img } from "pages/SignIn/Img";
 import SignUpComponentSetDivider from "../../components/SignUpComponentSetDivider";
 import SignUpComponentSetProperty1 from "../../components/SignUpComponentSetProperty1";
 

@@ -1,12 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import {  Img } from "./Img";
-import {Button} from './Button';
-import {Text} from './Text';
+import { Button, Img, Text } from "../../components";
 import SignUpComponentSetDivider from "../../components/SignUpComponentSetDivider";
 import SignUpComponentSetProperty1 from "../../components/SignUpComponentSetProperty1";
 
-export default function SignInPage() {
+export default function SignupcomponentsetPage() {
   return (
     <>
       <Helmet>
