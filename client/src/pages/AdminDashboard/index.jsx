@@ -14,11 +14,6 @@ export default function AdmindashboardPage() {
   const [searchBarValue7, setSearchBarValue7] = React.useState("");
   const [collapsed, setCollapsed] = React.useState(false);
 
-  //use this function to collapse/expand the sidebar
-  //function collapseSidebar() {
-  //    setCollapsed(!collapsed)
-  //}
-
   return (
     <>
       <MainLayout>

@@ -9,6 +9,7 @@ import Two from "pages/Two";
 import Three from "pages/Three";
 import One from "pages/One";
 import AdminDashboard from "pages/AdminDashboard";
+import Profile from "pages/Profile";
 // import Dashboard from "pages/Dashboard";
 import Dashboard from "pages/Clientdashboard";
 import SignInPage from "pages/SignIn";
@@ -57,6 +58,22 @@ const ProjectRoutes = () => {
     },
     {
       path: "signup",
+      element: <Dashboard />,
+    },
+    {
+      path: "mycontext",
+      element: <Dashboard />,
+    },
+    {
+      path: "subscription",
+      element: <Dashboard />,
+    },
+    {
+      path: "profile",
+      element: <Profile />,
+    },
+    {
+      path: "contextDetail/:id",
       element: <Dashboard />,
     },
     { path: "*", element: <NotFound /> },

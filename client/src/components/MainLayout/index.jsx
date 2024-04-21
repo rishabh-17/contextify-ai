@@ -17,7 +17,7 @@ export default function ClientdashboardPage({ active, children }) {
             />
             <h2 className="text-xl font-bold text-purple-900">Contextify</h2>
           </div>
-          <form className="mx-auto w-[30%] p-1 border rounded bg-[#F7F0FC] h-8 overflow-hidden sm:hidden">
+          <form className="mx-auto w-[30%] pl-2 border rounded bg-[#F7F0FC] h-8 overflow-hidden sm:hidden">
             <div className="relative">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                 <svg
@@ -39,7 +39,7 @@ export default function ClientdashboardPage({ active, children }) {
               <input
                 type="search"
                 id="default-search"
-                className="block w-[90%] pl-16 ml-8 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-[90%] ml-6 ps-10 text-sm text-gray-900 border-gray-300 rounded-lg bg-gray-50  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white bg-transparent border-0"
                 placeholder="Search "
                 required
               />
