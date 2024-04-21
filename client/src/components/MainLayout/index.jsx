@@ -73,11 +73,51 @@ export default function ClientdashboardPage({ active, children }) {
               </li>
             </ul>
             <ul className="text-sm">
-              <li className="ml-5 my-3 text-xs">support</li>
-              <li className="ml-5 my-3 text-xs">Report an issue</li>
-              <li className="ml-5 my-3 text-xs">Subscription</li>
-              <li className="ml-5 my-3 text-xs">Settings</li>
-              <li className="ml-5 my-3 text-xs">Logout</li>
+              <li
+                className={
+                  active === 3
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
+                    : "ml-5 my-3 text-xs"
+                }
+              >
+                support
+              </li>
+              <li
+                className={
+                  active === 3
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
+                    : "ml-5 my-3 text-xs"
+                }
+              >
+                Report an issue
+              </li>
+              <li
+                className={
+                  active === 4
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
+                    : "ml-5 my-3 text-xs"
+                }
+              >
+                Subscription
+              </li>
+              <li
+                className={
+                  active === 5
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
+                    : "ml-5 my-3 text-xs"
+                }
+              >
+                Settings
+              </li>
+              <li
+                className={
+                  active === 6
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
+                    : "ml-5 my-3 text-xs"
+                }
+              >
+                Logout
+              </li>
             </ul>
           </div>
 

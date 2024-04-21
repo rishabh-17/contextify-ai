@@ -14,7 +14,8 @@ import Profile from "pages/Profile";
 import Dashboard from "pages/Clientdashboard";
 import SignInPage from "pages/SignIn";
 import SignUpPage from "pages/SignUp";
-
+import Subscription from "pages/Subscription";
+import MyContext from "pages/MyContext";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -63,11 +64,11 @@ const ProjectRoutes = () => {
     },
     {
       path: "mycontext",
-      element: <Dashboard />,
+      element: <MyContext />,
     },
     {
       path: "subscription",
-      element: <Dashboard />,
+      element: <Subscription />,
     },
     {
       path: "profile",
