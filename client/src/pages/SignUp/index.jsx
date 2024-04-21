@@ -84,10 +84,10 @@ Privacy Policy "
               </div>
 
               {/* social media divider section */}
-              <SignUpComponentSetDivider className="flex items-center gap-[23px] sm:flex-col" />
+              {/* <SignUpComponentSetDivider className="flex items-center gap-[23px] sm:flex-col" /> */}
 
               {/* social media buttons section */}
-              <div className="flex flex-col gap-4">
+              {/* <div className="flex flex-col gap-4">
                 <Button
                   shape="round"
                   leftIcon={
@@ -104,7 +104,7 @@ Privacy Policy "
                 >
                   Continue with Apple
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

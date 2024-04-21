@@ -76,10 +76,10 @@ export default function SignInPage() {
               </div>
 
               {/* social login divider section */}
-              <SignUpComponentSetDivider className="flex items-center gap-[23px] sm:flex-col" />
+              {/* <SignUpComponentSetDivider className="flex items-center gap-[23px] sm:flex-col" /> */}
 
               {/* social login buttons section */}
-              <div className="flex flex-col gap-4">
+              {/* <div className="flex flex-col gap-4">
                 <Button
                   shape="round"
                   leftIcon={
@@ -96,7 +96,7 @@ export default function SignInPage() {
                 >
                   Continue with Apple
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
