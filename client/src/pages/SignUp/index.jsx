@@ -19,10 +19,10 @@ export default function SignUpPage() {
       </Helmet>
 
       {/* language selection section */}
-      <div className="flex w-full justify-center bg-gray-100 px-14 py-[107px] md:p-5">
-        <div className="mt-[79px] flex w-[68%] flex-col items-center gap-[31px] md:w-full">
+      <div className="flex w-full justify-center bg-gray-100 px-14 pt-[20px] md:p-5">
+        <div className="mt-[20px] flex w-[68%] flex-col items-center  md:w-full">
           {/* login prompt section */}
-          <div className="flex items-center justify-between gap-5 self-stretch sm:flex-col">
+          <div className="flex items-center justify-between gap-2 self-stretch sm:flex-col">
             <div className="flex items-center pl-2">
               <Text as="p" className="self-end !text-blue_gray-900">
                 English (united States)
@@ -46,7 +46,7 @@ export default function SignUpPage() {
           </div>
 
           {/* signup form section */}
-          <div className="container-xs flex flex-col items-center gap-[30px] rounded-[32px] border border-solid border-gray-700_59 p-10 md:p-5">
+          <div className="container-xs flex flex-col items-center gap-[10px] rounded-[32px] border border-solid border-gray-700_59 pt-1 md:p-5">
             <div className="flex w-[73%] flex-col items-center gap-1 md:w-full">
               <div className="h-[40px] w-[40px] rounded-[20px] bg-gray-400_01" />
               <a href="#">

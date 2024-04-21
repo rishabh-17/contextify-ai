@@ -18,7 +18,7 @@ export default function SignInPage() {
       </Helmet>
 
       {/* language selection section */}
-      <div className="flex w-full justify-center bg-gray-100 px-14 py-[186px] md:p-5">
+      <div className="flex w-full justify-center bg-gray-100 px-14 pt-[20px] md:p-5">
         {/* main content section */}
         <div className="mb-[110px] flex w-[66%] flex-col items-center gap-[31px] md:w-full">
           {/* header section */}
