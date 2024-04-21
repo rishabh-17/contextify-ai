@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Text } from 'components';
-const index = ({ question, answer }) => {
+const FAQ = ({ question, answer }) => {
     const [toggle, settoggle] = useState(false);
     return (
         <div className='transition delay-300 duration-500 ease-in-out'>
@@ -42,4 +42,4 @@ const index = ({ question, answer }) => {
     )
 }
 
-export default index
+export default FAQ

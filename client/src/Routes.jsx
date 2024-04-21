@@ -13,6 +13,7 @@ import Profile from "pages/Profile";
 // import Dashboard from "pages/Dashboard";
 import Dashboard from "pages/Clientdashboard";
 import SignInPage from "pages/SignIn";
+import SignUpPage from "pages/SignUp";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -58,7 +59,7 @@ const ProjectRoutes = () => {
     },
     {
       path: "signup",
-      element: <Dashboard />,
+      element: <SignUpPage />,
     },
     {
       path: "mycontext",
