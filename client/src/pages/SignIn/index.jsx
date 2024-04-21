@@ -3,10 +3,12 @@ import { Helmet } from "react-helmet";
 import {  Img } from "./Img";
 import {Button} from './Button';
 import {Text} from './Text';
+import { useNavigate } from "react-router-dom";
 import SignUpComponentSetDivider from "../../components/SignUpComponentSetDivider";
 import SignUpComponentSetProperty1 from "../../components/SignUpComponentSetProperty1";
 
 export default function SignInPage() {
+  const navigate = useNavigate();
   return (
     <>
       <Helmet>
@@ -41,6 +43,7 @@ export default function SignInPage() {
               <Button
                 size="xs"
                 className="min-w-[131px] rounded-md border border-solid border-gray-900_01 !text-gray-900_01 sm:px-5"
+                onClick={() => navigate("/signup")}
               >
                 Sign up
               </Button>
@@ -70,6 +73,7 @@ export default function SignInPage() {
                   color="purple_900"
                   shape="round"
                   className="w-full border border-solid border-blue_gray-100 lowercase sm:px-5"
+                  onClick={() => navigate("/")}
                 >
                   login
                 </Button>

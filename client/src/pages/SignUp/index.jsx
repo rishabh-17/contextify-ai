@@ -4,10 +4,12 @@ import {CheckBox} from "../../components";
 import { Button } from "pages/SignIn/Button";
 import { Text } from "pages/SignIn/Text";
 import { Img } from "pages/SignIn/Img";
+import { useNavigate } from "react-router-dom";
 import SignUpComponentSetDivider from "../../components/SignUpComponentSetDivider";
 import SignUpComponentSetProperty1 from "../../components/SignUpComponentSetProperty1";
 
 export default function SignUpPage() {
+  const navigate = useNavigate();
   return (
     <>
       <Helmet>
@@ -39,6 +41,7 @@ export default function SignUpPage() {
               <Button
                 size="xs"
                 className="min-w-[131px] rounded-md border border-solid border-gray-900_01 !text-gray-900_01 sm:px-5"
+                onClick={() => navigate("/signin")}
               >
                 Login
               </Button>
@@ -78,6 +81,7 @@ Privacy Policy "
                   color="purple_900"
                   shape="round"
                   className="w-full border border-solid border-blue_gray-100 lowercase sm:px-5"
+                  onClick={() => navigate("/")}
                 >
                   cREATE AN ACCOUNT
                 </Button>
