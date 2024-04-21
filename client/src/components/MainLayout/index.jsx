@@ -2,8 +2,10 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { CloseSVG } from "../../assets/images";
 import { Text, Img, Input, Button } from "..";
+import { useNavigate } from "react-router-dom";
 
 export default function ClientdashboardPage({ active, children }) {
+  const navigate = useNavigate();
   const [searchBarValue, setSearchBarValue] = React.useState("");
   return (
     <>
@@ -59,6 +61,7 @@ export default function ClientdashboardPage({ active, children }) {
                     ? "text-sm p-3 bg-purple-900 rounded-lg text-[#fff] my-1"
                     : "text-sm p-3 text-purple-900 rounded-lg my-1"
                 }
+                onClick={() => navigate("/dashboard")}
               >
                 Dashboard
               </li>
@@ -68,6 +71,7 @@ export default function ClientdashboardPage({ active, children }) {
                     ? "text-sm p-3 bg-purple-900 rounded-lg text-[#fff] my-1"
                     : "text-sm p-3 text-purple-900 rounded-lg my-1"
                 }
+                onClick={() => navigate("/mycontext")}
               >
                 My Context
               </li>
