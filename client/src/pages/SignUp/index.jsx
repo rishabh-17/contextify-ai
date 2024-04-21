@@ -55,15 +55,15 @@ export default function SignUpPage() {
           username,
         }
       );
-      if (data.error) {
-        setError(data.error);
+      if (!data.success) {
+        setError(data.msg);
         setFormValidity((prevState) => ({
           ...prevState,
           username: data.error,
         }));
         setIsLoading(false);
       } else {
-        navigate("/");
+        navigate("/signin");
       }
     } catch (err) {
       setError(err.message);
@@ -73,7 +73,7 @@ export default function SignUpPage() {
 
   return (
     <div className="h-screen flex items-center justify-center">
-      <div className="w-[60%] p-5 border-t border-b border-l border-r border-gray-100 rounded-tl-lg rounded-tr-lg">
+      <div className="w-[60%] md:w-[100%] p-5 border-t border-b border-l border-r border-gray-100 rounded-tl-lg rounded-tr-lg">
         <div className="container flex flex-col items-center justify-center px-5 md:px-14 md:py-24">
           <div className="flex items-center justify-between gap-2 self-stretch sm:flex-col">
             <div className="flex items-center pl-2">
@@ -104,7 +104,7 @@ export default function SignUpPage() {
             </div>
           </div>
 
-          <div className="container-xs w-[50%] flex flex-col items-center gap-[10px] rounded-[32px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5">
+          <div className="container-xs w-[50%] sm:w-full flex flex-col items-center gap-[10px] rounded-[32px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5">
             <div className="flex w-[73%] flex-col items-center gap-1 md:w-full">
               <div className="h-[40px] w-[40px] rounded-[20px] bg-gray-400_01" />
               <a href="#">
