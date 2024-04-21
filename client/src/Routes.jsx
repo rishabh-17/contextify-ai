@@ -11,6 +11,7 @@ import One from "pages/One";
 import AdminDashboard from "pages/AdminDashboard";
 // import Dashboard from "pages/Dashboard";
 import Dashboard from "pages/Clientdashboard";
+import SignInPage from "pages/SignIn";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -51,8 +52,8 @@ const ProjectRoutes = () => {
       element: <Dashboard />,
     },
     {
-      path: "login",
-      element: <Dashboard />,
+      path: "signin",
+      element: <SignInPage />,
     },
     {
       path: "signup",
