@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Text, Img } from "./..";
 import { useNavigate } from "react-router-dom";
-import './index.css';
+import "./index.css";
 export default function Header({ ...props }) {
   const navigate = useNavigate();
   return (
@@ -12,7 +12,8 @@ export default function Header({ ...props }) {
             <Img
               src="images/img_frame_purple_900.svg"
               alt="image"
-              width={'100%'} />
+              width={"100%"}
+            />
             <Text
               size="14xl"
               as="p"
@@ -56,8 +57,18 @@ export default function Header({ ...props }) {
                 color="white_A700"
                 size="9xl"
                 className="sm:px-5 capitalize min-w-[160px] rounded-[30px]"
+                onClick={() => {
+                  if (localStorage.getItem("admintoken")) {
+                    navigate("/admindashboard");
+                  }
+                  if (localStorage.getItem("token")) {
+                    navigate("/dashboard");
+                  } else {
+                    navigate("/login");
+                  }
+                }}
               >
-                Get Free Trial
+                {localStorage.getItem("token") ? "Dashboard" : "Get Free Trial"}
               </Button>
             </div>
           </div>
