@@ -57,9 +57,15 @@ export default function LoginPage() {
         }));
         setIsLoading(false);
       } else {
-        localStorage.setItem("token", data.token);
-        setIsLoading(false);
-        // navigate("/");
+        if (data.authToken) {
+          localStorage.setItem("admintoken", data.authToken);
+          setIsLoading(false);
+          navigate("/");
+        } else {
+          localStorage.setItem("token", data.token);
+          setIsLoading(false);
+          // navigate("/");
+        }
       }
     } catch (err) {
       setError(err.message);

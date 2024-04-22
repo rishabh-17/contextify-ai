@@ -11,9 +11,34 @@ const dropDownOptions = [
 ];
 
 export default function AdmindashboardPage() {
-  const [searchBarValue7, setSearchBarValue7] = React.useState("");
-  const [collapsed, setCollapsed] = React.useState(false);
+  const [users, setUsers] = React.useState([]);
+  const [apiHistory, setApiHistory] = React.useState([]);
 
+  React.useEffect(() => {
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const fetchUsers = async () => {
+      const { data } = await axios.get(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/admin/users",
+        config
+      );
+      setUsers(data.data);
+    };
+
+    const fetchApiHistory = async () => {
+      const { data } = await axios.get(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/admin/apihistory",
+        config
+      );
+      setApiHistory(data.data);
+    };
+
+    fetchUsers();
+    fetchApiHistory();
+  }, []);
   return (
     <>
       <MainLayout>
