@@ -20,7 +20,8 @@
     "react-pro-sidebar": "^1.1.0",
     "react-router-dom": "6.0.2",
     "react-router-hash-link": "^2.4.3",
-    "react-select": "^5.2.1"
+    "react-select": "^5.2.1",
+    "react-web-share": "^2.0.2"
   },
   "scripts": {
     "start": "vite",

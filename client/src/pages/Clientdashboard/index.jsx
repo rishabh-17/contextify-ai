@@ -1,6 +1,7 @@
 import React from "react";
 import MainLayout from "../../components/MainLayout";
 import axios from "axios";
+import { RWebShare } from "react-web-share";
 
 export default function ClientdashboardPage() {
   const [searchBarValue, setSearchBarValue] = React.useState("");
@@ -95,9 +96,18 @@ export default function ClientdashboardPage() {
               </div>
             </section>
             <section className="my-5 flex gap-4">
-              <button className="bg-[#fff] text-purple-900 rounded-xl px-5 py-3">
-                Share
-              </button>
+              <RWebShare
+                data={{
+                  text: "Contextify Your Browser Experience",
+                  url: "https://contxtify-ai.com/",
+                  title: "Contextify",
+                }}
+                onClick={() => console.log("shared successfully!")}
+              >
+                <button className="bg-[#fff] text-purple-900 rounded-xl px-5 py-3">
+                  Share
+                </button>
+              </RWebShare>
               <button className="bg-[#fff] text-purple-900 rounded-xl px-5 py-3">
                 Invite
               </button>
