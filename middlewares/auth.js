@@ -39,3 +39,11 @@ exports.secretKeyValidation = (req, res, next) => {
     return res.status(401).json({ success: false, msg: "invalid token" });
   }
 };
+
+exports.checkAdmin = (req, res, next) => {
+  if (req.user.premiumType ==='admin'){
+    next()
+  } else {
+    res.json({ success: false, msg: 'Unauthorized access'})
+  }
+}
