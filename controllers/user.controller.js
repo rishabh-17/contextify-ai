@@ -11,7 +11,7 @@ exports.signup = async (req, res, next) => {
 
     const userCheck = await User.findOne({ email: email });
     if (userCheck) {
-      res.json({ msg: "email already exist", signup: false });
+      res.json({ msg: "email already exist", success: false });
     } else {
       const hashed = await bcrypt.hash(password, 10);
       const user = new User({
@@ -20,7 +20,7 @@ exports.signup = async (req, res, next) => {
         password: hashed,
       });
       await user.save();
-      res.json({ msg: "signup Successful", signup: true, user });
+      res.json({ msg: "signup Successful", success: true, user });
     }
   } catch (error) {
     console.log(error);
@@ -35,23 +35,28 @@ exports.login = async (req, res, next) => {
 
     const user = await User.findOne({ email: email });
 
-    console.log(user);
-    if (user?.email.length) {
+    if (user) {
       bcrypt
         .compare(password, user.password)
-        .then(() => {
-          res.json({
-            msg: "login successful",
-            login: true,
-            user,
-            token: getAccessToken(user.id, user.name, user.isPremiumUser),
-          });
+        .then((e) => {
+          console.log(e);
+
+          if (e) {
+            res.json({
+              msg: "login successful",
+              login: true,
+              user,
+              token: getAccessToken(user.id, user.name, user.isPremiumUser),
+            });
+          } else {
+            res.json({ msg: "Enter correct password", success: false });
+          }
         })
         .catch((err) => {
-          res.json({ msg: "Enter correct password", login: false, err });
+          res.json({ msg: "Error logging in", success: false, err });
         });
     } else {
-      res.json({ msg: "user not found", login: false });
+      res.json({ msg: "user not found", success: false });
     }
   } catch (error) {
     console.log("login error", error);

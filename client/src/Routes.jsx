@@ -9,9 +9,13 @@ import Two from "pages/Two";
 import Three from "pages/Three";
 import One from "pages/One";
 import AdminDashboard from "pages/AdminDashboard";
+import Profile from "pages/Profile";
 // import Dashboard from "pages/Dashboard";
 import Dashboard from "pages/Clientdashboard";
-
+import SignInPage from "pages/SignIn";
+import SignUpPage from "pages/SignUp";
+import Subscription from "pages/Subscription";
+import MyContext from "pages/MyContext";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -48,6 +52,30 @@ const ProjectRoutes = () => {
     },
     {
       path: "dashboard",
+      element: <Dashboard />,
+    },
+    {
+      path: "signin",
+      element: <SignInPage />,
+    },
+    {
+      path: "signup",
+      element: <SignUpPage />,
+    },
+    {
+      path: "mycontext",
+      element: <MyContext />,
+    },
+    {
+      path: "subscription",
+      element: <Subscription />,
+    },
+    {
+      path: "profile",
+      element: <Profile />,
+    },
+    {
+      path: "contextDetail/:id",
       element: <Dashboard />,
     },
     { path: "*", element: <NotFound /> },
