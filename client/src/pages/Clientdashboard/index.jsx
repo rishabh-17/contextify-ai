@@ -4,10 +4,8 @@ import axios from "axios";
 import { RWebShare } from "react-web-share";
 
 export default function ClientdashboardPage() {
-  const [searchBarValue, setSearchBarValue] = React.useState("");
   const [history, setHistory] = React.useState([]);
   const [saved, setSaved] = React.useState([]);
-  const active = 1;
 
   React.useEffect(() => {
     const config = {
@@ -15,6 +13,7 @@ export default function ClientdashboardPage() {
         authentication: `${localStorage.getItem("token")}`,
       },
     };
+
     const fetchHistory = async () => {
       const { data } = await axios.get(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/history",
@@ -102,7 +101,7 @@ export default function ClientdashboardPage() {
                   url: "https://contxtify-ai.com/",
                   title: "Contextify",
                 }}
-                onClick={() => console.log("shared successfully!")}
+                // onClick={() => console.log("shared successfully!")}
               >
                 <button className="bg-[#fff] text-purple-900 rounded-xl px-5 py-3">
                   Share

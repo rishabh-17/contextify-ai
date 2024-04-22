@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { CloseSVG } from "../../assets/images";
 import { Text, Img, SelectBox, Input } from "../../components";
 import MainLayout from "../../components/MainLayout";
+import axios from "axios";
 
 const dropDownOptions = [
   { label: "Option1", value: "option1" },
