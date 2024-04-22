@@ -197,5 +197,6 @@ module.exports = {
       backgroundImage: { gradient: "linear-gradient(61deg, #f8c561,#f68d60)" },
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"),
+            require('flowbite/plugin')],
 };

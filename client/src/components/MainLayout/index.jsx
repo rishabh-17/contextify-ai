@@ -3,6 +3,14 @@ import { Helmet } from "react-helmet";
 import { CloseSVG } from "../../assets/images";
 import { Text, Img, Input, Button } from "..";
 import { useNavigate } from "react-router-dom";
+import { MdOutlineContactSupport } from "react-icons/md";
+import { IoPowerSharp } from "react-icons/io5";
+import { IoSettingsOutline } from "react-icons/io5";
+import { TbMessageReport } from "react-icons/tb";
+import { MdOutlineSpaceDashboard } from "react-icons/md";
+import { TbFileSettings } from "react-icons/tb";
+import { MdNotificationAdd } from "react-icons/md";
+import { IoIosArrowDropdown } from "react-icons/io";
 
 export default function ClientdashboardPage({ active, children }) {
   const navigate = useNavigate();
@@ -13,9 +21,10 @@ export default function ClientdashboardPage({ active, children }) {
         <nav className="w-full h-[10%] bg-[#fff] flex justify-between px-5 items-center">
           <div className="flex items-center">
             <Img
-              src="images/img_frame_purple_900.svg"
+              src="images/logo.png"
+              // src="images/img_frame_purple_900.svg"
               alt="image"
-              className="my-auto"
+              className="my-auto h-[50px]"
             />
             <h2 className="text-xl font-bold text-purple-900">Contextify</h2>
           </div>
@@ -47,7 +56,81 @@ export default function ClientdashboardPage({ active, children }) {
               />
             </div>
           </form>
-          <div>icons</div>
+          <div className="flex flex-row items-center">
+            <MdNotificationAdd />
+            <Img
+              src="images/logo.png"
+              alt="image"
+              className="my-auto mx-4 h-[50px]"
+            />
+            <div className="text-black flex flex-col">
+                  <h3>mony roy</h3>
+                  <span>user</span>
+            </div>
+              <div>
+                <button
+                  id="dropdownInformationButton"
+                  data-dropdown-toggle="dropdownInformation"
+                  className="text-white   font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center  dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  type="button"
+                >
+                  {/* <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m1 1 4 4 4-4" />
+                   </svg> */}
+                  <IoIosArrowDropdown className="h-[90px]" />
+                </button>
+                {/* Dropdown menu */}
+                <div
+                  id="dropdownInformation"
+                  className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                >
+                  <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                    <div>Bonnie Green</div>
+                    <div className="font-medium truncate">
+                      name@flowbite.com
+                    </div>
+                  </div>
+                  <ul
+                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownInformationButton"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Earnings
+                      </a>
+                    </li>
+                  </ul>
+                  <div className="py-2">
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    >
+                      Sign out
+                    </a>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
         </nav>
         <div className="flex h-[90%]">
           <div
@@ -58,21 +141,23 @@ export default function ClientdashboardPage({ active, children }) {
               <li
                 className={
                   active === 1
-                    ? "text-sm p-3 bg-purple-900 rounded-lg text-[#fff] my-1"
-                    : "text-sm p-3 text-purple-900 rounded-lg my-1"
+                    ? "text-sm p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
+                    : "text-sm p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center"
                 }
                 onClick={() => navigate("/dashboard")}
               >
+                <MdOutlineSpaceDashboard />
                 Dashboard
               </li>
               <li
                 className={
                   active === 2
-                    ? "text-sm p-3 bg-purple-900 rounded-lg text-[#fff] my-1"
-                    : "text-sm p-3 text-purple-900 rounded-lg my-1"
+                    ? "text-sm p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
+                    : "text-sm p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center"
                 }
                 onClick={() => navigate("/mycontext")}
               >
+                <TbFileSettings />
                 My Context
               </li>
             </ul>
@@ -80,46 +165,51 @@ export default function ClientdashboardPage({ active, children }) {
               <li
                 className={
                   active === 3
-                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
-                    : "ml-5 my-3 text-xs"
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
+                    : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
+                <MdOutlineContactSupport />
                 support
               </li>
               <li
                 className={
                   active === 3
-                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
-                    : "ml-5 my-3 text-xs"
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
+                    : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
+                <TbMessageReport />
                 Report an issue
               </li>
               <li
                 className={
                   active === 4
-                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
-                    : "ml-5 my-3 text-xs"
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
+                    : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
+                <IoPowerSharp />
                 Subscription
               </li>
               <li
                 className={
                   active === 5
-                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
-                    : "ml-5 my-3 text-xs"
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
+                    : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
+                <IoSettingsOutline />
                 Settings
               </li>
               <li
                 className={
                   active === 6
-                    ? "ml-5 my-3 text-sm text-purple-900 font-bold"
-                    : "ml-5 my-3 text-xs"
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
+                    : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
+                <IoPowerSharp />
                 Logout
               </li>
             </ul>
