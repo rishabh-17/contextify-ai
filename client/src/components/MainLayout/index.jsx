@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { CloseSVG } from "../../assets/images";
 import { Text, Img, Input, Button } from "..";
@@ -68,61 +68,72 @@ export default function ClientdashboardPage({ active, children }) {
               className="my-auto mx-4 h-[50px]"
             />
             <div className="text-black flex flex-col">
-                  <h3>mony roy</h3>
-                  <span>user</span>
+              <h3>mony roy</h3>
+              <span>user</span>
             </div>
             <div>
-    
-            <div>
-      <button
-        id="dropdownInformationButton"
-        className="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-blue-700"
-        type="button"
-        onClick={toggleDropdown}
-      >
-        <IoIosArrowDropdown className="h-[90px]" />
-      </button>
-      {/* Dropdown menu */}
-      <div
-        id="dropdownInformation"
-        className={`absolute bg-[#fff] right-0 top-[70px] z-10 ${isDropdownOpen ? '' : 'hidden'} bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
-      >
-        <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-          <div>Bonnie Green</div>
-          <div className="font-medium truncate">name@flowbite.com</div>
-        </div>
-        <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-          <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Settings
-            </a>
-          </li>
-          <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-              Earnings
-            </a>
-          </li>
-        </ul>
-        <div className="py-2">
-          <a
-            href="#"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-          >
-            Sign out
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-      
-    </div>
-            
+              <div>
+                <button
+                  id="dropdownInformationButton"
+                  className="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-blue-700"
+                  type="button"
+                  onClick={toggleDropdown}
+                >
+                  <IoIosArrowDropdown className="h-[90px]" />
+                </button>
+                {/* Dropdown menu */}
+                <div
+                  id="dropdownInformation"
+                  className={`absolute bg-[#fff] right-0 top-[70px] z-10 ${
+                    isDropdownOpen ? "" : "hidden"
+                  } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                >
+                  <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                    <div>Bonnie Green</div>
+                    <div className="font-medium truncate">
+                      name@flowbite.com
+                    </div>
+                  </div>
+                  <ul
+                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownInformationButton"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        Earnings
+                      </a>
+                    </li>
+                  </ul>
+                  <div className="py-2">
+                    <a
+                      href="#"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    >
+                      Sign out
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </nav>
         <div className="flex h-[90%]">
@@ -201,6 +212,10 @@ export default function ClientdashboardPage({ active, children }) {
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
+                onClick={() => {
+                  localStorage.clear();
+                  navigate("/");
+                }}
               >
                 <IoPowerSharp />
                 Logout
