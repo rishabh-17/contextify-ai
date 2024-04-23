@@ -64,7 +64,7 @@ export default function Header({ ...props }) {
                   if (localStorage.getItem("token")) {
                     navigate("/dashboard");
                   } else {
-                    navigate("/login");
+                    navigate("/signin");
                   }
                 }}
               >
