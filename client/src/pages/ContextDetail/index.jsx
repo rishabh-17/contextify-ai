@@ -40,7 +40,7 @@ export default function ContextDetail() {
 
   return (
     <div>
-      <MainLayout>
+      <MainLayout active={2}>
         <h2 className="font-bold text-xl mt-10">Context Title</h2>
         <p className="mt-5">
           Constext Detail. Lorem ipsum dolor sit amet consectetur adipisicing
