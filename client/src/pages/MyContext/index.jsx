@@ -2,7 +2,6 @@ import React from "react";
 import MainLayout from "../../components/MainLayout";
 import axios from "axios";
 
-
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
 
@@ -15,7 +14,7 @@ export default function MyContext() {
 
     const fetchContexts = async () => {
       const { data } = await axios.get(
-        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/contexts",
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved",
         config
       );
       setContexts(data.data);
