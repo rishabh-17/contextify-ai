@@ -5,6 +5,12 @@ import { RWebShare } from "react-web-share";
 import { MdPerson } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5";
 import { FaRegEdit } from "react-icons/fa";
+import { GiBrain } from "react-icons/gi";
+import { WiTime4 } from "react-icons/wi";
+import { IoMdShare } from "react-icons/io";
+import { IoIosPersonAdd } from "react-icons/io";
+
+
 
 export default function ClientdashboardPage() {
   const [history, setHistory] = React.useState([]);
@@ -88,15 +94,22 @@ export default function ClientdashboardPage() {
                   <p>1</p>
                 </div>
                 <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col rounded rounded-2xl">
-                  <div className="h-10 w-10 bg-blue-400 rounded-xl items-center ">
-                    <IoPeopleSharp className="h-8 w-8" />
+                  <div className="flex h-12 w-12 p-3 bg-purple-300 rounded-xl items-center justify-center">
+                    <IoPeopleSharp className="h-8 w-8" color="#140694" />
+                  </div>
+                  <p>people</p>
+                  <p>1</p>
+                </div>
+                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col rounded rounded-2xl">
+                  <div className="flex h-12 w-12 p-3 bg-purple-300 rounded-xl items-center justify-center">
+                    <IoPeopleSharp className="h-8 w-8" color="#140694" />
                   </div>
                   <p>people</p>
                   <p>1</p>
                 </div>
               </div>
               <div className="w-full flex justify-end">
-                <button className="text-[#fff] bg-purple-900 rounded p-2">
+                <button className="text-[#fff] bg-purple-900 rounded-xl p-2">
                   View all
                 </button>
               </div>
@@ -121,7 +134,7 @@ export default function ClientdashboardPage() {
                   </div>
                 </div>
                 <div className="bg-[#fff] w-full h-32 flex items-center text-center rounded-xl">
-                  <FaRegEdit className="h-10 w-10 mx-6" />
+                  <FaRegEdit className="h-10 w-10 mx-6" color="#140694" />
                   <div className="h-[70px] w-[500px] mt-8 flex justify-around border-b-4 border-[#000000]">
                     <h3 className="h-12 w-[10px]">Will Smith</h3>
                     <div className="h-12 w-[35px] pl-[200px]">
@@ -131,21 +144,98 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="w-full flex justify-start">
-                <button className="text-[#fff] bg-purple-900 rounded p-2">
+                <button className="text-[#fff] bg-purple-900 rounded-xl p-2">
                   View all
                 </button>
               </div>
             </section>
           </div>
           <div>
-            <section className="mb-5">
-              <h2>My notes for further research</h2>
+            <section className="mb-5 mx-10">
+              <h2>Things i know </h2>
 
-              <div className="bg-[#fff] w-full min-h-24 rounded my-2">
-                <div className="w-full p-4">hiiii</div>
+              <div className="bg-[#fff] flex flex-col  w-full min-h-24 rounded-xl my-2">
+                <div className="w-full p-6">
+                  <div className="flex  w-full  justify-center text-center">
+                    <GiBrain className="h-16 w-16 top-0" color='#4B0082'/>
+                    <div className="flex flex-col ml-6 w-full text-end justify-end">
+                      <p className=" pl-[40%] float-end">
+                        How razor blades are made and reused
+                      </p>{" "}
+                      <div className="h-[2px] w-full border-b-2 border-[#000000] " />
+                    </div>{" "}
+                  </div>
+                  <div></div>
+                  <div></div>
+                </div>
+                <div className="w-full p-6">
+                  <div className="flex  w-full  justify-center text-center">
+                    <GiBrain className="h-16 w-16 top-0" color='#4B0082'/>
+                    <div className="flex flex-col ml-6 w-full text-end justify-end">
+                      <p className=" pl-[40%] float-end">
+                        How razor blades are made and reused
+                      </p>{" "}
+                      <div className="h-[2px] w-full border-b-2 border-[#000000] " />
+                    </div>{" "}
+                  </div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <div className="w-full flex justify-start">
+                <button className="text-[#fff] bg-purple-900 rounded-xl p-2">
+                  View all
+                </button>
               </div>
             </section>
-            <section className="my-5 flex gap-4">
+            <section className="mb-5 mx-10">
+              <h2>For future exploration</h2>
+
+              <div className=" flex flex-col  w-full min-h-24 rounded-xl my-2">
+              <div className="w-full p-6">
+                  <div className="flex  w-full  justify-center text-center">
+                    <WiTime4 className="h-16 w-16 top-0" color='#4B0082'/>
+                    <div className="flex flex-col ml-6 w-full text-end justify-end">
+                      <div className="flex flex-row justify-around">
+
+                      <h2 className="  float-end">
+                        Wang chung
+                      </h2>{" "}
+                      <p className=" w-8 float-end">
+                       Research by 25/04/2001
+                      </p>{" "}
+                      </div>
+                      <div className="h-[2px] w-full border-b-2 border-[#000000] " />
+                    </div>{" "}
+                  </div>
+                </div>
+                <div className="w-full p-6">
+                  <div className="flex  w-full  justify-center text-center">
+                    <WiTime4 className="h-16 w-16 top-0" color='#4B0082'/>
+                    <div className="flex flex-col ml-6 w-full text-end justify-end">
+                      <div className="flex flex-row justify-around">
+
+                      <h2 className="  float-end">
+                        Wang chung
+                      </h2>{" "}
+                      <p className=" w-8 float-end">
+                       Research by 25/04/2001
+                      </p>{" "}
+                      </div>
+                      <div className="h-[2px] w-full border-b-2 border-[#000000] " />
+                    </div>{" "}
+                  </div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <div className="w-full flex justify-start">
+                <button className="text-[#fff] bg-purple-900 rounded-xl p-2">
+                  View all
+                </button>
+              </div>
+            </section>
+            <section className="my-10 mx-16 flex gap-8">
               <RWebShare
                 data={{
                   text: "Contextify Your Browser Experience",
@@ -154,11 +244,13 @@ export default function ClientdashboardPage() {
                 }}
                 // onClick={() => console.log("shared successfully!")}
               >
-                <button className="bg-[#fff] text-purple-900 rounded-xl px-5 py-3">
+                <button className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4">
+                <IoMdShare className="gap-2" color='#4B0082'/>
                   Share
                 </button>
               </RWebShare>
-              <button className="bg-[#fff] text-purple-900 rounded-xl px-5 py-3">
+              <button className="flex flex-row justify-around bg-[#fff] text-purple-900 rounded-xl px-10 py-4">
+                <IoIosPersonAdd className="gap-2" color='#4B0082'/> 
                 Invite
               </button>
             </section>

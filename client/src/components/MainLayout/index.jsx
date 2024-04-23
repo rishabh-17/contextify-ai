@@ -72,68 +72,67 @@ export default function ClientdashboardPage({ active, children }) {
               <span>user</span>
             </div>
             <div>
-              <div>
-                <button
-                  id="dropdownInformationButton"
-                  className="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-blue-700"
-                  type="button"
-                  onClick={toggleDropdown}
-                >
-                  <IoIosArrowDropdown className="h-[90px]" />
-                </button>
-                {/* Dropdown menu */}
-                <div
-                  id="dropdownInformation"
-                  className={`absolute bg-[#fff] right-0 top-[70px] z-10 ${
-                    isDropdownOpen ? "" : "hidden"
-                  } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
-                >
-                  <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                    <div>Bonnie Green</div>
-                    <div className="font-medium truncate">
-                      name@flowbite.com
-                    </div>
-                  </div>
-                  <ul
-                    className="py-2 text-sm text-gray-700 dark:text-gray-200"
-                    aria-labelledby="dropdownInformationButton"
-                  >
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Settings
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Earnings
-                      </a>
-                    </li>
-                  </ul>
-                  <div className="py-2">
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >
-                      Sign out
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+    
+            <div>
+      <button
+        id="dropdownInformationButton"
+        className="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-blue-700"
+        type="button"
+        onClick={toggleDropdown}
+      >
+        <IoIosArrowDropdown className="h-[90px]" />
+      </button>
+      {/* Dropdown menu */}
+      <div
+        id="dropdownInformation"
+        className={`absolute bg-[#fff] right-0 top-[70px] z-10 ${isDropdownOpen ? '' : 'hidden'} bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+      >
+        <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+          <div>Profile</div>
+          <div className="font-medium truncate">name@flowbite.com</div>
+        </div>
+        <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+          <li>
+            <a href="#" className="block px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <MdOutlineSpaceDashboard className="h-4 w-4"/>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <IoPowerSharp className="h-4 w-4"/>
+              Subscription
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <MdOutlineContactSupport className="h-4 w-4"/>
+              Support
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <IoSettingsOutline className="h-4 w-4"/>
+              Settings
+            </a>
+          </li>
+        </ul>
+        <div className="py-2">
+          <a
+            href="#"
+            className="block px-4 py-2 text-sm text-gray-700 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+          >
+            <IoPowerSharp className="h-4 w-4"/>
+            Sign out
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+      
+    </div>
+            
           </div>
         </nav>
         <div className="flex h-[90%]">
@@ -150,7 +149,7 @@ export default function ClientdashboardPage({ active, children }) {
                 }
                 onClick={() => navigate("/dashboard")}
               >
-                <MdOutlineSpaceDashboard />
+                <MdOutlineSpaceDashboard className="h-4 w-4"/>
                 Dashboard
               </li>
               <li
@@ -161,7 +160,7 @@ export default function ClientdashboardPage({ active, children }) {
                 }
                 onClick={() => navigate("/mycontext")}
               >
-                <TbFileSettings />
+                <TbFileSettings className="h-4 w-4"/>
                 My Context
               </li>
             </ul>
@@ -173,7 +172,7 @@ export default function ClientdashboardPage({ active, children }) {
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
-                <MdOutlineContactSupport />
+                <MdOutlineContactSupport className="h-4 w-4"/>
                 support
               </li>
               <li
@@ -183,7 +182,7 @@ export default function ClientdashboardPage({ active, children }) {
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
-                <TbMessageReport />
+                <TbMessageReport className="h-4 w-4"/>
                 Report an issue
               </li>
               <li
@@ -193,7 +192,7 @@ export default function ClientdashboardPage({ active, children }) {
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
-                <IoPowerSharp />
+                <IoPowerSharp className="h-4 w-4"/>
                 Subscription
               </li>
               <li
@@ -203,7 +202,7 @@ export default function ClientdashboardPage({ active, children }) {
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
-                <IoSettingsOutline />
+                <IoSettingsOutline className="h-4 w-4"/>
                 Settings
               </li>
               <li
@@ -217,7 +216,7 @@ export default function ClientdashboardPage({ active, children }) {
                   navigate("/");
                 }}
               >
-                <IoPowerSharp />
+                <IoPowerSharp className="h-4 w-4"/>
                 Logout
               </li>
             </ul>
