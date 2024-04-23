@@ -4,6 +4,20 @@ const { clientController } = require("../controllers");
 
 const router = express.Router();
 
-router.get('/saved', AuthMiddleware.userAuthentication, clientController.getSaved )
-router.get('/history', AuthMiddleware.userAuthentication, clientController.getHistory )
+router.get(
+  "/saved",
+  AuthMiddleware.userAuthentication,
+  clientController.getSaved
+);
+router.get(
+  "/saved/:id",
+  AuthMiddleware.userAuthentication,
+  clientController.getOneSaved
+);
+router.get(
+  "/history",
+  AuthMiddleware.userAuthentication,
+  clientController.getHistory
+);
+router.get("/history/:id", clientController.getOneHistory);
 module.exports = router;

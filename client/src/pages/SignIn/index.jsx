@@ -64,7 +64,7 @@ export default function LoginPage() {
         } else {
           localStorage.setItem("token", data.token);
           setIsLoading(false);
-          // navigate("/");
+          navigate("/dashboard");
         }
       }
     } catch (err) {

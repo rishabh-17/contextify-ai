@@ -16,6 +16,7 @@ import SignInPage from "pages/SignIn";
 import SignUpPage from "pages/SignUp";
 import Subscription from "pages/Subscription";
 import MyContext from "pages/MyContext";
+import ContextDetail from "pages/ContextDetail";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -75,8 +76,8 @@ const ProjectRoutes = () => {
       element: <Profile />,
     },
     {
-      path: "contextDetail/:id",
-      element: <Dashboard />,
+      path: "contextdetail/:type/:id",
+      element: <ContextDetail />,
     },
     { path: "*", element: <NotFound /> },
   ]);

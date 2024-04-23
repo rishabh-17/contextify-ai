@@ -10,9 +10,31 @@ exports.getSaved = async (req, res) => {
   }
 };
 
+exports.getOneSaved = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const saved = await Saved.findOne({ _id: id, user: req.user._id });
+    res.json({ success: true, data: saved });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, error: "unable to get saved" });
+  }
+};
+
 exports.getHistory = async (req, res) => {
   try {
     const history = await History.find({ user: req.user._id });
+    res.json({ success: true, data: history });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, error: "unable to get history" });
+  }
+};
+
+exports.getOneHistory = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const history = await History.findOne({ _id: id, user: req.user._id });
     res.json({ success: true, data: history });
   } catch (error) {
     console.log(error);
