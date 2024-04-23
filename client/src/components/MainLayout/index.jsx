@@ -93,25 +93,25 @@ export default function ClientdashboardPage({ active, children }) {
         </div>
         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
           <li>
-            <a href="#" className="block px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <a href="#" className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
             <MdOutlineSpaceDashboard className="h-4 w-4"/>
               Dashboard
             </a>
           </li>
           <li>
-            <a href="#" className="block px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <a href="#" className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
             <IoPowerSharp className="h-4 w-4"/>
               Subscription
             </a>
           </li>
           <li>
-            <a href="#" className="block px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <a href="#" className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
             <MdOutlineContactSupport className="h-4 w-4"/>
               Support
             </a>
           </li>
           <li>
-            <a href="#" className="block px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <a href="#" className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
             <IoSettingsOutline className="h-4 w-4"/>
               Settings
             </a>
@@ -120,7 +120,7 @@ export default function ClientdashboardPage({ active, children }) {
         <div className="py-2">
           <a
             href="#"
-            className="block px-4 py-2 text-sm text-gray-700 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+            className="px-4 py-2 text-sm text-gray-700 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
           >
             <IoPowerSharp className="h-4 w-4"/>
             Sign out
