@@ -86,21 +86,21 @@ export default function ClientdashboardPage() {
                       : item.question}
                   </div>
                 ))}
-                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col rounded rounded-2xl">
+                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col  rounded-2xl">
                   <div className=" flex h-12 w-12 p-3 bg-purple-300 rounded-xl items-center justify-center ">
                     <IoPeopleSharp className="h-8 w-8" color="#140694" />
                   </div>
                   <p>people</p>
                   <p>1</p>
                 </div>
-                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col rounded rounded-2xl">
+                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col  rounded-2xl">
                   <div className="flex h-12 w-12 p-3 bg-purple-300 rounded-xl items-center justify-center">
                     <IoPeopleSharp className="h-8 w-8" color="#140694" />
                   </div>
                   <p>people</p>
                   <p>1</p>
                 </div>
-                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col rounded rounded-2xl">
+                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col  rounded-2xl">
                   <div className="flex h-12 w-12 p-3 bg-purple-300 rounded-xl items-center justify-center">
                     <IoPeopleSharp className="h-8 w-8" color="#140694" />
                   </div>
