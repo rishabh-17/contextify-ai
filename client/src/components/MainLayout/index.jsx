@@ -60,13 +60,15 @@ export default function ClientdashboardPage({ active, children }) {
               />
             </div>
           </form>
-          <div className="flex flex-row items-center">
-            <MdNotificationAdd />
-            <Img
-              src="images/logo.png"
-              alt="image"
-              className="my-auto mx-4 h-[50px]"
-            />
+          <div className="flex flex-row items-center justify-around">
+            <MdNotificationAdd  className="h-6 w-6 mr-2"/>
+             <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
+                <img
+                  src="../../../public/images/Image.png"
+                  alt="profile"
+                  className="h-6 shadow-xl"
+                />
+              </div>
             <div className="text-black flex flex-col">
               <h3>mony roy</h3>
               <span>user</span>
@@ -80,16 +82,26 @@ export default function ClientdashboardPage({ active, children }) {
         type="button"
         onClick={toggleDropdown}
       >
-        <IoIosArrowDropdown className="h-[90px]" />
+        <IoIosArrowDropdown className="h-6 w-6" />
       </button>
       {/* Dropdown menu */}
       <div
         id="dropdownInformation"
-        className={`absolute bg-[#fff] right-0 top-[70px] z-10 ${isDropdownOpen ? '' : 'hidden'} bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+        className={`absolute bg-[#fff] w-[230px] right-0 top-[70px] z-10 ${isDropdownOpen ? '' : 'hidden'} bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
       >
-        <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-          <div>Profile</div>
+        <div className=" flex flex-row justify-around items-center px-4 py-3 text-sm text-gray-900 dark:text-white">
+        <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
+                <img
+                  src="../../../public/images/Image.png"
+                  alt="profile"
+                  className="h-6 shadow-xl"
+                />
+        </div>
+        <div>
+          <p>Profile</p>
           <div className="font-medium truncate">name@flowbite.com</div>
+        </div>
+
         </div>
         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
           <li>
