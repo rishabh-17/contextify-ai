@@ -11,22 +11,22 @@ import FreeTrialArea from "../../components/FreeTrialArea";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import './index.css';
-import company1 from "../../assets/company1.png";
-import company2 from "../../assets/company2.png";
-import company3 from "../../assets/company3.png";
-import company4 from "../../assets/company4.png";
-import company5 from "../../assets/company5.png";
-import company6 from "../../assets/company6.png";
-import company7 from "../../assets/company7.png";
-import company8 from "../../assets/company8.png";
-import company9 from "../../assets/company9.png";
-import company10 from "../../assets/company10.png";
-import company11 from "../../assets/company11.png";
-import section1Image from "../../assets/section1Image.png";
-import section3Image from "../../assets/section3Image.png";
-import section4Image from "../../assets/section4Image.png";
-import section5Image from "../../assets/section5Image.png";
-import section6Image from "../../assets/section6Image.png";
+import company1 from "../../assets/images/company1.png";
+import company2 from "../../assets/images/company2.png";
+import company3 from "../../assets/images/company3.png";
+import company4 from "../../assets/images/company4.png";
+import company5 from "../../assets/images/company5.png";
+import company6 from "../../assets/images/company6.png";
+import company7 from "../../assets/images/company7.png";
+import company8 from "../../assets/images/company8.png";
+import company9 from "../../assets/images/company9.png";
+import company10 from "../../assets/images/company10.png";
+import company11 from "../../assets/images/company11.png";
+import section1Image from "../../assets/images/section1Image.png";
+import section3Image from "../../assets/images/section3Image.png";
+import section4Image from "../../assets/images/section4Image.png";
+import section5Image from "../../assets/images/section5Image.png";
+import section6Image from "../../assets/images/section6Image.png";
 
 const dropDownOptions = [
   { label: "Option1", value: "option1" },

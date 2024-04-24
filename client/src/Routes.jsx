@@ -17,6 +17,7 @@ import SignUpPage from "pages/SignUp";
 import Subscription from "pages/Subscription";
 import MyContext from "pages/MyContext";
 import ContextDetail from "pages/ContextDetail";
+import Support from "pages/Support";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -74,6 +75,10 @@ const ProjectRoutes = () => {
     {
       path: "profile",
       element: <Profile />,
+    },
+    {
+      path: "support",
+      element: <Support />,
     },
     {
       path: "contextdetail/:type/:id",
