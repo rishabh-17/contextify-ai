@@ -5,7 +5,7 @@ export default function index() {
     <>
       <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-5 py-10">
         <h2 className="text-xl font-bold">Hi! How can we help?</h2>
-        <form className="mx-auto w-[30%] pl-2 border border-slate-900 rounded-2xl bg-[#F7F0FC] h-10 overflow-hidden sm:hidden">
+        <form className="mx-auto w-[80%] pl-2 border border-slate-900 rounded-2xl bg-[#F7F0FC] h-10 overflow-hidden sm:hidden">
           <div className="relative">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
               <svg
@@ -34,25 +34,25 @@ export default function index() {
           </div>
         </form>
 
-        <p className="text-xs  px-3 w-full text-center">
+        <p className="text-xs px-3 w-full text-center">
           <p className="w-full">FEATURED ARTICLES</p>
           <div className="w-full bg-[#000] h-[1px]"></div>
         </p>
 
-        <div className="w-full flex flex-row justify-between">
-          <div className="flex flex-col text-center">
+        <div className="w-full flex sm:flex-col gap-4 flex-row justify-between">
+          <div className="flex flex-col text-center  ">
             <h4 className="text-md">Problems signing in</h4>
             <p className="text-sm text-gray-600">Account Basics</p>
           </div>
-          <div className="flex flex-col text-center">
+          <div className="flex flex-col text-center  ">
             <h4 className="text-md">Problems signing in</h4>
             <p className="text-sm text-gray-600">Account Basics</p>
           </div>
-          <div className="flex flex-col text-center">
+          <div className="flex flex-col text-center  ">
             <h4 className="text-md">Problems signing in</h4>
             <p className="text-sm text-gray-600">Account Basics</p>
           </div>
-          <div className="flex flex-col text-center">
+          <div className="flex flex-col text-center  ">
             <h4 className="text-md">Problems signing in</h4>
             <p className="text-sm text-gray-600">Account Basics</p>
           </div>
@@ -60,7 +60,7 @@ export default function index() {
       </div>
       <div className="w-full bg-[#fff] py-10">
         <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-10 ">
-          <div className="w-full flex flex-row justify-between">
+          <div className="w-full flex  sm:flex-col gap-4 flex-row justify-between">
             <div className="flex flex-col items-center">
               icon
               <h4>Account Basics</h4>
