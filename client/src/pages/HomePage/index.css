@@ -1,3 +1,42 @@
 .ui4s{
-padding: 3% 5% ;
-}
+    padding: 3% 5% ;
+    }
+    
+    @media (min-width: 100px) and (max-width: 1024px) {
+    
+        .sdbv5{
+    flex-direction: column;
+        }
+        .ascc564{
+            width: 100% !important;
+        }
+        .afds86{
+            display: flex;
+            justify-content: center;
+            align-items: center !important;
+        }
+    
+    .jnjdcx4{
+        padding: 0 !important;margin: 0 !important;
+    }
+    
+    
+    }
+    
+    @media (min-width: 100px) and (max-width: 768px) {
+        .setion4{
+            flex-direction: column !important;
+        }
+        .sfd64{
+            top:0 !important;
+            width: 100% !important;
+        }
+    
+    }
+    @media (min-width: 100px) and (max-width: 1051px) {
+        .sdvf{
+            display: flex;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+    }

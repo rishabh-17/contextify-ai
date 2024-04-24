@@ -77,6 +77,10 @@ const ProjectRoutes = () => {
       element: <Profile />,
     },
     {
+      path: "support",
+      element: <Support />,
+    },
+    {
       path: "contextdetail/:type/:id",
       element: <ContextDetail />,
     },
