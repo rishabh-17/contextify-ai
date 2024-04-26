@@ -52,7 +52,7 @@ export default function SignUpPage() {
         {
           email,
           password,
-          username,
+          usname,
         }
       );
       if (!data.success) {

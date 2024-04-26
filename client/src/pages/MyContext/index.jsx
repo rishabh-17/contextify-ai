@@ -7,7 +7,7 @@ import { RxCounterClockwiseClock } from "react-icons/rx";
 
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
-  const [toggle, setToggle] = React.useState(null)
+  const [toggle, setToggle] = React.useState(1)
 
   React.useEffect(() => {
     const config = {

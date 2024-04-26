@@ -173,7 +173,6 @@ export default function ClientdashboardPage() {
           <div>
             <section className="mb-5 mx-10">
               <h2>Things i know </h2>
-
               <div className="bg-[#fff] flex flex-col  w-full min-h-24 rounded-xl my-2">
                 <div className="w-full p-6">
                   <div className="flex  w-full  justify-center text-center">

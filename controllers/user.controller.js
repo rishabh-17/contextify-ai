@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 /* The `exports.signup` function is a controller function that handles the logic for user signup. */
 exports.signup = async (req, res, next) => {
   try {
-    const name = req.body.name;
+    const name = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
 
