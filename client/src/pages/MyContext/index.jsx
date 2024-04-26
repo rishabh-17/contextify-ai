@@ -4,10 +4,12 @@ import axios from "axios";
 import { GiBrain } from "react-icons/gi";
 import { GrNotes } from "react-icons/gr";
 import { RxCounterClockwiseClock } from "react-icons/rx";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
   const [toggle, setToggle] = React.useState(1)
+  const navigate = useNavigate()
 
   React.useEffect(() => {
     const config = {
@@ -67,7 +69,7 @@ export default function MyContext() {
                 className="bg-[#fff] h-48 w-48 sm:w-full rounded-xl"
               ></div>
             ))}
-            <div className="bg-[#ffffff] h-48 w-48 sm:w-full rounded-xl p-2 overflow-auto">
+            <div className="bg-[#ffffff] h-48 w-48 sm:w-full rounded-xl p-2 overflow-auto" onClick={()=>navigate('/contextdetail/saved/:343')}>
               <div className="flex flex-col m-2 h-8 justify-around">
                 <h3 className="font-bold">Will Smith</h3>
               </div>
