@@ -1,5 +1,5 @@
 const gpt = require("../utils/gptServices.js");
-const {Saved, History} = require('../models')
+const { Saved, History } = require("../models");
 require("dotenv").config();
 const OpenAI = require("openai");
 
@@ -29,10 +29,10 @@ exports.getContext = async (req, res) => {
           question: text,
           answer: data,
           user: req.user,
-        })
-        newHistory.save().then(i=>{
+        });
+        newHistory.save().then((i) => {
           res.json({ success: true, data: data });
-        })
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -44,25 +44,21 @@ exports.getContext = async (req, res) => {
   // res.json({ data });
 };
 
-
 exports.saveContext = async (req, res) => {
   try {
-    let { question, answer } = req.body;
-  
-  const newSaved = new Saved({
-    question,
-    answer,
-    user: req.user
-  })
+    let { question, answer, type } = req.body;
 
-  newSaved.save().then(i=>{
-    res.json({success:true, msg: "saved successfully"})
-  })
+    const newSaved = new Saved({
+      question,
+      answer,
+      type,
+      user: req.user,
+    });
+
+    newSaved.save().then((i) => {
+      res.json({ success: true, msg: "saved successfully" });
+    });
   } catch (error) {
-    res.json({success: false, err: 'unable to save'})
+    res.json({ success: false, err: "unable to save" });
   }
-  
-
-
-
 };
