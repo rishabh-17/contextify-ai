@@ -52,10 +52,10 @@ export default function ClientdashboardPage() {
       },
     };
     
-    axios.get(
-      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/generateKey",
+    axios.post(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/generatekey",{},
       config
-    ).catch(data=>{
+    ).then(data=>{
       setSecret(data.data.key)
       localStorage.setItem('secret', data.data.key)
 
