@@ -46,7 +46,7 @@ exports.login = async (req, res, next) => {
               msg: "login successful",
               login: true,
               user,
-              token: getAccessToken(user.id, user.name, user.isPremiumUser),
+              token: getAccessToken(user.id, user.name, user.isPremiumUser, user.email),
             });
           } else {
             res.json({ msg: "Enter correct password", success: false });
@@ -63,9 +63,9 @@ exports.login = async (req, res, next) => {
   }
 };
 
-function getAccessToken(id, name, isPremiumUser) {
+function getAccessToken(id, name, isPremiumUser, email) {
   return jwt.sign(
-    { _id: id, name: name, isPremiumUser: isPremiumUser },
+    { _id: id, name: name, isPremiumUser: isPremiumUser, email: email },
     process.env.SECRET
   );
 }
