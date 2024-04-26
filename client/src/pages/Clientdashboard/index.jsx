@@ -130,7 +130,7 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="w-full flex justify-end">
-                <button className="text-[#fff] bg-purple-900 rounded-xl p-2">
+                <button className="text-[#fff] bg-purple-900 rounded-xl p-2" onClick={()=>navigate('/mycontext')}>
                   View all
                 </button>
               </div>
@@ -165,7 +165,7 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="w-full flex justify-start">
-                <button className="text-[#fff] bg-purple-900 rounded-xl p-2">
+                <button className="text-[#fff] bg-purple-900 rounded-xl p-2" onClick={()=>navigate('/mycontext')}>
                   View all
                 </button>
               </div>
@@ -203,7 +203,7 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="w-full flex justify-start">
-                <button className="text-[#fff] bg-purple-900 rounded-xl p-2">
+                <button className="text-[#fff] bg-purple-900 rounded-xl p-2" onClick={()=>navigate('/mycontext')}>
                   View all
                 </button>
               </div>
@@ -250,7 +250,7 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="w-full flex justify-start">
-                <button className="text-[#fff] bg-purple-900 rounded-xl p-2">
+                <button className="text-[#fff] bg-purple-900 rounded-xl p-2" onClick={()=>navigate('/mycontext')}>
                   View all
                 </button>
               </div>
