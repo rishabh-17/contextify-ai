@@ -15,6 +15,7 @@ import { IoIosArrowDropdown } from "react-icons/io";
 export default function ClientdashboardPage({ active, children }) {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const user = JSON.parse(localStorage.getItem('user'));
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -70,7 +71,7 @@ export default function ClientdashboardPage({ active, children }) {
                 />
               </div>
             <div className="text-black flex flex-col">
-              <h3>mony roy</h3>
+              <h3>{user?.name}</h3>
               <span>user</span>
             </div>
             <div>
@@ -99,7 +100,7 @@ export default function ClientdashboardPage({ active, children }) {
         </div>
         <a onClick={()=>navigate('/profile')}>
           <p>Profile</p>
-          <div className="font-medium truncate">name@contextify.com</div>
+          <div className="font-medium truncate">{user?.email}</div>
         </a>
 
         </div>
