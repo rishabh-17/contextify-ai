@@ -9,12 +9,14 @@ import { GiBrain } from "react-icons/gi";
 import { WiTime4 } from "react-icons/wi";
 import { IoMdShare } from "react-icons/io";
 import { IoIosPersonAdd } from "react-icons/io";
-
+import { FaEye } from "react-icons/fa";
 
 
 export default function ClientdashboardPage() {
   const [history, setHistory] = React.useState([]);
   const [saved, setSaved] = React.useState([]);
+  const [secret, setSecret] = React.useState(localStorage.getItem('secret'));
+  const [keyShow, setKeyShow] = React.useState(false)
 
   React.useEffect(() => {
     const config = {
@@ -42,6 +44,24 @@ export default function ClientdashboardPage() {
     fetchHistory();
     fetchSaved();
   }, []);
+
+  const genrateKey =  async () =>{
+     const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    
+    axios.get(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/generateKey",
+      config
+    ).catch(data=>{
+      setSecret(data.data.key)
+      localStorage.setItem('secret', data.data.key)
+
+    }).catch(err=> alert('unable to generate key'))
+
+    };
 
   return (
     <>
@@ -253,6 +273,21 @@ export default function ClientdashboardPage() {
                 <IoIosPersonAdd className="gap-2" color='#4B0082'/> 
                 Invite
               </button>
+            </section>
+            <section className="bg-[#fff] p-3 ">
+              <h3>Secret Key</h3>
+              <div>
+                { 
+                  secret?
+                  <div className="flex gap-3">
+                  <input className="roundedxl" type="password" value = { secret } />
+                  <FaEye onClick={()=>setKeyShow(!keyShow)} /> 
+                  </div>:
+                  <button className="px-3 py-2 bg-purple-900 text-[#fff] rounded-xl" onClick={genrateKey}>
+                    Generate Secret key
+                  </button>
+                }
+              </div>
             </section>
           </div>
         </div>
