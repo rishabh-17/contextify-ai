@@ -275,12 +275,12 @@ export default function ClientdashboardPage() {
               </button>
             </section>
             <section className="bg-[#fff] p-3 ">
-              <h3>Secret Key</h3>
+              <h3 className="">Secret Key</h3>
               <div>
                 { 
                   secret?
                   <div className="flex gap-3">
-                  <input className="roundedxl" type="password" value = { secret } />
+                  <input className="roundedxl" type={keyShow?"text":"password"} value = { secret } />
                   <FaEye onClick={()=>setKeyShow(!keyShow)} /> 
                   </div>:
                   <button className="px-3 py-2 bg-purple-900 text-[#fff] rounded-xl" onClick={genrateKey}>
