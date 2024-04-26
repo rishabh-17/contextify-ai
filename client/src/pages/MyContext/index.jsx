@@ -67,23 +67,12 @@ export default function MyContext() {
                 className="bg-[#fff] h-48 w-48 sm:w-full rounded-xl"
               ></div>
             ))}
-            <div className="bg-[#ffffff] h-48 w-48 sm:w-full rounded-xl">
-              <div className="flex flex-row m-2 h-8 justify-around ">
-              
-              </div>
+            <div className="bg-[#ffffff] h-48 w-48 sm:w-full rounded-xl p-2 overflow-auto">
               <div className="flex flex-col m-2 h-8 justify-around">
-                <h3>Will Smith</h3>
-                <p>Description</p>
+                <h3 className="font-bold">Will Smith</h3>
               </div>
-              <div className="flex flex-row m-2 h-8 justify-around">
-                <p>URL Label</p>
-                <p>URL Label</p>
-              </div>
-              <div className="flex flex-row m-2 justify-around h-8 ">
-                <p>Notes</p>
-                <p>Type Here</p>
-              </div>
-              <div className="flex flex-row m-2 h-8 ">
+              
+              <div className="flex flex-row m-2 h-8 text-gray-500">
                 <p>Thus is a form of martial arts</p>
                 <div className="H-[2px] border-b-2 border-black"/>
               </div>
