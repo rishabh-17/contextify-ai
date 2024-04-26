@@ -1,24 +1,24 @@
 const router = require("express").Router();
 const { savedController } = require("../controllers");
-const { AuthMiddleware } = require("./middlewares");
+const { AuthMiddleware } = require("../middlewares");
 
 router.get(
-  "/getSaved",
+  "/getsaved",
   AuthMiddleware.userAuthentication,
   savedController.getSaved
 );
 router.post(
-  "/addSaved",
+  "/addsaved",
   AuthMiddleware.secretKeyValidation,
   savedController.addSaved
 );
 router.put(
-  "/editSaved",
+  "/editsaved",
   AuthMiddleware.userAuthentication,
   savedController.editSaved
 );
 router.delete(
-  "/deleteSaved/:id",
+  "/deletesaved/:id",
   AuthMiddleware.userAuthentication,
   savedController.deleteSaved
 );

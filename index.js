@@ -1,7 +1,13 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const { contextRoutes, userRoutes,clientRoutes, adminRoutes } = require("./routes");
+const {
+  contextRoutes,
+  userRoutes,
+  clientRoutes,
+  adminRoutes,
+  savedRoutes,
+} = require("./routes");
 const { AuthMiddleware } = require("./middlewares");
 const { connectDB } = require("./utils");
 const app = express();
@@ -26,5 +32,6 @@ app.use("/api/context", AuthMiddleware.secretKeyValidation, contextRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/client", clientRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/saved", savedRoutes);
 
 app.listen(8000, () => connectDB(process.env.MONGO_URI));

@@ -18,7 +18,10 @@ exports.addSaved = (req, res) => {
       user: req.user,
     });
     newSaved.save().then((i) => {
-      res.json({ success: true, saved: i });
+      res.json({
+        success: true,
+        msg: "Added Successfully",
+      });
     });
   } catch (error) {
     res.json({ success: false, err: "unable to save" });
