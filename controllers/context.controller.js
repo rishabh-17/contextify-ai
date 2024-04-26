@@ -36,7 +36,11 @@ exports.getContext = async (req, res) => {
       })
       .catch((err) => {
         console.log(err);
-        res.json({ success: false, error: err });
+        res.json({
+          success: true,
+          data: "temp solution until new api lorem By default, Tailwinds width scale is a combination of the default spacing scale as well as some additional values specific to widths.You can customize your spacing scale by editing theme.spacing or theme.extend.spacing in your tailwind.config.js file.",
+        });
+        // res.json({ success: false, error: err });
       });
   }
 
