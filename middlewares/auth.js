@@ -17,21 +17,11 @@ exports.userAuthentication = (req, res, next) => {
 exports.secretKeyValidation = (req, res, next) => {
   try {
     const token = req.header("secret");
-    Premium.findOne({ Key: token }).then((premium) => {
-      if (!premium) {
-        return res
-          .status(401)
-          .json({ success: false, msg: "invalid premium key" });
-      } else if (premium.expiry < Date.now()) {
-        return res
-          .status(401)
-          .json({ success: false, msg: "premium key expired" });
-      } else if (premium.usage >= premium.totalReq) {
-        return res
-          .status(401)
-          .json({ success: false, msg: "premium key usage limit reached" });
+    User.findOne({ secretKey: token }).then((user) => {
+      if (!user) {
+        return res.status(401).json({ success: false, msg: "invalid user" });
       } else {
-        req.user = premium.user
+        req.user = user;
         next();
       }
     });
@@ -41,9 +31,9 @@ exports.secretKeyValidation = (req, res, next) => {
 };
 
 exports.checkAdmin = (req, res, next) => {
-  if (req.user.premiumType ==='admin'){
-    next()
+  if (req.user.premiumType === "admin") {
+    next();
   } else {
-    res.json({ success: false, msg: 'Unauthorized access'})
+    res.json({ success: false, msg: "Unauthorized access" });
   }
-}
+};
