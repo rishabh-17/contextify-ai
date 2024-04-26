@@ -183,6 +183,7 @@ export default function ClientdashboardPage({ active, children }) {
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
+                onClick={()=>navigate('/support')}
               >
                 <MdOutlineContactSupport className="h-4 w-4"/>
                 support
@@ -193,6 +194,7 @@ export default function ClientdashboardPage({ active, children }) {
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
+                onClick={()=>navigate('/support')}
               >
                 <TbMessageReport className="h-4 w-4"/>
                 Report an issue
@@ -203,6 +205,7 @@ export default function ClientdashboardPage({ active, children }) {
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
+                onClick={()=>navigate('/subscription')}
               >
                 <IoPowerSharp className="h-4 w-4"/>
                 Subscription

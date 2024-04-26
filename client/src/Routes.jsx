@@ -84,10 +84,7 @@ const ProjectRoutes = () => {
       path: "contextdetail/:type/:id",
       element: <ContextDetail />,
     },
-    {
-      path: "support",
-      element: <Support />,
-    },
+
     { path: "*", element: <NotFound /> },
   ]);
 
