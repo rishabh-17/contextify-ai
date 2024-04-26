@@ -16,7 +16,8 @@ export default function ClientdashboardPage() {
   const [history, setHistory] = React.useState([]);
   const [saved, setSaved] = React.useState([]);
   const [secret, setSecret] = React.useState(localStorage.getItem('secret'));
-  const [keyShow, setKeyShow] = React.useState(false)
+  const [keyShow, setKeyShow] = React.useState(false);
+  const user = JSON.parse(localStorage.getItem('user'));
 
   React.useEffect(() => {
     const config = {
@@ -66,7 +67,7 @@ export default function ClientdashboardPage() {
   return (
     <>
       <MainLayout active={1}>
-        <div className="w-full h-4">Hello, Moni</div>
+        <div className="w-full h-4">{user.name}</div>
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full py-3">
           <div>
             <div className="flex items-center gap-4 rounded ">

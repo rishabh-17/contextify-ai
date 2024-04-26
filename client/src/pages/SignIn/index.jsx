@@ -73,7 +73,7 @@ export default function LoginPage() {
         } else {
           localStorage.setItem("token", data.token);
           let user = parseJwt(data.token);
-          console.log(user);
+          localStorage.setItem('user', JSON.stringify(user))
           setIsLoading(false);
           navigate("/dashboard");
         }
