@@ -6,7 +6,7 @@ exports.getSaved = async (req, res) => {
     res.json({ success: true, data: saved });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, error: "unable to get saved" });
+    res.json({ success: false, err: "unable to get saved" });
   }
 };
 
@@ -17,7 +17,7 @@ exports.getOneSaved = async (req, res) => {
     res.json({ success: true, data: saved });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, error: "unable to get saved" });
+    res.json({ success: false, err: "unable to get saved" });
   }
 };
 
@@ -27,7 +27,7 @@ exports.getHistory = async (req, res) => {
     res.json({ success: true, data: history });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, error: "unable to get history" });
+    res.json({ success: false, err: "unable to get history" });
   }
 };
 
@@ -38,7 +38,7 @@ exports.getOneHistory = async (req, res) => {
     res.json({ success: true, data: history });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, error: "unable to get history" });
+    res.json({ success: false, err: "unable to get history" });
   }
 };
 
@@ -50,7 +50,7 @@ exports.deleteSaved = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, error: "unable to delete saved" });
+    res.json({ success: false, err: "unable to delete saved" });
   }
 };
 
@@ -67,11 +67,11 @@ exports.updateSaved = async (req, res) => {
           res.json({ success: true, saved: i });
         });
       } else {
-        res.json({ success: false, error: "saved not found" });
+        res.json({ success: false, err: "saved not found" });
       }
     });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, error: "unable to update saved" });
+    res.json({ success: false, err: "unable to update saved" });
   }
 };

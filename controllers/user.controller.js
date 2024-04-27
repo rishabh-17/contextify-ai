@@ -2,7 +2,6 @@ const { User } = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-/* The `exports.signup` function is a controller function that handles the logic for user signup. */
 exports.signup = async (req, res, next) => {
   try {
     const name = req.body.username;
@@ -27,7 +26,6 @@ exports.signup = async (req, res, next) => {
   }
 };
 
-/* The `exports.login` function is a controller function that handles the logic for user login. */
 exports.login = async (req, res, next) => {
   try {
     const email = req.body.email;
@@ -46,17 +44,22 @@ exports.login = async (req, res, next) => {
               msg: "login successful",
               login: true,
               user,
-              token: getAccessToken(user.id, user.name, user.isPremiumUser, user.email),
+              token: getAccessToken(
+                user.id,
+                user.name,
+                user.isPremiumUser,
+                user.email
+              ),
             });
           } else {
-            res.json({ msg: "Enter correct password", success: false });
+            res.json({ err: "Enter correct password", success: false });
           }
         })
         .catch((err) => {
-          res.json({ msg: "Error logging in", success: false, err });
+          res.json({ err: "Error logging in", success: false, err });
         });
     } else {
-      res.json({ msg: "user not found", success: false });
+      res.json({ err: "user not found", success: false });
     }
   } catch (error) {
     console.log("login error", error);

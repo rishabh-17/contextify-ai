@@ -38,14 +38,20 @@ export default function LoginPage() {
     return !password && !email;
   };
 
-  function parseJwt (token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
+  function parseJwt(token) {
+    var base64Url = token?.split(".")[1];
+    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    var jsonPayload = decodeURIComponent(
+      window
+        .atob(base64)
+        .split("")
+        .map(function (c) {
+          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+        })
+        .join("")
+    );
     return JSON.parse(jsonPayload);
-}
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -70,16 +76,19 @@ export default function LoginPage() {
           localStorage.setItem("admintoken", data.authToken);
           setIsLoading(false);
           navigate("/");
-        } else {
+        } else if (data.token) {
           localStorage.setItem("token", data.token);
           let user = parseJwt(data.token);
-          localStorage.setItem('user', JSON.stringify(user))
+          localStorage.setItem("user", JSON.stringify(user));
           setIsLoading(false);
           navigate("/dashboard");
+        } else {
+          setIsLoading(false);
+          setError(data.err);
         }
       }
     } catch (err) {
-      setError(err.message);
+      setError("Something went wrong");
       setIsLoading(false);
     }
   }

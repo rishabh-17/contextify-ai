@@ -11,13 +11,12 @@ import { IoMdShare } from "react-icons/io";
 import { IoIosPersonAdd } from "react-icons/io";
 import { FaEye } from "react-icons/fa";
 
-
 export default function ClientdashboardPage() {
   const [history, setHistory] = React.useState([]);
   const [saved, setSaved] = React.useState([]);
-  const [secret, setSecret] = React.useState(localStorage.getItem('secret'));
+  const [secret, setSecret] = React.useState(localStorage.getItem("secret"));
   const [keyShow, setKeyShow] = React.useState(false);
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem("user"));
 
   React.useEffect(() => {
     const config = {
@@ -46,28 +45,30 @@ export default function ClientdashboardPage() {
     fetchSaved();
   }, []);
 
-  const genrateKey =  async () =>{
-     const config = {
+  const genrateKey = async () => {
+    const config = {
       headers: {
         authentication: `${localStorage.getItem("token")}`,
       },
     };
-    
-    axios.post(
-      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/generatekey",{},
-      config
-    ).then(data=>{
-      setSecret(data.data.key)
-      localStorage.setItem('secret', data.data.key)
 
-    }).catch(err=> alert('unable to generate key'))
-
-    };
+    axios
+      .post(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/generatekey",
+        {},
+        config
+      )
+      .then((data) => {
+        setSecret(data.data.key);
+        localStorage.setItem("secret", data.data.key);
+      })
+      .catch((err) => alert("unable to generate key"));
+  };
 
   return (
     <>
       <MainLayout active={1}>
-        <div className="w-full h-4">{user.name}</div>
+        <div className="w-full h-4">{user?.name}</div>
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full py-3">
           <div>
             <div className="flex items-center gap-4 rounded ">
@@ -130,7 +131,10 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="w-full flex justify-end">
-                <button className="text-[#fff] bg-purple-900 rounded-xl p-2" onClick={()=>navigate('/mycontext')}>
+                <button
+                  className="text-[#fff] bg-purple-900 rounded-xl p-2"
+                  onClick={() => navigate("/mycontext")}
+                >
                   View all
                 </button>
               </div>
@@ -165,7 +169,10 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="w-full flex justify-start">
-                <button className="text-[#fff] bg-purple-900 rounded-xl p-2" onClick={()=>navigate('/mycontext')}>
+                <button
+                  className="text-[#fff] bg-purple-900 rounded-xl p-2"
+                  onClick={() => navigate("/mycontext")}
+                >
                   View all
                 </button>
               </div>
@@ -177,7 +184,7 @@ export default function ClientdashboardPage() {
               <div className="bg-[#fff] flex flex-col  w-full min-h-24 rounded-xl my-2">
                 <div className="w-full p-6">
                   <div className="flex  w-full  justify-center text-center">
-                    <GiBrain className="h-16 w-16 top-0" color='#4B0082'/>
+                    <GiBrain className="h-16 w-16 top-0" color="#4B0082" />
                     <div className="flex flex-col ml-6 w-full text-end justify-end">
                       <p className=" pl-[40%] float-end">
                         How razor blades are made and reused
@@ -190,7 +197,7 @@ export default function ClientdashboardPage() {
                 </div>
                 <div className="w-full p-6">
                   <div className="flex  w-full  justify-center text-center">
-                    <GiBrain className="h-16 w-16 top-0" color='#4B0082'/>
+                    <GiBrain className="h-16 w-16 top-0" color="#4B0082" />
                     <div className="flex flex-col ml-6 w-full text-end justify-end">
                       <p className=" pl-[40%] float-end">
                         How razor blades are made and reused
@@ -203,7 +210,10 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="w-full flex justify-start">
-                <button className="text-[#fff] bg-purple-900 rounded-xl p-2" onClick={()=>navigate('/mycontext')}>
+                <button
+                  className="text-[#fff] bg-purple-900 rounded-xl p-2"
+                  onClick={() => navigate("/mycontext")}
+                >
                   View all
                 </button>
               </div>
@@ -212,18 +222,13 @@ export default function ClientdashboardPage() {
               <h2>For future exploration</h2>
 
               <div className=" flex flex-col  w-full min-h-24 rounded-xl my-2">
-              <div className="w-full p-6">
+                <div className="w-full p-6">
                   <div className="flex  w-full  justify-center text-center">
-                    <WiTime4 className="h-16 w-16 top-0" color='#4B0082'/>
+                    <WiTime4 className="h-16 w-16 top-0" color="#4B0082" />
                     <div className="flex flex-col ml-6 w-full text-end justify-end">
                       <div className="flex flex-row justify-around">
-
-                      <h2 className="  float-end">
-                        Wang chung
-                      </h2>{" "}
-                      <p className=" w-8 float-end">
-                       Research by 25/04/2001
-                      </p>{" "}
+                        <h2 className="  float-end">Wang chung</h2>{" "}
+                        <p className=" w-8 float-end">Research by 25/04/2001</p>{" "}
                       </div>
                       <div className="h-[2px] w-full border-b-2 border-[#000000] " />
                     </div>{" "}
@@ -231,16 +236,11 @@ export default function ClientdashboardPage() {
                 </div>
                 <div className="w-full p-6">
                   <div className="flex  w-full  justify-center text-center">
-                    <WiTime4 className="h-16 w-16 top-0" color='#4B0082'/>
+                    <WiTime4 className="h-16 w-16 top-0" color="#4B0082" />
                     <div className="flex flex-col ml-6 w-full text-end justify-end">
                       <div className="flex flex-row justify-around">
-
-                      <h2 className="  float-end">
-                        Wang chung
-                      </h2>{" "}
-                      <p className=" w-8 float-end">
-                       Research by 25/04/2001
-                      </p>{" "}
+                        <h2 className="  float-end">Wang chung</h2>{" "}
+                        <p className=" w-8 float-end">Research by 25/04/2001</p>{" "}
                       </div>
                       <div className="h-[2px] w-full border-b-2 border-[#000000] " />
                     </div>{" "}
@@ -250,7 +250,10 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="w-full flex justify-start">
-                <button className="text-[#fff] bg-purple-900 rounded-xl p-2" onClick={()=>navigate('/mycontext')}>
+                <button
+                  className="text-[#fff] bg-purple-900 rounded-xl p-2"
+                  onClick={() => navigate("/mycontext")}
+                >
                   View all
                 </button>
               </div>
@@ -265,28 +268,35 @@ export default function ClientdashboardPage() {
                 // onClick={() => console.log("shared successfully!")}
               >
                 <button className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4">
-                <IoMdShare className="gap-2" color='#4B0082'/>
+                  <IoMdShare className="gap-2" color="#4B0082" />
                   Share
                 </button>
               </RWebShare>
               <button className="flex flex-row justify-around bg-[#fff] text-purple-900 rounded-xl px-10 py-4">
-                <IoIosPersonAdd className="gap-2" color='#4B0082'/> 
+                <IoIosPersonAdd className="gap-2" color="#4B0082" />
                 Invite
               </button>
             </section>
             <section className="bg-[#fff] p-3 ">
               <h3 className="">Secret Key</h3>
               <div>
-                { 
-                  secret?
+                {secret ? (
                   <div className="flex gap-3">
-                  <input className="roundedxl" type={keyShow?"text":"password"} value = { secret } />
-                  <FaEye onClick={()=>setKeyShow(!keyShow)} /> 
-                  </div>:
-                  <button className="px-3 py-2 bg-purple-900 text-[#fff] rounded-xl" onClick={genrateKey}>
+                    <input
+                      className="roundedxl"
+                      type={keyShow ? "text" : "password"}
+                      value={secret}
+                    />
+                    <FaEye onClick={() => setKeyShow(!keyShow)} />
+                  </div>
+                ) : (
+                  <button
+                    className="px-3 py-2 bg-purple-900 text-[#fff] rounded-xl"
+                    onClick={genrateKey}
+                  >
                     Generate Secret key
                   </button>
-                }
+                )}
               </div>
             </section>
           </div>
