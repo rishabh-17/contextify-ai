@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
   const [toggle, setToggle] = React.useState(1);
+  const user = JSON.parse(localStorage.getItem('user'))
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -42,7 +43,7 @@ export default function MyContext() {
                   className="h-24 shadow-xl"
                 />
               </div>
-              <p className="text-purple-900">moniroy@gmail.com</p>
+              <p className="text-purple-900">{user.email}</p>
             </div>
 
             <div className="sm:flex-row flex flex-col gap-4">
@@ -85,7 +86,7 @@ export default function MyContext() {
           </div>
           <div className="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-4 gap-3">
             {contexts.map((context) => (
-              <div
+              toggle == context.type && <div
                 className="bg-[#ffffff] h-64 w-64 sm:w-full rounded-xl p-2 overflow-auto"
                 onClick={() => navigate("/contextdetail/saved/" + context._id)}
               >

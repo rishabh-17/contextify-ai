@@ -68,7 +68,7 @@ export default function ClientdashboardPage() {
   return (
     <>
       <MainLayout active={1}>
-        <div className="w-full h-4">{user?.name}</div>
+        <div className="w-full h-4">Hi, {user?.name}</div>
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full py-3">
           <div>
             <div className="flex items-center gap-4 rounded ">
@@ -81,17 +81,17 @@ export default function ClientdashboardPage() {
                 <div className="flex flex-col items-center mx-8 mt-4">
                   <MdPerson className="h-8 w-8" color="#140694" />
                   <p>4</p>
-                  <p className="w-[90px] text-center">use cases this month</p>
+                  <p className="w-[90px] text-center">use cases</p>
                 </div>
                 <div className="flex flex-col items-center mx-8 mt-4">
                   <MdPerson className="h-8 w-8" color="#140694" />
                   <p>4</p>
-                  <p className="w-[90px] text-center">use cases this month</p>
+                  <p className="w-[90px] text-center">Total searches</p>
                 </div>
                 <div className="flex flex-col items-center mx-8 mt-4">
                   <MdPerson className="h-8 w-8" color="#140694" />
                   <p>4</p>
-                  <p className="w-[90px] text-center">use cases this month</p>
+                  <p className="w-[90px] text-center">Searches Left</p>
                 </div>
               </div>
             </div>
@@ -142,31 +142,19 @@ export default function ClientdashboardPage() {
             <section className=" my-5">
               <h2>My notes for further research</h2>
               <div className="flex flex-col items-center gap-2 my-2">
-                {saved.map((item) => (
-                  <div key={item._id} className="bg-[#fff] w-full h-24 rounded">
-                    {item.question.length > 30
-                      ? item.question.slice(0, 30) + "..."
-                      : item.question}
+                {saved?.map((item) => (
+                  item.type == 1 && <div className="bg-[#fff] w-full h-32 flex items-center text-center rounded-xl px-2">
+                  <FaRegEdit className="h-10 w-10 mx-6" color="#140694" />
+                  <div className="h-[70px] w-full mt-8 flex justify-between border-b-4 border-[#000000]">
+                    <h3 className="h-12">{item.question.length > 50
+                      ? item.question.slice(0, 50) + "..."
+                      : item.question}</h3>
+                    <div className="h-12 w-[100px]">
+                      Research by {item.createdAt.slice(0,10)}
+                    </div>
                   </div>
+                </div>
                 ))}
-                <div className="bg-[#fff] w-full h-32 flex items-center text-center rounded-xl">
-                  <FaRegEdit className="h-10 w-10 mx-6" color="#140694" />
-                  <div className="h-[70px] w-[500px] mt-8 flex justify-around border-b-4 border-[#000000]">
-                    <h3 className="h-12 w-[10px]">Will Smith</h3>
-                    <div className="h-12 w-[35px] pl-[200px]">
-                      Research by 20/2/2024
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-[#fff] w-full h-32 flex items-center text-center rounded-xl">
-                  <FaRegEdit className="h-10 w-10 mx-6" color="#140694" />
-                  <div className="h-[70px] w-[500px] mt-8 flex justify-around border-b-4 border-[#000000]">
-                    <h3 className="h-12 w-[10px]">Will Smith</h3>
-                    <div className="h-12 w-[35px] pl-[200px]">
-                      Research by 20/2/2024
-                    </div>
-                  </div>
-                </div>
               </div>
               <div className="w-full flex justify-start">
                 <button
@@ -182,32 +170,25 @@ export default function ClientdashboardPage() {
             <section className="mb-5 mx-10">
               <h2>Things i know </h2>
               <div className="bg-[#fff] flex flex-col  w-full min-h-24 rounded-xl my-2">
-                <div className="w-full p-6">
-                  <div className="flex  w-full  justify-center text-center">
+                {
+                  saved.filter(i=>i.type == 2).length===0 && <p>Nothing to show here.</p>
+                }
+                {saved.map((item) => (
+                item?.type == 2 && <div className="w-full p-6">
+                  <div className="flex w-full justify-between text-center">
                     <GiBrain className="h-16 w-16 top-0" color="#4B0082" />
-                    <div className="flex flex-col ml-6 w-full text-end justify-end">
-                      <p className=" pl-[40%] float-end">
-                        How razor blades are made and reused
+                    <div className="flex flex-col ml-6 w-full items-end text-end justify-end">
+                      <p className="">
+                      {item.question.length > 50
+                      ? item.question.slice(0, 50) + "..."
+                      : item.question}
                       </p>{" "}
-                      <div className="h-[2px] w-full border-b-2 border-[#000000] " />
+                      <div className="h-[2px] w-full border-b-2 border-[#000000]" />
                     </div>{" "}
                   </div>
                   <div></div>
                   <div></div>
-                </div>
-                <div className="w-full p-6">
-                  <div className="flex  w-full  justify-center text-center">
-                    <GiBrain className="h-16 w-16 top-0" color="#4B0082" />
-                    <div className="flex flex-col ml-6 w-full text-end justify-end">
-                      <p className=" pl-[40%] float-end">
-                        How razor blades are made and reused
-                      </p>{" "}
-                      <div className="h-[2px] w-full border-b-2 border-[#000000] " />
-                    </div>{" "}
-                  </div>
-                  <div></div>
-                  <div></div>
-                </div>
+                </div>))}
               </div>
               <div className="w-full flex justify-start">
                 <button
@@ -221,33 +202,21 @@ export default function ClientdashboardPage() {
             <section className="mb-5 mx-10">
               <h2>For future exploration</h2>
 
-              <div className=" flex flex-col  w-full min-h-24 rounded-xl my-2">
-                <div className="w-full p-6">
-                  <div className="flex  w-full  justify-center text-center">
+              <div className="flex flex-col w-full min-h-24 rounded-xl my-2">
+                {saved.map((item) => ( item.type == 3 && <div className="w-full p-6">
+                  <div className="flex w-full justify-evenly text-center">
                     <WiTime4 className="h-16 w-16 top-0" color="#4B0082" />
                     <div className="flex flex-col ml-6 w-full text-end justify-end">
                       <div className="flex flex-row justify-around">
-                        <h2 className="  float-end">Wang chung</h2>{" "}
-                        <p className=" w-8 float-end">Research by 25/04/2001</p>{" "}
+                        <h2 className="float-end">{item.question.length > 50
+                          ? item.question.slice(0, 50) + "..."
+                          : item.question}</h2>{" "}
+                        <p className="w-[100px]">Research by {item.createdAt.slice(0,10)}</p>{" "}
                       </div>
-                      <div className="h-[2px] w-full border-b-2 border-[#000000] " />
+                      <div className="h-[2px] w-full border-b-2 border-[#000000]" />
                     </div>{" "}
                   </div>
-                </div>
-                <div className="w-full p-6">
-                  <div className="flex  w-full  justify-center text-center">
-                    <WiTime4 className="h-16 w-16 top-0" color="#4B0082" />
-                    <div className="flex flex-col ml-6 w-full text-end justify-end">
-                      <div className="flex flex-row justify-around">
-                        <h2 className="  float-end">Wang chung</h2>{" "}
-                        <p className=" w-8 float-end">Research by 25/04/2001</p>{" "}
-                      </div>
-                      <div className="h-[2px] w-full border-b-2 border-[#000000] " />
-                    </div>{" "}
-                  </div>
-                  <div></div>
-                  <div></div>
-                </div>
+                </div>))}
               </div>
               <div className="w-full flex justify-start">
                 <button
@@ -256,6 +225,28 @@ export default function ClientdashboardPage() {
                 >
                   View all
                 </button>
+              </div>
+            </section>
+            <section className="mb-5 mx-10">
+              <h3 className="my-3">Secret Key</h3>
+              <div className="bg-[#fff] p-5 rounded-xl">
+                {secret ? (
+                  <div className="flex gap-3">
+                    <input
+                      className="roundedxl"
+                      type={keyShow ? "text" : "password"}
+                      value={secret}
+                    />
+                    <FaEye onClick={() => setKeyShow(!keyShow)} />
+                  </div>
+                ) : (
+                  <button
+                    className="px-3 py-2 bg-purple-900 text-[#fff] rounded-xl"
+                    onClick={genrateKey}
+                  >
+                    Generate Secret key
+                  </button>
+                )}
               </div>
             </section>
             <section className="my-10 mx-16 flex gap-8">
@@ -276,28 +267,6 @@ export default function ClientdashboardPage() {
                 <IoIosPersonAdd className="gap-2" color="#4B0082" />
                 Invite
               </button>
-            </section>
-            <section className="bg-[#fff] p-3 ">
-              <h3 className="">Secret Key</h3>
-              <div>
-                {secret ? (
-                  <div className="flex gap-3">
-                    <input
-                      className="roundedxl"
-                      type={keyShow ? "text" : "password"}
-                      value={secret}
-                    />
-                    <FaEye onClick={() => setKeyShow(!keyShow)} />
-                  </div>
-                ) : (
-                  <button
-                    className="px-3 py-2 bg-purple-900 text-[#fff] rounded-xl"
-                    onClick={genrateKey}
-                  >
-                    Generate Secret key
-                  </button>
-                )}
-              </div>
             </section>
           </div>
         </div>
