@@ -4,6 +4,7 @@ import { CloseSVG } from "../../assets/images";
 import { Text, Img, SelectBox, Input } from "../../components";
 import MainLayout from "../../components/MainLayout";
 import axios from "axios";
+import Chart from "react-apexcharts";
 
 const dropDownOptions = [
   { label: "Option1", value: "option1" },
@@ -14,6 +15,7 @@ const dropDownOptions = [
 export default function AdmindashboardPage() {
   const [users, setUsers] = React.useState([]);
   const [apiHistory, setApiHistory] = React.useState([]);
+  const [info, setInfo] = React.useState({});
 
   React.useEffect(() => {
     const config = {
@@ -37,9 +39,19 @@ export default function AdmindashboardPage() {
       setApiHistory(data.data);
     };
 
+    const fetchInfo = async () => {
+      const { data } = await axios.get(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/admin/info",
+        config
+      );
+      setInfo(data.data);
+    };
+
     fetchUsers();
     fetchApiHistory();
+    fetchInfo();
   }, []);
+
   return (
     <>
       <MainLayout>
@@ -192,6 +204,15 @@ export default function AdmindashboardPage() {
                     Api calls
                   </Text>
                 </div>
+                {info?.chart && (
+                  <Chart
+                    options={info.chart.options}
+                    series={info.chart.series}
+                    type="line"
+                    // width="500"
+                    height={300}
+                  />
+                )}
               </div>
             </div>
           </div>

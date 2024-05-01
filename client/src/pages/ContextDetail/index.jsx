@@ -53,7 +53,6 @@ export default function ContextDetail() {
               url: location.pathname,
               title: "Contextify",
             }}
-            // onClick={() => console.log("shared successfully!")}
           >
             <button className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4">
               <IoMdShare className="gap-2" color="#4B0082" />

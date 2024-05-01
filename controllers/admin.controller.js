@@ -62,3 +62,61 @@ exports.deleteApiHistory = async (req, res) => {
     return res.json({ success: false, err: "Unable to delete api history" });
   }
 };
+
+exports.getDashboard = async (req, res) => {
+  try {
+    const users = await User.countDocuments();
+    const saved = await Saved.countDocuments();
+    const history = await History.countDocuments();
+    const premiumUsers = await User.countDocuments({ isPremiumUser: true });
+    const startDate = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+    const endDate = new Date();
+    const pipeline = [
+      {
+        $match: {
+          createdAt: {
+            $gte: startDate,
+            $lt: endDate,
+          },
+        },
+      },
+      {
+        $group: {
+          _id: {
+            $dayOfYear: "$createdAt",
+          },
+          count: { $sum: 1 },
+        },
+      },
+    ];
+    const data = await History.aggregate(pipeline);
+    const chart = {
+      options: {
+        chart: {
+          id: "basic-bar",
+        },
+        xaxis: {
+          categories: data.map((d) => {
+            const date = new Date(0);
+            date.setFullYear(1970, 0, d._id);
+            return `${date.toLocaleDateString("en-US", {
+              month: "short",
+            })} ${date.getDate()}`;
+          }),
+        },
+      },
+      series: [
+        {
+          name: "series-1",
+          data: data.map((d) => d.count),
+        },
+      ],
+    };
+    return res.json({
+      success: true,
+      data: { users, saved, history, premiumUsers, chart },
+    });
+  } catch (error) {
+    return res.json({ success: false, err: "Unable to fetch dashboard" });
+  }
+};
