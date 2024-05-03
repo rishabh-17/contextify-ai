@@ -16,7 +16,7 @@ import img9 from "../../assets/About/section 1-9.png";
 import img10 from "../../assets/About/section 1-10.png";
 import img11 from "../../assets/About/section 1-11.png";
 import img12 from "../../assets/About/section 1-12.png";
-import innovation from "../../assets/About/innovation.png";
+import innovation from "../../assets/About/Innovation.png";
 import responsablity from "../../assets/About/responsblity.png";
 import teamwork from "../../assets/About/teamWork.png";
 import excelence from "../../assets/About/excellience.png";
