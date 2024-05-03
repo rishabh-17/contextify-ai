@@ -40,3 +40,8 @@
             align-items: center !important;
         }
     }
+
+
+    .mix-Blend{
+        mix-blend-mode: darken;
+    }

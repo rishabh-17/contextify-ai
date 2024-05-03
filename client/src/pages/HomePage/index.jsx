@@ -149,7 +149,7 @@ export default function HomePagePage() {
               <div className="flex md:flex-col md:flex-wrap md:h-[auto] justify-between items-start w-[40%] md:w-full gap-5">
                 <div className="h-[16px] w-[16px] mt-[100px] bg-deep_purple-A200 rounded-lg animate-bounce ascc564" />
               
-<img src={section1Image} alt="section1Image" width={"100%"} />
+<img src={section1Image} alt="section1Image" width={"100%"}className="mix-Blend" />
 
               </div>
 
@@ -310,7 +310,7 @@ export default function HomePagePage() {
 
               <div className="flex flex-col items-end w-[46%] gap-7 right-[0.00px] top-[16%] m-auto ascc564 afds86 ">
             
-            <img src={section3Image} alt="section3Image" />
+            <img src={section3Image} alt="section3Image" className="mix-Blend" />
                 <div className="h-[16px] w-[16px] mr-[19px] md:mr-0 bg-deep_purple-A200 rounded-lg" />
               </div>
 
@@ -399,7 +399,7 @@ export default function HomePagePage() {
             </div>
 
             <div className="h-[468px] w-[54%] m-auto  sfd64">
-             <img src={section4Image} alt="section4Image" />
+             <img src={section4Image} alt="section4Image" className="mix-Blend" />
             </div>
 
           </div>
@@ -409,7 +409,7 @@ export default function HomePagePage() {
             <div className="flex  justify-between items-center gap-5 md:flex md:flex-wrap  md:gap-0 md:w-full md:h-auto md:p-[-15] ">
               <div className="h-[452px] w-[49%] md:w-full md:h-auto relative sdvf">
                 
-               <img src={section5Image} alt="section5Image" />
+               <img src={section5Image} alt="section5Image" className="mix-Blend" />
                 
                
                
@@ -444,7 +444,7 @@ export default function HomePagePage() {
 
           </div>
 
-          <div className="setion6" style={{ height: '80vh', margin: "0px 30px", padding:"0px 20px"  }}>
+          <div className="setion6">
             <div style={{ display: "flex", width: '100%', height: 'max-content' }}>
 
               <div className="flex md:flex-col items-start md:self-stretch  md:p-5 md:ml-0 flex-1">
@@ -483,7 +483,7 @@ export default function HomePagePage() {
                   </div>
                 </div>
                 <div className="flex flex-col items-end md:self-stretch ml-[-80px] md:ml-0 flex-1">
-                  <img src={section6Image} alt="section6Image" />
+                  <img src={section6Image} alt="section6Image" className="mix-Blend" />
                 </div>
               </div>
             </div>
@@ -705,108 +705,6 @@ export default function HomePagePage() {
               </Text>
             </div>
 
-            {/* <div className="flex md:flex-col sm:flex-col items-center mt-[-48px]">
-              <div className="flex md:flex-col sm:flex-col sm:self-stretch  items-start md:self-stretch flex-1">
-                <div className="h-[16px] w-[16px] mt-[443px] z-[1] bg-purple-A100 rounded-lg" />
-                <div className="md:self-stretch h-[933px] w-[933px] md:w-full ml-[-2px] md:ml-0 flex-1 relative md:flex-none">
-                  <div className="flex flex-col items-end w-[73%] bottom-[16%] left-[16%] m-auto z-[2] absolute">
-                    <div className="h-[414px] w-[414px] mr-[51px] md:mr-0 border-indigo-500_0f border-[0.5px] border-solid rounded-[207px]" />
-                    <div className="self-stretch h-[228px] md:h-auto mt-[-113px] relative">
-                      <Img
-                        src="images/img_vector_white_a700_228x571.svg"
-                        alt="vector"
-                        className="h-[228px] rounded-[10px]"
-                      />
-                      <div className="flex flex-col items-center w-[72%] gap-[7px] bottom-[14%] right-[100px] left-0 m-auto absolute">
-                        <Text
-                          size="7xl"
-                          as="p"
-                          className="!text-black-900_87 text-center opacity-0.5 leading-[27px]"
-                        >
-                          Build your financial literacy within a
-                          transparent community. Follow other investors,
-                          share insights with people from different
-                          professional backgrounds, and never be alone.
-                        </Text>
-                        <Text size="12xl" as="p" className="text-center">
-                          Jony Scotty
-                        </Text>
-                        <Text size="4xl" as="p" className="text-center">
-                          UI Designer
-                        </Text>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="h-[933px] w-[933px] left-0 bottom-0 right-0 top-0 m-auto border-indigo-500_07 border-[0.5px] border-solid absolute rounded-[466px]" />
-                  <div className="flex md:flex-col justify-center items-center w-[86%] h-max right-[2.00px] bottom-0 top-0 my-auto absolute md:relative">
-                    <div className="flex md:flex-col justify-center items-start md:self-stretch flex-1">
-                      <div className="h-[16px] w-[16px] mt-[41px] z-[1] bg-deep_purple-A200 rounded-lg" />
-                      <div className="md:self-stretch h-[665px] w-[665px] ml-[-15px] md:ml-0 border-indigo-500_07 border-[0.5px] border-solid flex-1 rounded-[332px]" />
-                    </div>
-                    <div className="flex flex-col w-[23%] md:w-full ml-[-69px] gap-[194px] md:gap-[145px] md:ml-0 sm:gap-[97px]">
-                      <div className="w-[46%] md:w-full">
-                        <div>
-                          <div className="border-white-A700 border border-solid bg-purple-A100 rounded-[46px]">
-                            <Img
-                              src="images/img_ellipse_88x90.png"
-                              alt="circleimage_six"
-                              className="h-[88px] rounded-[50%]"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="ml-[108px] md:ml-0">
-                        <div className="flex flex-col items-center justify-center border-white-A700 border border-solid bg-deep_purple-A200 rounded-[46px]">
-                          <Img
-                            src="images/img_ellipse_87x87.png"
-                            alt="circleimage"
-                            className="h-[74px] w-[87px] rounded-[50%]"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex sm:flex-col items-start w-[58%] h-max left-[14%] bottom-0 top-0 my-auto absolute sm:relative">
-                    <div className="w-[16%] sm:w-full mt-[137px] z-[1]">
-                      <div className="border-white-A700 border border-solid bg-purple-A100 shadow-6xl rounded-[46px]">
-                        <Img
-                          src="images/img_ellipse_89x89.png"
-                          alt="circleimage"
-                          className="h-[86px] w-[89px] rounded-[50%]"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-start sm:self-stretch ml-[-29px] gap-[90px] md:gap-[67px] sm:gap-[45px] sm:ml-0 border-deep_purple-A200 border-[5px] border-solid flex-1 rounded-[240px]">
-                      <div className="w-[12%] md:w-full ml-[118px] md:ml-0">
-                        <div className="border-white-A700 border border-solid bg-deep_purple-A200 rounded-[31px]">
-                          <div className="mt-1.5">
-                            <Img
-                              src="images/img_image.png"
-                              alt="image"
-                              className="h-[50px] rounded-[50%]"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="w-[36%] md:w-full mb-[153px] ml-[153px] md:ml-0">
-                        <div className="border-white-A700 border-8 border-solid bg-deep_purple-A200 rounded-[84px]">
-                          <div className="mt-0.5">
-                            <Img
-                              src="images/img_image_157x160.png"
-                              alt="image_thirty"
-                              className="h-[157px] rotate-[0deg] rounded-[50%]"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="h-[16px] w-[16px] bottom-[10%] left-[19%] m-auto bg-deep_purple-A200 absolute rounded-lg" />
-                  <div className="h-[16px] w-[16px] right-[15.00px] top-[23%] m-auto bg-deep_purple-A200 absolute rounded-lg" />
-                </div>
-              </div>
-              <div className="self-end h-[16px] w-[16px] mb-[170px] ml-[-2px] md:ml-0 z-[1] bg-purple-A100 rounded-lg" />
-            </div> */}
 
           </div>
 

@@ -4,6 +4,26 @@ import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import "./index.css";
+import img2 from "../../assets/About/section 1-2.png";
+import img3 from "../../assets/About/section 1-3.png";
+import img4 from "../../assets/About/section 1-4.png";
+import img5 from "../../assets/About/section 1-5.png";
+import img6 from "../../assets/About/section 1-6.png";
+import img7 from "../../assets/About/section 1-7.png";
+import img8 from "../../assets/About/section 1-8.png";
+import img9 from "../../assets/About/section 1-9.png";
+import img10 from "../../assets/About/section 1-10.png";
+import img11 from "../../assets/About/section 1-11.png";
+import img12 from "../../assets/About/section 1-12.png";
+import innovation from "../../assets/About/innovation.png";
+import responsablity from "../../assets/About/responsblity.png";
+import teamwork from "../../assets/About/teamWork.png";
+import excelence from "../../assets/About/excellience.png";
+import c1 from "../../assets/About/clint1.png";
+import c2 from "../../assets/About/client2.png";
+import c3 from "../../assets/About/client3.png";
+import b1 from "../../assets/About/qwert.png";
 
 export default function AboutPage() {
   return (
@@ -15,67 +35,69 @@ export default function AboutPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div className=" md:max-w-lg:flex flex flex-col md:w-[150%] sm:w-[370vw] lg:w-[200vw] items-center w-full gap-[258px] py-8 md:gap-[193px] sm:gap-[129px] sm:py-5 bg-gray-100">
+      <div  >
         <Header className="w-[86%] md:w-full md:p-5" />
         <div className="self-stretch" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
-          <div className="flex flex-col items-center">
-            <Text size="22xl" as="p" className="!text-gray-900">
-              About Contextify
-            </Text>
-            <Text
-              size="13xl"
-              as="p"
-              className="mt-3.5 !text-gray-600_03 text-center"
-            >
-              Discover the Power of Contextify!
-            </Text>
+          <div className="flex flex-col items-center" style={{width:"100%"}}>
 
 
 
-            <div className="hjsadkj md:flex-wrap w-auto sm:" style={{
-              display: "flex",
-              width: "100%",
-              overflow: "hidden",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "30px",
-              margin: "50px 0px",
-            }}>
-              <Img
-                src="images/img_photo.png"
-                alt="photo_one"
-                className="h-[583px] w-full md:h-96 w-full object-cover rounded-2xl md:h-auto md:w-1/2"
-              />
-              <Img
-                src="images/img_photo_583x476.png"
-                alt="photo_three"
-                className="h-[583px] w-full md:h-96 w-full object-cover rounded-2xl md:h-auto md:w-1/2"
-              />
+            <div className="section1" style={{paddingTop:"20vh" , paddingBottom:"20px"}}>
+              <Text style={{fontSize:"5vw" , textAlign:"center" , paddingBottom:"1vh"}} as="p" className="!text-gray-900">
+                About Contextify
+              </Text>
+              <Text
+              style={{fontSize:"3.5vw", textAlign:"center"}}
+                as="p"
+                className="mt-3.5 !text-gray-600_03 text-center"
+              >
+                Discover the Power of Contextify!
+              </Text>
+            </div>
+            <div className="section2" style={{paddingBottom:"20px"}} >
+
+              <div className="uifhn" style={{ width: "100%" }}>
+
+                <div className="vygfsduhij" style={{ width: "60.41vw" }}>
+
+                  <Img
+                    src="images/img_photo.png"
+                    alt="photo_one"
+                    width="100%"
+                  />
+                </div>
+                <div className="dcexvf" style={{ width: "34.66vw" }}>
+
+
+                  <Img
+                    src="images/img_photo_583x476.png"
+                    alt="photo_three"
+                    width="100%"
+                  />
+                </div>
+
+
+              </div>
+
             </div>
 
 
+            {/* <div className="section3" > */}
+            <div className="flex justify-between md:flex-col sm:flex-col md:items-center " style={{paddingBottom:"20px"}} >
 
-            <div className="h-96 w-full object-cover rounded-2xl md:h-auto md:w-1/2">
-              <div className="flex ml-[5px] md:ml-0 z-[1]" style={
-                {
-                  textAlign: "left",
-                  width: "50%",
-                }
-              }>
-                <Heading size="10xl" as="h1" className="ddddoooo !text-gray-900 !font-nunito text-center">
+              <div style={{ width: "max-content" }}>
+
+                <Heading size="10xl" as="h1" className="ddddoooo !text-gray-900 !font-nunito text-center md:w-full">
                   What we do
                 </Heading>
               </div>
-              <div className="flex md:flex-col items-start w-[92%] md:w-full md:p-5" style={{}}>
-                {/* <Img
-                  src="images/img_group_19834.png"
-                  alt="image_one"
-                  className="w-[38%] md:w-full object-cover"
-                /> */}
+
+
+              <div className="scjxhjf" style={{ width: "60%" }} >
                 <Text
                   size="11xl"
                   as="p"
-                  className="w-[62%] md:w-full ml-[30%] md:ml-0 !text-gray-600_03 !font-nunito leading-[157.4%]"
+                  className=" md:w-full ml-0 !text-gray-600_03 !font-nunito leading-[157.4%] sm:w-full"
                   style={{
                     display: "flex"
                   }}
@@ -95,616 +117,214 @@ export default function AboutPage() {
                     in their infancy.{" "}
                   </>
                 </Text>
+
+
+
+
+
               </div>
+
             </div>
 
-            <div className="flex flex-col  ">
-              <div className="flex w-full">
-                <div className="flex flex-col items-center w-[98%] md:w-full gap-[31px] md:p-5  sm:flel-wrap md:flex-wrap">
 
+            <div className="section4"  style={{paddingBottom:"20px"}}>
 
-                  <div className="flex justify-center w-[20%] md:w-full" >
-                    <div className="flex flex-col items-center w-full sm:w-[20%] md:w-auto">
-                      <div className="h-12 w-52 md:w-[52%] bg-orange-50_01" />
-                      <div className="flex mt-[-42px]">
-                        <div className="flex flex-col items-center" >
-                          <Text size="19xl" as="p" className="capitalize">
-                            Our Trusted Partners
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="w-full md:w-full md:p-5 md:ml-0 md:mt-0 md:mb-0 md:pr-0 md:pl-0 md:pt-0 md:pb-0 ">
-                    <div className="flex flex-col gap-[26px]">
-                      <div class="w-full mx-auto sm:block sm:w-full z-[1] md:w-full md:p-[5%]">
-                        <div class="flex md:flex-col justify-center items-center gap-[21px]">
-                          <div class="md:self-stretch h-[101px] md:w-[200px]  md:ml-[45%] md:h-[50px] bg-white-A700 shadow-xs flex-1 relative rounded-[50px] md:flex-none">
-                            <div class="flex justify-center md:w-full items-center w-full h-max gap-[7px] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[50px]">
-                              <Img
-                                src="images/img_vector_black_900_02.svg"
-                                alt="vector_eleven"
-                                className="h-[38px] w-[35px] md:flex-wrap z-[1] sm:flex-none z-[1]"
-                              />
-                              <Img
-                                src="images/img_vector_black_900_02_33x82.svg"
-                                alt="vector_thirteen"
-                                className="self-end h-[33px] md:flex-wrap  z-[1] sm:flex-none z-[1] "
-                              />
-                            </div>
-                          </div>
-                          <div className="h-[92px] w-[11%] md:w-[200px] md:ml-[50%]  md:h-auto bg-white-A700 shadow-xs relative rounded-[46px]">
-                            <div className="flex justify-center w-full md:mt-[-45%] h-max left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
-                              <Img
-                                src="images/img_format_wordmark.svg"
-                                alt="formatwordmark"
-                                className="h-[29px] md:flex wrap  z-[1] sm:flex-none z-[1]"
-                              />
-                            </div>
-                          </div>
-                          <div className="md:self-stretch h-[101px]  md:ml-[22%] md:w-[200px] md:h-auto bg-white-A700 flex-1 relative rounded-[50px] md:flex-none">
-                            <div className="flex justify-center w-full h-max md:mt-[-55%] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 absolute rounded-[50px]">
-                              <Img
-                                src="images/img_format_wordmark_green_600_01.svg"
-                                alt="formatwordmark"
-                                className="h-[38px] md:flex wrap  z-[1] sm:flex-none z-[1]"
-                              />
-                            </div>
-                          </div>
-                          <div className="h-[101px] w-[19%] md:w-[200px] md:ml-[50%]  md:h-[50px] bg-white-A700 shadow-5xl relative rounded-[50px]">
-                            <div className="flex justify-center items-start w-full  h-max gap-[15px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-5xl absolute rounded-[50px]">
-                              <Img
-                                src="images/img_vector_deep_purple_a200_01.svg"
-                                alt="vector_nineteen"
-                                className="h-[39px]"
-                              />
-                              <Img
-                                src="images/img_vector_black_900_02_25x112.svg"
-                                alt="vector"
-                                className="h-[25px] mt-1 md:flex wrap  z-[1] sm:flex-none z-[1]"
-                              />
-                            </div>
-                          </div>
-                          <div className="md:self-stretch h-[81px] md:w-[200px] md:ml-[22%]  md:h-[50px] bg-white-A700 md:bg-transparent flex-1 relative rounded-[40px] md:flex-none">
-                            <div className="flex justify-center w-full h-max left-0 md:mt-[-40.5%]  bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[40px]">
-                              <Img
-                                src="images/img_format_wordmark_light_blue_500.svg"
-                                alt="formatwordmark"
-                                className="h-[19px] md:flex wrap  z-[1] sm:flex-none z-[1]"
-                              />
-                            </div>
-                          </div>
-                          <div className="md:self-stretch h-[94px] md:w-[200px] md:mt-[-11.5%] md:ml-[45%] md:h-[50px] bg-white-A700 shadow-xs flex-1 relative rounded-[47px] md:flex-none">
-                            <div className="flex justify-center w-full h-max left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[47px]">
-                              <Img
-                                src="images/img_format_wordmark_black_900_02.svg"
-                                alt="formatwordmark"
-                                className="h-[32px] md:flex wrap justify-center  z-[1]  sm:flex-none z-[1]"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-
-                      <div>
-                        <div className="flex">
-                          <div className="flex md:flex-col items-center w-[94%] md:w-full gap-[21px]">
-                            <div className="flex md:flex-col w-[100%] md:w-full gap-[21px]">
-                              <div className="h-[92px] w-full md:h-auto bg-white-A700 md:w-[200px]  md:ml-[45%] md:bg-transparent md:h-[50px] shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-full left-0 bottom-0 md:mt-[50%] right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
-                                  <Img
-                                    src="images/img_format_wordmark_black_900_02_32x130.svg"
-                                    alt="formatwordmark"
-                                    className="h-[29px] "
-                                  />
-                                </div>
-                              </div>
-                              <div className="h-[92px] w-full -[101px] md:w-[200px]  md:ml-[65%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max md:mt-[-40%] left-0 bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
-                                  <Img
-                                    src="images/img_format_wordmark_black_900_02_29x130.svg"
-                                    alt="formatwordmark"
-                                    className="h-[29px]"
-                                  />
-                                </div>
-                              </div>
-
-                              <div className="h-[92px] w-full md:w-[200px] md:ml-[45%]  md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max left-0 md:mt-[-75%] bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
-                                  <Img
-                                    src="images/img_format_wordmark_deep_orange_a400_01.svg"
-                                    alt="formatwordmark"
-                                    className="h-[29px]"
-                                  />
-                                </div>
-                              </div>
-
-                              <div className="h-[92px] w-full md:ml-[22%] md:w-[200px] md:h-auto bg-white-A700 shadow-xs cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max left-0 md:mt-[-85%] bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
-                                  <Img
-                                    src="images/img_property_1_wordmark.svg"
-                                    alt="propertyone"
-                                    className="h-[29px]"
-                                  />
-                                </div>
-                              </div>
-                              <div className="h-[93px] w-full md:w-[200px] md:ml-[45%]  md:h-[50px] md:bg-transparent bg-white-A700 cursor-pointer relative rounded-[46px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max left-0 md:mt-[10%] bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 absolute rounded-[46px]">
-                                  <Img
-                                    src="images/img_format_wordmark_black_900_02_31x130.svg"
-                                    alt="formatwordmark"
-                                    className="h-[31px]"
-                                  />
-                                </div>
-                              </div>
-                              <div className="h-[88px] w-full h-[81px] md:w-[200px] md:ml-[22%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs cursor-pointer relative rounded-[44px] hover:shadow-xs">
-                                <div className="flex justify-center w-full h-max left-0 md:mt-[-28%] bottom-0 right-0 top-0 p-[31px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[44px]">
-                                  <Img
-                                    src="images/img_format_frame.svg"
-                                    alt="image_one"
-                                    className="h-[25px]"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="h-[92px] w-[15%] md:w-[200px] md:mt-[-11.5%]  md:ml-[45%] md:bg-transparent md:h-[50px] bg-white-A700 shadow-xs relative rounded-[46px]">
-                              <div className="flex justify-center items-center sm:mt-[6%] w-full md:mt-[5%] h-max gap-[5px] left-0 bottom-0 right-0 top-0 p-[30px] m-auto sm:p-5 bg-white-A700 shadow-xs absolute rounded-[46px]">
-                                <Img
-                                  src="images/img_vector_pink_a200.svg"
-                                  alt="vector"
-                                  className="self-end h-[26px] w-[27px]"
-                                />
-                                <Img
-                                  src="images/img_vector_black_900_02_29x97.svg"
-                                  alt="vector"
-                                  className="h-[29px]"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              <div className="flex flex-col items-center w-full  md:w-full md:text-center ">
+                <div className="h-12 w-52 md:w-[52%] bg-orange-50_01" />
+                <div className="flex mt-[-42px]">
+                  <div className="flex flex-col items-center" >
+                    <Text size="19xl" as="p" className="capitalize">
+                      Our Trusted Partners
+                    </Text>
                   </div>
                 </div>
               </div>
 
+              {/* <div style={{ width: "100%", marginTop: "30px" }} > */}
+     <div style={{width:"100%"}} >
+  {/* <div className="grid grid-cols-5 md:grid-cols-6 md:gap-4 gap-4 justify-items-center md:w-full"> */}
+  <div className="dsvhue" style={{display:"flex" ,justifyContent:"space-around", width:"100%" , }}>
+
+    <img src={img2} alt="" width={"10%"} />
+    <img src={img3} alt="" width={"10%"} />
+    <img src={img4} alt="" width={"10%"} />
+    <img src={img5} alt="" width={"10%"} />
+    <img src={img6} alt="" width={"10%"} />
+    <img src={img7} alt="" width={"10%"} />
+    
+    </div>
+
+    <div  className="dsvhue" style={{display:"flex" ,justifyContent:"space-around", width:"100%"}}>
+
+    <img src={img8} alt="" width={"10%"} />
+    <img src={img9} alt="" width={"10%"} />
+    <img src={img10} alt="" width={"10%"} />
+    <img src={img11} alt="" width={"10%"} />
+    <img src={img12} alt="" width={"10%"} />
+    {/* <img src={img13} alt="" width={"20%"} /> */}
+  
+  </div>
+</div>
 
 
-              {/* our missition */}
+
+            </div>
+
+
+
+
+            {/* our missition */}
+            <div  
+              className="sdfg "
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                marginTop: "10vh",
+                paddingBottom:"20px"
+              }}
+            >
               <div
-                className="sdfg"
+                className="w-full "
                 style={{
                   display: "flex",
                   alignItems: "center",
+                  gap:"20px",
                   justifyContent: "center",
-                  flexWrap: "wrap",
-                  marginTop: "",
                 }}
               >
-                <div
-                  className="w-full p-3.5"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div className="flex md:flex-col justify-center items-center w-full mx-auto my-20 max-w-[1372px]">
-                    <div className="flex flex-col items-start w-[45%] md:w-full gap-5">
-                      <Heading
-                        size="10xl"
-                        as="h1"
-                        className="!text-gray-900 pl-[15%] !font-nunito"
-                      >
-                        Our Mission
-                      </Heading>
-                      <Text
-                        size="11xl"
-                        as="p"
-                        className="w-[100%] md:w-[80%] pl-[15%] md:ml-0 !text-gray-600_03 !font-nunito leading-[157.4%]"
-                      >
-                        <>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          Pharetra
-                          <br />
-                          Ld eu aliquet diam lorem viverra at justo. Nulla odio
-                          nequefjf gravida in pharetra egestas. Ac id sagittis
-                          at morbi interdum nibh diam sagittis et.
-                          <br />
-                          <br />
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          Pharetra
-                          <br /> id eu aliquet diam lorem viverra at justo.
-                          Nulla odio nequesg gravida in pharetra egestas.
-                        </>
-                      </Text>
-                    </div>
-                    <div class="md:self-stretch md:ml-0 flex-1 flex flex-col items-center ml-[-4px] md:ml-0">
-                      <div class="bg-gray-400_02 w-full md:w-[70%] sm::w-[70%] rounded-[60px]">
-                        <Img
-                          src="images/img_photo_378x760.png"
-                          alt="photo_one"
-                          class="h-[378px] w-full md:w-full h-auto object-cover rounded-[60px]"
-                        />
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              {/* our value */}
-
-              <Helmet>
-                <title>Contextify</title>
-                <meta
-                  name="description"
-                  content="Web site created using create-react-app"
-                />
-              </Helmet>
-
-              <div
-                className="flex h-[10vh] flex-col items-center w-full gap-6 md:h-[130vh]   pb-[98px] gap-[39px] md:pb-5"
-
-              >
-                <div className="flex flex-col items-center w-[47%] md:w-full gap-[31px] md:p-5">
-                  <Button
-                    color="deep_purple_50_02"
-                    size="11xl"
-                    className="sm:px-5 !text-purple-900 font-nunito font-bold min-w-[164px] rounded-[37px]"
-                  >
-                    Our values
-                  </Button>
-                  <Text
-                    size="20xl"
-                    as="p"
-                    className="!text-gray-900 text-center leading-[110%]"
-                  >
-                    <>
-                      The story and values behind
-                      <br /> our company
-                    </>
-                  </Text>
-                </div>
-                <div className="stretch1111  flex  flex-col items-center gap-6  md:h-[100vh]">
-                  <div className="justify-center gap-[52px] grid-cols-[repeat(auto-fill,_minmax(620px_,_1fr))] grid :w-[70%]">
-
-                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
-                      <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                        <div class="w-[21%] md:w-full p-[39px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
-
-                          <Img
-                            src="images/img_icon_white_a700.svg"
-                            alt="image"
-                            className="h-[71px] w-full md:h-auto my-[5px]  md:h-16   h-auto my-2"
-                          />
-                        </div>
-                        <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
-                          <Heading
-                            size="7xl"
-                            as="h1"
-                            className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
-                          >
-                            Innovation
-                          </Heading>
-                          <Text
-                            size="11xl"
-                            as="p"
-                            className="!text-gray-600_03 leading-[157.4%] w-[100%] md:w-[80%] pl-[15%] sm:ml-[10%] sm:w-[80%]  "
-                          >
-                            Long established fact that a readeed to will be
-                            distracted by the readable content of a page when
-                            looking at its layout
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
-                      <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                        <div className="w-[21%] md:w-full p-[35px] md:ml-[20%] sm:ml-[40%] sm:w-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[40%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
-                          <Img
-                            src="images/img_icon_white_a700_64x58.svg"
-                            alt="icon_one"
-                            className="h-[64px] w-full  md:h-auto my-[5px]  md:h-16   h-auto my-2"
-                          />
-                        </div>
-                        <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
-                          <Heading
-                            size="7xl"
-                            as="h2"
-                            className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
-                          >
-                            Team work
-                          </Heading>
-                          <Text
-                            size="11xl"
-                            as="p"
-                            className="!text-gray-600_03 !font-nunito leading-[157.4%]  w-[100%] md:w-[80%] pl-[15%]"
-                          >
-                            Long established fact that a readeed to will be
-                            distracted by the readable content of a page when
-                            looking at its layout
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
-                      <div className="flex md:flex-col justify-between items-start w-full gap-5 my-3">
-                        <div className="w-[21%] md:w-full p-[35px] sm:ml-[40%] sm:w-[20%]  md:ml-[20%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[40%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
-                          <Img
-                            src="images/img_icon_white_a700_62x44.svg"
-                            alt="icon_one"
-                            className="h-[62px] w-full md:h-auto mt-[7px] mb-1.5 md:h-auto my-[5px]  md:h-16   h-auto my-2"
-                          />
-                        </div>
-                        <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
-                          <Heading
-                            size="7xl"
-                            as="h3"
-                            className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] md:pl-[15%]"
-                          >
-                            Excellence
-                          </Heading>
-                          <Text
-                            size="11xl"
-                            as="p"
-                            className="!text-gray-600_03 !font-nunito leading-[157.4%]  w-[100%] md:w-[80%] pl-[15%]"
-                          >
-                            Long established fact that a readeed to will be
-                            distracted by the readable content of a page when
-                            looking at its layout
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px]flex justify-center w-full p-[27px] sm:p-5 bg-gray-50_01 rounded-[30px] flex justify-center w-full p-5 bg-gray-50_01 rounded-lg">
-                      <div className="flex md:flex-col justify-between items-center w-full gap-5 my-3">
-                        <div className="w-[21%] md:w-full p-[35px] sm:ml-[0%] sm:w-[20%] md:ml-[-10%] sm:p-5 bg-purple-900 rounded-[23px] w-[21%] md:w-full p-[39px]  sm:ml-[50%] sm:p-5 bg-purple-900 rounded-[23px] md:w-1/5 md:w-[50%]  flex justify-center items-center p-5 bg-purple-900 rounded-md">
-                          <Img
-                            src="images/img_icon_indigo_a100.svg"
-                            alt="icon_one"
-                            className="h-[51px] w-full md:h-auto my-3.5 md:h-auto my-[5px]  md:h-16   h-auto my-2"
-                          />
-                        </div>
-                        <div className="flex flex-col items-start w-[73%] md:w-full gap-[3px]">
-                          <Heading
-                            size="7xl"
-                            as="h4"
-                            className="!text-gray-900 !font-nunito w-[100%] md:w-[80%] pl-[15%]"
-                          >
-                            Responsibility
-                          </Heading>
-                          <Text
-                            size="11xl"
-                            as="p"
-                            className="!text-gray-600_03 !font-nunito leading-[157.4%]  w-[100%] md:w-[80%] pl-[15%]"
-                          >
-                            Long established fact that a readeed to will be
-                            distracted by the readable content of a page when
-                            looking at its layout
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* </div> */}
-                </div>
-              </div>
-
-
-
-              {/* Team */}
-              <div className="Team">
-                <Button
-                  color="deep_purple_50_02"
-                  size="11xl"
-                  className="lolo  mt-[811px] sm:px-5 font-nunito font-bold z-[1] min-w-[155px] rounded-[37px]"
-                >
-                  Our Team
-                </Button>
-                <div className="self-stretch h-[1754px] md:h-auto mt-[-2px] relative">
-                  <div className="flex flex-col items-start md:flex-row md:items-center flex flex-col items-start w-[38%] bottom-[-0.08px] right-[0.00px] m-auto absolute">
-                    {/* circule */}
-                    <div
-                      className="h-[273px] w-[273px] ml-[33px] md:ml-0 z-[1] bg-purple-400 shadow-7xl rounded-[136px]"
-                      style={{
-                        zIndex: "0",
-                        overflow: "hidden",
-                        margin: "-3px -8%",
-                      }}
-                    />
-                    <Img
-                      src="images/img_group_1000003855.png"
-                      alt="image_four"
-                      className="h-[1308px] w-full md:h-auto mt-[-150px] object-cover"
-                    />
-                  </div>
-                  <div className="flex md:flex-col items-start w-[79%]">
-                    <Img
-                      src="images/img_vector_purple_900_1078x472.png"
-                      alt="vector"
-                      className="w-[37%] md:w-full object-cover rounded-[148px]"
-                      style={{ margin: "-26% -10%" }}
-                    />
-                    <Text
-                      size="20xl"
-                      as="p"
-                      className="mt-[33px] ml-[150px] md:p-5 md:ml-0 !text-gray-900 text-center"
+                <div className="flex md:flex-col justify-center items-center w-full mx-auto my-20 max-w-[1372px]">
+                  <div className="flex flex-col items-start  md:w-full gap-5 md:items-center  rvfdv" style={{width:"50%"}}>
+                    <Heading
+                      size="10xl"
+                      as="h1"
+                      className="!text-gray-900 !font-nunito  md:items-center"
                     >
-                      Meet the team behind Contextify!
+                      Our Mission
+                    </Heading>
+                    <Text
+                      size="11xl"
+                      as="p"
+                      className="w-[100%] md:w-[80%]  md:ml-0 !text-gray-600_03 !font-nunito leading-[157.4%]"
+                    >
+                      <>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        Pharetra
+                        <br />
+                        Ld eu aliquet diam lorem viverra at justo. Nulla odio
+                        nequefjf gravida in pharetra egestas. Ac id sagittis
+                        at morbi interdum nibh diam sagittis et.
+                        <br />
+                        <br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        Pharetra
+                        <br /> id eu aliquet diam lorem viverra at justo.
+                        Nulla odio nequesg gravida in pharetra egestas.
+                      </>
                     </Text>
                   </div>
-                  <Text
-                    size="20xl"
-                    as="p"
-                    className="w-[22%] bottom-[43%] left-[9.00px] m-auto !text-gray-900 text-center leading-[110%] absolute md:ml-[15%] md:w-[50px]"
-                  >
-                    The Power Trio{" "}
-                  </Text>
-                  <Text
-                    size="11xl"
-                    as="p"
-                    className="w-[64%] bottom-[34%] right-[2%] m-auto !text-gray-600_03 leading-[30px] absolute   md:mr-[15%]  md:w-[50%]"
-                  >
-                    <span className="text-black-900_02 text-lg">1:&nbsp;</span>
-                    <span className="text-gray-600_03 text-lg">
-                      Marie Curie&nbsp;
-                    </span>
-                    <span className="text-black-900_02 text-lg ">
-                      <>
-                        is one of our talented and experienced makeup artists. She
-                        has been working in the beauty industry for over 10 years
-                        and has a passion for creating stunning looks for
-                        different occasions. <br />
-                        <br />
-                        2:&nbsp;
-                      </>
-                    </span>
-                    <span className="text-gray-600_03 text-lg">Odelia Chan</span>
-                    <span className="text-black-900_02 text-lg">&nbsp;</span>
-                    <span className="text-black-900_02 text-lg">
-                      <>
-                        is our amazing and creative content writer. She has a
-                        degree in journalism and a flair for writing engaging and
-                        informative articles. She covers topics such as makeup
-                        trends, product reviews, celebrity news, and more. She
-                        also edits and proofreads our content to ensure quality
-                        and accuracy. <br />
-                        <br />
-                        3:&nbsp;
-                      </>
-                    </span>
-                    <span className="text-gray-600_03 text-lg">Maria Garcia</span>
-                    <span className="text-black-900_02 text-lg ">
-                      &nbsp;is our wonderful and friendly community manager. She
-                      has a background in social media and customer service and a
-                      love for makeup and beauty.&nbsp;
-                    </span>
-                  </Text>
-                  <div className="h-[519px] w-full bottom-[-0.08px] right-0 left-0 m-auto bg-gray-50_01 absolute">
-                    <div className="flex md:flex-col justify-end items-center w-[62%] bottom-[0.00px] right-[0.00px] m-auto absolute md:relative">
-                      <div className="flex self-end justify-end w-[36%] md:w-full mb-[140px] md:p-5 z-[1]">
-                        <div className="flex justify-end w-full p-[29px] sm:p-5 border-black-900_02 border-2 border-solid rounded-[40px]">
-                          <div className="flex self-end mr-2.5 md:mr-0">
-                            <Text as="p" className="capitalize">
-                              Start Your Free Trial Today
-                            </Text>
-                          </div>
-                        </div>
-                      </div>
+                  <div class="md:self-stretch md:ml-0 flex-1 flex flex-col items-center ml-[-4px] md:ml-0">
+                    <div class="bg-gray-400_02 w-full  rounded-[60px] ghfgbhj" >
                       <Img
-                        src="images/img_polygon_amber_200.png"
-                        alt="polygon_one"
-                        className="w-[64%] md:w-full ml-[-56px] md:ml-0 object-cover rounded-[69px]"
+                        src="images/img_photo_378x760.png"
+                        alt="photo_one"
+                        class="h-[378px] w-full md:w-full h-auto object-cover rounded-[2vw]"
                       />
-                    </div>
-                    <div
-                      className="flex md:flex-col justify-center w-full h-max left-0 bottom-0 right-0 top-0 m-auto absolute md:relative"
-                      style={{ overflow: "hidden" }}
-                    >
-                      <div className="flex md:flex-col justify-center items-start md:self-stretch md:p-5 flex-1">
-                        <Img
-                          src="images/img_polygon_deep_purple_a200.png"
-                          alt="polygon_three"
-                          className="w-[47%] md:w-full z-[1] object-cover rounded-[69px]"
-                          style={{}}
-                        />
-                        <Text
-                          size="19xl"
-                          as="p"
-                          className="mt-[138px] ml-[-3px] md:ml-0 capitalize text-center"
-                          style={{ backgroundColor: "white", width: "100%" }}
-                        >
-                          try Contextify for free
-                        </Text>
-                      </div>
-                      <Img
-                        src="images/img_polygon_deep_orange_300.png"
-                        alt="polygon_five"
-                        className="w-[32%] md:w-full ml-[-4px] md:ml-0 object-cover rounded-[69px]"
-                      />
-                    </div>
-                    <div className="flex md:flex-col items-center w-[64%] left-[0.00px] top-[0.00px] m-auto absolute md:relative">
-                      <Img
-                        src="images/img_polygon_purple_a100.png"
-                        alt="polygon_seven"
-                        className="w-[60%] md:w-full object-cover rounded-[69px]"
-                        style={{ margin: "-10% -50%", innerHeight: "20" }}
-                      />
-                    </div>
-                    <Text
-                      size="8xl"
-                      as="p"
-                      className="w-[88%] md:w-full ml-[-87px] md:p-5 md:ml-0 capitalize text-center leading-8"
-                      style={{ overflow: "hidden", backgroundColor: "white" }}
-                    >
-                      Contexttify is a hub puts information into context at the
-                      click of a button
-                    </Text>
-                    <div className="h-[50px] w-[18%] left-[40%] top-[27%] m-auto bg-orange-50_01 absolute" />
-                  </div>
-                  <div className="w-[22%] right-[20%] top-[21%] m-auto absolute">
-                    <div className="h-[250px] w-[250px] md:h-auto relative">
-                      <Img
-                        src="images/img_user_1_1.png"
-                        alt="user1one_one"
-                        className="h-[250px] w-[250px] rounded-[50%]"
-                      />
-                      <Button
-                        color="purple_400_a7"
-                        size="md"
-                        shape="round"
-                        className="left-[0.00px] bottom-0 top-0 my-auto font-inter font-light opacity-0.85 min-w-[112px] absolute"
-                      >
-                        Odelia Chan
-                      </Button>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center w-[20%] gap-5 top-[12%] right-0 left-0 m-auto absolute">
-                    <div className="w-[89%] md:w-full pb-[41px] md:pb-5 md:p-5">
-                      <div className="h-[250px] w-[250px] md:h-auto relative">
-                        <Img
-                          src="images/img_user_1_1_250x250.png"
-                          alt="user1one_three"
-                          className="h-[250px] w-[250px] rounded-[50%]"
-                        />
-                        <Text
-                          as="p"
-                          className="flex justify-center items-center h-max pl-2.5 pr-[5px] left-[0.00px] bottom-0 top-0 py-1 my-auto !text-gray-100_02 !font-inter text-center !font-light opacity-0.85 bg-purple-400_a7 absolute rounded-[5px]"
-                        >
-                          Marie Curie
-                        </Text>
-                      </div>
-                    </div>
-                    <div className="w-[89%] md:w-full pb-[41px] md:pb-5 md:p-5">
-                      <div className="h-[250px] w-[250px] md:h-auto relative">
-                        <Img
-                          src="images/img_user_1_1_1.png"
-                          alt="user1one_five"
-                          className="h-[250px] w-[250px] rounded-[50%]"
-                        />
-                        <Button
-                          color="purple_400_a7"
-                          size="md"
-                          shape="round"
-                          className="left-[0.00px] bottom-0 top-0 my-auto !text-blue_gray-50 font-inter font-light opacity-0.85 min-w-[125px] absolute"
-                        >
-                          Paula Roberta
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </div>
-              <Footer />
-              <Text className="self-start mt-[25px]" />
             </div>
+            {/* our value */}
+
+            {/* <Helmet>
+              <title>Contextify</title>
+              <meta
+                name="description"
+                content="Web site created using create-react-app"
+              />
+            </Helmet> */}
+
+
+            <div className="section5" style={{paddingBottom:"20px"}} >
+
+              <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+                <p style={{ background: "#EFECFF", padding: "20px 15px ", color: "#4B0082", borderRadius: "50px", fontWeight: "bold" }}>Our Value</p>
+              </div>
+
+              <div style={{ display: "flex", justifyContent: "center", width: "100%" }} >
+                <p style={{ width: "70%", textAlign: "center", fontSize: "50px" }} className="text-l">The story and values behind our company</p>
+              </div>
+
+              <div style={{ display: "flex", justifyContent: "center", width: "100%" }} className="md:w-60 md:flex-col md:items-center chgf">
+                <div className="hvgh" style={{ width: "40%" }}>
+                  <img src={innovation} alt="" />
+                  <img src={responsablity} alt="" />
+                </div>
+                <div className="hvgh" style={{ width: "40%" }}>
+                  <img src={teamwork} alt="" />
+                  <img src={excelence} alt="" />
+                </div>
+
+              </div>
+            </div>
+
+
+            <div className="section6" style={{ width: "100%" ,paddingBottom:"20px" }}>
+
+              <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+                <p style={{ background: "#EFECFF", padding: "20px 15px ", color: "#4B0082", borderRadius: "50px", fontWeight: "bold" }}>Our Team</p>
+              </div>
+
+              <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+                <p style={{ width: "70%", textAlign: "center", fontSize: "4.166vw" }}>Meet the team behind Contextify!</p>
+              </div>
+
+
+              <div style={{ display: "flex", justifyContent: "space-around", width: "100%" }} className="wkhc edkigf">
+
+                <img src={c1} alt="" width={"28%"} />
+                <img src={c2} alt="" width={"28%"} />
+                <img src={c3} alt="" width={"28%"} />
+              </div>
+            </div>
+
+
+            <div className="section7" style={{ width: "100%", display: "flex", justifyContent: "center" ,paddingBottom:"20px" }}>
+              <div className="rpvfvd3" style={{ width:"90%", background: "linear-gradient(to bottom , #684FFF , #B871FE", borderRadius: "20px" , display:"flex" , justifyContent:'space-around' }}>
+
+                <div className="fv5" style={{ width:"45%" , padding:"100px 60px "}}>
+                  <div style={{display:"grid" , gap:"15px"}}>
+                    <div style={{ width: "100%" , display:"grid" , gap:"30px"}}>
+
+                      <h5 style={{fontSize:"35px"}}>Start your free trial today
+                      </h5>
+                      <p>It is a long established fact that a reader will be
+                        by the readable when looking at it layout. </p>
+                    </div>
+
+                    <div style={{width:"100%" , display:"flex" ,gap:"5px", justifyContent:"space-between"}}>
+                      <input style={{width:"78%" , background:"#ffffff7d" , borderRadius:"50px" , outline:""}}  placeholder="your mail here..." type="text" />
+                      <button style={{width:"max-content" , color:"#5236FF" , background:"white" , padding:"10px 20px" , borderRadius:"50px"}}>Submit</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="fv6" style={{ width: "45%" }}><img src={b1} alt="" /></div>
+
+              </div>
+            </div>
+            {/* Team */}
+            {/* <div className="Team"> */}
+
+            <Footer />
+            <Text className="self-start mt-[25px]" />
           </div>
         </div>
       </div>
+
     </>
   );
 }
