@@ -38,7 +38,7 @@ export default function ClientdashboardPage() {
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved",
         config
       );
-      setSaved(data.data);
+      setSaved(data?.data);
     };
 
     fetchHistory();
@@ -59,8 +59,8 @@ export default function ClientdashboardPage() {
         config
       )
       .then((data) => {
-        setSecret(data.data.key);
-        localStorage.setItem("secret", data.data.key);
+        setSecret(data?.data?.key);
+        localStorage.setItem("secret", data?.data?.key);
       })
       .catch((err) => alert("unable to generate key"));
   };
@@ -103,9 +103,9 @@ export default function ClientdashboardPage() {
                     key={item._id}
                     className="bg-[#fff] w-[32%] h-32 rounded"
                   >
-                    {item.question.length > 20
-                      ? item.question.slice(0, 20) + "..."
-                      : item.question}
+                    {item?.question?.length > 20
+                      ? item?.question?.slice(0, 20) + "..."
+                      : item?.question}
                   </div>
                 ))}
                 <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col  rounded-2xl">
@@ -143,14 +143,14 @@ export default function ClientdashboardPage() {
               <h2>My notes for further research</h2>
               <div className="flex flex-col items-center gap-2 my-2">
                 {saved?.map((item) => (
-                  item.type == 1 && <div className="bg-[#fff] w-full h-32 flex items-center text-center rounded-xl px-2">
+                  item?.type == 1 && <div className="bg-[#fff] w-full h-32 flex items-center text-center rounded-xl px-2">
                   <FaRegEdit className="h-10 w-10 mx-6" color="#140694" />
                   <div className="h-[70px] w-full mt-8 flex justify-between border-b-4 border-[#000000]">
-                    <h3 className="h-12">{item.question.length > 50
-                      ? item.question.slice(0, 50) + "..."
-                      : item.question}</h3>
+                    <h3 className="h-12">{item?.question?.length > 50
+                      ? item?.question?.slice(0, 50) + "..."
+                      : item?.question}</h3>
                     <div className="h-12 w-[100px]">
-                      Research by {item.createdAt.slice(0,10)}
+                      Research by {item?.createdAt?.slice(0,10)}
                     </div>
                   </div>
                 </div>
@@ -173,15 +173,15 @@ export default function ClientdashboardPage() {
                 {
                   saved.filter(i=>i.type == 2).length===0 && <p>Nothing to show here.</p>
                 }
-                {saved.map((item) => (
+                {saved?.map((item) => (
                 item?.type == 2 && <div className="w-full p-6">
                   <div className="flex w-full justify-between text-center">
                     <GiBrain className="h-16 w-16 top-0" color="#4B0082" />
                     <div className="flex flex-col ml-6 w-full items-end text-end justify-end">
                       <p className="">
-                      {item.question.length > 50
-                      ? item.question.slice(0, 50) + "..."
-                      : item.question}
+                      {item?.question?.length > 50
+                      ? item?.question?.slice(0, 50) + "..."
+                      : item?.question}
                       </p>{" "}
                       <div className="h-[2px] w-full border-b-2 border-[#000000]" />
                     </div>{" "}
@@ -203,15 +203,15 @@ export default function ClientdashboardPage() {
               <h2>For future exploration</h2>
 
               <div className="flex flex-col w-full min-h-24 rounded-xl my-2">
-                {saved.map((item) => ( item.type == 3 && <div className="w-full p-6">
+                {saved?.map((item) => ( item?.type == 3 && <div className="w-full p-6">
                   <div className="flex w-full justify-evenly text-center">
                     <WiTime4 className="h-16 w-16 top-0" color="#4B0082" />
                     <div className="flex flex-col ml-6 w-full text-end justify-end">
                       <div className="flex flex-row justify-around">
-                        <h2 className="float-end">{item.question.length > 50
-                          ? item.question.slice(0, 50) + "..."
-                          : item.question}</h2>{" "}
-                        <p className="w-[100px]">Research by {item.createdAt.slice(0,10)}</p>{" "}
+                        <h2 className="float-end">{item?.question?.length > 50
+                          ? item?.question?.slice(0, 50) + "..."
+                          : item?.question}</h2>{" "}
+                        <p className="w-[100px]">Research by {item?.createdAt?.slice(0,10)}</p>{" "}
                       </div>
                       <div className="h-[2px] w-full border-b-2 border-[#000000]" />
                     </div>{" "}
@@ -274,3 +274,4 @@ export default function ClientdashboardPage() {
     </>
   );
 }
+

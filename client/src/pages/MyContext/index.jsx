@@ -24,7 +24,7 @@ export default function MyContext() {
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved",
         config
       );
-      setContexts(data.data);
+      setContexts(data?.data);
     };
 
     fetchContexts();

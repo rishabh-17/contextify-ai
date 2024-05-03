@@ -5,7 +5,7 @@ exports.userAuthentication = (req, res, next) => {
   try {
     const token = req.header("authentication");
     const user = jwt.verify(token, process.env.SECRET);
-    User.findById(user._id).then((user) => {
+    User.findById(user?._id).then((user) => {
       req.user = user;
       next();
     });
@@ -31,9 +31,10 @@ exports.secretKeyValidation = (req, res, next) => {
 };
 
 exports.checkAdmin = (req, res, next) => {
-  if (req.user.premiumType === "admin") {
+  if (req.user?.premiumType === "admin") {
     next();
   } else {
     res.status(401).json({ success: false, err: "Unauthorized access" });
   }
 };
+
