@@ -299,11 +299,13 @@ export default function HomePage() {
               </div>
 
               <div  className="w-full flex justify-center">
+                <div className="flex flex-col items-center">
                 <img className="border-4 border-purple-500 rounded-full p-1" src={`images/${selected.img}`} width={150} height={150} alt="" />
-                <div className="bg-white">
+                <div className="bg-[#fff] p-2 text-center w-[500px] rounded-xl">
                   <p>{selected.description}</p>
-                  <h3>{selected.name}</h3>
-                  <h3>{selected.title}</h3>
+                  <h3 className="text-xl mt-2 font-bold">{selected.name}</h3>
+                  <h3 className="text-xl mt-2 font-bold">{selected.title}</h3>
+                </div>
                 </div>
               </div>
 
