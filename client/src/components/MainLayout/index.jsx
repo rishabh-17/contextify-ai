@@ -15,7 +15,7 @@ import { IoIosArrowDropdown } from "react-icons/io";
 export default function ClientdashboardPage({ active, children }) {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -23,137 +23,25 @@ export default function ClientdashboardPage({ active, children }) {
   return (
     <>
       <div className="h-screen overflow-hidden">
-        <nav className="w-full h-[10%] bg-[#fff] flex justify-between px-5 items-center">
-          <div className="flex items-center">
-            <Img
-              src="images/logo.png"
-              // src="images/img_frame_purple_900.svg"
-              alt="image"
-              className="my-auto h-[50px]"
-            />
-            <h2 className="text-xl font-bold text-purple-900">Contextify</h2>
-          </div>
-          <form className="mx-auto w-[30%] pl-2 border rounded bg-[#F7F0FC] h-8 overflow-hidden sm:hidden">
-            <div className="relative">
-              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                  />
-                </svg>
-              </div>
-              <input
-                type="search"
-                id="default-search"
-                className="block w-[90%] ml-6 ps-10 text-sm text-gray-900 border-gray-300 rounded-lg bg-gray-50  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white bg-transparent border-0"
-                placeholder="Search "
-                required
-              />
-            </div>
-          </form>
-          <div className="flex flex-row items-center justify-around">
-            <MdNotificationAdd  className="h-6 w-6 mr-2"/>
-             <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
-                <img
-                  src="../../../public/images/Image.png"
-                  alt="profile"
-                  className="h-6 shadow-xl"
-                />
-              </div>
-            <div className="text-black flex flex-col">
-              <h3>{user?.name}</h3>
-              <span>user</span>
-            </div>
-            <div>
-    
-            <div>
-      <button
-        id="dropdownInformationButton"
-        className="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-blue-700"
-        type="button"
-        onClick={toggleDropdown}
-      >
-        <IoIosArrowDropdown className="h-6 w-6" />
-      </button>
-      {/* Dropdown menu */}
-      <div
-        id="dropdownInformation"
-        className={`absolute bg-[#fff] w-[230px] right-0 top-[70px] z-10 ${isDropdownOpen ? '' : 'hidden'} bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
-      >
-        <div className=" flex flex-row justify-around items-center px-4 py-3 text-sm text-gray-900 dark:text-white">
-        <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
-                <img
-                  src="../../../public/images/Image.png"
-                  alt="profile"
-                  className="h-6 shadow-xl"
-                />
-        </div>
-        <a onClick={()=>navigate('/profile')}>
-          <p>Profile</p>
-          <div className="font-medium truncate">{user?.email}</div>
-        </a>
-
-        </div>
-        <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-          <li onClick={()=>navigate('/dashboard')}>
-            <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-            <MdOutlineSpaceDashboard className="h-4 w-4"/>
-              Dashboard
-            </a>
-          </li>
-          <li onClick={()=>navigate('/subscription')}>
-            <a  className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-            <IoPowerSharp className="h-4 w-4"/>
-              Subscription
-            </a>
-          </li>
-          <li onClick={()=>navigate('/support')}>
-            <a href="#" className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-            <MdOutlineContactSupport className="h-4 w-4"/>
-              Support
-            </a>
-          </li>
-          <li>
-            <a href="#" className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-            <IoSettingsOutline className="h-4 w-4"/>
-              Settings
-            </a>
-          </li>
-        </ul>
-        <div className="py-2">
-          <a
-            href="#"
-            className="px-4 py-2 text-sm text-gray-700 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-          >
-            <IoPowerSharp className="h-4 w-4"/>
-            Sign out
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-      
-    </div>
-            
-          </div>
-        </nav>
-        <div className="flex h-[90%]">
+        <div className="flex h-full ">
           <div
-            className="w-1/5 p-4 flex h-full flex-col gap-3 justify-between bg-[#fff] sm:hidden
+            className="w-1/5 p-4 flex h-full flex-col gap-3 justify-between bg-[#F7F0FC] sm:hidden
         "
           >
             <ul>
+              <li>
+                <div className="flex items-center mb-5">
+                  <Img
+                    src="images/logo.png"
+                    // src="images/img_frame_purple_900.svg"
+                    alt="image"
+                    className="my-auto h-[50px]"
+                  />
+                  <h2 className="text-xl font-bold text-purple-900">
+                    Contextify
+                  </h2>
+                </div>
+              </li>
               <li
                 className={
                   active === 1
@@ -162,7 +50,7 @@ export default function ClientdashboardPage({ active, children }) {
                 }
                 onClick={() => navigate("/dashboard")}
               >
-                <MdOutlineSpaceDashboard className="h-4 w-4"/>
+                <MdOutlineSpaceDashboard className="h-4 w-4" />
                 Dashboard
               </li>
               <li
@@ -173,7 +61,7 @@ export default function ClientdashboardPage({ active, children }) {
                 }
                 onClick={() => navigate("/mycontext")}
               >
-                <TbFileSettings className="h-4 w-4"/>
+                <TbFileSettings className="h-4 w-4" />
                 My Context
               </li>
             </ul>
@@ -184,9 +72,9 @@ export default function ClientdashboardPage({ active, children }) {
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
-                onClick={()=>navigate('/support')}
+                onClick={() => navigate("/support")}
               >
-                <MdOutlineContactSupport className="h-4 w-4"/>
+                <MdOutlineContactSupport className="h-4 w-4" />
                 support
               </li>
               <li
@@ -195,9 +83,9 @@ export default function ClientdashboardPage({ active, children }) {
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
-                onClick={()=>navigate('/support')}
+                onClick={() => navigate("/support")}
               >
-                <TbMessageReport className="h-4 w-4"/>
+                <TbMessageReport className="h-4 w-4" />
                 Report an issue
               </li>
               <li
@@ -206,9 +94,9 @@ export default function ClientdashboardPage({ active, children }) {
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
-                onClick={()=>navigate('/subscription')}
+                onClick={() => navigate("/subscription")}
               >
-                <IoPowerSharp className="h-4 w-4"/>
+                <IoPowerSharp className="h-4 w-4" />
                 Subscription
               </li>
               <li
@@ -218,7 +106,7 @@ export default function ClientdashboardPage({ active, children }) {
                     : "ml-5 my-3 text-xs flex gap-2 items-center"
                 }
               >
-                <IoSettingsOutline className="h-4 w-4"/>
+                <IoSettingsOutline className="h-4 w-4" />
                 Settings
               </li>
               <li
@@ -232,13 +120,136 @@ export default function ClientdashboardPage({ active, children }) {
                   navigate("/");
                 }}
               >
-                <IoPowerSharp className="h-4 w-4"/>
+                <IoPowerSharp className="h-4 w-4" />
                 Logout
               </li>
             </ul>
           </div>
 
           <div className="p-5 w-full overflow-auto">
+            <nav className="w-full h-[10%] bg-[#fff] flex justify-between px-5 items-center">
+              <form className="w-[40%] pl-2 border rounded bg-[#F7F0FC] h-8 overflow-hidden sm:hidden">
+                <div className="relative">
+                  <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg
+                      className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                      />
+                    </svg>
+                  </div>
+                  <input
+                    type="search"
+                    id="default-search"
+                    className="block w-[90%] ml-6 ps-10 text-sm text-gray-900 border-gray-300 rounded-lg bg-gray-50  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white bg-transparent border-0"
+                    placeholder="Search "
+                    required
+                  />
+                </div>
+              </form>
+              <div className="flex flex-row items-center justify-around">
+                <MdNotificationAdd className="h-6 w-6 mr-2" />
+                <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
+                  <img
+                    src="../../../public/images/Image.png"
+                    alt="profile"
+                    className="h-6 shadow-xl"
+                  />
+                </div>
+                <div className="text-black flex flex-col">
+                  <h3>{user?.name}</h3>
+                  <span>user</span>
+                </div>
+                <div>
+                  <div>
+                    <button
+                      id="dropdownInformationButton"
+                      className="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-blue-700"
+                      type="button"
+                      onClick={toggleDropdown}
+                    >
+                      <IoIosArrowDropdown className="h-6 w-6" />
+                    </button>
+                    {/* Dropdown menu */}
+                    <div
+                      id="dropdownInformation"
+                      className={`absolute bg-[#fff] w-[230px] right-0 top-[70px] z-10 ${
+                        isDropdownOpen ? "" : "hidden"
+                      } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                    >
+                      <div className=" flex flex-row justify-around items-center px-4 py-3 text-sm text-gray-900 dark:text-white">
+                        <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
+                          <img
+                            src="../../../public/images/Image.png"
+                            alt="profile"
+                            className="h-6 shadow-xl"
+                          />
+                        </div>
+                        <a onClick={() => navigate("/profile")}>
+                          <p>Profile</p>
+                          <div className="font-medium truncate">
+                            {user?.email}
+                          </div>
+                        </a>
+                      </div>
+                      <ul
+                        className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                        aria-labelledby="dropdownInformationButton"
+                      >
+                        <li onClick={() => navigate("/dashboard")}>
+                          <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                            <MdOutlineSpaceDashboard className="h-4 w-4" />
+                            Dashboard
+                          </a>
+                        </li>
+                        <li onClick={() => navigate("/subscription")}>
+                          <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                            <IoPowerSharp className="h-4 w-4" />
+                            Subscription
+                          </a>
+                        </li>
+                        <li onClick={() => navigate("/support")}>
+                          <a
+                            href="#"
+                            className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          >
+                            <MdOutlineContactSupport className="h-4 w-4" />
+                            Support
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                          >
+                            <IoSettingsOutline className="h-4 w-4" />
+                            Settings
+                          </a>
+                        </li>
+                      </ul>
+                      <div className="py-2">
+                        <a
+                          href="#"
+                          className="px-4 py-2 text-sm text-gray-700 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                        >
+                          <IoPowerSharp className="h-4 w-4" />
+                          Sign out
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
             {/* --------------------------------------------------------------------------------------------------------------------------- main components start*/}
             {children}
             {/* --------------------------------------------------------------------------------------------------------------------------- main components end*/}

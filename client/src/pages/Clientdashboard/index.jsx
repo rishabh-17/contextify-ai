@@ -4,12 +4,16 @@ import axios from "axios";
 import { RWebShare } from "react-web-share";
 import { MdPerson } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5";
-import { FaRegEdit } from "react-icons/fa";
+import { FaRegEdit, FaPlus } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 import { WiTime4 } from "react-icons/wi";
 import { IoMdShare } from "react-icons/io";
 import { IoIosPersonAdd } from "react-icons/io";
 import { FaEye } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import share_peoples from "../../assets/share_peoples.png";
+
+// import { ThreeDCard } from "../../components/threedcard";
 
 export default function ClientdashboardPage() {
   const [history, setHistory] = React.useState([]);
@@ -17,7 +21,7 @@ export default function ClientdashboardPage() {
   const [secret, setSecret] = React.useState(localStorage.getItem("secret"));
   const [keyShow, setKeyShow] = React.useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
-
+  const navigate = useNavigate();
   React.useEffect(() => {
     const config = {
       headers: {
@@ -68,34 +72,169 @@ export default function ClientdashboardPage() {
   return (
     <>
       <MainLayout active={1}>
-        <div className="w-full h-4">Hi, {user?.name}</div>
+        <div className="w-full mb-4 text-violet-900 h-4 text-lg">
+          Hi, {user?.name}
+        </div>
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full py-3">
           <div>
-            <div className="flex items-center gap-4 rounded ">
+            <div className="flex flex-col  items-center gap-4 rounded-full ml-5 w-1/3">
               <img
-                src="https://png.pngtree.com/png-vector/20190909/ourmid/pngtree-outline-user-icon-png-image_1727916.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5H3d-mRDA8EJp4JIoVsVod9iYe5PqViR-hUd7pDn-mQ&s"
                 alt=""
-                width={100}
+                width={150}
+                className="rounded-full"
               />
-              <div className="bg-[#fff] w-full h-[130px] flex flex-row rounded rounded-2xl">
-                <div className="flex flex-col items-center mx-8 mt-4">
-                  <MdPerson className="h-8 w-8" color="#140694" />
-                  <p>4</p>
-                  <p className="w-[90px] text-center">use cases</p>
+
+              <button
+                className="text-[#fff] bg-purple-900 rounded-full p-2 mb-4"
+                onClick={() => navigate("/profile")}
+              >
+                Edit Profile
+              </button>
+            </div>
+
+            <section className="my-5">
+              <div className="bg-[#fff] shadow-md border w-full py-8 gap-4 flex flex-wrap justify-between rounded rounded-2xl">
+                <div className="flex items-center">
+                  <div className="p-3  bg-orange-200 rounded-xl mx-1">
+                    <MdPerson className="h-8 w-8" color="orange" />
+                  </div>
+                  <div>
+                    <p className="w-[90px] text-center text-gray-700">
+                      Categories
+                    </p>
+                    <p className="w-[90px] text-center">4</p>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center mx-8 mt-4">
-                  <MdPerson className="h-8 w-8" color="#140694" />
-                  <p>4</p>
-                  <p className="w-[90px] text-center">Total searches</p>
+                <div className="flex items-center">
+                  <div className="h-2/3 my-auto w-[2px] bg-gray-300"></div>
+                  <div className="p-3  bg-purple-200 rounded-xl mx-1">
+                    <MdPerson className="h-8 w-8" color="#140694" />
+                  </div>
+                  <div>
+                    <p className="w-[90px] text-center text-gray-700">
+                      use cases
+                    </p>
+                    <p className="w-[90px] text-center">4</p>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center mx-8 mt-4">
-                  <MdPerson className="h-8 w-8" color="#140694" />
-                  <p>4</p>
-                  <p className="w-[90px] text-center">Searches Left</p>
+
+                <div className="flex items-center">
+                  <div className="h-2/3 my-auto w-[2px] bg-gray-300"></div>
+                  <div className="p-3  bg-blue-200 rounded-xl mx-1">
+                    <MdPerson className="h-8 w-8" color="blue" />
+                  </div>
+                  <div>
+                    <p className="w-[90px] text-center text-gray-700">Shared</p>
+                    <p className="w-[90px] text-center">4</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div>
+            <section className="mb-5 mx-10 bg-[#fff] p-5 rounded-xl shadow-md">
+              <h3 className="my-3">Secret Key</h3>
+              <div className="bg-[#fff] p-5 rounded-xl">
+                {secret ? (
+                  <div className="flex gap-3">
+                    <input
+                      className="roundedxl"
+                      type={keyShow ? "text" : "password"}
+                      value={secret}
+                    />
+                    <FaEye onClick={() => setKeyShow(!keyShow)} />
+                  </div>
+                ) : (
+                  <button
+                    className="px-3 py-2 bg-purple-900 text-[#fff] rounded-xl"
+                    onClick={genrateKey}
+                  >
+                    Generate Secret key
+                  </button>
+                )}
+              </div>
+            </section>
+            <section className="m-10 p-4 flex gap-8 bg-[#fff] shadow-md rounded-xl">
+              <div className=" ">
+                <img src={share_peoples} width={100} alt="" />
+              </div>
+              <div className="h-full flex flex-col justify-between">
+                <h3>Share with your friends</h3>
+                <RWebShare
+                  data={{
+                    text: "Contextify Your Browser Experience",
+                    url: "https://contxtify-ai.com/",
+                    title: "Contextify",
+                  }}
+                >
+                  <button className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4">
+                    <IoMdShare className="gap-2" color="#4B0082" />
+                    Share
+                  </button>
+                </RWebShare>
+              </div>
+            </section>
+          </div>
+        </div>
+        <section className=" my-5">
+          <h2>Recent Context</h2>
+          <div className="flex flex-wrap items-center gap-2 my-2">
+            {history.slice(0, 4).map(
+              (item) =>
+                item?.type == 1 && (
+                  <div
+                    class="max-w-sm w-[200px] h-[300px]
+             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
+                  >
+                    <div className="overflow-auto h-[160px]">
+                      <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+                        {item?.question?.length > 50
+                          ? item?.question?.slice(0, 50) + "..."
+                          : item?.question}
+                      </h5>
+                      <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
+                        {item?.answer}
+                      </p>
+                    </div>
+                    <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
+                      <div>
+                        <FaPlus color="gray" />
+                      </div>
+                    </div>
+                  </div>
+                )
+            )}
+            <div
+              class="max-w-sm w-[200px] h-[300px]
+             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
+            >
+              <div className="overflow-auto h-[160px]">
+                <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+                  Noteworthy technology acquisitions 2021
+                </h5>
+                <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
+                  Here are the biggest enterprise technology acquisitions of
+                  2021 so far, in reverse chronological order.
+                </p>
+              </div>
+              <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
+                <div>
+                  <FaPlus color="gray" />
                 </div>
               </div>
             </div>
-            <section className=" my-5">
+          </div>
+          <div className="w-full flex justify-start">
+            <button
+              className="text-[#fff] bg-purple-900 rounded-xl p-2"
+              onClick={() => navigate("/mycontext")}
+            >
+              View all
+            </button>
+          </div>
+        </section>
+        {/* <section className=" my-5">
               <h2>Top topics I have in the past month</h2>
               <div className="flex items-center gap-2 my-2">
                 {history.slice(0, 4).map((item) => (
@@ -138,140 +277,8 @@ export default function ClientdashboardPage() {
                   View all
                 </button>
               </div>
-            </section>
-            <section className=" my-5">
-              <h2>My notes for further research</h2>
-              <div className="flex flex-col items-center gap-2 my-2">
-                {saved?.map((item) => (
-                  item?.type == 1 && <div className="bg-[#fff] w-full h-32 flex items-center text-center rounded-xl px-2">
-                  <FaRegEdit className="h-10 w-10 mx-6" color="#140694" />
-                  <div className="h-[70px] w-full mt-8 flex justify-between border-b-4 border-[#000000]">
-                    <h3 className="h-12">{item?.question?.length > 50
-                      ? item?.question?.slice(0, 50) + "..."
-                      : item?.question}</h3>
-                    <div className="h-12 w-[100px]">
-                      Research by {item?.createdAt?.slice(0,10)}
-                    </div>
-                  </div>
-                </div>
-                ))}
-              </div>
-              <div className="w-full flex justify-start">
-                <button
-                  className="text-[#fff] bg-purple-900 rounded-xl p-2"
-                  onClick={() => navigate("/mycontext")}
-                >
-                  View all
-                </button>
-              </div>
-            </section>
-          </div>
-          <div>
-            <section className="mb-5 mx-10">
-              <h2>Things i know </h2>
-              <div className="bg-[#fff] flex flex-col  w-full min-h-24 rounded-xl my-2">
-                {
-                  saved.filter(i=>i.type == 2).length===0 && <p>Nothing to show here.</p>
-                }
-                {saved?.map((item) => (
-                item?.type == 2 && <div className="w-full p-6">
-                  <div className="flex w-full justify-between text-center">
-                    <GiBrain className="h-16 w-16 top-0" color="#4B0082" />
-                    <div className="flex flex-col ml-6 w-full items-end text-end justify-end">
-                      <p className="">
-                      {item?.question?.length > 50
-                      ? item?.question?.slice(0, 50) + "..."
-                      : item?.question}
-                      </p>{" "}
-                      <div className="h-[2px] w-full border-b-2 border-[#000000]" />
-                    </div>{" "}
-                  </div>
-                  <div></div>
-                  <div></div>
-                </div>))}
-              </div>
-              <div className="w-full flex justify-start">
-                <button
-                  className="text-[#fff] bg-purple-900 rounded-xl p-2"
-                  onClick={() => navigate("/mycontext")}
-                >
-                  View all
-                </button>
-              </div>
-            </section>
-            <section className="mb-5 mx-10">
-              <h2>For future exploration</h2>
-
-              <div className="flex flex-col w-full min-h-24 rounded-xl my-2">
-                {saved?.map((item) => ( item?.type == 3 && <div className="w-full p-6">
-                  <div className="flex w-full justify-evenly text-center">
-                    <WiTime4 className="h-16 w-16 top-0" color="#4B0082" />
-                    <div className="flex flex-col ml-6 w-full text-end justify-end">
-                      <div className="flex flex-row justify-around">
-                        <h2 className="float-end">{item?.question?.length > 50
-                          ? item?.question?.slice(0, 50) + "..."
-                          : item?.question}</h2>{" "}
-                        <p className="w-[100px]">Research by {item?.createdAt?.slice(0,10)}</p>{" "}
-                      </div>
-                      <div className="h-[2px] w-full border-b-2 border-[#000000]" />
-                    </div>{" "}
-                  </div>
-                </div>))}
-              </div>
-              <div className="w-full flex justify-start">
-                <button
-                  className="text-[#fff] bg-purple-900 rounded-xl p-2"
-                  onClick={() => navigate("/mycontext")}
-                >
-                  View all
-                </button>
-              </div>
-            </section>
-            <section className="mb-5 mx-10">
-              <h3 className="my-3">Secret Key</h3>
-              <div className="bg-[#fff] p-5 rounded-xl">
-                {secret ? (
-                  <div className="flex gap-3">
-                    <input
-                      className="roundedxl"
-                      type={keyShow ? "text" : "password"}
-                      value={secret}
-                    />
-                    <FaEye onClick={() => setKeyShow(!keyShow)} />
-                  </div>
-                ) : (
-                  <button
-                    className="px-3 py-2 bg-purple-900 text-[#fff] rounded-xl"
-                    onClick={genrateKey}
-                  >
-                    Generate Secret key
-                  </button>
-                )}
-              </div>
-            </section>
-            <section className="my-10 mx-16 flex gap-8">
-              <RWebShare
-                data={{
-                  text: "Contextify Your Browser Experience",
-                  url: "https://contxtify-ai.com/",
-                  title: "Contextify",
-                }}
-                // onClick={() => console.log("shared successfully!")}
-              >
-                <button className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4">
-                  <IoMdShare className="gap-2" color="#4B0082" />
-                  Share
-                </button>
-              </RWebShare>
-              <button className="flex flex-row justify-around bg-[#fff] text-purple-900 rounded-xl px-10 py-4">
-                <IoIosPersonAdd className="gap-2" color="#4B0082" />
-                Invite
-              </button>
-            </section>
-          </div>
-        </div>
+            </section> */}
       </MainLayout>
     </>
   );
 }
-
