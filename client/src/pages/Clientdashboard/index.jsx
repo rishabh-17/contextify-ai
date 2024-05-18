@@ -189,17 +189,29 @@ export default function ClientdashboardPage() {
                   >
                     <div className="overflow-auto h-[160px]">
                       <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
-                        {item?.question?.length > 50
-                          ? item?.question?.slice(0, 50) + "..."
+                        {item?.question?.length > 30
+                          ? item?.question?.slice(0, 30) + "..."
                           : item?.question}
                       </h5>
                       <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
-                        {item?.answer}
+                        {item?.answer.length > 50
+                          ? item?.answer?.slice(0, 50) + "..."
+                          : item?.answer}
                       </p>
                     </div>
                     <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
                       <div>
-                        <FaPlus color="gray" />
+                        <div>
+                          <RWebShare
+                            data={{
+                              text: "Contextify Your Browser Experience",
+                              url: `/contextdetail/saved/ + ${item._id}`,
+                              title: "Contextify",
+                            }}
+                          >
+                            <FaPlus color="gray" />
+                          </RWebShare>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -220,7 +232,15 @@ export default function ClientdashboardPage() {
               </div>
               <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
                 <div>
-                  <FaPlus color="gray" />
+                  <RWebShare
+                    data={{
+                      text: "Contextify Your Browser Experience",
+                      url: "https://contxtify-ai.com/",
+                      title: "Contextify",
+                    }}
+                  >
+                    <FaPlus color="gray" />
+                  </RWebShare>
                 </div>
               </div>
             </div>

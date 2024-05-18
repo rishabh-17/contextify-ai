@@ -5,11 +5,11 @@ import { GiBrain } from "react-icons/gi";
 import { GrNotes } from "react-icons/gr";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
-
+import { FaRegEdit, FaPlus } from "react-icons/fa";
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
   const [toggle, setToggle] = React.useState(1);
-  const user = JSON.parse(localStorage.getItem('user'))
+  const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -33,81 +33,107 @@ export default function MyContext() {
   return (
     <div>
       <MainLayout active={2}>
-        <div className="flex sm:flex-col gap-4 p-4">
-          <div className="flex flex-col gap-4">
+        <div className="flex-col gap-4 p-4">
+          <div className="border rounded-xl p-5 shadow-md mb-3">
             <div>
-              <div className="h-[150px] flex bg-gray-300 rounded-full text-center items-center justify-center">
-                <img
-                  src="../../../public/images/Image.png"
-                  alt="profile"
-                  className="h-24 shadow-xl"
-                />
-              </div>
-              <p className="text-purple-900">{user.email}</p>
+              <h2 className="text-lg font-bold">
+                Get contexts wherever you browse
+              </h2>
+              <p className="text-xs">
+                Use it on Gmail, Facebook, Twitter, LinkedIn, and thousands of
+                other websites.
+              </p>
             </div>
-
-            <div className="sm:flex-row flex flex-col gap-4">
+            <div></div>
+            <div></div>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h2 className="text-xl font-bold mt-5">My Context</h2>
+            <div>
+              <input
+                type="text"
+                className=" px-4 py-2 border border-gray-300 shadow-md"
+                placeholder="Search"
+              />
+            </div>
+            <div className="sm:flex-row flex gap-4 justify-center w-full">
               <div
                 onClick={() => setToggle(1)}
                 className={
                   toggle === 1
-                    ? "bg-purple-900 h-36 w-36 flex flex-col items-center justify-around text-white sm:w-14 sm:h-14 rounded-xl"
-                    : " bg-purple-200 h-36 w-36 flex flex-col items-center justify-around text-white sm:w-14 sm:h-14 rounded-xl"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold "
+                    : " flex flex-col items-center  text-gray-600"
                 }
               >
-                <GiBrain className="h-16 w-16 " color="#fff" />
-                <h3 className="text-white">things i know</h3>
+                <h3>Things i know</h3>
               </div>
               <div
                 onClick={() => setToggle(2)}
                 className={
                   toggle === 2
-                    ? "bg-purple-900 h-36 w-36 flex flex-col items-center justify-around text-white sm:w-14 sm:h-14 rounded-xl"
-                    : " bg-purple-200 h-36 w-36 flex flex-col items-center justify-around text-white sm:w-14 sm:h-14 rounded-xl"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold "
+                    : " flex flex-col items-center  text-gray-600"
                 }
               >
-                <GrNotes className="h-16 w-16" color="#fff" />
                 <h3 className="text-white">Notes</h3>
               </div>
               <div
                 onClick={() => setToggle(3)}
                 className={
                   toggle === 3
-                    ? "bg-purple-900 h-36 w-36 flex flex-col items-center justify-around text-white sm:w-14 sm:h-14 rounded-xl"
-                    : " bg-purple-200 h-36 w-36 flex flex-col items-center justify-around text-white sm:w-14 sm:h-14 rounded-xl"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold "
+                    : " flex flex-col items-center  text-gray-600"
                 }
               >
-                <RxCounterClockwiseClock className="h-16 w-16" color="#fff" />
                 <h3 className="text-white" color="#fff">
-                  future exploration
+                  Future exploration
                 </h3>
               </div>
             </div>
           </div>
           <div className="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-4 gap-3">
-            {contexts.map((context) => (
-              toggle == context.type && <div
-                className="bg-[#ffffff] h-64 w-64 sm:w-full rounded-xl p-2 overflow-auto"
-                onClick={() => navigate("/contextdetail/saved/" + context._id)}
-              >
-                <div className="flex flex-col m-2 justify-around">
-                  <h3 className="font-bold">
-                    {context.question.length > 50
-                      ? context.question.slice(0, 50) + "..."
-                      : context.question}
-                  </h3>
-                </div>
-
-                <div className="flex flex-row m-2 h-8 text-gray-500">
-                  <p>
-                    {context.answer.length > 250
-                      ? context.answer.slice(0, 250) + "..."
-                      : context.answer}
-                  </p>
-                  <div className="H-[2px] border-b-2 border-black" />
-                </div>
-              </div>
-            ))}
+            {contexts.map(
+              (context) =>
+                toggle == context.type && (
+                  <div
+                    class="max-w-sm w-[200px] h-[300px]
+             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
+                  >
+                    <div
+                      className="overflow-auto h-[160px]"
+                      onClick={() =>
+                        navigate(
+                          `/contextdetail/${context.type}/ + ${context._id}`
+                        )
+                      }
+                    >
+                      <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+                        {context?.question?.length > 30
+                          ? context?.question?.slice(0, 30) + "..."
+                          : context?.question}
+                      </h5>
+                      <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
+                        {context?.answer.length > 50
+                          ? context?.answer?.slice(0, 50) + "..."
+                          : context?.answer}
+                      </p>
+                    </div>
+                    <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
+                      <div>
+                        <RWebShare
+                          data={{
+                            text: "Contextify Your Browser Experience",
+                            url: `/contextdetail/${context.type}/ + ${context._id}`,
+                            title: "Contextify",
+                          }}
+                        >
+                          <FaPlus color="gray" />
+                        </RWebShare>
+                      </div>
+                    </div>
+                  </div>
+                )
+            )}
           </div>
         </div>
       </MainLayout>
