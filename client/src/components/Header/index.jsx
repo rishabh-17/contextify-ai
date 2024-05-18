@@ -8,19 +8,14 @@ export default function Header({ ...props }) {
     <header {...props} className="wih5">
       <div className="w-full">
         <div className="flex md:flex-col justify-between items-center gap-5">
-          <div className="jhsufdj w-100% flex md:ml-[-75%]">
+          <div className="jhsufdj w-100% flex md:ml-[-75%] items-center">
             <Img
-              src="images/img_frame_purple_900.svg"
+              src="images/logo.png"
+              // src="images/img_frame_purple_900.svg"
               alt="image"
-              width={"100%"}
+              className="my-auto h-[60px]"
             />
-            <Text
-              size="14xl"
-              as="p"
-              className="bottom-[-0.45px] right-[0.00px] m-auto !text-deep_purple-A200_04 capitalize"
-            >
-              Contextify
-            </Text>
+            <h2 className="text-xl font-bold text-purple-900">Contextify</h2>
           </div>
           <div className="flex sm:flex-col items-center">
             <div className="mx-5 cursor-pointer" onClick={() => navigate("/")}>
