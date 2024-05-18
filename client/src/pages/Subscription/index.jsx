@@ -4,12 +4,12 @@ export default function Subscription() {
   return (
     <div>
       <MainLayout active={4}>
-        <div className="w-full text-3xl">Subscriptions</div>
+        <div className="w-full text-3xl font-bold">Subscriptions</div>
         <div>See your current plan. Chose a plan to that will suit you.</div>
         <div className="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-center my-4">
           <div
             id="card"
-            className="w-[80%] md:w-[90%] h-[500px] bg-[#fff] rounded-xl hover:bg-purple-900 hover:text-[#fff] p-4"
+            className="w-[80%] md:w-[90%] h-[500px] bg-[#fff] rounded-xl hover:bg-purple-900 hover:text-[#fff] p-4 shadow-md"
           >
             <div className="flex gap-4 my-4">
               <img src="" alt="basic" />
@@ -39,7 +39,7 @@ export default function Subscription() {
           </div>
           <div
             id="card"
-            className="w-[80%] md:w-[90%] h-[500px] bg-[#fff] rounded-xl hover:bg-purple-900 hover:text-[#fff] p-4"
+            className="w-[80%] md:w-[90%] h-[500px] bg-[#fff] rounded-xl hover:bg-purple-900 hover:text-[#fff] p-4 shadow-md"
           >
             <div className="flex gap-4 my-4">
               <img src="" alt="basic" />
@@ -69,7 +69,7 @@ export default function Subscription() {
           </div>
           <div
             id="card"
-            className="w-[80%] md:w-[90%] h-[500px] bg-[#fff] rounded-xl hover:bg-purple-900 hover:text-[#fff] p-4"
+            className="w-[80%] md:w-[90%] h-[500px] bg-[#fff] rounded-xl hover:bg-purple-900 hover:text-[#fff] p-4 shadow-md"
           >
             <div className="flex gap-4 my-4">
               <img src="" alt="basic" />

@@ -23,7 +23,10 @@ export default function ClientdashboardPage() {
   const [keyShow, setKeyShow] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
   const [tone, setTone] = useState(1);
+  const [type, setType] = useState(1);
   const user = JSON.parse(localStorage.getItem("user"));
+  const [ques, setQues] = useState("");
+  const [ans, setAns] = useState("");
   const navigate = useNavigate();
   React.useEffect(() => {
     const config = {
@@ -70,6 +73,24 @@ export default function ClientdashboardPage() {
         localStorage.setItem("secret", data?.data?.key);
       })
       .catch((err) => alert("unable to generate key"));
+  };
+
+  const handleNewContext = async () => {
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+        secret: `${secret}`,
+      },
+    };
+    if (!ques) return alert("Please enter a question");
+    else if (!secret) return alert("Please generate a secret key");
+    else {
+      axios.post(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/context/contextify",
+        { text: ques, type: type, tone: tone },
+        config
+      );
+    }
   };
 
   return (
@@ -281,54 +302,11 @@ export default function ClientdashboardPage() {
             </button>
           </div>
         </section>
-        {/* <section className=" my-5">
-              <h2>Top topics I have in the past month</h2>
-              <div className="flex items-center gap-2 my-2">
-                {history.slice(0, 4).map((item) => (
-                  <div
-                    key={item._id}
-                    className="bg-[#fff] w-[32%] h-32 rounded"
-                  >
-                    {item?.question?.length > 20
-                      ? item?.question?.slice(0, 20) + "..."
-                      : item?.question}
-                  </div>
-                ))}
-                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col  rounded-2xl">
-                  <div className=" flex h-12 w-12 p-3 bg-purple-300 rounded-xl items-center justify-center ">
-                    <IoPeopleSharp className="h-8 w-8" color="#140694" />
-                  </div>
-                  <p>people</p>
-                  <p>1</p>
-                </div>
-                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col  rounded-2xl">
-                  <div className="flex h-12 w-12 p-3 bg-purple-300 rounded-xl items-center justify-center">
-                    <IoPeopleSharp className="h-8 w-8" color="#140694" />
-                  </div>
-                  <p>people</p>
-                  <p>1</p>
-                </div>
-                <div className="bg-[#fff] w-[32%] h-32 p-4 text-center items-center flex flex-col  rounded-2xl">
-                  <div className="flex h-12 w-12 p-3 bg-purple-300 rounded-xl items-center justify-center">
-                    <IoPeopleSharp className="h-8 w-8" color="#140694" />
-                  </div>
-                  <p>people</p>
-                  <p>1</p>
-                </div>
-              </div>
-              <div className="w-full flex justify-end">
-                <button
-                  className="text-[#fff] bg-purple-900 rounded-xl p-2"
-                  onClick={() => navigate("/mycontext")}
-                >
-                  View all
-                </button>
-              </div>
-            </section> */}
+
         {showModal && (
           <div className="absolute w-[60%] h-[80%] m-auto left-0 right-0 bg-[#fff] shadow-md rounded border-2  border-purple-300 top-0 bottom-0">
             <div className="grid grid-cols-2 h-full">
-              <div className="bg-gray-100 p-4 flex flex-col gap-8 rounded">
+              <div className="bg-gray-100 p-4 flex flex-col gap-4 rounded overflow-y-auto">
                 <h3 className="text-3xl font-bold text-center">New Context</h3>
                 <div>
                   <h5 className="font-bold  text-md mb-3">
@@ -392,15 +370,54 @@ export default function ClientdashboardPage() {
                     Text to be contextify
                   </h5>
                   <textarea
-                    name=""
-                    id=""
+                    onChange={(e) => setQues(e.target.value)}
                     placeholder="Enter text here"
                     className="w-full rounded-xl"
                     rows={10}
+                    value={ques}
                   ></textarea>
                 </div>
-                <div></div>
-                <button className="bg-purple-900 text-[#fff] p-2 w-full">
+                <div>
+                  <h5 className="font-bold  text-md mb-3">
+                    Select Preferred type
+                  </h5>
+                  <div className="flex gap-2 flex-wrap">
+                    <button
+                      className={
+                        type === 1
+                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                      }
+                      onClick={() => setType(1)}
+                    >
+                      Things i know
+                    </button>
+                    <button
+                      className={
+                        type === 2
+                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                      }
+                      onClick={() => setType(2)}
+                    >
+                      Notes
+                    </button>
+                    <button
+                      className={
+                        type === 3
+                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                      }
+                      onClick={() => setType(3)}
+                    >
+                      Future exploration
+                    </button>
+                  </div>
+                </div>
+                <button
+                  className="bg-purple-900 text-[#fff] p-2 w-full"
+                  onClick={handleNewContext}
+                >
                   Generate
                 </button>
               </div>
@@ -415,12 +432,16 @@ export default function ClientdashboardPage() {
                   type="text"
                   placeholder="Untitled"
                   className="border-0 text-7xl font-bold"
+                  value={ques}
+                  onChange={(e) => setQues(e.target.value)}
                 />
                 <textarea
                   name=""
                   id=""
                   placeholder="Write Something"
                   className="h-full text-sm border-0 overflow-y-auto"
+                  value={ans}
+                  onChange={(e) => setAns(e.target.value)}
                 ></textarea>
               </div>
             </div>
