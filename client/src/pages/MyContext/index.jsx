@@ -35,7 +35,7 @@ export default function MyContext() {
     <div>
       <MainLayout active={2}>
         <div className="flex-col gap-4 p-4">
-          <div className="border rounded-xl p-5 shadow-md mb-3">
+          <div className="flex border rounded-xl p-5 shadow-md mb-3 justify-between">
             <div>
               <h2 className="text-lg font-bold">
                 Get contexts wherever you browse
@@ -46,7 +46,9 @@ export default function MyContext() {
               </p>
             </div>
             <div></div>
-            <div></div>
+            <button className="text-[#fff] p-2 bg-purple-900 rounded">
+              Add to Chrome
+            </button>
           </div>
           <div className="flex flex-col gap-4">
             <h2 className="text-xl font-bold mt-5">My Context</h2>
@@ -92,7 +94,7 @@ export default function MyContext() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-4 gap-3">
+          <div className="flex flex-wrap p-4 gap-3">
             {contexts.map(
               (context) =>
                 toggle == context.type && (
