@@ -52,7 +52,7 @@ export default function SignUpPage() {
         {
           email,
           password,
-          name:username
+          name: username,
         }
       );
       if (!data.success) {
@@ -104,7 +104,7 @@ export default function SignUpPage() {
             </div>
           </div>
 
-          <div className="container-xs w-[50%] sm:w-full flex flex-col items-center gap-[10px] rounded-[32px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5">
+          <div className="container-xs w-[50%] sm:w-full flex flex-col items-center gap-[10px] rounded-[32px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5  bg-[#fff] shadow-md rounded-xl">
             <div className="flex w-[73%] flex-col items-center gap-1 md:w-full">
               <div className="h-[40px] w-[40px] rounded-[20px] bg-gray-400_01" />
               <a href="#">
