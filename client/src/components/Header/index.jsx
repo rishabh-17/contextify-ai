@@ -51,7 +51,7 @@ export default function Header({ ...props }) {
               <Button
                 color="white_A700"
                 size="9xl"
-                className="sm:px-5 capitalize min-w-[160px] rounded-[30px]"
+                className="sm:px-5 capitalize min-w-[160px] border-2 border-purple-400 rounded-[30px]"
                 onClick={() => {
                   if (localStorage.getItem("admintoken")) {
                     navigate("/admindashboard");
