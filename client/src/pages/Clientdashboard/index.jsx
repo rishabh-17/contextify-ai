@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainLayout from "../../components/MainLayout";
 import axios from "axios";
 import { RWebShare } from "react-web-share";
@@ -12,7 +12,8 @@ import { IoIosPersonAdd } from "react-icons/io";
 import { FaEye } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import share_peoples from "../../assets/share_peoples.png";
-
+import { CiFileOn } from "react-icons/ci";
+import { IoClose } from "react-icons/io5";
 // import { ThreeDCard } from "../../components/threedcard";
 
 export default function ClientdashboardPage() {
@@ -20,6 +21,8 @@ export default function ClientdashboardPage() {
   const [saved, setSaved] = React.useState([]);
   const [secret, setSecret] = React.useState(localStorage.getItem("secret"));
   const [keyShow, setKeyShow] = React.useState(false);
+  const [showModal, setShowModal] = React.useState(false);
+  const [tone, setTone] = useState(1);
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   React.useEffect(() => {
@@ -180,6 +183,30 @@ export default function ClientdashboardPage() {
         <section className=" my-5">
           <h2>Recent Context</h2>
           <div className="flex flex-wrap items-center gap-2 my-2">
+            <div
+              class="max-w-sm w-[200px] h-[300px]
+             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
+            >
+              <div className="overflow-auto" onClick={() => setShowModal(true)}>
+                <CiFileOn color="purple" className="w-full  h-[160px]" />
+                <h5 class=" text-md font-bold tracking-tight text-gray-900 text-xl text-center dark:text-white">
+                  New Context
+                </h5>
+              </div>
+              <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
+                <div>
+                  <RWebShare
+                    data={{
+                      text: "Contextify Your Browser Experience",
+                      url: `/dashboard`,
+                      title: "Contextify",
+                    }}
+                  >
+                    <FaPlus color="gray" />
+                  </RWebShare>
+                </div>
+              </div>
+            </div>
             {history.slice(0, 4).map(
               (item) =>
                 item?.type == 1 && (
@@ -298,6 +325,107 @@ export default function ClientdashboardPage() {
                 </button>
               </div>
             </section> */}
+        {showModal && (
+          <div className="absolute w-[60%] h-[80%] m-auto left-0 right-0 bg-[#fff] shadow-md rounded border-2  border-purple-300 top-0 bottom-0">
+            <div className="grid grid-cols-2 h-full">
+              <div className="bg-gray-100 p-4 flex flex-col gap-8 rounded">
+                <h3 className="text-3xl font-bold text-center">New Context</h3>
+                <div>
+                  <h5 className="font-bold  text-md mb-3">
+                    How you want your context to sound like?
+                  </h5>
+                  <div className="flex gap-2 flex-wrap">
+                    <button
+                      className={
+                        tone === 1
+                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                      }
+                      onClick={() => setTone(1)}
+                    >
+                      simple
+                    </button>
+                    <button
+                      className={
+                        tone === 2
+                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                      }
+                      onClick={() => setTone(2)}
+                    >
+                      simple
+                    </button>
+                    <button
+                      className={
+                        tone === 3
+                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                      }
+                      onClick={() => setTone(3)}
+                    >
+                      simple
+                    </button>
+                    <button
+                      className={
+                        tone === 4
+                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                      }
+                      onClick={() => setTone(4)}
+                    >
+                      simple
+                    </button>
+                    <button
+                      className={
+                        tone === 5
+                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                      }
+                      onClick={() => setTone(5)}
+                    >
+                      simple
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <h5 className="font-bold  text-md mb-3">
+                    Text to be contextify
+                  </h5>
+                  <textarea
+                    name=""
+                    id=""
+                    placeholder="Enter text here"
+                    className="w-full rounded-xl"
+                    rows={10}
+                  ></textarea>
+                </div>
+                <div></div>
+                <button className="bg-purple-900 text-[#fff] p-2 w-full">
+                  Generate
+                </button>
+              </div>
+              <div className="p-4 flex flex-col gap-3 rounded overflow-y-auto">
+                <div className="flex flex-row-reverse">
+                  <IoClose
+                    className="cursor-pointer"
+                    onClick={() => setShowModal(false)}
+                  />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Untitled"
+                  className="border-0 text-7xl font-bold"
+                />
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Write Something"
+                  className="h-full text-sm border-0 overflow-y-auto"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        )}
       </MainLayout>
     </>
   );
