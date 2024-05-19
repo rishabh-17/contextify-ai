@@ -91,7 +91,7 @@ export default function ClientdashboardPage() {
           { text: ques, type: type, tone: tone },
           config
         )
-        .then((data) => {
+        .then(({ data }) => {
           setAns(data?.data);
         })
         .catch((err) => {
