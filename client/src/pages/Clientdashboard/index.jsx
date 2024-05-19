@@ -85,11 +85,18 @@ export default function ClientdashboardPage() {
     if (!ques) return alert("Please enter a question");
     else if (!secret) return alert("Please generate a secret key");
     else {
-      axios.post(
-        (import.meta.env.VITE_BACKEND_URL || "") + "/api/context/contextify",
-        { text: ques, type: type, tone: tone },
-        config
-      );
+      axios
+        .post(
+          (import.meta.env.VITE_BACKEND_URL || "") + "/api/context/contextify",
+          { text: ques, type: type, tone: tone },
+          config
+        )
+        .then((data) => {
+          setAns(data?.data);
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
     }
   };
 
