@@ -13,9 +13,9 @@ export default function Header({ ...props }) {
               src="images/logo.png"
               // src="images/img_frame_purple_900.svg"
               alt="image"
-              className="my-auto h-[60px]"
+              className="my-auto h-[80px]"
             />
-            <h2 className="text-xl font-bold text-purple-900">Contextify</h2>
+            <h2 className="text-3xl font-bold text-purple-900">Contextify</h2>
           </div>
           <div className="flex sm:flex-col items-center">
             <div className="mx-5 cursor-pointer" onClick={() => navigate("/")}>

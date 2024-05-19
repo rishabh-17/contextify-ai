@@ -1,12 +1,26 @@
 import React from "react";
 import { Text, Button, Img, Heading, Input, SelectBox } from "../../components";
-
+import { TypeAnimation } from "react-type-animation";
 const index = () => {
   return (
-    <div className="flex flex-col justify-center w-full mt-[168px] bg-gray-50_01 relative h-[500px] overflow-hidden">
-      <Text size="19xl" as="p" className=" md:ml-0 capitalize text-center mb-4">
-        try Contextify for free
-      </Text>
+    <div className="flex flex-col justify-center w-full mt-[168px] bg-gray-50_01 relative h-[500px] overflow-hidden shadow-md">
+      <h2 size="19xl" as="p" className=" md:ml-0 capitalize text-center mb-4">
+        <TypeAnimation
+          sequence={[
+            // Same substring at the start will only be typed out once, initially
+            "Try Contextify for Free",
+            1000, // wait 1s before replacing "Mice" with "Hamsters"
+            "Convert Information into Context",
+            1000,
+            "Trusted by 2000+ Users",
+            1000,
+          ]}
+          wrapper="span"
+          speed={50}
+          style={{ fontSize: "3em", display: "inline-block" }}
+          repeat={Infinity}
+        />
+      </h2>
       <Text
         size="8xl"
         as="p"

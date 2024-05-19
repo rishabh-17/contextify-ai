@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { googleLogout, useGoogleLogin } from "@react-oauth/google";
+import { GoogleLogin } from "@react-oauth/google";
 export default function SignUpPage() {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
@@ -70,6 +71,11 @@ export default function SignUpPage() {
       setIsLoading(false);
     }
   }
+
+  const login = useGoogleLogin({
+    onSuccess: (codeResponse) => console.log(codeResponse),
+    onError: (error) => console.log("Login Failed:", error),
+  });
 
   return (
     <div className="h-screen flex items-center justify-center">
@@ -196,6 +202,14 @@ export default function SignUpPage() {
                 >
                   CREATE AN ACCOUNT
                 </button>
+                <GoogleLogin
+                  onSuccess={(credentialResponse) => {
+                    console.log(credentialResponse);
+                  }}
+                  onError={() => {
+                    console.log("Login Failed");
+                  }}
+                />
               </div>
             </form>
             {error && <p className="text-red-500">{error}</p>}
