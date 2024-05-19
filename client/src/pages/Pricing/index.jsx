@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { FaRegCheckCircle, FaBan } from "react-icons/fa";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import FreeTrialArea from "../../components/FreeTrialArea";
 
 export default function PricingPage() {
   return (
@@ -288,6 +289,7 @@ export default function PricingPage() {
           </table>
         </div>
       </section>
+      <FreeTrialArea />
       <Footer />
     </div>
   );

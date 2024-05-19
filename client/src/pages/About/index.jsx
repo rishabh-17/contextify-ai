@@ -48,18 +48,16 @@ export default function AboutPage() {
       </section>
 
       <section className="px-48 mt-48">
-        <Carousel autoPlay centerMode infiniteLoop>
+        <Carousel autoPlay infiniteLoop>
           <div>
             <img src="https://elledecor.in/wp-content/uploads/2023/06/H1-6.jpg" />
-            <p className="legend">Legend 1</p>
           </div>
           <div>
             <img src="https://elledecor.in/wp-content/uploads/2023/06/H1-6.jpg" />
-            <p className="legend">Legend 2</p>
           </div>
           <div>
             <img src="https://elledecor.in/wp-content/uploads/2023/06/H1-6.jpg" />
-            <p className="legend">Legend 3</p>
+            {/* <p className="legend">Legend 3</p> */}
           </div>
         </Carousel>
       </section>
