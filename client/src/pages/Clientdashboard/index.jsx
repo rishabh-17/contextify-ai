@@ -313,7 +313,7 @@ export default function ClientdashboardPage() {
         {showModal && (
           <div className="absolute w-[60%] h-[80%] m-auto left-0 right-0 bg-[#fff] shadow-md rounded border-2  border-purple-300 top-0 bottom-0">
             <div className="grid grid-cols-2 h-full">
-              <div className="bg-gray-100 p-4 flex flex-col gap-4 rounded overflow-y-auto">
+              <div className="bg-gray-100 p-4 flex flex-col justify-between rounded overflow-y-auto">
                 <h3 className="text-3xl font-bold text-center">New Context</h3>
                 <div>
                   <h5 className="font-bold  text-md mb-3">
