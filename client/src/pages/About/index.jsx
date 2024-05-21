@@ -159,7 +159,7 @@ export default function AboutPage() {
       </section>
 
       <section className="px-48 mt-48">
-        <div className="grid grid-cols-3 gap-24">
+        <div className="flex flex-wrap gap-12 w-full ">
           {/* <div className="flex flex-col gap-5 justify-center items-center w-[200px]">
             <div className="rounded-full shadow-2xl overflow-hidden border-2 border-purple-500 p-1">
               <img
@@ -177,7 +177,7 @@ export default function AboutPage() {
               <p>Digital Marketing Specialist New York, USA.</p>
             </div>
           </div> */}
-          <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+          <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-96">
             <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl ">
               <img
                 src="https://dstudiosphotography.com/wp-content/uploads/2019/01/Corporate-Headshots-3-square.jpg"
@@ -185,10 +185,10 @@ export default function AboutPage() {
               />
             </div>
             <div class="p-6 text-center">
-              <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+              <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-[#fff]">
                 Charlie Williams
               </h4>
-              <p class="block font-sans text-base antialiased font-medium leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400">
+              <p class="block font-sans text-base antialiased font-medium leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400 text-[#fff]">
                 Digital Marketing Specialist New York, USA.
               </p>
             </div>
@@ -197,23 +197,23 @@ export default function AboutPage() {
                 href="#facebook"
                 class="block font-sans text-xl antialiased font-normal leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-600 to-blue-400"
               >
-                <FaFacebook />
+                <FaFacebook color={"white"} />
               </a>
               <a
                 href="#twitter"
                 class="block font-sans text-xl antialiased font-normal leading-relaxed bg-clip-text bg-gradient-to-tr from-light-blue-600 to-light-blue-400"
               >
-                <FaTwitter />
+                <FaTwitter color={"white"} />
               </a>
               <a
                 href="#instagram"
                 class="block font-sans text-xl antialiased font-normal leading-relaxed bg-clip-text bg-gradient-to-tr from-purple-600 to-purple-400"
               >
-                <FaInstagram />
+                <FaInstagram color={"white"} />
               </a>
             </div>
           </div>
-          <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+          <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-96">
             <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl ">
               <img
                 src="https://dstudiosphotography.com/wp-content/uploads/2019/01/Corporate-Headshots-3-square.jpg"
@@ -221,10 +221,10 @@ export default function AboutPage() {
               />
             </div>
             <div class="p-6 text-center">
-              <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+              <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-[#fff]">
                 Charlie Williams
               </h4>
-              <p class="block font-sans text-base antialiased font-medium leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400">
+              <p class="block font-sans text-base antialiased font-medium leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400 text-[#fff]">
                 Digital Marketing Specialist New York, USA.
               </p>
             </div>
@@ -233,23 +233,23 @@ export default function AboutPage() {
                 href="#facebook"
                 class="block font-sans text-xl antialiased font-normal leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-600 to-blue-400"
               >
-                <FaFacebook />
+                <FaFacebook color={"white"} />
               </a>
               <a
                 href="#twitter"
                 class="block font-sans text-xl antialiased font-normal leading-relaxed bg-clip-text bg-gradient-to-tr from-light-blue-600 to-light-blue-400"
               >
-                <FaTwitter />
+                <FaTwitter color={"white"} />
               </a>
               <a
                 href="#instagram"
                 class="block font-sans text-xl antialiased font-normal leading-relaxed bg-clip-text bg-gradient-to-tr from-purple-600 to-purple-400"
               >
-                <FaInstagram />
+                <FaInstagram color={"white"} />
               </a>
             </div>
           </div>
-          <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+          <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-96">
             <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl ">
               <img
                 src="https://dstudiosphotography.com/wp-content/uploads/2019/01/Corporate-Headshots-3-square.jpg"
@@ -257,10 +257,10 @@ export default function AboutPage() {
               />
             </div>
             <div class="p-6 text-center">
-              <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+              <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-[#fff]">
                 Charlie Williams
               </h4>
-              <p class="block font-sans text-base antialiased font-medium leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400">
+              <p class="block font-sans text-base antialiased font-medium leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400 text-[#fff]">
                 Digital Marketing Specialist New York, USA.
               </p>
             </div>
@@ -269,19 +269,19 @@ export default function AboutPage() {
                 href="#facebook"
                 class="block font-sans text-xl antialiased font-normal leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-600 to-blue-400"
               >
-                <FaFacebook />
+                <FaFacebook color={"white"} />
               </a>
               <a
                 href="#twitter"
                 class="block font-sans text-xl antialiased font-normal leading-relaxed bg-clip-text bg-gradient-to-tr from-light-blue-600 to-light-blue-400"
               >
-                <FaTwitter />
+                <FaTwitter color={"white"} />
               </a>
               <a
                 href="#instagram"
                 class="block font-sans text-xl antialiased font-normal leading-relaxed bg-clip-text bg-gradient-to-tr from-purple-600 to-purple-400"
               >
-                <FaInstagram />
+                <FaInstagram color={"white"} />
               </a>
             </div>
           </div>
