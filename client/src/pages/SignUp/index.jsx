@@ -9,9 +9,11 @@ export default function SignUpPage() {
   const [username, setUsername] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [retypePassword, setRetypePassword] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [error, setError] = React.useState("");
   const [passwordVisible, setPasswordVisible] = React.useState(false);
+  const [passwordVisible2, setPasswordVisible2] = React.useState(false);
 
   const [formValidity, setFormValidity] = React.useState({
     email: "",
@@ -35,6 +37,9 @@ export default function SignUpPage() {
       case "username":
         setUsername(value);
         break;
+      case "retypePassword":
+        setRetypePassword(value);
+        break;
       default:
         break;
     }
@@ -45,8 +50,37 @@ export default function SignUpPage() {
     return !email && !password && !username;
   };
 
+  const strongRegex = new RegExp(
+    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
+  );
+
+  const validatePassword = () => {
+    const valid = strongRegex.test(password);
+    setFormValidity((prevState) => ({
+      ...prevState,
+      password: valid ? "" : "Password is not strong enough.",
+    }));
+    return valid;
+  };
+
   async function handleSubmit(e) {
     e.preventDefault();
+    if (!isFormValid()) {
+      setError("Please fill in all required fields.");
+      return;
+    }
+
+    if (!validatePassword()) {
+      setError(
+        "Password is not strong enough. Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character."
+      );
+      return;
+    }
+
+    if (password !== retypePassword) {
+      setError("Passwords do not match.");
+      return;
+    }
     setIsLoading(true);
     try {
       const { data } = await axios.post(
@@ -231,6 +265,37 @@ export default function SignUpPage() {
                     id="password"
                     name="password"
                     value={password}
+                    onChange={handleChange}
+                    className="self-stretch sm:px-5  bg-transparent rounded-xl"
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-center justify-between">
+                    <p className="text-gray-700">Confirm Password</p>
+                    <div
+                      className="cursor-pointer flex items-center justify-center rounded-md"
+                      onClick={() => setPasswordVisible2(!passwordVisible2)}
+                    >
+                      {passwordVisible2 ? (
+                        <img
+                          src="images/img_icon_eye_close.svg"
+                          alt="eye_close"
+                          className="h-[16px] w-[16px]"
+                        />
+                      ) : (
+                        <img
+                          src="images/img_icon_eye_open.svg"
+                          alt="eye_open"
+                          className="h-[16px] w-[16px]"
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <input
+                    type={passwordVisible2 ? "text" : "password"}
+                    id="password"
+                    name="retypePassword"
+                    value={retypePassword}
                     onChange={handleChange}
                     className="self-stretch sm:px-5  bg-transparent rounded-xl"
                   />
