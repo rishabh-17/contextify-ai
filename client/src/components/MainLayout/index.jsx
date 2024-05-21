@@ -11,7 +11,9 @@ import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { TbFileSettings } from "react-icons/tb";
 import { MdNotificationAdd } from "react-icons/md";
 import { IoIosArrowDropdown } from "react-icons/io";
-
+import { RxDashboard } from "react-icons/rx";
+import { FaRegStar } from "react-icons/fa";
+import { LuFileStack } from "react-icons/lu";
 export default function ClientdashboardPage({ active, children }) {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -35,9 +37,9 @@ export default function ClientdashboardPage({ active, children }) {
                     src="images/logo.png"
                     // src="images/img_frame_purple_900.svg"
                     alt="image"
-                    className="my-auto h-[50px]"
+                    className="my-auto h-[60px]"
                   />
-                  <h2 className="text-xl font-bold text-purple-900">
+                  <h2 className="text-2xl font-bold text-purple-900">
                     Contextify
                   </h2>
                 </div>
@@ -50,7 +52,7 @@ export default function ClientdashboardPage({ active, children }) {
                 }
                 onClick={() => navigate("/dashboard")}
               >
-                <MdOutlineSpaceDashboard className="h-4 w-4" />
+                <RxDashboard className="h-6 w-6" />
                 Dashboard
               </li>
               <li
@@ -61,7 +63,7 @@ export default function ClientdashboardPage({ active, children }) {
                 }
                 onClick={() => navigate("/mycontext")}
               >
-                <TbFileSettings className="h-4 w-4" />
+                <LuFileStack className="h-6 w-6" />
                 My Context
               </li>
               <li
@@ -72,8 +74,8 @@ export default function ClientdashboardPage({ active, children }) {
                 }
                 onClick={() => navigate("/subscription")}
               >
-                <IoPowerSharp className="h-4 w-4" />
-                Subscription
+                <FaRegStar className="h-6 w-6" />
+                Premium
               </li>
             </ul>
             <ul className="text-md">
