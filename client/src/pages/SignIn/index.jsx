@@ -236,19 +236,29 @@ export default function LoginPage() {
               >
                 LOGIN
               </button>
-              <GoogleLogin
-                onSuccess={(credentialResponse) => {
-                  handleGoogleSignup(
-                    parseJwt(credentialResponse.credential),
-                    credentialResponse.credential
-                  );
-                }}
-                onError={() => {
-                  console.log("Login Failed");
-                }}
-              />
+              <div className="flex justify-center">
+                <GoogleLogin
+                  onSuccess={(credentialResponse) => {
+                    handleGoogleSignup(
+                      parseJwt(credentialResponse.credential),
+                      credentialResponse.credential
+                    );
+                  }}
+                  onError={() => {
+                    console.log("Login Failed");
+                  }}
+                />
+              </div>
             </div>
           </form>
+          <div>
+            <p
+              className="text-gray-700 cursor-pointer hover:underline"
+              onClick={() => navigate("/forgotpassword")}
+            >
+              Forgot Password?
+            </p>
+          </div>
           {error && <p className="text-red-500">{error}</p>}
         </div>
       </div>

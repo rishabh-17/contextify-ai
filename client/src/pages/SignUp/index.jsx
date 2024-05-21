@@ -319,14 +319,18 @@ export default function SignUpPage() {
                 >
                   CREATE AN ACCOUNT
                 </button>
-                <GoogleLogin
-                  onSuccess={(credentialResponse) => {
-                    handleGoogleSignup(parseJwt(credentialResponse.credential));
-                  }}
-                  onError={() => {
-                    console.log("Login Failed");
-                  }}
-                />
+                <div className="flex justify-center">
+                  <GoogleLogin
+                    onSuccess={(credentialResponse) => {
+                      handleGoogleSignup(
+                        parseJwt(credentialResponse.credential)
+                      );
+                    }}
+                    onError={() => {
+                      console.log("Login Failed");
+                    }}
+                  />
+                </div>
               </div>
             </form>
             {error && <p className="text-red-500">{error}</p>}
