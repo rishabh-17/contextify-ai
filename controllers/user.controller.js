@@ -30,10 +30,24 @@ exports.login = async (req, res, next) => {
   try {
     const email = req.body.email;
     const password = req.body.password;
+    const google = req.body.google;
 
     const user = await User.findOne({ email: email });
-
+    //  need to add more sequrity cheaks in future
     if (user) {
+      if (google) {
+        res.json({
+          msg: "login successful",
+          login: true,
+          user,
+          token: getAccessToken(
+            user.id,
+            user.name,
+            user.isPremiumUser,
+            user.email
+          ),
+        });
+      }
       bcrypt
         .compare(password, user.password)
         .then((e) => {
