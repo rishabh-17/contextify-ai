@@ -19,7 +19,7 @@ import { IoClose } from "react-icons/io5";
 export default function ClientdashboardPage() {
   const [history, setHistory] = React.useState([]);
   const [saved, setSaved] = React.useState([]);
-  const [secret, setSecret] = React.useState(localStorage.getItem("secret"));
+  const [secret, setSecret] = React.useState("");
   const [keyShow, setKeyShow] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
   const [tone, setTone] = useState(1);
@@ -174,7 +174,12 @@ export default function ClientdashboardPage() {
                       type={keyShow ? "text" : "password"}
                       value={secret}
                     />
-                    <FaEye onClick={() => setKeyShow(!keyShow)} />
+                    <FaEye
+                      onClick={() => {
+                        setKeyShow(!keyShow);
+                        if (keyShow === true) setSecret("");
+                      }}
+                    />
                   </div>
                 ) : (
                   <button

@@ -94,7 +94,7 @@ export default function LoginPage() {
       setIsLoading(false);
     }
   }
-  async function handleGoogleSignup(details) {
+  async function handleGoogleSignup(details, gtoken) {
     // e.preventDefault();
     setIsLoading(true);
     try {
@@ -104,6 +104,7 @@ export default function LoginPage() {
           email: details.email,
           password: details.email,
           google: true,
+          gtoken: gtoken,
         }
       );
       if (data.error) {
@@ -237,7 +238,10 @@ export default function LoginPage() {
               </button>
               <GoogleLogin
                 onSuccess={(credentialResponse) => {
-                  handleGoogleSignup(parseJwt(credentialResponse.credential));
+                  handleGoogleSignup(
+                    parseJwt(credentialResponse.credential),
+                    credentialResponse.credential
+                  );
                 }}
                 onError={() => {
                   console.log("Login Failed");
