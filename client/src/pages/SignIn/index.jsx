@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Text, Img, Input, Button } from "../../components";
 
 import axios from "axios";
 export default function LoginPage() {
@@ -121,8 +122,14 @@ export default function LoginPage() {
       </div>
       <div className="w-full max-w-md p-5 flex flex-col items-center justify-center space-y-6 md:p-10">
         <div className="container-xs w-full flex flex-col items-center gap-[10px] rounded-[32px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5  bg-[#fff] shadow-md">
+          <Img
+            src="images/logo.png"
+            // src="images/img_frame_purple_900.svg"
+            alt="image"
+            className="my-0 pb-0 h-[60px]"
+          />
           <div className="flex w-full flex-col items-center gap-1 md:w-full">
-            <div className="h-[40px] w-[40px] rounded-[20px] bg-gray-400_01" />
+            {/* <div classNam e="h-[40px] w-[40px] rounded-[20px] bg-gray-400_01" /> */}
             <a href="#">
               <p className="text-blue_gray-900 text-3xl">Login</p>
             </a>

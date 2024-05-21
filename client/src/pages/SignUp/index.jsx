@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
+import { Text, Img, Input, Button } from "../../components";
 import { GoogleLogin } from "@react-oauth/google";
 export default function SignUpPage() {
   const navigate = useNavigate();
@@ -101,6 +102,7 @@ export default function SignUpPage() {
                   <span className="text-gray-900_01">&nbsp;&nbsp;</span>
                 </p>
               </div>
+
               <button
                 className="min-w-[131px] rounded-md border border-solid border-gray-900_01 text-gray-900_01 sm:px-5"
                 onClick={() => navigate("/signin")}
@@ -111,8 +113,14 @@ export default function SignUpPage() {
           </div>
 
           <div className="container-xs w-[50%] sm:w-full flex flex-col items-center gap-[10px] rounded-[32px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5  bg-[#fff] shadow-md rounded-xl">
+            <Img
+              src="images/logo.png"
+              // src="images/img_frame_purple_900.svg"
+              alt="image"
+              className="my-0 pb-0 h-[60px]"
+            />
             <div className="flex w-[73%] flex-col items-center gap-1 md:w-full">
-              <div className="h-[40px] w-[40px] rounded-[20px] bg-gray-400_01" />
+              {/* <div className="h-[40px] w-[40px] rounded-[20px] bg-gray-400_01" /> */}
               <a href="#">
                 <p className="text-blue_gray-900 text-3xl">Create an account</p>
               </a>
