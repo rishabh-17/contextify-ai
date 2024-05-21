@@ -73,8 +73,52 @@ export default function SignUpPage() {
     }
   }
 
+  async function handleGoogleSignup(detail) {
+    // e.preventDefault();
+    setIsLoading(true);
+    try {
+      const { data } = await axios.post(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/signup",
+        {
+          email: detail.email,
+          password: detail.email,
+          name: detail.given_name,
+        }
+      );
+      if (!data.success) {
+        setError(data.msg);
+        setFormValidity((prevState) => ({
+          ...prevState,
+          username: data.error,
+        }));
+        setIsLoading(false);
+      } else {
+        navigate("/signin");
+      }
+    } catch (err) {
+      setError(err.message);
+      setIsLoading(false);
+    }
+  }
+
+  function parseJwt(token) {
+    var base64Url = token.split(".")[1];
+    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    var jsonPayload = decodeURIComponent(
+      window
+        .atob(base64)
+        .split("")
+        .map(function (c) {
+          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+        })
+        .join("")
+    );
+
+    return JSON.parse(jsonPayload);
+  }
+
   const login = useGoogleLogin({
-    onSuccess: (codeResponse) => console.log(codeResponse),
+    onSuccess: (codeResponse) => console.log(parseJwt(codeResponse.credential)),
     onError: (error) => console.log("Login Failed:", error),
   });
 
@@ -212,7 +256,7 @@ export default function SignUpPage() {
                 </button>
                 <GoogleLogin
                   onSuccess={(credentialResponse) => {
-                    console.log(credentialResponse);
+                    handleGoogleSignup(parseJwt(credentialResponse.credential));
                   }}
                   onError={() => {
                     console.log("Login Failed");

@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Text, Img, Input, Button } from "../../components";
-
+import { GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+
 export default function LoginPage() {
   const navigate = useNavigate();
   const [email, setEmail] = React.useState("");
@@ -63,6 +64,46 @@ export default function LoginPage() {
         {
           email,
           password,
+        }
+      );
+      if (data.error) {
+        setError(data.error);
+        setFormValidity((prevState) => ({
+          ...prevState,
+          email: data.error,
+        }));
+        setIsLoading(false);
+      } else {
+        if (data.authToken) {
+          localStorage.setItem("admintoken", data.authToken);
+          setIsLoading(false);
+          navigate("/");
+        } else if (data.token) {
+          localStorage.setItem("token", data.token);
+          let user = parseJwt(data.token);
+          localStorage.setItem("user", JSON.stringify(user));
+          setIsLoading(false);
+          navigate("/dashboard");
+        } else {
+          setIsLoading(false);
+          setError(data.err);
+        }
+      }
+    } catch (err) {
+      setError("Something went wrong");
+      setIsLoading(false);
+    }
+  }
+  async function handleGoogleSignup(details) {
+    // e.preventDefault();
+    setIsLoading(true);
+    try {
+      const { data } = await axios.post(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/login",
+        {
+          email: details.email,
+          password: details.email,
+          google: true,
         }
       );
       if (data.error) {
@@ -194,6 +235,14 @@ export default function LoginPage() {
               >
                 LOGIN
               </button>
+              <GoogleLogin
+                onSuccess={(credentialResponse) => {
+                  handleGoogleSignup(parseJwt(credentialResponse.credential));
+                }}
+                onError={() => {
+                  console.log("Login Failed");
+                }}
+              />
             </div>
           </form>
           {error && <p className="text-red-500">{error}</p>}
