@@ -45,8 +45,8 @@ export default function ClientdashboardPage({ active, children }) {
               <li
                 className={
                   active === 1
-                    ? "text-sm p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
-                    : "text-sm p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center"
+                    ? "text-md p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
+                    : "text-md p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110"
                 }
                 onClick={() => navigate("/dashboard")}
               >
@@ -56,49 +56,39 @@ export default function ClientdashboardPage({ active, children }) {
               <li
                 className={
                   active === 2
-                    ? "text-sm p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
-                    : "text-sm p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center"
+                    ? "text-md p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
+                    : "text-md p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110"
                 }
                 onClick={() => navigate("/mycontext")}
               >
                 <TbFileSettings className="h-4 w-4" />
                 My Context
               </li>
-            </ul>
-            <ul className="text-sm">
-              <li
-                className={
-                  active === 3
-                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
-                    : "ml-5 my-3 text-xs flex gap-2 items-center"
-                }
-                onClick={() => navigate("/support")}
-              >
-                <MdOutlineContactSupport className="h-4 w-4" />
-                support
-              </li>
-              <li
-                className={
-                  active === 3
-                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
-                    : "ml-5 my-3 text-xs flex gap-2 items-center"
-                }
-                onClick={() => navigate("/support")}
-              >
-                <TbMessageReport className="h-4 w-4" />
-                Report an issue
-              </li>
               <li
                 className={
                   active === 4
-                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
-                    : "ml-5 my-3 text-xs flex gap-2 items-center"
+                    ? "text-md p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
+                    : "text-md p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110"
                 }
                 onClick={() => navigate("/subscription")}
               >
                 <IoPowerSharp className="h-4 w-4" />
                 Subscription
               </li>
+            </ul>
+            <ul className="text-md">
+              <li
+                className={
+                  active === 3
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
+                    : "ml-5 my-3 text-sm flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110"
+                }
+                onClick={() => navigate("/support")}
+              >
+                <MdOutlineContactSupport className="h-4 w-4" />
+                support
+              </li>
+              {/* 
               <li
                 className={
                   active === 5
@@ -108,12 +98,12 @@ export default function ClientdashboardPage({ active, children }) {
               >
                 <IoSettingsOutline className="h-4 w-4" />
                 Settings
-              </li>
+              </li> */}
               <li
                 className={
                   active === 6
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
-                    : "ml-5 my-3 text-xs flex gap-2 items-center"
+                    : "ml-5 my-3 text-sm flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110  duration-300"
                 }
                 onClick={() => {
                   localStorage.clear();
@@ -157,7 +147,6 @@ export default function ClientdashboardPage({ active, children }) {
                 </div>
               </form>
               <div className="flex flex-row items-center justify-around">
-                <MdNotificationAdd className="h-6 w-6 mr-2" />
                 <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
                   <img
                     src="../../../public/images/Image.png"
@@ -167,7 +156,6 @@ export default function ClientdashboardPage({ active, children }) {
                 </div>
                 <div className="text-black flex flex-col">
                   <h3>{user?.name}</h3>
-                  <span>user</span>
                 </div>
                 <div>
                   <div>
@@ -182,7 +170,7 @@ export default function ClientdashboardPage({ active, children }) {
                     {/* Dropdown menu */}
                     <div
                       id="dropdownInformation"
-                      className={`absolute bg-[#fff] w-[230px] right-0 top-[70px] z-10 ${
+                      className={`absolute bg-[#fff] w-[230px] right-5 top-[70px] z-10 ${
                         isDropdownOpen ? "" : "hidden"
                       } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
                     >
@@ -240,6 +228,10 @@ export default function ClientdashboardPage({ active, children }) {
                         <a
                           href="#"
                           className="px-4 py-2 text-sm text-gray-700 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                          onClick={() => {
+                            localStorage.clear();
+                            navigate("/");
+                          }}
                         >
                           <IoPowerSharp className="h-4 w-4" />
                           Sign out
