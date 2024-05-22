@@ -63,7 +63,7 @@ export default function AboutPage() {
       </section>
 
       <section className=" px-48 sm:px-5 mt-24">
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-3 sm:grid-cols-1 gap-5">
           <h1 className="text-5xl">What We Do</h1>
           <div className="col-span-2">
             <p className="mb-5">
@@ -132,7 +132,7 @@ export default function AboutPage() {
       </section>
 
       <section className=" px-48 sm:px-5 mt-48">
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-1 gap-5">
           <div className="flex flex-col gap-5 justify-center">
             <h1 className="text-5xl">Our Mission</h1>
             <p>

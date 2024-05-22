@@ -62,9 +62,9 @@ export default function ContactUsPage() {
         <Header />
         <section className="my-48 text-center  mx-48 sm:mx-5">
           <h1 className="text-7xl mb-8">Get in touch today!</h1>
-          <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 justify-center px-24">
+          <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 justify-center px-24 sm:p-1">
             <div className="bg-[#fff] rounded-xl p-4 shadow-md flex items-center mx-3">
-              <div className="bg-purple-400 rounded-xl p-4 w-24">
+              <div className="bg-purple-400 rounded-xl p-4 w-[120px]">
                 <Img
                   src="images/img_icon.svg"
                   // src="images/img_frame_purple_900.svg"
@@ -72,13 +72,13 @@ export default function ContactUsPage() {
                   className="my-0 pb-0 h-[60px]"
                 />
               </div>
-              <div className="flex justify-between w-full px-3">
+              <div className="flex sm:flex-col justify-between w-full px-3">
                 <p>Mail Us</p>
                 <p>connect@contextify.info</p>
               </div>
             </div>
             <div className="bg-[#fff] rounded-xl p-4 shadow-md flex items-center mx-3">
-              <div className="bg-purple-A100 rounded-xl p-4 w-24 ">
+              <div className="bg-purple-A100 rounded-xl p-4 w-[120px] ">
                 <Img
                   src="images/img_iocn.svg"
                   // src="images/img_frame_purple_900.svg"
@@ -86,15 +86,18 @@ export default function ContactUsPage() {
                   className="my-0 pb-0 h-[60px]"
                 />
               </div>
-              <div className="flex justify-between w-full px-3">
+              <div className="flex  sm:flex-col justify-between w-full px-3">
                 <p>Call Us</p>
                 <p>+1 234 6787 75557 </p>
               </div>
             </div>
           </div>
         </section>
-        <form action="" className="bg-gray-100  mx-48 sm:mx-5 p-24 rounded-xl ">
-          <div className="grid grid-cols-2 gap-8 mb-8">
+        <form
+          action=""
+          className="bg-gray-100  mx-48  sm:mx-5 p-24 sm:px-5 rounded-xl "
+        >
+          <div className="grid grid-cols-2  sm:grid-cols-1 gap-8 mb-8">
             <div className="flex flex-col gap-2 mb-5">
               <label htmlFor="">First Name</label>
               <input className="w-full rounded-xl p-3" type="text" />
@@ -125,7 +128,7 @@ export default function ContactUsPage() {
             </button>
           </div>
         </form>
-        <section className="mx-48 my-24">
+        <section className="mx-48 my-24 sm:mx-5 ">
           <FAQ
             question={" Where is my order? Quisque molestie "}
             answer={" Your answer for Where is my order?"}

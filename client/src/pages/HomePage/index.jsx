@@ -56,7 +56,7 @@ export default function HomePage() {
           </section>
 
           <section className=" px-48 sm:px-5 mt-24">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 sm:grid-cols-1">
               <div className="flex flex-col gap-5">
                 <h1 className="text-7xl">
                   Be in the <br />
@@ -117,7 +117,7 @@ export default function HomePage() {
               </div>
               <div className="flex justify-center items-center">
                 <img
-                  className="shadow-2xl"
+                  className="shadow-md"
                   src={section1Image}
                   alt="section1Image"
                 />
@@ -134,40 +134,40 @@ export default function HomePage() {
               <div>
                 <div className="flex gap-8 justify-center w-min-0 flex-wrap">
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                   <div class="hexagon">
-                    <div className=" img bg-[#fff] shadow-2xl"></div>
+                    <div className=" img bg-[#fff] shadow-md"></div>
                   </div>
                 </div>
               </div>
@@ -175,11 +175,11 @@ export default function HomePage() {
           </section>
 
           <section className=" px-48 sm:px-5 mt-48">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="flex flex-col gap-5">
                 <h1 className="text-5xl">For All Your Research</h1>
                 <ul className="flex flex-col gap-10">
-                  <li className="flex gap-5">
+                  <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
                     <div className="h-16 w-16 bg-red-400 rounded-full" />
                     <div>
                       <h3 className="text-2xl m-1">Appointments</h3>
@@ -189,7 +189,7 @@ export default function HomePage() {
                       </p>
                     </div>
                   </li>
-                  <li className="flex gap-5">
+                  <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
                     <div className="h-16 w-16 bg-blue-400 rounded-full" />
                     <div>
                       <h3 className="text-2xl m-1">Appointments</h3>
@@ -199,7 +199,7 @@ export default function HomePage() {
                       </p>
                     </div>
                   </li>
-                  <li className="flex gap-5">
+                  <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
                     <div className="h-16 w-16 bg-green-400 rounded-full" />
                     <div>
                       <h3 className="text-2xl m-1">Appointments</h3>
@@ -215,7 +215,7 @@ export default function HomePage() {
               <div className="flex justify-center items-center">
                 {" "}
                 <img
-                  className=" shadow-2xl"
+                  className=" shadow-md"
                   src={section3Image}
                   alt="section1Image"
                 />
@@ -225,7 +225,7 @@ export default function HomePage() {
 
           <section className=" px-48 sm:px-5 mt-48">
             <div className="flex justify-center">
-              <div className="bg-purple-900 w-[90%] h-[250px] rounded-3xl flex justify-evenly text-[#fff] items-center shadow-2xl">
+              <div className="bg-purple-900 w-[90%] h-[250px] rounded-3xl flex flex-wrap justify-evenly text-[#fff] items-center shadow-md">
                 <div className="text-center">
                   <h2 className="text-5xl font-bold mb-5">110+</h2>
                   <p>Searches per second</p>
@@ -245,7 +245,7 @@ export default function HomePage() {
           </section>
 
           <section className=" px-48 sm:px-5 mt-48">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
                   Manage your searches and{" "}
@@ -264,7 +264,7 @@ export default function HomePage() {
               <div className="flex justify-center items-center">
                 {" "}
                 <img
-                  className=" shadow-2xl"
+                  className=" shadow-md"
                   src={section4Image}
                   alt="section1Image"
                 />
@@ -273,11 +273,11 @@ export default function HomePage() {
           </section>
 
           <section className=" px-48 sm:px-5 mt-48">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="flex justify-center items-center">
                 {" "}
                 <img
-                  className=" shadow-2xl"
+                  className=" shadow-md"
                   src={section5Image}
                   alt="section1Image"
                 />
@@ -300,7 +300,7 @@ export default function HomePage() {
           </section>
 
           <section className=" px-48 sm:px-5 mt-48">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
                   Manage your searches and{" "}
@@ -318,7 +318,7 @@ export default function HomePage() {
               <div className="flex justify-center items-center">
                 {" "}
                 <img
-                  className=" shadow-2xl"
+                  className=" shadow-md"
                   src={section6Image}
                   alt="section1Image"
                 />
@@ -333,8 +333,8 @@ export default function HomePage() {
                 <span className="bg-orange-50">Several Use Cases</span>{" "}
               </h2>
             </div>
-            <div className="grid grid-cols-3 gap-5">
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-2xl">
+            <div className="grid grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-4 gap-5">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Education System</h3>
@@ -344,7 +344,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-2xl">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Education System</h3>
@@ -354,7 +354,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-2xl">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Education System</h3>
@@ -364,7 +364,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-2xl">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Education System</h3>
@@ -374,7 +374,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-2xl">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Education System</h3>
@@ -384,7 +384,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-2xl">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Education System</h3>

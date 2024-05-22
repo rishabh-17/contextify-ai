@@ -73,7 +73,7 @@ export default function Header({ ...props }) {
             <FaAlignRight color="purple" onClick={() => setSidebar(!sidebar)} />
           </div>
           {sidebar && (
-            <aside className=" flex z-10 flex-col justify-between gap-4 absolute h-screen lg:hidden md:w-1/2 sm:w-2/3 left-0 top-0 bg-purple-900">
+            <aside className=" flex z-50 flex-col justify-between gap-4 absolute h-screen lg:hidden md:w-1/2 sm:w-2/3 left-0 top-0 bg-purple-900">
               <div className="flex flex-col gap-5 mt-8">
                 <div
                   className="mx-5 cursor-pointer"
