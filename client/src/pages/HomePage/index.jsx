@@ -405,8 +405,11 @@ export default function HomePage() {
                 About US?{" "}
               </h2>
             </div>
-            <div className="reviews w-full h-[1000px]">
-              <div className="h-[700px] w-[700px] absolute border-8 border-purple-500 rounded-full m-auto left-0 right-0"></div>
+            <div
+              className="reviews w-full h-[1000px] sm:h-[500px]
+            "
+            >
+              <div className="h-[700px] w-[700px] sm:w-[300px] sm:h-[300px] absolute border-8 sm:border-2 border-purple-500 rounded-full m-auto left-0 right-0"></div>
               <div
                 className="w-full flex justify-end"
                 onClick={() =>
@@ -419,10 +422,10 @@ export default function HomePage() {
                 }
               >
                 <img
-                  className="border-4 border-purple-500 rounded-full p-1"
+                  className="border-4 border-purple-500 rounded-full p-1 w-36 sm:w-16"
                   src="images/img_photo_1.png"
-                  width={150}
-                  height={150}
+                  // width={150}
+                  // height={150}
                   alt=""
                 />
               </div>
@@ -438,10 +441,8 @@ export default function HomePage() {
                 }
               >
                 <img
-                  className="border-4 border-purple-500 rounded-full p-1"
+                  className="border-4 border-purple-500 rounded-full p-1 w-36 sm:w-16"
                   src="images/img_photo_2.png"
-                  width={150}
-                  height={150}
                   alt=""
                 />
               </div>
@@ -449,10 +450,8 @@ export default function HomePage() {
               <div className="w-full flex justify-center">
                 <div className="flex flex-col items-center">
                   <img
-                    className="border-4 border-purple-500 rounded-full p-1"
+                    className="border-4 border-purple-500 rounded-full p-1 w-36 sm:w-16"
                     src={`images/${selected.img}`}
-                    width={150}
-                    height={150}
                     alt=""
                   />
                   <div className="bg-[#fff] p-2 text-center w-[500px] rounded-xl">
@@ -475,10 +474,8 @@ export default function HomePage() {
                 className="w-full flex justify-end"
               >
                 <img
-                  className="border-4 border-purple-500 rounded-full p-1"
+                  className="border-4 border-purple-500 rounded-full p-1 w-36 sm:w-16"
                   src="images/img_group_2.png"
-                  width={150}
-                  height={150}
                   alt=""
                 />
               </div>
@@ -495,10 +492,8 @@ export default function HomePage() {
                 className="w-full flex "
               >
                 <img
-                  className="border-4 border-purple-500 rounded-full p-1"
+                  className="border-4 border-purple-500 rounded-full p-1 w-36 sm:w-16"
                   src="images/img_group_3.png"
-                  width={150}
-                  height={150}
                   alt=""
                 />
               </div>
@@ -515,10 +510,8 @@ export default function HomePage() {
                 className="w-full flex justify-center"
               >
                 <img
-                  className="border-4 border-purple-500 rounded-full p-1"
+                  className="border-4 border-purple-500 rounded-full p-1 w-36 sm:w-16"
                   src="images/img_photo_44x41.png"
-                  width={150}
-                  height={150}
                   alt=""
                 />
               </div>

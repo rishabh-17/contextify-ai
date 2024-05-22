@@ -47,7 +47,7 @@ export default function AboutPage() {
         <p>Discover the Power of Contextify!</p>
       </section>
 
-      <section className=" px-48 sm:px-5 mt-48">
+      <section className="px-48 sm:px-5 mt-48">
         <Carousel autoPlay infiniteLoop>
           <div>
             <img src="https://elledecor.in/wp-content/uploads/2023/06/H1-6.jpg" />
