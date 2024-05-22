@@ -31,9 +31,10 @@ exports.login = async (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
     const google = req.body.google;
+    const gtoken = req.body.gtoken;
 
     const user = await User.findOne({ email: email });
-    //  need to add more sequrity cheaks in future
+    //  need to add more security check in future
     if (user) {
       if (google) {
         res.json({

@@ -9,7 +9,7 @@ import FreeTrialArea from "../../components/FreeTrialArea";
 
 export default function PricingPage() {
   return (
-    <div className="px-48">
+    <div className=" px-48 sm:px-5">
       <Helmet>
         <title>Contextify</title>
         <meta
@@ -18,7 +18,7 @@ export default function PricingPage() {
         />
       </Helmet>
       <Header />
-      <section className="px-48 mt-48 text-center">
+      <section className=" px-48 sm:px-5 mt-48 text-center">
         <h1 className="text-7xl mb-5">Pricing</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipiscing elit interdum

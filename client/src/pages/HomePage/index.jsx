@@ -51,11 +51,11 @@ export default function HomePage() {
           />
         </Helmet>
         <div>
-          <section className="px-48">
+          <section className=" px-48 sm:px-5">
             <Header />
           </section>
 
-          <section className="px-48 mt-24">
+          <section className=" px-48 sm:px-5 mt-24">
             <div className="grid grid-cols-2">
               <div className="flex flex-col gap-5">
                 <h1 className="text-7xl">
@@ -174,7 +174,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="px-48 mt-48">
+          <section className=" px-48 sm:px-5 mt-48">
             <div className="grid grid-cols-2">
               <div className="flex flex-col gap-5">
                 <h1 className="text-5xl">For All Your Research</h1>
@@ -223,7 +223,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="px-48 mt-48">
+          <section className=" px-48 sm:px-5 mt-48">
             <div className="flex justify-center">
               <div className="bg-purple-900 w-[90%] h-[250px] rounded-3xl flex justify-evenly text-[#fff] items-center shadow-2xl">
                 <div className="text-center">
@@ -244,7 +244,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="px-48 mt-48">
+          <section className=" px-48 sm:px-5 mt-48">
             <div className="grid grid-cols-2">
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
@@ -272,7 +272,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="px-48 mt-48">
+          <section className=" px-48 sm:px-5 mt-48">
             <div className="grid grid-cols-2">
               <div className="flex justify-center items-center">
                 {" "}
@@ -299,7 +299,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="px-48 mt-48">
+          <section className=" px-48 sm:px-5 mt-48">
             <div className="grid grid-cols-2">
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
@@ -326,7 +326,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="px-48 mt-48">
+          <section className=" px-48 sm:px-5 mt-48">
             <div className="flex justify-center mb-24">
               <h2 className="text-5xl text-center">
                 Contextify Has The Ability to Serve <br />{" "}
@@ -397,7 +397,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="px-48 mt-48">
+          <section className=" px-48 sm:px-5 mt-48">
             <div className="flex justify-center">
               <h2 className="text-5xl text-center">
                 What our <span className="bg-orange-50">Client</span> Think{" "}

@@ -38,16 +38,16 @@ export default function AboutPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <section className="px-48">
+      <section className=" px-48 sm:px-5">
         <Header className="w-[86%] md:w-full md:p-5" />
       </section>
 
-      <section className="px-48 mt-48 text-center">
+      <section className=" px-48 sm:px-5 mt-48 text-center">
         <h1 className="text-7xl mb-5">About Contextify</h1>
         <p>Discover the Power of Contextify!</p>
       </section>
 
-      <section className="px-48 mt-48">
+      <section className=" px-48 sm:px-5 mt-48">
         <Carousel autoPlay infiniteLoop>
           <div>
             <img src="https://elledecor.in/wp-content/uploads/2023/06/H1-6.jpg" />
@@ -62,7 +62,7 @@ export default function AboutPage() {
         </Carousel>
       </section>
 
-      <section className="px-48 mt-24">
+      <section className=" px-48 sm:px-5 mt-24">
         <div className="grid grid-cols-3 gap-5">
           <h1 className="text-5xl">What We Do</h1>
           <div className="col-span-2">
@@ -131,7 +131,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-48 mt-48">
+      <section className=" px-48 sm:px-5 mt-48">
         <div className="grid grid-cols-2 gap-5">
           <div className="flex flex-col gap-5 justify-center">
             <h1 className="text-5xl">Our Mission</h1>
@@ -158,7 +158,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-48 mt-48">
+      <section className=" px-48 sm:px-5 mt-48">
         <div className="flex flex-wrap gap-12 w-full ">
           {/* <div className="flex flex-col gap-5 justify-center items-center w-[200px]">
             <div className="rounded-full shadow-2xl overflow-hidden border-2 border-purple-500 p-1">
@@ -288,7 +288,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-48 mt-48">
+      <section className=" px-48 sm:px-5 mt-48">
         <div
           className="section7"
           style={{
