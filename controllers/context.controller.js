@@ -2,7 +2,8 @@ const gpt = require("../utils/gptServices.js");
 const { Saved, History } = require("../models");
 require("dotenv").config();
 const OpenAI = require("openai");
-
+// const api = process.env.OPENAI_API_KEY;
+// console.log(api);
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -20,18 +21,22 @@ exports.getContext = async (req, res) => {
 
     openai.chat.completions
       .create({
-        model: "gpt-4",
+        model: "gpt-4-turbo",
         messages: prompt,
       })
       .then((data) => {
-        console.log(data);
+        // console.log("data");
+        // console.log(data?.choices?.[0].message);
         const newHistory = new History({
           question: text,
-          answer: data,
+          answer: data?.choices?.[0]?.message?.content,
           user: req.user,
         });
         newHistory.save().then((i) => {
-          res.json({ success: true, data: data });
+          res.json({
+            success: true,
+            data: data?.choices?.[0]?.message?.content,
+          });
         });
       })
       .catch((err) => {
