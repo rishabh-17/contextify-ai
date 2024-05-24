@@ -29,7 +29,7 @@ export default function Header({ ...props }) {
               className="mx-5 cursor-pointer"
               onClick={() => navigate("/about")}
             >
-              <Text as="p" className="text-[#fff] capitalize">
+              <Text as="p" className="text-purple-900 capitalize">
                 about us
               </Text>
             </div>
@@ -37,7 +37,7 @@ export default function Header({ ...props }) {
               className="mx-5 cursor-pointer"
               onClick={() => navigate("/pricing")}
             >
-              <Text as="p" className="text-[#fff] capitalize">
+              <Text as="p" className="text-purple-900 capitalize">
                 pricing
               </Text>
             </div>
@@ -45,7 +45,7 @@ export default function Header({ ...props }) {
               className="mx-5 cursor-pointer"
               onClick={() => navigate("/contactus")}
             >
-              <Text as="p" className="text-[#fff] capitalize">
+              <Text as="p" className="text-purple-900 capitalize">
                 Contact Us
               </Text>
             </div>
