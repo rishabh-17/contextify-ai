@@ -13,7 +13,7 @@ exports.getSaved = async (req, res) => {
 exports.getOneSaved = async (req, res) => {
   try {
     const id = req.params.id;
-    const saved = await Saved.findOne({ _id: id, user: req.user._id });
+    const saved = await Saved.findOne({ _id: id });
     res.json({ success: true, data: saved });
   } catch (error) {
     console.log(error);
@@ -34,7 +34,7 @@ exports.getHistory = async (req, res) => {
 exports.getOneHistory = async (req, res) => {
   try {
     const id = req.params.id;
-    const history = await History.findOne({ _id: id, user: req.user._id });
+    const history = await History.findOne({ _id: id });
     res.json({ success: true, data: history });
   } catch (error) {
     console.log(error);

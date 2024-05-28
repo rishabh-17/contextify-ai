@@ -9,11 +9,7 @@ router.get(
   AuthMiddleware.userAuthentication,
   clientController.getSaved
 );
-router.get(
-  "/saved/:id",
-  AuthMiddleware.userAuthentication,
-  clientController.getOneSaved
-);
+router.get("/saved/:id", clientController.getOneSaved);
 router.get(
   "/history",
   AuthMiddleware.userAuthentication,

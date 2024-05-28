@@ -264,7 +264,7 @@ export default function ClientdashboardPage() {
                       <RWebShare
                         data={{
                           text: "Contextify Your Browser Experience",
-                          url: `/contextdetail/saved/ + ${item._id}`,
+                          url: `/contextdetail/history/${item._id}`,
                           title: "Contextify",
                         }}
                       >
