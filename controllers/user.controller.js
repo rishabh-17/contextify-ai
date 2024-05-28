@@ -48,31 +48,33 @@ exports.login = async (req, res, next) => {
             user.email
           ),
         });
-      }
-      bcrypt
-        .compare(password, user.password)
-        .then((e) => {
-          console.log(e);
+      } else {
+        bcrypt
+          .compare(password, user.password)
+          .then((e) => {
+            console.log(e);
+            if (!e) {
+              res.json({ err: "Enter correct password", success: false });
+            }
 
-          if (e) {
-            res.json({
-              msg: "login successful",
-              login: true,
-              user,
-              token: getAccessToken(
-                user.id,
-                user.name,
-                user.isPremiumUser,
-                user.email
-              ),
-            });
-          } else {
-            res.json({ err: "Enter correct password", success: false });
-          }
-        })
-        .catch((err) => {
-          res.json({ err: "Error logging in", success: false, err });
-        });
+            if (e) {
+              res.json({
+                msg: "login successful",
+                login: true,
+                user,
+                token: getAccessToken(
+                  user.id,
+                  user.name,
+                  user.isPremiumUser,
+                  user.email
+                ),
+              });
+            }
+          })
+          .catch((err) => {
+            res.json({ err: "Error logging in", success: false, err });
+          });
+      }
     } else {
       res.json({ err: "user not found", success: false });
     }
