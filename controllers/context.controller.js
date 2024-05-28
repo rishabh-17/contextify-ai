@@ -15,7 +15,16 @@ exports.getContext = async (req, res) => {
     const prompt = [
       {
         role: "user",
-        content: "explain meaning of given text " + text,
+        content: `Please provide context for the following ${text}. The context should include:
+        Phrase/word highlighted: Identify and highlight the key phrase or word that requires context.
+        Short paragraph of details on the subject: Provide a brief explanation or description of the highlighted phrase or word.
+        Bullet point list of basic info: Include as much of the following information as applicable:
+        Who: Identify the person or group associated with the subject.
+        Why: Explain the reason or significance behind the subject.
+        What: Describe what the subject is or what is happening.
+        How: Explain the process or method involved.
+        Where: Specify the location or setting relevant to the subject.
+        When: Provide the time frame or period associated with the subject.`,
       },
     ];
 
@@ -29,13 +38,13 @@ exports.getContext = async (req, res) => {
         // console.log(data?.choices?.[0].message);
         const newHistory = new History({
           question: text,
-          answer: data?.choices?.[0]?.message?.content,
+          answer: data?.choices?.[0]?.message?.content.replace(/[\/\*]/g, ""),
           user: req.user,
         });
         newHistory.save().then((i) => {
           res.json({
             success: true,
-            data: data?.choices?.[0]?.message?.content,
+            data: data?.choices?.[0]?.message?.content.replace(/[\/\*]/g, ""),
           });
         });
       })

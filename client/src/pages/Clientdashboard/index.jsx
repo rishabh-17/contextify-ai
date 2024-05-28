@@ -79,11 +79,12 @@ export default function ClientdashboardPage() {
     const config = {
       headers: {
         authentication: `${localStorage.getItem("token")}`,
-        secret: `${secret}`,
+        secret: `${localStorage.getItem("secret")}`,
       },
     };
     if (!ques) return alert("Please enter a question");
-    else if (!secret) return alert("Please generate a secret key");
+    else if (!secret && !localStorage.getItem("secret"))
+      return alert("Please generate a secret key");
     else {
       axios
         .post(
