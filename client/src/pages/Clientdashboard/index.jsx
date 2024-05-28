@@ -241,70 +241,40 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
             </div>
-            {history.slice(0, 4).map(
-              (item) =>
-                item?.type == 1 && (
-                  <div
-                    class="max-w-sm w-[200px] h-[300px]
+            {history.slice(0, 4).map((item) => (
+              <div
+                class="max-w-sm w-[200px] h-[300px]
              p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
-                  >
-                    <div className="overflow-auto h-[160px]">
-                      <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
-                        {item?.question?.length > 30
-                          ? item?.question?.slice(0, 30) + "..."
-                          : item?.question}
-                      </h5>
-                      <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
-                        {item?.answer.length > 50
-                          ? item?.answer?.slice(0, 50) + "..."
-                          : item?.answer}
-                      </p>
-                    </div>
-                    <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
-                      <div>
-                        <div>
-                          <RWebShare
-                            data={{
-                              text: "Contextify Your Browser Experience",
-                              url: `/contextdetail/saved/ + ${item._id}`,
-                              title: "Contextify",
-                            }}
-                          >
-                            <FaPlus color="gray" />
-                          </RWebShare>
-                        </div>
-                      </div>
+              >
+                <div className="overflow-auto h-[160px]">
+                  <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+                    {item?.question?.length > 30
+                      ? item?.question?.slice(0, 30) + "..."
+                      : item?.question}
+                  </h5>
+                  <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
+                    {item?.answer.length > 50
+                      ? item?.answer?.slice(0, 50) + "..."
+                      : item?.answer}
+                  </p>
+                </div>
+                <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
+                  <div>
+                    <div>
+                      <RWebShare
+                        data={{
+                          text: "Contextify Your Browser Experience",
+                          url: `/contextdetail/saved/ + ${item._id}`,
+                          title: "Contextify",
+                        }}
+                      >
+                        <FaPlus color="gray" />
+                      </RWebShare>
                     </div>
                   </div>
-                )
-            )}
-            <div
-              class="max-w-sm w-[200px] h-[300px]
-             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
-            >
-              <div className="overflow-auto h-[160px]">
-                <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
-                  Noteworthy technology acquisitions 2021
-                </h5>
-                <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
-                  Here are the biggest enterprise technology acquisitions of
-                  2021 so far, in reverse chronological order.
-                </p>
-              </div>
-              <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
-                <div>
-                  <RWebShare
-                    data={{
-                      text: "Contextify Your Browser Experience",
-                      url: "https://contxtify-ai.com/",
-                      title: "Contextify",
-                    }}
-                  >
-                    <FaPlus color="gray" />
-                  </RWebShare>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
           <div className="w-full flex justify-start">
             <button
