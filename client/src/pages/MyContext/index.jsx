@@ -64,8 +64,8 @@ export default function MyContext() {
                 onClick={() => setToggle(1)}
                 className={
                   toggle === 1
-                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold "
-                    : " flex flex-col items-center  text-gray-600"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110"
+                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110"
                 }
               >
                 <h3>Things i know</h3>
@@ -74,8 +74,8 @@ export default function MyContext() {
                 onClick={() => setToggle(2)}
                 className={
                   toggle === 2
-                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold "
-                    : " flex flex-col items-center  text-gray-600"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110"
+                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110"
                 }
               >
                 <h3 className="text-white">Notes</h3>
@@ -84,8 +84,8 @@ export default function MyContext() {
                 onClick={() => setToggle(3)}
                 className={
                   toggle === 3
-                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold "
-                    : " flex flex-col items-center  text-gray-600"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110"
+                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110"
                 }
               >
                 <h3 className="text-white" color="#fff">

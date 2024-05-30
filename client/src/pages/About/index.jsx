@@ -159,7 +159,33 @@ export default function AboutPage() {
       </section>
 
       <section className=" px-48 sm:px-5 mt-48">
-        <div className="flex flex-wrap gap-12 w-full ">
+        <div className="grid grid-cols-2 sm:grid-cols-1 gap-5">
+          <div className="flex justify-center items-center">
+            {" "}
+            <img
+              className=" shadow-2xl"
+              src={
+                "https://t4.ftcdn.net/jpg/04/17/28/93/360_F_417289346_hrs0D4Lo8dSv3aWDqkQpRB0U9PbtFX6n.jpg"
+              }
+              alt="section1Image"
+            />
+          </div>
+          <div className="flex flex-col gap-5 justify-center">
+            <h1 className="text-5xl">Our Mission</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing Pharetra Ld eu
+              aliquet diam lorem viverra at justo. Nulla odio nequefjf gravida
+              in pharetra egestas. Ac id sagittis at morbi interdum nibh diam
+              sagittis et. Lorem ipsum dolor sit amet, consectetur adipiscing
+              Pharetra id eu aliquet diam lorem viverra at justo. Nulla odio
+              nequesg gravida in pharetra egestas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-48 sm:px-5 mt-48">
+        <div className="flex flex-wrap gap-4 w-full justify-between ">
           {/* <div className="flex flex-col gap-5 justify-center items-center w-[200px]">
             <div className="rounded-full shadow-2xl overflow-hidden border-2 border-purple-500 p-1">
               <img
@@ -177,7 +203,7 @@ export default function AboutPage() {
               <p>Digital Marketing Specialist New York, USA.</p>
             </div>
           </div> */}
-          <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-96">
+          <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-80">
             <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl ">
               <img
                 src="https://dstudiosphotography.com/wp-content/uploads/2019/01/Corporate-Headshots-3-square.jpg"
@@ -213,7 +239,7 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
-          <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-96">
+          <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-80">
             <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl ">
               <img
                 src="https://dstudiosphotography.com/wp-content/uploads/2019/01/Corporate-Headshots-3-square.jpg"
@@ -249,7 +275,7 @@ export default function AboutPage() {
               </a>
             </div>
           </div>
-          <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-96">
+          <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-80">
             <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl ">
               <img
                 src="https://dstudiosphotography.com/wp-content/uploads/2019/01/Corporate-Headshots-3-square.jpg"

@@ -9,7 +9,7 @@ import FreeTrialArea from "../../components/FreeTrialArea";
 
 export default function PricingPage() {
   return (
-    <div className=" px-48 sm:px-5">
+    <div className=" sm:px-5">
       <Helmet>
         <title>Contextify</title>
         <meta
@@ -26,7 +26,7 @@ export default function PricingPage() {
         </p>
       </section>
 
-      <section className="grid grid-cols-3 sm:grid-cols-1 gap-8 mt-48">
+      <section className="grid grid-cols-3 sm:grid-cols-1 gap-8 mt-48 px-48">
         <div className="flex flex-col gap-16 text-center rounded-xl bg-violet-200 p-4">
           <div className="flex justify-between px-5">
             <h3 className="font-bold text-3xl">Basic</h3>
@@ -115,7 +115,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="mt-48">
+      <section className="mt-48 px-48">
         <h2 className="text-3xl text-center">Compare pricing packages</h2>
         <div className="rounded-xl bg-purple-100 w-full">
           <table class="table-auto w-full">

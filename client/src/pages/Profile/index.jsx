@@ -120,7 +120,7 @@ export default function ProfilePage() {
           >
             <div className="relative m-2 ">
               <div
-                className={`cursor-pointer w-32 h-32 ${
+                className={`cursor-pointer w-32 h-32 hover:-translate-y-1 hover:scale-110 ${
                   data.profilePic
                     ? "bg-[url(" + data.profilePic + ")]"
                     : "bg-[url('https://via.placeholder.com/120')]"

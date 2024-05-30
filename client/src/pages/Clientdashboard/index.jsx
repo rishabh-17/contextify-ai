@@ -300,7 +300,7 @@ export default function ClientdashboardPage() {
                       className={
                         tone === 1
                           ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
-                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(1)}
                     >
@@ -310,7 +310,7 @@ export default function ClientdashboardPage() {
                       className={
                         tone === 2
                           ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
-                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(2)}
                     >
@@ -319,8 +319,8 @@ export default function ClientdashboardPage() {
                     <button
                       className={
                         tone === 3
-                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
-                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110 hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(3)}
                     >
@@ -330,7 +330,7 @@ export default function ClientdashboardPage() {
                       className={
                         tone === 4
                           ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
-                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(4)}
                     >
@@ -340,7 +340,7 @@ export default function ClientdashboardPage() {
                       className={
                         tone === 5
                           ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
-                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(5)}
                     >
@@ -369,7 +369,7 @@ export default function ClientdashboardPage() {
                       className={
                         type === 1
                           ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
-                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setType(1)}
                     >
@@ -379,7 +379,7 @@ export default function ClientdashboardPage() {
                       className={
                         type === 2
                           ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
-                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setType(2)}
                     >
@@ -389,7 +389,7 @@ export default function ClientdashboardPage() {
                       className={
                         type === 3
                           ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
-                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setType(3)}
                     >
@@ -398,7 +398,7 @@ export default function ClientdashboardPage() {
                   </div>
                 </div>
                 <button
-                  className="bg-purple-900 text-[#fff] p-2 w-full"
+                  className="bg-purple-900 text-[#fff] p-2 w-full hover:-translate-y-1 hover:scale-110"
                   onClick={handleNewContext}
                 >
                   Generate
@@ -407,7 +407,7 @@ export default function ClientdashboardPage() {
               <div className="p-4 flex flex-col gap-3 rounded overflow-y-auto">
                 <div className="flex flex-row-reverse">
                   <IoClose
-                    className="cursor-pointer"
+                    className="cursor-pointer  hover:-translate-y-1 hover:scale-110"
                     onClick={() => setShowModal(false)}
                   />
                 </div>

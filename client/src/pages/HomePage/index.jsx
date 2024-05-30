@@ -11,6 +11,7 @@ import FreeTrialArea from "../../components/FreeTrialArea";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "./index.css";
+import CountUp from "react-countup";
 import company1 from "../../assets/company1.png";
 import company2 from "../../assets/company2.png";
 import company3 from "../../assets/company3.png";
@@ -227,17 +228,25 @@ export default function HomePage() {
             <div className="flex justify-center">
               <div className="bg-purple-900 w-[90%] h-[250px] rounded-3xl flex flex-wrap justify-evenly text-[#fff] items-center shadow-md">
                 <div className="text-center">
-                  <h2 className="text-5xl font-bold mb-5">110+</h2>
+                  <h2 className="text-5xl font-bold mb-5">
+                    <CountUp end={110} duration={4.75} enableScrollSpy />+
+                  </h2>
                   <p>Searches per second</p>
                 </div>
 
                 <div className="text-center">
-                  <h2 className="text-5xl font-bold mb-5">110+</h2>
+                  <h2 className="text-5xl font-bold mb-5">
+                    {" "}
+                    <CountUp end={110} duration={7.75} enableScrollSpy />+
+                  </h2>
                   <p>Searches per second</p>
                 </div>
 
                 <div className="text-center">
-                  <h2 className="text-5xl font-bold mb-5">110+</h2>
+                  <h2 className="text-5xl font-bold mb-5">
+                    {" "}
+                    <CountUp end={110} duration={4.75} enableScrollSpy />+
+                  </h2>
                   <p>Searches per second</p>
                 </div>
               </div>
@@ -411,7 +420,7 @@ export default function HomePage() {
             >
               <div className="h-[700px] w-[700px] sm:w-[300px] sm:h-[300px] absolute border-8 sm:border-2 border-purple-500 rounded-full m-auto left-0 right-0"></div>
               <div
-                className="w-full flex justify-end"
+                className="w-full flex justify-end "
                 onClick={() =>
                   setSelected({
                     img: "img_photo_1.png",

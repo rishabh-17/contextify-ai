@@ -14,6 +14,7 @@ export default function Header({ ...props }) {
             <Img
               src="images/logo.png"
               // src="images/img_frame_purple_900.svg"
+              onClick={() => navigate("/")}
               alt="image"
               className="my-auto h-[80px]"
             />

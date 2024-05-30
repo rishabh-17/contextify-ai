@@ -155,7 +155,7 @@ export default function LoginPage() {
             </p>
           </div>
           <button
-            className="min-w-[131px] rounded-md border border-solid border-gray-900_01 text-gray-900_01 sm:px-5"
+            className="min-w-[131px] rounded-md border border-solid border-gray-900_01 text-gray-900_01 sm:px-5 hover:-translate-y-1 hover:scale-110"
             onClick={() => navigate("/signup")}
           >
             Sign Up
@@ -253,7 +253,7 @@ export default function LoginPage() {
           </form>
           <div>
             <p
-              className="text-gray-700 cursor-pointer hover:underline"
+              className="text-gray-700 cursor-pointer hover:underline hover:-translate-y-1 hover:scale-110"
               onClick={() => navigate("/forgotpassword")}
             >
               Forgot Password?

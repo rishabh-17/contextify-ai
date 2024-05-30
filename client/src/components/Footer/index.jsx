@@ -56,9 +56,6 @@ const index = () => {
             <Text as="p" className="capitalize">
               contact us
             </Text>
-            <Text as="p" className="capitalize">
-              blog
-            </Text>
           </div>
         </div>
         <div className="flex flex-col items-start mt-1 gap-[21px]">
@@ -84,9 +81,7 @@ const index = () => {
           <Text as="p" className="capitalize">
             take tour
           </Text>
-          <Text as="p" className="capitalize">
-            live chat
-          </Text>
+
           <Text as="p" className="capitalize">
             reveiws
           </Text>
@@ -99,20 +94,32 @@ const index = () => {
             Stay up to date
           </Text>
           <div className="self-stretch">
-            <div className="flex justify-between items-start gap-5 p-2.5 border-gray-300 border-2 border-solid bg-white-A700 rounded-[40px]">
-              <Text
-                as="p"
-                className="mt-[18px] ml-[13px] md:ml-0 !text-gray-500_05"
-              >
-                Your email{" "}
-              </Text>
+            <div
+              className={`flex justify-between items-center gap-5 p-2.5 border-gray-300 border-solid bg-white-A700 rounded-[40px] ${
+                localStorage.getItem("subscribed") ? "" : " border-2"
+              } `}
+            >
+              {!localStorage.getItem("subscribed") && (
+                <input className=" border-0" placeholder="your email" />
+              )}
+
               <div className="flex">
-                <Button
-                  size="9xl"
-                  className="sm:px-5 capitalize min-w-[160px] rounded-[30px]"
-                >
-                  Subscribe
-                </Button>
+                {localStorage.getItem("subscribed") ? (
+                  <h3 className="text-[#32a852] text-xl font-bold ">
+                    Already Subscribed
+                  </h3>
+                ) : (
+                  <Button
+                    size="9xl"
+                    className="sm:px-5 capitalize min-w-[160px] rounded-[30px]"
+                    onClick={() => {
+                      localStorage.setItem("subscribed", "true");
+                      window.location.reload();
+                    }}
+                  >
+                    Subscribe
+                  </Button>
+                )}
               </div>
             </div>
           </div>

@@ -103,15 +103,15 @@ export default function ContactUsPage() {
               <input className="w-full rounded-xl p-3" type="text" />
             </div>
             <div className="flex flex-col gap-2 mb-5">
-              <label htmlFor="">First Name</label>
+              <label htmlFor="">Last Name</label>
               <input className="w-full rounded-xl p-3" type="text" />
             </div>
             <div className="flex flex-col gap-2 mb-5">
-              <label htmlFor="">First Name</label>
-              <input className="w-full rounded-xl p-3" type="text" />
+              <label htmlFor="">Email</label>
+              <input className="w-full rounded-xl p-3" type="email" />
             </div>
             <div className="flex flex-col gap-2 mb-5">
-              <label htmlFor="">First Name</label>
+              <label htmlFor="">Title</label>
               <input className="w-full rounded-xl p-3" type="text" />
             </div>
           </div>

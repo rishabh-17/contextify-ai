@@ -182,7 +182,7 @@ export default function SignUpPage() {
               </div>
 
               <button
-                className="min-w-[131px] rounded-md border border-solid border-gray-900_01 text-gray-900_01 sm:px-5"
+                className="min-w-[131px] rounded-md border border-solid border-gray-900_01 text-gray-900_01 sm:px-5 hover:-translate-y-1 hover:scale-110"
                 onClick={() => navigate("/signin")}
               >
                 Login
