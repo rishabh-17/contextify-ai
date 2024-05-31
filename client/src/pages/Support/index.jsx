@@ -45,37 +45,52 @@ export default function index() {
             <p className="text-sm text-gray-600">Account Basics</p>
           </div>
           <div className="flex flex-col text-center  ">
-            <h4 className="text-md">Problems signing in</h4>
+            <h4 className="text-md">
+              Contextify doesn’t recognize my paid account
+            </h4>
             <p className="text-sm text-gray-600">Account Basics</p>
           </div>
           <div className="flex flex-col text-center  ">
-            <h4 className="text-md">Problems signing in</h4>
+            <h4 className="text-md">Privacy and security FAQ</h4>
             <p className="text-sm text-gray-600">Account Basics</p>
           </div>
           <div className="flex flex-col text-center  ">
-            <h4 className="text-md">Problems signing in</h4>
+            <h4 className="text-md">Get started with Contextify</h4>
             <p className="text-sm text-gray-600">Account Basics</p>
           </div>
         </div>
       </div>
       <div className="w-full bg-[#fff] py-10">
         <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-10 ">
-          <div className="w-full flex  sm:flex-col gap-4 flex-row justify-between">
-            <div className="flex flex-col items-center">
-              icon
+          <div className="w-full flex  sm:flex-col gap-4 flex-row flex-wrap justify-between">
+            <div className="flex flex-col items-center w-48 my-5">
+              <img src="images/support1.png" alt="" />
               <h4>Account Basics</h4>
             </div>
-            <div className="flex flex-col items-center">
-              icon
-              <h4>Account Basics</h4>
+            <div className="flex flex-col items-center w-48 my-5">
+              <img src="images/support2.png" alt="" />
+
+              <h4>Billing & Subscription</h4>
             </div>
-            <div className="flex flex-col items-center">
-              icon
-              <h4>Account Basics</h4>
+            <div className="flex flex-col items-center w-48 my-5">
+              <img src="images/support3.png" alt="" />
+
+              <h4>Resolve Issues</h4>
             </div>
-            <div className="flex flex-col items-center">
-              icon
-              <h4>Account Basics</h4>
+            <div className="flex flex-col items-center w-48 my-5">
+              <img src="images/support4.png" alt="" />
+
+              <h4>About Contextify</h4>
+            </div>
+            <div className="flex flex-col items-center w-48 my-5">
+              <img src="images/support5.png" alt="" />
+
+              <h4>Tips & Tutorials</h4>
+            </div>
+            <div className="flex flex-col items-center w-48 my-5">
+              <img src="images/support6.png" alt="" />
+
+              <h4>Business & Schools</h4>
             </div>
           </div>
         </div>

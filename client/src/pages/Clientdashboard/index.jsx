@@ -227,19 +227,7 @@ export default function ClientdashboardPage() {
                   New Context
                 </h5>
               </div>
-              <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
-                <div>
-                  <RWebShare
-                    data={{
-                      text: "Contextify Your Browser Experience",
-                      url: `/dashboard`,
-                      title: "Contextify",
-                    }}
-                  >
-                    <FaPlus color="gray" />
-                  </RWebShare>
-                </div>
-              </div>
+              <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center"></div>
             </div>
             {history.slice(0, 4).map((item) => (
               <div
@@ -276,14 +264,16 @@ export default function ClientdashboardPage() {
               </div>
             ))}
           </div>
-          <div className="w-full flex justify-start">
-            <button
-              className="text-[#fff] bg-purple-900 rounded-xl p-2"
-              onClick={() => navigate("/mycontext")}
-            >
-              View all
-            </button>
-          </div>
+          {!!history.length && (
+            <div className="w-full flex justify-start">
+              <button
+                className="text-[#fff] bg-purple-900 rounded-xl p-2"
+                onClick={() => navigate("/mycontext")}
+              >
+                View all
+              </button>
+            </div>
+          )}
         </section>
 
         {showModal && (

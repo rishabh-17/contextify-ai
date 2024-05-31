@@ -7,10 +7,15 @@ import { RWebShare } from "react-web-share";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
 import { FaRegEdit, FaPlus } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
+
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
   const [toggle, setToggle] = React.useState(1);
   const user = JSON.parse(localStorage.getItem("user"));
+  const [showBanner, setShowBanner] = React.useState(
+    localStorage.getItem("showBanner")
+  );
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -35,21 +40,32 @@ export default function MyContext() {
     <div>
       <MainLayout active={2}>
         <div className="flex-col gap-4 p-4">
-          <div className="flex border rounded-xl p-5 shadow-md mb-3 justify-between">
-            <div>
-              <h2 className="text-lg font-bold">
-                Get contexts wherever you browse
-              </h2>
-              <p className="text-xs">
-                Use it on Gmail, Facebook, Twitter, LinkedIn, and thousands of
-                other websites.
-              </p>
+          {!showBanner && (
+            <div className="flex border rounded-xl p-5 shadow-md mb-3 justify-between">
+              <div>
+                <h2 className="text-lg font-bold">
+                  Get contexts wherever you browse
+                </h2>
+                <p className="text-xs">
+                  Use it on Gmail, Facebook, Twitter, LinkedIn, and thousands of
+                  other websites.
+                </p>
+              </div>
+              <div></div>
+              <div className="flex gap-2 items-center">
+                <button className="text-[#fff] p-2 bg-purple-900 rounded">
+                  Add to Chrome
+                </button>
+                <IoClose
+                  onClick={() => {
+                    setShowBanner("true");
+                    localStorage.setItem("showBanner", "true");
+                  }}
+                  className="text-2xl cursor-pointer"
+                />
+              </div>
             </div>
-            <div></div>
-            <button className="text-[#fff] p-2 bg-purple-900 rounded">
-              Add to Chrome
-            </button>
-          </div>
+          )}
           <div className="flex flex-col gap-4">
             <h2 className="text-xl font-bold mt-5">My Context</h2>
             <div>

@@ -83,11 +83,11 @@ export default function ClientdashboardPage({ active, children }) {
                 className={
                   active === 3
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
-                    : "ml-5 my-3 text-sm flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110"
+                    : "ml-5 my-3 text-sm flex gap-2 items-center text-purple-900 hover:-translate-y-1 hover:scale-110"
                 }
                 onClick={() => navigate("/support")}
               >
-                <MdOutlineContactSupport className="h-4 w-4" />
+                <MdOutlineContactSupport className="h-6 w-6" />
                 support
               </li>
               {/* 
@@ -105,14 +105,14 @@ export default function ClientdashboardPage({ active, children }) {
                 className={
                   active === 6
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
-                    : "ml-5 my-3 text-sm flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110  duration-300"
+                    : "ml-5 my-3 text-sm flex gap-2 items-center text-purple-900 hover:-translate-y-1 hover:scale-110  duration-300"
                 }
                 onClick={() => {
                   localStorage.clear();
                   navigate("/");
                 }}
               >
-                <IoPowerSharp className="h-4 w-4" />
+                <IoPowerSharp className="h-6 w-6" />
                 Logout
               </li>
             </ul>
@@ -120,7 +120,8 @@ export default function ClientdashboardPage({ active, children }) {
 
           <div className="p-5 w-full overflow-auto">
             <nav className="w-full h-[10%] bg-[#fff] flex justify-between px-5 items-center">
-              <form className="w-[40%] pl-2 border rounded bg-[#F7F0FC] h-8 overflow-hidden sm:hidden">
+              <div></div>
+              {/* <form className="w-[40%] pl-2 border rounded bg-[#F7F0FC] h-8 overflow-hidden sm:hidden">
                 <div className="relative">
                   <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                     <svg
@@ -147,7 +148,7 @@ export default function ClientdashboardPage({ active, children }) {
                     required
                   />
                 </div>
-              </form>
+              </form> */}
               <div className="flex flex-row items-center justify-around">
                 <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
                   <img
@@ -186,8 +187,10 @@ export default function ClientdashboardPage({ active, children }) {
                         </div>
                         <a onClick={() => navigate("/profile")}>
                           <p>Profile</p>
-                          <div className="font-medium truncate">
-                            {user?.email}
+                          <div className="font-sm truncate">
+                            {user?.email?.length > 20
+                              ? user?.email?.slice(0, 20) + "..."
+                              : user?.email}
                           </div>
                         </a>
                       </div>
@@ -196,40 +199,31 @@ export default function ClientdashboardPage({ active, children }) {
                         aria-labelledby="dropdownInformationButton"
                       >
                         <li onClick={() => navigate("/dashboard")}>
-                          <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            <MdOutlineSpaceDashboard className="h-4 w-4" />
+                          <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
+                            <RxDashboard className="h-4 w-4" />
                             Dashboard
                           </a>
                         </li>
                         <li onClick={() => navigate("/subscription")}>
-                          <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                            <IoPowerSharp className="h-4 w-4" />
+                          <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
+                            <FaRegStar className="h-4 w-4" />
                             Subscription
                           </a>
                         </li>
                         <li onClick={() => navigate("/support")}>
                           <a
                             href="#"
-                            className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                            className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900"
                           >
                             <MdOutlineContactSupport className="h-4 w-4" />
                             Support
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                          >
-                            <IoSettingsOutline className="h-4 w-4" />
-                            Settings
                           </a>
                         </li>
                       </ul>
                       <div className="py-2">
                         <a
                           href="#"
-                          className="px-4 py-2 text-sm text-gray-700 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                          className="px-4 py-2 text-sm text-gray-900 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                           onClick={() => {
                             localStorage.clear();
                             navigate("/");
