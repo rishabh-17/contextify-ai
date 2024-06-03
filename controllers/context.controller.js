@@ -9,7 +9,7 @@ const openai = new OpenAI({
 });
 
 exports.getContext = async (req, res) => {
-  let { text } = req.body;
+  let { text, isImg } = req.body;
   console.log(text);
   if (text?.length > 0) {
     const prompt = [
