@@ -15,7 +15,9 @@ exports.getContext = async (req, res) => {
     const prompt = [
       {
         role: "user",
-        content: `Please provide context for the following ${text}. The context should include:
+        content: `Please provide context for the following ${
+          isImg ? "image" : "text"
+        } ${text}. The context should include:
         Phrase/word highlighted: Identify and highlight the key phrase or word that requires context.
         Short paragraph of details on the subject: Provide a brief explanation or description of the highlighted phrase or word.
         Bullet point list of basic info: Include as much of the following information as applicable:
