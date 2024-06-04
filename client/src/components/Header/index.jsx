@@ -10,11 +10,13 @@ export default function Header({ ...props }) {
     <header {...props} className="wih5">
       <div className="w-full">
         <div className="flex justify-between items-center gap-5">
-          <div className="jhsufdj w-100% flex items-center">
+          <div
+            className="jhsufdj w-100% flex items-center"
+            onClick={() => navigate("/")}
+          >
             <Img
               src="images/logo.png"
               // src="images/img_frame_purple_900.svg"
-              onClick={() => navigate("/")}
               alt="image"
               className="my-auto h-[80px]"
             />
