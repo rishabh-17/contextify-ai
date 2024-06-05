@@ -9,7 +9,7 @@ import FreeTrialArea from "../../components/FreeTrialArea";
 
 export default function PricingPage() {
   return (
-    <div className=" sm:px-5">
+    <div className=" sm:px-5 bg-[#f7f0fc]">
       <Helmet>
         <title>Contextify</title>
         <meta
@@ -17,8 +17,10 @@ export default function PricingPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <Header />
-      <section className=" px-48 sm:px-5 mt-48 text-center">
+      <div className="mx-48">
+        <Header />
+      </div>
+      <section className="px-48 sm:px-5 mt-48 text-center">
         <h1 className="text-7xl mb-5">Pricing</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipiscing elit interdum
@@ -290,7 +292,7 @@ export default function PricingPage() {
         </div>
       </section>
       <FreeTrialArea />
-      <Footer />
+      <Footer className="pb-24" />
     </div>
   );
 }

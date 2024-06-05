@@ -42,7 +42,8 @@ export default function HomePage() {
   return (
     <>
       <div
-        style={{ width: "100%", height: "max-content", marginBottom: "100px" }}
+        style={{ width: "100%", height: "max-content", paddingBottom: "100px" }}
+        className="bg-[#f7f0fc]"
       >
         <Helmet>
           <title>Contextify</title>
@@ -80,7 +81,7 @@ export default function HomePage() {
                   Already using contextify?{" "}
                   <span className="text-purple-900">sign in</span>
                 </p>
-                <div className="flex gap-12 mt-8 w-full">
+                {/* <div className="flex gap-12 mt-8 w-full">
                   <div className="flex w-fit ">
                     <img
                       className="z-20"
@@ -114,7 +115,7 @@ export default function HomePage() {
                     <h3 className="text-2xl font-bold">4.8/5</h3>
                     <p>Rating</p>
                   </div>
-                </div>
+                </div> */}
               </div>
               <div className="flex justify-center items-center">
                 <img
@@ -126,7 +127,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="mt-24 mb-48">
+          {/* <section className="mt-24 mb-48">
             <div className="flex flex-col items-center">
               <div className="text-center">
                 <p>Trusted by 20000+ Clients</p>
@@ -173,7 +174,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           <section className=" px-48 sm:px-5 mt-48">
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">

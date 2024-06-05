@@ -58,8 +58,10 @@ export default function ContactUsPage() {
           content="Web site created using create-react-app"
         />
       </Helmet>
-      <div>
-        <Header />
+      <div className="bg-[#f7f0fc]">
+        <div className="px-48">
+          <Header />
+        </div>
         <section className="my-48 text-center  mx-48 sm:mx-5">
           <h1 className="text-7xl mb-8">Get in touch today!</h1>
           <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 justify-center px-24 sm:p-1">
@@ -95,7 +97,7 @@ export default function ContactUsPage() {
         </section>
         <form
           action=""
-          className="bg-gray-100  mx-48  sm:mx-5 p-24 sm:px-5 rounded-xl "
+          className="bg-gray-100 shadow-md mx-48 sm:mx-5 p-24 sm:px-5 rounded-xl "
         >
           <div className="grid grid-cols-2  sm:grid-cols-1 gap-8 mb-8">
             <div className="flex flex-col gap-2 mb-5">
@@ -132,25 +134,32 @@ export default function ContactUsPage() {
           <FAQ
             question={" Where is my order? Quisque molestie "}
             answer={" Your answer for Where is my order?"}
+            count={1}
           />
           <FAQ
             question={" How can I return an item purchased online? "}
             answer={"Your answer for Where is my order?"}
+            count={2}
           />
           <FAQ
             question={" Can I cancel or change my order?"}
             answer={" Your answer for Where is my order?"}
+            count={3}
           />
           <FAQ
             question={" I have a promotional or discount code? "}
             answer={" Your answer for Where is my order?"}
+            count={4}
           />
           <FAQ
             question={" Can I integrate my store with Facebook?"}
             answer={" Your answer for Where is my order?"}
+            count={5}
           />
         </section>
-        <Footer />
+        <div className="pb-24">
+          <Footer />
+        </div>
       </div>
     </>
   );

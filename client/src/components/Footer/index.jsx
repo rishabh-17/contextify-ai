@@ -7,19 +7,19 @@ const index = () => {
         <div className="flex justify-between items-start w-[29%] md:w-full gap-5">
           <div className="flex justify-center w-[56%]">
             <div className="flex flex-col w-full gap-6">
-              <div className="h-[39px] relative">
+              <div
+                className="jhsufdj w-full flex items-center"
+                onClick={() => navigate("/")}
+              >
                 <Img
-                  src="images/img_frame_purple_900.svg"
-                  alt="image_two"
-                  className="h-[39px] left-[0.00px] bottom-0 top-0 my-auto absolute"
+                  src="images/logo.png"
+                  // src="images/img_frame_purple_900.svg"
+                  alt="image"
+                  className="my-auto h-[80px] w-[180px]"
                 />
-                <Text
-                  size="14xl"
-                  as="p"
-                  className="bottom-[-0.98px] right-[0.00px] m-auto !text-purple-900 !font-inter capitalize absolute"
-                >
+                <h2 className="text-2xl font-bold text-purple-900">
                   Contextify
-                </Text>
+                </h2>
               </div>
               <div className="flex items-start gap-2">
                 <Img

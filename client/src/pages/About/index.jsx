@@ -30,7 +30,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="bg-[#f7f0fc]">
       <Helmet>
         <title>Contextify</title>
         <meta
@@ -47,7 +47,7 @@ export default function AboutPage() {
         <p>Discover the Power of Contextify!</p>
       </section>
 
-      <section className="px-48 sm:px-5 mt-48">
+      <section className="px-48 sm:px-5 mt-24">
         <Carousel autoPlay infiniteLoop>
           <div>
             <img src="https://elledecor.in/wp-content/uploads/2023/06/H1-6.jpg" />
@@ -62,7 +62,7 @@ export default function AboutPage() {
         </Carousel>
       </section>
 
-      <section className=" px-48 sm:px-5 mt-24">
+      <section className=" px-48 sm:px-5 mt-24 text-lg">
         <div className="grid grid-cols-3 sm:grid-cols-1 gap-5">
           <h1 className="text-5xl">What We Do</h1>
           <div className="col-span-2">
@@ -82,7 +82,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-24 mb-48">
+      {/* <section className="mt-24 mb-48">
         <div className="flex flex-col items-center">
           <div className="text-center">
             <p>Trusted by 20000+ Clients</p>
@@ -129,9 +129,9 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className=" px-48 sm:px-5 mt-48">
+      <section className=" px-48 sm:px-5 mt-48 text-lg">
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-5">
           <div className="flex flex-col gap-5 justify-center">
             <h1 className="text-5xl">Our Mission</h1>
@@ -170,7 +170,7 @@ export default function AboutPage() {
               alt="section1Image"
             />
           </div>
-          <div className="flex flex-col gap-5 justify-center">
+          <div className="flex flex-col gap-5 justify-center text-lg">
             <h1 className="text-5xl">Our Mission</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing Pharetra Ld eu
@@ -388,9 +388,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-48 mb-24">
+      <section className="mt-48 pb-24">
         <Footer />
       </section>
-    </>
+    </div>
   );
 }
