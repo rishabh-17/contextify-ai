@@ -87,7 +87,7 @@ export default function ClientdashboardPage({ active, children }) {
                 }
                 onClick={() => navigate("/support")}
               >
-                <MdOutlineContactSupport className="h-6 w-6" />
+                <MdOutlineContactSupport className="h-8 w-8" />
                 support
               </li>
               {/* 
@@ -112,8 +112,11 @@ export default function ClientdashboardPage({ active, children }) {
                   navigate("/");
                 }}
               >
-                <IoPowerSharp className="h-6 w-6" />
-                Logout
+                <IoPowerSharp className="h-8 w-8" />
+                <div>
+                <p>Logout</p>
+                <p className="text-xs">{user?.name}</p></div>
+                
               </li>
             </ul>
           </div>

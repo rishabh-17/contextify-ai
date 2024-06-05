@@ -118,7 +118,7 @@ export default function ClientdashboardPage() {
               />
 
               <button
-                className="text-[#fff] bg-purple-900 rounded-full p-2 mb-4"
+                className="text-[#fff] bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-full p-2 mb-4"
                 onClick={() => navigate("/profile")}
               >
                 Edit Profile
@@ -184,7 +184,7 @@ export default function ClientdashboardPage() {
                   </div>
                 ) : (
                   <button
-                    className="px-3 py-2 bg-purple-900 text-[#fff] rounded-xl"
+                    className="px-3 py-2 bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-xl"
                     onClick={genrateKey}
                   >
                     Generate Secret key
@@ -289,7 +289,7 @@ export default function ClientdashboardPage() {
                     <button
                       className={
                         tone === 1
-                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
                           : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(1)}
@@ -299,7 +299,7 @@ export default function ClientdashboardPage() {
                     <button
                       className={
                         tone === 2
-                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
                           : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(2)}
@@ -309,7 +309,7 @@ export default function ClientdashboardPage() {
                     <button
                       className={
                         tone === 3
-                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                           : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110 hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(3)}
@@ -319,7 +319,7 @@ export default function ClientdashboardPage() {
                     <button
                       className={
                         tone === 4
-                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
                           : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(4)}
@@ -329,7 +329,7 @@ export default function ClientdashboardPage() {
                     <button
                       className={
                         tone === 5
-                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
                           : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(5)}
@@ -358,7 +358,7 @@ export default function ClientdashboardPage() {
                     <button
                       className={
                         type === 1
-                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
                           : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setType(1)}
@@ -368,7 +368,7 @@ export default function ClientdashboardPage() {
                     <button
                       className={
                         type === 2
-                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
                           : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setType(2)}
@@ -378,7 +378,7 @@ export default function ClientdashboardPage() {
                     <button
                       className={
                         type === 3
-                          ? "bg-purple-900 text-[#fff] px-2 py-1 rounded-full"
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
                           : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setType(3)}
@@ -388,7 +388,7 @@ export default function ClientdashboardPage() {
                   </div>
                 </div>
                 <button
-                  className="bg-purple-900 text-[#fff] p-2 w-full hover:-translate-y-1 hover:scale-110"
+                  className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-2 w-full hover:-translate-y-1 hover:scale-110"
                   onClick={handleNewContext}
                 >
                   Generate
