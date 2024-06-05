@@ -62,7 +62,7 @@ export default function index() {
       </div>
       <div className="w-full bg-[#fff] py-10">
         <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-10 ">
-          <div className="w-full flex  sm:flex-col gap-4 flex-row flex-wrap justify-between">
+          <div className="w-full gap-4 grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-between">
             <div className="flex flex-col items-center w-48 my-5">
               <img src="images/support1.png" alt="" />
               <h4>Account Basics</h4>

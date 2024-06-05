@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import share_peoples from "../../assets/share_peoples.png";
 import { CiFileOn } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
+import { Img } from "../../components";
 // import { ThreeDCard } from "../../components/threedcard";
 
 export default function ClientdashboardPage() {
@@ -103,19 +104,28 @@ export default function ClientdashboardPage() {
 
   return (
     <>
-      <MainLayout active={1}>
+      <MainLayout active={1} user={user}>
         <div className="w-full mb-4 text-violet-900 h-4 text-lg">
           Hi, {user?.name}
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full py-3">
           <div>
             <div className="flex flex-col  items-center gap-4 rounded-full ml-5 w-1/3">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5H3d-mRDA8EJp4JIoVsVod9iYe5PqViR-hUd7pDn-mQ&s"
-                alt=""
-                width={150}
-                className="rounded-full"
-              />
+              {user?.img ? (
+                <img
+                  src={user?.img}
+                  alt=""
+                  width={150}
+                  className="rounded-full"
+                />
+              ) : (
+                <Img
+                  src="images/defaultImg.jpg"
+                  // src="images/img_frame_purple_900.svg"
+                  alt="image"
+                  className="rounded-full"
+                />
+              )}
 
               <button
                 className="text-[#fff] bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-full p-2 mb-4"
@@ -126,10 +136,15 @@ export default function ClientdashboardPage() {
             </div>
 
             <section className="my-5">
-              <div className="bg-[#fff] shadow-md border w-full py-8 gap-4 flex flex-wrap justify-between rounded rounded-2xl">
+              <div className="bg-[#fff] shadow-md border w-full py-8 px-4 gap-4 flex flex-wrap justify-between rounded rounded-2xl">
                 <div className="flex items-center">
                   <div className="p-3  bg-orange-200 rounded-xl mx-1">
-                    <MdPerson className="h-8 w-8" color="orange" />
+                    <Img
+                      src="images/Paper.svg"
+                      // src="images/img_frame_purple_900.svg"
+                      alt="image"
+                      className="my-auto h-8 w-8"
+                    />
                   </div>
                   <div>
                     <p className="w-[90px] text-center text-gray-700">
@@ -139,9 +154,13 @@ export default function ClientdashboardPage() {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <div className="h-2/3 my-auto w-[2px] bg-gray-300"></div>
                   <div className="p-3  bg-purple-200 rounded-xl mx-1">
-                    <MdPerson className="h-8 w-8" color="#140694" />
+                    <Img
+                      src="images/Swap.svg"
+                      // src="images/img_frame_purple_900.svg"
+                      alt="image"
+                      className="my-auto h-8 w-8"
+                    />
                   </div>
                   <div>
                     <p className="w-[90px] text-center text-gray-700">
@@ -152,9 +171,13 @@ export default function ClientdashboardPage() {
                 </div>
 
                 <div className="flex items-center">
-                  <div className="h-2/3 my-auto w-[2px] bg-gray-300"></div>
                   <div className="p-3  bg-blue-200 rounded-xl mx-1">
-                    <MdPerson className="h-8 w-8" color="blue" />
+                    <Img
+                      src="images/Group.svg"
+                      // src="images/img_frame_purple_900.svg"
+                      alt="image"
+                      className="my-auto h-8 w-8"
+                    />
                   </div>
                   <div>
                     <p className="w-[90px] text-center text-gray-700">Shared</p>

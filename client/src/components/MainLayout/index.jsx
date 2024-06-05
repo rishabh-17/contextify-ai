@@ -114,9 +114,9 @@ export default function ClientdashboardPage({ active, children }) {
               >
                 <IoPowerSharp className="h-8 w-8" />
                 <div>
-                <p>Logout</p>
-                <p className="text-xs">{user?.name}</p></div>
-                
+                  <p>Logout</p>
+                  <p className="text-xs">{user?.name}</p>
+                </div>
               </li>
             </ul>
           </div>
@@ -154,8 +154,8 @@ export default function ClientdashboardPage({ active, children }) {
               </form> */}
               <div className="flex flex-row items-center justify-around">
                 <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
-                  <img
-                    src="../../../public/images/Image.png"
+                  <Img
+                    src="images/defaultImg.jpg"
                     alt="profile"
                     className="h-6 shadow-xl"
                   />
@@ -180,7 +180,7 @@ export default function ClientdashboardPage({ active, children }) {
                         isDropdownOpen ? "" : "hidden"
                       } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
                     >
-                      <div className=" flex flex-row justify-around items-center px-4 py-3 text-sm text-gray-900 dark:text-white">
+                      <div className=" flex flex-row flex-wrap gap-3 items-center px-1 py-3 text-sm text-purple-900 dark:text-white">
                         <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
                           <img
                             src="../../../public/images/Image.png"
@@ -198,7 +198,7 @@ export default function ClientdashboardPage({ active, children }) {
                         </a>
                       </div>
                       <ul
-                        className="py-2 text-sm text-gray-700 dark:text-gray-200"
+                        className="py-2 text-md text-purple-900 dark:text-gray-200"
                         aria-labelledby="dropdownInformationButton"
                       >
                         <li onClick={() => navigate("/dashboard")}>
@@ -222,20 +222,21 @@ export default function ClientdashboardPage({ active, children }) {
                             Support
                           </a>
                         </li>
-                      </ul>
-                      <div className="py-2">
-                        <a
-                          href="#"
-                          className="px-4 py-2 text-sm text-gray-900 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                        <li
                           onClick={() => {
                             localStorage.clear();
                             navigate("/");
                           }}
                         >
-                          <IoPowerSharp className="h-4 w-4" />
-                          Sign out
-                        </a>
-                      </div>
+                          <a
+                            href="#"
+                            className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900"
+                          >
+                            <IoPowerSharp className="h-4 w-4" />
+                            Sign out
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>

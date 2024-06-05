@@ -100,7 +100,10 @@ const index = () => {
               } `}
             >
               {!localStorage.getItem("subscribed") && (
-                <input className=" border-0" placeholder="your email" />
+                <input
+                  className=" border-0 border-transparent focus:border-transparent focus:ring-0"
+                  placeholder="your email"
+                />
               )}
 
               <div className="flex">
