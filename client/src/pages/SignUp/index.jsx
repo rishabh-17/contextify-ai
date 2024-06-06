@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import { Text, Img, Input, Button } from "../../components";
+import { LoadingContext } from "../../App";
 import { GoogleLogin } from "@react-oauth/google";
 export default function SignUpPage() {
   const navigate = useNavigate();

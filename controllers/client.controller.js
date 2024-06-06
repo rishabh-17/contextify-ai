@@ -75,3 +75,26 @@ exports.updateSaved = async (req, res) => {
     res.json({ success: false, err: "unable to update saved" });
   }
 };
+
+exports.profileData = async (req, res) => {
+  try {
+    const user = await User.findOne({ _id: req.user._id });
+    res.json({
+      success: true,
+      data: {
+        name: user.name,
+        email: user.email,
+        isPremium: user.isPremiumUser,
+        totalReq: user.totalReq,
+        premiumType: user.premiumType,
+        expiry: user.expiry,
+        history: await History.find({ user: req.user._id })
+          .sort({ date: -1 })
+          .limit(10),
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, err: "unable to get dashbord data" });
+  }
+};

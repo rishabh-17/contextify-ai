@@ -44,6 +44,8 @@ exports.getContext = async (req, res) => {
           user: req.user,
         });
         newHistory.save().then((i) => {
+          req.user.totalReq = req.user.totalReq - 1;
+          req.user.save();
           res.json({
             success: true,
             data: data?.choices?.[0]?.message?.content.replace(/[\/\*]/g, ""),
@@ -59,9 +61,6 @@ exports.getContext = async (req, res) => {
         res.status(500).json({ success: false, err: err });
       });
   }
-
-  // const data = await explain(req.body.text);
-  // res.json({ data });
 };
 
 exports.saveContext = async (req, res) => {

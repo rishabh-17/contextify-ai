@@ -38,7 +38,7 @@ const UserSchema = new mongoose.Schema(
     },
     totalReq: {
       type: Number,
-      default: 10,
+      default: 15,
     },
     premiumType: {
       type: String,

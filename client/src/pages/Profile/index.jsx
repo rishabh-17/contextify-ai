@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Helmet } from "react-helmet";
 import MainLayout from "../../components/MainLayout";
+import { LoadingContext } from "../../App";
 
 export default function ProfilePage() {
   const [data, setData] = useState({});

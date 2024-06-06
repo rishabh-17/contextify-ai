@@ -16,4 +16,9 @@ router.get(
   clientController.getHistory
 );
 router.get("/history/:id", clientController.getOneHistory);
+router.get(
+  "/profile",
+  AuthMiddleware.userAuthentication,
+  clientController.profileData
+);
 module.exports = router;

@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import share_peoples from "../../assets/share_peoples.png";
 import { CiFileOn } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
+import { LoadingContext } from "../../App";
 import { Img } from "../../components";
 // import { ThreeDCard } from "../../components/threedcard";
 
@@ -46,6 +47,15 @@ export default function ClientdashboardPage() {
       setHistory(data.data);
       setLoading(false);
     };
+    const fetchProfile = async () => {
+      setLoading(true);
+      const { data } = await axios.get(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/profile",
+        config
+      );
+      console.log(data);
+      setLoading(false);
+    };
 
     const fetchSaved = async () => {
       setLoading(true);
@@ -59,6 +69,7 @@ export default function ClientdashboardPage() {
 
     fetchHistory();
     fetchSaved();
+    fetchProfile();
   }, []);
 
   const genrateKey = async () => {
@@ -460,5 +471,3 @@ export default function ClientdashboardPage() {
     </>
   );
 }
-
-
