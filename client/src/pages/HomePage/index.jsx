@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading, Input, SelectBox } from "../../components";
 import Header from "../../components/Header";
@@ -28,6 +28,7 @@ import section3Image from "../../assets/section3Image.png";
 import section4Image from "../../assets/section4Image.png";
 import section5Image from "../../assets/section5Image.png";
 import section6Image from "../../assets/section6Image.png";
+import { LoadingContext } from "../../App";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -38,6 +39,8 @@ export default function HomePage() {
     name: "Walter White",
     title: "Developer",
   });
+
+  const setLoading = useContext(LoadingContext);
 
   return (
     <>

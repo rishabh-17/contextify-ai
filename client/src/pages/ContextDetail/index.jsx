@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import MainLayout from "../../components/MainLayout";
 import { RWebShare } from "react-web-share";
 import { IoMdShare } from "react-icons/io";
@@ -10,6 +10,7 @@ export default function ContextDetail() {
   const [data, setData] = useState({});
   const location = useLocation();
   console.log(id, type);
+  const setLoading = useContext(LoadingContext);
 
   useEffect(() => {
     const config = {
@@ -18,27 +19,23 @@ export default function ContextDetail() {
       },
     };
 
-    const fetchHistory = async () => {
-      const { data } = await axios.get(
-        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/history/" + id,
-        config
-      );
-      setData(data.data);
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const { data } = await axios.get(
+          (import.meta.env.VITE_BACKEND_URL || "") +
+            `/api/client/${type}/${id}`,
+          config
+        );
+        setData(data.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    const fetchSaved = async () => {
-      const { data } = await axios.get(
-        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved/" + id,
-        config
-      );
-      setData(data.data);
-    };
-
-    if (type === "history") {
-      fetchHistory();
-    } else if (type === "saved") {
-      fetchSaved();
-    }
+    fetchData();
   }, []);
 
   return (

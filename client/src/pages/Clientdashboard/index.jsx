@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import MainLayout from "../../components/MainLayout";
 import axios from "axios";
 import { RWebShare } from "react-web-share";
@@ -29,6 +29,7 @@ export default function ClientdashboardPage() {
   const [ques, setQues] = useState("");
   const [ans, setAns] = useState("");
   const navigate = useNavigate();
+  const setLoading = useContext(LoadingContext);
   React.useEffect(() => {
     const config = {
       headers: {
@@ -37,19 +38,23 @@ export default function ClientdashboardPage() {
     };
 
     const fetchHistory = async () => {
+      setLoading(true);
       const { data } = await axios.get(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/history",
         config
       );
       setHistory(data.data);
+      setLoading(false);
     };
 
     const fetchSaved = async () => {
+      setLoading(true);
       const { data } = await axios.get(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved",
         config
       );
       setSaved(data?.data);
+      setLoading(false);
     };
 
     fetchHistory();
@@ -57,6 +62,7 @@ export default function ClientdashboardPage() {
   }, []);
 
   const genrateKey = async () => {
+    setLoading(true);
     const config = {
       headers: {
         authentication: `${localStorage.getItem("token")}`,
@@ -72,11 +78,16 @@ export default function ClientdashboardPage() {
       .then((data) => {
         setSecret(data?.data?.key);
         localStorage.setItem("secret", data?.data?.key);
+        setLoading(false);
       })
-      .catch((err) => alert("unable to generate key"));
+      .catch((err) => {
+        alert("unable to generate key");
+        setLoading(false);
+      });
   };
 
   const handleNewContext = async () => {
+    setLoading(true);
     const config = {
       headers: {
         authentication: `${localStorage.getItem("token")}`,
@@ -95,9 +106,11 @@ export default function ClientdashboardPage() {
         )
         .then(({ data }) => {
           setAns(data?.data);
+          setLoading(false);
         })
         .catch((err) => {
           alert(err.message);
+          setLoading(false);
         });
     }
   };
@@ -447,3 +460,5 @@ export default function ClientdashboardPage() {
     </>
   );
 }
+
+

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Helmet } from "react-helmet";
 import MainLayout from "../../components/MainLayout";
 
 export default function ProfilePage() {
   const [data, setData] = useState({});
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const setLoadingContext = useContext(LoadingContext);
 
   const validate = (fieldValues = data) => {
     let tempErrors = { ...errors };
@@ -44,6 +46,8 @@ export default function ProfilePage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setLoadingContext(true);
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
       e.stopPropagation();
@@ -59,15 +63,22 @@ export default function ProfilePage() {
         password: data?.password?.length ? "" : "This field is required.",
       });
     } else {
-      const res = await fetch("/api/user", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      const user = await res.json();
-      console.log(user);
+      try {
+        const res = await fetch("/api/user", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const user = await res.json();
+        console.log(user);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLoading(false);
+        setLoadingContext(false);
+      }
     }
   };
 
@@ -80,6 +91,8 @@ export default function ProfilePage() {
   };
 
   const handleFileChange = (e) => {
+    setLoading(true);
+    setLoadingContext(true);
     const file = e.target.files[0];
     if (file) {
       const formData = new FormData();
@@ -97,7 +110,11 @@ export default function ProfilePage() {
             profilePic: data.secure_url,
           });
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err))
+        .finally(() => {
+          setLoading(false);
+          setLoadingContext(false);
+        });
     }
   };
 

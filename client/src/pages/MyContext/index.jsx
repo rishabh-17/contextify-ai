@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import MainLayout from "../../components/MainLayout";
 import axios from "axios";
 import { GiBrain } from "react-icons/gi";
@@ -17,6 +17,7 @@ export default function MyContext() {
     localStorage.getItem("showBanner")
   );
   const navigate = useNavigate();
+  const setLoading = useContext(LoadingContext);
 
   React.useEffect(() => {
     const config = {
@@ -26,11 +27,13 @@ export default function MyContext() {
     };
 
     const fetchContexts = async () => {
+      setLoading(true);
       const { data } = await axios.get(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved",
         config
       );
       setContexts(data?.data);
+      setLoading(false);
     };
 
     fetchContexts();

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
@@ -10,7 +10,7 @@ export default function SignUpPage() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [retypePassword, setRetypePassword] = React.useState("");
-  const [isLoading, setIsLoading] = React.useState(false);
+  const setLoading = useContext(LoadingContext);
   const [error, setError] = React.useState("");
   const [passwordVisible, setPasswordVisible] = React.useState(false);
   const [passwordVisible2, setPasswordVisible2] = React.useState(false);
@@ -81,7 +81,7 @@ export default function SignUpPage() {
       setError("Passwords do not match.");
       return;
     }
-    setIsLoading(true);
+    setLoading(true);
     try {
       const { data } = await axios.post(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/signup",
@@ -97,19 +97,19 @@ export default function SignUpPage() {
           ...prevState,
           username: data.error,
         }));
-        setIsLoading(false);
+        setLoading(false);
       } else {
         navigate("/signin");
       }
     } catch (err) {
       setError(err.message);
-      setIsLoading(false);
+      setLoading(false);
     }
   }
 
   async function handleGoogleSignup(detail) {
     // e.preventDefault();
-    setIsLoading(true);
+    setLoading(true);
     try {
       const { data } = await axios.post(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/signup",
@@ -125,13 +125,13 @@ export default function SignUpPage() {
           ...prevState,
           username: data.error,
         }));
-        setIsLoading(false);
+        setLoading(false);
       } else {
         navigate("/signin");
       }
     } catch (err) {
       setError(err.message);
-      setIsLoading(false);
+      setLoading(false);
     }
   }
 

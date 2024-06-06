@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Text, Img, Input, Button } from "../../components";
 import { GoogleLogin } from "@react-oauth/google";
@@ -8,7 +8,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [isLoading, setIsLoading] = React.useState(false);
+  const setLoading = useContext(LoadingContext);
   const [error, setError] = React.useState("");
   const [passwordVisible, setPasswordVisible] = React.useState(false);
 
@@ -57,7 +57,7 @@ export default function LoginPage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading(true);
+    setLoading(true);
     try {
       const { data } = await axios.post(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/login",
@@ -72,31 +72,31 @@ export default function LoginPage() {
           ...prevState,
           email: data.error,
         }));
-        setIsLoading(false);
+        setLoading(false);
       } else {
         if (data.authToken) {
           localStorage.setItem("admintoken", data.authToken);
-          setIsLoading(false);
+          setLoading(false);
           navigate("/");
         } else if (data.token) {
           localStorage.setItem("token", data.token);
           let user = parseJwt(data.token);
           localStorage.setItem("user", JSON.stringify(user));
-          setIsLoading(false);
+          setLoading(false);
           navigate("/dashboard");
         } else {
-          setIsLoading(false);
+          setLoading(false);
           setError(data.err);
         }
       }
     } catch (err) {
       setError("Something went wrong");
-      setIsLoading(false);
+      setLoading(false);
     }
   }
   async function handleGoogleSignup(details, gtoken) {
     // e.preventDefault();
-    setIsLoading(true);
+    setLoading(true);
     try {
       const { data } = await axios.post(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/login",
@@ -113,26 +113,26 @@ export default function LoginPage() {
           ...prevState,
           email: data.error,
         }));
-        setIsLoading(false);
+        setLoading(false);
       } else {
         if (data.authToken) {
           localStorage.setItem("admintoken", data.authToken);
-          setIsLoading(false);
+          setLoading(false);
           navigate("/");
         } else if (data.token) {
           localStorage.setItem("token", data.token);
           let user = parseJwt(data.token);
           localStorage.setItem("user", JSON.stringify(user));
-          setIsLoading(false);
+          setLoading(false);
           navigate("/dashboard");
         } else {
-          setIsLoading(false);
+          setLoading(false);
           setError(data.err);
         }
       }
     } catch (err) {
       setError("Something went wrong");
-      setIsLoading(false);
+      setLoading(false);
     }
   }
 
