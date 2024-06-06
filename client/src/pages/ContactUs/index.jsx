@@ -132,30 +132,26 @@ export default function ContactUsPage() {
         </form>
         <section className="mx-48 my-24 sm:mx-5 ">
           <FAQ
-            question={" Where is my order? Quisque molestie "}
-            answer={" Your answer for Where is my order?"}
+            question={" Are there any limits on use cases for the Basic/Free tier? "}
+            answer={" Yes, you initially get 15 credits tehn you are bound to upgrade to get more"}
             count={1}
           />
           <FAQ
-            question={" How can I return an item purchased online? "}
-            answer={"Your answer for Where is my order?"}
+            question={" Does Contextify work with videos? "}
+            answer={"Not yet. As soon as GPT-4 can understand and analyze videos, we will update Contextify to include this option."}
             count={2}
           />
           <FAQ
-            question={" Can I cancel or change my order?"}
-            answer={" Your answer for Where is my order?"}
+            question={" Can I cancle my subscription and/or get a refund? "}
+            answer={" No refunds, but feel free to slip out of the Premium tier anytime you like. That being said, Basic is still pretty cool."}
             count={3}
           />
           <FAQ
-            question={" I have a promotional or discount code? "}
-            answer={" Your answer for Where is my order?"}
+            question={" Got any other questions? "}
+            answer={" Drop us a message on the contact page, or email us @ info[at]contextify.info"}
             count={4}
           />
-          <FAQ
-            question={" Can I integrate my store with Facebook?"}
-            answer={" Your answer for Where is my order?"}
-            count={5}
-          />
+          
         </section>
         <div className="pb-24">
           <Footer />

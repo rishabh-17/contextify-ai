@@ -43,8 +43,8 @@ export default function AboutPage() {
       </section>
 
       <section className=" px-48 sm:px-5 mt-48 text-center">
-        <h1 className="text-7xl mb-5">About Contextify</h1>
-        <p>Discover the Power of Contextify!</p>
+        <h1 className="text-7xl mb-5">Get to Know Us!</h1>
+        <p>The Story Behind Contextify</p>
       </section>
 
       <section className="px-48 sm:px-5 mt-24">
@@ -67,16 +67,15 @@ export default function AboutPage() {
           <h1 className="text-5xl">What We Do</h1>
           <div className="col-span-2">
             <p className="mb-5">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using.
+            Dreamed up by a content writer and pulled together by a team of freelance developers, Contextify first came into being as a thought: “What if we could take out the “open in new tab” part of the search process?”
+Doing research as a freelancer isn’t easy – and we imagine it isn’t all that smooth for students, startup founders, and side-hustlers either. (And everyone else.) 
+
             </p>
             <p>
-              Content here', making it look like readable English. Many desktop
-              publishing packages and web page editors now use Lorem Ipsum as
-              their default model text, and a search for 'lorem ipsum' will
-              uncover many web sites still in their infancy.{" "}
+            It’s too easy to lose your place while reading something online, just to look up this word or phrase you’re not familiar with. Or forget about what you were working on after chasing down a rabbit trail – only to realize two hours in that it wasn’t even relevant to your main project. 
+            Or not being sure about where to start with your research, because you don’t know the context around the given subject.We know the pain, the frustration, the 113 tabs open on three separate browser windows. We’ve been there. 
+            That’s why we’ve created Contextify. 
+{" "}
             </p>
           </div>
         </div>
@@ -136,16 +135,17 @@ export default function AboutPage() {
           <div className="flex flex-col gap-5 justify-center">
             <h1 className="text-5xl">Our Mission</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing Pharetra Ld eu
-              aliquet diam lorem viverra at justo. Nulla odio nequefjf gravida
-              in pharetra egestas. Ac id sagittis at morbi interdum nibh diam
-              sagittis et. Lorem ipsum dolor sit amet, consectetur adipiscing
-              Pharetra id eu aliquet diam lorem viverra at justo. Nulla odio
-              nequesg gravida in pharetra egestas.
+            We’re here to revolutionize the way people interact with the internet.Contextify helps to put information on the internet into context for each user – whether that be a slang phrase you haven’t quite picked up yet, a meme you totally don’t get but is trending, or a marketing term you’d like to learn more about for your own business. 
+<br/><br/>
+            Whatever the case, Contextify gives you what you need to “be in the know” – that is, be informed enough about a topic to know what your next steps are, and whether it’s worth your time to keep exploring. (In which case, we’d also give you three recommended resources to see you off on your next adventure!)
+
+            Because – let’s face it – we don’t have that much time to spend opening and closing tabs just to make sure it’s “who” and not “whom”. There are cooler things to do online. 
+            Why not get the information you need at the click of a button without leaving whichever tab you’re already on?
+
             </p>
           </div>
 
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center pl-5 ml-10">
             {" "}
             <img
               className=" shadow-2xl"
@@ -158,7 +158,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className=" px-48 sm:px-5 mt-48">
+      {/* <section className=" px-48 sm:px-5 mt-48">
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-5">
           <div className="flex justify-center items-center">
             {" "}
@@ -182,11 +182,11 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="px-48 sm:px-5 mt-48">
+      {/* <section className="px-48 sm:px-5 mt-48">
         <div className="flex flex-wrap gap-4 w-full justify-between ">
-          {/* <div className="flex flex-col gap-5 justify-center items-center w-[200px]">
+          <div className="flex flex-col gap-5 justify-center items-center w-[200px]">
             <div className="rounded-full shadow-2xl overflow-hidden border-2 border-purple-500 p-1">
               <img
                 className="rounded-full"
@@ -202,7 +202,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-bold mb-2">Charlie Williams</h3>
               <p>Digital Marketing Specialist New York, USA.</p>
             </div>
-          </div> */}
+          </div>
           <div class="relative flex flex-col text-gray-700 bg-purple-900 shadow-md bg-clip-border rounded-xl w-80">
             <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl ">
               <img
@@ -312,7 +312,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className=" px-48 sm:px-5 mt-48">
         <div
@@ -343,8 +343,7 @@ export default function AboutPage() {
                     Start your free trial today
                   </h5>
                   <p>
-                    It is a long established fact that a reader will be by the
-                    readable when looking at it layout.{" "}
+                  Contextify puts information into context at the click of a button. Be in the know.{" "}
                   </p>
                 </div>
 

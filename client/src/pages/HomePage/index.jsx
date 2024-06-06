@@ -61,12 +61,11 @@ export default function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-1">
               <div className="flex flex-col gap-5">
                 <h1 className="text-7xl">
-                  Be in the <br />
-                  <span className="bg-orange-50">Know.</span>
+                  Demystify the <br />
+                  <span className="bg-orange-50">Internet.</span>
                 </h1>
                 <p className="text-2xl">
-                  Contextify is a hub puts information into <br /> context at
-                  the click of a button
+                Contextify puts information into context at the click of a button. Be in the Know
                 </p>
                 <div className="flex gap-5 items-center mt-16">
                   <input
@@ -179,35 +178,33 @@ export default function HomePage() {
           <section className=" px-48 sm:px-5 mt-48">
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="flex flex-col gap-5">
-                <h1 className="text-5xl">For All Your Research</h1>
+                <h1 className="text-5xl">One Platform for Your Research</h1>
                 <ul className="flex flex-col gap-10">
                   <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
                     <div className="h-16 w-16 bg-red-400 rounded-full" />
                     <div>
-                      <h3 className="text-2xl m-1">Appointments</h3>
+                      <h3 className="text-2xl m-1">Browser extension</h3>
                       <p>
-                        Many desktop publishing packages and web page editors
-                        now use for them.
+                      Run web searches on text + images without leaving your current tab
+
                       </p>
                     </div>
                   </li>
                   <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
                     <div className="h-16 w-16 bg-blue-400 rounded-full" />
                     <div>
-                      <h3 className="text-2xl m-1">Appointments</h3>
+                      <h3 className="text-2xl m-1">Audio search results</h3>
                       <p>
-                        Many desktop publishing packages and web page editors
-                        now use for them.
+                      No time to read? Click to hear the information you’re looking for. 
                       </p>
                     </div>
                   </li>
                   <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
                     <div className="h-16 w-16 bg-green-400 rounded-full" />
                     <div>
-                      <h3 className="text-2xl m-1">Appointments</h3>
+                      <h3 className="text-2xl m-1">Log your learning</h3>
                       <p>
-                        Many desktop publishing packages and web page editors
-                        now use for them.
+                      We make it easy to re-find things you thought were cool.
                       </p>
                     </div>
                   </li>
@@ -258,16 +255,12 @@ export default function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
-                  Manage your searches and{" "}
-                  <span className="bg-orange-50">notes</span> with ease.
+                Know the {" "}
+                  <span className="bg-orange-50">Topic</span> 
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                  odio aut deserunt. Porro minima magnam assumenda nam ipsa,
-                  unde praesentium qui autem sint aliquam sunt consequuntur
-                  tempora voluptates maiores natus? Possimus, obcaecati. Laborum
-                  maxime minus quis molestias sequi officia saepe excepturi,
-                  assumenda eveniet, vel eos!
+                Contextify is a built-in, same-page Google search that skips the “open-in-new-tab” part and gives you the answers you’re looking for after one simple highlight. 
+                Recommended resources come with each search, allowing for easy exploration.
                 </p>
               </div>
 
@@ -294,16 +287,13 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
-                  Manage your searches and{" "}
-                  <span className="bg-orange-50">notes</span> with ease.
+                Know the {" "}
+                  <span className="bg-orange-50">Internet</span>
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                  odio aut deserunt. Porro minima magnam assumenda nam ipsa,
-                  unde praesentium qui autem sint aliquam sunt consequuntur
-                  tempora voluptates maiores natus? Possimus, obcaecati. Laborum
-                  maxime minus quis molestias sequi officia saepe excepturi,
-                  assumenda eveniet, vel eos!
+                More than just a summary (like what you see in search browsers these days), 
+                Contextify places the selected media into both broad and specific contexts, 
+                turning you into a well-informed "citizen of the internet" in seconds. 
                 </p>
               </div>
             </div>
@@ -313,16 +303,13 @@ export default function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
-                  Manage your searches and{" "}
-                  <span className="bg-orange-50">notes</span> with ease.
+                 Know {" "}
+                  <span className="bg-orange-50">Yourself</span>
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                  odio aut deserunt. Porro minima magnam assumenda nam ipsa,
-                  unde praesentium qui autem sint aliquam sunt consequuntur
-                  tempora voluptates maiores natus? Possimus, obcaecati. Laborum
-                  maxime minus quis molestias sequi officia saepe excepturi,
-                  assumenda eveniet, vel eos!
+                Contextify also serves as an self-analysis tool to see what you’ve been 
+                paying attention to on the web lately – precious data that’ll help you make 
+                better choices for the time/attention you’re spending online.
                 </p>
               </div>
               <div className="flex justify-center items-center">
@@ -339,68 +326,62 @@ export default function HomePage() {
           <section className=" px-48 sm:px-5 mt-48">
             <div className="flex justify-center mb-24">
               <h2 className="text-5xl text-center">
-                Contextify Has The Ability to Serve <br />{" "}
-                <span className="bg-orange-50">Several Use Cases</span>{" "}
+               Use <br />{" "}
+                <span className="bg-orange-50">Contextify</span>{" "}
               </h2>
             </div>
             <div className="grid grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-4 gap-5">
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Education System</h3>
+                  <h3 className="text-xl">Tight on time?</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Dicta sequi earum atque rerum ullam.
+                  Short-form, bullet-point results give you the who, what, when, where, how, and why. 
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Education System</h3>
+                  <h3 className="text-xl">Doing in-depth research?</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Dicta sequi earum atque rerum ullam.
+                  Figure out which rabbit holes are relevant without leaving your key research tab.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Education System</h3>
+                  <h3 className="text-xl">Feeling social?</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Dicta sequi earum atque rerum ullam.
+                  Share what cool stuff you’ve discovered through Contextify right within the platform.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Education System</h3>
+                  <h3 className="text-xl">Need good sources?</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Dicta sequi earum atque rerum ullam.
+                  See how your topic relates to other subjects, and get the links you need without getting lost.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Education System</h3>
+                  <h3 className="text-xl">Catching up on trends?</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Dicta sequi earum atque rerum ullam.
+                  Contextify summarizes both movie plots and production/showing details. Same for celebs and just about anything else.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Education System</h3>
+                  <h3 className="text-xl">Keep forgetting to look things up?</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Dicta sequi earum atque rerum ullam.
+                  No need to lose track of neat tidbits you’ve meant to run a search on again! Get Contextified notes.
                   </p>
                 </div>
               </div>
