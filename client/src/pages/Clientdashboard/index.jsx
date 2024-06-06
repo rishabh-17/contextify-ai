@@ -31,6 +31,7 @@ export default function ClientdashboardPage() {
   const [ans, setAns] = useState("");
   const navigate = useNavigate();
   const setLoading = useContext(LoadingContext);
+  const [profile, setProfile] = useState({});
   React.useEffect(() => {
     const config = {
       headers: {
@@ -53,7 +54,7 @@ export default function ClientdashboardPage() {
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/profile",
         config
       );
-      console.log(data);
+      setProfile(data?.data);
       setLoading(false);
     };
 
@@ -204,8 +205,10 @@ export default function ClientdashboardPage() {
                     />
                   </div>
                   <div>
-                    <p className="w-[90px] text-center text-gray-700">Shared</p>
-                    <p className="w-[90px] text-center">4</p>
+                    <p className="w-[90px] text-center text-gray-700">Tokens</p>
+                    <p className="w-[90px] text-center">
+                      {profile?.totalReq || 0}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -281,15 +284,18 @@ export default function ClientdashboardPage() {
                 class="max-w-sm w-[200px] h-[300px]
              p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
               >
-                <div className="overflow-auto h-[160px]">
+                <div
+                  className="overflow-auto h-full"
+                  onClick={() => navigate(`/contextdetail/history/${item._id}`)}
+                >
                   <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
                     {item?.question?.length > 30
                       ? item?.question?.slice(0, 30) + "..."
                       : item?.question}
                   </h5>
                   <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
-                    {item?.answer.length > 50
-                      ? item?.answer?.slice(0, 50) + "..."
+                    {item?.answer.length > 200
+                      ? item?.answer?.slice(0, 200) + "..."
                       : item?.answer}
                   </p>
                 </div>

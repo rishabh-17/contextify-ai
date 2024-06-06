@@ -4,6 +4,7 @@ import { RWebShare } from "react-web-share";
 import { IoMdShare } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { LoadingContext } from "../../App";
 import axios from "axios";
 export default function ContextDetail() {
   const { id, type } = useParams();
