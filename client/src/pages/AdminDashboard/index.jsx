@@ -92,20 +92,6 @@ export default function AdmindashboardPage() {
                       className="h-[60px] w-[60px]"
                     />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Img
-                      src="images/img_checkmark_teal_a700.svg"
-                      alt="image"
-                      className="h-[24px] w-[24px]"
-                    />
-                    <Text size="lg" as="p" className="!text-teal-A700">
-                      <span className="text-teal-A700">8.5%</span>
-                      <span className="text-gray-900_02">&nbsp;</span>
-                      <span className="text-gray_700_02">
-                        Up from yesterday
-                      </span>
-                    </Text>
-                  </div>
                 </div>
                 <div className="flex w-full flex-col justify-center gap-[33px] rounded-[14px] bg-white-A700  p-3.5 shadow-md">
                   <div className="flex items-start justify-between gap-5">
@@ -122,20 +108,6 @@ export default function AdmindashboardPage() {
                       alt="close_one"
                       className="h-[60px] w-[60px]"
                     />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Img
-                      src="images/img_checkmark_teal_a700.svg"
-                      alt="checkmark_one"
-                      className="h-[24px] w-[24px]"
-                    />
-                    <Text size="lg" as="p" className="!text-teal-A700">
-                      <span className="text-teal-A700">1.3%</span>
-                      <span className="text-gray-900_02">&nbsp;</span>
-                      <span className="text-gray_700_02">
-                        Up from past week
-                      </span>
-                    </Text>
                   </div>
                 </div>
                 <div className="flex w-full flex-col items-center justify-center gap-8 rounded-[14px] bg-white-A700 p-3.5 shadow-md">
@@ -154,20 +126,6 @@ export default function AdmindashboardPage() {
                       className="h-[60px] w-[60px]"
                     />
                   </div>
-                  <div className="flex items-center gap-2 self-start">
-                    <Img
-                      src="images/img_group_pink_400.svg"
-                      alt="image"
-                      className="h-[24px] w-[24px]"
-                    />
-                    <Text size="lg" as="p" className="!text-pink-400">
-                      <span className="text-pink-400">4.3%</span>
-                      <span className="text-gray-900_02">&nbsp;</span>
-                      <span className="text-gray_700_02">
-                        Down from yesterday
-                      </span>
-                    </Text>
-                  </div>
                 </div>
                 <div className="flex w-full flex-col gap-[33px] rounded-[14px] bg-white-A700 p-4 shadow-md">
                   <div className="flex items-start justify-between gap-5">
@@ -184,20 +142,6 @@ export default function AdmindashboardPage() {
                       alt="user_one"
                       className="h-[60px] w-[60px]"
                     />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Img
-                      src="images/img_checkmark_teal_a700.svg"
-                      alt="checkmark_one"
-                      className="h-[24px] w-[24px]"
-                    />
-                    <Text size="lg" as="p" className="!text-teal-A700">
-                      <span className="text-teal-A700">1.8%</span>
-                      <span className="text-gray-900_02">&nbsp;</span>
-                      <span className="text-gray_700_02">
-                        Up from yesterday
-                      </span>
-                    </Text>
                   </div>
                 </div>
               </div>
