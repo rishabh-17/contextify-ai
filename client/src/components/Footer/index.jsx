@@ -8,14 +8,14 @@ const index = () => {
           <div className="flex justify-center w-[56%]">
             <div className="flex flex-col w-full gap-6">
               <div
-                className="jhsufdj w-full flex items-center"
+                className="jhsufdj w-full flex items-center pt-0"
                 onClick={() => navigate("/")}
               >
                 <Img
                   src="images/logo.png"
                   // src="images/img_frame_purple_900.svg"
                   alt="image"
-                  className="my-auto h-[80px] w-[180px]"
+                  className="my-auto h-[80px] w-[180px] pt-0 mt-0"
                 />
                 <h2 className="text-2xl font-bold text-purple-900">
                   Contextify

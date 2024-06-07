@@ -1,8 +1,15 @@
 import React from "react";
 import Footer from "../../components/Footer";
+import { useNavigate } from "react-router-dom";
+import { IoMdArrowRoundBack } from "react-icons/io";
 export default function index() {
+  const navigate = useNavigate();
   return (
     <>
+    <div className="flex gap-3 m-5" onClick={ () => navigate(-1)}>
+    <IoMdArrowRoundBack />
+      back
+    </div>
       <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-5 py-10">
         <h2 className="text-xl font-bold">Hi! How can we help?</h2>
         <form className="mx-auto w-[80%] pl-2 border border-slate-900 rounded-2xl bg-[#F7F0FC] h-10 overflow-hidden sm:hidden">
@@ -77,21 +84,7 @@ export default function index() {
 
               <h4>Resolve Issues</h4>
             </div>
-            <div className="flex flex-col items-center w-48 my-5">
-              <img src="images/support4.png" alt="" />
-
-              <h4>About Contextify</h4>
-            </div>
-            <div className="flex flex-col items-center w-48 my-5">
-              <img src="images/support5.png" alt="" />
-
-              <h4>Tips & Tutorials</h4>
-            </div>
-            <div className="flex flex-col items-center w-48 my-5">
-              <img src="images/support6.png" alt="" />
-
-              <h4>Business & Schools</h4>
-            </div>
+            
           </div>
         </div>
       </div>

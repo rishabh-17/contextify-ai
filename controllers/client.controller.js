@@ -88,6 +88,7 @@ exports.profileData = async (req, res) => {
         totalReq: user.totalReq,
         premiumType: user.premiumType,
         expiry: user.expiry,
+        usage: user.usage,
         history: await History.find({ user: req.user._id })
           .sort({ date: -1 })
           .limit(10),

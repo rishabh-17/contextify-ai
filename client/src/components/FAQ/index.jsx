@@ -7,7 +7,7 @@ const FAQ = ({ question, answer, count }) => {
     <div
       id="accordion-open"
       data-accordion="open"
-      className="transition ease-in-out delay-150  text-xl"
+      className="transition ease-in-out delay-150 text-xl bg-[#DBCCE6]"
     >
       <h2 id="accordion-open-heading-1">
         <button
@@ -58,7 +58,7 @@ const FAQ = ({ question, answer, count }) => {
           aria-labelledby="accordion-open-heading-1"
         >
           <div className="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-            <p className="mb-2 textt-purple-500 dark:textt-purple-400">
+            <p className="mb-2 text-gray-700 dark:text-purple-700 text-sm">
               {answer}
             </p>
           </div>

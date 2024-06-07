@@ -34,7 +34,8 @@ const UserSchema = new mongoose.Schema(
       type: Date,
     },
     usage: {
-      type: String,
+      type: Number,
+      default: 0
     },
     totalReq: {
       type: Number,

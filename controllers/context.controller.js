@@ -45,6 +45,7 @@ exports.getContext = async (req, res) => {
         });
         newHistory.save().then((i) => {
           req.user.totalReq = req.user.totalReq - 1;
+          req.user.usage = req.user.usage + 1;
           req.user.save();
           res.json({
             success: true,

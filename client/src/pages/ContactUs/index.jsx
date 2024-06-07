@@ -130,7 +130,8 @@ export default function ContactUsPage() {
             </button>
           </div>
         </form>
-        <section className="mx-48 my-24 sm:mx-5 ">
+        <section className="mx-48 my-24 sm:mx-5 flex flex-col gap-3">
+          <h1 className="text-5xl text-center mb-12">Frequently Asked Questions</h1>
           <FAQ
             question={" Are there any limits on use cases for the Basic/Free tier? "}
             answer={" Yes, you initially get 15 credits tehn you are bound to upgrade to get more"}

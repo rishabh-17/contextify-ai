@@ -75,7 +75,7 @@ export default function HomePage() {
                     className="border border-gray-500 rounded-3xl px-4 py-5 w-[80%]"
                     placeholder="Get Started for Free"
                   />
-                  <div className="border border-gray-500 rounded-3xl px-4 py-5 bg-purple-900 w-min-[100px]">
+                  <div className="border border-gray-500 rounded-3xl px-4 py-5 bg-purple-900  w-min-[100px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
                     <FaArrowRightLong width={100} height={100} color="white" />
                   </div>
                 </div>

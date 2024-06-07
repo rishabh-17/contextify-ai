@@ -288,7 +288,8 @@ export default function PricingPage() {
         </div>
       </section>
       <FreeTrialArea />
-      <Footer className="pb-24" />
+      <div  className="pb-24">
+      <Footer /></div>
     </div>
   );
 }

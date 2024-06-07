@@ -127,11 +127,16 @@ export default function ClientdashboardPage() {
     }
   };
 
+  function capitalizeFirstLetter(string) {
+    if (!string) return "";
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
   return (
     <>
       <MainLayout active={1} user={user}>
         <div className="w-full mb-4 text-violet-900 h-4 text-lg">
-          Hi, {user?.name}
+          Hi, {capitalizeFirstLetter(user?.name)}
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full py-3">
           <div>
@@ -191,7 +196,7 @@ export default function ClientdashboardPage() {
                     <p className="w-[90px] text-center text-gray-700">
                       use cases
                     </p>
-                    <p className="w-[90px] text-center">4</p>
+                    <p className="w-[90px] text-center">{profile?.usage||0}</p>
                   </div>
                 </div>
 
