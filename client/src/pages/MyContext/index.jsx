@@ -126,7 +126,7 @@ export default function MyContext() {
                       className="overflow-auto h-[160px]"
                       onClick={() =>
                         navigate(
-                          `/contextdetail/${context.type}/ + ${context._id}`
+                          `/contextdetail/${context.type}/${context._id}`
                         )
                       }
                     >

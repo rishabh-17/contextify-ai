@@ -135,15 +135,17 @@ export default function ClientdashboardPage() {
         secret: `${localStorage.getItem("secret")}`,
       },
     };
-    if (!ques) return alert("Please enter a question");
-    else if (!secret && !localStorage.getItem("secret")){
-      setLoading(false)
-      return alert("Please generate a secret key");}
-    else {
+    if (!ques) {
+      setLoading(false);
+      return alert("Please enter a question");
+    } else if (!secret && !localStorage.getItem("secret")) {
+      setLoading(false);
+      return alert("Please generate a secret key");
+    } else {
       axios
         .post(
           (import.meta.env.VITE_BACKEND_URL || "") + "/api/context/save",
-          { question: ques, answer: ans, type: type,},
+          { question: ques, answer: ans, type: type },
           config
         )
         .then(({ data }) => {
@@ -161,7 +163,7 @@ export default function ClientdashboardPage() {
   function capitalizeFirstLetter(string) {
     if (!string) return "";
     return string.charAt(0).toUpperCase() + string.slice(1);
-}
+  }
 
   return (
     <>
@@ -227,7 +229,9 @@ export default function ClientdashboardPage() {
                     <p className="w-[90px] text-center text-gray-700">
                       use cases
                     </p>
-                    <p className="w-[90px] text-center">{profile?.usage||0}</p>
+                    <p className="w-[90px] text-center">
+                      {profile?.usage || 0}
+                    </p>
                   </div>
                 </div>
 
@@ -439,7 +443,7 @@ export default function ClientdashboardPage() {
                     value={ques}
                   ></textarea>
                 </div>
-                
+
                 <button
                   className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-2 w-full hover:-translate-y-1 hover:scale-110"
                   onClick={handleNewContext}
@@ -469,49 +473,51 @@ export default function ClientdashboardPage() {
                   value={ans}
                   onChange={(e) => setAns(e.target.value)}
                 ></textarea>
-                {ans && <div>
-                  <h5 className="font-bold  text-md mb-3">
-                    Select Preferred type
-                  </h5>
-                  <div className="flex gap-2 flex-wrap">
-                    <button
-                      className={
-                        type === 1
-                          ? "bg-purple-900 text-[#fff] text-sm hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
-                          : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
-                      }
-                      onClick={() => setType(1)}
-                    >
-                      Things i know
-                    </button>
-                    <button
-                      className={
-                        type === 2
-                          ? "bg-purple-900 text-[#fff] text-sm hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
-                          : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
-                      }
-                      onClick={() => setType(2)}
-                    >
-                      Notes
-                    </button>
-                    <button
-                      className={
-                        type === 3
-                          ? "bg-purple-900 text-sm text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
-                          : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
-                      }
-                      onClick={() => setType(3)}
-                    >
-                      Future exploration
-                    </button>
-                    <button
-                  className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-2 w-full hover:-translate-y-1 hover:scale-110"
-                  onClick={handleSaveContext}
-                >
-                  Save
-                </button>
+                {ans && (
+                  <div>
+                    <h5 className="font-bold  text-md mb-3">
+                      Select Preferred type
+                    </h5>
+                    <div className="flex gap-2 flex-wrap">
+                      <button
+                        className={
+                          type === 1
+                            ? "bg-purple-900 text-[#fff] text-sm hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                            : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                        }
+                        onClick={() => setType(1)}
+                      >
+                        Things i know
+                      </button>
+                      <button
+                        className={
+                          type === 2
+                            ? "bg-purple-900 text-[#fff] text-sm hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                            : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                        }
+                        onClick={() => setType(2)}
+                      >
+                        Notes
+                      </button>
+                      <button
+                        className={
+                          type === 3
+                            ? "bg-purple-900 text-sm text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                            : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                        }
+                        onClick={() => setType(3)}
+                      >
+                        Future exploration
+                      </button>
+                      <button
+                        className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-2 w-full hover:-translate-y-1 hover:scale-110"
+                        onClick={handleSaveContext}
+                      >
+                        Save
+                      </button>
+                    </div>
                   </div>
-                </div>}
+                )}
               </div>
             </div>
           </div>
