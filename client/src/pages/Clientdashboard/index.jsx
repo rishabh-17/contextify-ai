@@ -24,7 +24,7 @@ export default function ClientdashboardPage() {
   const [secret, setSecret] = React.useState("");
   const [keyShow, setKeyShow] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
-  const [tone, setTone] = useState(1);
+  const [tone, setTone] = useState(0);
   const [type, setType] = useState(1);
   const user = JSON.parse(localStorage.getItem("user"));
   const [ques, setQues] = useState("");

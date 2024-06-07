@@ -11,8 +11,10 @@ export default function AppsPage() {
             <FaWindows className="h-24 w-24 text-purple-900" />
             <div className="flex justify-between w-full items-center">
               <div>
-                <h2 className="text-2xl font-bold">Contextify For Windows</h2>
-                <p>Now Available for windows chrome</p>
+                <h2 className="text-2xl font-bold">Contextify For Chrome</h2>
+                <p>
+                  Now Available for every browser that allows Chrome Extensions.
+                </p>
               </div>
               <button className="bg-purple-900 text-[#fff] h-10 p-2 rounded transition ease-in-out hover:translate-y-1 hover:bg-gray-50 hover:text-[#000]">
                 Install

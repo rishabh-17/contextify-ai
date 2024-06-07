@@ -49,7 +49,12 @@ export default function ContextDetail() {
     <div>
       <MainLayout active={2}>
         <h2 className="font-bold text-xl mt-10">{data.question}</h2>
-        <p className="mt-5">{data.answer}</p>
+
+        <textarea
+          className="w-full p-4 mt-3 h-full border-0"
+          value={data?.answer}
+          disabled
+        ></textarea>
         {data.answer && (
           <section className="my-10 flex gap-8">
             <RWebShare
