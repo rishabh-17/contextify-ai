@@ -14,7 +14,7 @@ export default function AppsPage() {
                 <h2 className="text-2xl font-bold">Contextify For Windows</h2>
                 <p>Now Available for windows chrome</p>
               </div>
-              <button className="bg-purple-900 text-[#fff] h-10 p-2 rounded">
+              <button className="bg-purple-900 text-[#fff] h-10 p-2 rounded transition ease-in-out hover:translate-y-1 hover:bg-gray-50 hover:text-[#000]">
                 Install
               </button>
             </div>
