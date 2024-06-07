@@ -158,39 +158,9 @@ export default function SignUpPage() {
   });
 
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="gap-2 flex items-center justify-center">
       <div className="w-[60%] md:w-[100%] p-5 border-t border-b border-l border-r border-gray-100 rounded-tl-lg rounded-tr-lg">
         <div className="container flex flex-col items-center justify-center px-5 md:px-14 md:py-24">
-          <div className="flex items-center justify-between gap-2 self-stretch sm:flex-col">
-            <div className="flex items-center pl-2">
-              <p className="self-end text-blue_gray-900">
-                English (united States)
-              </p>
-              <img
-                src="images/img_property_1_arrow.svg"
-                alt="propertyone_one"
-                className="h-[24px] w-[24px]"
-              />
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex">
-                <p className="self-end text-gray-700 underline">
-                  <span className="text-blue_gray-900">
-                    Already have an account?
-                  </span>
-                  <span className="text-gray-900_01">&nbsp;&nbsp;</span>
-                </p>
-              </div>
-
-              <button
-                className="min-w-[131px] rounded-md border border-solid border-gray-900_01 text-gray-900_01 sm:px-5 hover:-translate-y-1 hover:scale-110"
-                onClick={() => navigate("/signin")}
-              >
-                Login
-              </button>
-            </div>
-          </div>
-
           <div className="container-xs w-[50%] sm:w-full flex flex-col items-center gap-[10px] rounded-[32px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5  bg-[#fff] shadow-md rounded-xl">
             <Img
               src="images/logo.png"
@@ -335,6 +305,26 @@ export default function SignUpPage() {
               </div>
             </form>
             {error && <p className="text-red-500">{error}</p>}
+          </div>
+
+          <div className="flex items-center justify-center gap-2 self-stretch sm:flex-col">
+            <div className="flex items-center gap-2">
+              <div className="flex">
+                <p className="self-end text-gray-700 underline">
+                  <span className="text-blue_gray-900">
+                    Already have an account?
+                  </span>
+                  <span className="text-gray-900_01">&nbsp;&nbsp;</span>
+                </p>
+              </div>
+
+              <button
+                className="min-w-[131px] rounded-md border border-solid border-gray-900_01 text-gray-900_01 sm:px-5 hover:-translate-y-1 hover:scale-110"
+                onClick={() => navigate("/signin")}
+              >
+                Login
+              </button>
+            </div>
           </div>
         </div>
       </div>

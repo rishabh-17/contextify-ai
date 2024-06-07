@@ -143,30 +143,6 @@ export default function LoginPage() {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center md:min-h-screen">
-      <div className="container flex max-w-3xl mx-auto sm:flex-col items-center justify-between gap-2 self-stretch">
-        <div className="flex items-center pl-2">
-          <p className="self-end text-blue_gray-900">English (united States)</p>
-          <img
-            src="images/img_property_1_arrow.svg"
-            alt="propertyone_one"
-            className="h-[24px] w-[24px]"
-          />
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="flex">
-            <p className="self-end text-gray-700 underline">
-              <span className="text-blue_gray-900">Don't have an account?</span>
-              <span className="text-gray-900_01">&nbsp;&nbsp;</span>
-            </p>
-          </div>
-          <button
-            className="min-w-[131px] rounded-md border border-solid border-gray-900_01 text-gray-900_01 sm:px-5 hover:-translate-y-1 hover:scale-110"
-            onClick={() => navigate("/signup")}
-          >
-            Sign Up
-          </button>
-        </div>
-      </div>
       <div className="w-full max-w-md p-5 flex flex-col items-center justify-center space-y-6 md:p-10">
         <div className="container-xs w-full flex flex-col items-center gap-[10px] rounded-[32px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5  bg-[#fff] shadow-md">
           <Img
@@ -265,6 +241,23 @@ export default function LoginPage() {
             </p>
           </div>
           {error && <p className="text-red-500">{error}</p>}
+        </div>
+      </div>
+
+      <div className="container flex max-w-3xl mx-auto sm:flex-col items-center justify-center gap-2 self-stretch">
+        <div className="flex items-center gap-2">
+          <div className="flex">
+            <p className="self-end text-gray-700 underline">
+              <span className="text-blue_gray-900">Don't have an account?</span>
+              <span className="text-gray-900_01">&nbsp;&nbsp;</span>
+            </p>
+          </div>
+          <button
+            className="min-w-[131px] rounded-md border border-solid border-gray-900_01 text-gray-900_01 sm:px-5 hover:-translate-y-1 hover:scale-110"
+            onClick={() => navigate("/signup")}
+          >
+            Sign Up
+          </button>
         </div>
       </div>
     </div>
