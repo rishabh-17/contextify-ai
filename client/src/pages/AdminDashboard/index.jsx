@@ -76,7 +76,7 @@ export default function AdmindashboardPage() {
                 Dashboard
               </Text>
               <div className="flex w-[95%] gap-[30px] md:w-full md:flex-col">
-                <div className="flex w-full flex-col justify-center gap-[31px] rounded-[14px] bg-white-A700 p-3.5 ">
+                <div className="flex w-full flex-col justify-center gap-[31px] rounded-[14px] bg-white-A700 p-3.5 shadow-md">
                   <div className="flex items-start justify-between gap-5">
                     <div className="flex flex-col items-start gap-[19px]">
                       <Text size="lg" as="p" className="!text-gray-900_b2">
@@ -107,7 +107,7 @@ export default function AdmindashboardPage() {
                     </Text>
                   </div>
                 </div>
-                <div className="flex w-full flex-col justify-center gap-[33px] rounded-[14px] bg-white-A700  p-3.5">
+                <div className="flex w-full flex-col justify-center gap-[33px] rounded-[14px] bg-white-A700  p-3.5 shadow-md">
                   <div className="flex items-start justify-between gap-5">
                     <div className="flex flex-col items-start gap-[17px]">
                       <Text size="lg" as="p" className="!text-gray-900_b2">
@@ -138,7 +138,7 @@ export default function AdmindashboardPage() {
                     </Text>
                   </div>
                 </div>
-                <div className="flex w-full flex-col items-center justify-center gap-8 rounded-[14px] bg-white-A700 p-3.5 ">
+                <div className="flex w-full flex-col items-center justify-center gap-8 rounded-[14px] bg-white-A700 p-3.5 shadow-md">
                   <div className="flex items-start justify-between gap-5 self-stretch">
                     <div className="flex flex-col items-start gap-[18px]">
                       <Text size="lg" as="p" className="!text-gray-900_b2">
@@ -169,7 +169,7 @@ export default function AdmindashboardPage() {
                     </Text>
                   </div>
                 </div>
-                <div className="flex w-full flex-col gap-[33px] rounded-[14px] bg-white-A700 p-4 ">
+                <div className="flex w-full flex-col gap-[33px] rounded-[14px] bg-white-A700 p-4 shadow-md">
                   <div className="flex items-start justify-between gap-5">
                     <div className="flex flex-col items-start gap-[15px]">
                       <Text size="lg" as="p" className="!text-gray-900_b2">
@@ -201,7 +201,7 @@ export default function AdmindashboardPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-[95%] flex-col gap-10 rounded-[14px] bg-white-A700 p-8  md:w-full sm:p-5">
+              <div className="flex w-[95%] flex-col gap-10 rounded-[14px] bg-white-A700 p-8  md:w-full sm:p-5 shadow-md">
                 <div className="flex items-center justify-between gap-5">
                   <Text size="3xl" as="p" className="self-end">
                     Api calls
