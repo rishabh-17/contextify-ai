@@ -14,6 +14,9 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import { RxDashboard } from "react-icons/rx";
 import { FaRegStar } from "react-icons/fa";
 import { LuFileStack } from "react-icons/lu";
+import { GoGear } from "react-icons/go";
+import { RxAvatar } from "react-icons/rx";
+
 export default function ClientdashboardPage({ active, children }) {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -203,10 +206,10 @@ export default function ClientdashboardPage({ active, children }) {
                         className="py-2 text-md text-purple-900 dark:text-gray-200"
                         aria-labelledby="dropdownInformationButton"
                       >
-                        <li onClick={() => navigate("/dashboard")}>
+                        <li onClick={() => navigate("/profile")}>
                           <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
-                            <RxDashboard className="h-4 w-4" />
-                            Dashboard
+                            <RxAvatar className="h-4 w-4" />
+                            Profile
                           </a>
                         </li>
                         <li onClick={() => navigate("/subscription")}>
@@ -220,8 +223,8 @@ export default function ClientdashboardPage({ active, children }) {
                             href="#"
                             className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900"
                           >
-                            <MdOutlineContactSupport className="h-4 w-4" />
-                            Support
+                            <GoGear className="h-4 w-4" />
+                            Setting
                           </a>
                         </li>
                         <li

@@ -10,14 +10,12 @@ const openai = new OpenAI({
 
 exports.getContext = async (req, res) => {
   let { text, isImg } = req.body;
-  console.log(text);
+ if (!isImg) {
   if (text?.length > 0) {
     const prompt = [
       {
         role: "user",
-        content: `Please provide context for the following ${
-          isImg ? "image" : "text"
-        } ${text}. The context should include:
+        content: `Please provide context for the following ${text}. The context should include:
         Phrase/word highlighted: Identify and highlight the key phrase or word that requires context.
         Short paragraph of details on the subject: Provide a brief explanation or description of the highlighted phrase or word.
         Bullet point list of basic info: Include as much of the following information as applicable:
@@ -61,6 +59,25 @@ exports.getContext = async (req, res) => {
         // });
         res.status(500).json({ success: false, err: err });
       });
+  } else {
+    openai.chat.completions
+      .create({
+        model="gpt-4o",
+        messages=[
+            {
+              "role": "user",
+              "content": [
+                {"type": "text", "text": "What’s in this image?"},
+                {
+                  "type": "image_url",
+                  "image_url": {
+                    "url": text,
+                  },
+                },
+              ],
+            }
+  ]
+      })
   }
 };
 
