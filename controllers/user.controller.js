@@ -58,17 +58,31 @@ exports.login = async (req, res, next) => {
             }
 
             if (e) {
-              res.json({
-                msg: "login successful",
-                login: true,
-                user,
-                token: getAccessToken(
-                  user.id,
-                  user.name,
-                  user.isPremiumUser,
-                  user.email
-                ),
-              });
+              if (user.premiumType === "admin") {
+                res.json({
+                  msg: "login successful",
+                  login: true,
+                  user,
+                  authToken: getAccessToken(
+                    user.id,
+                    user.name,
+                    user.premiumType,
+                    user.email
+                  ),
+                });
+              } else {
+                res.json({
+                  msg: "login successful",
+                  login: true,
+                  user,
+                  token: getAccessToken(
+                    user.id,
+                    user.name,
+                    user.isPremiumUser,
+                    user.email
+                  ),
+                });
+              }
             }
           })
           .catch((err) => {

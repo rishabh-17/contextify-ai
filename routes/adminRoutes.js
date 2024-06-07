@@ -20,4 +20,9 @@ router.get(
   AuthMiddleware.userAuthentication,
   adminController.getApiHistory
 );
+router.delete(
+  "/user/:id",
+  AuthMiddleware.userAuthentication,
+  adminController.deleteUser
+);
 module.exports = router;

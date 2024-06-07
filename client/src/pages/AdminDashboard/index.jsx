@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { CloseSVG } from "../../assets/images";
 import { Text, Img, SelectBox, Input } from "../../components";
-import MainLayout from "../../components/MainLayout";
+import AdminLayout from "../../components/AdminLayout";
 import axios from "axios";
 import Chart from "react-apexcharts";
 import { LoadingContext } from "../../App";
@@ -17,35 +17,37 @@ export default function AdmindashboardPage() {
   const [users, setUsers] = React.useState([]);
   const [apiHistory, setApiHistory] = React.useState([]);
   const [info, setInfo] = React.useState({});
+  const setLoading = useContext(LoadingContext);
 
   React.useEffect(() => {
-    const config = {
-      headers: {
-        authentication: `${localStorage.getItem("token")}`,
-      },
-    };
     const fetchUsers = async () => {
+      setLoading(true);
       const { data } = await axios.get(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/admin/users",
-        config
+        { headers: { authentication: `${localStorage.getItem("admintoken")}` } }
       );
       setUsers(data.data);
+      setLoading(false);
     };
 
     const fetchApiHistory = async () => {
+      setLoading(true);
       const { data } = await axios.get(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/admin/apihistory",
-        config
+        { headers: { authentication: `${localStorage.getItem("admintoken")}` } }
       );
       setApiHistory(data.data);
+      setLoading(false);
     };
 
     const fetchInfo = async () => {
+      setLoading(true);
       const { data } = await axios.get(
         (import.meta.env.VITE_BACKEND_URL || "") + "/api/admin/info",
-        config
+        { headers: { authentication: `${localStorage.getItem("admintoken")}` } }
       );
       setInfo(data.data);
+      setLoading(false);
     };
 
     fetchUsers();
@@ -55,7 +57,7 @@ export default function AdmindashboardPage() {
 
   return (
     <>
-      <MainLayout>
+      <AdminLayout active={1}>
         <Helmet>
           <title>admin</title>
           <meta
@@ -63,7 +65,7 @@ export default function AdmindashboardPage() {
             content="Web site created using create-react-app"
           />
         </Helmet>
-        <div className="flex w-full justify-center overflow-auto bg-gray-100 md:flex-col">
+        <div className="flex w-full justify-center overflow-auto bg-gray-100 rounded md:flex-col p-4 backdrop-blur-md">
           <div className="w-full min-h-screen md:h-auto md:pb-5">
             <div className="flex flex-col items-center gap-[30px]">
               <Text
@@ -74,14 +76,14 @@ export default function AdmindashboardPage() {
                 Dashboard
               </Text>
               <div className="flex w-[95%] gap-[30px] md:w-full md:flex-col">
-                <div className="flex w-full flex-col justify-center gap-[31px] rounded-[14px] bg-white-A700 p-3.5 shadow-xs">
+                <div className="flex w-full flex-col justify-center gap-[31px] rounded-[14px] bg-white-A700 p-3.5 ">
                   <div className="flex items-start justify-between gap-5">
                     <div className="flex flex-col items-start gap-[19px]">
                       <Text size="lg" as="p" className="!text-gray-900_b2">
-                        Total User
+                        Total API calls
                       </Text>
                       <Text size="6xl" as="p" className="tracking-[1.00px]">
-                        40,689
+                        {history.length}
                       </Text>
                     </div>
                     <Img
@@ -105,14 +107,14 @@ export default function AdmindashboardPage() {
                     </Text>
                   </div>
                 </div>
-                <div className="flex w-full flex-col justify-center gap-[33px] rounded-[14px] bg-white-A700 p-3.5 shadow-xs">
+                <div className="flex w-full flex-col justify-center gap-[33px] rounded-[14px] bg-white-A700  p-3.5">
                   <div className="flex items-start justify-between gap-5">
                     <div className="flex flex-col items-start gap-[17px]">
                       <Text size="lg" as="p" className="!text-gray-900_b2">
                         Total Premium
                       </Text>
                       <Text size="6xl" as="p" className="tracking-[1.00px]">
-                        10293
+                        {users.filter((i) => i.totalReq > 15).length || 0}
                       </Text>
                     </div>
                     <Img
@@ -136,14 +138,14 @@ export default function AdmindashboardPage() {
                     </Text>
                   </div>
                 </div>
-                <div className="flex w-full flex-col items-center justify-center gap-8 rounded-[14px] bg-white-A700 p-3.5 shadow-xs">
+                <div className="flex w-full flex-col items-center justify-center gap-8 rounded-[14px] bg-white-A700 p-3.5 ">
                   <div className="flex items-start justify-between gap-5 self-stretch">
                     <div className="flex flex-col items-start gap-[18px]">
                       <Text size="lg" as="p" className="!text-gray-900_b2">
                         Total Sales
                       </Text>
                       <Text size="6xl" as="p" className="tracking-[1.00px]">
-                        $89,000
+                        $0.00
                       </Text>
                     </div>
                     <Img
@@ -167,14 +169,14 @@ export default function AdmindashboardPage() {
                     </Text>
                   </div>
                 </div>
-                <div className="flex w-full flex-col gap-[33px] rounded-[14px] bg-white-A700 p-4 shadow-xs">
+                <div className="flex w-full flex-col gap-[33px] rounded-[14px] bg-white-A700 p-4 ">
                   <div className="flex items-start justify-between gap-5">
                     <div className="flex flex-col items-start gap-[15px]">
                       <Text size="lg" as="p" className="!text-gray-900_b2">
                         Total Sign Ups
                       </Text>
                       <Text size="6xl" as="p" className="tracking-[1.00px]">
-                        2040
+                        {users?.length || 0}
                       </Text>
                     </div>
                     <Img
@@ -199,7 +201,7 @@ export default function AdmindashboardPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-[95%] flex-col gap-10 rounded-[14px] bg-white-A700 p-8 shadow-xs md:w-full sm:p-5">
+              <div className="flex w-[95%] flex-col gap-10 rounded-[14px] bg-white-A700 p-8  md:w-full sm:p-5">
                 <div className="flex items-center justify-between gap-5">
                   <Text size="3xl" as="p" className="self-end">
                     Api calls
@@ -218,7 +220,7 @@ export default function AdmindashboardPage() {
             </div>
           </div>
         </div>
-      </MainLayout>
+      </AdminLayout>
     </>
   );
 }

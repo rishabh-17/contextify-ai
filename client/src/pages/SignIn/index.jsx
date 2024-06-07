@@ -77,8 +77,12 @@ export default function LoginPage() {
       } else {
         if (data.authToken) {
           localStorage.setItem("admintoken", data.authToken);
+          let user = parseJwt(data.authToken);
+          localStorage.setItem("user", JSON.stringify(user));
           setLoading(false);
-          navigate("/");
+          console.log("first");
+          navigate("/admindashboard");
+          console.log(456789);
         } else if (data.token) {
           localStorage.setItem("token", data.token);
           let user = parseJwt(data.token);

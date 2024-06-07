@@ -18,6 +18,7 @@ import Subscription from "pages/Subscription";
 import MyContext from "pages/MyContext";
 import ContextDetail from "pages/ContextDetail";
 import Support from "pages/Support";
+import AllUsers from "pages/AllUsers";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -83,6 +84,10 @@ const ProjectRoutes = () => {
     {
       path: "contextdetail/:type/:id",
       element: <ContextDetail />,
+    },
+    {
+      path: "allusers",
+      element: <AllUsers />,
     },
 
     { path: "*", element: <NotFound /> },
