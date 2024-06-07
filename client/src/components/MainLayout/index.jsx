@@ -20,6 +20,12 @@ import { RxAvatar } from "react-icons/rx";
 
 function OutsideClick(ref) {
   const [isClicked, setIsClicked] = useState();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/login");
+    }
+  }, []);
   useEffect(() => {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -251,6 +257,24 @@ export default function ClientdashboardPage({ active, children }) {
                             className="py-2 text-md text-purple-900 dark:text-gray-200"
                             aria-labelledby="dropdownInformationButton"
                           >
+                            <li onClick={() => navigate("/dashboard")}>
+                              <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900 hidden sm:flex">
+                                <RxDashboard className="h-4 w-4" />
+                                Dashboard
+                              </a>
+                            </li>
+                            <li onClick={() => navigate("/mycontext")}>
+                              <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900 hidden sm:flex">
+                                <LuFileStack className="h-4 w-4" />
+                                My Context
+                              </a>
+                            </li>
+                            <li onClick={() => navigate("/apps")}>
+                              <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900 hidden sm:flex">
+                                <IoCubeOutline className="h-4 w-4" />
+                                Apps
+                              </a>
+                            </li>
                             <li onClick={() => navigate("/profile")}>
                               <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
                                 <RxAvatar className="h-4 w-4" />
@@ -258,9 +282,18 @@ export default function ClientdashboardPage({ active, children }) {
                               </a>
                             </li>
                             <li onClick={() => navigate("/subscription")}>
-                              <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
+                              <a className="px-4 py-2 flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900 hidden sm:flex ">
                                 <FaRegStar className="h-4 w-4" />
                                 Subscription
+                              </a>
+                            </li>
+                            <li onClick={() => navigate("/support")}>
+                              <a
+                                href="#"
+                                className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900"
+                              >
+                                <MdOutlineContactSupport className="h-4 w-4" />
+                                Support
                               </a>
                             </li>
                             <li onClick={() => navigate("/support")}>

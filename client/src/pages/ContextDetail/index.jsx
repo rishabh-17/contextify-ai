@@ -3,15 +3,21 @@ import MainLayout from "../../components/MainLayout";
 import { RWebShare } from "react-web-share";
 import { IoMdShare } from "react-icons/io";
 import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { LoadingContext } from "../../App";
 import axios from "axios";
 export default function ContextDetail() {
   const { id, type } = useParams();
   const [data, setData] = useState({});
   const location = useLocation();
+  const navigate = useNavigate();
   console.log(id, type);
   const setLoading = useContext(LoadingContext);
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/login");
+    }
+  }, []);
 
   useEffect(() => {
     const config = {
