@@ -125,9 +125,7 @@ export default function MyContext() {
                     <div
                       className="overflow-auto h-[160px]"
                       onClick={() =>
-                        navigate(
-                          `/contextdetail/${context.type}/${context._id}`
-                        )
+                        navigate(`/contextdetail/saved/${context._id}`)
                       }
                     >
                       <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
