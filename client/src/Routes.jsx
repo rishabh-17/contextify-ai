@@ -19,6 +19,7 @@ import MyContext from "pages/MyContext";
 import ContextDetail from "pages/ContextDetail";
 import Support from "pages/Support";
 import AllUsers from "pages/AllUsers";
+import AppsPage from "pages/AppsPage";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -88,6 +89,10 @@ const ProjectRoutes = () => {
     {
       path: "allusers",
       element: <AllUsers />,
+    },
+    {
+      path: "apps",
+      element: <AppsPage />,
     },
 
     { path: "*", element: <NotFound /> },

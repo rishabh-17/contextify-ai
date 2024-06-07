@@ -4,6 +4,7 @@ import { CloseSVG } from "../../assets/images";
 import { Text, Img, Input, Button } from "..";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineContactSupport } from "react-icons/md";
+import { IoCubeOutline } from "react-icons/io5";
 import { IoPowerSharp } from "react-icons/io5";
 import { IoSettingsOutline } from "react-icons/io5";
 import { TbMessageReport } from "react-icons/tb";
@@ -27,24 +28,22 @@ function OutsideClick(ref) {
         setIsClicked(false);
       }
     }
-  
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [ref]);
-    return isClicked;
-  }
-  
+  return isClicked;
+}
 
 export default function ClientdashboardPage({ active, children }) {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
   const boxRef = useRef(null);
-// boxOutsideClick will be true on outside click
-  const boxOutsideClick = OutsideClick(boxRef); 
-
+  // boxOutsideClick will be true on outside click
+  const boxOutsideClick = OutsideClick(boxRef);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -54,7 +53,7 @@ export default function ClientdashboardPage({ active, children }) {
     if (boxOutsideClick) {
       setIsDropdownOpen(false);
     }
-  }, [boxOutsideClick])
+  }, [boxOutsideClick]);
   return (
     <>
       <div className="h-screen overflow-hidden">
@@ -110,6 +109,17 @@ export default function ClientdashboardPage({ active, children }) {
                 <FaRegStar className="h-6 w-6" />
                 Premium
               </li>
+              <li
+                className={
+                  active === 5
+                    ? "text-md p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
+                    : "text-md p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110"
+                }
+                onClick={() => navigate("/apps")}
+              >
+                <IoCubeOutline className="h-6 w-6" />
+                Apps
+              </li>
             </ul>
             <ul className="text-md">
               <li
@@ -148,9 +158,11 @@ export default function ClientdashboardPage({ active, children }) {
                 <IoPowerSharp className="h-8 w-8" />
                 <div>
                   <p>Sign out</p>
-                  <p className="text-xs">{user?.email?.length > 30
-                              ? user?.email?.slice(0, 30) + "..."
-                              : user?.email}</p>
+                  <p className="text-xs">
+                    {user?.email?.length > 30
+                      ? user?.email?.slice(0, 30) + "..."
+                      : user?.email}
+                  </p>
                 </div>
               </li>
             </ul>
@@ -209,72 +221,75 @@ export default function ClientdashboardPage({ active, children }) {
                       <IoIosArrowDropdown className="h-6 w-6" />
                     </button>
                     {/* Dropdown menu */}
-                    {isDropdownOpen && <div
-                      id="dropdownInformation"
-                      
-                      className={`absolute bg-[#fff] w-[230px] right-5 top-[70px] z-10 ${
-                        isDropdownOpen ? "" : "hidden"
-                      } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}  ref={boxRef}
-                    >
-                      <div>
-                      <div className=" flex flex-row flex-wrap gap-3 items-center px-1 py-3 text-sm text-purple-900 dark:text-white">
-                        {/* <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
+                    {isDropdownOpen && (
+                      <div
+                        id="dropdownInformation"
+                        className={`absolute bg-[#fff] w-[230px] right-5 top-[70px] z-10 ${
+                          isDropdownOpen ? "" : "hidden"
+                        } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                        ref={boxRef}
+                      >
+                        <div>
+                          <div className=" flex flex-row flex-wrap gap-3 items-center px-1 py-3 text-sm text-purple-900 dark:text-white">
+                            {/* <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
                           <img
                             src="../../../public/images/Image.png"
                             alt="profile"
                             className="h-6 shadow-xl"
                           />
                         </div> */}
-                        <a onClick={() => navigate("/profile")}>
-                          {/* <p>Profile</p> */}
-                          <div className="font-sm truncate">
-                            {user?.email?.length > 20
-                              ? user?.email?.slice(0, 20) + "..."
-                              : user?.email}
+                            <a onClick={() => navigate("/profile")}>
+                              {/* <p>Profile</p> */}
+                              <div className="font-sm truncate">
+                                {user?.email?.length > 20
+                                  ? user?.email?.slice(0, 20) + "..."
+                                  : user?.email}
+                              </div>
+                            </a>
                           </div>
-                        </a>
+                          <ul
+                            className="py-2 text-md text-purple-900 dark:text-gray-200"
+                            aria-labelledby="dropdownInformationButton"
+                          >
+                            <li onClick={() => navigate("/profile")}>
+                              <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
+                                <RxAvatar className="h-4 w-4" />
+                                Profile
+                              </a>
+                            </li>
+                            <li onClick={() => navigate("/subscription")}>
+                              <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
+                                <FaRegStar className="h-4 w-4" />
+                                Subscription
+                              </a>
+                            </li>
+                            <li onClick={() => navigate("/support")}>
+                              <a
+                                href="#"
+                                className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900"
+                              >
+                                <GoGear className="h-4 w-4" />
+                                Setting
+                              </a>
+                            </li>
+                            <li
+                              onClick={() => {
+                                localStorage.clear();
+                                navigate("/");
+                              }}
+                            >
+                              <a
+                                href="#"
+                                className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900"
+                              >
+                                <IoPowerSharp className="h-4 w-4" />
+                                Sign out
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                      <ul
-                        className="py-2 text-md text-purple-900 dark:text-gray-200"
-                        aria-labelledby="dropdownInformationButton"
-                      >
-                        <li onClick={() => navigate("/profile")}>
-                          <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
-                            <RxAvatar className="h-4 w-4" />
-                            Profile
-                          </a>
-                        </li>
-                        <li onClick={() => navigate("/subscription")}>
-                          <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
-                            <FaRegStar className="h-4 w-4" />
-                            Subscription
-                          </a>
-                        </li>
-                        <li onClick={() => navigate("/support")}>
-                          <a
-                            href="#"
-                            className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900"
-                          >
-                            <GoGear className="h-4 w-4" />
-                            Setting
-                          </a>
-                        </li>
-                        <li
-                          onClick={() => {
-                            localStorage.clear();
-                            navigate("/");
-                          }}
-                        >
-                          <a
-                            href="#"
-                            className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900"
-                          >
-                            <IoPowerSharp className="h-4 w-4" />
-                            Sign out
-                          </a>
-                        </li>
-                      </ul></div>
-                    </div>}
+                    )}
                   </div>
                 </div>
               </div>

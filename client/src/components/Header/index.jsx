@@ -68,9 +68,7 @@ export default function Header({ ...props }) {
                   }
                 }}
               >
-                {localStorage.getItem("token")
-                  ? "Dashboard"
-                  : "Getting Started"}
+                {localStorage.getItem("token") ? "Dashboard" : "Get Started"}
               </Button>
             </div>
           </div>
@@ -129,9 +127,7 @@ export default function Header({ ...props }) {
                     }
                   }}
                 >
-                  {localStorage.getItem("token")
-                    ? "Dashboard"
-                    : "Getting Started"}
+                  {localStorage.getItem("token") ? "Dashboard" : "Get Started"}
                 </Button>
               </div>
             </aside>

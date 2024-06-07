@@ -161,7 +161,7 @@ export default function SignUpPage() {
     <div className="gap-2 flex items-center justify-center">
       <div className="w-[60%] md:w-[100%] p-5 border-t border-b border-l border-r border-gray-100 rounded-tl-lg rounded-tr-lg">
         <div className="container flex flex-col items-center justify-center px-5 md:px-14 md:py-24">
-          <div className="container-xs w-[50%] sm:w-full flex flex-col items-center gap-[10px] rounded-[32px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5  bg-[#fff] shadow-md rounded-xl">
+          <div className="container-xs w-[50%] sm:w-full flex flex-col items-center gap-[10px] border border-solid  m-4 border-gray-700 p-5 pt-1 md:p-5  bg-[#fff] shadow-md rounded-xl">
             <Img
               src="images/logo.png"
               // src="images/img_frame_purple_900.svg"
