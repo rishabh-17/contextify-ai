@@ -43,21 +43,11 @@ export default function Subscription() {
                 Popular
               </div>
             </div>
-            <div className="flex flex-col gap-4 items-center">
-              <h2>
-                <span className="text-3xl font-bold">$7.99</span> / month
-              </h2>
-              <div className="text-orange-500 bg-yellow-100 rounded-full p-2 px-4 w-fit">
-                Billed as $96 per year
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <p>Unlimited members</p>
-              <p>Unlimited feedback</p>
-              <p>Weekly team Feedback Friday</p>
-              <p>Custom Kudos +9 illustration</p>
-              <p>Team feedback history</p>
-            </div>
+           
+            <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-100 dark:text-white">Min-max range</label>
+            <input id="minmax-range" type="range" min="20" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+
+            
             <div>
               <button className="text-purple-900 bg-[#fff] rounded-full px-4 py-2">
                 Get Started

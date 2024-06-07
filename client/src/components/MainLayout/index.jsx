@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { CloseSVG } from "../../assets/images";
 import { Text, Img, Input, Button } from "..";
@@ -17,14 +17,44 @@ import { LuFileStack } from "react-icons/lu";
 import { GoGear } from "react-icons/go";
 import { RxAvatar } from "react-icons/rx";
 
+function OutsideClick(ref) {
+  const [isClicked, setIsClicked] = useState();
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsClicked(true);
+      } else {
+        setIsClicked(false);
+      }
+    }
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+    return isClicked;
+  }
+  
+
 export default function ClientdashboardPage({ active, children }) {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
+  const boxRef = useRef(null);
+// boxOutsideClick will be true on outside click
+  const boxOutsideClick = OutsideClick(boxRef); 
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  useEffect(() => {
+    if (boxOutsideClick) {
+      setIsDropdownOpen(false);
+    }
+  }, [boxOutsideClick])
   return (
     <>
       <div className="h-screen overflow-hidden">
@@ -179,22 +209,24 @@ export default function ClientdashboardPage({ active, children }) {
                       <IoIosArrowDropdown className="h-6 w-6" />
                     </button>
                     {/* Dropdown menu */}
-                    <div
+                    {isDropdownOpen && <div
                       id="dropdownInformation"
+                      
                       className={`absolute bg-[#fff] w-[230px] right-5 top-[70px] z-10 ${
                         isDropdownOpen ? "" : "hidden"
-                      } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                      } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}  ref={boxRef}
                     >
+                      <div>
                       <div className=" flex flex-row flex-wrap gap-3 items-center px-1 py-3 text-sm text-purple-900 dark:text-white">
-                        <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
+                        {/* <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
                           <img
                             src="../../../public/images/Image.png"
                             alt="profile"
                             className="h-6 shadow-xl"
                           />
-                        </div>
+                        </div> */}
                         <a onClick={() => navigate("/profile")}>
-                          <p>Profile</p>
+                          {/* <p>Profile</p> */}
                           <div className="font-sm truncate">
                             {user?.email?.length > 20
                               ? user?.email?.slice(0, 20) + "..."
@@ -241,8 +273,8 @@ export default function ClientdashboardPage({ active, children }) {
                             Sign out
                           </a>
                         </li>
-                      </ul>
-                    </div>
+                      </ul></div>
+                    </div>}
                   </div>
                 </div>
               </div>
