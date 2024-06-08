@@ -428,7 +428,7 @@ export default function HomePage() {
                 onClick={() =>
                   setSelected({
                     img: "img_photo_2.png",
-                    description: "I love using contextify for my context2.",
+                    description: "I love using contextify for my context.",
                     name: "Jhon Snow",
                     title: "Tester",
                   })
@@ -460,7 +460,7 @@ export default function HomePage() {
                 onClick={() =>
                   setSelected({
                     img: "img_group_2.png",
-                    description: "I love using contextify for my context3.",
+                    description: "I love using contextify for my context.",
                     name: "Tony Stark",
                     title: "Iron Man",
                   })
@@ -478,7 +478,7 @@ export default function HomePage() {
                 onClick={() =>
                   setSelected({
                     img: "img_group_3.png",
-                    description: "I love using contextify for my context4.",
+                    description: "I love using contextify for my context.",
                     name: "Steve Rogers",
                     title: "Captain",
                   })
@@ -496,7 +496,7 @@ export default function HomePage() {
                 onClick={() =>
                   setSelected({
                     img: "img_photo_44x41.png",
-                    description: "I love using contextify for my context5.",
+                    description: "I love using contextify for my context.",
                     name: "Robin Hood",
                     title: "BDM",
                   })

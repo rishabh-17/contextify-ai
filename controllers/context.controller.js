@@ -9,24 +9,188 @@ const openai = new OpenAI({
 });
 
 exports.getContext = async (req, res) => {
-  let { text, isImg } = req.body;
+  let { text, isImg, tone } = req.body;
   if (!isImg) {
     if (text?.length > 0) {
-      const prompt = [
+      let prompt = [
         {
           role: "user",
-          content: `Please provide context for the following ${text}. The context should include:
-        Phrase/word highlighted: Identify and highlight the key phrase or word that requires context.
-        Short paragraph of details on the subject: Provide a brief explanation or description of the highlighted phrase or word.
-        Bullet point list of basic info: Include as much of the following information as applicable:
-        Who: Identify the person or group associated with the subject.
-        Why: Explain the reason or significance behind the subject.
-        What: Describe what the subject is or what is happening.
-        How: Explain the process or method involved.
-        Where: Specify the location or setting relevant to the subject.
-        When: Provide the time frame or period associated with the subject.`,
+          content: `You are a highly advanced AI with the capability to search and provide comprehensive information on various topics. For the following query, please expand your search beyond social media platforms and include relevant context from diverse and reputable sources. Ensure to cite multiple sources wherever possible.
+
+          Query: ${text}
+          
+          Guidelines:
+          
+          Expand Searches Beyond Social Media: Look for information from news articles, academic journals, official reports, and other reputable sources.
+          Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
+          Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
+          Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
+          
+          Please provide context in the following format. The context should include:
+          
+          Highlighted word: Identify and highlight the key phrase or word that requires context.
+          Description: Provide a detailed explanation or description of the highlighted word.
+          More details: Include as much of the following information as applicable:
+          Who: Identify the person or group associated with the subject.
+          Why: Explain the reason or significance behind the subject.
+          What: Describe what the subject is or what is happening.
+          How: Explain the process or method involved.
+          Where: Specify the location or setting relevant to the subject.
+          When: Provide the time frame or period associated with the subject.`,
         },
       ];
+
+      if (tone===1) {
+         prompt = [
+          {
+            role: "user",
+            content: `You are a highly advanced AI with the capability to search and provide comprehensive information on various topics. 
+            For the following query, please expand your search beyond social media platforms and include relevant context from diverse and reputable sources. 
+            Ensure to cite multiple sources wherever possible. Craft your response in a professional and formal tone.
+
+            Query: ${text}
+            
+            Guidelines:
+            
+            Expand Searches Beyond Social Media: Look for information from news articles, academic journals, official reports, and other reputable sources.
+            Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
+            Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
+            Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
+            
+            Please provide context in the following format. The context should include:
+            
+            Highlighted word: Identify and highlight the key phrase or word that requires context.
+            Description: Provide a detailed explanation or description of the highlighted word.
+            More details: Include as much of the following information as applicable:
+            Who: Identify the person or group associated with the subject.
+            Why: Explain the reason or significance behind the subject.
+            What: Describe what the subject is or what is happening.
+            How: Explain the process or method involved.
+            Where: Specify the location or setting relevant to the subject.
+            When: Provide the time frame or period associated with the subject.`,
+          },
+        ];
+      } else if (tone===2) {
+        prompt = [
+          {
+            role: "user",
+            content: `You are a highly advanced AI with the capability to search and provide comprehensive information on various topics. 
+            For the following query, please expand your search beyond social media platforms and include relevant context from diverse and reputable sources. 
+            Ensure to cite multiple sources wherever possible. Craft your response in a cheeky and humorous tone.
+
+            Query: ${text}
+            
+            Guidelines:
+            
+            Expand Searches Beyond Social Media: Look for information from news articles, academic journals, official reports, and other reputable sources.
+            Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
+            Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
+            Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
+            
+            Please provide context in the following format. The context should include:
+            
+            Highlighted word: Identify and highlight the key phrase or word that requires context.
+            Description: Provide a detailed explanation or description of the highlighted word.
+            More details: Include as much of the following information as applicable:
+            Who: Identify the person or group associated with the subject.
+            Why: Explain the reason or significance behind the subject.
+            What: Describe what the subject is or what is happening.
+            How: Explain the process or method involved.
+            Where: Specify the location or setting relevant to the subject.
+            When: Provide the time frame or period associated with the subject.`,
+          },
+        ];
+      } else if (tone===3) {
+        prompt = [
+          {
+            role: "user",
+            content: `You are a highly advanced AI with the capability to search and provide comprehensive information on various topics. 
+            For the following query, please expand your search beyond social media platforms and include relevant context from diverse and reputable sources. 
+            Ensure to cite multiple sources wherever possible. Craft your response in a conversational and engaging tone.
+
+            Query: ${text}
+            
+            Guidelines:
+            
+            Expand Searches Beyond Social Media: Look for information from news articles, academic journals, official reports, and other reputable sources.
+            Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
+            Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
+            Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
+            
+            Please provide context in the following format. The context should include:
+            
+            Highlighted word: Identify and highlight the key phrase or word that requires context.
+            Description: Provide a detailed explanation or description of the highlighted word.
+            More details: Include as much of the following information as applicable:
+            Who: Identify the person or group associated with the subject.
+            Why: Explain the reason or significance behind the subject.
+            What: Describe what the subject is or what is happening.
+            How: Explain the process or method involved.
+            Where: Specify the location or setting relevant to the subject.
+            When: Provide the time frame or period associated with the subject.`,
+          },
+        ];
+      } else if (tone===4) {
+        prompt = [
+          {
+            role: "user",
+            content: `You are a highly advanced AI with the capability to search and provide comprehensive information on various topics. 
+            For the following query, please expand your search beyond social media platforms and include relevant context from diverse and reputable sources. 
+            Ensure to cite multiple sources wherever possible. Craft your response in an exciting and cheerful tone.
+
+            Query: ${text}
+            
+            Guidelines:
+            
+            Expand Searches Beyond Social Media: Look for information from news articles, academic journals, official reports, and other reputable sources.
+            Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
+            Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
+            Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
+            
+            Please provide context in the following format. The context should include:
+            
+            Highlighted word: Identify and highlight the key phrase or word that requires context.
+            Description: Provide a detailed explanation or description of the highlighted word.
+            More details: Include as much of the following information as applicable:
+            Who: Identify the person or group associated with the subject.
+            Why: Explain the reason or significance behind the subject.
+            What: Describe what the subject is or what is happening.
+            How: Explain the process or method involved.
+            Where: Specify the location or setting relevant to the subject.
+            When: Provide the time frame or period associated with the subject.`,
+          },
+        ];
+      } else if (tone===5) {
+        prompt = [
+          {
+            role: "user",
+            content: `You are a highly advanced AI with the capability to search and provide comprehensive information on various topics. 
+            For the following query, please expand your search beyond social media platforms and include relevant context from diverse and reputable sources. 
+            Ensure to cite multiple sources wherever possible. Craft your response in a kid friendly tone suitable for children to understand.
+
+            Query: ${text}
+            
+            Guidelines:
+            
+            Expand Searches Beyond Social Media: Look for information from news articles, academic journals, official reports, and other reputable sources.
+            Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
+            Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
+            Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
+            
+            Please provide context in the following format. The context should include:
+            
+            Highlighted word: Identify and highlight the key phrase or word that requires context.
+            Description: Provide a detailed explanation or description of the highlighted word.
+            More details: Include as much of the following information as applicable:
+            Who: Identify the person or group associated with the subject.
+            Why: Explain the reason or significance behind the subject.
+            What: Describe what the subject is or what is happening.
+            How: Explain the process or method involved.
+            Where: Specify the location or setting relevant to the subject.
+            When: Provide the time frame or period associated with the subject.`,
+          },
+        ];
+      } 
 
       openai.chat.completions
         .create({
@@ -70,16 +234,28 @@ exports.getContext = async (req, res) => {
             content: [
               {
                 type: "text",
-                text: `Please provide context for the following image. The context should include:
-        Phrase/word highlighted: Identify and highlight the key phrase or word that requires context.
-        Short paragraph of details on the subject: Provide a brief explanation or description of the highlighted phrase or word.
-        Bullet point list of basic info: Include as much of the following information as applicable:
-        Who: Identify the person or group associated with the subject.
-        Why: Explain the reason or significance behind the subject.
-        What: Describe what the subject is or what is happening.
-        How: Explain the process or method involved.
-        Where: Specify the location or setting relevant to the subject.
-        When: Provide the time frame or period associated with the subject`,
+                text: `You are a highly advanced AI with the capability to search and provide comprehensive information on various topics. 
+                For the following image, please expand your search beyond social media platforms and include relevant context from diverse and reputable sources. 
+                Ensure to cite multiple sources wherever possible.
+                
+                Guidelines:
+                
+                Expand Searches Beyond Social Media: Look for information from news articles, academic journals, official reports, and other reputable sources.
+                Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
+                Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
+                Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
+                
+                Please provide context in the following format. The context should include:
+                
+                Highlighted word: Identify and highlight the key phrase or word that requires context.
+                Description: Provide a detailed explanation or description of the highlighted word.
+                More details: Include as much of the following information as applicable:
+                Who: Identify the person or group associated with the subject.
+                Why: Explain the reason or significance behind the subject.
+                What: Describe what the subject is or what is happening.
+                How: Explain the process or method involved.
+                Where: Specify the location or setting relevant to the subject.
+                When: Provide the time frame or period associated with the subject.`,
               },
               {
                 type: "image_url",
