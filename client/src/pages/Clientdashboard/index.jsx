@@ -15,7 +15,9 @@ import share_peoples from "../../assets/share_peoples.png";
 import { CiFileOn } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { LoadingContext } from "../../App";
+
 import { Img } from "../../components";
+import Uploader from "components/Uploader";
 // import { ThreeDCard } from "../../components/threedcard";
 
 export default function ClientdashboardPage() {
@@ -32,6 +34,7 @@ export default function ClientdashboardPage() {
   const navigate = useNavigate();
   const setLoading = useContext(LoadingContext);
   const [profile, setProfile] = useState({});
+  const [isImgUrl, setIsImgUrl] = useState(false);
   React.useEffect(() => {
     const config = {
       headers: {
@@ -99,6 +102,7 @@ export default function ClientdashboardPage() {
   };
 
   const handleNewContext = async () => {
+    setIsImgUrl(false);
     setLoading(true);
     const config = {
       headers: {
@@ -106,14 +110,48 @@ export default function ClientdashboardPage() {
         secret: `${localStorage.getItem("secret")}`,
       },
     };
-    if (!ques) return alert("Please enter a question");
-    else if (!secret && !localStorage.getItem("secret"))
+    if (!ques) {
+      setLoading(false);
+      return alert("Please enter a question");
+    } else if (!secret && !localStorage.getItem("secret")) {
+      setLoading(false);
       return alert("Please generate a secret key");
-    else {
+    } else {
       axios
         .post(
           (import.meta.env.VITE_BACKEND_URL || "") + "/api/context/contextify",
           { text: ques, type: type, tone: tone },
+          config
+        )
+        .then(({ data }) => {
+          setAns(data?.data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          alert(err.message);
+          setLoading(false);
+        });
+    }
+  };
+
+  const handleNewImg = async (url) => {
+    setIsImgUrl(true);
+    setQues(url);
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+        secret: `${localStorage.getItem("secret")}`,
+      },
+    };
+    if (!secret && !localStorage.getItem("secret")) {
+      setLoading(false);
+      return alert("Please generate a secret key");
+    } else {
+      axios
+        .post(
+          (import.meta.env.VITE_BACKEND_URL || "") + "/api/context/contextify",
+          { text: url, type: type, tone: tone, isImg: true },
           config
         )
         .then(({ data }) => {
@@ -443,13 +481,15 @@ export default function ClientdashboardPage() {
                     value={ques}
                   ></textarea>
                 </div>
-
-                <button
-                  className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-2 w-full hover:-translate-y-1 hover:scale-110"
-                  onClick={handleNewContext}
-                >
-                  Generate
-                </button>
+                <div className="flex gap-4 w-full items-center">
+                  <button
+                    className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-2 w-full hover:-translate-y-1 hover:scale-110"
+                    onClick={handleNewContext}
+                  >
+                    Generate
+                  </button>
+                  <Uploader handleNewImg={handleNewImg} />
+                </div>
               </div>
               <div className="p-4 flex flex-col gap-3 rounded overflow-y-auto">
                 <div className="flex flex-row-reverse">
@@ -458,13 +498,17 @@ export default function ClientdashboardPage() {
                     onClick={() => setShowModal(false)}
                   />
                 </div>
-                <input
-                  type="text"
-                  placeholder="Untitled"
-                  className="border-0 text-7xl font-bold"
-                  value={ques}
-                  onChange={(e) => setQues(e.target.value)}
-                />
+                {!isImgUrl ? (
+                  <input
+                    type="text"
+                    placeholder="Untitled"
+                    className="border-0 text-7xl font-bold"
+                    value={ques}
+                    onChange={(e) => setQues(e.target.value)}
+                  />
+                ) : (
+                  <img src={ques} width="100" />
+                )}
                 <textarea
                   name=""
                   id=""
