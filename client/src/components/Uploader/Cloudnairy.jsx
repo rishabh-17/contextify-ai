@@ -3,25 +3,14 @@ import { createContext, useEffect, useState } from "react";
 // Create a context to manage the script loading state
 const CloudinaryScriptContext = createContext();
 import { FcAddImage } from "react-icons/fc";
-function CloudinaryUploadWidget({ uwConfig, setPublicId, handleNewImg }) {
+function CloudinaryUploadWidget({
+  uwConfig,
+  setPublicId,
+  handleNewImg,
+  context,
+}) {
   const [loaded, setLoaded] = useState(false);
-  const iframes = document.querySelectorAll("iframe");
-  const uniqueSrcs = new Set();
-  let myWidget;
-  // Iterate over the iframes
-  iframes.forEach((iframe) => {
-    const src = iframe.getAttribute("src");
 
-    // Check if the src is already in the set
-    if (uniqueSrcs.has(src)) {
-      // If it's a duplicate, remove the iframe
-      iframe.remove();
-    } else {
-      // Otherwise, add the src to the set
-      uniqueSrcs.add(src);
-    }
-  });
-  console.log(iframes);
   useEffect(() => {
     // Check if the script is already loaded
     if (!loaded) {
@@ -30,7 +19,7 @@ function CloudinaryUploadWidget({ uwConfig, setPublicId, handleNewImg }) {
         // If not loaded, create and load the script
         const script = document.createElement("script");
         script.setAttribute("async", "");
-        script.setAttribute("id", "uw");
+        script.setAttribute("id", context ? "context" : "uw");
         script.src = "https://upload-widget.cloudinary.com/global/all.js";
         script.addEventListener("load", () => setLoaded(true));
         document.body.appendChild(script);
@@ -39,12 +28,11 @@ function CloudinaryUploadWidget({ uwConfig, setPublicId, handleNewImg }) {
         setLoaded(true);
       }
     }
-  }, []);
+  }, [loaded]);
 
   const initializeCloudinaryWidget = () => {
-    console.log(1);
     if (loaded) {
-      myWidget = window.cloudinary.createUploadWidget(
+      var myWidget = window.cloudinary.createUploadWidget(
         uwConfig,
         (error, result) => {
           if (!error && result && result.event === "success") {
@@ -53,8 +41,7 @@ function CloudinaryUploadWidget({ uwConfig, setPublicId, handleNewImg }) {
             setPublicId(result.info.public_id);
             myWidget.close();
           }
-        },
-        () => {}
+        }
       );
 
       document.getElementById("upload_widget").addEventListener(

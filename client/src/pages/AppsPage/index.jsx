@@ -12,13 +12,9 @@ export default function AppsPage() {
             <div className="flex justify-between w-full items-center">
               <div>
                 <h2 className="text-2xl font-bold">Contextify For Chrome</h2>
-<<<<<<< Updated upstream
                 <p>
                   Now Available for every browser that allows Chrome Extensions.
                 </p>
-=======
-                <p>Now Available for every browser that allows Chrome Extensions</p>
->>>>>>> Stashed changes
               </div>
               <button className="bg-purple-900 text-[#fff] h-10 p-2 rounded transition ease-in-out hover:translate-y-1 hover:bg-gray-50 hover:text-[#000]">
                 Install

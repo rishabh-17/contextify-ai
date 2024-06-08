@@ -250,12 +250,6 @@ export default function ClientdashboardPage() {
                   className="rounded-full"
                 />
               )}
-              <div id="profile-img-change">
-                <Uploader
-                  id="profile-img-uploader"
-                  handleNewImg={updateProfileImg}
-                />
-              </div>
             </div>
 
             <section className="my-5">
@@ -527,7 +521,7 @@ export default function ClientdashboardPage() {
                   >
                     Generate
                   </button>
-                  <Uploader handleNewImg={handleNewImg} />
+                  <Uploader handleNewImg={handleNewImg} context />
                 </div>
               </div>
               <div className="p-4 flex flex-col gap-3 rounded overflow-y-auto">

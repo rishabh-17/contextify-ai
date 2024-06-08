@@ -11,6 +11,28 @@ export default function ProfilePage() {
   const [loading, setLoading] = useState(false);
   const setLoadingContext = useContext(LoadingContext);
 
+  function uploadFile(file) {
+    console.log("first");
+    const url = `https://api.cloudinary.com/v1_1/dmhrtscbx/upload`;
+    const fd = new FormData();
+    fd.append("upload_preset", "vbsvsreg");
+    fd.append("tags", "browser_upload"); // Optional - add tags for image admin in Cloudinary
+    fd.append("file", file);
+
+    fetch(url, {
+      method: "POST",
+      body: fd,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const url = data.url;
+        setData({ ...data, imgUrl: url });
+      })
+      .catch((error) => {
+        console.error("Error uploading the file:", error);
+      });
+  }
+
   const validate = (fieldValues = data) => {
     let tempErrors = { ...errors };
 
@@ -137,9 +159,12 @@ export default function ProfilePage() {
                 />
               )}
               <div id="profile-img-change">
-                <Uploader
-                  id="profile-img-uploader"
-                  handleNewImg={(url) => setData({ ...data, imgUrl: url })}
+                <input
+                  type="file"
+                  onChange={(e) => {
+                    console.log();
+                    uploadFile(e.target.files[0]);
+                  }}
                 />
               </div>
             </div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import CloudinaryUploadWidget from "./Cloudnairy";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage, responsive, placeholder } from "@cloudinary/react";
-export default function Uploader({ handleNewImg }) {
+export default function Uploader({ handleNewImg, context }) {
   const [publicId, setPublicId] = useState("olympic_flag");
   const [cloudName] = useState("dmhrtscbx");
   const [uploadPreset] = useState("vbsvsreg");
@@ -36,6 +36,7 @@ export default function Uploader({ handleNewImg }) {
     <div className="App">
       <CloudinaryUploadWidget
         uwConfig={uwConfig}
+        context
         setPublicId={setPublicId}
         handleNewImg={handleNewImg}
       />
