@@ -123,19 +123,23 @@ export default function MyContext() {
              p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
                   >
                     <div
-                      className="overflow-auto h-[160px]"
+                      className="overflow-auto h-full"
                       onClick={() =>
                         navigate(`/contextdetail/saved/${context._id}`)
                       }
                     >
-                      <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
-                        {context?.question?.length > 30
-                          ? context?.question?.slice(0, 30) + "..."
-                          : context?.question}
-                      </h5>
+                      {context?.question?.startsWith("http") ? (
+                        <img src={context?.question} alt="" />
+                      ) : (
+                        <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+                          {context?.question?.length > 30
+                            ? context?.question?.slice(0, 30) + "..."
+                            : context?.question}
+                        </h5>
+                      )}
                       <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
-                        {context?.answer.length > 50
-                          ? context?.answer?.slice(0, 50) + "..."
+                        {context?.answer.length > 100
+                          ? context?.answer?.slice(0, 100) + "..."
                           : context?.answer}
                       </p>
                     </div>

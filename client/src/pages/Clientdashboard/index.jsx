@@ -366,7 +366,7 @@ export default function ClientdashboardPage() {
                   className="overflow-auto h-full"
                   onClick={() => navigate(`/contextdetail/history/${item._id}`)}
                 >
-                  {item.question.startsWith("http") ? (
+                  {item?.question?.startsWith("http") ? (
                     <img src={item?.question} alt="image" className="mb-2" />
                   ) : (
                     <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
