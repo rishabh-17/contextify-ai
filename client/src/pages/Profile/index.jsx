@@ -13,9 +13,9 @@ export default function ProfilePage() {
 
   function uploadFile(file) {
     console.log("first");
-    const url = `https://api.cloudinary.com/v1_1/dmhrtscbx/upload`;
+    const url = `https://api.cloudinary.com/v1_1/dyvnljwlp/upload`;
     const fd = new FormData();
-    fd.append("upload_preset", "vbsvsreg");
+    fd.append("upload_preset", "fiiwnfdp");
     fd.append("tags", "browser_upload"); // Optional - add tags for image admin in Cloudinary
     fd.append("file", file);
 
