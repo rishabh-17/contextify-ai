@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Text, Img, Input, Button } from "../../components";
 import { GoogleLogin } from "@react-oauth/google";
@@ -17,6 +17,10 @@ export default function LoginPage() {
     password: "",
     email: "",
   });
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

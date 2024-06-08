@@ -91,6 +91,10 @@ exports.profileData = async (req, res) => {
         premiumType: user.premiumType,
         expiry: user.expiry,
         usage: user.usage,
+        imgUrl: user.imgUrl,
+        city: user.city,
+        state: user.state,
+        phone: user.phone,
         history: await History.find({ user: req.user._id })
           .sort({ date: -1 })
           .limit(10),

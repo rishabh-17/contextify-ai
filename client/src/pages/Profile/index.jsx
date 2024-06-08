@@ -1,8 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import MainLayout from "../../components/MainLayout";
 import { LoadingContext } from "../../App";
-
+import axios from "axios";
+import { Img } from "../../components";
+import Uploader from "components/Uploader";
 export default function ProfilePage() {
   const [data, setData] = useState({});
   const [errors, setErrors] = useState({});
@@ -39,49 +41,63 @@ export default function ProfilePage() {
       tempErrors.password = fieldValues.password?.length
         ? ""
         : "This field is required.";
-
+    setLoadingContext(false);
     setErrors({
       ...tempErrors,
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setLoadingContext(true);
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      e.stopPropagation();
-      setErrors({
-        firstName: data?.firstName?.length ? "" : "This field is required.",
-        lastName: data?.lastName?.length ? "" : "This field is required.",
-        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data?.email)
-          ? ""
-          : "Email is not valid.",
-        phone: data?.phone?.length === 10 ? "" : "Contact number is not valid.",
-        city: data?.city?.length ? "" : "This field is required.",
-        state: data?.state?.length ? "" : "This field is required.",
-        password: data?.password?.length ? "" : "This field is required.",
-      });
-    } else {
-      try {
-        const res = await fetch("/api/user", {
+  const handleSubmit = async (url) => {
+    try {
+      setLoading(true);
+      setLoadingContext(true);
+      const res = await fetch(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/update",
+        {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
+            authentication: `${localStorage.getItem("token")}`,
           },
           body: JSON.stringify(data),
-        });
-        const user = await res.json();
-        console.log(user);
-      } catch (err) {
-        console.log(err);
-      } finally {
-        setLoading(false);
-        setLoadingContext(false);
-      }
+        }
+      );
+      const user = await res.json();
+      console.log(user);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+      setLoadingContext(false);
     }
   };
+
+  useEffect(() => {
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const fetchProfile = async () => {
+      setLoading(true);
+      const { data } = await axios.get(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/profile",
+        config
+      );
+      setData({
+        firstName: data?.data?.name.split(" ")[0],
+        lastName: data?.data?.name.split(" ")[1],
+        email: data?.data?.email,
+        phone: data?.data?.phone,
+        state: data?.data?.state,
+        city: data?.data?.city,
+        imgUrl: data?.data?.imgUrl,
+        password: data?.data?.password,
+      });
+      setLoading(false);
+    };
+    fetchProfile();
+  }, []);
 
   const handleChange = (e) => {
     setData({
@@ -89,34 +105,6 @@ export default function ProfilePage() {
       [e.target.name]: e.target.value,
     });
     validate({ [e.target.name]: e.target.value });
-  };
-
-  const handleFileChange = (e) => {
-    setLoading(true);
-    setLoadingContext(true);
-    const file = e.target.files[0];
-    if (file) {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", "profile-pic");
-
-      fetch("https://api.cloudinary.com/v1_1/dzf1h7q5f/image/upload", {
-        method: "POST",
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setData({
-            ...data,
-            profilePic: data.secure_url,
-          });
-        })
-        .catch((err) => console.log(err))
-        .finally(() => {
-          setLoading(false);
-          setLoadingContext(false);
-        });
-    }
   };
 
   return (
@@ -131,31 +119,29 @@ export default function ProfilePage() {
       <MainLayout>
         <div className="px-24 w-3/4 md:w-full sm:p-3">
           <h1 className="text-3xl">Edit Pofile</h1>
-          <form
-            className="flex flex-col gap-8"
-            onSubmit={handleSubmit}
-            noValidate
-          >
-            <div className="relative m-2 ">
-              <div
-                className={`cursor-pointer w-32 h-32 hover:-translate-y-1 hover:scale-110 ${
-                  data.profilePic
-                    ? "bg-[url(" + data.profilePic + ")]"
-                    : "bg-[url('https://via.placeholder.com/120')]"
-                } hover:bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW1N8HZnfDzGHlqKTsf9sAkrCXYJ8cP0EjXB9ixruDXQ&s')]`}
-                onClick={() =>
-                  document.getElementById("profilepicfile").click()
-                }
-              />
-
-              <input
-                type="file"
-                id="profilepicfile"
-                name="file"
-                className="hidden"
-                style={{ display: "none" }}
-                onChange={handleFileChange}
-              />
+          <div className="flex flex-col gap-8" noValidate>
+            <div className="relative m-2 w-48 flex flex-col justify-center items-center">
+              {data?.imgUrl ? (
+                <img
+                  src={data?.imgUrl}
+                  alt=""
+                  width={150}
+                  className="rounded-full"
+                />
+              ) : (
+                <Img
+                  src="images/defaultImg.jpg"
+                  // src="images/img_frame_purple_900.svg"
+                  alt="image"
+                  className="rounded-full w-48"
+                />
+              )}
+              <div id="profile-img-change">
+                <Uploader
+                  id="profile-img-uploader"
+                  handleNewImg={(url) => setData({ ...data, imgUrl: url })}
+                />
+              </div>
             </div>
             <div className="flex sm:flex-col gap-5 ">
               <div className="w-full">
@@ -193,7 +179,7 @@ export default function ProfilePage() {
                 )}
               </div>
             </div>
-            <div>
+            {/* <div>
               <label className="mb-1">Email</label>
               <input
                 type="email"
@@ -207,7 +193,7 @@ export default function ProfilePage() {
                 required
               />
               {errors.email && <p className="text-red-600">{errors.email}</p>}
-            </div>
+            </div> */}
             <div>
               <label className="mb-1">Contact Number</label>
               <input
@@ -255,7 +241,7 @@ export default function ProfilePage() {
                 {errors.state && <p className="text-red-600">{errors.state}</p>}
               </div>
             </div>
-            <div>
+            {/* <div>
               <label className="mb-1">Password</label>
               <input
                 type="text"
@@ -271,13 +257,16 @@ export default function ProfilePage() {
               {errors.password && (
                 <p className="text-red-600">{errors.password}</p>
               )}
-            </div>
+            </div> */}
             <div className="flex justify-center">
-              <button className="px-8 py-2 bg-purple-900 text-[#fff] rounded ">
+              <button
+                className="px-8 py-2 bg-purple-900 text-[#fff] rounded "
+                onClick={handleSubmit}
+              >
                 Save
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </MainLayout>
     </>

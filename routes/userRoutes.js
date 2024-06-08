@@ -11,5 +11,6 @@ router.post(
   AuthMiddleware.userAuthentication,
   userController.genrateKey
 );
+router.put("/update", AuthMiddleware.userAuthentication, userController.update);
 
 module.exports = router;

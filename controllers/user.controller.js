@@ -116,3 +116,31 @@ exports.genrateKey = async (req, res) => {
     console.log(error);
   }
 };
+
+exports.update = async (req, res) => {
+  try {
+    const id = req.user._id;
+    const { firstName, lastName, phone, state, city, imgUrl } = req.body;
+    const user = await User.findById(id);
+    if (firstName && lastName) {
+      user.name = firstName + " " + lastName;
+    }
+
+    if (phone) {
+      user.phone = phone;
+    }
+    if (state) {
+      user.state = state;
+    }
+    if (city) {
+      user.city = city;
+    }
+    if (imgUrl) {
+      user.imgUrl = imgUrl;
+    }
+    await user.save();
+    res.json({ success: true, user, msg: "profile updated successfully" });
+  } catch (error) {
+    console.log(error);
+  }
+};

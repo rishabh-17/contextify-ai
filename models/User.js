@@ -35,7 +35,7 @@ const UserSchema = new mongoose.Schema(
     },
     usage: {
       type: Number,
-      default: 0
+      default: 0,
     },
     totalReq: {
       type: Number,
@@ -44,6 +44,18 @@ const UserSchema = new mongoose.Schema(
     premiumType: {
       type: String,
       default: "free",
+    },
+    imgUrl: {
+      type: String,
+    },
+    state: {
+      type: String,
+    },
+    city: {
+      type: String,
+    },
+    phone: {
+      type: String,
     },
   },
   { timestamps: true }

@@ -198,6 +198,29 @@ export default function ClientdashboardPage() {
         });
     }
   };
+
+  const updateProfileImg = async (url) => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    axios
+      .put(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/update",
+        { imgUrl: url },
+        config
+      )
+      .then(({ data }) => {
+        alert(data.msg);
+        setLoading(false);
+      })
+      .catch((err) => {
+        alert(err.err);
+        setLoading(false);
+      });
+  };
   function capitalizeFirstLetter(string) {
     if (!string) return "";
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -212,9 +235,9 @@ export default function ClientdashboardPage() {
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full py-3">
           <div>
             <div className="flex flex-col  items-center gap-4 rounded-full ml-5 w-1/3">
-              {user?.img ? (
+              {profile?.imgUrl ? (
                 <img
-                  src={user?.img}
+                  src={profile?.imgUrl}
                   alt=""
                   width={150}
                   className="rounded-full"
@@ -227,13 +250,12 @@ export default function ClientdashboardPage() {
                   className="rounded-full"
                 />
               )}
-
-              <button
-                className="text-[#fff] bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-full p-2 mb-4"
-                onClick={() => navigate("/profile")}
-              >
-                Edit Profile
-              </button>
+              <div id="profile-img-change">
+                <Uploader
+                  id="profile-img-uploader"
+                  handleNewImg={updateProfileImg}
+                />
+              </div>
             </div>
 
             <section className="my-5">
