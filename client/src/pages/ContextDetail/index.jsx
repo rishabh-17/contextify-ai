@@ -48,7 +48,11 @@ export default function ContextDetail() {
   return (
     <div>
       <MainLayout active={2}>
-        <h2 className="font-bold text-xl mt-10">{data.question}</h2>
+        {data?.question?.startsWith("http") ? (
+          <img src={data.question} alt="" width={400} />
+        ) : (
+          <h2 className="font-bold text-xl mt-10">{data.question}</h2>
+        )}
 
         <textarea
           className="w-full p-4 mt-3 h-full border-0"

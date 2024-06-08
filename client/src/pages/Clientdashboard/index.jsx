@@ -366,11 +366,15 @@ export default function ClientdashboardPage() {
                   className="overflow-auto h-full"
                   onClick={() => navigate(`/contextdetail/history/${item._id}`)}
                 >
-                  <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
-                    {item?.question?.length > 30
-                      ? item?.question?.slice(0, 30) + "..."
-                      : item?.question}
-                  </h5>
+                  {item.question.startsWith("http") ? (
+                    <img src={item?.question} alt="image" className="mb-2" />
+                  ) : (
+                    <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+                      {item?.question?.length > 30
+                        ? item?.question?.slice(0, 30) + "..."
+                        : item?.question}
+                    </h5>
+                  )}
                   <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
                     {item?.answer.length > 200
                       ? item?.answer?.slice(0, 200) + "..."
@@ -471,15 +475,28 @@ export default function ClientdashboardPage() {
                 </div>
                 <div>
                   <h5 className="font-bold  text-md mb-3">
-                    Text to be contextify
+                    Text to be contextified
                   </h5>
-                  <textarea
-                    onChange={(e) => setQues(e.target.value)}
-                    placeholder="Enter text here"
-                    className="w-full rounded-xl"
-                    rows={10}
-                    value={ques}
-                  ></textarea>
+                  {ques.startsWith("http") ? (
+                    <textarea
+                      onChange={(e) => {
+                        setIsImgUrl(false);
+                        setQues(e.target.value);
+                      }}
+                      placeholder="Enter text here"
+                      className="w-full rounded-xl"
+                      value={!ques.startsWith("http") ? ques : ""}
+                      rows={10}
+                    ></textarea>
+                  ) : (
+                    <textarea
+                      onChange={(e) => setQues(e.target.value)}
+                      placeholder="Enter text here"
+                      className="w-full rounded-xl"
+                      rows={10}
+                      value={ques}
+                    ></textarea>
+                  )}
                 </div>
                 <div className="flex gap-4 w-full items-center">
                   <button

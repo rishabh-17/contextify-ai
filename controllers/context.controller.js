@@ -92,8 +92,6 @@ exports.getContext = async (req, res) => {
         ],
       })
       .then((data) => {
-        // console.log("data");
-        // console.log(data?.choices?.[0].message);
         const newHistory = new History({
           question: text,
           answer: data?.choices?.[0]?.message?.content.replace(/[\/\*]/g, ""),

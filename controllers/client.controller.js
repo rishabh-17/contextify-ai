@@ -23,7 +23,9 @@ exports.getOneSaved = async (req, res) => {
 
 exports.getHistory = async (req, res) => {
   try {
-    const history = await History.find({ user: req.user._id });
+    const history = await History.find({ user: req.user._id }).sort({
+      createdAt: -1,
+    });
     res.json({ success: true, data: history });
   } catch (error) {
     console.log(error);
