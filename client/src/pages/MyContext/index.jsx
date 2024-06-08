@@ -139,8 +139,10 @@ export default function MyContext() {
                       )}
                       <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
                         {context?.answer.length > 100
-                          ? context?.answer?.slice(0, 100) + "..."
-                          : context?.answer}
+                          ? context?.answer
+                              ?.replaceAll("#", "")
+                              ?.slice(0, 100) + "..."
+                          : context?.answer?.replaceAll("#", "")}
                       </p>
                     </div>
                     <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">

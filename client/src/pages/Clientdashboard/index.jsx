@@ -393,8 +393,8 @@ export default function ClientdashboardPage() {
                   )}
                   <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
                     {item?.answer.length > 200
-                      ? item?.answer?.slice(0, 200) + "..."
-                      : item?.answer}
+                      ? item?.answer?.replaceAll("#", "")?.slice(0, 200) + "..."
+                      : item?.answer?.replaceAll("#", "")}
                   </p>
                 </div>
                 <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">

@@ -56,7 +56,7 @@ export default function ContextDetail() {
 
         <textarea
           className="w-full p-4 mt-3 h-full border-0"
-          value={data?.answer}
+          value={data?.answer?.replaceAll("#", "")}
           disabled
         ></textarea>
         {data.answer && (

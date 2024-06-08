@@ -302,7 +302,7 @@ export default function ClientdashboardPage({ active, children }) {
                                 className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900"
                               >
                                 <GoGear className="h-4 w-4" />
-                                Setting
+                                Settings
                               </a>
                             </li>
                             <li
