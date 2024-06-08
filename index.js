@@ -17,21 +17,23 @@ app.use(express.json({ limit: "50mb" }));
 
 app.use(express.static(__dirname + "/client/build"));
 
-app.get("/", (req, res) => {
-  console.log("working");
-  console.log(`client/build/${req.url !== "/" ? req.url : "index.html"}`);
-  res.sendFile(
-    path.join(
-      __dirname,
-      `client/build/${req.url !== "/" ? req.url : "index.html"}`
-    )
-  );
-});
-
 app.use("/api/context", AuthMiddleware.secretKeyValidation, contextRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/client", clientRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/saved", savedRoutes);
+
+app.get("*", (req, res) => {
+  if (req.url.startsWith("/api")) {
+    res.status(404).json({ error: "Not found" });
+  } else {
+    const filePath = path.join(__dirname, "client/build", "index.html");
+    res.sendFile(filePath, (err) => {
+      if (err) {
+        res.status(404).json({ error: "Not found" });
+      }
+    });
+  }
+});
 
 app.listen(8000, () => connectDB(process.env.MONGO_URI));

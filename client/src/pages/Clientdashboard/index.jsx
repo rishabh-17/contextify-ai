@@ -223,7 +223,7 @@ export default function ClientdashboardPage() {
   };
   function capitalizeFirstLetter(string) {
     if (!string) return "";
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return string?.charAt(0)?.toUpperCase() + string?.slice(1);
   }
 
   return (
@@ -373,7 +373,7 @@ export default function ClientdashboardPage() {
               </div>
               <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center"></div>
             </div>
-            {history.slice(0, 4).map((item) => (
+            {history?.slice(0, 4).map((item) => (
               <div
                 class="max-w-sm w-[200px] h-[300px]
              p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
@@ -415,7 +415,7 @@ export default function ClientdashboardPage() {
               </div>
             ))}
           </div>
-          {!!history.length && (
+          {!!history?.length && (
             <div className="w-full flex justify-start">
               <button
                 className="text-[#fff] bg-purple-900 rounded-xl p-2"

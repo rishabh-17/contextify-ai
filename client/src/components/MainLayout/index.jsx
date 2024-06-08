@@ -72,7 +72,7 @@ export default function ClientdashboardPage({ active, children }) {
               <li>
                 <div className="flex items-center mb-5">
                   <Img
-                    src="images/logo.png"
+                    src="/images/logo.png"
                     // src="images/img_frame_purple_900.svg"
                     alt="image"
                     className="my-auto h-[60px]"
