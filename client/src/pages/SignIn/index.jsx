@@ -252,7 +252,6 @@ export default function LoginPage() {
           <div className="flex">
             <p className="self-end text-gray-700 underline">
               <span className="text-blue_gray-900">Don't have an account?</span>
-              <span className="text-gray-900_01">&nbsp;&nbsp;</span>
             </p>
           </div>
           <button

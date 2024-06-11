@@ -150,7 +150,7 @@ export default function MyContext() {
                         <RWebShare
                           data={{
                             text: "Contextify Your Browser Experience",
-                            url: `/contextdetail/${context.type}/ + ${context._id}`,
+                            url: `https://www.contextify.info/contextdetail/${context.type}/ + ${context._id}`,
                             title: "Contextify",
                           }}
                         >

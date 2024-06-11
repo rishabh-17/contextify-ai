@@ -1,62 +1,62 @@
 import React from "react";
 import { Text, Button, Img } from "../../components";
+import { useNavigate } from "react-router-dom";
 const index = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-full mt-[156px] mx-auto md:p-5 max-w-[1240px]">
-      <div className="flex md:flex-col justify-between items-start gap-5">
-        <div className="flex justify-between items-start w-[29%] md:w-full gap-5">
-          <div className="flex justify-center w-[56%]">
-            <div className="flex flex-col w-full gap-6">
-              <div
-                className="jhsufdj w-full flex items-center pt-0"
-                onClick={() => navigate("/")}
-              >
-                <Img
-                  src="images/logo.png"
-                  // src="images/img_frame_purple_900.svg"
-                  alt="image"
-                  className="my-auto h-[80px] w-[180px] pt-0 mt-0"
-                />
-                <h2 className="text-2xl font-bold text-purple-900">
-                  Contextify
-                </h2>
-              </div>
-              <div className="flex items-start gap-2">
-                <Img
-                  src="images/img_frame_purple_900_24x24.svg"
-                  alt="image_three"
-                  className="h-[24px] w-[24px]"
-                />
-                <Text as="p" className="capitalize">
-                  support@contextify.com
-                </Text>
-              </div>
-              {/* <div className="flex items-center gap-2">
-                <Img
-                  src="images/img_frame_24x24.svg"
-                  alt="image_four"
-                  className="h-[24px] w-[24px]"
-                />
-                <Text as="p" className="self-start capitalize">
-                  +1 234 456 678 89
-                </Text>
-              </div> */}
+      <div className="flex flex-wrap sm:flex-col justify-between items-start gap-5">     
+        <div className="flex shrink justify-center">
+          <div className="flex flex-col w-full gap-6">
+            <div
+              className="jhsufdj w-full flex items-center pt-0"
+              onClick={() => navigate("/")}
+            >
+              <Img
+                src="images/logo.png"
+                // src="images/img_frame_purple_900.svg"
+                alt="image"
+                className="my-auto h-[80px] w-[180px] pt-0 mt-0"
+              />
+              <h2 className="text-2xl font-bold text-purple-900">
+                Contextify
+              </h2>
             </div>
+            <div className="flex items-start gap-2">
+              <Img
+                src="images/img_frame_purple_900_24x24.svg"
+                alt="image_three"
+                className="h-[24px] w-[24px]"
+              />
+              <Text as="p" className="capitalize">
+                support@contextify.com
+              </Text>
+            </div>
+            {/* <div className="flex items-center gap-2">
+              <Img
+                src="images/img_frame_24x24.svg"
+                alt="image_four"
+                className="h-[24px] w-[24px]"
+              />
+              <Text as="p" className="self-start capitalize">
+                +1 234 456 678 89
+              </Text>
+            </div> */}
           </div>
-          <div className="flex flex-col items-start gap-[22px]">
-            <Text size="16xl" as="p" className="capitalize text-center">
-              links
-            </Text>
-            <Text as="p" className="capitalize">
-              home
-            </Text>
-            <Text as="p" className="capitalize">
-              about us
-            </Text>
-            <Text as="p" className="capitalize">
-              contact us
-            </Text>
-          </div>
+        </div>
+        <div className="flex flex-col items-start gap-[22px]  md:items-center">
+          <Text size="16xl" as="p" className="capitalize text-center">
+            links
+          </Text>
+          <Text as="p" className="capitalize cursor-pointer" onClick={()=>navigate('/')}>
+            home
+          </Text>
+          <Text as="p" className="capitalize cursor-pointer" onClick={()=>navigate('/about')}>
+            about us
+          </Text>
+          <Text as="p" className="capitalize cursor-pointer" onClick={()=>navigate('/contactus')}>
+            contact us
+          </Text>
         </div>
         <div className="flex flex-col items-start mt-1 gap-[21px]">
           <Text size="16xl" as="p" className="capitalize">
@@ -132,7 +132,7 @@ const index = () => {
         </div>
       </div>
       <div className="w-[1050px] mt-2 ml-[8%] h-px bg-deep_purple-100" />
-      <Text className="mt-[35px] ml-[38%]">
+      <Text className="text-center">
         Copyright 2024 Contextify inc. all rights reserved
       </Text>
     </div>

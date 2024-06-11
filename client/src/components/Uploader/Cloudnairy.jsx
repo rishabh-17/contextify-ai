@@ -3,6 +3,8 @@ import { createContext, useEffect, useState } from "react";
 // Create a context to manage the script loading state
 const CloudinaryScriptContext = createContext();
 import { FcAddImage } from "react-icons/fc";
+import { BsPaperclip } from "react-icons/bs";
+
 function CloudinaryUploadWidget({
   uwConfig,
   setPublicId,
@@ -56,7 +58,7 @@ function CloudinaryUploadWidget({
 
   return (
     <CloudinaryScriptContext.Provider value={{ loaded }}>
-      <FcAddImage
+      <BsPaperclip
         id="upload_widget"
         className=" bg-[#fff] w-6 h-6"
         onClick={initializeCloudinaryWidget}

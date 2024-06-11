@@ -338,7 +338,7 @@ export default function ClientdashboardPage() {
             </section>
             <section className="m-10 p-4 flex gap-8 bg-[#fff] shadow-md rounded-xl">
               <div className=" ">
-                <img src={share_peoples} width={100} alt="" />
+                <img src="images/sharePeoples.jpg" width={100} alt="" />
               </div>
               <div className="h-full flex flex-col justify-between">
                 <h3>Share with your friends</h3>
@@ -403,7 +403,7 @@ export default function ClientdashboardPage() {
                       <RWebShare
                         data={{
                           text: "Contextify Your Browser Experience",
-                          url: `/contextdetail/history/${item._id}`,
+                          url: `https://www.contextify.info/contextdetail/history/${item._id}`,
                           title: "Contextify",
                         }}
                       >

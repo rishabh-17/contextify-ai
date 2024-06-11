@@ -64,12 +64,11 @@ export default function ContactUsPage() {
         </div>
         <section className="my-48 text-center  mx-48 sm:mx-5">
           <h1 className="text-7xl mb-8">Get in touch today!</h1>
-          <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 justify-center px-24 sm:p-1">
+          <div className="flex gap-4 justify-center px-24 sm:p-1">
             <div className="bg-[#fff] rounded-xl p-4 shadow-md flex items-center mx-3">
               <div className="bg-purple-400 rounded-xl p-4 w-[120px]">
                 <Img
                   src="images/img_icon.svg"
-                  // src="images/img_frame_purple_900.svg"
                   alt="image"
                   className="my-0 pb-0 h-[60px]"
                 />
@@ -79,7 +78,7 @@ export default function ContactUsPage() {
                 <p>connect@contextify.info</p>
               </div>
             </div>
-            <div className="bg-[#fff] rounded-xl p-4 shadow-md flex items-center mx-3">
+            {/* <div className="bg-[#fff] rounded-xl p-4 shadow-md flex items-center mx-3">
               <div className="bg-purple-A100 rounded-xl p-4 w-[120px] ">
                 <Img
                   src="images/img_iocn.svg"
@@ -92,7 +91,7 @@ export default function ContactUsPage() {
                 <p>Call Us</p>
                 <p>+1 234 6787 75557 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
         <form

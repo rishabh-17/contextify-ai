@@ -399,7 +399,7 @@ export default function HomePage() {
                 About US?{" "}
               </h2>
             </div>
-            <div
+            {/* <div
               className="reviews w-full h-[1000px] sm:h-[500px]
             "
             >
@@ -509,7 +509,7 @@ export default function HomePage() {
                   alt=""
                 />
               </div>
-            </div>
+            </div> */}
           </section>
 
           <section className="mt-48">

@@ -5,6 +5,7 @@ import { LoadingContext } from "../../App";
 import axios from "axios";
 import { Img } from "../../components";
 import Uploader from "components/Uploader";
+
 export default function ProfilePage() {
   const [data, setData] = useState({});
   const [errors, setErrors] = useState({});
@@ -158,16 +159,15 @@ export default function ProfilePage() {
                   className="rounded-full w-48"
                 />
               )}
-              <div id="profile-img-change">
+            </div>
+              <div id="profile-img-change w-56">
                 <input
                   type="file"
                   onChange={(e) => {
-                    console.log();
                     uploadFile(e.target.files[0]);
                   }}
                 />
               </div>
-            </div>
             <div className="flex sm:flex-col gap-5 ">
               <div className="w-full">
                 <label className="mb-1">First Name</label>

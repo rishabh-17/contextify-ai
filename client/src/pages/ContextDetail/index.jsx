@@ -15,7 +15,7 @@ export default function ContextDetail() {
   const setLoading = useContext(LoadingContext);
   useEffect(() => {
     if (!localStorage.getItem("token")) {
-      navigate("/login");
+      navigate("/signin");
     }
   }, []);
 

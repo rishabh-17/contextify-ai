@@ -23,7 +23,7 @@ function OutsideClick(ref) {
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.getItem("token")) {
-      navigate("/login");
+      navigate("/signin");
     }
   }, []);
   useEffect(() => {

@@ -9,9 +9,9 @@ export default function Header({ ...props }) {
   return (
     <header {...props} className="wih5">
       <div className="w-full">
-        <div className="flex justify-between items-center gap-5">
+        <div className="flex justify-between items-center gap-3">
           <div
-            className="jhsufdj w-100% flex items-center"
+            className="jhsufdj w-fit flex items-center"
             onClick={() => navigate("/")}
           >
             <Img
@@ -22,14 +22,14 @@ export default function Header({ ...props }) {
             />
             <h2 className="text-3xl font-bold text-purple-900">Contextify</h2>
           </div>
-          <div className="flex items-center md:hidden">
-            <div className="mx-5 cursor-pointer" onClick={() => navigate("/")}>
+          <div className="flex flex-shrink items-center md:hidden">
+            <div className="mx-3 cursor-pointer" onClick={() => navigate("/")}>
               <Text as="p" className="text-purple-900 capitalize">
                 home
               </Text>
             </div>
             <div
-              className="mx-5 cursor-pointer"
+              className="mx-3 cursor-pointer"
               onClick={() => navigate("/about")}
             >
               <Text as="p" className="text-purple-900 capitalize">
@@ -37,7 +37,7 @@ export default function Header({ ...props }) {
               </Text>
             </div>
             <div
-              className="mx-5 cursor-pointer"
+              className="mx-3 cursor-pointer"
               onClick={() => navigate("/pricing")}
             >
               <Text as="p" className="text-purple-900 capitalize">
@@ -45,7 +45,7 @@ export default function Header({ ...props }) {
               </Text>
             </div>
             <div
-              className="mx-5 cursor-pointer"
+              className="mx-3 cursor-pointer"
               onClick={() => navigate("/contactus")}
             >
               <Text as="p" className="text-purple-900 capitalize">
