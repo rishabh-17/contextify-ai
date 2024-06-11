@@ -117,7 +117,7 @@ export default function ContactUsPage() {
               <input className="w-full rounded-xl p-3" type="text" />
             </div>
           </div>
-          <label htmlFor="">Message</label>
+          <label htmlFor="">Subject</label>
           <textarea
             name=""
             id=""
@@ -134,7 +134,7 @@ export default function ContactUsPage() {
           <h1 className="text-5xl text-center mb-12">Frequently Asked Questions</h1>
           <FAQ
             question={" Are there any limits on use cases for the Basic/Free tier? "}
-            answer={" Yes, you initially get 15 credits tehn you are bound to upgrade to get more"}
+            answer={" Yes, you initially get 15 credits tehn you are bound to upgrade to get more."}
             count={1}
           />
           <FAQ
@@ -143,13 +143,13 @@ export default function ContactUsPage() {
             count={2}
           />
           <FAQ
-            question={" Can I cancle my subscription and/or get a refund? "}
+            question={" Can I cancel my subscription and/or get a refund? "}
             answer={" No refunds, but feel free to slip out of the Premium tier anytime you like. That being said, Basic is still pretty cool."}
             count={3}
           />
           <FAQ
             question={" Got any other questions? "}
-            answer={" Drop us a message on the contact page, or email us @ info[at]contextify.info"}
+            answer={" Drop us a message on the contact page, or email us @ support[at]contextify.info"}
             count={4}
           />
           

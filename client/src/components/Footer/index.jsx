@@ -28,10 +28,10 @@ const index = () => {
                   className="h-[24px] w-[24px]"
                 />
                 <Text as="p" className="capitalize">
-                  help@contextify.com
+                  support@contextify.com
                 </Text>
               </div>
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <Img
                   src="images/img_frame_24x24.svg"
                   alt="image_four"
@@ -40,7 +40,7 @@ const index = () => {
                 <Text as="p" className="self-start capitalize">
                   +1 234 456 678 89
                 </Text>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="flex flex-col items-start gap-[22px]">
@@ -83,7 +83,10 @@ const index = () => {
           </Text>
 
           <Text as="p" className="capitalize">
-            reveiws
+            reviews
+          </Text>
+          <Text as="p" className="capitalize">
+            Support
           </Text>
         </div>
         <div className="flex flex-col items-start w-[27%] md:w-full gap-5">

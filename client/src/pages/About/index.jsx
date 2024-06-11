@@ -139,7 +139,7 @@ Doing research as a freelancer isn’t easy – and we imagine it isn’t all th
 <br/><br/>
             Whatever the case, Contextify gives you what you need to “be in the know” – that is, be informed enough about a topic to know what your next steps are, and whether it’s worth your time to keep exploring. (In which case, we’d also give you three recommended resources to see you off on your next adventure!)
 
-            Because – let’s face it – we don’t have that much time to spend opening and closing tabs just to make sure it’s “who” and not “whom”. There are cooler things to do online. 
+            Because – let’s face it – we don’t have that much time to spend opening and closing tabs just to make sure it’s “who” and not “whom”. There are cooler things to do online. <br/><br/>
             Why not get the information you need at the click of a button without leaving whichever tab you’re already on?
 
             </p>
@@ -362,7 +362,7 @@ Doing research as a freelancer isn’t easy – and we imagine it isn’t all th
                       borderRadius: "50px",
                       outline: "",
                     }}
-                    placeholder="your mail here..."
+                    placeholder="your email"
                     type="text"
                   />
                   <button

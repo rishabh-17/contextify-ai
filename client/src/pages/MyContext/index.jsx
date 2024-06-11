@@ -88,7 +88,7 @@ export default function MyContext() {
                     : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110"
                 }
               >
-                <h3>Things i know</h3>
+                <h3>Things I know</h3>
               </div>
               <div
                 onClick={() => setToggle(2)}

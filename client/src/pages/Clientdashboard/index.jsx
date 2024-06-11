@@ -281,7 +281,7 @@ export default function ClientdashboardPage() {
                   </div>
                   <div>
                     <p className="w-[90px] text-center text-gray-700">
-                      use cases
+                      Use Cases
                     </p>
                     <p className="w-[90px] text-center">
                       {profile?.usage || 0}
@@ -564,7 +564,7 @@ export default function ClientdashboardPage() {
                         }
                         onClick={() => setType(1)}
                       >
-                        Things i know
+                        Things I know
                       </button>
                       <button
                         className={

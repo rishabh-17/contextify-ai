@@ -174,8 +174,7 @@ export default function SignUpPage() {
                 <p className="text-blue_gray-900 text-3xl">Create an account</p>
               </a>
               <p className="text-center text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                lobortis maximus{" "}
+              Welcome to a new way of using the Internet{" "}
               </p>
             </div>
             <form

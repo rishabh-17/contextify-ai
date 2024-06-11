@@ -64,8 +64,8 @@ export default function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-1">
               <div className="flex flex-col gap-5">
                 <h1 className="text-7xl">
-                  Demystify the <br />
-                  <span className="bg-orange-50">Internet.</span>
+                  Bring the Internet Into<br />
+                  <span className="bg-orange-50">Focus.</span>
                 </h1>
                 <p className="text-2xl">
                 Contextify puts information into context at the click of a button. Be in the Know
@@ -184,7 +184,7 @@ export default function HomePage() {
                 <h1 className="text-5xl">One Platform for Your Research</h1>
                 <ul className="flex flex-col gap-10">
                   <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
-                    <div className="h-16 w-16 bg-red-400 rounded-full" />
+                    <div className="h-16 w-16 bg-purple-400 rounded-full" />
                     <div>
                       <h3 className="text-2xl m-1">Browser extension</h3>
                       <p>
@@ -194,7 +194,7 @@ export default function HomePage() {
                     </div>
                   </li>
                   <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
-                    <div className="h-16 w-16 bg-blue-400 rounded-full" />
+                    <div className="h-16 w-16 bg-purple-400 rounded-full" />
                     <div>
                       <h3 className="text-2xl m-1">Audio search results</h3>
                       <p>
@@ -203,7 +203,7 @@ export default function HomePage() {
                     </div>
                   </li>
                   <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
-                    <div className="h-16 w-16 bg-green-400 rounded-full" />
+                    <div className="h-16 w-16 bg-purple-400 rounded-full" />
                     <div>
                       <h3 className="text-2xl m-1">Log your learning</h3>
                       <p>
@@ -232,7 +232,7 @@ export default function HomePage() {
                   <h2 className="text-5xl font-bold mb-5">
                     <CountUp end={110} duration={4.75} enableScrollSpy />+
                   </h2>
-                  <p>Searches per second</p>
+                  <p>Current Users</p>
                 </div>
 
                 <div className="text-center">
@@ -240,7 +240,7 @@ export default function HomePage() {
                     {" "}
                     <CountUp end={110} duration={7.75} enableScrollSpy />+
                   </h2>
-                  <p>Searches per second</p>
+                  <p>Searches Made</p>
                 </div>
 
                 <div className="text-center">
@@ -335,7 +335,7 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-4 gap-5">
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
-                <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
+                <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Tight on time?</h3>
                   <p>
@@ -344,7 +344,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
-                <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
+                <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Doing in-depth research?</h3>
                   <p>
@@ -353,7 +353,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
-                <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
+                <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Feeling social?</h3>
                   <p>
@@ -362,7 +362,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
-                <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
+                <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Need good sources?</h3>
                   <p>
@@ -371,7 +371,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
-                <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
+                <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Catching up on trends?</h3>
                   <p>
@@ -380,7 +380,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
-                <div className="h-12 w-12 bg-red-400 shrink-0 rounded-full" />
+                <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   <h3 className="text-xl">Keep forgetting to look things up?</h3>
                   <p>
