@@ -15,7 +15,8 @@ exports.getContext = async (req, res) => {
       let prompt = [
         {
           role: "user",
-          content: `You are a highly advanced AI with the capability to search and provide comprehensive information on various topics. For the following query, please expand your search beyond social media platforms and include relevant context from diverse and reputable sources. Ensure to cite multiple sources wherever possible.
+          content: `You are a highly advanced AI with the capability to search and provide comprehensive information on various topics. 
+          For the following query, please expand your search across the world wide web and beyond the social media platforms and include relevant context from diverse and reputable sources. Ensure to cite multiple sources wherever possible.
 
           Query: ${text}
           
@@ -36,7 +37,10 @@ exports.getContext = async (req, res) => {
           What: Describe what the subject is or what is happening.
           How: Explain the process or method involved.
           Where: Specify the location or setting relevant to the subject.
-          When: Provide the time frame or period associated with the subject.`,
+          When: Provide the time frame or period associated with the subject.
+          
+          
+          Provide all responses in a clear and structured format, including URLs for each source.`,
         },
       ];
 
@@ -67,7 +71,9 @@ exports.getContext = async (req, res) => {
             What: Describe what the subject is or what is happening.
             How: Explain the process or method involved.
             Where: Specify the location or setting relevant to the subject.
-            When: Provide the time frame or period associated with the subject.`,
+            When: Provide the time frame or period associated with the subject.
+            
+            Provide all responses in a clear and structured format, including URLs for each source.`,
           },
         ];
       } else if (tone===2) {
@@ -97,7 +103,9 @@ exports.getContext = async (req, res) => {
             What: Describe what the subject is or what is happening.
             How: Explain the process or method involved.
             Where: Specify the location or setting relevant to the subject.
-            When: Provide the time frame or period associated with the subject.`,
+            When: Provide the time frame or period associated with the subject.
+            
+            Provide all responses in a clear and structured format, including URLs for each source.`,
           },
         ];
       } else if (tone===3) {
@@ -127,7 +135,9 @@ exports.getContext = async (req, res) => {
             What: Describe what the subject is or what is happening.
             How: Explain the process or method involved.
             Where: Specify the location or setting relevant to the subject.
-            When: Provide the time frame or period associated with the subject.`,
+            When: Provide the time frame or period associated with the subject.
+            
+            Provide all responses in a clear and structured format, including URLs for each source.`,
           },
         ];
       } else if (tone===4) {
@@ -157,7 +167,9 @@ exports.getContext = async (req, res) => {
             What: Describe what the subject is or what is happening.
             How: Explain the process or method involved.
             Where: Specify the location or setting relevant to the subject.
-            When: Provide the time frame or period associated with the subject.`,
+            When: Provide the time frame or period associated with the subject.
+            
+            Provide all responses in a clear and structured format, including URLs for each source.`,
           },
         ];
       } else if (tone===5) {
@@ -187,7 +199,9 @@ exports.getContext = async (req, res) => {
             What: Describe what the subject is or what is happening.
             How: Explain the process or method involved.
             Where: Specify the location or setting relevant to the subject.
-            When: Provide the time frame or period associated with the subject.`,
+            When: Provide the time frame or period associated with the subject.
+            
+            Provide all responses in a clear and structured format, including URLs for each source.`,
           },
         ];
       } 
