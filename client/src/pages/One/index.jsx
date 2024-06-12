@@ -7,7 +7,10 @@ export default function OnePage() {
     <>
       <Helmet>
         <title>Contextify</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Contextify puts information into context at the click of a button."
+        />
       </Helmet>
       <div className="flex flex-col items-center w-full pb-[98px] gap-[39px] md:pb-5">
         <div className="flex flex-col items-center w-[47%] md:w-full gap-[31px] md:p-5">
@@ -18,7 +21,11 @@ export default function OnePage() {
           >
             Our values
           </Button>
-          <Text size="20xl" as="p" className="!text-gray-900 text-center leading-[110%]">
+          <Text
+            size="20xl"
+            as="p"
+            className="!text-gray-900 text-center leading-[110%]"
+          >
             <>
               The story and values behind
               <br /> our company
@@ -37,12 +44,20 @@ export default function OnePage() {
                   />
                 </div>
                 <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
-                  <Heading size="7xl" as="h1" className="!text-gray-900 !font-nunito">
+                  <Heading
+                    size="7xl"
+                    as="h1"
+                    className="!text-gray-900 !font-nunito"
+                  >
                     Innovation
                   </Heading>
-                  <Text size="11xl" as="p" className="!text-gray-600_03 leading-[157.4%]">
-                    Long established fact that a readeed to will be distracted by the readable content of a page when
-                    looking at its layout
+                  <Text
+                    size="11xl"
+                    as="p"
+                    className="!text-gray-600_03 leading-[157.4%]"
+                  >
+                    Long established fact that a readeed to will be distracted
+                    by the readable content of a page when looking at its layout
                   </Text>
                 </div>
               </div>
@@ -57,12 +72,20 @@ export default function OnePage() {
                   />
                 </div>
                 <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
-                  <Heading size="7xl" as="h2" className="!text-gray-900 !font-nunito">
+                  <Heading
+                    size="7xl"
+                    as="h2"
+                    className="!text-gray-900 !font-nunito"
+                  >
                     Team work
                   </Heading>
-                  <Text size="11xl" as="p" className="!text-gray-600_03 !font-nunito leading-[157.4%]">
-                    Long established fact that a readeed to will be distracted by the readable content of a page when
-                    looking at its layout
+                  <Text
+                    size="11xl"
+                    as="p"
+                    className="!text-gray-600_03 !font-nunito leading-[157.4%]"
+                  >
+                    Long established fact that a readeed to will be distracted
+                    by the readable content of a page when looking at its layout
                   </Text>
                 </div>
               </div>
@@ -77,12 +100,20 @@ export default function OnePage() {
                   />
                 </div>
                 <div className="flex flex-col items-start w-[73%] md:w-full gap-1.5">
-                  <Heading size="7xl" as="h3" className="!text-gray-900 !font-nunito">
+                  <Heading
+                    size="7xl"
+                    as="h3"
+                    className="!text-gray-900 !font-nunito"
+                  >
                     Excellence
                   </Heading>
-                  <Text size="11xl" as="p" className="!text-gray-600_03 !font-nunito leading-[157.4%]">
-                    Long established fact that a readeed to will be distracted by the readable content of a page when
-                    looking at its layout
+                  <Text
+                    size="11xl"
+                    as="p"
+                    className="!text-gray-600_03 !font-nunito leading-[157.4%]"
+                  >
+                    Long established fact that a readeed to will be distracted
+                    by the readable content of a page when looking at its layout
                   </Text>
                 </div>
               </div>
@@ -97,12 +128,20 @@ export default function OnePage() {
                   />
                 </div>
                 <div className="flex flex-col items-start w-[73%] md:w-full gap-[3px]">
-                  <Heading size="7xl" as="h4" className="!text-gray-900 !font-nunito">
+                  <Heading
+                    size="7xl"
+                    as="h4"
+                    className="!text-gray-900 !font-nunito"
+                  >
                     Responsibility
                   </Heading>
-                  <Text size="11xl" as="p" className="!text-gray-600_03 !font-nunito leading-[157.4%]">
-                    Long established fact that a readeed to will be distracted by the readable content of a page when
-                    looking at its layout
+                  <Text
+                    size="11xl"
+                    as="p"
+                    className="!text-gray-600_03 !font-nunito leading-[157.4%]"
+                  >
+                    Long established fact that a readeed to will be distracted
+                    by the readable content of a page when looking at its layout
                   </Text>
                 </div>
               </div>

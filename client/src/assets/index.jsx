@@ -10,7 +10,7 @@ import HomePageUIDesign from "../../components/HomePageUIDesign";
 import FreeTrialArea from "../../components/FreeTrialArea";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import './index.css';
+import "./index.css";
 import company1 from "../../assets/images/company1.png";
 import company2 from "../../assets/images/company2.png";
 import company3 from "../../assets/images/company3.png";
@@ -37,19 +37,25 @@ const dropDownOptions = [
 export default function HomePagePage() {
   return (
     <>
-      <div style={{ width: '100%', height: 'max-content' }}>
-
+      <div style={{ width: "100%", height: "max-content" }}>
         <Helmet>
           <title>Contextify</title>
           <meta
             name="description"
-            content="Web site created using create-react-app"
+            content="Contextify puts information into context at the click of a button."
           />
         </Helmet>
         <div>
           <Header />
 
-          <div className="setion1" style={{ width: '100%', height: 'max-content'  , padding:" 0px 20px" }}>
+          <div
+            className="setion1"
+            style={{
+              width: "100%",
+              height: "max-content",
+              padding: " 0px 20px",
+            }}
+          >
             <div className="flex md:flex md:flex-wrap  self-stretch  justify-between items-center w-full gap-5 mx-auto md:p-5 max-w-[1424px] md:w-[90%] jnjdcx4">
               <div className="flex flex-col w-[56%] md:w-full gap-[70px] ascc564">
                 <div className="h-[140px] w-[89%] relative  relative w-full md:w-[89%]">
@@ -148,18 +154,22 @@ export default function HomePagePage() {
 
               <div className="flex md:flex-col md:flex-wrap md:h-[auto] justify-between items-start w-[40%] md:w-full gap-5">
                 <div className="h-[16px] w-[16px] mt-[100px] bg-deep_purple-A200 rounded-lg animate-bounce ascc564" />
-              
-<img src={section1Image} alt="section1Image" width={"100%"} />
 
+                <img src={section1Image} alt="section1Image" width={"100%"} />
               </div>
-
-
             </div>
           </div>
 
-          <div className="setion2" style={{ width: '100%', height: 'max-content' }}>
+          <div
+            className="setion2"
+            style={{ width: "100%", height: "max-content" }}
+          >
             <div className="flex justify-center items-center w-full md:w-[21%] mt-[107px] gap-[11px] p-5 md:p-0">
-              <Text size="7xl" as="p" className="capitalize text-center md:text-left">
+              <Text
+                size="7xl"
+                as="p"
+                className="capitalize text-center md:text-left"
+              >
                 Trusted by 20,000+ clients
               </Text>
               <Img
@@ -184,36 +194,48 @@ export default function HomePagePage() {
                   </div>
                 </div>
 
-                <div style={{width:"100%"}}>
-                  
-                  <div style={{display:"flex" , flexWrap:"wrap" , width:"100%" , gap:"27px",justifyContent:"center",paddingBottom:"3vh"}}>
-
-<img src={company1} alt="company1" />
-<img src={company2} alt="company2" />
-<img src={company3} alt="company3" />
-<img src={company4} alt="company4" />
-<img src={company5} alt="company5" />
-<img src={company6} alt="company6" />
-
+                <div style={{ width: "100%" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      width: "100%",
+                      gap: "27px",
+                      justifyContent: "center",
+                      paddingBottom: "3vh",
+                    }}
+                  >
+                    <img src={company1} alt="company1" />
+                    <img src={company2} alt="company2" />
+                    <img src={company3} alt="company3" />
+                    <img src={company4} alt="company4" />
+                    <img src={company5} alt="company5" />
+                    <img src={company6} alt="company6" />
                   </div>
-                  <div style={{display:"flex" , flexWrap:"wrap" , width:"100%" , gap:"27px", justifyContent:"center"}}>
-                  <img src={company7} alt="company7" />
-                  <img src={company8} alt="company8" />
-                  <img src={company9} alt="company9" />
-                  <img src={company10} alt="company10" />
-                  <img src={company11} alt="company11" />
-
+                  <div
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      width: "100%",
+                      gap: "27px",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={company7} alt="company7" />
+                    <img src={company8} alt="company8" />
+                    <img src={company9} alt="company9" />
+                    <img src={company10} alt="company10" />
+                    <img src={company11} alt="company11" />
                   </div>
-
-
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="setion3" style={{ width: '100%', height: 'max-content' }}>
-
-
+          <div
+            className="setion3"
+            style={{ width: "100%", height: "max-content" }}
+          >
             <Text
               size="19xl"
               as="p"
@@ -222,9 +244,16 @@ export default function HomePagePage() {
               one platform for all Your Research
             </Text>
 
-            <div className="sdbv5" style={{ display: 'flex' , flexWrap:"wrap" ,gap:"10px" , width:"100%"}}>
-
-              <div className="flex flex-col items-center w-[34%] gap-12 m-auto  ascc564" >
+            <div
+              className="sdbv5"
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "10px",
+                width: "100%",
+              }}
+            >
+              <div className="flex flex-col items-center w-[34%] gap-12 m-auto  ascc564">
                 <div className="self-stretch">
                   <div className="flex justify-between items-start gap-5 p-4  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-white-A700 hover:shadow-xs rounded-[24px]">
                     <div className="flex flex-col mt-[13px] ml-[3px] md:ml-0">
@@ -309,12 +338,9 @@ export default function HomePagePage() {
               {/* .................................................................................................. */}
 
               <div className="flex flex-col items-end w-[46%] gap-7 right-[0.00px] top-[16%] m-auto ascc564 afds86 ">
-            
-            <img src={section3Image} alt="section3Image" />
+                <img src={section3Image} alt="section3Image" />
                 <div className="h-[16px] w-[16px] mr-[19px] md:mr-0 bg-deep_purple-A200 rounded-lg" />
               </div>
-
-
             </div>
 
             <div className="flex justify-end w-[86%]  right-[6%] m-auto ">
@@ -332,8 +358,7 @@ export default function HomePagePage() {
                       as="p"
                       className="!text-white-A700 capitalize text-center leading-6"
                     >
-                      Automation templates for creating your campaigns
-                      quickly
+                      Automation templates for creating your campaigns quickly
                     </Text>
                   </div>
                   <div className="flex flex-col items-center w-full gap-[9px]">
@@ -348,8 +373,7 @@ export default function HomePagePage() {
                       as="p"
                       className="!text-white-A700 capitalize text-center leading-6"
                     >
-                      Automation templates for creating your campaigns
-                      quickly
+                      Automation templates for creating your campaigns quickly
                     </Text>
                   </div>
                   <div className="flex flex-col items-center w-full gap-[9px]">
@@ -364,21 +388,38 @@ export default function HomePagePage() {
                       as="p"
                       className="!text-white-A700 capitalize text-center leading-6"
                     >
-                      Automation templates for creating your campaigns
-                      quickly
+                      Automation templates for creating your campaigns quickly
                     </Text>
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
 
-
-          <div className="setion4" style={{ width: '100%', height: '100vh', display: "flex", marginTop: "30px" , padding:"0px 20px"   }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "40px", width: '45%' , height:"100%", alignItems:"center" , justifyContent:'center' , position:"relative" , top:"-12%" }} className="sfd64">
-
+          <div
+            className="setion4"
+            style={{
+              width: "100%",
+              height: "100vh",
+              display: "flex",
+              marginTop: "30px",
+              padding: "0px 20px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "40px",
+                width: "45%",
+                height: "100%",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
+                top: "-12%",
+              }}
+              className="sfd64"
+            >
               <Text
                 size="19xl"
                 as="p"
@@ -391,28 +432,29 @@ export default function HomePagePage() {
                 as="p"
                 className="w-[100%]    !text-black-900_87 capitalize opacity-0.5 leading-[27px] "
               >
-                Pellentesque blandit augue facilisis malesuada interdum
-                eleifend risus, commodo. Egestas senectus vehicula vel
-                consectetur eu. Sit pulvinar urna diam lacus fringilla eu
-                cursus.
+                Pellentesque blandit augue facilisis malesuada interdum eleifend
+                risus, commodo. Egestas senectus vehicula vel consectetur eu.
+                Sit pulvinar urna diam lacus fringilla eu cursus.
               </Text>
             </div>
 
             <div className="h-[468px] w-[54%] m-auto  sfd64">
-             <img src={section4Image} alt="section4Image" />
+              <img src={section4Image} alt="section4Image" />
             </div>
-
           </div>
 
-          <div className="setion5" style={{ width: '100%', height: 'max-content', display: "flex" , padding:"0px 20px"  }}>
-
+          <div
+            className="setion5"
+            style={{
+              width: "100%",
+              height: "max-content",
+              display: "flex",
+              padding: "0px 20px",
+            }}
+          >
             <div className="flex  justify-between items-center gap-5 md:flex md:flex-wrap  md:gap-0 md:w-full md:h-auto md:p-[-15] ">
               <div className="h-[452px] w-[49%] md:w-full md:h-auto relative sdvf">
-                
-               <img src={section5Image} alt="section5Image" />
-                
-               
-               
+                <img src={section5Image} alt="section5Image" />
               </div>
               <div className="flex self-end justify-center w-[41%] md:w-full mb-24 md:flex-wrap md:mb-0">
                 <div className="flex flex-col w-full gap-6">
@@ -435,18 +477,21 @@ export default function HomePagePage() {
                   >
                     Pellentesque blandit augue facilisis malesuada interdum
                     eleifend risus, commodo. Egestas senectus vehicula vel
-                    consectetur eu. Sit pulvinar urna diam lacus fringilla
-                    eu cursus.
+                    consectetur eu. Sit pulvinar urna diam lacus fringilla eu
+                    cursus.
                   </Text>
                 </div>
               </div>
             </div>
-
           </div>
 
-          <div className="setion6" style={{ height: '80vh', margin: "0px 30px", padding:"0px 20px"  }}>
-            <div style={{ display: "flex", width: '100%', height: 'max-content' }}>
-
+          <div
+            className="setion6"
+            style={{ height: "80vh", margin: "0px 30px", padding: "0px 20px" }}
+          >
+            <div
+              style={{ display: "flex", width: "100%", height: "max-content" }}
+            >
               <div className="flex md:flex-col items-start md:self-stretch  md:p-5 md:ml-0 flex-1">
                 <div className="flex w-[39%] md:w-full mt-[63px] z-[1]">
                   <div className="flex flex-col w-full">
@@ -467,10 +512,10 @@ export default function HomePagePage() {
                       as="p"
                       className="w-[83%] md:w-full mt-6 !text-black-900_87 capitalize opacity-0.5 leading-[27px]"
                     >
-                      Pellentesque blandit augue facilisis malesuada
-                      interdum eleifend risus, commodo. Egestas senectus
-                      vehicula vel consectetur eu. Sit pulvinar urna diam
-                      lacus fringilla eu cursus.
+                      Pellentesque blandit augue facilisis malesuada interdum
+                      eleifend risus, commodo. Egestas senectus vehicula vel
+                      consectetur eu. Sit pulvinar urna diam lacus fringilla eu
+                      cursus.
                     </Text>
                     <div className="flex mt-[3px]">
                       <Button
@@ -487,19 +532,41 @@ export default function HomePagePage() {
                 </div>
               </div>
             </div>
-
-
-           
-
-
           </div>
 
-
-          <div className="setion7" style={{ height: 'max-content', width: "100%", display: "flex", gap: "25px", flexWrap:"wrap" , justifyContent:"center" , alignItems:"center", marginTop:"25px"  }}>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: "15px", width: "364px" }}>
-              <div className="flex justify-center flex-1" style={{ height: "50%" }}>
-                <div className="flex justify-between  items-start w-full gap-5 p-4  shadow-xs rounded-[24px]" style={{minHeight:"208px" , maxHeight:"max-content" ,background:"white"}}>
+          <div
+            className="setion7"
+            style={{
+              height: "max-content",
+              width: "100%",
+              display: "flex",
+              gap: "25px",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "25px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "15px",
+                width: "364px",
+              }}
+            >
+              <div
+                className="flex justify-center flex-1"
+                style={{ height: "50%" }}
+              >
+                <div
+                  className="flex justify-between  items-start w-full gap-5 p-4  shadow-xs rounded-[24px]"
+                  style={{
+                    minHeight: "208px",
+                    maxHeight: "max-content",
+                    background: "white",
+                  }}
+                >
                   <div className="flex flex-col">
                     <Button
                       color="pink_400"
@@ -519,16 +586,22 @@ export default function HomePagePage() {
                       as="p"
                       className="!text-black-900_87 opacity-0.5 leading-[27px]"
                     >
-                      Many desktop publishing packages and web page
-                      editors now use for them.
+                      Many desktop publishing packages and web page editors now
+                      use for them.
                     </Text>
                   </div>
                 </div>
               </div>
               {/* ....................................................................................... */}
 
-              <div className="flex justify-center flex-1" style={{ height: "50%" }}>
-                <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]" style={{minHeight:"208px" , maxHeight:"max-content"}}>
+              <div
+                className="flex justify-center flex-1"
+                style={{ height: "50%" }}
+              >
+                <div
+                  className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]"
+                  style={{ minHeight: "208px", maxHeight: "max-content" }}
+                >
                   <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
                     <Button
                       color="deep_orange_A200"
@@ -548,18 +621,30 @@ export default function HomePagePage() {
                       as="p"
                       className="!text-black-900_87 opacity-0.5 leading-[27px]"
                     >
-                      Many desktop publishing packages and web page
-                      editors now use for them.
+                      Many desktop publishing packages and web page editors now
+                      use for them.
                     </Text>
                   </div>
                 </div>
               </div>
-
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "15px", width: "364px" }}>
-              <div className="flex  md:flex-wrap m-auto" style={{ height: "50%" }}>
-                <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]" style={{minHeight:"208px" , maxHeight:"max-content"}}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "15px",
+                width: "364px",
+              }}
+            >
+              <div
+                className="flex  md:flex-wrap m-auto"
+                style={{ height: "50%" }}
+              >
+                <div
+                  className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]"
+                  style={{ minHeight: "208px", maxHeight: "max-content" }}
+                >
                   <div className="flex flex-col">
                     <Button
                       color="red_500"
@@ -579,16 +664,21 @@ export default function HomePagePage() {
                       as="p"
                       className="!text-black-900_87 opacity-0.5 leading-[27px]"
                     >
-                      Many desktop publishing packages and web page editors
-                      now use for them.
+                      Many desktop publishing packages and web page editors now
+                      use for them.
                     </Text>
                   </div>
                 </div>
               </div>
 
-
-              <div className="flex d:flex-wrap  m-auto  " style={{ height: "50%" }}>
-                <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]" style={{minHeight:"208px" , maxHeight:"max-content"}}>
+              <div
+                className="flex d:flex-wrap  m-auto  "
+                style={{ height: "50%" }}
+              >
+                <div
+                  className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]"
+                  style={{ minHeight: "208px", maxHeight: "max-content" }}
+                >
                   <div className="flex flex-col">
                     <Button
                       color="deep_purple_A200_05"
@@ -608,82 +698,100 @@ export default function HomePagePage() {
                       as="p"
                       className="!text-black-900_87 opacity-0.5 leading-[27px]"
                     >
-                      Many desktop publishing packages and web page editors
-                      now use for them.
+                      Many desktop publishing packages and web page editors now
+                      use for them.
                     </Text>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "15px", width: "364px" }}>
-
-
-
-            
-                <div className="flex justify-center flex-1">
-                  <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]" style={{minHeight:"208px" , maxHeight:"max-content"}}>
-                    <div className="flex flex-col md:ml-0">
-                      <Button
-                        color="blue_400_01"
-                        size="5xl"
-                        shape="circle"
-                        className="w-[50px] !rounded-[25px]"
-                      >
-                        <Img src="images/img_group_239.png" />
-                      </Button>
-                    </div>
-                    <div className="flex flex-col items-start mt-3.5 mr-[3px] md:mr-0 flex-1">
-                      <Text size="12xl" as="p" className="capitalize">
-                        beauty & wellness
-                      </Text>
-                      <Text
-                        size="7xl"
-                        as="p"
-                        className="!text-black-900_87 opacity-0.5 leading-[27px]"
-                      >
-                        Many desktop publishing packages and web page editors
-                        now use for them.
-                      </Text>
-                    </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "15px",
+                width: "364px",
+              }}
+            >
+              <div className="flex justify-center flex-1">
+                <div
+                  className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]"
+                  style={{ minHeight: "208px", maxHeight: "max-content" }}
+                >
+                  <div className="flex flex-col md:ml-0">
+                    <Button
+                      color="blue_400_01"
+                      size="5xl"
+                      shape="circle"
+                      className="w-[50px] !rounded-[25px]"
+                    >
+                      <Img src="images/img_group_239.png" />
+                    </Button>
+                  </div>
+                  <div className="flex flex-col items-start mt-3.5 mr-[3px] md:mr-0 flex-1">
+                    <Text size="12xl" as="p" className="capitalize">
+                      beauty & wellness
+                    </Text>
+                    <Text
+                      size="7xl"
+                      as="p"
+                      className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                    >
+                      Many desktop publishing packages and web page editors now
+                      use for them.
+                    </Text>
                   </div>
                 </div>
-                <div className="flex justify-center flex-1">
-                  <div className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]" style={{minHeight:"208px" , maxHeight:"max-content"}}>
-                    <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
-                      <Button
-                        color="blue_400_02"
-                        size="5xl"
-                        shape="circle"
-                        className="w-[50px] !rounded-[25px]"
-                      >
-                        <Img src="images/img_group_381.png" />
-                      </Button>
-                    </div>
-                    <div className="flex flex-col items-start mt-[13px] mr-[3px] md:mr-0 flex-1">
-                      <Text size="12xl" as="p" className="capitalize">
-                        events & entertainment
-                      </Text>
-                      <Text
-                        size="7xl"
-                        as="p"
-                        className="!text-black-900_87 opacity-0.5 leading-[27px]"
-                      >
-                        Many desktop publishing packages and web page editors
-                        now use for them.
-                      </Text>
-                    </div>
+              </div>
+              <div className="flex justify-center flex-1">
+                <div
+                  className="flex justify-between items-start w-full gap-5 p-4 bg-white-A700 shadow-xs rounded-[24px]"
+                  style={{ minHeight: "208px", maxHeight: "max-content" }}
+                >
+                  <div className="flex flex-col mt-3.5 ml-1 md:ml-0">
+                    <Button
+                      color="blue_400_02"
+                      size="5xl"
+                      shape="circle"
+                      className="w-[50px] !rounded-[25px]"
+                    >
+                      <Img src="images/img_group_381.png" />
+                    </Button>
+                  </div>
+                  <div className="flex flex-col items-start mt-[13px] mr-[3px] md:mr-0 flex-1">
+                    <Text size="12xl" as="p" className="capitalize">
+                      events & entertainment
+                    </Text>
+                    <Text
+                      size="7xl"
+                      as="p"
+                      className="!text-black-900_87 opacity-0.5 leading-[27px]"
+                    >
+                      Many desktop publishing packages and web page editors now
+                      use for them.
+                    </Text>
                   </div>
                 </div>
-              
+              </div>
             </div>
-
           </div>
 
-          <div className="setion8" style={{ height: 'max-content', width: "100%" , marginTop:"25px"}}>
-            <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-
-              <div className="flex items-center w-[35%]  m-auto" style={{ flexDirection: "column" }}>
+          <div
+            className="setion8"
+            style={{ height: "max-content", width: "100%", marginTop: "25px" }}
+          >
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                className="flex items-center w-[35%]  m-auto"
+                style={{ flexDirection: "column" }}
+              >
                 <Text size="7xl" as="p" className="md:p-5 capitalize">
                   trusted by 20,000+ clients
                 </Text>
@@ -694,13 +802,19 @@ export default function HomePagePage() {
                 />
               </div>
             </div>
-            <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Text
                 size="19xl"
                 as="p"
                 className="flex md:flex-col items-center  capitalize text-center "
-                style={{ width: "45%" }}>
+                style={{ width: "45%" }}
+              >
                 what our client think about us?
               </Text>
             </div>
@@ -807,16 +921,13 @@ export default function HomePagePage() {
               </div>
               <div className="self-end h-[16px] w-[16px] mb-[170px] ml-[-2px] md:ml-0 z-[1] bg-purple-A100 rounded-lg" />
             </div> */}
-
           </div>
 
           <FreeTrialArea />
           <Footer />
           <Text className="mt-[30px]" />
-
         </div>
-      </div >
-
+      </div>
     </>
   );
 }

@@ -136,7 +136,7 @@ export default function ProfilePage() {
         <title>admin</title>
         <meta
           name="description"
-          content="Web site created using create-react-app"
+          content="Contextify puts information into context at the click of a button."
         />
       </Helmet>
       <MainLayout>
@@ -160,14 +160,14 @@ export default function ProfilePage() {
                 />
               )}
             </div>
-              <div id="profile-img-change w-56">
-                <input
-                  type="file"
-                  onChange={(e) => {
-                    uploadFile(e.target.files[0]);
-                  }}
-                />
-              </div>
+            <div id="profile-img-change w-56">
+              <input
+                type="file"
+                onChange={(e) => {
+                  uploadFile(e.target.files[0]);
+                }}
+              />
+            </div>
             <div className="flex sm:flex-col gap-5 ">
               <div className="w-full">
                 <label className="mb-1">First Name</label>

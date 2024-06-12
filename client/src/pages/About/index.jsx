@@ -35,7 +35,7 @@ export default function AboutPage() {
         <title>Contextify</title>
         <meta
           name="description"
-          content="Web site created using create-react-app"
+          content="Contextify puts information into context at the click of a button."
         />
       </Helmet>
       <section className=" px-48 sm:px-5">
@@ -67,15 +67,23 @@ export default function AboutPage() {
           <h1 className="text-5xl">What We Do</h1>
           <div className="col-span-2">
             <p className="mb-5">
-            Dreamed up by a content writer and pulled together by a team of freelance developers, Contextify first came into being as a thought: “What if we could take out the “open in new tab” part of the search process?”
-Doing research as a freelancer isn’t easy – and we imagine it isn’t all that smooth for students, startup founders, and side-hustlers either. (And everyone else.) 
-
+              Dreamed up by a content writer and pulled together by a team of
+              freelance developers, Contextify first came into being as a
+              thought: “What if we could take out the “open in new tab” part of
+              the search process?” Doing research as a freelancer isn’t easy –
+              and we imagine it isn’t all that smooth for students, startup
+              founders, and side-hustlers either. (And everyone else.)
             </p>
             <p>
-            It’s too easy to lose your place while reading something online, just to look up this word or phrase you’re not familiar with. Or forget about what you were working on after chasing down a rabbit trail – only to realize two hours in that it wasn’t even relevant to your main project. 
-            Or not being sure about where to start with your research, because you don’t know the context around the given subject.We know the pain, the frustration, the 113 tabs open on three separate browser windows. We’ve been there. 
-            That’s why we’ve created Contextify. 
-{" "}
+              It’s too easy to lose your place while reading something online,
+              just to look up this word or phrase you’re not familiar with. Or
+              forget about what you were working on after chasing down a rabbit
+              trail – only to realize two hours in that it wasn’t even relevant
+              to your main project. Or not being sure about where to start with
+              your research, because you don’t know the context around the given
+              subject.We know the pain, the frustration, the 113 tabs open on
+              three separate browser windows. We’ve been there. That’s why we’ve
+              created Contextify.{" "}
             </p>
           </div>
         </div>
@@ -135,13 +143,25 @@ Doing research as a freelancer isn’t easy – and we imagine it isn’t all th
           <div className="flex flex-col gap-5 justify-center">
             <h1 className="text-5xl">Our Mission</h1>
             <p>
-            We’re here to revolutionize the way people interact with the internet.Contextify helps to put information on the internet into context for each user – whether that be a slang phrase you haven’t quite picked up yet, a meme you totally don’t get but is trending, or a marketing term you’d like to learn more about for your own business. 
-<br/><br/>
-            Whatever the case, Contextify gives you what you need to “be in the know” – that is, be informed enough about a topic to know what your next steps are, and whether it’s worth your time to keep exploring. (In which case, we’d also give you three recommended resources to see you off on your next adventure!)
-
-            Because – let’s face it – we don’t have that much time to spend opening and closing tabs just to make sure it’s “who” and not “whom”. There are cooler things to do online. <br/><br/>
-            Why not get the information you need at the click of a button without leaving whichever tab you’re already on?
-
+              We’re here to revolutionize the way people interact with the
+              internet.Contextify helps to put information on the internet into
+              context for each user – whether that be a slang phrase you haven’t
+              quite picked up yet, a meme you totally don’t get but is trending,
+              or a marketing term you’d like to learn more about for your own
+              business.
+              <br />
+              <br />
+              Whatever the case, Contextify gives you what you need to “be in
+              the know” – that is, be informed enough about a topic to know what
+              your next steps are, and whether it’s worth your time to keep
+              exploring. (In which case, we’d also give you three recommended
+              resources to see you off on your next adventure!) Because – let’s
+              face it – we don’t have that much time to spend opening and
+              closing tabs just to make sure it’s “who” and not “whom”. There
+              are cooler things to do online. <br />
+              <br />
+              Why not get the information you need at the click of a button
+              without leaving whichever tab you’re already on?
             </p>
           </div>
 
@@ -343,7 +363,8 @@ Doing research as a freelancer isn’t easy – and we imagine it isn’t all th
                     Start your free trial today
                   </h5>
                   <p>
-                  Contextify puts information into context at the click of a button. Be in the know.{" "}
+                    Contextify puts information into context at the click of a
+                    button. Be in the know.{" "}
                   </p>
                 </div>
 

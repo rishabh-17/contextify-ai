@@ -14,7 +14,7 @@ export default function PricingPage() {
         <title>Contextify</title>
         <meta
           name="description"
-          content="Web site created using create-react-app"
+          content="Contextify puts information into context at the click of a button."
         />
       </Helmet>
       <div className="mx-48">
@@ -22,17 +22,16 @@ export default function PricingPage() {
       </div>
       <section className="px-48 sm:px-5 mt-48 text-center">
         <h1 className="text-6xl mb-3 ">Ready to Start Contextifying?</h1>
-        <br/>
+        <br />
         <p className="text-3xl">
-        Choose your tier and start contextifying today!
+          Choose your tier and start contextifying today!
         </p>
       </section>
 
-      <section className="grid grid-cols-3 sm:grid-cols-1 gap-8 mt-48 px-48">
+      <section className="grid grid-cols-3 sm:grid-cols-1 gap-8 mt-48 px-48 md:px-5">
         <div className="flex flex-col gap-16 text-center rounded-xl bg-violet-200 p-4">
           <div className="flex justify-between px-5">
             <h3 className="font-bold text-3xl">Free</h3>
-           
           </div>
           <div className="flex flex-col gap-4 items-center">
             <h2>
@@ -47,8 +46,6 @@ export default function PricingPage() {
             <p>Access to browser extension</p>
             <p>Access to audio + text search results</p>
             <p>User dashboard</p>
-            
-           
           </div>
           <div>
             <button className="bg-purple-900 text-[#fff] rounded-full px-4 py-2">
@@ -76,7 +73,6 @@ export default function PricingPage() {
             <p>45 Credits</p>
             <p>Everything in Basic</p>
             <p>Collaborations</p>
-           
           </div>
           <div>
             <button className="text-purple-900 bg-[#fff] rounded-full px-4 py-2 mt-8">
@@ -88,22 +84,21 @@ export default function PricingPage() {
         <div className="flex flex-col gap-16 text-center rounded-xl bg-violet-200 p-4">
           <div className="flex justify-between px-5">
             <h3 className="font-bold text-3xl">Executive</h3>
-            
           </div>
           <div className="flex flex-col gap-4 items-center">
             <h2>
               <span className="text-3xl font-bold">Custom</span>
             </h2>
             <h2>
-              <span className="text-1xl font-bold">Tailored plan for your team’s unique needs.</span>
+              <span className="text-1xl font-bold">
+                Tailored plan for your team’s unique needs.
+              </span>
             </h2>
           </div>
           <div className="flex flex-col gap-4">
-            
             <p>Everything in Premium</p>
             <p>Dedicated Customer Support</p>
             <p>Data Backup</p>
-            
           </div>
           <div>
             <button className="bg-purple-900 text-[#fff] rounded-full px-4 py-2">
@@ -113,10 +108,10 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="mt-48 px-48">
+      <section className="mt-48 px-48 md:px-0">
         <h2 className="text-3xl text-center">Compare pricing packages</h2>
         <div className="rounded-xl bg-purple-100 w-full">
-          <table class="table-auto w-full">
+          <table class="table-auto w-full sm:text-sm">
             <thead className="py-5 border-b-2 border-gray-300">
               <tr className="text-start text-2xl my-5">
                 <th className="py-10">Features</th>
@@ -288,8 +283,9 @@ export default function PricingPage() {
         </div>
       </section>
       <FreeTrialArea />
-      <div  className="pb-24">
-      <Footer /></div>
+      <div className="pb-24">
+        <Footer />
+      </div>
     </div>
   );
 }

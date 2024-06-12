@@ -14,7 +14,10 @@ export default function DashboardPage() {
     <>
       <Helmet>
         <title>Contextify</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Contextify puts information into context at the click of a button."
+        />
       </Helmet>
       <div className="flex w-full bg-gray-100">
         <div className="flex md:flex-col items-center w-[98%] md:w-full gap-10 md:p-5">
@@ -28,17 +31,32 @@ export default function DashboardPage() {
                 placeholder={`Search `}
                 value={searchBarValue6}
                 onChange={(e) => setSearchBarValue6(e)}
-                prefix={<Img src="images/img_search.svg" alt="search" className="cursor-pointer" />}
+                prefix={
+                  <Img
+                    src="images/img_search.svg"
+                    alt="search"
+                    className="cursor-pointer"
+                  />
+                }
                 suffix={
                   searchBarValue6?.length > 0 ? (
-                    <CloseSVG onClick={() => setSearchBarValue6("")} height={24} width={24} fillColor="#000000ff" />
+                    <CloseSVG
+                      onClick={() => setSearchBarValue6("")}
+                      height={24}
+                      width={24}
+                      fillColor="#000000ff"
+                    />
                   ) : null
                 }
                 className="self-end w-[29%] sm:w-full mb-[9px] gap-2 sm:pr-5 text-black-900_7e font-dmsans"
               />
               <div className="w-[3%] sm:w-full">
                 <div className="flex flex-col items-end">
-                  <Img src="images/img_photo_44x44.png" alt="photo_one" className="h-[44px] w-[44px] rounded-[50%]" />
+                  <Img
+                    src="images/img_photo_44x44.png"
+                    alt="photo_one"
+                    className="h-[44px] w-[44px] rounded-[50%]"
+                  />
                   <div className="h-[12px] w-[12px] mt-[-10px] bg-green-600 rounded-md" />
                 </div>
               </div>
@@ -135,7 +153,11 @@ export default function DashboardPage() {
                     titleThree="Louisville"
                     description="<>When you enter into any new area <br />of science, you almost always find.</>"
                   />
-                  <DashboardElementscards deep="Milan" minimal="Edinburgh" title="Helsinki" />
+                  <DashboardElementscards
+                    deep="Milan"
+                    minimal="Edinburgh"
+                    title="Helsinki"
+                  />
                 </div>
               </div>
             </div>

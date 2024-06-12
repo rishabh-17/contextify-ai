@@ -62,7 +62,7 @@ export default function AdmindashboardPage() {
           <title>admin</title>
           <meta
             name="description"
-            content="Web site created using create-react-app"
+            content="Contextify puts information into context at the click of a button."
           />
         </Helmet>
         <div className="flex w-full justify-center overflow-auto bg-gray-100 rounded md:flex-col p-4 backdrop-blur-md">
