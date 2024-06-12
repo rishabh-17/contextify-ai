@@ -70,9 +70,7 @@ const index = () => {
               privacy policy
             </Text>
           </a>
-          <Text as="p" className="capitalize">
-            cookie policy
-          </Text>
+          
         </div>
         <div className="flex flex-col items-start gap-[21px]">
           <Text size="16xl" as="p" className="capitalize">
