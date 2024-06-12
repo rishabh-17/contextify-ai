@@ -278,8 +278,8 @@ export default function SignUpPage() {
                     className="mr-[1px] "
                   />
                   <label htmlFor="property1checkb">
-                    By creating an account, I agree to our Terms of use and
-                    Privacy Policy
+                    By creating an account, I agree to our <a href="/policy" target="_blank" className="underline hover:text-blue-500 culsor-pointer"> Terms of use and
+                    Privacy Policy</a>
                   </label>
                 </div>
                 <button
