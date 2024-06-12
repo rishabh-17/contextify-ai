@@ -5,7 +5,7 @@ const index = () => {
   const navigate = useNavigate();
   return (
     <div className="w-full mt-[156px] mx-auto md:p-5 max-w-[1240px]">
-      <div className="flex flex-wrap sm:flex-col justify-between items-start gap-5">     
+      <div className="flex flex-wrap sm:flex-col justify-between items-start gap-5">
         <div className="flex shrink justify-center">
           <div className="flex flex-col w-full gap-6">
             <div
@@ -16,11 +16,9 @@ const index = () => {
                 src="images/logo.png"
                 // src="images/img_frame_purple_900.svg"
                 alt="image"
-                className="my-auto h-[80px] w-[180px] pt-0 mt-0"
+                className="my-auto h-[80px] w-[80px] pt-0 mt-0"
               />
-              <h2 className="text-2xl font-bold text-purple-900">
-                Contextify
-              </h2>
+              <h2 className="text-2xl font-bold text-purple-900">Contextify</h2>
             </div>
             <div className="flex items-start gap-2">
               <Img
@@ -48,13 +46,25 @@ const index = () => {
           <Text size="16xl" as="p" className="capitalize text-center">
             links
           </Text>
-          <Text as="p" className="capitalize cursor-pointer" onClick={()=>navigate('/')}>
+          <Text
+            as="p"
+            className="capitalize cursor-pointer"
+            onClick={() => navigate("/")}
+          >
             home
           </Text>
-          <Text as="p" className="capitalize cursor-pointer" onClick={()=>navigate('/about')}>
+          <Text
+            as="p"
+            className="capitalize cursor-pointer"
+            onClick={() => navigate("/about")}
+          >
             about us
           </Text>
-          <Text as="p" className="capitalize cursor-pointer" onClick={()=>navigate('/contactus')}>
+          <Text
+            as="p"
+            className="capitalize cursor-pointer"
+            onClick={() => navigate("/contactus")}
+          >
             contact us
           </Text>
         </div>
@@ -70,7 +80,6 @@ const index = () => {
               privacy policy
             </Text>
           </a>
-          
         </div>
         <div className="flex flex-col items-start gap-[21px]">
           <Text size="16xl" as="p" className="capitalize">

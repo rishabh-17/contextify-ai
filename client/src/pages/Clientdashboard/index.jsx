@@ -128,7 +128,7 @@ export default function ClientdashboardPage() {
           setLoading(false);
         })
         .catch((err) => {
-          alert(err.message);
+          alert(err?.response?.data?.err);
           setLoading(false);
         });
     }
@@ -146,6 +146,7 @@ export default function ClientdashboardPage() {
     };
     if (!secret && !localStorage.getItem("secret")) {
       setLoading(false);
+
       return alert("Please generate a secret key");
     } else {
       axios
@@ -159,7 +160,7 @@ export default function ClientdashboardPage() {
           setLoading(false);
         })
         .catch((err) => {
-          alert(err.message);
+          alert(err?.response?.data?.err);
           setLoading(false);
         });
     }
