@@ -1,5 +1,6 @@
 const gpt = require("../utils/gptServices.js");
 const { Saved, History } = require("../models");
+const axios = require("axios");
 require("dotenv").config();
 const OpenAI = require("openai");
 // const api = process.env.OPENAI_API_KEY;
@@ -12,6 +13,9 @@ exports.getContext = async (req, res) => {
   let { text, isImg, tone } = req.body;
   if (!isImg) {
     if (text?.length > 0) {
+      const googleRes = await axios.get(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.CX}&q=${text?.slice(0,2000)}`)
+      const googleSources = googleRes.data.items.slice(5);
+      console.log(googleSources)
       let prompt = [
         {
           role: "user",
@@ -40,7 +44,7 @@ exports.getContext = async (req, res) => {
           When: Provide the time frame or period associated with the subject.
           
           
-          Provide all responses in a clear and structured format, including URLs for each source.`,
+          Provide all responses in a clear and structured format, including URLs for each source. ${googleSources} include formattedUrl, social media links or any other url in you answer as string form the json`,
         },
       ];
 
