@@ -15,7 +15,7 @@ export default function ContactUsPage() {
       </Helmet>
       <div className="px-48 bg-[#f7f0fc] pb-24">
         <Header />
-        <ul className="flex gap-4 justify-center">
+        <ul className="flex gap-4 justify-center mt-24">
           <li
             className={` cursor-pointer underline-offset-8 font-bold ${
               policy === 1 && "underline text-blue-600"
@@ -242,7 +242,7 @@ export default function ContactUsPage() {
                   </a>
                 </p>
 
-                <p class="mt-6">Contextify Team</p>
+                <p class="mt-6 font-semibold">Contextify Team</p>
               </div>
             </div>
           </div>

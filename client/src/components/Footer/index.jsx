@@ -72,14 +72,18 @@ const index = () => {
           <Text size="16xl" as="p" className="capitalize">
             legal
           </Text>
-          <Text as="p" className="capitalize">
+          <Text
+            as="p"
+            className="capitalize cursor-pointer"
+            onClick={() => navigate("/policy")}
+          >
             terms of use
           </Text>
-          <a href="#">
-            <Text as="p" className="capitalize">
+          <div onClick={() => navigate("/policy")} className="cursor-pointer">
+            <Text as="p" className="capitalize ">
               privacy policy
             </Text>
-          </a>
+          </div>
         </div>
         <div className="flex flex-col items-start gap-[21px]">
           <Text size="16xl" as="p" className="capitalize">
