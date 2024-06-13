@@ -17,6 +17,13 @@ exports.userAuthentication = (req, res, next) => {
 exports.secretKeyValidation = (req, res, next) => {
   try {
     const token = req.header("secret");
+    if (token === "undefined") {
+      console.log(token);
+      return res.status(401).json({
+        success: false,
+        err: "To access this feature, click on the puzzle piece icon in the Chrome toolbar and select the Contextify icon to provide your secret key.",
+      });
+    }
     User.findOne({ secretKey: token }).then((user) => {
       if (!user) {
         return res.status(401).json({ success: false, err: "invalid user" });

@@ -55,7 +55,7 @@ export default function ContactUsPage() {
         <title>Contextify</title>
         <meta
           name="description"
-          content="Web site created using create-react-app"
+          content="Contextify puts information into context at the click of a button."
         />
       </Helmet>
       <div className="bg-[#f7f0fc]">
@@ -130,28 +130,39 @@ export default function ContactUsPage() {
           </div>
         </form>
         <section className="mx-48 my-24 sm:mx-5 flex flex-col gap-3">
-          <h1 className="text-5xl text-center mb-12">Frequently Asked Questions</h1>
+          <h1 className="text-5xl text-center mb-12">
+            Frequently Asked Questions
+          </h1>
           <FAQ
-            question={" Are there any limits on use cases for the Basic/Free tier? "}
-            answer={" Yes, you initially get 15 credits tehn you are bound to upgrade to get more."}
+            question={
+              " Are there any limits on use cases for the Basic/Free tier? "
+            }
+            answer={
+              " Yes, you initially get 15 credits tehn you are bound to upgrade to get more."
+            }
             count={1}
           />
           <FAQ
             question={" Does Contextify work with videos? "}
-            answer={"Not yet. As soon as GPT-4 can understand and analyze videos, we will update Contextify to include this option."}
+            answer={
+              "Not yet. As soon as GPT-4 can understand and analyze videos, we will update Contextify to include this option."
+            }
             count={2}
           />
           <FAQ
             question={" Can I cancel my subscription and/or get a refund? "}
-            answer={" No refunds, but feel free to slip out of the Premium tier anytime you like. That being said, Basic is still pretty cool."}
+            answer={
+              " No refunds, but feel free to slip out of the Premium tier anytime you like. That being said, Basic is still pretty cool."
+            }
             count={3}
           />
           <FAQ
             question={" Got any other questions? "}
-            answer={" Drop us a message on the contact page, or email us @ support[at]contextify.info"}
+            answer={
+              " Drop us a message on the contact page, or email us @ support[at]contextify.info"
+            }
             count={4}
           />
-          
         </section>
         <div className="pb-24">
           <Footer />

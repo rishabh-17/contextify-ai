@@ -15,7 +15,10 @@ export default function AdminDashboardOnePage() {
     <>
       <Helmet>
         <title>admin</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Contextify puts information into context at the click of a button."
+        />
       </Helmet>
       <div className="w-full bg-gray-100 pr-[38px] sm:pr-5">
         <div className="flex items-start gap-[47px] md:flex-col">
@@ -32,7 +35,11 @@ export default function AdminDashboardOnePage() {
             <div className="relative ml-[3px] mt-[-880px] h-[880px] self-stretch bg-gray-50 md:ml-0" />
             <div className="relative ml-7 mt-[-858px] flex w-[72%] flex-col gap-[73px] md:ml-0 md:w-full md:gap-[54px] sm:gap-9">
               <div className="flex items-center justify-between gap-5">
-                <Img src="images/img_settings.svg" alt="settings_one" className="h-[36px] w-[36px]" />
+                <Img
+                  src="images/img_settings.svg"
+                  alt="settings_one"
+                  className="h-[36px] w-[36px]"
+                />
                 <Text size="xl" as="p" className="self-end !text-purple-900">
                   Contextify
                 </Text>
@@ -76,7 +83,11 @@ export default function AdminDashboardOnePage() {
             <header className="flex flex-col gap-[3px]">
               <div className="flex items-start justify-between gap-5 sm:flex-col">
                 <div className="flex w-[27%] items-center justify-center gap-2.5 sm:w-full">
-                  <Button color="gray_50" shape="round" className="!rounded-[12px]">
+                  <Button
+                    color="gray_50"
+                    shape="round"
+                    className="!rounded-[12px]"
+                  >
                     <Img src="images/img_group_17.svg" />
                   </Button>
                   <div className="flex flex-1 items-center justify-center gap-[9px]">
@@ -100,11 +111,21 @@ export default function AdminDashboardOnePage() {
                   </div>
                 </div>
                 <div className="flex w-[22%] items-center justify-center gap-2.5 sm:w-full">
-                  <Img src="images/img_image.png" alt="image_one" className="h-[45px] rounded-[12px] object-cover" />
+                  <Img
+                    src="images/img_image.png"
+                    alt="image_one"
+                    className="h-[45px] rounded-[12px] object-cover"
+                  />
                   <SelectBox
                     size="xs"
                     shape="square"
-                    indicator={<Img src="images/img_group_27.svg" alt="contrast" className="h-[23px] w-[24px]" />}
+                    indicator={
+                      <Img
+                        src="images/img_group_27.svg"
+                        alt="contrast"
+                        className="h-[23px] w-[24px]"
+                      />
+                    }
                     name="zahrahasht"
                     placeholder={`Zahra hasht..`}
                     options={dropDownOptions}
@@ -116,44 +137,81 @@ export default function AdminDashboardOnePage() {
             </header>
             <div className="flex items-center justify-between gap-5 md:flex-col">
               <div className="flex items-start gap-[15px] self-end">
-                <Text size="8xl" as="p" className="!font-alatsi !text-gray-700_01">
-                  <span className="font-junge text-gray-700_01">Project statisti</span>
-                  <span className="font-junge tracking-[-0.90px] text-gray-700_01">cs</span>
+                <Text
+                  size="8xl"
+                  as="p"
+                  className="!font-alatsi !text-gray-700_01"
+                >
+                  <span className="font-junge text-gray-700_01">
+                    Project statisti
+                  </span>
+                  <span className="font-junge tracking-[-0.90px] text-gray-700_01">
+                    cs
+                  </span>
                 </Text>
                 <div className="flex rounded-[19px] bg-deep_purple-A200_05 p-[7px]">
-                  <Img src="images/img_profile.svg" alt="profile_one" className="h-[23px] w-[24px]" />
+                  <Img
+                    src="images/img_profile.svg"
+                    alt="profile_one"
+                    className="h-[23px] w-[24px]"
+                  />
                 </div>
               </div>
               <TabList className="flex w-[40%] flex-wrap justify-between gap-[50px] p-4 md:w-full">
-                <Tab className="ml-[7px] text-sm font-normal tracking-[-0.07px] text-gray-50 md:ml-0">30 days</Tab>
-                <Tab className="text-sm font-normal tracking-[-0.07px] text-blue_gray-900">90 days</Tab>
-                <Tab className="self-start text-sm font-normal tracking-[-0.07px] text-blue_gray-900">6 monts</Tab>
+                <Tab className="ml-[7px] text-sm font-normal tracking-[-0.07px] text-gray-50 md:ml-0">
+                  30 days
+                </Tab>
+                <Tab className="text-sm font-normal tracking-[-0.07px] text-blue_gray-900">
+                  90 days
+                </Tab>
+                <Tab className="self-start text-sm font-normal tracking-[-0.07px] text-blue_gray-900">
+                  6 monts
+                </Tab>
                 <Tab className="mr-[7px] self-start text-sm font-normal tracking-[-0.07px] text-blue_gray-900 md:mr-0">
                   12 monts
                 </Tab>
               </TabList>
             </div>
             {[...Array(4)].map((_, index) => (
-              <TabPanel key={`tab-panel${index}`} className="absolute items-center">
+              <TabPanel
+                key={`tab-panel${index}`}
+                className="absolute items-center"
+              >
                 <div className="w-full">
                   <div className="flex flex-col gap-[33px]">
                     <div className="flex items-center gap-[17px] md:flex-col">
                       <div className="flex w-full flex-col gap-6 rounded-[32px] border border-solid border-gray-50_66 bg-blue_gray-50_66 p-[23px] sm:p-5">
                         <div className="flex flex-wrap items-center justify-between gap-5">
-                          <Text size="xl" as="p" className="tracking-[-0.40px] !text-black-900_01">
+                          <Text
+                            size="xl"
+                            as="p"
+                            className="tracking-[-0.40px] !text-black-900_01"
+                          >
                             Total visits
                           </Text>
-                          <Text size="7xl" as="p" className="!text-deep_purple-A200">
+                          <Text
+                            size="7xl"
+                            as="p"
+                            className="!text-deep_purple-A200"
+                          >
                             42,43M
                           </Text>
                         </div>
                         <div className="mb-[22px] flex flex-col items-start">
                           <div className="h-px w-full self-stretch bg-gray-400_01" />
-                          <Text size="xs" as="p" className="mt-5 !text-gray-500">
+                          <Text
+                            size="xs"
+                            as="p"
+                            className="mt-5 !text-gray-500"
+                          >
                             40,000,000
                           </Text>
                           <div className="mt-[13px] flex items-start gap-[9px] self-stretch sm:flex-col">
-                            <Text size="xs" as="p" className="mt-[30px] !text-gray-500">
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="mt-[30px] !text-gray-500"
+                            >
                               30,000,000
                             </Text>
                             <div className="flex flex-1 flex-col items-end sm:self-stretch">
@@ -172,13 +230,25 @@ export default function AdminDashboardOnePage() {
                               </div>
                             </div>
                           </div>
-                          <Text size="xs" as="p" className="mt-[5px] !text-gray-500">
+                          <Text
+                            size="xs"
+                            as="p"
+                            className="mt-[5px] !text-gray-500"
+                          >
                             20,000,000
                           </Text>
-                          <Text size="xs" as="p" className="mt-[30px] !text-gray-500">
+                          <Text
+                            size="xs"
+                            as="p"
+                            className="mt-[30px] !text-gray-500"
+                          >
                             10,000,000
                           </Text>
-                          <Text size="xs" as="p" className="ml-[43px] mt-5 !text-gray-500 md:ml-0">
+                          <Text
+                            size="xs"
+                            as="p"
+                            className="ml-[43px] mt-5 !text-gray-500 md:ml-0"
+                          >
                             0
                           </Text>
                           <div className="mr-1.5 mt-8 flex w-[85%] items-center justify-between gap-5 self-end md:mr-0 md:w-full">
@@ -191,17 +261,33 @@ export default function AdminDashboardOnePage() {
                               </Text>
                             </div>
                             <div className="flex flex-wrap self-end">
-                              <Text size="xs" as="p" className="self-end !text-gray-500">
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="self-end !text-gray-500"
+                              >
                                 Apr
                               </Text>
-                              <Text size="xs" as="p" className="ml-12 self-start !text-gray-500">
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="ml-12 self-start !text-gray-500"
+                              >
                                 May
                               </Text>
-                              <Text size="xs" as="p" className="ml-[37px] self-start !text-gray-500">
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="ml-[37px] self-start !text-gray-500"
+                              >
                                 Jun
                               </Text>
                             </div>
-                            <Text size="xs" as="p" className="h-[13px] self-start !text-gray-500">
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="h-[13px] self-start !text-gray-500"
+                            >
                               Jul
                             </Text>
                           </div>
@@ -216,7 +302,11 @@ export default function AdminDashboardOnePage() {
                                 <div className="flex w-[89%] flex-col items-end">
                                   <div className="flex flex-col items-start gap-[22px] self-stretch">
                                     <div className="flex w-[90%] items-center justify-between gap-5 self-end md:w-full">
-                                      <Button color="white_A700_05" shape="round" className="w-[52px] !rounded-[16px]">
+                                      <Button
+                                        color="white_A700_05"
+                                        shape="round"
+                                        className="w-[52px] !rounded-[16px]"
+                                      >
                                         <Img src="images/img_vector.svg" />
                                       </Button>
                                       <div className="mb-[13px] flex items-start gap-0.5 self-end">
@@ -225,12 +315,19 @@ export default function AdminDashboardOnePage() {
                                           alt="arrowup_one"
                                           className="mt-0.5 h-[6px] rounded-[1px]"
                                         />
-                                        <Text as="p" className="!text-white-A700">
+                                        <Text
+                                          as="p"
+                                          className="!text-white-A700"
+                                        >
                                           12%
                                         </Text>
                                       </div>
                                     </div>
-                                    <Text size="7xl" as="p" className="!text-gray-50">
+                                    <Text
+                                      size="7xl"
+                                      as="p"
+                                      className="!text-gray-50"
+                                    >
                                       42,34%
                                     </Text>
                                   </div>
@@ -272,15 +369,27 @@ export default function AdminDashboardOnePage() {
                                   >
                                     <Img src="images/img_calendar.svg" />
                                   </Button>
-                                  <Text size="7xl" as="p" className="mt-[23px] !text-blue_gray-900">
+                                  <Text
+                                    size="7xl"
+                                    as="p"
+                                    className="mt-[23px] !text-blue_gray-900"
+                                  >
                                     42,34%
                                   </Text>
-                                  <Text size="md" as="p" className="mt-[3px] !text-blue_gray-900_b7">
+                                  <Text
+                                    size="md"
+                                    as="p"
+                                    className="mt-[3px] !text-blue_gray-900_b7"
+                                  >
                                     Pages per visit
                                   </Text>
                                 </div>
                                 <div className="mb-2.5 flex flex-col items-center self-end rounded-[9px] bg-deep_purple-A200_05 p-[3px]">
-                                  <Img src="images/img_profile.svg" alt="profile_five" className="h-[10px] w-[10px]" />
+                                  <Img
+                                    src="images/img_profile.svg"
+                                    alt="profile_five"
+                                    className="h-[10px] w-[10px]"
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -289,7 +398,11 @@ export default function AdminDashboardOnePage() {
                         <div className="flex gap-6 sm:flex-col">
                           <div className="flex w-full flex-col items-start rounded-[32px] bg-gray-50 p-[15px] sm:w-full">
                             <div className="flex w-[79%] items-center justify-between gap-5 self-center md:w-full">
-                              <Button color="gray_400_0a" shape="round" className="w-[52px] !rounded-[16px]">
+                              <Button
+                                color="gray_400_0a"
+                                shape="round"
+                                className="w-[52px] !rounded-[16px]"
+                              >
                                 <Img src="images/img_lock_deep_purple_a200.svg" />
                               </Button>
                               <div className="mb-3 flex items-start gap-2 self-end">
@@ -303,17 +416,29 @@ export default function AdminDashboardOnePage() {
                                 </Text>
                               </div>
                             </div>
-                            <Text size="7xl" as="p" className="mt-[22px] !text-blue_gray-900">
+                            <Text
+                              size="7xl"
+                              as="p"
+                              className="mt-[22px] !text-blue_gray-900"
+                            >
                               326.60K
                             </Text>
-                            <Text size="md" as="p" className="mb-[25px] mt-[5px] !text-blue_gray-900_b7">
+                            <Text
+                              size="md"
+                              as="p"
+                              className="mb-[25px] mt-[5px] !text-blue_gray-900_b7"
+                            >
                               Total Monthly Visit
                             </Text>
                           </div>
                           <div className="relative h-[191px] w-full rounded-[32px] bg-gray-50 md:h-auto sm:w-full">
                             <div className="ml-4 mt-[17px] flex w-[76%] flex-col items-start md:ml-0">
                               <div className="flex w-[90%] items-center justify-between gap-5 self-end md:w-full">
-                                <Button color="white_A700_05" shape="round" className="w-[52px] !rounded-[16px]">
+                                <Button
+                                  color="white_A700_05"
+                                  shape="round"
+                                  className="w-[52px] !rounded-[16px]"
+                                >
                                   <Img src="images/img_vector_black_900_01.svg" />
                                 </Button>
                                 <div className="mb-[11px] flex items-start gap-1.5 self-end">
@@ -327,16 +452,28 @@ export default function AdminDashboardOnePage() {
                                   </Text>
                                 </div>
                               </div>
-                              <Text size="7xl" as="p" className="mt-[22px] !text-blue_gray-900">
+                              <Text
+                                size="7xl"
+                                as="p"
+                                className="mt-[22px] !text-blue_gray-900"
+                              >
                                 42,34%
                               </Text>
-                              <Text size="md" as="p" className="mt-[3px] !text-blue_gray-900_b7">
+                              <Text
+                                size="md"
+                                as="p"
+                                className="mt-[3px] !text-blue_gray-900_b7"
+                              >
                                 Bounce Rate
                               </Text>
                             </div>
                             <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max w-full flex-col items-start rounded-[32px] bg-gray-50 p-4">
                               <div className="flex w-[82%] items-center justify-between gap-5 self-center md:w-full">
-                                <Button color="gray_400_05" shape="round" className="w-[52px] !rounded-[16px]">
+                                <Button
+                                  color="gray_400_05"
+                                  shape="round"
+                                  className="w-[52px] !rounded-[16px]"
+                                >
                                   <Img src="images/img_lock_deep_purple_a200_52x52.svg" />
                                 </Button>
                                 <div className="mb-3.5 flex items-start gap-1.5 self-end">
@@ -350,10 +487,18 @@ export default function AdminDashboardOnePage() {
                                   </Text>
                                 </div>
                               </div>
-                              <Text size="7xl" as="p" className="mt-5 !text-blue_gray-900">
+                              <Text
+                                size="7xl"
+                                as="p"
+                                className="mt-5 !text-blue_gray-900"
+                              >
                                 00:03:27
                               </Text>
-                              <Text size="md" as="p" className="mb-6 mt-[5px] !text-blue_gray-900_b7">
+                              <Text
+                                size="md"
+                                as="p"
+                                className="mb-6 mt-[5px] !text-blue_gray-900_b7"
+                              >
                                 Avg.Visit Duration
                               </Text>
                             </div>
@@ -374,32 +519,50 @@ export default function AdminDashboardOnePage() {
                         <div className="mt-[7px] flex w-[90%] items-center justify-between gap-5 md:w-full sm:flex-col">
                           <div className="flex w-[61%] flex-col items-start gap-[13px] sm:w-full">
                             <div className="flex flex-wrap justify-between gap-5 self-stretch rounded-[12px] bg-blue_gray-50 p-1.5">
-                              <Text as="p" className="ml-[39px] tracking-[-0.24px] !text-gray-500_02 md:ml-0">
+                              <Text
+                                as="p"
+                                className="ml-[39px] tracking-[-0.24px] !text-gray-500_02 md:ml-0"
+                              >
                                 sourse
                               </Text>
-                              <Text as="p" className="mr-10 self-start tracking-[-0.24px] !text-gray-400 md:mr-0">
+                              <Text
+                                as="p"
+                                className="mr-10 self-start tracking-[-0.24px] !text-gray-400 md:mr-0"
+                              >
                                 Traffic sourse,%
                               </Text>
                             </div>
                             <div className="ml-[19px] flex w-[79%] justify-between gap-5 md:ml-0 md:w-full">
                               <div className="flex w-[33%] items-center justify-center gap-3 self-end">
                                 <div className="h-[12px] w-[18px] self-start rounded-sm bg-light_blue-300" />
-                                <Text as="p" className="tracking-[-0.24px] !text-black-900_01">
+                                <Text
+                                  as="p"
+                                  className="tracking-[-0.24px] !text-black-900_01"
+                                >
                                   Direct{" "}
                                 </Text>
                               </div>
-                              <Text as="p" className="self-start tracking-[-0.24px] !text-black-900_01">
+                              <Text
+                                as="p"
+                                className="self-start tracking-[-0.24px] !text-black-900_01"
+                              >
                                 50
                               </Text>
                             </div>
                             <div className="ml-[19px] flex w-[79%] justify-between gap-5 md:ml-0 md:w-full">
                               <div className="flex w-[33%] items-center justify-center gap-[9px] self-end">
                                 <div className="h-[12px] w-[18px] self-start rounded-sm bg-purple-A100" />
-                                <Text as="p" className="tracking-[-0.24px] !text-black-900_01">
+                                <Text
+                                  as="p"
+                                  className="tracking-[-0.24px] !text-black-900_01"
+                                >
                                   Search
                                 </Text>
                               </div>
-                              <Text as="p" className="self-start tracking-[-0.24px] !text-black-900_01">
+                              <Text
+                                as="p"
+                                className="self-start tracking-[-0.24px] !text-black-900_01"
+                              >
                                 50
                               </Text>
                             </div>
@@ -412,12 +575,23 @@ export default function AdminDashboardOnePage() {
                                   <div className="relative ml-[-4px] h-[4px] w-[4px] rounded-sm bg-gray-50" />
                                 </div>
                                 <div className="relative z-[3] mt-[-2px] flex items-center self-stretch">
-                                  <Img src="images/img_mobile.svg" alt="mobile_one" className="h-[97px] w-[47%]" />
+                                  <Img
+                                    src="images/img_mobile.svg"
+                                    alt="mobile_one"
+                                    className="h-[97px] w-[47%]"
+                                  />
                                   <div className="relative mb-3 ml-[-31px] flex flex-col items-end self-end">
-                                    <Text size="7xl" as="p" className="!text-black-900_01">
+                                    <Text
+                                      size="7xl"
+                                      as="p"
+                                      className="!text-black-900_01"
+                                    >
                                       50%
                                     </Text>
-                                    <Text as="p" className="mr-2 tracking-[-0.24px] !text-gray-500_01 md:mr-0">
+                                    <Text
+                                      as="p"
+                                      className="mr-2 tracking-[-0.24px] !text-gray-500_01 md:mr-0"
+                                    >
                                       Direct{" "}
                                     </Text>
                                   </div>
@@ -443,32 +617,50 @@ export default function AdminDashboardOnePage() {
                         <div className="mt-[7px] flex w-[90%] items-center justify-between gap-5 md:w-full sm:flex-col">
                           <div className="flex w-[61%] flex-col items-start gap-[13px] sm:w-full">
                             <div className="flex flex-wrap justify-between gap-5 self-stretch rounded-[12px] bg-blue_gray-50 p-1.5">
-                              <Text as="p" className="ml-[39px] tracking-[-0.24px] !text-gray-500_02 md:ml-0">
+                              <Text
+                                as="p"
+                                className="ml-[39px] tracking-[-0.24px] !text-gray-500_02 md:ml-0"
+                              >
                                 sourse
                               </Text>
-                              <Text as="p" className="mr-10 self-start tracking-[-0.24px] !text-gray-400 md:mr-0">
+                              <Text
+                                as="p"
+                                className="mr-10 self-start tracking-[-0.24px] !text-gray-400 md:mr-0"
+                              >
                                 Traffic sourse,%
                               </Text>
                             </div>
                             <div className="ml-[19px] flex w-[79%] justify-between gap-5 md:ml-0 md:w-full">
                               <div className="flex w-[33%] items-center justify-center gap-3 self-end">
                                 <div className="h-[12px] w-[18px] self-start rounded-sm bg-light_blue-300" />
-                                <Text as="p" className="tracking-[-0.24px] !text-black-900_01">
+                                <Text
+                                  as="p"
+                                  className="tracking-[-0.24px] !text-black-900_01"
+                                >
                                   Direct{" "}
                                 </Text>
                               </div>
-                              <Text as="p" className="self-start tracking-[-0.24px] !text-black-900_01">
+                              <Text
+                                as="p"
+                                className="self-start tracking-[-0.24px] !text-black-900_01"
+                              >
                                 50
                               </Text>
                             </div>
                             <div className="ml-[19px] flex w-[79%] justify-between gap-5 md:ml-0 md:w-full">
                               <div className="flex w-[33%] items-center justify-center gap-[9px] self-end">
                                 <div className="h-[12px] w-[18px] self-start rounded-sm bg-purple-A100" />
-                                <Text as="p" className="tracking-[-0.24px] !text-black-900_01">
+                                <Text
+                                  as="p"
+                                  className="tracking-[-0.24px] !text-black-900_01"
+                                >
                                   Search
                                 </Text>
                               </div>
-                              <Text as="p" className="self-start tracking-[-0.24px] !text-black-900_01">
+                              <Text
+                                as="p"
+                                className="self-start tracking-[-0.24px] !text-black-900_01"
+                              >
                                 50
                               </Text>
                             </div>
@@ -481,12 +673,23 @@ export default function AdminDashboardOnePage() {
                                   <div className="relative ml-[-4px] h-[4px] w-[4px] rounded-sm bg-gray-50" />
                                 </div>
                                 <div className="relative z-[5] mt-[-2px] flex items-center self-stretch">
-                                  <Img src="images/img_mobile.svg" alt="mobile_three" className="h-[97px] w-[47%]" />
+                                  <Img
+                                    src="images/img_mobile.svg"
+                                    alt="mobile_three"
+                                    className="h-[97px] w-[47%]"
+                                  />
                                   <div className="relative mb-3 ml-[-31px] flex flex-col items-end self-end">
-                                    <Text size="7xl" as="p" className="!text-black-900_01">
+                                    <Text
+                                      size="7xl"
+                                      as="p"
+                                      className="!text-black-900_01"
+                                    >
                                       50%
                                     </Text>
-                                    <Text as="p" className="mr-2 tracking-[-0.24px] !text-gray-500_01 md:mr-0">
+                                    <Text
+                                      as="p"
+                                      className="mr-2 tracking-[-0.24px] !text-gray-500_01 md:mr-0"
+                                    >
                                       Direct{" "}
                                     </Text>
                                   </div>
