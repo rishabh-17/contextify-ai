@@ -4,7 +4,7 @@ import axios from "axios";
 import { RWebShare } from "react-web-share";
 import { MdPerson } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5";
-import { FaRegEdit, FaPlus } from "react-icons/fa";
+import { FaRegEdit, FaPlus, FaMicrophone } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 import { WiTime4 } from "react-icons/wi";
 import { IoMdShare } from "react-icons/io";
@@ -226,6 +226,15 @@ export default function ClientdashboardPage() {
     if (!string) return "";
     return string?.charAt(0)?.toUpperCase() + string?.slice(1);
   }
+
+  const handleSpeech = () => {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(ans);
+    const voices = speechSynthesis.getVoices();
+    const selectedVoice = localStorage.getItem("voiceType") || 1;
+    utterance.voice = voices[selectedVoice];
+    synth.speak(utterance);
+  };
 
   return (
     <>
@@ -587,12 +596,19 @@ export default function ClientdashboardPage() {
                       >
                         Future exploration
                       </button>
-                      <button
-                        className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-2 w-full hover:-translate-y-1 hover:scale-110"
-                        onClick={handleSaveContext}
-                      >
-                        Save
-                      </button>
+                      <div className="flex gap-2 w-full items-center">
+                        <button
+                          className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-2 hover:-translate-y-1 hover:scale-110"
+                          onClick={handleSaveContext}
+                        >
+                          Save
+                        </button>
+                        <FaMicrophone
+                          color="purple"
+                          className="h-8"
+                          onClick={handleSpeech}
+                        />
+                      </div>
                     </div>
                   </div>
                 )}

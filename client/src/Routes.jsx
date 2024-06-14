@@ -20,7 +20,8 @@ import ContextDetail from "pages/ContextDetail";
 import Support from "pages/Support";
 import AllUsers from "pages/AllUsers";
 import AppsPage from "pages/AppsPage";
-import Policy from "pages/Policy"
+import Policy from "pages/Policy";
+import Settings from "pages/Settings";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -98,6 +99,10 @@ const ProjectRoutes = () => {
     {
       path: "policy",
       element: <Policy />,
+    },
+    {
+      path: "settings",
+      element: <Settings />,
     },
     { path: "*", element: <NotFound /> },
   ]);
