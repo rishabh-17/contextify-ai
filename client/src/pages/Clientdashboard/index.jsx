@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import MainLayout from "../../components/MainLayout";
 import axios from "axios";
 import { RWebShare } from "react-web-share";
+import { RiSpeakFill } from "react-icons/ri";
 import { MdPerson } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5";
 import { FaRegEdit, FaPlus, FaMicrophone } from "react-icons/fa";
@@ -535,10 +536,15 @@ export default function ClientdashboardPage() {
                 </div>
               </div>
               <div className="p-4 flex flex-col gap-3 rounded overflow-y-auto">
-                <div className="flex flex-row-reverse">
+                <div className="flex flex-row-reverse items-center gap-3">
                   <IoClose
                     className="cursor-pointer  hover:-translate-y-1 hover:scale-110"
                     onClick={() => setShowModal(false)}
+                  />
+                  <RiSpeakFill
+                    color="purple"
+                    className="h-8"
+                    onClick={handleSpeech}
                   />
                 </div>
                 {!isImgUrl ? (
@@ -596,19 +602,12 @@ export default function ClientdashboardPage() {
                       >
                         Future exploration
                       </button>
-                      <div className="flex gap-2 w-full items-center">
-                        <button
-                          className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-2 hover:-translate-y-1 hover:scale-110"
-                          onClick={handleSaveContext}
-                        >
-                          Save
-                        </button>
-                        <FaMicrophone
-                          color="purple"
-                          className="h-8"
-                          onClick={handleSpeech}
-                        />
-                      </div>
+                      <button
+                        className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-2 hover:-translate-y-1 hover:scale-110"
+                        onClick={handleSaveContext}
+                      >
+                        Save
+                      </button>
                     </div>
                   </div>
                 )}

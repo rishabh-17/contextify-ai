@@ -47,7 +47,7 @@ exports.checkAdmin = (req, res, next) => {
 
 exports.checkRequestLimit = (req, res, next) => {
   console.log("working");
-  if (req.user?.totalReq < 0) {
+  if (req.user?.totalReq <= 0) {
     res.status(401).json({ success: false, err: "Request limit exceeded" });
   } else {
     next();
