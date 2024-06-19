@@ -271,23 +271,7 @@ export default function ClientdashboardPage() {
             </div>
 
             <section className="my-5">
-              <div className="bg-[#fff] shadow-md border w-full py-8 px-4 gap-4 flex flex-wrap justify-between rounded rounded-2xl">
-                <div className="flex items-center">
-                  <div className="p-3  bg-orange-200 rounded-xl mx-1">
-                    <Img
-                      src="images/Paper.svg"
-                      // src="images/img_frame_purple_900.svg"
-                      alt="image"
-                      className="my-auto h-8 w-8"
-                    />
-                  </div>
-                  <div>
-                    <p className="w-[90px] text-center text-gray-700">
-                      Categories
-                    </p>
-                    <p className="w-[90px] text-center">4</p>
-                  </div>
-                </div>
+              <div className="bg-[#fff] shadow-md border w-full py-8 px-4 gap-4 flex flex-wrap justify-evenly sm:justify-between rounded rounded-2xl">
                 <div className="flex items-center">
                   <div className="p-3  bg-purple-200 rounded-xl mx-1">
                     <Img
