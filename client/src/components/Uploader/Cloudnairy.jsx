@@ -60,7 +60,7 @@ function CloudinaryUploadWidget({
     <CloudinaryScriptContext.Provider value={{ loaded }}>
       <BsPaperclip
         id="upload_widget"
-        className=" bg-[#fff] w-6 h-6"
+        className=" bg-[#fff] w-6 h-6 bg-transparent"
         onClick={initializeCloudinaryWidget}
       />
     </CloudinaryScriptContext.Provider>

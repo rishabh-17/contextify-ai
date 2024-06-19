@@ -33,7 +33,7 @@ export default function Uploader({ handleNewImg, context }) {
   const myImage = cld.image(publicId);
 
   return (
-    <div className="App">
+    <div className="bg-transparent">
       <CloudinaryUploadWidget
         uwConfig={uwConfig}
         context
