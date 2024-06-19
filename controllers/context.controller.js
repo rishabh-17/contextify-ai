@@ -17,9 +17,11 @@ exports.getContext = async (req, res) => {
         const googleRes = await axios.get(
           `https://www.googleapis.com/customsearch/v1?key=${
             process.env.GOOGLE_API_KEY
-          }&cx=${process.env.CX}&q=${text?.slice(0, 2000)}`
+          }&cx=${process.env.CX}&q=${
+            test.length > 2000 ? text?.slice(0, 2000) : text
+          }`
         );
-        const googleSources = googleRes.data.items.slice(5);
+        const googleSources = googleRes?.data?.items?.slice(5);
         console.log(googleSources);
         let prompt = [
           {
