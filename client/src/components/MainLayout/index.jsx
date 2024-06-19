@@ -17,6 +17,7 @@ import { FaRegStar } from "react-icons/fa";
 import { LuFileStack } from "react-icons/lu";
 import { GoGear } from "react-icons/go";
 import { RxAvatar } from "react-icons/rx";
+import axios from "axios";
 
 function OutsideClick(ref) {
   const [isClicked, setIsClicked] = useState();
@@ -48,12 +49,32 @@ export default function ClientdashboardPage({ active, children }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const user = JSON.parse(localStorage.getItem("user"));
   const boxRef = useRef(null);
+  const [profile, setProfile] = useState({});
+
   // boxOutsideClick will be true on outside click
   const boxOutsideClick = OutsideClick(boxRef);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const fetchProfile = async () => {
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+
+    const { data } = await axios.get(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/profile",
+      config
+    );
+    setProfile(data?.data);
+  };
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
 
   useEffect(() => {
     if (boxOutsideClick) {
@@ -206,11 +227,11 @@ export default function ClientdashboardPage({ active, children }) {
                 </div>
               </form> */}
               <div className="flex flex-row items-center justify-around">
-                <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
+                <div className="h-8 w-8 m-2 flex rounded-full text-center items-center justify-center p-0">
                   <Img
-                    src="images/defaultImg.jpg"
+                    src={profile?.imgUrl || "/images/defaultImg.jpg"}
                     alt="profile"
-                    className="h-6 shadow-xl"
+                    className="h-8 shadow-xl"
                   />
                 </div>
                 <div className="text-black flex flex-col">
@@ -237,15 +258,7 @@ export default function ClientdashboardPage({ active, children }) {
                       >
                         <div>
                           <div className=" flex flex-row flex-wrap gap-3 items-center px-1 py-3 text-sm text-purple-900 dark:text-white">
-                            {/* <div className="h-8 w-8 m-2 flex bg-gray-300 rounded-full text-center items-center justify-center">
-                          <img
-                            src="../../../public/images/Image.png"
-                            alt="profile"
-                            className="h-6 shadow-xl"
-                          />
-                        </div> */}
                             <a onClick={() => navigate("/profile")}>
-                              {/* <p>Profile</p> */}
                               <div className="font-sm truncate">
                                 {user?.email?.length > 20
                                   ? user?.email?.slice(0, 20) + "..."

@@ -5,7 +5,7 @@ import { RWebShare } from "react-web-share";
 import { RiSpeakFill } from "react-icons/ri";
 import { MdPerson } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5";
-import { FaRegEdit, FaPlus, FaMicrophone } from "react-icons/fa";
+import { FaRegEdit, FaPlus, FaCopy } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 import { WiTime4 } from "react-icons/wi";
 import { IoMdShare } from "react-icons/io";
@@ -36,6 +36,35 @@ export default function ClientdashboardPage() {
   const setLoading = useContext(LoadingContext);
   const [profile, setProfile] = useState({});
   const [isImgUrl, setIsImgUrl] = useState(false);
+
+  const genrateKey = async (e, initial) => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+
+    axios
+      .post(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/generatekey",
+        {},
+        config
+      )
+      .then((data) => {
+        console.log(initial);
+        if (!initial) {
+          setSecret(data?.data?.key);
+        }
+        localStorage.setItem("secret", data?.data?.key);
+        setLoading(false);
+      })
+      .catch((err) => {
+        alert("unable to generate key");
+        setLoading(false);
+      });
+  };
+
   React.useEffect(() => {
     const config = {
       headers: {
@@ -75,32 +104,10 @@ export default function ClientdashboardPage() {
     fetchHistory();
     fetchSaved();
     fetchProfile();
+    if (!localStorage.getItem("secret")) {
+      genrateKey(true, true);
+    }
   }, []);
-
-  const genrateKey = async () => {
-    setLoading(true);
-    const config = {
-      headers: {
-        authentication: `${localStorage.getItem("token")}`,
-      },
-    };
-
-    axios
-      .post(
-        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/generatekey",
-        {},
-        config
-      )
-      .then((data) => {
-        setSecret(data?.data?.key);
-        localStorage.setItem("secret", data?.data?.key);
-        setLoading(false);
-      })
-      .catch((err) => {
-        alert("unable to generate key");
-        setLoading(false);
-      });
-  };
 
   const handleNewContext = async () => {
     setIsImgUrl(false);
@@ -330,11 +337,16 @@ export default function ClientdashboardPage() {
                       type={keyShow ? "text" : "password"}
                       value={secret}
                     />
-                    <FaEye
+                    <FaCopy
+                      color="purple"
                       onClick={() => {
-                        setKeyShow(!keyShow);
-                        if (keyShow === true) setSecret("");
+                        navigator.clipboard.writeText(secret);
+                        alert("copied");
                       }}
+                      // onClick={() => {
+                      //   setKeyShow(!keyShow);
+                      //   if (keyShow === true) setSecret("");
+                      // }}
                     />
                   </div>
                 ) : (
@@ -356,7 +368,7 @@ export default function ClientdashboardPage() {
                 <RWebShare
                   data={{
                     text: "Contextify Your Browser Experience",
-                    url: "https://contxtify-ai.com/",
+                    url: "https://contextify.info/",
                     title: "Contextify",
                   }}
                 >
@@ -410,7 +422,7 @@ export default function ClientdashboardPage() {
                 </div>
                 <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
                   <div>
-                    <div>
+                    <div className="flex gap-3">
                       <RWebShare
                         data={{
                           text: "Contextify Your Browser Experience",
@@ -420,6 +432,16 @@ export default function ClientdashboardPage() {
                       >
                         <FaPlus color="gray" />
                       </RWebShare>
+
+                      <FaCopy
+                        color="purple"
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            `https://www.contextify.info/contextdetail/history/${item._id}`
+                          );
+                          alert("copied");
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -568,9 +590,7 @@ export default function ClientdashboardPage() {
                 ></textarea>
                 {ans && (
                   <div>
-                    <h5 className="font-bold  text-md mb-3">
-                      Save To:
-                    </h5>
+                    <h5 className="font-bold  text-md mb-3">Save To:</h5>
                     <div className="flex gap-2 flex-wrap">
                       <button
                         className={

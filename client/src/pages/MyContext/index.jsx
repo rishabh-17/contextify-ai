@@ -6,7 +6,7 @@ import { GrNotes } from "react-icons/gr";
 import { RWebShare } from "react-web-share";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
-import { FaRegEdit, FaPlus } from "react-icons/fa";
+import { FaRegEdit, FaPlus, FaCopy } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { LoadingContext } from "../../App";
 
@@ -146,7 +146,7 @@ export default function MyContext() {
                       </p>
                     </div>
                     <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
-                      <div>
+                      <div className="flex gap-3">
                         <RWebShare
                           data={{
                             text: "Contextify Your Browser Experience",
@@ -156,6 +156,15 @@ export default function MyContext() {
                         >
                           <FaPlus color="gray" />
                         </RWebShare>
+                        <FaCopy
+                          color="purple"
+                          onClick={() => {
+                            navigator.clipboard.writeText(
+                              `https://www.contextify.info/contextdetail/${context.type}/ + ${context._id}`
+                            );
+                            alert("copied");
+                          }}
+                        />
                       </div>
                     </div>
                   </div>

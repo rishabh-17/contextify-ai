@@ -3,8 +3,6 @@ const { Saved, History } = require("../models");
 const axios = require("axios");
 require("dotenv").config();
 const OpenAI = require("openai");
-// const api = process.env.OPENAI_API_KEY;
-// console.log(api);
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
