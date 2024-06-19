@@ -16,9 +16,13 @@ export default function AppsPage() {
                   Now Available for every browser that allows Chrome Extensions.
                 </p>
               </div>
-              <button className="bg-purple-900 text-[#fff] h-10 p-2 rounded transition ease-in-out hover:translate-y-1 hover:bg-gray-50 hover:text-[#000]">
+              <a
+                href="https://chromewebstore.google.com/detail/contextify/fbfhkfielfdockkbkldjbeokbbhgdccc"
+                target="_blank"
+                className="bg-purple-900 text-[#fff] h-10 p-2 rounded transition ease-in-out hover:translate-y-1 hover:bg-gray-50 hover:text-[#000]"
+              >
                 Install
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -1,7 +1,35 @@
 import React, { useState } from "react";
 import MainLayout from "../../components/MainLayout";
+import Payment from "../../components/Payment";
 export default function Subscription() {
   const [range, setRange] = useState(20);
+
+  const handleCheckout = () => {
+    fetch(
+      (import.meta.env.VITE_BACKEND_URL || "") +
+        "/api/user/create-checkout-session",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          authentication: `${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          items: [{ name: "Contextify Tokens", quantity: range }],
+        }),
+      }
+    )
+      .then((res) => {
+        if (res.ok) return res.json();
+        return res.json().then((json) => Promise.reject(json));
+      })
+      .then(({ url }) => {
+        window.location = url;
+      })
+      .catch((e) => {
+        console.error(e.error);
+      });
+  };
   return (
     <div>
       <MainLayout active={4}>
@@ -32,7 +60,6 @@ export default function Subscription() {
               </button>
             </div>
           </div>
-
           <div className="flex flex-col col-span-2 md:col-span-1 gap-16 text-center rounded-xl bg-purple-900 p-4 text-[#fff]">
             <div className="flex justify-between px-5">
               <h3 className="font-bold text-3xl">Custom</h3>
@@ -67,8 +94,11 @@ export default function Subscription() {
             </div>
 
             <div>
-              <button className="text-purple-900 bg-[#fff] rounded-full px-4 py-2">
-                Get Started
+              <button
+                className="text-purple-900 bg-[#fff] rounded-full px-4 py-2"
+                onClick={handleCheckout}
+              >
+                Buy
               </button>
             </div>
           </div>

@@ -1,6 +1,7 @@
 const { User } = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const stripe = require("stripe")(process.env.STRIPE_API);
 
 exports.signup = async (req, res, next) => {
   try {
@@ -142,5 +143,32 @@ exports.update = async (req, res) => {
     res.json({ success: true, user, msg: "profile updated successfully" });
   } catch (error) {
     console.log(error);
+  }
+};
+
+exports.makePayment = async (req, res) => {
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      mode: "payment",
+      line_items: req.body.items.map((item) => {
+        return {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: item.name,
+            },
+            unit_amount: 200,
+          },
+          quantity: item.quantity,
+        };
+      }),
+      success_url: `http://localhost:5173/dashboard`,
+      cancel_url: "http://localhost:5173/subscription",
+    });
+    res.json({ url: session.url });
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({ error: e.message });
   }
 };

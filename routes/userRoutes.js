@@ -12,5 +12,6 @@ router.post(
   userController.genrateKey
 );
 router.put("/update", AuthMiddleware.userAuthentication, userController.update);
+router.post("/create-checkout-session", userController.makePayment);
 
 module.exports = router;
