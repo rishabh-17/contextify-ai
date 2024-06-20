@@ -16,7 +16,7 @@ exports.getContext = async (req, res) => {
           `https://www.googleapis.com/customsearch/v1?key=${
             process.env.GOOGLE_API_KEY
           }&cx=${process.env.CX}&q=${
-            test.length > 2000 ? text?.slice(0, 2000) : text
+            text.length > 2000 ? text?.slice(0, 2000) : text
           }`
         );
         const googleSources = googleRes?.data?.items?.slice(5);
