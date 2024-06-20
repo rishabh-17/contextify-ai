@@ -1,7 +1,16 @@
+html {
+  overflow-x: hidden;
+}
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: Junge;
+  width: 100%;
+  overflow-x: hidden;
+  /* background-color: #F7F0FC; */
+  /* padding: 0 50px; */
 }
 * {
   box-sizing: border-box;
@@ -42,3 +51,13 @@ input {
 input:focus {
   outline: none;
 }
+
+.root {
+  background-color: #f5f5f5;
+}
+
+
+button:hover {
+  transition: all 0.3s ease;
+}
+

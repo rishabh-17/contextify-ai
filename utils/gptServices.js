@@ -1,10 +1,11 @@
+require("dotenv").config();
 const OpenAI = require("openai");
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const explainText = async (text) => {
+const explain = async (text) => {
   if (text?.length > 0) {
     const prompt = [
       {
@@ -22,11 +23,11 @@ const explainText = async (text) => {
         return { success: true, data: data };
       })
       .catch((err) => {
-        return { success: false, error: err };
+        return { success: false, err: err };
       });
   }
 
-  return { success: false, error: "Text is empty" };
+  return { success: false, err: "Text is empty" };
 };
 
 const explainImage = async (imageUrl) => {
@@ -45,11 +46,11 @@ const explainImage = async (imageUrl) => {
         return { success: true, data: data };
       })
       .catch((err) => {
-        return { success: false, error: err };
+        return { success: false, err: err };
       });
   }
 
-  return { success: false, error: "Unable to get image" };
+  return { success: false, err: "Unable to get image" };
 };
 
-exports.module = { explainText, explainImage };
+exports.module = { explain, explainImage };

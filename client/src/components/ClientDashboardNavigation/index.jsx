@@ -13,11 +13,7 @@ export default function ClientDashboardNavigation({ hidebgcopyOne, prop, product
                 {prop}
               </Text>
             ) : null}
-            <Img
-              src="images/img_dashboard_2_svgrepo_com.svg"
-              alt="dashboardtwo"
-              className="absolute bottom-0 left-0 right-0 top-0 m-auto h-[40px] w-full"
-            />
+           
           </div>
           <Text size="md" as="p" className="mt-2 tracking-[0.30px] !text-white-A700">
             {products}

@@ -26,6 +26,37 @@ const UserSchema = new mongoose.Schema(
       type: String,
       select: false,
     },
+    secretKey: {
+      type: String,
+      trim: true,
+    },
+    expiry: {
+      type: Date,
+    },
+    usage: {
+      type: Number,
+      default: 0,
+    },
+    totalReq: {
+      type: Number,
+      default: 15,
+    },
+    premiumType: {
+      type: String,
+      default: "free",
+    },
+    imgUrl: {
+      type: String,
+    },
+    state: {
+      type: String,
+    },
+    city: {
+      type: String,
+    },
+    phone: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

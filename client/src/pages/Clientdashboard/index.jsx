@@ -1,444 +1,635 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { CloseSVG } from "../../assets/images";
-import { Text, Img, Input, Button } from "../../components";
-import ClientDashboardNavigation from "../../components/ClientDashboardNavigation";
-import ClientDashboardNavigation1 from "../../components/ClientDashboardNavigation1";
+import React, { useState, useContext } from "react";
+import MainLayout from "../../components/MainLayout";
+import axios from "axios";
+import { RWebShare } from "react-web-share";
+import { RiSpeakFill } from "react-icons/ri";
+import { MdPerson } from "react-icons/md";
+import { IoPeopleSharp } from "react-icons/io5";
+import { FaRegEdit, FaPlus, FaCopy } from "react-icons/fa";
+import { GiBrain } from "react-icons/gi";
+import { WiTime4 } from "react-icons/wi";
+import { IoMdShare } from "react-icons/io";
+import { IoIosPersonAdd } from "react-icons/io";
+import { FaEye } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import share_peoples from "../../assets/share_peoples.png";
+import { CiFileOn } from "react-icons/ci";
+import { IoClose } from "react-icons/io5";
+import { LoadingContext } from "../../App";
+
+import { Img } from "../../components";
+import Uploader from "components/Uploader";
+// import { ThreeDCard } from "../../components/threedcard";
 
 export default function ClientdashboardPage() {
-  const [searchBarValue, setSearchBarValue] = React.useState("");
+  const [history, setHistory] = React.useState([]);
+  const [saved, setSaved] = React.useState([]);
+  const [secret, setSecret] = React.useState("");
+  const [keyShow, setKeyShow] = React.useState(false);
+  const [showModal, setShowModal] = React.useState(false);
+  const [tone, setTone] = useState(0);
+  const [type, setType] = useState(1);
+  const user = JSON.parse(localStorage.getItem("user"));
+  const [ques, setQues] = useState("");
+  const [ans, setAns] = useState("");
+  const navigate = useNavigate();
+  const setLoading = useContext(LoadingContext);
+  const [profile, setProfile] = useState({});
+  const [isImgUrl, setIsImgUrl] = useState(false);
+
+  const genrateKey = async (e, initial) => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+
+    axios
+      .post(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/generatekey",
+        {},
+        config
+      )
+      .then((data) => {
+        console.log(initial);
+        if (!initial) {
+          setSecret(data?.data?.key);
+        }
+        localStorage.setItem("secret", data?.data?.key);
+        setLoading(false);
+      })
+      .catch((err) => {
+        alert("unable to generate key");
+        setLoading(false);
+      });
+  };
+
+  React.useEffect(() => {
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+
+    const fetchHistory = async () => {
+      setLoading(true);
+      const { data } = await axios.get(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/history",
+        config
+      );
+      setHistory(data.data);
+      setLoading(false);
+    };
+    const fetchProfile = async () => {
+      setLoading(true);
+      const { data } = await axios.get(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/profile",
+        config
+      );
+      setProfile(data?.data);
+      setLoading(false);
+    };
+
+    const fetchSaved = async () => {
+      setLoading(true);
+      const { data } = await axios.get(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved",
+        config
+      );
+      setSaved(data?.data);
+      setLoading(false);
+    };
+
+    fetchHistory();
+    fetchSaved();
+    fetchProfile();
+    if (!localStorage.getItem("secret")) {
+      genrateKey(true, true);
+    }
+  }, []);
+
+  const handleNewContext = async () => {
+    setIsImgUrl(false);
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+        secret: `${localStorage.getItem("secret")}`,
+      },
+    };
+    if (!ques) {
+      setLoading(false);
+      return alert("Please enter a question");
+    } else if (!secret && !localStorage.getItem("secret")) {
+      setLoading(false);
+      return alert("Please generate a secret key");
+    } else {
+      axios
+        .post(
+          (import.meta.env.VITE_BACKEND_URL || "") + "/api/context/contextify",
+          { text: ques, type: type, tone: tone },
+          config
+        )
+        .then(({ data }) => {
+          setAns(data?.data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          alert(err?.response?.data?.err);
+          setLoading(false);
+        });
+    }
+  };
+
+  const handleNewImg = async (url) => {
+    setIsImgUrl(true);
+    setQues(url);
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+        secret: `${localStorage.getItem("secret")}`,
+      },
+    };
+    if (!secret && !localStorage.getItem("secret")) {
+      setLoading(false);
+
+      return alert("Please generate a secret key");
+    } else {
+      axios
+        .post(
+          (import.meta.env.VITE_BACKEND_URL || "") + "/api/context/contextify",
+          { text: url, type: type, tone: tone, isImg: true },
+          config
+        )
+        .then(({ data }) => {
+          setAns(data?.data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          alert(err?.response?.data?.err);
+          setLoading(false);
+        });
+    }
+  };
+
+  const handleSaveContext = async () => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+        secret: `${localStorage.getItem("secret")}`,
+      },
+    };
+    if (!ques) {
+      setLoading(false);
+      return alert("Please enter a question");
+    } else if (!secret && !localStorage.getItem("secret")) {
+      setLoading(false);
+      return alert("Please generate a secret key");
+    } else {
+      axios
+        .post(
+          (import.meta.env.VITE_BACKEND_URL || "") + "/api/context/save",
+          { question: ques, answer: ans, type: type },
+          config
+        )
+        .then(({ data }) => {
+          alert(data.msg);
+          setQues("");
+          setAns("");
+          setLoading(false);
+        })
+        .catch((err) => {
+          alert(err.err);
+          setLoading(false);
+        });
+    }
+  };
+
+  const updateProfileImg = async (url) => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    axios
+      .put(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/update",
+        { imgUrl: url },
+        config
+      )
+      .then(({ data }) => {
+        alert(data.msg);
+        setLoading(false);
+      })
+      .catch((err) => {
+        alert(err.err);
+        setLoading(false);
+      });
+  };
+  function capitalizeFirstLetter(string) {
+    if (!string) return "";
+    return string?.charAt(0)?.toUpperCase() + string?.slice(1);
+  }
+
+  const handleSpeech = () => {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(ans);
+    const voices = speechSynthesis.getVoices();
+    const selectedVoice = localStorage.getItem("voiceType") || 1;
+    utterance.voice = voices[selectedVoice];
+    synth.speak(utterance);
+  };
 
   return (
     <>
-      <Helmet>
-        <title>admin</title>
-        <meta name="description" content="Web site created using create-react-app" />
-      </Helmet>
-      <div className="w-full bg-white-A700">
-        <div className="flex items-start md:flex-col">
-          <div className="relative z-[1] mt-[18px] flex w-[17%] flex-col items-center gap-[23px] md:w-full md:p-5">
-            <div className="relative h-[39px] w-[74%]">
-              <Img
-                src="images/img_frame.svg"
-                alt="image"
-                className="absolute bottom-0 left-[0.00px] top-0 my-auto h-[39px] w-[65%]"
-              />
-              <Text
-                size="5xl"
-                as="p"
-                className="absolute bottom-[-0.45px] right-[0.00px] m-auto capitalize !text-deep_purple-A200_02"
-              >
-                Contextify
-              </Text>
-            </div>
-            <div className="flex flex-col items-start self-stretch">
-              <ClientDashboardNavigation
-                hidebgcopyOne={true}
-                prop=""
-                className="flex items-center justify-center gap-5 self-stretch pr-6 sm:pr-5"
-              />
-              <div className="ml-[17px] mt-6 flex w-[86%] rounded-md bg-white-A700 p-2.5 md:ml-0 md:w-full">
-                <div className="ml-1.5 flex items-center gap-1 md:ml-0">
-                  <div className="flex items-center">
-                    <Text size="2xl" as="p" className="self-end text-center !text-purple-900">
-                      
-                    </Text>
-                    <Img
-                      src="images/img_context_data_de.svg"
-                      alt="image_one"
-                      className="relative ml-[-18px] h-[30px] w-[30px]"
-                    />
-                  </div>
-                  <Text size="md" as="p" className="tracking-[0.30px] !text-purple-900">
-                    My Context
-                  </Text>
-                </div>
-              </div>
-              <div className="ml-[42px] mt-[620px] flex items-center gap-[17px] md:ml-0">
-                <Img src="images/img_contact_support.svg" alt="contactsupport" className="h-[20px] w-[20px]" />
-                <a href="Support" target="_blank" rel="noreferrer">
-                  <Text size="md" as="p" className="tracking-[0.30px]">
-                    Support
-                  </Text>
-                </a>
-              </div>
-              <div className="ml-[41px] mt-[18px] flex items-center gap-[18px] md:ml-0">
-                <Img
-                  src="images/img_vector_black_900_01_20x20.svg"
-                  alt="vector_one"
-                  className="h-[20px] w-[20px] self-start"
+      <MainLayout active={1} user={user}>
+        <div className="w-full mb-4 text-violet-900 h-4 text-lg">
+          Hi, {capitalizeFirstLetter(user?.name)}
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full py-3">
+          <div>
+            <div className="flex flex-col  items-center gap-4 rounded-full ml-5 w-1/3">
+              {profile?.imgUrl ? (
+                <img
+                  src={profile?.imgUrl}
+                  alt=""
+                  width={150}
+                  className="rounded-full"
                 />
-                <Text size="md" as="p" className="self-end tracking-[0.30px]">
-                  Report an issue
-                </Text>
-              </div>
-              <div className="mt-[9px] flex flex-col self-stretch md:flex-row">
-                <ClientDashboardNavigation1 className="flex items-center p-[11px]" />
-                <div className="h-px w-[240px] bg-gray-300" />
-                <ClientDashboardNavigation1 products="Settings" className="flex items-center p-[11px]" />
-              </div>
-              <ClientDashboardNavigation1 products="Logout" className="flex items-end gap-4 p-[11px]" />
+              ) : (
+                <Img
+                  src="images/defaultImg.jpg"
+                  // src="images/img_frame_purple_900.svg"
+                  alt="image"
+                  className="rounded-full"
+                />
+              )}
             </div>
+
+            <section className="my-5">
+              <div className="bg-[#fff] shadow-md border w-full py-8 px-4 gap-4 flex flex-wrap justify-evenly sm:justify-between rounded rounded-2xl">
+                <div className="flex items-center">
+                  <div className="p-3  bg-purple-200 rounded-xl mx-1">
+                    <Img
+                      src="images/Swap.svg"
+                      // src="images/img_frame_purple_900.svg"
+                      alt="image"
+                      className="my-auto h-8 w-8"
+                    />
+                  </div>
+                  <div>
+                    <p className="w-[90px] text-center text-gray-700">
+                      Use Cases
+                    </p>
+                    <p className="w-[90px] text-center">
+                      {profile?.usage || 0}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="p-3  bg-blue-200 rounded-xl mx-1">
+                    <Img
+                      src="images/Group.svg"
+                      // src="images/img_frame_purple_900.svg"
+                      alt="image"
+                      className="my-auto h-8 w-8"
+                    />
+                  </div>
+                  <div>
+                    <p className="w-[90px] text-center text-gray-700">Tokens</p>
+                    <p className="w-[90px] text-center">
+                      {profile?.totalReq || 0}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
-          <div className="relative ml-[-1px] flex-1 bg-gray-100 pb-[69px] md:ml-0 md:self-stretch md:p-5 md:pb-5">
-            <div className="relative h-[1070px] bg-[url(/public/images/img_group_37.png)] bg-cover bg-no-repeat pb-[31px] sm:pb-5">
-              <div className="absolute bottom-[9%] left-0 right-0 m-auto h-[845px] w-[98%] md:h-auto">
-                <div className="mb-56 ml-[7px] flex w-[91%] items-start md:ml-0 sm:flex-col">
-                  <Text size="xl" as="p" className="mt-[69px] tracking-[-0.11px]">
-                    My notes for further research
-                  </Text>
-                  <div className="relative ml-[-129px] flex flex-1 bg-black-900_01 sm:ml-0 sm:self-stretch">
-                    <div className="mb-2.5 mt-[154px] flex w-[42%] items-center justify-between gap-5 md:w-full md:p-5">
-                      <Text size="xl" as="p" className="self-end tracking-[-0.11px]">
-                        Wing Chun
-                      </Text>
-                      <div className="flex flex-col items-start">
-                        <Text size="md" as="p" className="tracking-[-0.11px]">
-                          Research by
-                        </Text>
-                        <Text size="md" as="p" className="tracking-[-0.11px]">
-                          20/2/2024
-                        </Text>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute right-[0.00px] top-1/4 m-auto flex w-[42%] flex-col items-start">
-                  <div className="flex items-start self-stretch sm:flex-col">
-                    <Text size="xl" as="p" className="mt-20 tracking-[-0.11px]">
-                      For future exploration
-                    </Text>
-                    <Img
-                      src="images/img_vector_201x456.png"
-                      alt="vector_three"
-                      className="relative ml-[-169px] h-[201px] flex-1 object-cover sm:ml-0 sm:w-full sm:self-stretch"
+          <div>
+            <section className="mb-5 mx-10 bg-[#fff] p-5 rounded-xl shadow-md">
+              <h3 className="my-3">Secret Key</h3>
+              <div className="bg-[#fff] p-5 rounded-xl">
+                {secret ? (
+                  <div className="flex gap-3">
+                    <input
+                      className="roundedxl"
+                      type={keyShow ? "text" : "password"}
+                      value={secret}
+                    />
+                    <FaCopy
+                      color="purple"
+                      onClick={() => {
+                        navigator.clipboard.writeText(secret);
+                        alert("copied");
+                      }}
+                      // onClick={() => {
+                      //   setKeyShow(!keyShow);
+                      //   if (keyShow === true) setSecret("");
+                      // }}
                     />
                   </div>
-                  <div className="relative mt-[-63px] flex w-[89%] rounded-[14px] bg-white-A700 p-[18px] shadow-xs md:w-full">
-                    <Button
-                      size="xs"
-                      shape="round"
-                      className="ml-[7px] mt-[150px] min-w-[100px] tracking-[0.30px] md:ml-0 sm:px-5"
-                    >
-                      View all
-                    </Button>
-                  </div>
-                </div>
-                <div className="absolute left-[0.00px] top-[10.43px] m-auto flex w-[50%] flex-col items-start">
-                  <div className="flex items-center gap-[26px] self-stretch sm:flex-col">
-                    <Img
-                      src="images/img_group_170x170.png"
-                      alt="image_two"
-                      className="h-[170px] w-[170px] object-cover sm:w-full"
-                    />
-                    <div className="mb-2.5 flex flex-1 justify-center self-end rounded-[14px] bg-white-A700 p-[11px] shadow-xs sm:self-stretch">
-                      <div className="mb-7 flex w-[80%] gap-10 md:flex-row">
-                        <div className="flex flex-1 flex-col gap-1">
-                          <Img src="images/img_lock.svg" alt="image" className="ml-[17px] h-[25px] w-[25px] md:ml-0" />
-                          <div className="flex flex-col items-start gap-[7px]">
-                            <Text as="p" className="ml-[25px] !text-gray-900_02 md:ml-0">
-                              4
-                            </Text>
-                            <Text as="p" className="!text-gray-900_02">
-                              <>
-                                Use cases <br />
-                                this month
-                              </>
-                            </Text>
-                          </div>
-                        </div>
-                        <div className="flex flex-1 flex-col items-center gap-1">
-                          <Img src="images/img_lock.svg" alt="lock_one" className="h-[25px] w-[25px]" />
-                          <div className="flex flex-col items-center gap-[7px] self-stretch">
-                            <Text as="p" className="!text-gray-900_02">
-                              5/25
-                            </Text>
-                            <Text as="p" className="!text-gray-900_02">
-                              <>
-                                Posts on cool
-                                <br />
-                                stuffs
-                              </>
-                            </Text>
-                          </div>
-                        </div>
-                        <div className="flex w-[31%] flex-col gap-1">
-                          <Img
-                            src="images/img_lock.svg"
-                            alt="lock_one"
-                            className="ml-[23px] h-[25px] w-[25px] md:ml-0"
-                          />
-                          <div className="flex flex-col items-start gap-[7px]">
-                            <Text as="p" className="ml-[25px] !text-gray-900_02 md:ml-0">
-                              4/20
-                            </Text>
-                            <Text as="p" className="!text-gray-900_02">
-                              <>
-                                Use new topics <br />
-                                this month
-                              </>
-                            </Text>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <Text size="xl" as="p" className="mt-[29px] tracking-[-0.11px]">
-                    Top topics I have in the past month
-                  </Text>
-                  <div className="mt-4 flex gap-[19px] self-stretch md:flex-row sm:flex-col">
-                    <div className="flex w-full flex-col items-start justify-center rounded-[14px] bg-white-A700 p-[17px] shadow-xs sm:w-full">
-                      <Img
-                        src="images/img_contrast.svg"
-                        alt="people_one"
-                        className="ml-[37px] h-[60px] w-[60px] md:ml-0"
-                      />
-                      <Text size="lg" as="p" className="ml-[42px] mt-[11px] !text-gray-900_02 md:ml-0">
-                        People{" "}
-                      </Text>
-                      <Text size="lg" as="p" className="mb-[3px] ml-[62px] !text-gray-900_02 md:ml-0">
-                        1
-                      </Text>
-                    </div>
-                    <div className="flex w-full flex-col items-start justify-center rounded-[14px] bg-white-A700 p-[17px] shadow-xs sm:w-full">
-                      <Img
-                        src="images/img_contrast.svg"
-                        alt="contrast_one"
-                        className="ml-[37px] h-[60px] w-[60px] md:ml-0"
-                      />
-                      <Text size="lg" as="p" className="ml-[42px] mt-[11px] !text-gray-900_02 md:ml-0">
-                        People{" "}
-                      </Text>
-                      <Text size="lg" as="p" className="mb-[3px] ml-[62px] !text-gray-900_02 md:ml-0">
-                        1
-                      </Text>
-                    </div>
-                    <div className="flex w-full flex-col items-start justify-center rounded-[14px] bg-white-A700 p-[17px] shadow-xs sm:w-full">
-                      <Img
-                        src="images/img_contrast.svg"
-                        alt="contrast_one"
-                        className="ml-[37px] h-[60px] w-[60px] md:ml-0"
-                      />
-                      <Text size="lg" as="p" className="ml-[42px] mt-[11px] !text-gray-900_02 md:ml-0">
-                        People{" "}
-                      </Text>
-                      <Text size="lg" as="p" className="mb-[3px] ml-[62px] !text-gray-900_02 md:ml-0">
-                        1
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-                <Button
-                  size="xs"
-                  shape="round"
-                  className="absolute bottom-0 left-[40%] top-0 my-auto min-w-[100px] tracking-[0.30px] sm:px-5"
-                >
-                  View all
-                </Button>
-                <div className="absolute right-[5%] top-[5%] m-auto flex w-[38%] flex-col items-center gap-6 rounded-[14px] bg-white-A700 p-[9px] shadow-xs">
-                  <div className="mt-[21px] flex w-[88%] flex-col items-start md:w-full">
-                    <div className="relative z-[2] flex items-center justify-between gap-5 self-stretch">
-                      <Img src="images/img_know_svgrepo_com.svg" alt="knowsvgrepo_one" className="h-[32px] w-[32px]" />
-                      <Text size="md" as="p" className="mb-[5px] self-end tracking-[-0.11px]">
-                        How razor blades are made and reused
-                      </Text>
-                    </div>
-                    <div className="relative mt-[-3px] h-[2px] w-[81%] self-end bg-gray-700_3f" />
-                  </div>
-                  <div className="flex w-[88%] items-center justify-between gap-5 md:w-full">
-                    <Img src="images/img_know_svgrepo_com.svg" alt="knowsvgrepo" className="h-[32px] w-[32px]" />
-                    <div className="flex w-[81%] flex-col items-center gap-[3px]">
-                      <Text size="md" as="p" className="tracking-[-0.11px]">
-                        How razor blades are made and reused
-                      </Text>
-                      <div className="h-[2px] w-full self-stretch bg-gray-700_3f" />
-                    </div>
-                  </div>
-                  <Button
-                    size="xs"
-                    shape="round"
-                    className="ml-[30px] min-w-[100px] self-start tracking-[0.30px] md:ml-0 sm:px-5"
+                ) : (
+                  <button
+                    className="px-3 py-2 bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-xl"
+                    onClick={genrateKey}
                   >
-                    View all
-                  </Button>
-                </div>
-                <div className="absolute bottom-[-0.43px] left-[2.00px] m-auto flex w-[49%] flex-col gap-10 md:relative">
-                  <div className="flex flex-1 rounded-[14px] bg-white-A700 p-[34px] shadow-xs sm:p-5">
-                    <Img src="images/img_edit.svg" alt="edit_one" className="ml-[3px] h-[60px] w-[13%] md:ml-0" />
-                  </div>
-                  <div className="flex flex-1 rounded-[14px] bg-white-A700 p-[26px] shadow-xs sm:p-5">
-                    <div className="mb-3.5 flex w-full items-start justify-between gap-5">
-                      <div className="flex w-[44%] items-start justify-between gap-5">
-                        <Img src="images/img_edit.svg" alt="edit_one" className="h-[60px] w-[29%]" />
-                        <Text size="xl" as="p" className="mt-[7px] tracking-[-0.11px]">
-                          Wing Chun
-                        </Text>
-                      </div>
-                      <div className="flex flex-col items-start">
-                        <Text size="md" as="p" className="tracking-[-0.11px]">
-                          Research by
-                        </Text>
-                        <Text size="md" as="p" className="tracking-[-0.11px]">
-                          20/2/2024
-                        </Text>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute bottom-[8%] right-[6%] m-auto flex w-[36%] flex-col">
-                  <div className="flex items-center sm:flex-col">
-                    <div className="flex w-[34%] justify-center self-end rounded-[20px] bg-white-A700 p-[23px] shadow-xs sm:w-full sm:p-5">
-                      <Text size="md" as="p" className="self-start tracking-[0.30px] !text-black-900_01">
-                        share info
-                      </Text>
-                    </div>
-                    <div className="relative ml-[-172px] flex flex-1 flex-col gap-[39px] bg-black-900_01 sm:ml-0 sm:self-stretch">
-                      <div className="flex cursor-pointer items-start hover:shadow-xs md:p-5">
-                        <Img
-                          src="images/img_future_svgrepo_com.svg"
-                          alt="wing_chun_one"
-                          className="h-[39px] w-[39px]"
-                        />
-                        <Text size="xl" as="p" className="ml-[61px] mt-0.5 tracking-[-0.11px]">
-                          Wing Chun
-                        </Text>
-                        <div className="ml-[79px] flex flex-col items-start">
-                          <Text size="md" as="p" className="tracking-[-0.11px]">
-                            Research by
-                          </Text>
-                          <Text size="md" as="p" className="ml-[3px] tracking-[-0.11px] md:ml-0">
-                            20/2/2024
-                          </Text>
-                        </div>
-                      </div>
-                      <div className="ml-[5px] flex cursor-pointer items-center hover:shadow-xs md:ml-0 md:p-5">
-                        <Img
-                          src="images/img_future_svgrepo_com.svg"
-                          alt="futuresvgrepo"
-                          className="h-[39px] w-[39px]"
-                        />
-                        <Text size="xl" as="p" className="ml-[57px] mt-[3px] self-start tracking-[-0.11px]">
-                          Wing Chun
-                        </Text>
-                        <div className="ml-[79px] flex flex-col items-start">
-                          <Text size="md" as="p" className="tracking-[-0.11px]">
-                            Research by
-                          </Text>
-                          <Text size="md" as="p" className="ml-1 tracking-[-0.11px] md:ml-0">
-                            20/2/2024
-                          </Text>
-                        </div>
-                      </div>
-                      <Button
-                        color="white_A700"
-                        size="xl"
-                        leftIcon={
-                          <Img
-                            src="images/img_invitefriendsvgrepocom_1.svg"
-                            alt="invite-friend-svgrepo-com 1"
-                            className="h-[25px] w-[25px]"
-                          />
-                        }
-                        className="min-w-[204px] gap-[9px] rounded-[20px] tracking-[0.30px] hover:shadow-xs md:p-5 sm:px-5"
-                      >
-                        invite friends
-                      </Button>
-                    </div>
-                  </div>
-                  <Img
-                    src="images/img_share.svg"
-                    alt="share_one"
-                    className="relative ml-[5px] mt-[-48px] h-[96px] w-[96px] md:ml-0"
-                  />
-                </div>
-                <Text size="xl" as="p" className="absolute right-[31%] top-[0.00px] m-auto tracking-[-0.11px]">
-                  Things I know
-                </Text>
+                    Generate Secret key
+                  </button>
+                )}
               </div>
-              <Button
-                size="xs"
-                shape="round"
-                className="absolute bottom-[3%] left-[3%] m-auto min-w-[100px] tracking-[0.30px] sm:px-5"
-              >
-                View all
-              </Button>
-              <div className="absolute left-0 right-0 top-[0.00px] m-auto flex w-full flex-col items-start gap-[29px]">
-                <header className="self-stretch">
-                  <div className="flex items-center justify-between gap-5 bg-white-A700 p-[13px] md:flex-col">
-                    <div className="ml-[18px] flex w-[38%] items-center justify-center gap-[25px] md:ml-0 md:w-full sm:flex-col">
-                      <Text size="2xl" as="p" className="mb-1 self-end text-center">
-                        
-                      </Text>
-                      <Input
-                        color="gray_100"
-                        size="xs"
-                        shape="round"
-                        name="search"
-                        placeholder={`Search`}
-                        value={searchBarValue}
-                        onChange={(e) => setSearchBarValue(e)}
-                        prefix={
-                          <Img src="images/img_rewind.svg" alt="rewind" className="h-[15px] w-[15px] cursor-pointer" />
-                        }
-                        suffix={
-                          searchBarValue?.length > 0 ? (
-                            <CloseSVG
-                              onClick={() => setSearchBarValue("")}
-                              height={15}
-                              width={15}
-                              fillColor="#000000ff"
-                            />
-                          ) : null
-                        }
-                        className="flex-grow gap-3 border-blue_gray-100 text-gray-900_7f sm:pr-5"
-                      />
-                    </div>
-                    <div className="mr-[17px] flex w-[21%] items-start justify-between gap-5 md:mr-0 md:w-full">
-                      <div className="relative mt-[5px] h-[32px] w-[12%]">
-                        <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-max w-[97%] items-start justify-center">
-                          <div className="flex flex-col items-end">
-                            <Text as="p" className="relative z-[3] !text-white-A700">
-                              6
-                            </Text>
-                            <Img
-                              src="images/img_group.svg"
-                              alt="image_three"
-                              className="relative mt-[-9px] h-[26px] w-full md:h-auto"
-                            />
-                          </div>
-                          <div className="relative ml-[-11px] h-[16px] w-[16px] rounded-lg bg-pink-400" />
-                        </div>
-                        <div className="absolute right-[0.00px] top-[0.00px] m-auto h-[18px] w-[18px] rounded-[9px] bg-pink-400_1a" />
-                      </div>
-                      <div className="flex items-center gap-5">
-                        <Img
-                          src="images/img_group_170x170.png"
-                          alt="image_four"
-                          className="h-[44px] w-[44px] object-cover"
-                        />
-                        <div className="flex flex-col items-start gap-0.5">
-                          <Text size="md" as="p" className="!text-gray-800">
-                            Moni Roy
-                          </Text>
-                          <Text as="p" className="!text-gray-700_03">
-                            User
-                          </Text>
-                        </div>
-                        <div className="flex flex-col items-center justify-center rounded-[9px] border border-solid border-gray-700 p-1.5">
-                          <Img src="images/img_group_gray_700_03.svg" alt="image_five" className="h-[4px]" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </header>
-                <Text size="xl" as="p" className="ml-[31px] tracking-[-0.11px] md:ml-0">
-                  Hello, Moni
-                </Text>
+            </section>
+            <section className="m-10 p-4 flex gap-8 bg-[#fff] shadow-md rounded-xl">
+              <div className=" ">
+                <img src="images/sharePeoples.jpg" width={100} alt="" />
               </div>
-            </div>
+              <div className="h-full flex flex-col justify-between">
+                <h3>Share with your friends</h3>
+                <RWebShare
+                  data={{
+                    text: "Contextify Your Browser Experience",
+                    url: "https://contextify.info/",
+                    title: "Contextify",
+                  }}
+                >
+                  <button className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4">
+                    <IoMdShare className="gap-2" color="#4B0082" />
+                    Share
+                  </button>
+                </RWebShare>
+              </div>
+            </section>
           </div>
         </div>
-      </div>
+        <section className=" my-5">
+          <h2>Recent Context</h2>
+          <div className="flex flex-wrap items-center gap-2 my-2">
+            <div
+              class="max-w-sm w-[200px] h-[300px]
+             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
+            >
+              <div className="overflow-auto" onClick={() => setShowModal(true)}>
+                <CiFileOn color="purple" className="w-full  h-[160px]" />
+                <h5 class=" text-md font-bold tracking-tight text-gray-900 text-xl text-center dark:text-white">
+                  New Context
+                </h5>
+              </div>
+              <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center"></div>
+            </div>
+            {history?.slice(0, 4).map((item) => (
+              <div
+                class="max-w-sm w-[200px] h-[300px]
+             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
+              >
+                <div
+                  className="overflow-auto h-full"
+                  onClick={() => navigate(`/contextdetail/history/${item._id}`)}
+                >
+                  {item?.question?.startsWith("http") ? (
+                    <img src={item?.question} alt="image" className="mb-2" />
+                  ) : (
+                    <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+                      {item?.question?.length > 30
+                        ? item?.question?.slice(0, 30) + "..."
+                        : item?.question}
+                    </h5>
+                  )}
+                  <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
+                    {item?.answer.length > 200
+                      ? item?.answer?.replaceAll("#", "")?.slice(0, 200) + "..."
+                      : item?.answer?.replaceAll("#", "")}
+                  </p>
+                </div>
+                <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
+                  <div>
+                    <div className="flex gap-3">
+                      <RWebShare
+                        data={{
+                          text: "Contextify Your Browser Experience",
+                          url: `https://www.contextify.info/contextdetail/history/${item._id}`,
+                          title: "Contextify",
+                        }}
+                      >
+                        <FaPlus color="gray" />
+                      </RWebShare>
+
+                      <FaCopy
+                        color="purple"
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            `https://www.contextify.info/contextdetail/history/${item._id}`
+                          );
+                          alert("copied");
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          {!!history?.length && (
+            <div className="w-full flex justify-start">
+              <button
+                className="text-[#fff] bg-purple-900 rounded-xl p-2"
+                onClick={() => navigate("/mycontext")}
+              >
+                View all
+              </button>
+            </div>
+          )}
+        </section>
+
+        {showModal && (
+          <div className="absolute w-[60%] h-[80%] m-auto left-0 right-0 bg-[#fff] shadow-md rounded border-2  border-purple-300 top-0 bottom-0 overflow-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-1 sm:overflow-auto h-full">
+              <div className="bg-gray-100 p-4 flex flex-col justify-between rounded overflow-auto min-h-[500px]">
+                <div className=" flex-row-reverse items-center gap-3 hidden sm:flex">
+                  <IoClose
+                    className="cursor-pointer  hover:-translate-y-1 hover:scale-110"
+                    onClick={() => setShowModal(false)}
+                  />
+                </div>
+                <h3 className="text-3xl font-bold text-center">New Context</h3>
+                <div>
+                  <h5 className="font-bold  text-md mb-3">
+                    How you want your context to sound like?
+                  </h5>
+                  <div className="flex gap-2 flex-wrap">
+                    <button
+                      className={
+                        tone === 1
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                      }
+                      onClick={() => setTone(1)}
+                    >
+                      Professional
+                    </button>
+                    <button
+                      className={
+                        tone === 2
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                      }
+                      onClick={() => setTone(2)}
+                    >
+                      Cheeky
+                    </button>
+                    <button
+                      className={
+                        tone === 3
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110 hover:-translate-y-1 hover:scale-110"
+                      }
+                      onClick={() => setTone(3)}
+                    >
+                      Conversational
+                    </button>
+                    <button
+                      className={
+                        tone === 4
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                      }
+                      onClick={() => setTone(4)}
+                    >
+                      Excited
+                    </button>
+                    <button
+                      className={
+                        tone === 5
+                          ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                      }
+                      onClick={() => setTone(5)}
+                    >
+                      Kid-friendly
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <h5 className="font-bold  text-md mb-3">
+                    Text to be contextified
+                  </h5>
+                  {ques.startsWith("http") ? (
+                    <textarea
+                      onChange={(e) => {
+                        setIsImgUrl(false);
+                        setQues(e.target.value);
+                      }}
+                      placeholder="Enter text here"
+                      className="w-full rounded-xl"
+                      value={!ques.startsWith("http") ? ques : ""}
+                      rows={10}
+                    ></textarea>
+                  ) : (
+                    <textarea
+                      onChange={(e) => setQues(e.target.value)}
+                      placeholder="Enter text here"
+                      className="w-full rounded-xl"
+                      rows={10}
+                      value={ques}
+                    ></textarea>
+                  )}
+                </div>
+                <div className="flex gap-4 w-full items-center">
+                  <button
+                    className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-2 w-full hover:-translate-y-1 hover:scale-110"
+                    onClick={handleNewContext}
+                  >
+                    Generate
+                  </button>
+                  <Uploader
+                    handleNewImg={handleNewImg}
+                    className="bg-transparent"
+                    context
+                  />
+                </div>
+              </div>
+              <div className="p-4 flex flex-col gap-3 rounded overflow-auto min-h-[500px]">
+                <div className="flex flex-row-reverse items-center gap-3">
+                  <IoClose
+                    className="cursor-pointer sm:hidden  hover:-translate-y-1 hover:scale-110"
+                    onClick={() => setShowModal(false)}
+                  />
+                  <RiSpeakFill
+                    color="purple"
+                    className="h-8"
+                    onClick={handleSpeech}
+                  />
+                </div>
+                {!isImgUrl ? (
+                  <input
+                    type="text"
+                    placeholder="Untitled"
+                    className="border-0 text-7xl font-bold"
+                    value={ques}
+                    onChange={(e) => setQues(e.target.value)}
+                  />
+                ) : (
+                  <img src={ques} width="100" />
+                )}
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Write Something"
+                  className="h-full text-sm border-0 overflow-y-auto"
+                  value={ans}
+                  onChange={(e) => setAns(e.target.value)}
+                ></textarea>
+                {ans && (
+                  <div>
+                    <h5 className="font-bold  text-md mb-3">Save To:</h5>
+                    <div className="flex gap-2 flex-wrap">
+                      <button
+                        className={
+                          type === 1
+                            ? "bg-purple-900 text-[#fff] text-sm hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                            : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                        }
+                        onClick={() => setType(1)}
+                      >
+                        Things I know
+                      </button>
+                      <button
+                        className={
+                          type === 2
+                            ? "bg-purple-900 text-[#fff] text-sm hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                            : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                        }
+                        onClick={() => setType(2)}
+                      >
+                        Notes
+                      </button>
+                      <button
+                        className={
+                          type === 3
+                            ? "bg-purple-900 text-sm text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
+                            : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
+                        }
+                        onClick={() => setType(3)}
+                      >
+                        Future exploration
+                      </button>
+                      <button
+                        className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-2 hover:-translate-y-1 hover:scale-110"
+                        onClick={handleSaveContext}
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+      </MainLayout>
     </>
   );
 }
