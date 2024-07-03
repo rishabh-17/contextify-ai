@@ -6,7 +6,7 @@ import { Text, Img, Input, Button } from "../../components";
 import { LoadingContext } from "../../App";
 import { GoogleLogin } from "@react-oauth/google";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-
+import PasswordStrengthBar from "react-password-strength-bar";
 export default function SignUpPage() {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
@@ -235,6 +235,10 @@ export default function SignUpPage() {
                       />
                     )}
                   </div>
+
+                  {password && (
+                    <PasswordStrengthBar minLength={8} password={password} />
+                  )}
                 </div>
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center justify-between">
