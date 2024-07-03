@@ -5,6 +5,8 @@ import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 import { Text, Img, Input, Button } from "../../components";
 import { LoadingContext } from "../../App";
 import { GoogleLogin } from "@react-oauth/google";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+
 export default function SignUpPage() {
   const navigate = useNavigate();
   const [username, setUsername] = React.useState("");
@@ -174,7 +176,7 @@ export default function SignUpPage() {
                 <p className="text-blue_gray-900 text-3xl">Create an account</p>
               </a>
               <p className="text-center text-gray-700">
-              Welcome to a new way of using the Internet{" "}
+                Welcome to a new way of using the Internet{" "}
               </p>
             </div>
             <form
@@ -211,33 +213,28 @@ export default function SignUpPage() {
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center justify-between">
                     <p className="text-gray-700">Password</p>
-                    <div
-                      className="cursor-pointer flex items-center justify-center rounded-md"
-                      onClick={() => setPasswordVisible(!passwordVisible)}
-                    >
-                      {passwordVisible ? (
-                        <img
-                          src="images/img_icon_eye_close.svg"
-                          alt="eye_close"
-                          className="h-[16px] w-[16px]"
-                        />
-                      ) : (
-                        <img
-                          src="images/img_icon_eye_open.svg"
-                          alt="eye_open"
-                          className="h-[16px] w-[16px]"
-                        />
-                      )}
-                    </div>
                   </div>
-                  <input
-                    type={passwordVisible ? "text" : "password"}
-                    id="password"
-                    name="password"
-                    value={password}
-                    onChange={handleChange}
-                    className="self-stretch sm:px-5  bg-transparent rounded-xl"
-                  />
+                  <div className="flex items-center px-1 bg-transparent border border-gray-500 rounded-xl">
+                    <input
+                      type={passwordVisible ? "text" : "password"}
+                      id="password"
+                      name="password"
+                      value={password}
+                      onChange={handleChange}
+                      className="self-stretch sm:px-5 border-0  bg-transparent rounded-xl"
+                    />
+                    {passwordVisible ? (
+                      <FaRegEye
+                        className="h-5 w-5 text-gray-800"
+                        onClick={() => setPasswordVisible(!passwordVisible)}
+                      />
+                    ) : (
+                      <FaRegEyeSlash
+                        className="h-5 w-5"
+                        onClick={() => setPasswordVisible(!passwordVisible)}
+                      />
+                    )}
+                  </div>
                 </div>
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center justify-between">
@@ -245,30 +242,29 @@ export default function SignUpPage() {
                     <div
                       className="cursor-pointer flex items-center justify-center rounded-md"
                       onClick={() => setPasswordVisible2(!passwordVisible2)}
-                    >
-                      {passwordVisible2 ? (
-                        <img
-                          src="images/img_icon_eye_close.svg"
-                          alt="eye_close"
-                          className="h-[16px] w-[16px]"
-                        />
-                      ) : (
-                        <img
-                          src="images/img_icon_eye_open.svg"
-                          alt="eye_open"
-                          className="h-[16px] w-[16px]"
-                        />
-                      )}
-                    </div>
+                    ></div>
                   </div>
-                  <input
-                    type={passwordVisible2 ? "text" : "password"}
-                    id="password"
-                    name="retypePassword"
-                    value={retypePassword}
-                    onChange={handleChange}
-                    className="self-stretch sm:px-5  bg-transparent rounded-xl"
-                  />
+                  <div className="flex items-center px-1 bg-transparent border border-gray-500 rounded-xl">
+                    <input
+                      type={passwordVisible2 ? "text" : "password"}
+                      id="password"
+                      name="retypePassword"
+                      value={retypePassword}
+                      onChange={handleChange}
+                      className="self-stretch sm:px-5 border-0  bg-transparent rounded-xl"
+                    />
+                    {passwordVisible2 ? (
+                      <FaRegEye
+                        className="h-5 w-5 text-gray-800"
+                        onClick={() => setPasswordVisible2(!passwordVisible2)}
+                      />
+                    ) : (
+                      <FaRegEyeSlash
+                        className="h-5 w-5"
+                        onClick={() => setPasswordVisible2(!passwordVisible2)}
+                      />
+                    )}
+                  </div>
                 </div>
                 <div className="flex items-center gap-2 text-left text-base text-blue_gray-900 sm:pr-5">
                   <input
@@ -278,8 +274,15 @@ export default function SignUpPage() {
                     className="mr-[1px] "
                   />
                   <label htmlFor="property1checkb">
-                    By creating an account, I agree to our <a href="/policy" target="_blank" className="underline hover:text-blue-500 culsor-pointer"> Terms of use and
-                    Privacy Policy</a>
+                    By creating an account, I agree to our{" "}
+                    <a
+                      href="/policy"
+                      target="_blank"
+                      className="underline hover:text-blue-500 culsor-pointer"
+                    >
+                      {" "}
+                      Terms of use and Privacy Policy
+                    </a>
                   </label>
                 </div>
                 <button

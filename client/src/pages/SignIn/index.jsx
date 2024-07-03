@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Text, Img, Input, Button } from "../../components";
 import { GoogleLogin } from "@react-oauth/google";
 import { LoadingContext } from "../../App";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import axios from "axios";
 
 export default function LoginPage() {
@@ -161,7 +162,7 @@ export default function LoginPage() {
               <p className="text-blue_gray-900 text-3xl">Login</p>
             </a>
             <p className="text-center text-gray-700">
-            Welcome to a new way of using the Internet{" "}
+              Welcome to a new way of using the Internet{" "}
             </p>
           </div>
           <form
@@ -173,14 +174,16 @@ export default function LoginPage() {
                 <label htmlFor="email" className="text-gray-700">
                   Email
                 </label>
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={handleChange}
-                  className="w-full bg-transparent rounded-xl focus:ring-blue_gray-900 focus:border-blue_gray-900 sm:px-5"
-                />
+                <div className="bg-transparent border border-gray-700 rounded-xl focus:ring-blue_gray-900 focus:border-blue_gray-900 ">
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    value={email}
+                    onChange={handleChange}
+                    className="w-full border-0 rounded-xl  sm:px-5"
+                  />
+                </div>
               </div>
               <div className="flex flex-col gap-[5px]">
                 <div className="flex items-center justify-between">
@@ -188,30 +191,29 @@ export default function LoginPage() {
                   <div
                     className="cursor-pointer flex items-center justify-center rounded-md"
                     onClick={() => setPasswordVisible(!passwordVisible)}
-                  >
-                    {passwordVisible ? (
-                      <img
-                        src="images/img_icon_eye_close.svg"
-                        alt="eye_close"
-                        className="h-[16px] w-[16px]"
-                      />
-                    ) : (
-                      <img
-                        src="images/img_icon_eye_open.svg"
-                        alt="eye_open"
-                        className="h-[16px] w-[16px]"
-                      />
-                    )}
-                  </div>
+                  ></div>
                 </div>
-                <input
-                  type={passwordVisible ? "text" : "password"}
-                  id="password"
-                  name="password"
-                  value={password}
-                  onChange={handleChange}
-                  className="w-full bg-transparent rounded-xl focus:ring-blue_gray-900 focus:border-blue_gray-900 sm:px-5"
-                />
+                <div className="flex items-center px-1 bg-transparent border border-gray-700 rounded-xl focus:ring-blue_gray-900 focus:border-blue_gray-900 ">
+                  <input
+                    type={passwordVisible ? "text" : "password"}
+                    id="password"
+                    name="password"
+                    value={password}
+                    onChange={handleChange}
+                    className="w-full border-0 rounded-xl sm:px-5"
+                  />
+                  {passwordVisible ? (
+                    <FaRegEye
+                      className="h-5 w-5 text-gray-800"
+                      onClick={() => setPasswordVisible(!passwordVisible)}
+                    />
+                  ) : (
+                    <FaRegEyeSlash
+                      className="h-5 w-5"
+                      onClick={() => setPasswordVisible(!passwordVisible)}
+                    />
+                  )}
+                </div>
               </div>
               <button
                 type="submit"
