@@ -10,6 +10,11 @@ router.get(
   clientController.getSaved
 );
 router.get("/saved/:id", clientController.getOneSaved);
+router.delete(
+  "/saved/:id",
+  AuthMiddleware.userAuthentication,
+  clientController.deleteSaved
+);
 router.get(
   "/history",
   AuthMiddleware.userAuthentication,

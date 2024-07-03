@@ -11,6 +11,7 @@ import { IoMdShare } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { LoadingContext } from "../../App";
 import SharePopup from "../../components/sharePopup";
+import { MdDelete } from "react-icons/md";
 
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
@@ -24,25 +25,54 @@ export default function MyContext() {
   const navigate = useNavigate();
   const setLoading = useContext(LoadingContext);
 
-  React.useEffect(() => {
+  const fetchContexts = async () => {
     const config = {
       headers: {
         authentication: `${localStorage.getItem("token")}`,
       },
     };
+    setLoading(true);
 
-    const fetchContexts = async () => {
-      setLoading(true);
-      const { data } = await axios.get(
-        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved",
-        config
-      );
-      setContexts(data?.data);
-      setLoading(false);
-    };
-
+    const { data } = await axios.get(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved",
+      config
+    );
+    setContexts(data?.data);
+    setLoading(false);
+  };
+  React.useEffect(() => {
     fetchContexts();
   }, []);
+
+  const deleteContext = async (id) => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const sure = window.confirm("Are you sure?");
+    if (!sure) {
+      setLoading(false);
+      return;
+    }
+    try {
+      const { data } = await axios.delete(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/client/saved/" + id,
+        config
+      );
+      if (!data?.success) {
+        alert("Something went wrong");
+        return;
+      }
+      fetchContexts();
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+      setLoading(false);
+    }
+  };
 
   return (
     <div>
@@ -156,12 +186,20 @@ export default function MyContext() {
                       <div className="flex gap-3">
                         <IoMdShare
                           color="gray"
+                          className="cursor-pointer"
                           onClick={() => {
                             setShareUrl(
                               `https://www.contextify.info/contextdetail/${context.type}/${context._id}`
                             );
                             setSharePop(true);
                           }}
+                        />
+                        <MdDelete
+                          onClick={() => {
+                            deleteContext(context._id);
+                          }}
+                          color="red"
+                          className="cursor-pointer"
                         />
                       </div>
                     </div>

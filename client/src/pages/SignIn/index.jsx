@@ -179,6 +179,7 @@ export default function LoginPage() {
                     type="text"
                     id="email"
                     name="email"
+                    placeholder="Enter Your Email"
                     value={email}
                     onChange={handleChange}
                     className="w-full border-0 rounded-xl  sm:px-5"
@@ -198,6 +199,7 @@ export default function LoginPage() {
                     type={passwordVisible ? "text" : "password"}
                     id="password"
                     name="password"
+                    placeholder="Enter Your Password"
                     value={password}
                     onChange={handleChange}
                     className="w-full border-0 rounded-xl sm:px-5"

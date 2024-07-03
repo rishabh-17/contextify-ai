@@ -192,6 +192,7 @@ export default function SignUpPage() {
                     type="text"
                     id="username"
                     name="username"
+                    placeholder="Enter Your Username"
                     value={username}
                     onChange={handleChange}
                     className="self-stretch bg-transparent rounded-xl sm:px-5"
@@ -206,6 +207,7 @@ export default function SignUpPage() {
                     id="email"
                     name="email"
                     value={email}
+                    placeholder="Enter Your Email"
                     onChange={handleChange}
                     className="self-stretch  bg-transparent rounded-xl sm:px-5"
                   />
@@ -219,6 +221,7 @@ export default function SignUpPage() {
                       type={passwordVisible ? "text" : "password"}
                       id="password"
                       name="password"
+                      placeholder="Enter Your Password"
                       value={password}
                       onChange={handleChange}
                       className="self-stretch sm:px-5 border-0  bg-transparent rounded-xl"
@@ -253,6 +256,7 @@ export default function SignUpPage() {
                       type={passwordVisible2 ? "text" : "password"}
                       id="password"
                       name="retypePassword"
+                      placeholder="Retype Your Password"
                       value={retypePassword}
                       onChange={handleChange}
                       className="self-stretch sm:px-5 border-0  bg-transparent rounded-xl"
