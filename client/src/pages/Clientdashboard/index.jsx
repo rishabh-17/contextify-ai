@@ -2,10 +2,11 @@ import React, { useState, useContext } from "react";
 import MainLayout from "../../components/MainLayout";
 import axios from "axios";
 import { RWebShare } from "react-web-share";
+import { ShareSocial } from "react-share-social";
 import { RiSpeakFill } from "react-icons/ri";
 import { MdPerson } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5";
-import { FaRegEdit, FaPlus, FaCopy } from "react-icons/fa";
+import { FaRegEdit, FaCopy } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 import { WiTime4 } from "react-icons/wi";
 import { IoMdShare } from "react-icons/io";
@@ -16,10 +17,9 @@ import share_peoples from "../../assets/share_peoples.png";
 import { CiFileOn } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import { LoadingContext } from "../../App";
-
 import { Img } from "../../components";
 import Uploader from "components/Uploader";
-// import { ThreeDCard } from "../../components/threedcard";
+import SharePopup from "../../components/sharePopup";
 
 export default function ClientdashboardPage() {
   const [history, setHistory] = React.useState([]);
@@ -36,6 +36,8 @@ export default function ClientdashboardPage() {
   const setLoading = useContext(LoadingContext);
   const [profile, setProfile] = useState({});
   const [isImgUrl, setIsImgUrl] = useState(false);
+  const [sharePop, setSharePop] = useState(false);
+  const [shareUrl, setShareUrl] = useState("");
 
   const genrateKey = async (e, initial) => {
     setLoading(true);
@@ -247,6 +249,9 @@ export default function ClientdashboardPage() {
   return (
     <>
       <MainLayout active={1} user={user}>
+        {sharePop && shareUrl && (
+          <SharePopup url={shareUrl} setSharePop={setSharePop} />
+        )}
         <div className="w-full mb-4 text-violet-900 h-4 text-lg">
           Hi, {capitalizeFirstLetter(user?.name)}
         </div>
@@ -349,18 +354,16 @@ export default function ClientdashboardPage() {
               </div>
               <div className="h-full flex flex-col justify-between">
                 <h3>Share with your friends</h3>
-                <RWebShare
-                  data={{
-                    text: "Contextify Your Browser Experience",
-                    url: "https://contextify.info/",
-                    title: "Contextify",
+                <button
+                  className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4"
+                  onClick={() => {
+                    setShareUrl("https://contextify.info/");
+                    setSharePop(true);
                   }}
                 >
-                  <button className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4">
-                    <IoMdShare className="gap-2" color="#4B0082" />
-                    Share
-                  </button>
-                </RWebShare>
+                  <IoMdShare className="gap-2" color="#4B0082" />
+                  Share
+                </button>
               </div>
             </section>
           </div>
@@ -407,23 +410,13 @@ export default function ClientdashboardPage() {
                 <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
                   <div>
                     <div className="flex gap-3">
-                      <RWebShare
-                        data={{
-                          text: "Contextify Your Browser Experience",
-                          url: `https://www.contextify.info/contextdetail/history/${item._id}`,
-                          title: "Contextify",
-                        }}
-                      >
-                        <FaPlus color="gray" />
-                      </RWebShare>
-
-                      <FaCopy
-                        color="purple"
+                      <IoMdShare
+                        color="gray"
                         onClick={() => {
-                          navigator.clipboard.writeText(
+                          setShareUrl(
                             `https://www.contextify.info/contextdetail/history/${item._id}`
                           );
-                          alert("copied");
+                          setSharePop(true);
                         }}
                       />
                     </div>

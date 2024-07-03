@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import MainLayout from "../../components/MainLayout";
 import axios from "axios";
 import { GiBrain } from "react-icons/gi";
@@ -6,14 +6,18 @@ import { GrNotes } from "react-icons/gr";
 import { RWebShare } from "react-web-share";
 import { RxCounterClockwiseClock } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
-import { FaRegEdit, FaPlus, FaCopy } from "react-icons/fa";
+import { FaRegEdit, FaCopy } from "react-icons/fa";
+import { IoMdShare } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { LoadingContext } from "../../App";
+import SharePopup from "../../components/sharePopup";
 
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
   const [toggle, setToggle] = React.useState(1);
   const user = JSON.parse(localStorage.getItem("user"));
+  const [sharePop, setSharePop] = useState(false);
+  const [shareUrl, setShareUrl] = useState("");
   const [showBanner, setShowBanner] = React.useState(
     localStorage.getItem("showBanner")
   );
@@ -43,6 +47,9 @@ export default function MyContext() {
   return (
     <div>
       <MainLayout active={2}>
+        {sharePop && shareUrl && (
+          <SharePopup url={shareUrl} setSharePop={setSharePop} />
+        )}
         <div className="flex-col gap-4 p-4">
           {!showBanner && (
             <div className="flex border rounded-xl p-5 shadow-md mb-3 justify-between">
@@ -147,22 +154,13 @@ export default function MyContext() {
                     </div>
                     <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
                       <div className="flex gap-3">
-                        <RWebShare
-                          data={{
-                            text: "Contextify Your Browser Experience",
-                            url: `https://www.contextify.info/contextdetail/${context.type}/ + ${context._id}`,
-                            title: "Contextify",
-                          }}
-                        >
-                          <FaPlus color="gray" />
-                        </RWebShare>
-                        <FaCopy
-                          color="purple"
+                        <IoMdShare
+                          color="gray"
                           onClick={() => {
-                            navigator.clipboard.writeText(
-                              `https://www.contextify.info/contextdetail/${context.type}/ + ${context._id}`
+                            setShareUrl(
+                              `https://www.contextify.info/contextdetail/${context.type}/${context._id}`
                             );
-                            alert("copied");
+                            setSharePop(true);
                           }}
                         />
                       </div>

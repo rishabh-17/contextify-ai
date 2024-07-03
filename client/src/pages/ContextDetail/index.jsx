@@ -5,10 +5,14 @@ import { IoMdShare } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LoadingContext } from "../../App";
+import SharePopup from "../../components/sharePopup";
 import axios from "axios";
 export default function ContextDetail() {
   const { id, type } = useParams();
   const [data, setData] = useState({});
+  const [sharePop, setSharePop] = useState(false);
+  const [shareUrl, setShareUrl] = useState("");
+
   const location = useLocation();
   const navigate = useNavigate();
   console.log(id, type);
@@ -48,6 +52,9 @@ export default function ContextDetail() {
   return (
     <div>
       <MainLayout active={2}>
+        {sharePop && shareUrl && (
+          <SharePopup url={shareUrl} setSharePop={setSharePop} />
+        )}
         {data?.question?.startsWith("http") ? (
           <img src={data.question} alt="" width={400} />
         ) : (
@@ -61,18 +68,17 @@ export default function ContextDetail() {
         ></textarea>
         {data.answer && (
           <section className="my-10 flex gap-8">
-            <RWebShare
-              data={{
-                text: "Contextify Your Browser Experience",
-                url: location.pathname,
-                title: "Contextify",
+            <button
+              className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4"
+              onClick={() => {
+                console.log(location);
+                setShareUrl("https://www.contextify.info" + location.pathname);
+                setSharePop(true);
               }}
             >
-              <button className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4">
-                <IoMdShare className="gap-2" color="#4B0082" />
-                Share
-              </button>
-            </RWebShare>
+              <IoMdShare className="gap-2" color="#4B0082" />
+              Share
+            </button>
           </section>
         )}
       </MainLayout>
