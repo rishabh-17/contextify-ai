@@ -255,7 +255,7 @@ export default function ClientdashboardPage() {
         <div className="w-full mb-4 text-violet-900 h-4 text-lg">
           Hi, {capitalizeFirstLetter(user?.name)}
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 w-full py-3">
+        <div className="grid grid-cols-2 md:grid-cols-1 gap-4 w-full py-3">
           <div>
             <div className="flex flex-col  items-center gap-4 rounded-full ml-5 w-1/3">
               {profile?.imgUrl ? (
