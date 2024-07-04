@@ -172,3 +172,43 @@ exports.makePayment = async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 };
+
+exports.getCategories = async (req, res) => {
+  try {
+    const id = req.user._id;
+    const user = await User.findById(id);
+    res.json({ success: true, categories: user.categories });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, msg: "something went wrong" });
+  }
+};
+
+exports.addCategory = async (req, res) => {
+  try {
+    const id = req.user._id;
+    const { category } = req.body;
+    const user = await User.findById(id);
+    user.categories.push(category);
+    console.log(req.body);
+    await user.save();
+    res.json({ success: true, msg: "category added successfully" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, msg: "something went wrong" });
+  }
+};
+
+exports.deleteCategory = async (req, res) => {
+  try {
+    const id = req.user._id;
+    const { category } = req.body;
+    const user = await User.findById(id);
+    user.categories = user.categories.filter((c) => c !== category);
+    await user.save();
+    res.json({ success: true, msg: "category deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, msg: "something went wrong" });
+  }
+};

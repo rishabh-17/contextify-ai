@@ -6,6 +6,8 @@ import { LoadingContext } from "../../App";
 import axios from "axios";
 import { Img } from "../../components";
 import Uploader from "components/Uploader";
+import { MdDelete } from "react-icons/md";
+
 export default function Settings() {
   const [tab, setTab] = useState(1);
   const [voiceType, setVoiceType] = useState(
@@ -15,7 +17,76 @@ export default function Settings() {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const setLoadingContext = useContext(LoadingContext);
+  const [categories, setCategories] = useState([]);
+  const [categoryInput, setCategoryInput] = useState("");
+  const user = JSON.parse(localStorage.getItem("user"));
 
+  const fetchCategories = async () => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const { data } = await axios.get(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/categories",
+      config
+    );
+    setCategories(data?.categories);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const handleAddCategory = async () => {
+    setLoading(true);
+    if (!categoryInput && !categories.includes(categoryInput)) {
+      setLoading(false);
+      return;
+    }
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const { data } = await axios.post(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/categories",
+      {
+        category: categoryInput,
+      },
+      config
+    );
+    if (!data?.success) {
+      alert("Something went wrong");
+      return;
+    }
+    fetchCategories();
+    setLoading(false);
+  };
+
+  const handleDeleteCategory = async (category) => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const { data } = await axios.post(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/categories/delete",
+      {
+        category,
+      },
+      config
+    );
+    if (!data?.success) {
+      alert("Something went wrong");
+      return;
+    }
+    fetchCategories();
+    setLoading(false);
+  };
   function uploadFile(file) {
     console.log("first");
     const url = `https://api.cloudinary.com/v1_1/dyvnljwlp/upload`;
@@ -415,6 +486,45 @@ export default function Settings() {
                   </option>
                 ))}
               </select>
+
+              <div className="mt-8 flex flex-col gap-2">
+                <h3 className="text-xl font-bold mb-1">Categories</h3>
+                <ul className="flex flex-col gap-2">
+                  <li className="font-bold border border-gray-300 p-2 ">
+                    Notes
+                  </li>
+                  <li className="font-bold border border-gray-300 p-2">
+                    Things I know
+                  </li>
+                  <li className="font-bold border border-gray-300 p-2">
+                    Future exploration
+                  </li>
+                  {(categories || [])?.map((category) => (
+                    <li className="flex justify-between p-2">
+                      <p>{category}</p>{" "}
+                      <button className="bg-red-600 p-1">
+                        <MdDelete
+                          className="text-[#fff] w-4 h-4"
+                          onClick={() => handleDeleteCategory(category)}
+                        />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="Add Category"
+                    onChange={(e) => setCategoryInput(e.target.value)}
+                  />
+                  <button
+                    className=" flex font-bold text-xl px-8 py-1 bg-purple-900 text-[#fff] rounded"
+                    onClick={handleAddCategory}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
             </section>
           )}
 

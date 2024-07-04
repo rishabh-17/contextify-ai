@@ -1,5 +1,11 @@
 const mongoose = require("mongoose");
 
+const uri = "";
+mongoose
+  .connect(uri, {})
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.error("Error connecting:", err));
+
 const UserSchema = new mongoose.Schema(
   {
     name: {
@@ -64,4 +70,12 @@ const UserSchema = new mongoose.Schema(
 
 const User = mongoose.model("User", UserSchema);
 
-module.exports = User;
+User.updateMany({}, { $set: { categories: [] } })
+  .then((updateResult) => {
+    console.log("Updated", updateResult.modifiedCount, "documents");
+    mongoose.connection.close(); // Close connection after update
+  })
+  .catch((err) => {
+    console.error("Error updating users:", err);
+    mongoose.connection.close(); // Close connection on error
+  });
