@@ -13,7 +13,7 @@ export default function AppsPage() {
               <div>
                 <h2 className="text-2xl font-bold">Contextify For Chrome</h2>
                 <p>
-                  Now Available for every browser that allows Chrome Extensions.
+                  Now available for every browser that allows Chrome extensions.
                 </p>
               </div>
               <a

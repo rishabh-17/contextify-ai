@@ -91,7 +91,7 @@ exports.login = async (req, res, next) => {
           });
       }
     } else {
-      res.json({ err: "user not found", success: false });
+      res.json({ err: "User not found", success: false });
     }
   } catch (error) {
     console.log("login error", error);

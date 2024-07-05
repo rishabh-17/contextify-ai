@@ -74,7 +74,7 @@ export default function HomePagePage() {
                     as="p"
                     className="w-[89%] md:w-full md:w-[89%] capitalize leading-8"
                   >
-                    Contexttify is a hub puts information into context at the
+                    Contextify is a hub that puts information into context at the
                     click of a button
                   </Text>
                   <div className="flex sm:flex-col self-stretch mt-7 gap-6">

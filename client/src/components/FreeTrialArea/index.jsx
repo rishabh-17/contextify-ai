@@ -26,7 +26,7 @@ const index = () => {
         as="p"
         className="w-[100%] md:w-full md:p-5 md:ml-0 capitalize text-center leading-8 text-[#fff] mb-8"
       >
-        Contexttify is a hub puts information into context at the click of a
+        Contextify is a hub that puts information into context at the click of a
         button
       </Text>
       <div className="justify-center w-fit p-[29px] sm:p-5 border-white border-2 border-solid  rounded-[40px] mx-auto">

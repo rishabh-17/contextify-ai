@@ -343,7 +343,7 @@ export default function ClientdashboardPage() {
                     className="px-3 py-2 bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-xl"
                     onClick={genrateKey}
                   >
-                    Generate Secret key
+                    Generate secret key
                   </button>
                 )}
               </div>

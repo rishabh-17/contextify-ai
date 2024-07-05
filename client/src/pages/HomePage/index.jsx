@@ -64,13 +64,13 @@ export default function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-1">
               <div className="flex flex-col gap-5">
                 <h1 className="text-7xl">
-                  Bring the Internet Into
+                  Bring the Internet into
                   <br />
                   <span className="bg-orange-50">Focus.</span>
                 </h1>
                 <p className="text-2xl">
                   Contextify puts information into context at the click of a
-                  button. Be in the Know
+                  button. Be in the know
                 </p>
                 <div className="flex gap-5 items-center mt-16">
                   <input
@@ -82,7 +82,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p>
-                  Already using contextify?{" "}
+                  Already using Contextify?{" "}
                   <span className="text-purple-900">sign in</span>
                 </p>
                 {/* <div className="flex gap-12 mt-8 w-full">
@@ -228,7 +228,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className=" px-48 sm:px-5 mt-48">
+          {/* <section className=" px-48 sm:px-5 mt-48">
             <div className="flex justify-center">
               <div className="bg-purple-900 w-[90%] h-[250px] rounded-3xl flex flex-wrap justify-evenly text-[#fff] items-center shadow-md">
                 <div className="text-center">
@@ -255,7 +255,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           <section className=" px-48 sm:px-5 mt-48">
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
@@ -264,10 +264,7 @@ export default function HomePage() {
                   Know the <span className="bg-orange-50">Topic</span>
                 </h1>
                 <p>
-                  Contextify is a built-in, same-page Google search that skips
-                  the “open-in-new-tab” part and gives you the answers you’re
-                  looking for after one simple highlight. Recommended resources
-                  come with each search, allowing for easy exploration.
+                Contextify provides built-in, same-page Google search results with one simple highlight, skipping the need to open new tabs. Each search includes recommended resources for easy exploration.
                 </p>
               </div>
 
@@ -297,10 +294,7 @@ export default function HomePage() {
                   Know the <span className="bg-orange-50">Internet</span>
                 </h1>
                 <p>
-                  More than just a summary (like what you see in search browsers
-                  these days), Contextify places the selected media into both
-                  broad and specific contexts, turning you into a well-informed
-                  "citizen of the internet" in seconds.
+                Contextify goes beyond simple summaries, placing selected media into both broad and specific contexts, making you a well-informed "citizen of the internet" in seconds.
                 </p>
               </div>
             </div>
@@ -340,77 +334,70 @@ export default function HomePage() {
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Tight on time?</h3>
+                  {/* <h3 className="text-xl">Tight on time?</h3> */}
                   <p>
-                    Short-form, bullet-point results give you the who, what,
-                    when, where, how, and why.
+                  Save time with short-form bullet-point summaries
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Doing in-depth research?</h3>
+                  {/* <h3 className="text-xl">Doing in-depth research?</h3> */}
                   <p>
-                    Figure out which rabbit holes are relevant without leaving
-                    your key research tab.
+                  Save time by identifying relevant research rabbit holes within your main tab.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Feeling social?</h3>
+                  {/* <h3 className="text-xl">Feeling social?</h3> */}
                   <p>
-                    Share what cool stuff you’ve discovered through Contextify
-                    right within the platform.
+                  Easily share your discoveries on Contextify directly within the platform.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Need good sources?</h3>
+                  {/* <h3 className="text-xl">Need good sources?</h3> */}
                   <p>
-                    See how your topic relates to other subjects, and get the
-                    links you need without getting lost.
+                  Find reliable sources and related topics effortlessly without losing your way.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">Catching up on trends?</h3>
+                  {/* <h3 className="text-xl">Catching up on trends?</h3> */}
                   <p>
-                    Contextify summarizes both movie plots and
-                    production/showing details. Same for celebs and just about
-                    anything else.
+                  Stay updated on trends with Contextify's summaries of movie plots, production details, celeb news, and more.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
-                  <h3 className="text-xl">
+                  {/* <h3 className="text-xl">
                     Keep forgetting to look things up?
-                  </h3>
+                  </h3> */}
                   <p>
-                    No need to lose track of neat tidbits you’ve meant to run a
-                    search on again! Get Contextified notes.
+                  Never forget to look things up again with Contextified notes to keep track of interesting tidbits.
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className=" px-48 sm:px-5 mt-48">
+          {/* <section className=" px-48 sm:px-5 mt-48">
             <div className="flex justify-center">
               <h2 className="text-5xl text-center">
                 What our <span className="bg-orange-50">Client</span> Think{" "}
                 <br />
                 About US?{" "}
               </h2>
-            </div>
+            </div> */}
             {/* <div
               className="reviews w-full h-[1000px] sm:h-[500px]
             "
@@ -522,7 +509,7 @@ export default function HomePage() {
                 />
               </div>
             </div> */}
-          </section>
+          {/* </section> */}
 
           <section className="mt-48">
             <FreeTrialArea />
