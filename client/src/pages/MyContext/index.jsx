@@ -20,6 +20,7 @@ export default function MyContext() {
   const [sharePop, setSharePop] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
   const [categories, setCategories] = useState([]);
+  const [search, setSearch] = useState("");
   const [showBanner, setShowBanner] = React.useState(
     localStorage.getItem("showBanner")
   );
@@ -129,9 +130,21 @@ export default function MyContext() {
                 type="text"
                 className=" px-4 py-2 border border-gray-300 shadow-md"
                 placeholder="Search"
+                onChange={(e) => setSearch(e.target.value)}
+                value={search}
               />
             </div>
             <div className="sm:flex-row flex flex-wrap gap-4 justify-center w-full">
+              <div
+                onClick={() => setToggle("All")}
+                className={
+                  toggle === "All"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110 cursor-pointer"
+                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110 cursor-pointer"
+                }
+              >
+                <h3>All</h3>
+              </div>
               <div
                 onClick={() => setToggle("Things I know")}
                 className={
@@ -181,60 +194,66 @@ export default function MyContext() {
             </div>
           </div>
           <div className="flex flex-wrap p-4 gap-3">
-            {contexts.map(
-              (context) =>
-                toggle == context?.type && (
-                  <div
-                    class="max-w-sm w-[200px] h-[300px]
-             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
-                  >
+            {contexts
+              .filter(
+                (context) =>
+                  context?.question?.includes(search) ||
+                  context?.answer?.includes(search)
+              )
+              .map(
+                (context) =>
+                  (toggle == context?.type || toggle == "All") && (
                     <div
-                      className="overflow-auto h-full"
-                      onClick={() =>
-                        navigate(`/contextdetail/saved/${context._id}`)
-                      }
+                      class="max-w-sm w-[200px] h-[300px]
+             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
                     >
-                      {context?.question?.startsWith("http") ? (
-                        <img src={context?.question} alt="" />
-                      ) : (
-                        <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
-                          {context?.question?.length > 30
-                            ? context?.question?.slice(0, 30) + "..."
-                            : context?.question}
-                        </h5>
-                      )}
-                      <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
-                        {context?.answer.length > 100
-                          ? context?.answer
-                              ?.replaceAll("#", "")
-                              ?.slice(0, 100) + "..."
-                          : context?.answer?.replaceAll("#", "")}
-                      </p>
-                    </div>
-                    <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
-                      <div className="flex gap-3">
-                        <IoMdShare
-                          color="gray"
-                          className="cursor-pointer"
-                          onClick={() => {
-                            setShareUrl(
-                              `https://www.contextify.info/contextdetail/${context.type}/${context._id}`
-                            );
-                            setSharePop(true);
-                          }}
-                        />
-                        <MdDelete
-                          onClick={() => {
-                            deleteContext(context._id);
-                          }}
-                          color="red"
-                          className="cursor-pointer"
-                        />
+                      <div
+                        className="overflow-auto h-full"
+                        onClick={() =>
+                          navigate(`/contextdetail/saved/${context._id}`)
+                        }
+                      >
+                        {context?.question?.startsWith("http") ? (
+                          <img src={context?.question} alt="" />
+                        ) : (
+                          <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+                            {context?.question?.length > 30
+                              ? context?.question?.slice(0, 30) + "..."
+                              : context?.question}
+                          </h5>
+                        )}
+                        <p class="font-normal text-sm text-gray-700 dark:text-gray-400">
+                          {context?.answer.length > 100
+                            ? context?.answer
+                                ?.replaceAll("#", "")
+                                ?.slice(0, 100) + "..."
+                            : context?.answer?.replaceAll("#", "")}
+                        </p>
+                      </div>
+                      <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center">
+                        <div className="flex gap-3">
+                          <IoMdShare
+                            color="gray"
+                            className="cursor-pointer"
+                            onClick={() => {
+                              setShareUrl(
+                                `https://www.contextify.info/contextdetail/${context.type}/${context._id}`
+                              );
+                              setSharePop(true);
+                            }}
+                          />
+                          <MdDelete
+                            onClick={() => {
+                              deleteContext(context._id);
+                            }}
+                            color="red"
+                            className="cursor-pointer"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )
-            )}
+                  )
+              )}
           </div>
         </div>
       </MainLayout>
