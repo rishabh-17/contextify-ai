@@ -1,5 +1,7 @@
 import React, { useState, createContext } from "react";
 import Routes from "./Routes";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Loader from "./components/Loader";
@@ -13,6 +15,7 @@ function App() {
       <LoadingContext.Provider value={setLoading}>
         {loading && <Loader />}
         <Notifications />
+        <ToastContainer />
         <div className={loading ? "h-screen overflow-hidden" : ""}>
           <Router>
             <Routes />
