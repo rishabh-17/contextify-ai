@@ -19,12 +19,26 @@ export default function MyContext() {
   const user = JSON.parse(localStorage.getItem("user"));
   const [sharePop, setSharePop] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
+  const [categories, setCategories] = useState([]);
   const [showBanner, setShowBanner] = React.useState(
     localStorage.getItem("showBanner")
   );
   const navigate = useNavigate();
   const setLoading = useContext(LoadingContext);
-
+  const fetchCategories = async () => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const { data } = await axios.get(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/categories",
+      config
+    );
+    setCategories(data?.categories);
+    setLoading(false);
+  };
   const fetchContexts = async () => {
     const config = {
       headers: {
@@ -42,6 +56,7 @@ export default function MyContext() {
   };
   React.useEffect(() => {
     fetchContexts();
+    fetchCategories();
   }, []);
 
   const deleteContext = async (id) => {
@@ -116,39 +131,53 @@ export default function MyContext() {
                 placeholder="Search"
               />
             </div>
-            <div className="sm:flex-row flex gap-4 justify-center w-full">
+            <div className="sm:flex-row flex flex-wrap gap-4 justify-center w-full">
               <div
-                onClick={() => setToggle(1)}
+                onClick={() => setToggle("Things I know")}
                 className={
-                  toggle === 1
-                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110"
-                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110"
+                  toggle === "Things I know"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110 cursor-pointer"
+                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110 cursor-pointer"
                 }
               >
                 <h3>Things I know</h3>
               </div>
               <div
-                onClick={() => setToggle(2)}
+                onClick={() => setToggle("Notes")}
                 className={
-                  toggle === 2
-                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110"
-                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110"
+                  toggle === "Notes"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110 cursor-pointer"
+                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110  cursor-pointer"
                 }
               >
                 <h3 className="text-white">Notes</h3>
               </div>
               <div
-                onClick={() => setToggle(3)}
+                onClick={() => setToggle("Future exploration")}
                 className={
-                  toggle === 3
-                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110"
-                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110"
+                  toggle === "Future exploration"
+                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110 cursor-pointer"
+                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110 cursor-pointer"
                 }
               >
                 <h3 className="text-white" color="#fff">
                   Future exploration
                 </h3>
               </div>
+              {categories.map((category) => (
+                <div
+                  onClick={() => setToggle(category)}
+                  className={
+                    toggle === category
+                      ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110 cursor-pointer"
+                      : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110 cursor-pointer"
+                  }
+                >
+                  <h3 className="text-white" color="#fff">
+                    {category}
+                  </h3>
+                </div>
+              ))}
             </div>
           </div>
           <div className="flex flex-wrap p-4 gap-3">

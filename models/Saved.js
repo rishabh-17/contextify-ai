@@ -13,7 +13,9 @@ const SavedSchema = new mongoose.Schema(
       required: true,
     },
     type: {
-      type: Number,
+      type: String,
+      trim: true,
+      required: true,
     },
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },

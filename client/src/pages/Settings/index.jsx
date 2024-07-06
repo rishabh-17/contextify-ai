@@ -62,6 +62,7 @@ export default function Settings() {
       alert("Something went wrong");
       return;
     }
+    setCategoryInput("");
     fetchCategories();
     setLoading(false);
   };
@@ -319,7 +320,6 @@ export default function Settings() {
                     ) : (
                       <Img
                         src="images/defaultImg.jpg"
-                        // src="images/img_frame_purple_900.svg"
                         alt="image"
                         className="rounded-full w-48"
                       />
@@ -500,7 +500,7 @@ export default function Settings() {
                     Future exploration
                   </li>
                   {(categories || [])?.map((category) => (
-                    <li className="flex justify-between p-2">
+                    <li className="flex justify-between p-2 border font-bold border-gray-300">
                       <p>{category}</p>{" "}
                       <button className="bg-red-600 p-1">
                         <MdDelete
@@ -515,10 +515,11 @@ export default function Settings() {
                   <input
                     type="text"
                     placeholder="Add Category"
+                    value={categoryInput}
                     onChange={(e) => setCategoryInput(e.target.value)}
                   />
                   <button
-                    className=" flex font-bold text-xl px-8 py-1 bg-purple-900 text-[#fff] rounded"
+                    className="flex font-bold text-xl px-8 py-1 bg-purple-900 text-[#fff] rounded"
                     onClick={handleAddCategory}
                   >
                     +

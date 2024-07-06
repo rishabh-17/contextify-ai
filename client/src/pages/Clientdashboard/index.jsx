@@ -32,12 +32,29 @@ export default function ClientdashboardPage() {
   const user = JSON.parse(localStorage.getItem("user"));
   const [ques, setQues] = useState("");
   const [ans, setAns] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
   const navigate = useNavigate();
   const setLoading = useContext(LoadingContext);
   const [profile, setProfile] = useState({});
   const [isImgUrl, setIsImgUrl] = useState(false);
   const [sharePop, setSharePop] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
+
+  const fetchCategories = async () => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const { data } = await axios.get(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/categories",
+      config
+    );
+    setCategories(data?.categories || []);
+    setLoading(false);
+  };
 
   const genrateKey = async (e, initial) => {
     setLoading(true);
@@ -106,6 +123,7 @@ export default function ClientdashboardPage() {
     fetchHistory();
     fetchSaved();
     fetchProfile();
+    fetchCategories();
     if (!localStorage.getItem("secret")) {
       genrateKey(true, true);
     }
@@ -577,45 +595,45 @@ export default function ClientdashboardPage() {
                 ></textarea>
                 {ans && (
                   <div>
-                    <h5 className="font-bold  text-md mb-3">Save To:</h5>
-                    <div className="flex gap-2 flex-wrap">
-                      <button
-                        className={
-                          type === 1
-                            ? "bg-purple-900 text-[#fff] text-sm hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
-                            : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
-                        }
-                        onClick={() => setType(1)}
-                      >
-                        Things I know
-                      </button>
-                      <button
-                        className={
-                          type === 2
-                            ? "bg-purple-900 text-[#fff] text-sm hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
-                            : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
-                        }
-                        onClick={() => setType(2)}
-                      >
-                        Notes
-                      </button>
-                      <button
-                        className={
-                          type === 3
-                            ? "bg-purple-900 text-sm text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full"
-                            : "bg-[#fff] border text-sm border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
-                        }
-                        onClick={() => setType(3)}
-                      >
-                        Future exploration
-                      </button>
-                      <button
-                        className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-2 hover:-translate-y-1 hover:scale-110"
-                        onClick={handleSaveContext}
-                      >
-                        Save
-                      </button>
+                    <div className="flex gap-2 items-center">
+                      <h5 className="font-bold  text-md mb-3">Save To:</h5>
+                      <div className="flex gap-2 flex-wrap">
+                        <div className="relative inline-block text-left">
+                          <select
+                            className="bg-white rounded shadow-lg p-3"
+                            id="dropdownMenu"
+                            role="menu"
+                            onChange={(e) => setType(e.target.value)}
+                            // aria-orientation="vertical"
+                            // aria-labelledby="dropdownButton"
+                          >
+                            {[
+                              "Things I know",
+                              "Notes",
+                              "Future exploration",
+                              ...categories,
+                            ].map((option, index) => (
+                              <option
+                                key={index}
+                                className="text-sm px-2 py-1 rounded hover:-translate-y-1 hover:scale-110"
+                                value={option}
+                                onClick={() => {
+                                  setType(option);
+                                }}
+                              >
+                                {option}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
                     </div>
+                    <button
+                      className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-2 hover:-translate-y-1 hover:scale-110 mt-2"
+                      onClick={handleSaveContext}
+                    >
+                      Save
+                    </button>
                   </div>
                 )}
               </div>
