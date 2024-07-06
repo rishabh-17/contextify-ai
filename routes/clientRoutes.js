@@ -1,5 +1,5 @@
 const express = require("express");
-const { AuthMiddleware } = require("../middlewares");
+const { AuthMiddleware, secretKeyValidation } = require("../middlewares");
 const { clientController } = require("../controllers");
 
 const router = express.Router();
@@ -25,5 +25,21 @@ router.get(
   "/profile",
   AuthMiddleware.userAuthentication,
   clientController.profileData
+);
+
+router.get(
+  "/feedback",
+  AuthMiddleware.userAuthentication,
+  clientController.getFeedback
+);
+router.post(
+  "/feedback",
+  AuthMiddleware.userAuthentication,
+  clientController.postFeedback
+);
+router.post(
+  "/feedback/extension",
+  AuthMiddleware.secretKeyValidation,
+  clientController.postFeedback
 );
 module.exports = router;

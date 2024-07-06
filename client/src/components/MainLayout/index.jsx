@@ -10,7 +10,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { TbMessageReport } from "react-icons/tb";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { TbFileSettings } from "react-icons/tb";
-import { MdNotificationAdd } from "react-icons/md";
+import { MdOutlineFeedback } from "react-icons/md";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { RxDashboard } from "react-icons/rx";
 import { FaRegStar } from "react-icons/fa";
@@ -160,17 +160,18 @@ export default function ClientdashboardPage({ active, children }) {
                 <MdOutlineContactSupport className="h-8 w-8" />
                 Support
               </li>
-              {/* 
+
               <li
                 className={
-                  active === 5
+                  active === 3
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
-                    : "ml-5 my-3 text-xs flex gap-2 items-center"
+                    : "ml-5 my-3 text-sm flex gap-2 items-center text-purple-900 hover:-translate-y-1 hover:scale-110"
                 }
+                onClick={() => navigate("/feedback")}
               >
-                <IoSettingsOutline className="h-4 w-4" />
-                Settings
-              </li> */}
+                <MdOutlineFeedback className="h-8 w-8" />
+                Feedback
+              </li>
               <li
                 className={
                   active === 6
@@ -308,6 +309,12 @@ export default function ClientdashboardPage({ active, children }) {
                                 <MdOutlineContactSupport className="h-4 w-4" />
                                 Support
                               </a>
+                            </li>
+                            <li onClick={() => navigate("/feedback")}>
+                              <div className=" px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900">
+                                <MdOutlineFeedback className="h-4 w-4" />
+                                Feedback
+                              </div>
                             </li>
                             <li onClick={() => {}}>
                               <div

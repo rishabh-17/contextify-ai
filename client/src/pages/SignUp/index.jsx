@@ -66,6 +66,72 @@ export default function SignUpPage() {
     return valid;
   };
 
+  const handleLogin = async () => {
+    const { data } = await axios.post(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/login",
+      {
+        email,
+        password,
+      }
+    );
+    if (data.authToken) {
+      localStorage.setItem("admintoken", data.authToken);
+      let user = parseJwt(data.authToken);
+      localStorage.setItem("user", JSON.stringify(user));
+      setLoading(false);
+      console.log("first");
+      navigate("/admindashboard");
+      console.log(456789);
+    } else if (data.token) {
+      localStorage.setItem("token", data.token);
+      let user = parseJwt(data.token);
+      localStorage.setItem("user", JSON.stringify(user));
+      setLoading(false);
+      navigate("/dashboard");
+    } else {
+      setLoading(false);
+      setError(data.err);
+    }
+  };
+
+  async function handleGoogleSignin(details, gtoken) {
+    // e.preventDefault();
+    setLoading(true);
+    try {
+      const { data } = await axios.post(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/login",
+        {
+          email: details.email,
+          password: details.email,
+          google: true,
+          gtoken: gtoken,
+        }
+      );
+      if (data.error) {
+        setError(data.error);
+        setLoading(false);
+      } else {
+        if (data.authToken) {
+          localStorage.setItem("admintoken", data.authToken);
+          setLoading(false);
+          navigate("/");
+        } else if (data.token) {
+          localStorage.setItem("token", data.token);
+          let user = parseJwt(data.token);
+          localStorage.setItem("user", JSON.stringify(user));
+          setLoading(false);
+          navigate("/dashboard");
+        } else {
+          setLoading(false);
+          setError(data.err);
+        }
+      }
+    } catch (err) {
+      setError("Something went wrong");
+      setLoading(false);
+    }
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     if (!isFormValid()) {
@@ -102,7 +168,7 @@ export default function SignUpPage() {
         }));
         setLoading(false);
       } else {
-        navigate("/signin");
+        handleLogin();
       }
     } catch (err) {
       setError(err.message);
@@ -130,7 +196,7 @@ export default function SignUpPage() {
         }));
         setLoading(false);
       } else {
-        navigate("/signin");
+        handleGoogleSignin(detail);
       }
     } catch (err) {
       setError(err.message);

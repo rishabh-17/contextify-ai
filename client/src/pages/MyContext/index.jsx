@@ -108,7 +108,7 @@ export default function MyContext() {
             </div>
           )}
           <div className="flex flex-col gap-4">
-            <h2 className="text-xl font-bold mt-5">My Context</h2>
+            <h2 className="text-3xl font-bold mt-5">My Context</h2>
             <div>
               <input
                 type="text"

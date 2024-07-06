@@ -1,4 +1,4 @@
-const { User, Saved, History } = require("../models");
+const { User, Saved, History, Feedback } = require("../models");
 
 exports.getSaved = async (req, res) => {
   try {
@@ -103,5 +103,26 @@ exports.profileData = async (req, res) => {
   } catch (error) {
     console.log(error);
     res.json({ success: false, err: "unable to get dashbord data" });
+  }
+};
+
+exports.getFeedback = async (req, res) => {
+  try {
+    const feedback = await Feedback.find({});
+    res.json({ success: true, data: feedback });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, err: "unable to get feedback" });
+  }
+};
+
+exports.postFeedback = async (req, res) => {
+  try {
+    console.log(req.body);
+    const feedback = await Feedback.create({ ...req.body, user: req.user._id });
+    res.json({ success: true, data: feedback });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, err: "unable to post feedback" });
   }
 };
