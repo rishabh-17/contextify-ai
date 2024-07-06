@@ -5,6 +5,7 @@ import { FaRegThumbsUp } from "react-icons/fa";
 import { FaThumbsDown } from "react-icons/fa";
 import { FaThumbsUp } from "react-icons/fa";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function index() {
   const [feedback, setFeedback] = useState({
@@ -31,9 +32,10 @@ export default function index() {
         config
       );
       setFeedback({ rating: "", comment: "", idea: "" });
-      alert("success");
+      toast.success("Feedback submitted successfully");
     } catch (error) {
       console.error(error);
+      toast.error("Something went wrong");
     }
   };
 

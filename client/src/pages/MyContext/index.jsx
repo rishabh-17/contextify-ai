@@ -12,6 +12,7 @@ import { IoClose } from "react-icons/io5";
 import { LoadingContext } from "../../App";
 import SharePopup from "../../components/sharePopup";
 import { MdDelete } from "react-icons/md";
+import { toast } from "react-toastify";
 
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
@@ -78,14 +79,15 @@ export default function MyContext() {
         config
       );
       if (!data?.success) {
-        alert("Something went wrong");
+        toast.error("Something went wrong");
         return;
       }
+      toast.success("Context deleted successfully");
       fetchContexts();
       setLoading(false);
     } catch (error) {
       console.log(error);
-      alert("Something went wrong");
+      toast.error("Something went wrong");
       setLoading(false);
     }
   };

@@ -19,6 +19,8 @@ import { IoClose } from "react-icons/io5";
 import { LoadingContext } from "../../App";
 import { Img } from "../../components";
 import Uploader from "components/Uploader";
+import { toast } from "react-toastify";
+
 import SharePopup from "../../components/sharePopup";
 
 export default function ClientdashboardPage() {
@@ -71,15 +73,15 @@ export default function ClientdashboardPage() {
         config
       )
       .then((data) => {
-        console.log(initial);
         if (!initial) {
           setSecret(data?.data?.key);
+          toast.success("Key generated successfully");
         }
         localStorage.setItem("secret", data?.data?.key);
         setLoading(false);
       })
       .catch((err) => {
-        alert("unable to generate key");
+        toast.error("unable to generate key");
         setLoading(false);
       });
   };
@@ -143,7 +145,7 @@ export default function ClientdashboardPage() {
       return alert("Please enter a question");
     } else if (!secret && !localStorage.getItem("secret")) {
       setLoading(false);
-      return alert("Please generate a secret key");
+      return toast.warn("Please generate a secret key");
     } else {
       axios
         .post(
@@ -156,7 +158,7 @@ export default function ClientdashboardPage() {
           setLoading(false);
         })
         .catch((err) => {
-          alert(err?.response?.data?.err);
+          toast.error(err?.response?.data?.err);
           setLoading(false);
         });
     }
@@ -175,7 +177,7 @@ export default function ClientdashboardPage() {
     if (!secret && !localStorage.getItem("secret")) {
       setLoading(false);
 
-      return alert("Please generate a secret key");
+      return toast.warn("Please generate a secret key");
     } else {
       axios
         .post(
@@ -188,7 +190,7 @@ export default function ClientdashboardPage() {
           setLoading(false);
         })
         .catch((err) => {
-          alert(err?.response?.data?.err);
+          toast.error(err?.response?.data?.err);
           setLoading(false);
         });
     }
@@ -204,10 +206,10 @@ export default function ClientdashboardPage() {
     };
     if (!ques) {
       setLoading(false);
-      return alert("Please enter a question");
+      return toast.warn("Please enter a question");
     } else if (!secret && !localStorage.getItem("secret")) {
       setLoading(false);
-      return alert("Please generate a secret key");
+      return toast.warn("Please generate a secret key");
     } else {
       axios
         .post(
@@ -216,13 +218,13 @@ export default function ClientdashboardPage() {
           config
         )
         .then(({ data }) => {
-          alert(data.msg);
+          toast.success("Saved successfully");
           setQues("");
           setAns("");
           setLoading(false);
         })
         .catch((err) => {
-          alert(err.err);
+          toast.error(err.err);
           setLoading(false);
         });
     }

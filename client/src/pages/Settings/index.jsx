@@ -7,6 +7,7 @@ import axios from "axios";
 import { Img } from "../../components";
 import Uploader from "components/Uploader";
 import { MdDelete } from "react-icons/md";
+import { toast } from "react-toastify";
 
 export default function Settings() {
   const [tab, setTab] = useState(1);
@@ -22,18 +23,23 @@ export default function Settings() {
   const user = JSON.parse(localStorage.getItem("user"));
 
   const fetchCategories = async () => {
-    setLoading(true);
-    const config = {
-      headers: {
-        authentication: `${localStorage.getItem("token")}`,
-      },
-    };
-    const { data } = await axios.get(
-      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/categories",
-      config
-    );
-    setCategories(data?.categories);
-    setLoading(false);
+    try {
+      setLoading(true);
+      const config = {
+        headers: {
+          authentication: `${localStorage.getItem("token")}`,
+        },
+      };
+      const { data } = await axios.get(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/categories",
+        config
+      );
+      setCategories(data?.categories);
+    } catch (error) {
+      toast.error("Failed to fetch categories");
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -62,6 +68,7 @@ export default function Settings() {
       alert("Something went wrong");
       return;
     }
+    toast.success("Category added successfully");
     setCategoryInput("");
     fetchCategories();
     setLoading(false);
@@ -82,9 +89,10 @@ export default function Settings() {
       config
     );
     if (!data?.success) {
-      alert("Something went wrong");
+      toast.error("Failed to delete category");
       return;
     }
+    toast.success("Category deleted successfully");
     fetchCategories();
     setLoading(false);
   };
@@ -163,8 +171,9 @@ export default function Settings() {
       );
       const user = await res.json();
       console.log(user);
+      toast.success("Profile updated successfully");
     } catch (err) {
-      console.log(err);
+      toast.error("Failed to update profile");
     } finally {
       setLoading(false);
       setLoadingContext(false);

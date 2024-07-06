@@ -6,6 +6,7 @@ import AdminLayout from "../../components/AdminLayout";
 import axios from "axios";
 import Chart from "react-apexcharts";
 import { LoadingContext } from "../../App";
+import { toast } from "react-toastify";
 
 const dropDownOptions = [
   { label: "Option1", value: "option1" },

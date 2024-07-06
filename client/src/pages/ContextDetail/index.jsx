@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LoadingContext } from "../../App";
 import SharePopup from "../../components/sharePopup";
+import { toast } from "react-toastify";
 import axios from "axios";
 export default function ContextDetail() {
   const { id, type } = useParams();
@@ -41,6 +42,7 @@ export default function ContextDetail() {
         setData(data.data);
       } catch (error) {
         console.log(error);
+        toast.error("Something went wrong");
       } finally {
         setLoading(false);
       }
