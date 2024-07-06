@@ -164,7 +164,7 @@ export default function MyContext() {
                   Future exploration
                 </h3>
               </div>
-              {categories.map((category) => (
+              {categories?.map((category) => (
                 <div
                   onClick={() => setToggle(category)}
                   className={
@@ -183,7 +183,7 @@ export default function MyContext() {
           <div className="flex flex-wrap p-4 gap-3">
             {contexts.map(
               (context) =>
-                toggle == context.type && (
+                toggle == context?.type && (
                   <div
                     class="max-w-sm w-[200px] h-[300px]
              p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"

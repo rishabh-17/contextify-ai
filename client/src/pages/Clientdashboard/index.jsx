@@ -611,8 +611,8 @@ export default function ClientdashboardPage() {
                               "Things I know",
                               "Notes",
                               "Future exploration",
-                              ...categories,
-                            ].map((option, index) => (
+                              ...(categories || []),
+                            ]?.map((option, index) => (
                               <option
                                 key={index}
                                 className="text-sm px-2 py-1 rounded hover:-translate-y-1 hover:scale-110"
