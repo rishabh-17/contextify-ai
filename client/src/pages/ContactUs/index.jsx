@@ -116,15 +116,17 @@ export default function ContactUsPage() {
               <input className="w-full rounded-xl p-3" type="text" />
             </div>
           </div>
-          <label htmlFor="">Subject</label>
+          <div className="mb-3">
+          <label htmlFor="" >Subject</label>
+          </div>
           <textarea
             name=""
             id=""
             className="block w-full rounded-xl"
             rows={12}
           ></textarea>
-          <div className="flex justify-center my-5">
-            <button className="mt-8 bg-purple-900 text-[#fff] rounded-xl p-3 px-8">
+          <div className="flex justify-center my-5 ">
+            <button className="mt-8 bg-purple-900 text-[#fff] rounded-xl p-3 px-8 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300">
               Send Message
             </button>
           </div>

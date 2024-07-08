@@ -29,7 +29,7 @@ const index = () => {
         Contextify is a hub that puts information into context at the click of a
         button
       </Text>
-      <div className="justify-center w-fit p-[29px] sm:p-5 border-white border-2 border-solid  rounded-[40px] mx-auto">
+      <div className="justify-center w-fit p-[29px] sm:p-5 border-white border-2 border-solid  rounded-[40px] mx-auto transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300">
         <Text as="p" className="capitalize text-center text-[#fff]">
           Start Your Free Trial Today
         </Text>

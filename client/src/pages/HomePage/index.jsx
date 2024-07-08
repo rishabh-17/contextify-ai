@@ -77,13 +77,13 @@ export default function HomePage() {
                     className="border border-gray-500 rounded-3xl px-4 py-5 w-[80%]"
                     placeholder="Get Started for Free"
                   />
-                  <div className="border border-gray-500 rounded-3xl px-4 py-5 bg-purple-900  w-min-[100px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
-                    <FaArrowRightLong width={100} height={100} color="white" />
+                  <div className="border border-purple-400 rounded-3xl px-4 py-5 bg-white  w-min-[100px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300">
+                    <FaArrowRightLong width={100} height={100} color="purple" />
                   </div>
                 </div>
                 <p>
                   Already using Contextify?{" "}
-                  <span className="text-purple-900">sign in</span>
+                  <span className="text-purple-900">Sign in</span>
                 </p>
                 {/* <div className="flex gap-12 mt-8 w-full">
                   <div className="flex w-fit ">
@@ -330,8 +330,8 @@ export default function HomePage() {
                 Use <br /> <span className="bg-orange-50">Contextify</span>{" "}
               </h2>
             </div>
-            <div className="grid grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-4 gap-5">
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
+            <div className="grid grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-4 gap-5 ">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Tight on time?</h3> */}
@@ -340,7 +340,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Doing in-depth research?</h3> */}
@@ -349,7 +349,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Feeling social?</h3> */}
@@ -358,7 +358,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Need good sources?</h3> */}
@@ -367,7 +367,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Catching up on trends?</h3> */}
@@ -376,7 +376,7 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md">
+              <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
                 <div className="h-12 w-12 bg-purple-400 shrink-0 rounded-full" />
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">

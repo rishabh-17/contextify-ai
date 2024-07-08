@@ -394,6 +394,7 @@ export default function AboutPage() {
                       padding: "10px 20px",
                       borderRadius: "50px",
                     }}
+                    className="transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300"
                   >
                     Submit
                   </button>
