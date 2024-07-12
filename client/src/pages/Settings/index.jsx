@@ -311,6 +311,16 @@ export default function Settings() {
             >
               Help
             </li>
+            <li
+              className={`${
+                tab === 6
+                  ? "text-violet-900 underline underline-offset-8"
+                  : "text-gray-500"
+              } font-semibold text-md cursor-pointer`}
+              onClick={() => setTab(6)}
+            >
+              Categories
+            </li>
           </ul>
           <hr className="mb-8 mt-4" />
 
@@ -495,49 +505,47 @@ export default function Settings() {
                   </option>
                 ))}
               </select>
-
-              <div className="mt-8 flex flex-col gap-2">
-                <h3 className="text-xl font-bold mb-1">Categories</h3>
-                <ul className="flex flex-col gap-2">
-                  <li className="font-bold border border-gray-300 p-2 ">
-                    Notes
-                  </li>
-                  <li className="font-bold border border-gray-300 p-2">
-                    Things I know
-                  </li>
-                  <li className="font-bold border border-gray-300 p-2">
-                    Future exploration
-                  </li>
-                  {(categories || [])?.map((category) => (
-                    <li className="flex justify-between p-2 border font-bold border-gray-300">
-                      <p>{category}</p>{" "}
-                      <button className="bg-red-600 p-1">
-                        <MdDelete
-                          className="text-[#fff] w-4 h-4"
-                          onClick={() => handleDeleteCategory(category)}
-                        />
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    placeholder="Add Category"
-                    value={categoryInput}
-                    onChange={(e) => setCategoryInput(e.target.value)}
-                  />
-                  <button
-                    className="flex font-bold text-xl px-8 py-1 bg-purple-900 text-[#fff] rounded"
-                    onClick={handleAddCategory}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
             </section>
           )}
-
+          {tab === 6 && (
+            <div className="mt-8 flex flex-col gap-2">
+              <h3 className="text-xl font-bold mb-1">Categories</h3>
+              <ul className="flex flex-col gap-2">
+                <li className="font-bold border border-gray-300 p-2 ">Notes</li>
+                <li className="font-bold border border-gray-300 p-2">
+                  Things I know
+                </li>
+                <li className="font-bold border border-gray-300 p-2">
+                  Future exploration
+                </li>
+                {(categories || [])?.map((category) => (
+                  <li className="flex justify-between p-2 border font-bold border-gray-300">
+                    <p>{category}</p>{" "}
+                    <button className="bg-red-600 p-1">
+                      <MdDelete
+                        className="text-[#fff] w-4 h-4"
+                        onClick={() => handleDeleteCategory(category)}
+                      />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="Add Category"
+                  value={categoryInput}
+                  onChange={(e) => setCategoryInput(e.target.value)}
+                />
+                <button
+                  className="flex font-bold text-xl px-8 py-1 bg-purple-900 text-[#fff] rounded"
+                  onClick={handleAddCategory}
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          )}
           {tab === 3 && (
             <section>
               <h4 className="text-xl font-bold mb-4">Notifications</h4>

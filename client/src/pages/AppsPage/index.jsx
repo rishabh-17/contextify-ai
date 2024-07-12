@@ -1,7 +1,15 @@
 import React from "react";
 import MainLayout from "../../components/MainLayout";
 import { FaWindows, FaChrome } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { FaRegEdit, FaCopy, FaRegQuestionCircle } from "react-icons/fa";
+import { Tooltip } from "react-tooltip";
+
 export default function AppsPage() {
+  const navigate = useNavigate();
+  const [keyShow, setKeyShow] = React.useState(false);
+  const [secret, setSecret] = React.useState(localStorage.getItem("secret"));
+
   return (
     <div>
       <MainLayout active={5}>
@@ -16,13 +24,48 @@ export default function AppsPage() {
                   Now available for every browser that allows Chrome extensions.
                 </p>
               </div>
-              <a
-                href="https://chromewebstore.google.com/detail/contextify/fbfhkfielfdockkbkldjbeokbbhgdccc"
-                target="_blank"
-                className="bg-purple-900 text-[#fff] h-10 p-2 rounded transition ease-in-out hover:translate-y-1 hover:bg-gray-50 hover:text-[#000]"
-              >
-                Install
-              </a>
+              <div className=" items-center">
+                <section className="flex items-center">
+                  <h3 className="my-3">Secret Key</h3>
+                  <div className="bg-[#fff] p-5 rounded-xl">
+                    {secret && (
+                      <div className="flex items-center gap-3">
+                        <input
+                          className="roundedxl"
+                          type={keyShow ? "text" : "password"}
+                          value={secret}
+                        />
+                        <FaCopy
+                          color="purple"
+                          onClick={() => {
+                            navigator.clipboard.writeText(secret);
+                            alert("copied");
+                          }}
+                          // onClick={() => {
+                          //   setKeyShow(!keyShow);
+                          //   if (keyShow === true) setSecret("");
+                          // }}
+                        />
+                        <FaRegQuestionCircle
+                          data-tooltip-id="my-tooltip"
+                          color="purple"
+                          data-tooltip-content="Key will be used in chrome extension"
+                        />
+                        <Tooltip id="my-tooltip" />
+                      </div>
+                    )}
+                  </div>
+                </section>
+                <div className="flex items-center w-full justify-center">
+                  <a
+                    href="https://chromewebstore.google.com/detail/contextify/fbfhkfielfdockkbkldjbeokbbhgdccc"
+                    target="_blank"
+                    className="bg-purple-900 text-[#fff] h-10 p-2 rounded transition ease-in-out hover:translate-y-1 hover:bg-gray-50 hover:text-[#000] w-fit"
+                  >
+                    Install
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

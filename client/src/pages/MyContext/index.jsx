@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 
 export default function MyContext() {
   const [contexts, setContexts] = React.useState([]);
-  const [toggle, setToggle] = React.useState(1);
+  const [toggle, setToggle] = React.useState("All");
   const user = JSON.parse(localStorage.getItem("user"));
   const [sharePop, setSharePop] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
@@ -146,38 +146,6 @@ export default function MyContext() {
                 }
               >
                 <h3>All</h3>
-              </div>
-              <div
-                onClick={() => setToggle("Things I know")}
-                className={
-                  toggle === "Things I know"
-                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110 cursor-pointer"
-                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110 cursor-pointer"
-                }
-              >
-                <h3>Things I know</h3>
-              </div>
-              <div
-                onClick={() => setToggle("Notes")}
-                className={
-                  toggle === "Notes"
-                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110 cursor-pointer"
-                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110  cursor-pointer"
-                }
-              >
-                <h3 className="text-white">Notes</h3>
-              </div>
-              <div
-                onClick={() => setToggle("Future exploration")}
-                className={
-                  toggle === "Future exploration"
-                    ? "flex flex-col items-center text-purple-700 border-b-2 border-purple-700 pb-2 font-bold  hover:-translate-y-1 hover:scale-110 cursor-pointer"
-                    : " flex flex-col items-center  text-gray-600 hover:-translate-y-1 hover:scale-110 cursor-pointer"
-                }
-              >
-                <h3 className="text-white" color="#fff">
-                  Future exploration
-                </h3>
               </div>
               {categories?.map((category) => (
                 <div

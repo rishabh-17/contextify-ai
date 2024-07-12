@@ -56,7 +56,7 @@ export default function Header({ ...props }) {
               <Button
                 color="white_A700"
                 size="9xl"
-                className="sm:px-5 capitalize min-w-[160px] border-2 border-purple-400 rounded-[30px] transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300"                
+                className="sm:px-5 capitalize min-w-[160px] border-2 border-purple-400 rounded-[30px] transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 hover:text-[#fff] duration-300"
                 onClick={() => {
                   if (localStorage.getItem("admintoken")) {
                     navigate("/admindashboard");

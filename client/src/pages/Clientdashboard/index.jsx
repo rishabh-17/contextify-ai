@@ -6,7 +6,7 @@ import { ShareSocial } from "react-share-social";
 import { RiSpeakFill } from "react-icons/ri";
 import { MdPerson } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5";
-import { FaRegEdit, FaCopy } from "react-icons/fa";
+import { FaRegEdit, FaCopy, FaRegQuestionCircle } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 import { WiTime4 } from "react-icons/wi";
 import { IoMdShare } from "react-icons/io";
@@ -20,6 +20,7 @@ import { LoadingContext } from "../../App";
 import { Img } from "../../components";
 import Uploader from "components/Uploader";
 import { toast } from "react-toastify";
+import { Tooltip } from "react-tooltip";
 
 import SharePopup from "../../components/sharePopup";
 
@@ -42,6 +43,8 @@ export default function ClientdashboardPage() {
   const [isImgUrl, setIsImgUrl] = useState(false);
   const [sharePop, setSharePop] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
+  const [addCategoryInput, setAddCategoryInput] = useState(false);
+  const [addCategory, setAddCategory] = useState("");
 
   const fetchCategories = async () => {
     setLoading(true);
@@ -176,7 +179,6 @@ export default function ClientdashboardPage() {
     };
     if (!secret && !localStorage.getItem("secret")) {
       setLoading(false);
-
       return toast.warn("Please generate a secret key");
     } else {
       axios
@@ -194,6 +196,35 @@ export default function ClientdashboardPage() {
           setLoading(false);
         });
     }
+  };
+
+  const handleAddCategory = async () => {
+    setLoading(true);
+    if (!addCategory && !categories.includes(addCategory)) {
+      setLoading(false);
+      return;
+    }
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const { data } = await axios.post(
+      (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/categories",
+      {
+        category: addCategory,
+      },
+      config
+    );
+    if (!data?.success) {
+      alert("Something went wrong");
+      return;
+    }
+    toast.success("Category added successfully");
+    setAddCategory("");
+    setAddCategoryInput(false);
+    fetchCategories();
+    setLoading(false);
   };
 
   const handleSaveContext = async () => {
@@ -275,9 +306,9 @@ export default function ClientdashboardPage() {
         <div className="w-full mb-4 text-violet-900 h-4 text-lg">
           Hi, {capitalizeFirstLetter(user?.name)}
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-1 gap-4 w-full py-3">
+        <div className="grid grid-cols-1  md:grid-cols-1 gap-4 w-full py-3">
           <div>
-            <div className="flex flex-col  items-center gap-4 rounded-full ml-5 w-1/3">
+            {/* <div className="flex flex-col  items-center gap-4 rounded-full ml-5 w-1/3">
               {profile?.imgUrl ? (
                 <img
                   src={profile?.imgUrl}
@@ -293,9 +324,9 @@ export default function ClientdashboardPage() {
                   className="rounded-full"
                 />
               )}
-            </div>
+            </div> */}
 
-            <section className="my-5">
+            <section className="my-5 mx-10">
               <div className="bg-[#fff] shadow-md border w-full py-8 px-4 gap-4 flex flex-wrap justify-evenly sm:justify-between rounded rounded-2xl">
                 <div className="flex items-center">
                   <div className="p-3  bg-purple-200 rounded-xl mx-1">
@@ -307,11 +338,15 @@ export default function ClientdashboardPage() {
                     />
                   </div>
                   <div>
-                    <p className="w-[90px] text-center text-gray-700">
+                    <p className="w-[120px] text-center text-gray-700 flex gap-1">
                       Use Cases
+                      <FaRegQuestionCircle
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content="Total Context Searched"
+                      />
                     </p>
                     <p className="w-[90px] text-center">
-                      {profile?.usage || 0}
+                      {profile?.usage || 0} <Tooltip id="my-tooltip" />
                     </p>
                   </div>
                 </div>
@@ -326,7 +361,13 @@ export default function ClientdashboardPage() {
                     />
                   </div>
                   <div>
-                    <p className="w-[90px] text-center text-gray-700">Tokens</p>
+                    <p className="w-[90px] text-center text-gray-700 flex gap-1">
+                      Tokens{" "}
+                      <FaRegQuestionCircle
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content="Token Left"
+                      />
+                    </p>
                     <p className="w-[90px] text-center">
                       {profile?.totalReq || 0}
                     </p>
@@ -335,8 +376,24 @@ export default function ClientdashboardPage() {
               </div>
             </section>
           </div>
+          <section className="my-5 mx-10">
+            <div className="bg-[#fff] shadow-md border w-full py-8 px-4 gap-4 rounded-2xl flex justify-between items-center">
+              <div className="">
+                <h3 className="my-3 font-bold">Get more contexts with AI</h3>
+                <p className=" text-gray-700">
+                  Subscribe to a plan and unlock the power of contextify
+                </p>
+              </div>
+              <button
+                className="px-3 py-2 bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-xl h-10"
+                onClick={() => navigate("/subscription")}
+              >
+                Unlock
+              </button>
+            </div>
+          </section>
           <div>
-            <section className="mb-5 mx-10 bg-[#fff] p-5 rounded-xl shadow-md">
+            {/* <section className="mb-5 mx-10 bg-[#fff] p-5 rounded-xl shadow-md">
               <h3 className="my-3">Secret Key</h3>
               <div className="bg-[#fff] p-5 rounded-xl">
                 {secret ? (
@@ -367,42 +424,49 @@ export default function ClientdashboardPage() {
                   </button>
                 )}
               </div>
-            </section>
-            <section className="m-10 p-4 flex gap-8 bg-[#fff] shadow-md rounded-xl">
-              <div className=" ">
-                <img src="images/sharePeoples.jpg" width={100} alt="" />
-              </div>
-              <div className="h-full flex flex-col justify-between">
-                <h3>Share with your friends</h3>
+            </section> */}
+
+            <div className="grid grid-cols-2 md:grid-cols-1">
+              <section className="my-5 mx-10 bg-[#fff] p-5 flex flex-col items-center gap-4 justify-center rounded-xl shadow-md">
+                <h3 className="my-3 font-bold">Get Context Now</h3>
                 <button
-                  className="flex flex-row bg-[#fff] justify-around text-purple-900 rounded-xl px-10 py-4"
-                  onClick={() => {
-                    setShareUrl("https://contextify.info/");
-                    setSharePop(true);
-                  }}
+                  className="px-3 py-2 bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-xl"
+                  onClick={() => setShowModal(true)}
                 >
-                  <IoMdShare className="gap-2" color="#4B0082" />
-                  Share
+                  Contextify
                 </button>
-              </div>
-            </section>
+              </section>
+
+              <section className="mx-10 p-5 my-5 flex gap-8 bg-[#fff] shadow-md rounded-xl">
+                <div className=" ">
+                  <img src="images/sharePeoples.jpg" width={100} alt="" />
+                </div>
+                <div className="h-full flex flex-col justify-between">
+                  <h3 className="my-3">Share with your friends</h3>
+                  <button
+                    className="bg-[#fff] flex text-purple-900 rounded-xl mt-3 py-2 hover:hover:-translate-y-1 hover:scale-110 border-purple-900 border w-fit px-5 items-center"
+                    onClick={() => {
+                      setShareUrl("https://contextify.info/");
+                      setSharePop(true);
+                    }}
+                  >
+                    <IoMdShare className="mx-1" color="#4B0082" />
+                    <span>Share</span>
+                  </button>
+                </div>
+              </section>
+            </div>
           </div>
         </div>
         <section className=" my-5">
-          <h2>Recent Context</h2>
+          <h2 className="gap-1 flex">
+            Recent Context{" "}
+            <FaRegQuestionCircle
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Context History"
+            />
+          </h2>
           <div className="flex flex-wrap items-center gap-2 my-2">
-            <div
-              class="max-w-sm w-[200px] h-[300px]
-             p-2 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between"
-            >
-              <div className="overflow-auto" onClick={() => setShowModal(true)}>
-                <CiFileOn color="purple" className="w-full  h-[160px]" />
-                <h5 class=" text-md font-bold tracking-tight text-gray-900 text-xl text-center dark:text-white">
-                  New Context
-                </h5>
-              </div>
-              <div className="h-[40px] w-full border-t-2 flex flex-row-reverse items-center"></div>
-            </div>
             {history?.slice(0, 4).map((item) => (
               <div
                 class="max-w-sm w-[200px] h-[300px]
@@ -458,7 +522,7 @@ export default function ClientdashboardPage() {
         </section>
 
         {showModal && (
-          <div className="absolute w-[60%] h-[80%] m-auto left-0 right-0 bg-[#fff] shadow-md rounded border-2  border-purple-300 top-0 bottom-0 overflow-auto">
+          <div className="absolute w-[60%] h-[80%] md:w-full m-auto left-0 right-0 bg-[#fff] shadow-md rounded border-2  border-purple-300 top-0 bottom-0 overflow-auto">
             <div className="grid grid-cols-2 sm:grid-cols-1 sm:overflow-auto h-full">
               <div className="bg-gray-100 p-4 flex flex-col justify-between rounded overflow-auto min-h-[500px]">
                 <div className=" flex-row-reverse items-center gap-3 hidden sm:flex">
@@ -497,7 +561,7 @@ export default function ClientdashboardPage() {
                       className={
                         tone === 3
                           ? "bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
-                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110 hover:-translate-y-1 hover:scale-110"
+                          : "bg-[#fff] border border-purple-900 text-purple-900 px-2 py-1 rounded-full hover:-translate-y-1 hover:scale-110"
                       }
                       onClick={() => setTone(3)}
                     >
@@ -599,34 +663,59 @@ export default function ClientdashboardPage() {
                   <div>
                     <div className="flex gap-2 items-center">
                       <h5 className="font-bold  text-md mb-3">Save To:</h5>
-                      <div className="flex gap-2 flex-wrap">
-                        <div className="relative inline-block text-left">
-                          <select
-                            className="bg-white rounded shadow-lg p-3"
-                            id="dropdownMenu"
-                            role="menu"
-                            onChange={(e) => setType(e.target.value)}
-                            // aria-orientation="vertical"
-                            // aria-labelledby="dropdownButton"
-                          >
-                            {[
-                              "Things I know",
-                              "Notes",
-                              "Future exploration",
-                              ...(categories || []),
-                            ]?.map((option, index) => (
-                              <option
-                                key={index}
-                                className="text-sm px-2 py-1 rounded hover:-translate-y-1 hover:scale-110"
-                                value={option}
+                      <div className="flex gap-2 flex-wrap ">
+                        <div className="relative inline-block text-left flex gap-3 w-full">
+                          {!addCategoryInput ? (
+                            <>
+                              <select
+                                className="bg-white rounded shadow-lg p-3 w-max"
+                                id="dropdownMenu"
+                                role="menu"
+                                onChange={(e) => setType(e.target.value)}
+                                // aria-orientation="vertical"
+                                // aria-labelledby="dropdownButton"
+                              >
+                                {[...(categories || [])]?.map(
+                                  (option, index) => (
+                                    <option
+                                      key={index}
+                                      className="text-sm px-2 py-1 rounded hover:-translate-y-1 hover:scale-110"
+                                      value={option}
+                                      onClick={() => {
+                                        setType(option);
+                                      }}
+                                    >
+                                      {option}
+                                    </option>
+                                  )
+                                )}
+                              </select>
+                              <button
+                                className="bg-purple-900 gap-3 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-1 hover:-translate-y-1 w-10 hover:scale-110 rounded-lg"
                                 onClick={() => {
-                                  setType(option);
+                                  setAddCategoryInput(!addCategoryInput);
                                 }}
                               >
-                                {option}
-                              </option>
-                            ))}
-                          </select>
+                                +
+                              </button>
+                            </>
+                          ) : (
+                            <>
+                              <input
+                                type="text"
+                                value={addCategory}
+                                onChange={(e) => setAddCategory(e.target.value)}
+                              />
+                              <button
+                                className="bg-purple-900 gap-3 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-1 hover:-translate-y-1 w-12 hover:scale-110 rounded-lg"
+                                onClick={() => {
+                                  handleAddCategory();
+                                }}
+                              >
+                                Add
+                              </button>
+                            </>
+                          )}
                         </div>
                       </div>
                     </div>
