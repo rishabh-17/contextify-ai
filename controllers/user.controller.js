@@ -1,6 +1,7 @@
 const { User } = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const Payment = require("../models/Payment");
 const stripe = require("stripe")(process.env.STRIPE_API);
 
 exports.signup = async (req, res, next) => {
@@ -163,12 +164,12 @@ exports.makePayment = async (req, res) => {
           quantity: item.quantity,
         };
       }),
-      success_url: `http://localhost:5173/dashboard`,
+      success_url: `http://localhost:5173/subscription/?session_id={CHECKOUT_SESSION_ID}&user_id=3433&tokens=${req.body.items[0].quantity}`,
       cancel_url: "http://localhost:5173/subscription",
     });
-    res.json({ url: session.url });
+    // console.log(session);
+    res.json({ url: session.url, session });
   } catch (e) {
-    console.log(e);
     res.status(500).json({ error: e.message });
   }
 };
@@ -179,7 +180,6 @@ exports.getCategories = async (req, res) => {
     const user = await User.findById(id);
     res.json({ success: true, categories: user.categories });
   } catch (error) {
-    console.log(error);
     res.json({ success: false, msg: "something went wrong" });
   }
 };
@@ -190,11 +190,9 @@ exports.addCategory = async (req, res) => {
     const { category } = req.body;
     const user = await User.findById(id);
     user.categories.push(category);
-    console.log(req.body);
     await user.save();
     res.json({ success: true, msg: "category added successfully" });
   } catch (error) {
-    console.log(error);
     res.json({ success: false, msg: "something went wrong" });
   }
 };
@@ -208,7 +206,40 @@ exports.deleteCategory = async (req, res) => {
     await user.save();
     res.json({ success: true, msg: "category deleted successfully" });
   } catch (error) {
-    console.log(error);
     res.json({ success: false, msg: "something went wrong" });
+  }
+};
+
+exports.paymentSuccess = async (req, res) => {
+  const { sessionId, tokens } = req.body;
+  try {
+    const sessionData = await stripe.checkout.sessions.retrieve(sessionId);
+
+    if (!sessionData) {
+      return res.status(404).send({ error: "Session not found" });
+    }
+    const isRedeemed = await Payment.find({ session: sessionId });
+    console.log(isRedeemed);
+    if (isRedeemed.length > 1) {
+      return res.status(400).send({ error: "Already redeemed" });
+    }
+    const newSession = new Payment({
+      session: sessionId,
+      user: req.user._id,
+      tokenQuantity: req.body.tokens,
+    });
+    await newSession.save();
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
+    const user = req.user;
+    if (!user) {
+      return res.status(404).send({ error: "User not found" });
+    }
+
+    user.totalReq += tokens;
+    await user.save();
+
+    res.send({ success: true });
+  } catch (error) {
+    res.status(500).send({ error: error.message });
   }
 };

@@ -15,6 +15,6 @@ const PremiumSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Premium = mongoose.model("Premium", PremiumSchema);
+const Payment = mongoose.model("Payment", PremiumSchema);
 
-module.exports = Premium;
+module.exports = Payment;

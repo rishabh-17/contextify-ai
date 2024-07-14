@@ -49,7 +49,10 @@ export default function PricingPage() {
             <p>User dashboard</p>
           </div>
           <div>
-            <button className="bg-purple-900 text-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300">
+            <button
+              className="bg-purple-900 text-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300"
+              onClick={() => navigate("/signup")}
+            >
               Get Started
             </button>
           </div>
@@ -89,7 +92,10 @@ export default function PricingPage() {
           </div>
 
           <div>
-            <button className="text-purple-900 bg-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300">
+            <button
+              className="text-purple-900 bg-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300"
+              onClick={() => navigate("/signup")}
+            >
               Get Started
             </button>
           </div>
@@ -253,17 +259,26 @@ export default function PricingPage() {
               <tr className="text-start my-5">
                 <th className="py-10"></th>
                 <th>
-                  <button className="p-3 rounded-full border-2 border-gray-400 text-white transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300">
+                  <button
+                    className="p-3 rounded-full border-2 border-gray-400 text-white transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300"
+                    onClick={() => navigate("/signup")}
+                  >
                     Get Started
                   </button>
                 </th>
                 <th>
-                  <button className="p-3 rounded-full bg-purple-900 text-[#fff] transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300">
+                  <button
+                    className="p-3 rounded-full bg-purple-900 text-[#fff] transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300"
+                    onClick={() => navigate("/signup")}
+                  >
                     Get Started
                   </button>
                 </th>
                 <th>
-                  <button className="p-3 rounded-full border-2 border-gray-400 text-white transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300">
+                  <button
+                    className="p-3 rounded-full border-2 border-gray-400 text-white transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300"
+                    onClick={() => navigate("/signup")}
+                  >
                     Get Started
                   </button>
                 </th>
