@@ -6,7 +6,14 @@ import { ShareSocial } from "react-share-social";
 import { RiSpeakFill } from "react-icons/ri";
 import { MdPerson } from "react-icons/md";
 import { IoPeopleSharp } from "react-icons/io5";
-import { FaRegEdit, FaCopy, FaRegQuestionCircle } from "react-icons/fa";
+import {
+  FaRegEdit,
+  FaCopy,
+  FaRegQuestionCircle,
+  FaPlay,
+  FaPause,
+  FaStop,
+} from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 import { WiTime4 } from "react-icons/wi";
 import { IoMdShare } from "react-icons/io";
@@ -39,6 +46,7 @@ export default function ClientdashboardPage() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const navigate = useNavigate();
   const setLoading = useContext(LoadingContext);
+  const [loadingState, setLoadingState] = useState(false);
   const [profile, setProfile] = useState({});
   const [isImgUrl, setIsImgUrl] = useState(false);
   const [sharePop, setSharePop] = useState(false);
@@ -136,7 +144,7 @@ export default function ClientdashboardPage() {
 
   const handleNewContext = async () => {
     setIsImgUrl(false);
-    setLoading(true);
+    setLoadingState(true);
     const config = {
       headers: {
         authentication: `${localStorage.getItem("token")}`,
@@ -144,10 +152,10 @@ export default function ClientdashboardPage() {
       },
     };
     if (!ques) {
-      setLoading(false);
+      setLoadingState(false);
       return alert("Please enter a question");
     } else if (!secret && !localStorage.getItem("secret")) {
-      setLoading(false);
+      setLoadingState(false);
       return toast.warn("Please generate a secret key");
     } else {
       axios
@@ -158,11 +166,11 @@ export default function ClientdashboardPage() {
         )
         .then(({ data }) => {
           setAns(data?.data);
-          setLoading(false);
+          setLoadingState(false);
         })
         .catch((err) => {
           toast.error(err?.response?.data?.err);
-          setLoading(false);
+          setLoadingState(false);
         });
     }
   };
@@ -287,14 +295,44 @@ export default function ClientdashboardPage() {
     if (!string) return "";
     return string?.charAt(0)?.toUpperCase() + string?.slice(1);
   }
+  const [speechSynthesisInstance, setSpeechSynthesisInstance] = useState(null);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const handleSpeech = () => {
-    const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(ans);
-    const voices = speechSynthesis.getVoices();
-    const selectedVoice = localStorage.getItem("voiceType") || 1;
-    utterance.voice = voices[selectedVoice];
-    synth.speak(utterance);
+    if (ans) {
+      const synth = window.speechSynthesis;
+      const utterance = new SpeechSynthesisUtterance(ans);
+      const voices = speechSynthesis.getVoices();
+      const selectedVoice = localStorage.getItem("voiceType") || 1;
+      utterance.voice = voices[selectedVoice];
+      synth.speak(utterance);
+      setSpeechSynthesisInstance(synth);
+      setIsSpeaking(true);
+      setIsPaused(false);
+    }
+  };
+
+  const handlePause = () => {
+    if (speechSynthesisInstance && isSpeaking) {
+      speechSynthesisInstance.pause();
+      setIsPaused(true);
+    }
+  };
+
+  const handleResume = () => {
+    if (speechSynthesisInstance && isPaused) {
+      speechSynthesisInstance.resume();
+      setIsPaused(false);
+    }
+  };
+
+  const handleCancel = () => {
+    if (speechSynthesisInstance) {
+      speechSynthesisInstance.cancel();
+      setIsSpeaking(false);
+      setIsPaused(false);
+    }
   };
 
   return (
@@ -427,14 +465,17 @@ export default function ClientdashboardPage() {
             </section> */}
 
             <div className="grid grid-cols-2 md:grid-cols-1">
-              <section className="my-5 mx-10 bg-[#fff] p-5 flex flex-col items-center gap-4 justify-center rounded-xl shadow-md">
-                <h3 className="my-3 font-bold">Get Context Now</h3>
-                <button
-                  className="px-3 py-2 bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-xl"
-                  onClick={() => setShowModal(true)}
-                >
-                  Contextify
-                </button>
+              <section className="my-5 mx-10 bg-[#fff] p-5 flex items-center gap-4 rounded-xl shadow-md">
+                <Img src="images/logo.png" alt="Loading..." className="h-24" />
+                <div className="flex flex-col items-center">
+                  <h3 className="my-3 font-bold">Get Context Now</h3>
+                  <button
+                    className="px-3 py-2 bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 rounded-xl"
+                    onClick={() => setShowModal(true)}
+                  >
+                    Contextify
+                  </button>
+                </div>
               </section>
 
               <section className="mx-10 p-5 my-5 flex gap-8 bg-[#fff] shadow-md rounded-xl">
@@ -628,106 +669,140 @@ export default function ClientdashboardPage() {
                   />
                 </div>
               </div>
-              <div className="p-4 flex flex-col gap-3 rounded overflow-auto min-h-[500px]">
-                <div className="flex flex-row-reverse items-center gap-3">
-                  <IoClose
-                    className="cursor-pointer sm:hidden  hover:-translate-y-1 hover:scale-110"
-                    onClick={() => setShowModal(false)}
+              {loadingState ? (
+                <div className="p-4 flex flex-col justify-center items-center rounded overflow-hidden min-h-[500px]">
+                  <Img
+                    src="images/logo.png"
+                    alt="Loading..."
+                    className="h-24 animate-spin"
                   />
-                  <RiSpeakFill
-                    color="purple"
-                    className="h-8"
-                    onClick={handleSpeech}
-                  />
+                  <div>Loading...</div>
                 </div>
-                {!isImgUrl ? (
-                  <input
-                    type="text"
-                    placeholder="Untitled"
-                    className="border-0 text-7xl font-bold"
-                    value={ques}
-                    onChange={(e) => setQues(e.target.value)}
-                  />
-                ) : (
-                  <img src={ques} width="100" />
-                )}
-                <textarea
-                  name=""
-                  id=""
-                  placeholder="Write Something"
-                  className="h-full text-sm border-0 overflow-y-auto"
-                  value={ans}
-                  onChange={(e) => setAns(e.target.value)}
-                ></textarea>
-                {ans && (
-                  <div>
-                    <div className="flex gap-2 items-center">
-                      <h5 className="font-bold  text-md mb-3">Save To:</h5>
-                      <div className="flex gap-2 flex-wrap ">
-                        <div className="relative inline-block text-left flex gap-3 w-full">
-                          {!addCategoryInput ? (
-                            <>
-                              <select
-                                className="bg-white rounded shadow-lg p-3 w-max"
-                                id="dropdownMenu"
-                                role="menu"
-                                onChange={(e) => setType(e.target.value)}
-                                // aria-orientation="vertical"
-                                // aria-labelledby="dropdownButton"
-                              >
-                                {[...(categories || [])]?.map(
-                                  (option, index) => (
-                                    <option
-                                      key={index}
-                                      className="text-sm px-2 py-1 rounded hover:-translate-y-1 hover:scale-110"
-                                      value={option}
-                                      onClick={() => {
-                                        setType(option);
-                                      }}
-                                    >
-                                      {option}
-                                    </option>
-                                  )
-                                )}
-                              </select>
-                              <button
-                                className="bg-purple-900 gap-3 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-1 hover:-translate-y-1 w-10 hover:scale-110 rounded-lg"
-                                onClick={() => {
-                                  setAddCategoryInput(!addCategoryInput);
-                                }}
-                              >
-                                +
-                              </button>
-                            </>
-                          ) : (
-                            <>
-                              <input
-                                type="text"
-                                value={addCategory}
-                                onChange={(e) => setAddCategory(e.target.value)}
-                              />
-                              <button
-                                className="bg-purple-900 gap-3 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-1 hover:-translate-y-1 w-12 hover:scale-110 rounded-lg"
-                                onClick={() => {
-                                  handleAddCategory();
-                                }}
-                              >
-                                Add
-                              </button>
-                            </>
-                          )}
+              ) : (
+                <div className="p-4 flex flex-col gap-3 rounded overflow-auto min-h-[500px]">
+                  <div className="flex flex-row-reverse items-center gap-3">
+                    <IoClose
+                      className="cursor-pointer sm:hidden  hover:-translate-y-1 hover:scale-110"
+                      onClick={() => setShowModal(false)}
+                    />
+                    {!isSpeaking && !isPaused && (
+                      <RiSpeakFill
+                        color="purple"
+                        className="h-6 w-6 cursor-pointer hover:-translate-y-1 hover:scale-110"
+                        onClick={handleSpeech}
+                      />
+                    )}
+
+                    {isSpeaking && !isPaused && (
+                      <FaPause
+                        className="h-6 w-6 cursor-pointer hover:-translate-y-1 hover:scale-110 text-purple-900"
+                        onClick={handlePause}
+                      />
+                    )}
+                    {isPaused && (
+                      <FaPlay
+                        className="h-6 w-6 cursor-pointer hover:-translate-y-1 hover:scale-110 text-purple-900"
+                        onClick={handleResume}
+                      />
+                    )}
+                    {(isSpeaking || isPaused) && (
+                      <FaStop
+                        className="h-6 w-6 cursor-pointer hover:-translate-y-1 hover:scale-110 text-purple-900"
+                        onClick={handleCancel}
+                      />
+                    )}
+                  </div>
+                  {!isImgUrl ? (
+                    <input
+                      type="text"
+                      placeholder="Untitled"
+                      className="border-0 text-7xl font-bold"
+                      value={ques}
+                      onChange={(e) => setQues(e.target.value)}
+                    />
+                  ) : (
+                    <img src={ques} width="100" />
+                  )}
+                  <textarea
+                    name=""
+                    id=""
+                    placeholder="Write Something"
+                    className="h-full text-sm border-0 overflow-y-auto"
+                    value={ans}
+                    onChange={(e) => setAns(e.target.value)}
+                  ></textarea>
+                  {ans && (
+                    <div>
+                      <div className="flex gap-2 items-center">
+                        <h5 className="font-bold  text-md mb-3">Save To:</h5>
+                        <div className="flex gap-2 flex-wrap ">
+                          <div className="relative inline-block text-left flex gap-3 w-full">
+                            {!addCategoryInput ? (
+                              <>
+                                <select
+                                  className="bg-white rounded shadow-lg p-3 w-max"
+                                  id="dropdownMenu"
+                                  role="menu"
+                                  onChange={(e) => setType(e.target.value)}
+                                  // aria-orientation="vertical"
+                                  // aria-labelledby="dropdownButton"
+                                >
+                                  {[...(categories || [])]?.map(
+                                    (option, index) => (
+                                      <option
+                                        key={index}
+                                        className="text-sm px-2 py-1 rounded hover:-translate-y-1 hover:scale-110"
+                                        value={option}
+                                        onClick={() => {
+                                          setType(option);
+                                        }}
+                                      >
+                                        {option}
+                                      </option>
+                                    )
+                                  )}
+                                </select>
+                                <button
+                                  className="bg-purple-900 gap-3 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-1 hover:-translate-y-1 w-10 hover:scale-110 rounded-lg"
+                                  onClick={() => {
+                                    setAddCategoryInput(!addCategoryInput);
+                                  }}
+                                >
+                                  +
+                                </button>
+                              </>
+                            ) : (
+                              <>
+                                <input
+                                  type="text"
+                                  value={addCategory}
+                                  onChange={(e) =>
+                                    setAddCategory(e.target.value)
+                                  }
+                                />
+                                <button
+                                  className="bg-purple-900 gap-3 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 p-1 hover:-translate-y-1 w-12 hover:scale-110 rounded-lg"
+                                  onClick={() => {
+                                    handleAddCategory();
+                                  }}
+                                >
+                                  Add
+                                </button>
+                              </>
+                            )}
+                          </div>
                         </div>
                       </div>
+                      <button
+                        className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-2 hover:-translate-y-1 hover:scale-110 mt-2"
+                        onClick={handleSaveContext}
+                      >
+                        Save
+                      </button>
                     </div>
-                    <button
-                      className="bg-purple-900 text-[#fff] hover:hover:-translate-y-1 hover:scale-110 hover:bg-[#fff] hover:text-purple-900 w-full p-2 hover:-translate-y-1 hover:scale-110 mt-2"
-                      onClick={handleSaveContext}
-                    >
-                      Save
-                    </button>
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         )}

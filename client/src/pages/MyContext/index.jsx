@@ -112,9 +112,15 @@ export default function MyContext() {
               </div>
               <div></div>
               <div className="flex gap-2 items-center">
-                <button className="text-[#fff] p-2 bg-purple-900 rounded">
+                {/* <button className="text-[#fff] p-2 bg-purple-900 rounded"> */}
+                <a
+                  href="https://chromewebstore.google.com/detail/contextify/fbfhkfielfdockkbkldjbeokbbhgdccc"
+                  target="_blank"
+                  className="bg-purple-900 text-[#fff] h-10 p-2 rounded transition ease-in-out hover:translate-y-1 hover:bg-gray-50 hover:text-[#000] w-fit"
+                >
                   Add to Chrome
-                </button>
+                </a>
+                {/* </button> */}
                 <IoClose
                   onClick={() => {
                     setShowBanner("true");

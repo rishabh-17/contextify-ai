@@ -6,9 +6,12 @@ import Footer from "../../components/Footer";
 import { FaRegCheckCircle, FaBan } from "react-icons/fa";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import FreeTrialArea from "../../components/FreeTrialArea";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function PricingPage() {
   const [range, setRange] = useState(20);
+  const navigate = useNavigate();
   return (
     <div className=" sm:px-5 bg-[#f7f0fc]">
       <Helmet>
@@ -58,7 +61,7 @@ export default function PricingPage() {
           </div>
         </div>
 
-        <div className="flex flex-col col-span-2 md:col-span-1 gap-16 text-center rounded-xl bg-purple-900 p-4 text-[#fff]">
+        <div className="flex flex-col md:col-span-1 gap-16 text-center rounded-xl bg-purple-900 p-4 text-[#fff]">
           <div className="flex justify-between px-5">
             <h3 className="font-bold text-3xl">Custom</h3>
             <div className="bg-[#fff] rounded-full px-2 text-[#9b3ab4] text-center content-center">
@@ -97,6 +100,34 @@ export default function PricingPage() {
               onClick={() => navigate("/signup")}
             >
               Get Started
+            </button>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-16 text-center rounded-xl bg-violet-200 p-4">
+          <div className="flex justify-between px-5">
+            <h3 className="font-bold text-3xl">Free</h3>
+          </div>
+          <div className="flex flex-col gap-4 items-center">
+            <h2>
+              <span className="text-3xl font-bold">$0</span> / month
+            </h2>
+            <div className="text-orange-500 bg-yellow-100 rounded-full p-2 px-4 w-fit">
+              Billed as $0 per year
+            </div>
+          </div>
+          <div className="flex flex-col gap-4">
+            <p>15 credits</p>
+            <p>Access to browser extension</p>
+            <p>Access to audio + text search results</p>
+            <p>User dashboard</p>
+          </div>
+          <div>
+            <button
+              className="bg-purple-900 text-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300"
+              onClick={() => navigate("/contactus")}
+            >
+              Contact Us
             </button>
           </div>
         </div>
@@ -150,7 +181,7 @@ export default function PricingPage() {
                 </td>
               </tr>
               <tr className="bg-[#fff]">
-                <td className="text-center py-6 "> Dedicated Support</td>
+                <td className="text-center py-6">Dedicated Support</td>
 
                 <td>
                   <FaBan className="mx-auto" color={"red"} />

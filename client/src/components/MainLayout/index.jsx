@@ -174,6 +174,17 @@ export default function ClientdashboardPage({ active, children }) {
               </li>
               <li
                 className={
+                  active === 3
+                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
+                    : "ml-5 my-3 text-sm flex gap-2 items-center text-purple-900 hover:-translate-y-1 hover:scale-110"
+                }
+                onClick={() => navigate("/settings")}
+              >
+                <GoGear className="h-8 w-8" />
+                Settings
+              </li>
+              <li
+                className={
                   active === 6
                     ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
                     : "ml-5 my-3 text-sm flex gap-2 items-center text-purple-900 hover:-translate-y-1 hover:scale-110  duration-300"
