@@ -58,4 +58,10 @@ router.post(
   userController.paymentSuccess
 );
 
+router.delete(
+  "/delete",
+  AuthMiddleware.userAuthentication,
+  userController.deleteUser
+);
+
 module.exports = router;

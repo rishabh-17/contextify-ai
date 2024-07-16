@@ -21,6 +21,7 @@ export default function Settings() {
   const [categories, setCategories] = useState([]);
   const [categoryInput, setCategoryInput] = useState("");
   const user = JSON.parse(localStorage.getItem("user"));
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const fetchCategories = async () => {
     try {
@@ -248,6 +249,22 @@ export default function Settings() {
       fetchVoices();
     }, 2000);
   }, []);
+
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      const config = {
+        headers: {
+          authentication: `${localStorage.getItem("token")}`,
+        },
+      };
+      await axios.delete(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/delete",
+        config
+      );
+      localStorage.removeItem("token");
+      window.location.href = "/";
+    }
+  };
 
   return (
     <MainLayout>
@@ -505,6 +522,69 @@ export default function Settings() {
                   </option>
                 ))}
               </select>
+              <div className="my-4">
+                <h2 className="text-xl font-bold mb-4">Delete Account</h2>
+                <div className="flex justify-between">
+                  <p>Delete this account</p>
+                  <button
+                    className="text-red-600 hover:underline cursor-pointer"
+                    onClick={() => setShowDeleteModal(true)}
+                  >
+                    Delete Account
+                  </button>
+                </div>
+                <div
+                  className={`fixed inset-0 flex items-center justify-center z-50 ${
+                    showDeleteModal ? "opacity-100" : "hidden"
+                  }`}
+                  onClick={(e) =>
+                    e.target.classList.contains("modal") &&
+                    setShowDeleteModal(false)
+                  }
+                >
+                  <div className="modal bg-[#fff] shadow-md p-8 rounded">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-lg font-bold">Delete Account</h3>
+                      <button
+                        className="text-red-600"
+                        onClick={() => setShowDeleteModal(false)}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <p className="text-sm">
+                      Are you sure you want to delete your account?
+                    </p>
+                    <div className="mt-4 flex justify-end">
+                      <button
+                        className="text-gray-600 mr-2"
+                        onClick={() => setShowDeleteModal(false)}
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className="px-4 py-2 bg-red-600 text-white rounded"
+                        onClick={handleDelete}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </section>
           )}
           {tab === 6 && (

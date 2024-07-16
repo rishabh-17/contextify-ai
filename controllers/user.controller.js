@@ -106,6 +106,16 @@ function getAccessToken(id, name, isPremiumUser, email) {
   );
 }
 
+exports.deleteUser = async (req, res) => {
+  try {
+    const userId = req.user._id;
+    await User.findByIdAndDelete(userId);
+    return res.json({ success: true, msg: "User deleted successfully" });
+  } catch (error) {
+    return res.json({ success: false, err: "Unable to delete user" });
+  }
+};
+
 exports.genrateKey = async (req, res) => {
   try {
     const id = req.user._id;
