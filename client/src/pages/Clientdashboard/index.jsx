@@ -635,24 +635,41 @@ export default function ClientdashboardPage() {
                     Text to be contextified
                   </h5>
                   {ques.startsWith("http") ? (
-                    <textarea
-                      onChange={(e) => {
-                        setIsImgUrl(false);
-                        setQues(e.target.value);
-                      }}
-                      placeholder="Enter text here"
-                      className="w-full rounded-xl"
-                      value={!ques.startsWith("http") ? ques : ""}
-                      rows={10}
-                    ></textarea>
+                    <div className="w-full rounded-xl bg-[#fff] p-1">
+                      <textarea
+                        style={{ resize: "none" }}
+                        onChange={(e) => setQues(e.target.value)}
+                        placeholder="Enter text here"
+                        className="w-full rounded-xl border-0"
+                        rows={10}
+                        value={!ques.startsWith("http") ? ques : ""}
+                      ></textarea>
+                      <div className="flex flex-row-reverse">
+                        <Uploader
+                          handleNewImg={handleNewImg}
+                          className="bg-transparent"
+                          context
+                        />
+                      </div>
+                    </div>
                   ) : (
-                    <textarea
-                      onChange={(e) => setQues(e.target.value)}
-                      placeholder="Enter text here"
-                      className="w-full rounded-xl"
-                      rows={10}
-                      value={ques}
-                    ></textarea>
+                    <div className="w-full rounded-xl bg-[#fff] p-1">
+                      <textarea
+                        style={{ resize: "none" }}
+                        onChange={(e) => setQues(e.target.value)}
+                        placeholder="Enter text here"
+                        className="w-full rounded-xl border-0"
+                        rows={10}
+                        value={ques}
+                      ></textarea>
+                      <div className="flex flex-row-reverse">
+                        <Uploader
+                          handleNewImg={handleNewImg}
+                          className="bg-transparent"
+                          context
+                        />
+                      </div>
+                    </div>
                   )}
                 </div>
                 <div className="flex gap-4 w-full items-center">
@@ -662,11 +679,6 @@ export default function ClientdashboardPage() {
                   >
                     Generate
                   </button>
-                  <Uploader
-                    handleNewImg={handleNewImg}
-                    className="bg-transparent"
-                    context
-                  />
                 </div>
               </div>
               {loadingState ? (
