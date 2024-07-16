@@ -111,9 +111,8 @@ export default function Subscription() {
                   for="minmax-range"
                   class="block text-lg font-bold text-gray-100 dark:text-white mb-3"
                 >
-                  Price $ {range * 2}
+                  <span className="text-3xl font-bold">${range * 2}</span>
                 </label>
-                <p>Tokens {range}</p>
               </div>
               <input
                 id="minmax-range"
@@ -126,7 +125,7 @@ export default function Subscription() {
                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
               />
               <div className="flex flex-col gap-4">
-                <p>15 credits</p>
+                <p>{range} Tokens</p>
                 <p>Access to browser extension</p>
                 <p>Access to audio + text search results</p>
                 <p>User dashboard</p>
