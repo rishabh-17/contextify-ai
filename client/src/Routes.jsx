@@ -23,6 +23,7 @@ import AppsPage from "pages/AppsPage";
 import Policy from "pages/Policy";
 import Settings from "pages/Settings";
 import Feedback from "pages/Feedback";
+import AdminSupport from "pages/AdminSupport";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -108,6 +109,10 @@ const ProjectRoutes = () => {
     {
       path: "feedback",
       element: <Feedback />,
+    },
+    {
+      path: "adminsupport",
+      element: <AdminSupport />,
     },
     { path: "*", element: <NotFound /> },
   ]);

@@ -10,18 +10,20 @@ const {
 } = require("./routes");
 const { AuthMiddleware } = require("./middlewares");
 const { connectDB } = require("./utils");
+const bodyParser = require("body-parser");
 const app = express();
 require("dotenv").config();
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
-
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/client/build"));
-
+app.use(bodyParser.json());
 app.use("/api/context", AuthMiddleware.secretKeyValidation, contextRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/client", clientRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/saved", savedRoutes);
+app.use("/api/support", require("./routes/supportRoutes"));
 
 app.get("*", (req, res) => {
   if (req.url.startsWith("/api")) {
