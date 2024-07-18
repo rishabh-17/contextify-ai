@@ -69,6 +69,7 @@ exports.getContext = async (req, res) => {
             Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
             Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
             Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
+            Craft your response in a professional and formal tone.
             
             Please provide context in the following format. The context should include:
             
@@ -82,7 +83,7 @@ exports.getContext = async (req, res) => {
             Where: Specify the location or setting relevant to the subject.
             When: Provide the time frame or period associated with the subject.
             
-            Provide all responses in a clear and structured format, including URLs for each source.`,
+            Provide all responses in a clear and structured format, including URLs for each source. Craft your response in a professional and formal tone.`,
             },
           ];
         } else if (tone === 2) {
@@ -101,6 +102,7 @@ exports.getContext = async (req, res) => {
             Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
             Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
             Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
+            Craft your response in a cheeky and humorous tone.
             
             Please provide context in the following format. The context should include:
             
@@ -114,7 +116,7 @@ exports.getContext = async (req, res) => {
             Where: Specify the location or setting relevant to the subject.
             When: Provide the time frame or period associated with the subject.
             
-            Provide all responses in a clear and structured format, including URLs for each source.`,
+            Provide all responses in a clear and structured format, including URLs for each source. Craft your response in a cheeky and humorous tone.`,
             },
           ];
         } else if (tone === 3) {
@@ -133,7 +135,8 @@ exports.getContext = async (req, res) => {
             Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
             Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
             Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
-            
+            Craft your response in a conversational and engaging tone.
+
             Please provide context in the following format. The context should include:
             
             Highlighted word: Identify and highlight the key phrase or word that requires context.
@@ -146,7 +149,7 @@ exports.getContext = async (req, res) => {
             Where: Specify the location or setting relevant to the subject.
             When: Provide the time frame or period associated with the subject.
             
-            Provide all responses in a clear and structured format, including URLs for each source.`,
+            Provide all responses in a clear and structured format, including URLs for each source.Craft your response in a conversational and engaging tone.`,
             },
           ];
         } else if (tone === 4) {
@@ -165,7 +168,8 @@ exports.getContext = async (req, res) => {
             Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
             Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
             Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
-            
+            Craft your response in an exciting and cheerful tone.
+
             Please provide context in the following format. The context should include:
             
             Highlighted word: Identify and highlight the key phrase or word that requires context.
@@ -178,7 +182,7 @@ exports.getContext = async (req, res) => {
             Where: Specify the location or setting relevant to the subject.
             When: Provide the time frame or period associated with the subject.
             
-            Provide all responses in a clear and structured format, including URLs for each source.`,
+            Provide all responses in a clear and structured format, including URLs for each source.Craft your response in an exciting and cheerful tone.`,
             },
           ];
         } else if (tone === 5) {
@@ -197,7 +201,8 @@ exports.getContext = async (req, res) => {
             Provide Context: Explain the background, significance, and any relevant details that provide a deeper understanding of the topic.
             Cite Multiple Sources: Reference at least three different sources to ensure the information is well-rounded and reliable.
             Summarize Content: When dealing with content like song lyrics, poems, recipes, or creative works, provide summaries, snippets, or high-level analyses without regurgitating the content in full. Always link to the original webpage for more information.
-            
+            Craft your response in a kid friendly tone suitable for children to understand.
+
             Please provide context in the following format. The context should include:
             
             Highlighted word: Identify and highlight the key phrase or word that requires context.
@@ -210,7 +215,7 @@ exports.getContext = async (req, res) => {
             Where: Specify the location or setting relevant to the subject.
             When: Provide the time frame or period associated with the subject.
             
-            Provide all responses in a clear and structured format, including URLs for each source.`,
+            Provide all responses in a clear and structured format, including URLs for each source. Craft your response in a kid friendly tone suitable for children to understand.`,
             },
           ];
         }
