@@ -1,4 +1,11 @@
 const Support = require("../models/Support.js");
+const cloudinary = require("cloudinary").v2;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_PUBLIC_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET_KEY,
+});
 
 exports.getAllsupport = async (req, res) => {
   try {
@@ -15,16 +22,16 @@ exports.getAllsupport = async (req, res) => {
 
 exports.createsupport = async (req, res) => {
   try {
-    console.log(req.body, req.files);
+    const result = await cloudinary.uploader.upload(req.body.thumbnail);
     const newSupport = new Support({
-      content: req.body.content,
-      thumbnail: req.body.thumbnail,
+      content: req.body.support,
+      thumbnail: result.secure_url,
       title: req.body.title,
     });
     await newSupport.save();
     res.status(201).json({ success: true, data: newSupport });
   } catch (err) {
-    // console.error(err);
+    console.log(err);
     res.status(500).json({
       success: false,
       message: "Unable to create a support, please try again",
@@ -57,6 +64,7 @@ exports.deletesupport = async (req, res) => {
     }
     res.json(support);
   } catch (error) {
+    console.log(error);
     res.json({ success: false });
   }
 };

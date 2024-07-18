@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import axios from "axios";
 export default function index() {
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL || ""}/api/support/get`)
+      .then((res) => {
+        setData(res?.data?.data);
+      });
+  }, []);
+
   return (
     <>
-    <div className="flex gap-3 m-5" onClick={ () => navigate(-1)}>
-    <IoMdArrowRoundBack />
-      back
-    </div>
+      <div className="flex gap-3 m-5" onClick={() => navigate(-1)}>
+        <IoMdArrowRoundBack />
+        back
+      </div>
       <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-5 py-10">
         <h2 className="text-xl font-bold">Hi! How can we help?</h2>
         <form className="mx-auto w-[80%] pl-2 border border-slate-900 rounded-2xl bg-[#F7F0FC] h-10 overflow-hidden sm:hidden">
@@ -45,51 +56,25 @@ export default function index() {
           <p className="w-full">FEATURED ARTICLES</p>
           <div className="w-full bg-[#000] h-[1px]"></div>
         </p>
-
-        <div className="w-full flex sm:flex-col gap-4 flex-row justify-between">
-          <div className="flex flex-col text-center  ">
-            <h4 className="text-md">Problems signing in</h4>
-            <p className="text-sm text-gray-600">Account Basics</p>
-          </div>
-          <div className="flex flex-col text-center  ">
-            <h4 className="text-md">
-              Contextify doesn’t recognize my paid account
-            </h4>
-            <p className="text-sm text-gray-600">Account Basics</p>
-          </div>
-          <div className="flex flex-col text-center  ">
-            <h4 className="text-md">Privacy and security FAQ</h4>
-            <p className="text-sm text-gray-600">Account Basics</p>
-          </div>
-          <div className="flex flex-col text-center  ">
-            <h4 className="text-md">Get started with Contextify</h4>
-            <p className="text-sm text-gray-600">Account Basics</p>
-          </div>
-        </div>
       </div>
       <div className="w-full bg-[#fff] py-10">
         <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-10 ">
           <div className="w-full gap-4 grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-between">
-            <div className="flex flex-col items-center w-48 my-5">
-              <img src="images/support1.png" alt="" />
-              <h4>Account Basics</h4>
-            </div>
-            <div className="flex flex-col items-center w-48 my-5">
-              <img src="images/support2.png" alt="" />
-
-              <h4>Billing & Subscription</h4>
-            </div>
-            <div className="flex flex-col items-center w-48 my-5">
-              <img src="images/support3.png" alt="" />
-
-              <h4>Resolve Issues</h4>
-            </div>
-            
+            {data?.map((i) => (
+              <div
+                className="flex flex-col items-center w-48 my-5 cursor-pointer"
+                onClick={() => navigate(`/support/${i?._id}`)}
+              >
+                <img src={i.thumbnail} alt="" />
+                <h4>{i?.title}</h4>
+              </div>
+            ))}
           </div>
         </div>
       </div>
       <div className="pb-24 px-48">
-      <Footer /></div>
+        <Footer />
+      </div>
     </>
   );
 }
