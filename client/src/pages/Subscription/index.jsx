@@ -88,11 +88,11 @@ export default function Subscription() {
                 </div>
               </div>
               <div className="flex flex-col gap-4">
-                <p>15 credits</p>
-                <p>Access to browser extension</p>
-                <p>Access to audio + text search results</p>
-                <p>User dashboard</p>
-              </div>
+            <p>15 tokens</p>
+            <p>Access to browser extension</p>
+            <p>Access to audio + text search results</p>
+            <p>User dashboard</p>
+          </div>
               <div>
                 <button className="bg-purple-900 text-[#fff] rounded-full px-4 py-2">
                   Get Started
@@ -101,7 +101,7 @@ export default function Subscription() {
             </div>
             <div className="flex flex-col md:col-span-1 gap-16 text-center rounded-xl bg-purple-900 p-4 text-[#fff]">
               <div className="flex justify-between px-5">
-                <h3 className="font-bold text-3xl">Custom</h3>
+                <h3 className="font-bold text-3xl">Premium</h3>
                 <div className="bg-[#fff] rounded-full px-2 text-[#9b3ab4] text-center content-center">
                   Popular
                 </div>
@@ -125,11 +125,9 @@ export default function Subscription() {
                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
               />
               <div className="flex flex-col gap-4">
-                <p>{range} Tokens</p>
-                <p>Access to browser extension</p>
-                <p>Access to audio + text search results</p>
-                <p>User dashboard</p>
-              </div>
+            <p>{range} Tokens</p>
+            <p>Everything in Free</p>
+          </div>
 
               <div>
                 <button
@@ -141,32 +139,27 @@ export default function Subscription() {
               </div>
             </div>
             <div className="flex flex-col gap-16 text-center rounded-xl bg-violet-200 p-4">
-              <div className="flex justify-between px-5">
-                <h3 className="font-bold text-3xl">Free</h3>
-              </div>
-              <div className="flex flex-col gap-4 items-center">
-                <h2>
-                  <span className="text-3xl font-bold">$0</span> / month
-                </h2>
-                <div className="text-orange-500 bg-yellow-100 rounded-full p-2 px-4 w-fit">
-                  Billed as $0 per year
-                </div>
-              </div>
-              <div className="flex flex-col gap-4">
-                <p>15 credits</p>
-                <p>Access to browser extension</p>
-                <p>Access to audio + text search results</p>
-                <p>User dashboard</p>
-              </div>
-              <div>
-                <button
-                  className="bg-purple-900 text-[#fff] rounded-full px-4 py-2"
-                  onClick={() => navigate("/contactus")}
-                >
-                  Get Started
-                </button>
-              </div>
-            </div>
+          <div className="flex justify-between px-5">
+            <h3 className="font-bold text-3xl">Custom</h3>
+          </div>
+          <div className="flex flex-col gap-4 items-center">
+            {/* <h2>
+              <span className="text-3xl font-bold">$0</span> / month
+            </h2> */}
+            
+          </div>
+          <div className="flex flex-col gap-4">
+            <p>Contact us to get a  customized plan!</p>
+          </div>
+          <div>
+            <button
+              className="bg-purple-900 text-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300 p-10"
+              onClick={() => navigate("/contactus")}
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
           </section>
         </MainLayout>
       </div>

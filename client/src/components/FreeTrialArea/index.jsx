@@ -39,7 +39,7 @@ const index = () => {
             navigate("/signup");
           }}
         >
-          Start Your Free Trial Today
+          Get Started Today
         </Text>
       </div>
     </div>

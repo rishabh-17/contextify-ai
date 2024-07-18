@@ -380,7 +380,7 @@ export default function ClientdashboardPage() {
                       Use Cases
                       <FaRegQuestionCircle
                         data-tooltip-id="my-tooltip"
-                        data-tooltip-content="Total Context Searched"
+                        data-tooltip-content="Total Contexts Searched"
                       />
                     </p>
                     <p className="w-[90px] text-center">
@@ -403,7 +403,7 @@ export default function ClientdashboardPage() {
                       Tokens{" "}
                       <FaRegQuestionCircle
                         data-tooltip-id="my-tooltip"
-                        data-tooltip-content="Token Left"
+                        data-tooltip-content="Tokens Left"
                       />
                     </p>
                     <p className="w-[90px] text-center">

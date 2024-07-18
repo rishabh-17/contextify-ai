@@ -27,9 +27,9 @@ export default function Header({ ...props }) {
               className="mx-3 text-purple-800 relative text-black hover:text-purple-800 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-purple-800 before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-purple-800 after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]"
               onClick={() => navigate("/")}
             >
-              <Text as="p" className="text-purple-900 capitalize">
+              {/* <Text as="p" className="text-purple-900 capitalize">
                 home
-              </Text>
+              </Text> */}
             </div>
             <div
               className="mx-3 text-purple-800 relative text-black hover:text-purple-800 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-purple-800 before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-purple-800 after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]"

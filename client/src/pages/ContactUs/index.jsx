@@ -75,7 +75,7 @@ export default function ContactUsPage() {
               </div>
               <div className="flex sm:flex-col justify-between w-full px-3">
                 <p>Mail Us</p>
-                <p>connect@contextify.info</p>
+                <p>support@contextify.info</p>
               </div>
             </div>
             {/* <div className="bg-[#fff] rounded-xl p-4 shadow-md flex items-center mx-3">

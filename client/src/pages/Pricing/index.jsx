@@ -39,14 +39,14 @@ export default function PricingPage() {
           </div>
           <div className="flex flex-col gap-4 items-center">
             <h2>
-              <span className="text-3xl font-bold">$0</span> / month
+              <span className="text-3xl font-bold">$0</span> 
             </h2>
             <div className="text-orange-500 bg-yellow-100 rounded-full p-2 px-4 w-fit">
-              Billed as $0 per year
+              Billed at $0 per year
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <p>15 credits</p>
+            <p>15 tokens</p>
             <p>Access to browser extension</p>
             <p>Access to audio + text search results</p>
             <p>User dashboard</p>
@@ -63,7 +63,7 @@ export default function PricingPage() {
 
         <div className="flex flex-col md:col-span-1 gap-16 text-center rounded-xl bg-purple-900 p-4 text-[#fff]">
           <div className="flex justify-between px-5">
-            <h3 className="font-bold text-3xl">Custom</h3>
+            <h3 className="font-bold text-3xl">Premium</h3>
             <div className="bg-[#fff] rounded-full px-2 text-[#9b3ab4] text-center content-center">
               Popular
             </div>
@@ -88,14 +88,12 @@ export default function PricingPage() {
           />
           <div className="flex flex-col gap-4">
             <p>{range} Tokens</p>
-            <p>Access to browser extension</p>
-            <p>Access to audio + text search results</p>
-            <p>User dashboard</p>
+            <p>Everything in Free</p>
           </div>
 
           <div>
             <button
-              className="text-purple-900 bg-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300"
+              className="text-purple-900 bg-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 duration-300 "
               onClick={() => navigate("/signup")}
             >
               Get Started
@@ -105,25 +103,20 @@ export default function PricingPage() {
 
         <div className="flex flex-col gap-16 text-center rounded-xl bg-violet-200 p-4">
           <div className="flex justify-between px-5">
-            <h3 className="font-bold text-3xl">Free</h3>
+            <h3 className="font-bold text-3xl">Custom</h3>
           </div>
           <div className="flex flex-col gap-4 items-center">
-            <h2>
+            {/* <h2>
               <span className="text-3xl font-bold">$0</span> / month
-            </h2>
-            <div className="text-orange-500 bg-yellow-100 rounded-full p-2 px-4 w-fit">
-              Billed as $0 per year
-            </div>
+            </h2> */}
+            
           </div>
           <div className="flex flex-col gap-4">
-            <p>15 credits</p>
-            <p>Access to browser extension</p>
-            <p>Access to audio + text search results</p>
-            <p>User dashboard</p>
+            <p>Contact us to get a  customized plan!</p>
           </div>
           <div>
             <button
-              className="bg-purple-900 text-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300"
+              className="bg-purple-900 text-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300 p-10"
               onClick={() => navigate("/contactus")}
             >
               Contact Us
@@ -143,7 +136,7 @@ export default function PricingPage() {
                 <th className="py-10">Features</th>
                 <th>Free</th>
                 <th>Premium</th>
-                <th>Executive</th>
+                <th>Custom</th>
               </tr>
             </thead>
             <tbody className="text-xl sm:text-sm">
