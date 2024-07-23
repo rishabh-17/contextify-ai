@@ -171,12 +171,12 @@ export default function MyContext() {
           </div>
           <div className="flex flex-wrap p-4 gap-3">
             {contexts
-              .filter(
+              ?.filter(
                 (context) =>
                   context?.question?.includes(search) ||
                   context?.answer?.includes(search)
               )
-              .map(
+              ?.map(
                 (context) =>
                   (toggle == context?.type || toggle == "All") && (
                     <div

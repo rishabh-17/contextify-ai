@@ -1,15 +1,46 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import MainLayout from "../../components/MainLayout";
 import { FaWindows, FaChrome } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FaRegEdit, FaCopy, FaRegQuestionCircle } from "react-icons/fa";
 import { Tooltip } from "react-tooltip";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { LoadingContext } from "../../App";
 
 export default function AppsPage() {
   const navigate = useNavigate();
-  const [keyShow, setKeyShow] = React.useState(false);
-  const [secret, setSecret] = React.useState(localStorage.getItem("secret"));
+  const [keyShow, setKeyShow] = useState(false);
+  const [secret, setSecret] = useState(localStorage.getItem("secret"));
+  const setLoading = useContext(LoadingContext);
 
+  const genrateKey = async (e, initial) => {
+    setLoading(true);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+
+    axios
+      .post(
+        (import.meta.env.VITE_BACKEND_URL || "") + "/api/user/generatekey",
+        {},
+        config
+      )
+      .then((data) => {
+        if (!initial) {
+          setSecret(data?.data?.key);
+          toast.success("Key generated successfully");
+        }
+        localStorage.setItem("secret", data?.data?.key);
+        setLoading(false);
+      })
+      .catch((err) => {
+        toast.error("unable to generate key");
+        setLoading(false);
+      });
+  };
   return (
     <div>
       <MainLayout active={5}>
@@ -28,7 +59,7 @@ export default function AppsPage() {
                 <section className="flex items-center">
                   <h3 className="my-3">Secret Key</h3>
                   <div className="bg-[#fff] p-5 rounded-xl">
-                    {secret && (
+                    {secret ? (
                       <div className="flex items-center gap-3">
                         <input
                           className="roundedxl"
@@ -41,10 +72,6 @@ export default function AppsPage() {
                             navigator.clipboard.writeText(secret);
                             alert("copied");
                           }}
-                          // onClick={() => {
-                          //   setKeyShow(!keyShow);
-                          //   if (keyShow === true) setSecret("");
-                          // }}
                         />
                         <FaRegQuestionCircle
                           data-tooltip-id="my-tooltip"
@@ -53,6 +80,15 @@ export default function AppsPage() {
                         />
                         <Tooltip id="my-tooltip" />
                       </div>
+                    ) : (
+                      <button
+                        onClick={() => {
+                          genrateKey(false);
+                        }}
+                        className="bg-purple-900 text-[#fff] h-10 p-2 rounded transition ease-in-out hover:translate-y-1 hover:bg-gray-50 hover:text-[#000] w-fit"
+                      >
+                        Generate
+                      </button>
                     )}
                   </div>
                 </section>

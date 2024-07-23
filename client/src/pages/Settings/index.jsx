@@ -591,13 +591,6 @@ export default function Settings() {
             <div className="mt-8 flex flex-col gap-2">
               <h3 className="text-xl font-bold mb-1">Categories</h3>
               <ul className="flex flex-col gap-2">
-                <li className="font-bold border border-gray-300 p-2 ">Notes</li>
-                <li className="font-bold border border-gray-300 p-2">
-                  Things I know
-                </li>
-                <li className="font-bold border border-gray-300 p-2">
-                  Future exploration
-                </li>
                 {(categories || [])?.map((category) => (
                   <li className="flex justify-between p-2 border font-bold border-gray-300">
                     <p>{category}</p>{" "}
