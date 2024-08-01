@@ -41,7 +41,7 @@ export default function Subscription() {
     }
   }, []);
   const CheckoutForm = ({ userId, tokens }) => {
-    const [range, setRange] = useState(20);
+    const [range, setRange] = useState(25);
     const [sessionId, setSessionId] = useState(null);
     const config = {
       headers: {
@@ -112,15 +112,17 @@ export default function Subscription() {
                   for="minmax-range"
                   class="block text-lg font-bold text-gray-100 dark:text-white mb-3"
                 >
-                  <span className="text-3xl font-bold">${range * 2}</span>
+                  <span className="text-3xl font-bold">
+                    ${(8 * range) / 25}
+                  </span>
                 </label>
               </div>
               <input
                 id="minmax-range"
                 type="range"
-                min="20"
-                max="300"
-                step="10"
+                min="25"
+                max="3000"
+                step="25"
                 value={range}
                 onChange={(e) => setRange(e.target.value)}
                 class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"

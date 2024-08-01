@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export default function PricingPage() {
-  const [range, setRange] = useState(20);
+  const [range, setRange] = useState(25);
   const navigate = useNavigate();
   return (
     <div className=" sm:px-5 bg-[#f7f0fc]">
@@ -39,7 +39,7 @@ export default function PricingPage() {
           </div>
           <div className="flex flex-col gap-4 items-center">
             <h2>
-              <span className="text-3xl font-bold">$0</span> 
+              <span className="text-3xl font-bold">$0</span>
             </h2>
             <div className="text-orange-500 bg-yellow-100 rounded-full p-2 px-4 w-fit">
               Billed at $0 per year
@@ -73,15 +73,15 @@ export default function PricingPage() {
               for="minmax-range"
               class="block text-lg font-bold text-gray-100 dark:text-white mb-0"
             >
-              <span className="text-3xl font-bold">${range * 2}</span>
+              <span className="text-3xl font-bold">${(range * 8) / 25}</span>
             </label>
           </div>
           <input
             id="minmax-range"
             type="range"
-            min="20"
+            min="25"
             max="300"
-            step="10"
+            step="25"
             value={range}
             onChange={(e) => setRange(e.target.value)}
             class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
@@ -109,10 +109,9 @@ export default function PricingPage() {
             {/* <h2>
               <span className="text-3xl font-bold">$0</span> / month
             </h2> */}
-            
           </div>
           <div className="flex flex-col gap-4">
-            <p>Contact us to get a  customized plan!</p>
+            <p>Contact us to get a customized plan!</p>
           </div>
           <div>
             <button

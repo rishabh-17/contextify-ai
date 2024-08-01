@@ -169,7 +169,7 @@ exports.makePayment = async (req, res) => {
             product_data: {
               name: item.name,
             },
-            unit_amount: 200,
+            unit_amount: 32,
           },
           quantity: item.quantity,
         };
