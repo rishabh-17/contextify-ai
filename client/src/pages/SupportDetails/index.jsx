@@ -9,6 +9,12 @@ export default function index() {
   const category = searchParams.get('category');
   useEffect(() => {
     console.log(category);
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL || ""}/api/support/get/?category=${category}`)
+      .then((res) => {
+        console.log(res?.data?.data);
+        setData(res?.data);
+      });
   }, []);
   const navigate = useNavigate();
   return (
@@ -17,12 +23,12 @@ export default function index() {
         <IoMdArrowRoundBack />
         back
       </div>
-        {data && (
-          <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-5 py-10">
-            <h2 className="text-xl font-bold">{data?.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: data?.content }} />
-          </div>
-        )}
+        <div className="grid grid-cols-2 gap-5 justify-between px-16">
+        {data.map(i=>  <div className="sm:w-full text-purple-900 hover:underline" onClick={() => navigate(`/support/${i?.id}`)}>
+          {i?.title}
+          </div>)}
+        </div>
+        
     </>
   );
 }
