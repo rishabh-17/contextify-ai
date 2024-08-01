@@ -174,8 +174,8 @@ exports.makePayment = async (req, res) => {
           quantity: item.quantity,
         };
       }),
-      success_url: `http://localhost:5173/subscription/?session_id={CHECKOUT_SESSION_ID}&user_id=3433&tokens=${req.body.items[0].quantity}`,
-      cancel_url: "http://localhost:5173/subscription",
+      success_url: `https://contextify.info/subscription/?session_id={CHECKOUT_SESSION_ID}&user_id=3433&tokens=${req.body.items[0].quantity}`,
+      cancel_url: "https://contextify.info/subscription",
     });
     // console.log(session);
     res.json({ url: session.url, session });
