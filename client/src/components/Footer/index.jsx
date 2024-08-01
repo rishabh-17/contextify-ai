@@ -13,47 +13,39 @@ const index = () => {
               onClick={() => navigate("/")}
             >
               <Img
-                src="images/logo.png"
-                // src="images/img_frame_purple_900.svg"
+                src="/images/logo.png"
                 alt="image"
                 className="my-auto h-[80px] w-[80px] pt-0 mt-0"
               />
               <h2 className="text-2xl font-bold text-purple-900">Contextify</h2>
             </div>
             <div className="space-y-3 -mt-5">
-            <div className="flex items-start gap-2">
-              <Img
-                src="images/img_frame_purple_900_24x24.svg"
-                alt="image_three"
-                className="h-[24px] w-[24px]"
-              />
-              <Text as="p">
-                support@contextify.info
-              </Text>
-              
-            </div>
-            <div className="flex items-start gap-1">
-              <Img
-                src="images/address.svg"
-                alt="image_three"
-                className="h-[24px] w-[24px]"
-              />
-              <Text as="p" className="capitalize">
-              103-2727 Steeles Ave West, Toronto, Ontario, M3J3G9
-              </Text>
-              
-            </div>
-            <div className="flex items-start gap-1">
-              <Img
-                src="images/phone.svg"
-                alt="image_three"
-                className="h-[24px] w-[24px]"
-              />
-              <Text>
-              +1 647-848-9235
-              </Text>
-              
-            </div>
+              <div className="flex items-start gap-2">
+                <Img
+                  src="/images/img_frame_purple_900_24x24.svg"
+                  alt="image_three"
+                  className="h-[24px] w-[24px]"
+                />
+                <Text as="p">support@contextify.info</Text>
+              </div>
+              <div className="flex items-start gap-1">
+                <Img
+                  src="/images/address.svg"
+                  alt="image_three"
+                  className="h-[24px] w-[24px]"
+                />
+                <Text as="p" className="capitalize">
+                  103-2727 Steeles Ave West, Toronto, Ontario, M3J3G9
+                </Text>
+              </div>
+              <div className="flex items-start gap-1">
+                <Img
+                  src="/images/phone.svg"
+                  alt="image_three"
+                  className="h-[24px] w-[24px]"
+                />
+                <Text>+1 647-848-9235</Text>
+              </div>
             </div>
             {/* <div className="flex items-center gap-2">
               <Img

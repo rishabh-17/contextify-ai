@@ -25,6 +25,7 @@ import Settings from "pages/Settings";
 import Feedback from "pages/Feedback";
 import AdminSupport from "pages/AdminSupport";
 import SupportDetails from "pages/SupportDetails";
+import SupportBlog from "pages/SupportBlog";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -86,6 +87,10 @@ const ProjectRoutes = () => {
     {
       path: "support",
       element: <Support />,
+    },
+    {
+      path: "support/:id",
+      element: <SupportBlog />,
     },
     {
       path: "supportdetail",

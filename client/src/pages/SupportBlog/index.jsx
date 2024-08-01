@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function index() {
   const [data, setData] = useState("");
-  const { category } = useSearchParams();
+  const { id } = useParams();
   useEffect(() => {
     console.log();
     axios

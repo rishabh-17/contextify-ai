@@ -43,7 +43,6 @@ export default function index() {
     <MainLayout>
       <div className="min-h-screen">
         <h1 className="text-3xl font-bold">Feedback</h1>
-
         <div className="flex flex-col items-center p-5 md:mx-2 mx-24 gap-5">
           <div className="w-full flex gap-3">
             <p className="font-bold">What did you think about Contextify?</p>

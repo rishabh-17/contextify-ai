@@ -9,7 +9,9 @@ cloudinary.config({
 
 exports.getAllsupport = async (req, res) => {
   try {
-    const supports = await Support.find({}).select(["-createdAt"]);
+    const category = req.query.category ? { category: req.query.category } : {};
+    console.log(category);
+    const supports = await Support.find(category).select(["-createdAt"]);
     res.status(200).json({ success: true, data: supports });
   } catch (err) {
     console.error(err);
