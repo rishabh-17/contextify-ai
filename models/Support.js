@@ -11,14 +11,13 @@ const supportSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  thumbnail: {
-    type: String,
-    required: true,
-  },
   title: {
     type: String,
     required: true,
   },
+  category: {
+    type: String
+  }
 });
 
 const support = mongoose.model("Support", supportSchema);

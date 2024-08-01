@@ -60,15 +60,49 @@ export default function index() {
       <div className="w-full bg-[#fff] py-10">
         <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-10 ">
           <div className="w-full gap-4 grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-between">
-            {data?.map((i) => (
               <div
                 className="flex flex-col items-center w-48 my-5 cursor-pointer"
-                onClick={() => navigate(`/support/${i?._id}`)}
+                onClick={() => navigate(`/supportdetail/?category=account`)}
               >
-                <img src={i.thumbnail} alt="" />
-                <h4>{i?.title}</h4>
+                <img src="images/support1.png" alt="" />
+                <h4>Account</h4>
               </div>
-            ))}
+              <div
+                className="flex flex-col items-center w-48 my-5 cursor-pointer"
+                onClick={() => navigate(`/supportdetail/?category=billing`)}
+              >
+                <img src="images/support1.png" alt="" />
+                <h4>Billing</h4>
+              </div>
+              <div
+                className="flex flex-col items-center w-48 my-5 cursor-pointer"
+                onClick={() => navigate(`/supportdetail/?category=issue`)}
+              >
+                <img src="images/support1.png" alt="" />
+                <h4>Issue</h4>
+              </div>
+              <div
+                className="flex flex-col items-center w-48 my-5 cursor-pointer"
+                onClick={() => navigate(`/supportdetail/?category=about`)}
+              >
+                <img src="images/support1.png" alt="" />
+                <h4>About</h4>
+              </div>
+              <div
+                className="flex flex-col items-center w-48 my-5 cursor-pointer"
+                onClick={() => navigate(`/supportdetail/?category=tip`)}
+              >
+                <img src="images/support1.png" alt="" />
+                <h4>Tips</h4>
+              </div>
+              <div
+                className="flex flex-col items-center w-48 my-5 cursor-pointer"
+                onClick={() => navigate(`/supportdetail/?category=business`)}
+              >
+                <img src="images/support1.png" alt="" />
+                <h4>Business</h4>
+              </div>
+              
           </div>
         </div>
       </div>

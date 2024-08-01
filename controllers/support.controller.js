@@ -22,10 +22,10 @@ exports.getAllsupport = async (req, res) => {
 
 exports.createsupport = async (req, res) => {
   try {
-    const result = await cloudinary.uploader.upload(req.body.thumbnail);
+    // const result = await cloudinary.uploader.upload(req.body.thumbnail);
     const newSupport = new Support({
       content: req.body.support,
-      thumbnail: result.secure_url,
+      category: req.body.category,
       title: req.body.title,
     });
     await newSupport.save();

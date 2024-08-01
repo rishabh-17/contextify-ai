@@ -22,6 +22,7 @@ const CreateBlogPage = () => {
     thumbnail: "",
   });
   const [images, setImages] = useState([]);
+  const [category, setCategory] = useState("");
 
   const handleChange = (e) => {
     setBlogData({
@@ -125,26 +126,22 @@ const CreateBlogPage = () => {
     });
 
   const handleSave = async () => {
-    if (blogData && images?.[0]?.file) {
       try {
-        const img = await toBase64(images[0].file);
         const response = await axios.post(
           `${import.meta.env.VITE_BACKEND_URL || ""}/api/support/create`,
           {
             title: blogData.title,
             support: blogData.blog,
-            thumbnail: img,
+            category: category
           }
         );
         console.log(response);
       } catch (error) {
         console.log(error);
       }
-    }
   };
 
   const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
     console.log(imageList, addUpdateIndex);
     setImages(imageList);
   };
@@ -168,7 +165,20 @@ const CreateBlogPage = () => {
             className="border bg-gray-100 border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-purple-900"
           />
         </div>
+
         <div className="mb-8">
+          <label htmlFor="category" className="font-bold block mb-2">Category:</label>
+          <select onChange={(e) => setCategory(e.target.value)} className="border bg-gray-100 border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-purple-900" >
+          <option value="account">Account</option>
+          <option value="billing">Billing</option>
+          <option value="issue">issue</option>
+          <option value="about">About</option>
+          <option value="tip">Tip</option>
+          <option value="business">Business</option>
+          </select>
+        </div>
+
+        <div className="mb-16">
           <label htmlFor="blog" className="font-bold block mb-2">
             Blog:
           </label>
@@ -182,7 +192,7 @@ const CreateBlogPage = () => {
           />
         </div>
 
-        <div className="mb-8 mt-24">
+        {/* <div className="mb-8 mt-24">
           <h2 className="font-bold mb-2">Upload Thumbnail</h2>
           <ImageUploading
             value={images}
@@ -244,7 +254,7 @@ const CreateBlogPage = () => {
               </div>
             )}
           </ImageUploading>
-        </div>
+        </div> */}
 
         <button
           type="submit"

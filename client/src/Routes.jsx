@@ -88,7 +88,7 @@ const ProjectRoutes = () => {
       element: <Support />,
     },
     {
-      path: "support/:id",
+      path: "supportdetail",
       element: <SupportDetails />,
     },
     {
@@ -121,7 +121,6 @@ const ProjectRoutes = () => {
     },
     { path: "*", element: <NotFound /> },
   ]);
-
   return element;
 };
 
