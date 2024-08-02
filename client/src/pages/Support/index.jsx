@@ -6,8 +6,8 @@ export default function index() {
   const navigate = useNavigate();
 
   return (
-    <>
-      <div className="flex gap-3 m-5" onClick={() => navigate(-1)}>
+    <div className="bg-[#f7f0fc] min-h-screen">
+      <div className="flex gap-3 p-5" onClick={() => navigate(-1)}>
         <IoMdArrowRoundBack />
         back
       </div>
@@ -47,7 +47,7 @@ export default function index() {
           <div className="w-full bg-[#000] h-[1px]"></div>
         </p>
       </div>
-      <div className="w-full bg-[#fff] py-10">
+      <div className="w-full  py-10">
         <div className="sm:w-full md:w-3/4 w-2/4 mx-auto flex flex-col justify-center items-center gap-12 mt-10 ">
           <div className="w-full gap-4 grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-between">
             <div
@@ -98,6 +98,6 @@ export default function index() {
       <div className="pb-24 px-48 md:px-5">
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
