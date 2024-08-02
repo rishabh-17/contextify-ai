@@ -54,42 +54,42 @@ export default function index() {
               className="flex flex-col items-center w-48 my-5 cursor-pointer"
               onClick={() => navigate(`/supportdetail/?category=account`)}
             >
-              <img src="images/support1.png" alt="" />
+              <img src="images/account.png" alt="" />
               <h4>Account</h4>
             </div>
             <div
               className="flex flex-col items-center w-48 my-5 cursor-pointer"
               onClick={() => navigate(`/supportdetail/?category=billing`)}
             >
-              <img src="images/support1.png" alt="" />
+              <img src="images/billing.png" alt="" />
               <h4>Billing</h4>
             </div>
             <div
               className="flex flex-col items-center w-48 my-5 cursor-pointer"
               onClick={() => navigate(`/supportdetail/?category=issue`)}
             >
-              <img src="images/support1.png" alt="" />
+              <img src="images/issue.png" alt="" />
               <h4>Issue</h4>
             </div>
             <div
               className="flex flex-col items-center w-48 my-5 cursor-pointer"
               onClick={() => navigate(`/supportdetail/?category=about`)}
             >
-              <img src="images/support1.png" alt="" />
+              <img src="images/about.png" alt="" />
               <h4>About</h4>
             </div>
             <div
               className="flex flex-col items-center w-48 my-5 cursor-pointer"
               onClick={() => navigate(`/supportdetail/?category=tip`)}
             >
-              <img src="images/support1.png" alt="" />
+              <img src="images/tips.png" alt="" />
               <h4>Tips</h4>
             </div>
             <div
               className="flex flex-col items-center w-48 my-5 cursor-pointer"
               onClick={() => navigate(`/supportdetail/?category=business`)}
             >
-              <img src="images/support1.png" alt="" />
+              <img src="images/business.png" alt="" />
               <h4>Business</h4>
             </div>
           </div>
