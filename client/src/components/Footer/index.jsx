@@ -15,7 +15,7 @@ const index = () => {
               <Img
                 src="/images/logo.png"
                 alt="image"
-                className="my-auto h-[80px] w-[80px] pt-0 mt-0"
+                className="my-auto h-[100px] w-100px] pt-0 mt-0"
               />
               <h2 className="text-2xl font-bold text-purple-900">Contextify</h2>
             </div>

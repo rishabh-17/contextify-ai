@@ -27,6 +27,8 @@ import section3Image from "../../assets/images/section3Image.png";
 import section4Image from "../../assets/images/section4Image.png";
 import section5Image from "../../assets/images/section5Image.png";
 import section6Image from "../../assets/images/section6Image.png";
+import contextify1 from "../../assets/images/contextify1.mp4"
+import extensionvid from "../../assets/images/extensionvid.mp4"
 
 const dropDownOptions = [
   { label: "Option1", value: "option1" },

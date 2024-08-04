@@ -123,7 +123,7 @@ export default function ClientdashboardPage({ active, children }) {
                 onClick={() => navigate("/mycontext")}
               >
                 <LuFileStack className="h-6 w-6" />
-                My Context
+                My Contexts
               </li>
               <li
                 className={
@@ -291,7 +291,7 @@ export default function ClientdashboardPage({ active, children }) {
                             <li onClick={() => navigate("/mycontext")}>
                               <a className="px-4 py-2 flex flex-row gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-purple-900 hidden sm:flex">
                                 <LuFileStack className="h-4 w-4" />
-                                My Context
+                                My Contexts
                               </a>
                             </li>
                             <li onClick={() => navigate("/apps")}>

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext, useRef, useEffect } from "react";
 // import './About.css';
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading } from "../../components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import "./index.css";
+import FreeTrialArea from "../../components/FreeTrialArea";
+
 import img2 from "../../assets/About/section 1-2.png";
 import img3 from "../../assets/About/section 1-3.png";
 import img4 from "../../assets/About/section 1-4.png";
@@ -27,8 +29,25 @@ import b1 from "../../assets/About/qwert.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import contextify1 from "../../assets/contextify1.mp4"
+
 
 export default function AboutPage() {
+
+  const videoEl = useRef(null);
+
+  const attemptPlay = () => {
+    videoEl &&
+      videoEl.current &&
+      videoEl.current.play().catch(error => {
+        console.error("Error attempting to play", error);
+      });
+  };
+
+  useEffect(() => {
+    attemptPlay();
+  }, []);
+
   return (
     <div className="bg-[#f7f0fc]">
       <Helmet>
@@ -47,20 +66,17 @@ export default function AboutPage() {
         <p>The Story Behind Contextify</p>
       </section>
 
-      <section className="px-48 sm:px-5 mt-24">
-        <Carousel autoPlay infiniteLoop>
-          <div>
-            <img src="https://elledecor.in/wp-content/uploads/2023/06/H1-6.jpg" />
-          </div>
-          <div>
-            <img src="https://elledecor.in/wp-content/uploads/2023/06/H1-6.jpg" />
-          </div>
-          <div>
-            <img src="https://elledecor.in/wp-content/uploads/2023/06/H1-6.jpg" />
-            {/* <p className="legend">Legend 3</p> */}
-          </div>
-        </Carousel>
-      </section>
+      <div className="px-96 sm:px-5 mt-24 justify-center items-center">
+         <video
+                  playsInline
+                  loop
+                  muted
+                  alt="All the devices"
+                  src={contextify1}
+                  ref={videoEl}
+                  className="rounded-3xl object-fill h-[350px] sm:mt-5"
+        />
+      </div>
 
       <section className=" px-48 sm:px-5 mt-24 text-lg">
         <div className="grid grid-cols-3 sm:grid-cols-1 gap-5">
@@ -334,7 +350,7 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-      <section className=" px-48 sm:px-5 mt-48">
+      {/* <section className=" px-48 sm:px-5 mt-48">
         <div
           className="section7"
           style={{
@@ -407,7 +423,12 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+<section className="mt-48">
+            <FreeTrialArea />
+          </section>
+
 
       <section className="mt-48 pb-24">
         <Footer />

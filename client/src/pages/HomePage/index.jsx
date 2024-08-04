@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Text, Button, Img, Heading, Input, SelectBox } from "../../components";
 import Header from "../../components/Header";
@@ -28,9 +28,18 @@ import section3Image from "../../assets/section3Image.png";
 import section4Image from "../../assets/section4Image.png";
 import section5Image from "../../assets/section5Image.png";
 import section6Image from "../../assets/section6Image.png";
+import contextify1 from "../../assets/contextify1.mp4"
+import extensionvid from "../../assets/extensionvid.mp4"
+import knowinternet from "../../assets/knowinternet.mp4"
+import knowtopic from "../../assets/knowtopic.mp4"
+import knowsearches from "../../assets/knowsearches.mp4"
+
+
 import { LoadingContext } from "../../App";
 
 import { FaArrowRightLong } from "react-icons/fa6";
+import { contextType } from "react-quill";
+
 
 export default function HomePage() {
   const [selected, setSelected] = React.useState({
@@ -40,6 +49,19 @@ export default function HomePage() {
     title: "Developer",
   });
 
+  const videoEl = useRef(null);
+
+  const attemptPlay = () => {
+    videoEl &&
+      videoEl.current &&
+      videoEl.current.play().catch(error => {
+        console.error("Error attempting to play", error);
+      });
+  };
+
+  useEffect(() => {
+    attemptPlay();
+  }, []);
   const setLoading = useContext(LoadingContext);
 
   return (
@@ -122,12 +144,19 @@ export default function HomePage() {
                 </div> */}
               </div>
               <div className="flex justify-center items-center">
-                <img
-                  className="shadow-md"
-                  src={section1Image}
-                  alt="section1Image"
-                />
+              <video
+                  // style={{ maxWidth: "100%", width: "900px", margin: "0 auto" }}
+                  playsInline
+                  loop
+                  muted
+                  alt="All the devices"
+                  src={contextify1}
+                  ref={videoEl}
+                  className="rounded-3xl object-fill h-[350px] sm:mt-5"
+        />
               </div>
+     
+          
             </div>
           </section>
 
@@ -234,11 +263,16 @@ export default function HomePage() {
 
               <div className="flex justify-center items-center">
                 {" "}
-                <img
-                  className=" shadow-md"
-                  src={section3Image}
-                  alt="section1Image"
-                />
+                <video
+                  // style={{ maxWidth: "100%", width: "900px", margin: "0 auto" }}
+                  playsInline
+                  loop
+                  muted
+                  alt="All the devices"
+                  src={extensionvid}
+                  ref={videoEl}
+                  className="rounded-3xl object-fill h-[350px]"
+        />
               </div>
             </div>
           </section>
@@ -285,11 +319,16 @@ export default function HomePage() {
 
               <div className="flex justify-center items-center">
                 {" "}
-                <img
-                  className=" shadow-md"
-                  src={section4Image}
-                  alt="section1Image"
-                />
+                <video
+                  // style={{ maxWidth: "100%", width: "900px", margin: "0 auto" }}
+                  playsInline
+                  loop
+                  muted
+                  alt="All the devices"
+                  src={knowtopic}
+                  ref={videoEl}
+                  className="rounded-3xl object-fill h-[350px]"
+        />
               </div>
             </div>
           </section>
@@ -298,11 +337,16 @@ export default function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="flex justify-center items-center">
                 {" "}
-                <img
-                  className=" shadow-md"
-                  src={section5Image}
-                  alt="section1Image"
-                />
+                <video
+                  // style={{ maxWidth: "100%", width: "900px", margin: "0 auto" }}
+                  playsInline
+                  loop
+                  muted
+                  alt="All the devices"
+                  src={knowinternet}
+                  ref={videoEl}
+                  className="rounded-3xl object-fill h-[350px]"
+        />
               </div>
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
@@ -319,22 +363,24 @@ export default function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
-                  Know <span className="bg-orange-50">Yourself</span>
+                  Know your <span className="bg-orange-50">Searches</span>
                 </h1>
                 <p>
-                  Contextify also serves as an self-analysis tool to see what
-                  you’ve been paying attention to on the web lately – precious
-                  data that’ll help you make better choices for the
-                  time/attention you’re spending online.
+                Contextify goes beyond categorization, organizing information into broad and specific contexts, enhancing your search experience and making you more informed in seconds.
                 </p>
               </div>
               <div className="flex justify-center items-center">
                 {" "}
-                <img
-                  className=" shadow-md"
-                  src={section6Image}
-                  alt="section1Image"
-                />
+                <video
+                  // style={{ maxWidth: "100%", width: "900px", margin: "0 auto" }}
+                  playsInline
+                  loop
+                  muted
+                  alt="All the devices"
+                  src={knowsearches}
+                  ref={videoEl}
+                  className="rounded-3xl object-fill h-[350px]"
+        />
               </div>
             </div>
           </section>
@@ -345,7 +391,7 @@ export default function HomePage() {
                 Use <br /> <span className="bg-orange-50">Contextify</span>{" "}
               </h2>
             </div>
-            <div className="grid grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-4 gap-5 ">
+            <div className="grid grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-5 ">
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
               <div className="h-20 w-20">
                 <img
