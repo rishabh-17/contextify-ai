@@ -29,17 +29,15 @@ import b1 from "../../assets/About/qwert.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import contextify1 from "../../assets/contextify1.mp4"
-
+import contextify1 from "../../assets/contextify1.mp4";
 
 export default function AboutPage() {
-
   const videoEl = useRef(null);
 
   const attemptPlay = () => {
     videoEl &&
       videoEl.current &&
-      videoEl.current.play().catch(error => {
+      videoEl.current.play().catch((error) => {
         console.error("Error attempting to play", error);
       });
   };
@@ -66,15 +64,15 @@ export default function AboutPage() {
         <p>The Story Behind Contextify</p>
       </section>
 
-      <div className="px-96 sm:px-5 mt-24 justify-center items-center">
-         <video
-                  playsInline
-                  loop
-                  muted
-                  alt="All the devices"
-                  src={contextify1}
-                  ref={videoEl}
-                  className="rounded-3xl object-fill h-[350px] sm:mt-5"
+      <div className="w-full flex sm:px-5 justify-center items-center">
+        <video
+          playsInline
+          loop
+          muted
+          alt="All the devices"
+          src={contextify1}
+          ref={videoEl}
+          className="rounded-3xl object-cover sm:mt-5 p-24"
         />
       </div>
 
@@ -425,10 +423,9 @@ export default function AboutPage() {
         </div>
       </section> */}
 
-<section className="mt-48">
-            <FreeTrialArea />
-          </section>
-
+      <section className="mt-48">
+        <FreeTrialArea />
+      </section>
 
       <section className="mt-48 pb-24">
         <Footer />

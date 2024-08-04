@@ -28,18 +28,16 @@ import section3Image from "../../assets/section3Image.png";
 import section4Image from "../../assets/section4Image.png";
 import section5Image from "../../assets/section5Image.png";
 import section6Image from "../../assets/section6Image.png";
-import contextify1 from "../../assets/contextify1.mp4"
-import extensionvid from "../../assets/extensionvid.mp4"
-import knowinternet from "../../assets/knowinternet.mp4"
-import knowtopic from "../../assets/knowtopic.mp4"
-import knowsearches from "../../assets/knowsearches.mp4"
-
+import contextify1 from "../../assets/contextify1.mp4";
+import extensionvid from "../../assets/extensionvid.mp4";
+import knowinternet from "../../assets/knowinternet.mp4";
+import knowtopic from "../../assets/knowtopic.mp4";
+import knowsearches from "../../assets/knowsearches.mp4";
 
 import { LoadingContext } from "../../App";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 import { contextType } from "react-quill";
-
 
 export default function HomePage() {
   const [selected, setSelected] = React.useState({
@@ -49,12 +47,36 @@ export default function HomePage() {
     title: "Developer",
   });
 
-  const videoEl = useRef(null);
+  const videoEl1 = useRef(null);
+  const videoEl2 = useRef(null);
+  const videoEl3 = useRef(null);
+  const videoEl4 = useRef(null);
+  const videoEl5 = useRef(null);
 
   const attemptPlay = () => {
-    videoEl &&
-      videoEl.current &&
-      videoEl.current.play().catch(error => {
+    videoEl1 &&
+      videoEl1.current &&
+      videoEl1.current.play().catch((error) => {
+        console.error("Error attempting to play", error);
+      });
+    videoEl2 &&
+      videoEl2.current &&
+      videoEl2.current.play().catch((error) => {
+        console.error("Error attempting to play", error);
+      });
+    videoEl3 &&
+      videoEl3.current &&
+      videoEl3.current.play().catch((error) => {
+        console.error("Error attempting to play", error);
+      });
+    videoEl4 &&
+      videoEl4.current &&
+      videoEl4.current.play().catch((error) => {
+        console.error("Error attempting to play", error);
+      });
+    videoEl5 &&
+      videoEl5.current &&
+      videoEl5.current.play().catch((error) => {
         console.error("Error attempting to play", error);
       });
   };
@@ -144,19 +166,17 @@ export default function HomePage() {
                 </div> */}
               </div>
               <div className="flex justify-center items-center">
-              <video
+                <video
                   // style={{ maxWidth: "100%", width: "900px", margin: "0 auto" }}
                   playsInline
                   loop
                   muted
                   alt="All the devices"
                   src={contextify1}
-                  ref={videoEl}
+                  ref={videoEl1}
                   className="rounded-3xl object-fill h-[350px] sm:mt-5"
-        />
+                />
               </div>
-     
-          
             </div>
           </section>
 
@@ -216,10 +236,7 @@ export default function HomePage() {
                 <ul className="flex flex-col gap-10">
                   <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
                     <div className="h-16 w-16">
-                    <img
-                 
-                  src= "images/logo.png"
-                  alt="section1Image"/>
+                      <img src="images/logo.png" alt="section1Image" />
                     </div>
                     <div>
                       <h3 className="text-2xl m-1">Browser extension</h3>
@@ -230,11 +247,8 @@ export default function HomePage() {
                     </div>
                   </li>
                   <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
-                  <div className="h-16 w-16">
-                    <img
-                  
-                  src= "images/logo.png"
-                  alt="logo"/>
+                    <div className="h-16 w-16">
+                      <img src="images/logo.png" alt="logo" />
                     </div>
                     <div>
                       <h3 className="text-2xl m-1">Audio search results</h3>
@@ -245,11 +259,8 @@ export default function HomePage() {
                     </div>
                   </li>
                   <li className="flex gap-5 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 rounded p-2 duration-300">
-                  <div className="h-16 w-16">
-                    <img
-                 
-                  src= "images/logo.png"
-                  alt="logo"/>
+                    <div className="h-16 w-16">
+                      <img src="images/logo.png" alt="logo" />
                     </div>
                     <div>
                       <h3 className="text-2xl m-1">Log your learning</h3>
@@ -270,9 +281,9 @@ export default function HomePage() {
                   muted
                   alt="All the devices"
                   src={extensionvid}
-                  ref={videoEl}
+                  ref={videoEl2}
                   className="rounded-3xl object-fill h-[350px]"
-        />
+                />
               </div>
             </div>
           </section>
@@ -313,7 +324,10 @@ export default function HomePage() {
                   Know the <span className="bg-orange-50">Topic</span>
                 </h1>
                 <p>
-                Contextify provides built-in, same-page Google search results with one simple highlight, skipping the need to open new tabs. Each search includes recommended resources for easy exploration.
+                  Contextify provides built-in, same-page Google search results
+                  with one simple highlight, skipping the need to open new tabs.
+                  Each search includes recommended resources for easy
+                  exploration.
                 </p>
               </div>
 
@@ -326,9 +340,9 @@ export default function HomePage() {
                   muted
                   alt="All the devices"
                   src={knowtopic}
-                  ref={videoEl}
+                  ref={videoEl3}
                   className="rounded-3xl object-fill h-[350px]"
-        />
+                />
               </div>
             </div>
           </section>
@@ -344,16 +358,18 @@ export default function HomePage() {
                   muted
                   alt="All the devices"
                   src={knowinternet}
-                  ref={videoEl}
+                  ref={videoEl4}
                   className="rounded-3xl object-fill h-[350px]"
-        />
+                />
               </div>
               <div className="flex flex-col gap-5 justify-center">
                 <h1 className="text-5xl">
                   Know the <span className="bg-orange-50">Internet</span>
                 </h1>
                 <p>
-                Contextify goes beyond simple summaries, placing selected media into both broad and specific contexts, making you a well-informed "citizen of the internet" in seconds.
+                  Contextify goes beyond simple summaries, placing selected
+                  media into both broad and specific contexts, making you a
+                  well-informed "citizen of the internet" in seconds.
                 </p>
               </div>
             </div>
@@ -366,7 +382,9 @@ export default function HomePage() {
                   Know your <span className="bg-orange-50">Searches</span>
                 </h1>
                 <p>
-                Contextify goes beyond categorization, organizing information into broad and specific contexts, enhancing your search experience and making you more informed in seconds.
+                  Contextify goes beyond categorization, organizing information
+                  into broad and specific contexts, enhancing your search
+                  experience and making you more informed in seconds.
                 </p>
               </div>
               <div className="flex justify-center items-center">
@@ -378,9 +396,9 @@ export default function HomePage() {
                   muted
                   alt="All the devices"
                   src={knowsearches}
-                  ref={videoEl}
+                  ref={videoEl5}
                   className="rounded-3xl object-fill h-[350px]"
-        />
+                />
               </div>
             </div>
           </section>
@@ -393,88 +411,73 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-3 md:grid-cols-2  sm:grid-cols-1 gap-5 ">
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
-              <div className="h-20 w-20">
-                <img
-                  
-                  src= "images/logo.png"
-                  alt="logo"/>
-                    </div>
+                <div className="h-20 w-20">
+                  <img src="images/logo.png" alt="logo" />
+                </div>
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Tight on time?</h3> */}
-                  <p>
-                  Save time with short-form bullet-point summaries
-                  </p>
+                  <p>Save time with short-form bullet-point summaries</p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
-              <div className="h-24 w-24">
-                <img
-                  
-                  src= "images/logo.png"
-                  alt="logo"/>
-                    </div>
+                <div className="h-24 w-24">
+                  <img src="images/logo.png" alt="logo" />
+                </div>
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Doing in-depth research?</h3> */}
                   <p>
-                  Save time by identifying relevant research rabbit holes within your main tab.
+                    Save time by identifying relevant research rabbit holes
+                    within your main tab.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
-              <div className="h-24 w-24">
-                <img
-                  
-                  src= "images/logo.png"
-                  alt="logo"/>
-                    </div>
+                <div className="h-24 w-24">
+                  <img src="images/logo.png" alt="logo" />
+                </div>
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Feeling social?</h3> */}
                   <p>
-                  Easily share your discoveries on Contextify directly within the platform.
+                    Easily share your discoveries on Contextify directly within
+                    the platform.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
-              <div className="h-24 w-24">
-                <img
-                  
-                  src= "images/logo.png"
-                  alt="logo"/>
-                    </div>
+                <div className="h-24 w-24">
+                  <img src="images/logo.png" alt="logo" />
+                </div>
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Need good sources?</h3> */}
                   <p>
-                  Find reliable sources and related topics effortlessly without losing your way.
+                    Find reliable sources and related topics effortlessly
+                    without losing your way.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
-              <div className="h-24 w-24">
-                <img
-                  
-                  src= "images/logo.png"
-                  alt="logo"/>
-                    </div>
+                <div className="h-24 w-24">
+                  <img src="images/logo.png" alt="logo" />
+                </div>
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">Catching up on trends?</h3> */}
                   <p>
-                  Stay updated on trends with Contextify's summaries of movie plots, production details, celeb news, and more.
+                    Stay updated on trends with Contextify's summaries of movie
+                    plots, production details, celeb news, and more.
                   </p>
                 </div>
               </div>
               <div className="flex p-5 bg-[#fff] gap-4 rounded-3xl shadow-md hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">
-              <div className="h-24 w-24">
-                <img
-                  
-                  src= "images/logo.png"
-                  alt="logo"/>
-                    </div>
+                <div className="h-24 w-24">
+                  <img src="images/logo.png" alt="logo" />
+                </div>
                 <div className="text-wrap">
                   {/* <h3 className="text-xl">
                     Keep forgetting to look things up?
                   </h3> */}
                   <p>
-                  Never forget to look things up again with Contextified notes to keep track of interesting tidbits.
+                    Never forget to look things up again with Contextified notes
+                    to keep track of interesting tidbits.
                   </p>
                 </div>
               </div>
@@ -489,7 +492,7 @@ export default function HomePage() {
                 About US?{" "}
               </h2>
             </div> */}
-            {/* <div
+          {/* <div
               className="reviews w-full h-[1000px] sm:h-[500px]
             "
             >
