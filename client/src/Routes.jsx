@@ -26,6 +26,7 @@ import Feedback from "pages/Feedback";
 import AdminSupport from "pages/AdminSupport";
 import SupportDetails from "pages/SupportDetails";
 import SupportBlog from "pages/SupportBlog";
+import SupportList from "pages/SupportList";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -123,6 +124,10 @@ const ProjectRoutes = () => {
     {
       path: "adminsupport",
       element: <AdminSupport />,
+    },
+    {
+      path: "supportlist",
+      element: <SupportList />,
     },
     { path: "*", element: <NotFound /> },
   ]);

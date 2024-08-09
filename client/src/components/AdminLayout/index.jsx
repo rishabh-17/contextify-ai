@@ -109,6 +109,17 @@ export default function ClientdashboardPage({ active, children }) {
                 <FaUsers className="h-6 w-6" />
                 Support
               </li>
+              <li
+                className={
+                  active === 4
+                    ? "text-md p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
+                    : "text-md p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110"
+                }
+                onClick={() => navigate("/supportlist")}
+              >
+                <FaUsers className="h-6 w-6" />
+                Support List
+              </li>
             </ul>
             <ul className="text-md">
               {/* 

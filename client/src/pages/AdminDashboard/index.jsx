@@ -8,12 +8,6 @@ import Chart from "react-apexcharts";
 import { LoadingContext } from "../../App";
 import { toast } from "react-toastify";
 
-const dropDownOptions = [
-  { label: "Option1", value: "option1" },
-  { label: "Option2", value: "option2" },
-  { label: "Option3", value: "option3" },
-];
-
 export default function AdmindashboardPage() {
   const [users, setUsers] = React.useState([]);
   const [apiHistory, setApiHistory] = React.useState([]);
@@ -50,7 +44,6 @@ export default function AdmindashboardPage() {
       setInfo(data.data);
       setLoading(false);
     };
-
     fetchUsers();
     fetchApiHistory();
     fetchInfo();
