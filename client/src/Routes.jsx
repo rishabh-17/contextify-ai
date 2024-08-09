@@ -129,6 +129,10 @@ const ProjectRoutes = () => {
       path: "supportlist",
       element: <SupportList />,
     },
+    {
+      path: "supportedit/:id",
+      element: <AdminSupport />,
+    },
     { path: "*", element: <NotFound /> },
   ]);
   return element;

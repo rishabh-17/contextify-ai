@@ -70,3 +70,24 @@ exports.deletesupport = async (req, res) => {
     res.json({ success: false });
   }
 };
+
+exports.updatesupport = async (req, res) => {
+  try {
+    const newSupport = new Support({
+      _id: req.params.id,
+      content: req.body.support,
+      category: req.body.category,
+      title: req.body.title,
+    });
+    const support = await Support.findByIdAndUpdate(req.params.id, newSupport);
+    if (!support) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Support not found" });
+    }
+    res.json(support);
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false });
+  }
+};

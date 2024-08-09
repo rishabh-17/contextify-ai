@@ -8,6 +8,7 @@ router.get("/get/:id", supportController.getsupport);
 
 //CREATE A POST AND DELETE
 router.post("/create", supportController.createsupport);
+router.post("/update/:id", supportController.updatesupport);
 router.delete("/delete/:id", supportController.deletesupport);
 
 module.exports = router;

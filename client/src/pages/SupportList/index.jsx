@@ -5,10 +5,13 @@ import axios from "axios";
 import ImageUploading from "react-images-uploading";
 import AdminLayout from "../../components/AdminLayout";
 import { LoadingContext } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 export default function index() {
   const [data, setData] = useState([]);
   const setLoading = useContext(LoadingContext);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -64,6 +67,14 @@ export default function index() {
                     {i.title}
                   </th>
                   <td class="px-6 py-4 text-right">
+                    <button
+                      class="font-medium text-blue-600 dark:text-blue-500 hover:underline mr-5"
+                      onClick={() => {
+                        navigate("/supportedit/" + i._id);
+                      }}
+                    >
+                      Edit
+                    </button>
                     <button
                       class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                       onClick={() => {

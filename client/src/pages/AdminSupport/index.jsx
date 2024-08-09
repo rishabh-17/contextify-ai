@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
 import axios from "axios";
 import ImageUploading from "react-images-uploading";
 import AdminLayout from "../../components/AdminLayout";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function index() {
   return (
@@ -22,9 +23,29 @@ const CreateBlogPage = () => {
     thumbnail: "",
   });
   const [images, setImages] = useState([]);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("account");
+  const navigate = useNavigate();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    console.log(id);
+    if (id) {
+      axios
+        .get(`${import.meta.env.VITE_BACKEND_URL || ""}/api/support/get/${id}`)
+        .then((res) => {
+          console.log(res?.data?.data);
+          setBlogData({
+            title: res?.data?.title,
+            blog: res?.data?.content,
+          });
+          setCategory(res?.data?.data?.category);
+        });
+    }
+  }, []);
 
   const handleChange = (e) => {
+    console.log(e.target.name);
     setBlogData({
       ...blogData,
       [e.target.name]: e.target.value,
@@ -126,19 +147,37 @@ const CreateBlogPage = () => {
     });
 
   const handleSave = async () => {
-      try {
+    try {
+      if (id) {
+        const response = await axios.post(
+          `${import.meta.env.VITE_BACKEND_URL || ""}/api/support/update/${id}`,
+          {
+            title: blogData.title,
+            support: blogData.blog,
+            category: category,
+          }
+        );
+        console.log(response);
+        setBlogData({ title: "", blog: "" });
+      } else {
         const response = await axios.post(
           `${import.meta.env.VITE_BACKEND_URL || ""}/api/support/create`,
           {
             title: blogData.title,
             support: blogData.blog,
-            category: category
+            category: category,
           }
         );
         console.log(response);
-      } catch (error) {
-        console.log(error);
+        setBlogData({ title: "", blog: "" });
+        navigate("/supportlist");
+        // handleChange({ target: { name: "title", value: "" } });
+        // handleChange({ target: { name: "blog", value: "" } });
+        // handleProcedureContentChange("");
       }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onChange = (imageList, addUpdateIndex) => {
@@ -148,6 +187,7 @@ const CreateBlogPage = () => {
 
   return (
     <div className="bg-gray-100 p-4 overflow-y-auto">
+      {console.log(blogData)}
       <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black">
         Create <span class="text-purple-900 dark:text-purple-900">Support</span>
       </h1>
@@ -158,23 +198,27 @@ const CreateBlogPage = () => {
           </label>
           <input
             type="text"
-            id="title"
             name="title"
-            value={blogData.title}
+            value={blogData?.title || ""}
             onChange={handleChange}
-            className="border bg-gray-100 border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-purple-900"
+            className="border bg-gray-100 border-gray-300 rounded p-2 w-full"
           />
         </div>
 
         <div className="mb-8">
-          <label htmlFor="category" className="font-bold block mb-2">Category:</label>
-          <select onChange={(e) => setCategory(e.target.value)} className="border bg-gray-100 border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-purple-900" >
-          <option value="account">Account</option>
-          <option value="billing">Billing</option>
-          <option value="issue">issue</option>
-          <option value="about">About</option>
-          <option value="tip">Tip</option>
-          <option value="business">Business</option>
+          <label htmlFor="category" className="font-bold block mb-2">
+            Category:
+          </label>
+          <select
+            onChange={(e) => setCategory(e.target.value)}
+            className="border bg-gray-100 border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-purple-900"
+          >
+            <option value="account">Account</option>
+            <option value="billing">Billing</option>
+            <option value="issue">issue</option>
+            <option value="about">About</option>
+            <option value="tip">Tip</option>
+            <option value="business">Business</option>
           </select>
         </div>
 
@@ -189,73 +233,9 @@ const CreateBlogPage = () => {
             placeholder="Write your content..."
             onChange={handleProcedureContentChange}
             style={{ height: "400px" }}
+            value={blogData?.blog}
           />
         </div>
-
-        {/* <div className="mb-8 mt-24">
-          <h2 className="font-bold mb-2">Upload Thumbnail</h2>
-          <ImageUploading
-            value={images}
-            onChange={onChange}
-            maxNumber={maxNumber}
-            dataURLKey="data_url"
-          >
-            {({
-              imageList,
-              onImageUpload,
-              onImageRemoveAll,
-              onImageUpdate,
-              onImageRemove,
-              isDragging,
-              dragProps,
-            }) => (
-              <div className="upload__image-wrapper border rounded-xl p-4">
-                {images.length === 0 ? (
-                  <button
-                    style={isDragging ? { color: "red" } : undefined}
-                    onClick={onImageUpload}
-                    {...dragProps}
-                    className="bg-purple-900 hover:bg-purple-900 text-[#fff] font-bold py-2 px-4 rounded"
-                  >
-                    Click or Drop here
-                  </button>
-                ) : (
-                  <button
-                    onClick={onImageRemoveAll}
-                    className="bg-red-500 hover:bg-red-700 text-[#fff] font-bold py-2 px-4 rounded"
-                  >
-                    Remove Image
-                  </button>
-                )}
-                {imageList?.map((image, index) => (
-                  <div key={index} className="image-item grid gap-2">
-                    <img
-                      src={image["data_url"]}
-                      alt=""
-                      width="150"
-                      className="rounded"
-                    />
-                    <div className="image-item__btn-wrapper">
-                      <button
-                        onClick={() => onImageUpdate(index)}
-                        className="bg-purple-900 hover:bg-purple-900 text-[#fff] font-bold py-1 px-2 rounded"
-                      >
-                        Update
-                      </button>
-                      <button
-                        onClick={() => onImageRemove(index)}
-                        className="bg-red-500 hover:bg-red-700 text-[#fff] font-bold py-1 px-2 rounded"
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </ImageUploading>
-        </div> */}
-
         <button
           type="submit"
           className="bg-purple-900 hover:bg-purple-900 text-[#fff] font-bold py-2 px-4 rounded"
