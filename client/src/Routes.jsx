@@ -27,6 +27,7 @@ import AdminSupport from "pages/AdminSupport";
 import SupportDetails from "pages/SupportDetails";
 import SupportBlog from "pages/SupportBlog";
 import SupportList from "pages/SupportList";
+import Mailer from "pages/Mailer";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -132,6 +133,10 @@ const ProjectRoutes = () => {
     {
       path: "supportedit/:id",
       element: <AdminSupport />,
+    },
+    {
+      path: "sendemail",
+      element: <Mailer />,
     },
     { path: "*", element: <NotFound /> },
   ]);

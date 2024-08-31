@@ -25,4 +25,6 @@ router.delete(
   AuthMiddleware.userAuthentication,
   adminController.deleteUser
 );
+
+router.post("/email", adminController.sendEmail);
 module.exports = router;

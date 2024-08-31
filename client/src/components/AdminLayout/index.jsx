@@ -17,6 +17,7 @@ import { FaRegStar } from "react-icons/fa";
 import { LuFileStack } from "react-icons/lu";
 import { GoGear } from "react-icons/go";
 import { RxAvatar } from "react-icons/rx";
+import { IoMdMailUnread } from "react-icons/io";
 
 function OutsideClick(ref) {
   const [isClicked, setIsClicked] = useState();
@@ -120,19 +121,19 @@ export default function ClientdashboardPage({ active, children }) {
                 <FaUsers className="h-6 w-6" />
                 Support List
               </li>
-            </ul>
-            <ul className="text-md">
-              {/* 
               <li
                 className={
                   active === 5
-                    ? "ml-5 my-3 text-sm text-purple-900 font-bold flex gap-2 items-center"
-                    : "ml-5 my-3 text-xs flex gap-2 items-center"
+                    ? "text-md p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
+                    : "text-md p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110"
                 }
+                onClick={() => navigate("/sendemail")}
               >
-                <IoSettingsOutline className="h-4 w-4" />
-                Settings
-              </li> */}
+                <IoMdMailUnread className="h-6 w-6" />
+                Mail
+              </li>
+            </ul>
+            <ul className="text-md">
               <li
                 className={
                   active === 6

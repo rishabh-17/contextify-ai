@@ -187,7 +187,6 @@ const CreateBlogPage = () => {
 
   return (
     <div className="bg-gray-100 p-4 overflow-y-auto">
-      {console.log(blogData)}
       <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black">
         Create <span class="text-purple-900 dark:text-purple-900">Support</span>
       </h1>

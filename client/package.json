@@ -34,7 +34,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "6.0.2",
     "react-router-hash-link": "^2.4.3",
-    "react-select": "^5.2.1",
+    "react-select": "^5.8.0",
     "react-share-social": "^0.1.60",
     "react-toastify": "^10.0.5",
     "react-tooltip": "^5.27.1",

@@ -1,4 +1,15 @@
 const { User, Saved, History } = require("../models");
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  host: "smtp.hostinger.com",
+  secure: true,
+  port: 465,
+  auth: {
+    user: "support@contextify.info",
+    pass: "OperationLIFE!2",
+  },
+});
 
 exports.getUsers = async (req, res) => {
   try {
@@ -118,5 +129,23 @@ exports.getDashboard = async (req, res) => {
     });
   } catch (error) {
     return res.json({ success: false, err: "Unable to fetch dashboard" });
+  }
+};
+
+exports.sendEmail = async (req, res) => {
+  const { emails, subject, message } = req.body;
+  try {
+    const result = await emails.map(async (email) => {
+      return await transporter.sendMail({
+        from: "support@contextify.info",
+        to: email,
+        subject: subject,
+        html: message,
+      });
+    });
+    return res.json({ success: true, result });
+  } catch (error) {
+    console.log(error);
+    return res.json({ success: false, err: "Unable to send email" });
   }
 };
