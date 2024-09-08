@@ -143,7 +143,7 @@ const ProjectRoutes = () => {
       path: "files",
       element: <Files />,
     },
-    { path: "*", element: <NotFound /> },
+    // { path: "*", element: <NotFound /> },
   ]);
   return element;
 };
