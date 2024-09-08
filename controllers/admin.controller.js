@@ -1,5 +1,7 @@
 const { User, Saved, History } = require("../models");
 const nodemailer = require("nodemailer");
+const path = require("path");
+const Files = require("../models/Files");
 
 const transporter = nodemailer.createTransport({
   host: "smtp.hostinger.com",
@@ -147,5 +149,42 @@ exports.sendEmail = async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.json({ success: false, err: "Unable to send email" });
+  }
+};
+
+exports.addFile = async (req, res) => {
+  const file = req.file;
+  try {
+    const fileObj = new Files({
+      name: file.originalname,
+      url: file.filename,
+    });
+    await fileObj.save();
+    return res.json({
+      success: true,
+      data: fileObj,
+      msg: "File uploaded successfully",
+    });
+  } catch (error) {
+    return res.json({ success: false, err: "Unable to upload file" });
+  }
+};
+
+exports.getFiles = async (req, res) => {
+  try {
+    const files = await Files.find();
+    return res.json({ success: true, data: files });
+  } catch (error) {
+    return res.json({ success: false, err: "Unable to fetch files" });
+  }
+};
+
+exports.deleteFile = async (req, res) => {
+  try {
+    const fileId = req.params.id;
+    await Files.findByIdAndDelete(fileId);
+    return res.json({ success: true, msg: "File deleted successfully" });
+  } catch (error) {
+    return res.json({ success: false, err: "Unable to delete file" });
   }
 };

@@ -1,23 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Helmet } from "react-helmet";
-import { CloseSVG } from "../../assets/images";
 import { Text, Img, Input, Button } from "..";
 import { useNavigate } from "react-router-dom";
-import { MdOutlineContactSupport } from "react-icons/md";
 import { IoPowerSharp } from "react-icons/io5";
-import { IoSettingsOutline } from "react-icons/io5";
-import { TbMessageReport } from "react-icons/tb";
-import { MdOutlineSpaceDashboard } from "react-icons/md";
-import { TbFileSettings } from "react-icons/tb";
-import { MdNotificationAdd } from "react-icons/md";
-import { IoIosArrowDropdown } from "react-icons/io";
 import { FaUsers } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
-import { FaRegStar } from "react-icons/fa";
-import { LuFileStack } from "react-icons/lu";
-import { GoGear } from "react-icons/go";
-import { RxAvatar } from "react-icons/rx";
 import { IoMdMailUnread } from "react-icons/io";
+import { FaCloud } from "react-icons/fa";
 
 function OutsideClick(ref) {
   const [isClicked, setIsClicked] = useState();
@@ -131,6 +119,17 @@ export default function ClientdashboardPage({ active, children }) {
               >
                 <IoMdMailUnread className="h-6 w-6" />
                 Mail
+              </li>
+              <li
+                className={
+                  active === 7
+                    ? "text-md p-3 bg-purple-900 rounded-lg text-[#fff] my-1 flex gap-2 items-center"
+                    : "text-md p-3 text-purple-900 rounded-lg my-1 flex gap-2 items-center hover:text-purple-900 hover:-translate-y-1 hover:scale-110"
+                }
+                onClick={() => navigate("/files")}
+              >
+                <FaCloud className="h-6 w-6" />
+                Cloud
               </li>
             </ul>
             <ul className="text-md">

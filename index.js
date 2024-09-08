@@ -14,6 +14,7 @@ const bodyParser = require("body-parser");
 const app = express();
 require("dotenv").config();
 app.use(cors());
+app.use("/cloud", express.static("cloud"));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/client/build"));
