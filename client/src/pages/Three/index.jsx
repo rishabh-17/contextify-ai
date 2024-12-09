@@ -7,24 +7,37 @@ export default function ThreePage() {
     <>
       <Helmet>
         <title>Contextify</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Contextify puts information into context at the click of a button."
+        />
       </Helmet>
       <div className="w-full p-3.5">
         <div className="flex md:flex-col justify-center items-center w-full mx-auto my-20 max-w-[1372px]">
           <div className="flex flex-col items-start w-[45%] md:w-full gap-5">
-            <Heading size="10xl" as="h1" className="!text-gray-900 !font-nunito">
+            <Heading
+              size="10xl"
+              as="h1"
+              className="!text-gray-900 !font-nunito"
+            >
               Our Mission
             </Heading>
-            <Text size="11xl" as="p" className="!text-gray-600_03 !font-nunito leading-[157.4%]">
+            <Text
+              size="11xl"
+              as="p"
+              className="!text-gray-600_03 !font-nunito leading-[157.4%]"
+            >
               <>
                 Lorem ipsum dolor sit amet, consectetur adipiscing Pharetra
                 <br />
-                Ld eu aliquet diam lorem viverra at justo. Nulla odio nequefjf gravida in pharetra egestas. Ac id
-                sagittis at morbi interdum nibh diam sagittis et.
+                Ld eu aliquet diam lorem viverra at justo. Nulla odio nequefjf
+                gravida in pharetra egestas. Ac id sagittis at morbi interdum
+                nibh diam sagittis et.
                 <br />
                 <br />
                 Lorem ipsum dolor sit amet, consectetur adipiscing Pharetra
-                <br /> id eu aliquet diam lorem viverra at justo. Nulla odio nequesg gravida in pharetra egestas.
+                <br /> id eu aliquet diam lorem viverra at justo. Nulla odio
+                nequesg gravida in pharetra egestas.
               </>
             </Text>
           </div>

@@ -7,7 +7,10 @@ export default function TwoPage() {
     <>
       <Helmet>
         <title>Contextify</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Contextify puts information into context at the click of a button."
+        />
       </Helmet>
       <div className="flex md:flex-col justify-center w-full gap-10">
         <div className="md:self-stretch md:p-5 flex-1">

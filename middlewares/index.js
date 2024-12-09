@@ -1,1 +1,1 @@
-exports.AuthMiddleware = require("./auth.middleware");
+exports.AuthMiddleware = require("./auth");

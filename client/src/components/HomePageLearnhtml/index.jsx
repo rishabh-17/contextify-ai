@@ -10,7 +10,7 @@ export default function HomePageLearnhtml({
 }) {
   return (
     <div {...props}>
-      <div className="w-full p-[13px] bg-neutral-100 rounded-[10px]">
+      <div className="w-full p-[13px] md:flex md:flex-wrap md:w-full bg-neutral-100 rounded-[10px]">
         <div className="flex justify-center items-start gap-[13px]">
           <Button color="pink_A200_01" size="2xl" shape="circle" className="w-[36px] !rounded-[18px]">
             <Img src="images/img_code_slash_1.svg" />

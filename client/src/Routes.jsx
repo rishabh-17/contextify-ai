@@ -8,10 +8,27 @@ import Pricing from "pages/Pricing";
 import Two from "pages/Two";
 import Three from "pages/Three";
 import One from "pages/One";
-import AdminDashboard from "pages/AdminDashboard";
+import Profile from "pages/Profile";
 // import Dashboard from "pages/Dashboard";
+import AdminDashboard from "pages/AdminDashboard";
 import Dashboard from "pages/Clientdashboard";
-
+import SignInPage from "pages/SignIn";
+import SignUpPage from "pages/SignUp";
+import Subscription from "pages/Subscription";
+import MyContext from "pages/MyContext";
+import ContextDetail from "pages/ContextDetail";
+import Support from "pages/Support";
+import AllUsers from "pages/AllUsers";
+import AppsPage from "pages/AppsPage";
+import Policy from "pages/Policy";
+import Settings from "pages/Settings";
+import Feedback from "pages/Feedback";
+import AdminSupport from "pages/AdminSupport";
+import SupportDetails from "pages/SupportDetails";
+import SupportBlog from "pages/SupportBlog";
+import SupportList from "pages/SupportList";
+import Mailer from "pages/Mailer";
+import Files from "pages/Files";
 const ProjectRoutes = () => {
   let element = useRoutes([
     {
@@ -50,9 +67,84 @@ const ProjectRoutes = () => {
       path: "dashboard",
       element: <Dashboard />,
     },
-    { path: "*", element: <NotFound /> },
+    {
+      path: "signin",
+      element: <SignInPage />,
+    },
+    {
+      path: "signup",
+      element: <SignUpPage />,
+    },
+    {
+      path: "mycontext",
+      element: <MyContext />,
+    },
+    {
+      path: "subscription",
+      element: <Subscription />,
+    },
+    {
+      path: "profile",
+      element: <Profile />,
+    },
+    {
+      path: "support",
+      element: <Support />,
+    },
+    {
+      path: "support/:id",
+      element: <SupportBlog />,
+    },
+    {
+      path: "supportdetail",
+      element: <SupportDetails />,
+    },
+    {
+      path: "contextdetail/:type/:id",
+      element: <ContextDetail />,
+    },
+    {
+      path: "allusers",
+      element: <AllUsers />,
+    },
+    {
+      path: "apps",
+      element: <AppsPage />,
+    },
+    {
+      path: "policy",
+      element: <Policy />,
+    },
+    {
+      path: "settings",
+      element: <Settings />,
+    },
+    {
+      path: "feedback",
+      element: <Feedback />,
+    },
+    {
+      path: "adminsupport",
+      element: <AdminSupport />,
+    },
+    {
+      path: "supportlist",
+      element: <SupportList />,
+    },
+    {
+      path: "supportedit/:id",
+      element: <AdminSupport />,
+    },
+    {
+      path: "sendemail",
+      element: <Mailer />,
+    },
+    {
+      path: "files",
+      element: <Files />,
+    },
+    // { path: "*", element: <NotFound /> },
   ]);
-
   return element;
 };
 

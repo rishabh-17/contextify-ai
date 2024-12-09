@@ -19,11 +19,6 @@ input:where(:not([type])),
 textarea,
 select {
   appearance: none;
-  background-color: transparent;
-  border-color: unset;
-  border-width: 0;
-  border-radius: unset;
-  padding: unset;
   font-size: unset;
   line-height: unset;
 }

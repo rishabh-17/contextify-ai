@@ -1,0 +1,175 @@
+import MainLayout from "../../components/MainLayout";
+import React, { useState, useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+// import Payment from "../../components/Payment";
+
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
+export default function Subscription() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const config = {
+    headers: {
+      authentication: `${localStorage.getItem("token")}`,
+    },
+  };
+  useEffect(() => {
+    const query = new URLSearchParams(location.search);
+    const sessionId = query.get("session_id");
+    const userId = query.get("user_id");
+    const tokens = query.get("tokens");
+    console.log(sessionId, userId, tokens);
+
+    if (sessionId && userId && tokens) {
+      axios
+        .post(
+          (import.meta.env.VITE_BACKEND_URL || "") +
+            "/api/user/payment-success",
+          { sessionId, tokens: parseInt(tokens) },
+          config
+        )
+        .then(() => {
+          toast.success("Payment Successful");
+        })
+        .catch(() => {
+          toast.error("Payment Failed");
+        });
+    }
+  }, []);
+  const CheckoutForm = ({ userId, tokens }) => {
+    const [range, setRange] = useState(25);
+    const [sessionId, setSessionId] = useState(null);
+    const config = {
+      headers: {
+        authentication: `${localStorage.getItem("token")}`,
+      },
+    };
+    const handleClick = async (event) => {
+      event.preventDefault();
+
+      const { data } = await axios.post(
+        (import.meta.env.VITE_BACKEND_URL || "") +
+          "/api/user/create-checkout-session",
+        {
+          userId,
+          tokens,
+          items: [{ name: "Contextify Tokens", quantity: range }],
+        },
+        config
+      );
+
+      setSessionId(data.session.id);
+      console.log(data);
+
+      const stripe = await stripePromise;
+      await stripe.redirectToCheckout({ sessionId: data.session.id });
+    };
+
+    return (
+      <div>
+        <MainLayout active={4}>
+          {/* <Payment /> */}
+          <div className="w-full text-3xl font-bold">Subscriptions</div>
+          <div>See your current plan. Chose a plan to that will suit you.</div>
+          <section className="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 my-5 px-36 md:px-5">
+            <div className="flex flex-col gap-16 text-center rounded-xl bg-violet-200 p-4">
+              <div className="flex justify-between px-5">
+                <h3 className="font-bold text-3xl">Free</h3>
+              </div>
+              <div className="flex flex-col gap-4 items-center">
+                <h2>
+                  <span className="text-3xl font-bold">$0</span> / month
+                </h2>
+                <div className="text-orange-500 bg-yellow-100 rounded-full p-2 px-4 w-fit">
+                  Billed as $0 per year
+                </div>
+              </div>
+              <div className="flex flex-col gap-4">
+                <p>15 tokens</p>
+                <p>Access to browser extension</p>
+                <p>Access to audio + text search results</p>
+                <p>User dashboard</p>
+              </div>
+              <div>
+                <button className="bg-purple-900 text-[#fff] rounded-full px-4 py-2">
+                  Get Started
+                </button>
+              </div>
+            </div>
+            <div className="flex flex-col md:col-span-1 gap-16 text-center rounded-xl bg-purple-900 p-4 text-[#fff]">
+              <div className="flex justify-between px-5">
+                <h3 className="font-bold text-3xl">Premium</h3>
+                <div className="bg-[#fff] rounded-full px-2 text-[#9b3ab4] text-center content-center">
+                  Popular
+                </div>
+              </div>
+              <div>
+                <label
+                  for="minmax-range"
+                  class="block text-lg font-bold text-gray-100 dark:text-white mb-3"
+                >
+                  <span className="text-3xl font-bold">
+                    ${(8 * range) / 25}
+                  </span>
+                </label>
+              </div>
+              <input
+                id="minmax-range"
+                type="range"
+                min="25"
+                max="3000"
+                step="25"
+                value={range}
+                onChange={(e) => setRange(e.target.value)}
+                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+              />
+              <div className="flex flex-col gap-4">
+                <p>{range} Tokens</p>
+                <p>Everything in Free</p>
+              </div>
+
+              <div>
+                <button
+                  className="text-purple-900 bg-[#fff] rounded-full px-4 py-2"
+                  onClick={handleClick}
+                >
+                  Buy
+                </button>
+              </div>
+            </div>
+            <div className="flex flex-col gap-16 text-center rounded-xl bg-violet-200 p-4">
+              <div className="flex justify-between px-5">
+                <h3 className="font-bold text-3xl">Custom</h3>
+              </div>
+              <div className="flex flex-col gap-4 items-center">
+                {/* <h2>
+              <span className="text-3xl font-bold">$0</span> / month
+            </h2> */}
+              </div>
+              <div className="flex flex-col gap-4">
+                <p>Contact us to get a customized plan!</p>
+              </div>
+              <div>
+                <button
+                  className="bg-purple-900 text-[#fff] rounded-full px-4 py-2 transition ease-in-out delay-150 bg-white hover:text-white hover:-translate-y-1 hover:scale-110 hover:bg-purple-900 duration-300 p-10"
+                  onClick={() => navigate("/contactus")}
+                >
+                  Contact Us
+                </button>
+              </div>
+            </div>
+          </section>
+        </MainLayout>
+      </div>
+    );
+  };
+  return (
+    <Elements stripe={stripePromise}>
+      <CheckoutForm userId="someUserId" tokens={10} />
+    </Elements>
+  );
+}

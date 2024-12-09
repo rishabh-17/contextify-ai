@@ -10,7 +10,7 @@ export default function HomePageSituplight({
 }) {
   return (
     <div {...props}>
-      <div className="w-full p-[13px] bg-neutral-100 rounded-[10px]">
+      <div className="w-full md:w-full p-[13px] md:flex md:flex-wrap bg-neutral-100 rounded-[10px]">
         <div className="flex justify-center items-start gap-[13px]">
           <Button
             color="purple_400"

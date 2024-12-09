@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import Routes from "./Routes";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router } from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import Loader from "./components/Loader";
+export const LoadingContext = createContext();
 
 function App() {
+  const [loading, setLoading] = useState(false);
   return (
-    <Router>
-      <Routes />
-    </Router>
+    <GoogleOAuthProvider clientId="373354593732-tn4ij8vgjhloghl1bt2l6mktmn2t7jei.apps.googleusercontent.com">
+      <LoadingContext.Provider value={setLoading}>
+        {loading && <Loader />}
+        <ToastContainer />
+        <div className={loading ? "h-screen overflow-hidden" : ""}>
+          <Router>
+            <Routes />
+          </Router>
+        </div>
+      </LoadingContext.Provider>
+    </GoogleOAuthProvider>
   );
 }
 
